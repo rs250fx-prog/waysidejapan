@@ -1,7 +1,7 @@
 # Cloudflare Pages の設定。D1 のバインドをコードで持つ。
 # ダッシュボード側にも同じバインドが要る場合があるので、両方で確認すること。
 name = "waysidejapan"
-compatibility_date = "2026-09-27"
+compatibility_date = "2026-09-26"
 pages_build_output_dir = "dist"
 
 [[d1_databases]]
