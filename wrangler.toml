@@ -7,4 +7,4 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "waysidejapan"
-database_id = "PLACEHOLDER_SET_AFTER_CREATE"
+database_id = "8b1c74f6-4535-4a14-bfff-b1119e237b69"
