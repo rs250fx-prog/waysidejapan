@@ -84,7 +84,7 @@ export const ROUTES = {
   areaHub: false,
   passes: false,
   itineraries: false,
-  about: false,
+  about: true,
   privacy: false,
   disclosure: false,
   contact: false,
@@ -94,15 +94,22 @@ export const ROUTES = {
 } as const;
 
 export const AUTHOR = {
-  name: 'Gal',
+  name: 'Ichiro Murase',
+  nameJa: '村瀬 一郎',
   /** バイラインに出す肩書き。実績の主張なので、事実でなくなったら直す */
-  credential: 'Living in Japan',
+  credential: 'Living in Japan · 30,000 km a year',
   url: '/en/about/',
+  /** 構造化データの sameAs に入れる外部プロフィール。増えるほど本人性が強まる */
+  sameAs: [] as string[],
 } as const;
 
 /** 事業者情報。プライバシーポリシーの法定事項に使う。未記入のあいだは公開しない */
 export const OPERATOR = {
-  name: '',
-  representative: '',
-  contactPath: '/en/contact/',
+  name: 'Financial and Marketing M16',
+  representative: 'Ichiro Murase',
+  postalCode: '107-0062',
+  address: 'Aoyama Marutake Building, 3-1-36 Minami-Aoyama, Minato-ku, Tokyo',
+  addressJa: '〒107-0062 東京都港区南青山3丁目1-36 青山丸竹ビル',
+  /** 問い合わせは既存サイトのフォームに寄せる。専用フォームを作ったら差し替える */
+  contactUrl: 'https://fam16.com/contact/',
 } as const;

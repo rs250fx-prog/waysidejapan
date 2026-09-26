@@ -1,0 +1,453 @@
+---
+import Base from '../../layouts/Base.astro';
+import { LOCALES, SITE_NAME, AUTHOR, OPERATOR, SITE_URL, hasAnyAffiliate, ROUTES, type Locale } from '../../config.ts';
+import { AREAS } from '../../data/areas.ts';
+
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Locale;
+
+/**
+ * 記事のバイラインから毎回ここへ飛ばす。E-E-A-T の受け皿なので、
+ * 主張する数値（走行距離・ローカルガイドのレベル）は事実でなくなったら直す。
+ */
+const credentials = [
+  { value: '30,000 km', label: 'ridden in a typical year' },
+  { value: 'Level 8', label: 'Google Local Guide' },
+  { value: '40+', label: 'prefectures visited' },
+  { value: '0', label: 'sponsored trips accepted' },
+];
+
+const statusLabel: Record<string, string> = {
+  covered: 'Covered',
+  'in-progress': 'In progress',
+  planned: 'Planned',
+};
+
+const graph = [
+  {
+    '@type': 'ProfilePage',
+    mainEntity: { '@id': `${SITE_URL}/#author` },
+  },
+  {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#publisher`,
+    name: OPERATOR.name,
+    url: 'https://fam16.com/',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: OPERATOR.address,
+      postalCode: OPERATOR.postalCode,
+      addressCountry: 'JP',
+    },
+  },
+];
+---
+
+<Base
+  locale={lang}
+  title="Who writes this"
+  description="Ichiro Murase lives in Japan, rides about 30,000 km a year and stops wherever there is a bath. How this site is researched, photographed and paid for — and what it will never do."
+  graph={graph}
+>
+  <section class="hero">
+    <div class="portrait" aria-hidden="true">PORTRAIT</div>
+    <div class="intro">
+      <p class="kicker">About</p>
+      <h1>I live here, and I stop wherever there is a bath</h1>
+      <p class="lead">
+        My name is Ichiro Murase ({AUTHOR.nameJa}). I am Japanese, I live in Japan, and I have spent the better part of
+        two decades travelling this country on a motorcycle — roughly 30,000 kilometres in a normal year, in every
+        season, mostly on the roads that do not appear in guidebooks.
+      </p>
+      <p class="lead">
+        Almost everything on this site is somewhere I reached under my own power, paid for myself, and photographed on
+        the day.
+      </p>
+    </div>
+  </section>
+
+  <section class="credentials">
+    <div class="wrap cred-inner">
+      {
+        credentials.map((c) => (
+          <div>
+            <div class="cred-value">{c.value}</div>
+            <div class="cred-label">{c.label}</div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="wrap body">
+    <section>
+      <h2>Why a Japanese person writing in English</h2>
+      <p>
+        Most English-language writing about Japan is by people passing through. That is not a criticism — a visitor
+        notices things a resident stops seeing. But a visitor cannot go back next weekend to check whether the fare
+        changed, and cannot read the notice taped to the door of a bathhouse.
+      </p>
+      <p>
+        I can. That is the entire premise of this site. When a price here has a date on it, the date is real. When a
+        guide says the transfer is eight minutes and tight with luggage, it is because I made it with luggage.
+      </p>
+    </section>
+
+    <section>
+      <h2>How I travel</h2>
+      <p>
+        By motorcycle, mostly. Thirty thousand kilometres a year adds up to a lot of small roads, and the reason I take
+        them is what sits along them: hot springs, the inn with six rooms, the counter with no English menu and one dish
+        worth crossing a prefecture for.
+      </p>
+      <p>
+        I have slept in campsites and in ryokan that cost more than a flight home, and eaten at both roadside stands and
+        Michelin-starred kitchens. I am a Level 8 Google Local Guide, which mostly means I have been writing down what I
+        find for a long time.
+      </p>
+      <p>
+        On this site the travel is by train, because that is what visitors to Japan can actually use. The motorcycle
+        knowledge still shows up — I know which valley the road follows, and which bath is worth the detour, because I
+        rode there first.
+      </p>
+    </section>
+
+    <section>
+      <h2>How I work</h2>
+      <div class="principles">
+        <div>
+          <h3>I go, then I write</h3>
+          <p>
+            Nothing here describes a place I have not stood in. Where a guide covers somewhere I visited years ago, the
+            article says so, and says when.
+          </p>
+        </div>
+        <div>
+          <h3>Every fare carries a date</h3>
+          <p>
+            Prices change and guides rot. Each article states the month its fares were checked, and anything older than
+            six months is pulled back for review before it stays up.
+          </p>
+        </div>
+        <div>
+          <h3>Yen first, conversions second</h3>
+          <p>
+            You will pay in yen, so yen is what I show — with an approximate euro and dollar figure beside it, updated
+            daily from European Central Bank rates.
+          </p>
+        </div>
+        <div>
+          <h3>My own photographs</h3>
+          <p>
+            No stock images. If a photo looks ordinary, it is because that is what the place looked like on the day I
+            was there.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="money">
+      <h2>How this site makes money</h2>
+      {
+        hasAnyAffiliate ? (
+          <>
+            <p>
+              Some links are affiliate links. If you book through one, the company pays me a commission and you pay the
+              same price you would have paid anyway. That is the whole arrangement.
+            </p>
+            <p>
+              What it does not buy is a recommendation. Nothing appears here because a company asked, and I have not
+              accepted a sponsored trip — accepting one would make the next review worthless. Where a booking link
+              exists for something I did not use myself, the article says so in the same sentence as the link.
+            </p>
+            {ROUTES.disclosure && <p><a href={`/${lang}/disclosure/`}>Read the full disclosure →</a></p>}
+          </>
+        ) : (
+          <p>
+            It does not, yet. There are no affiliate links, no advertising and no sponsored posts on this site at the
+            moment. When that changes, it will be stated here and on every article that contains one, before the link
+            rather than after it.
+          </p>
+        )
+      }
+    </section>
+
+    <section>
+      <h2>Where I cover</h2>
+      <p>
+        Western Japan first, because that is where I can go back next weekend. I would rather write twelve good guides
+        about one region than one thin guide about twelve.
+      </p>
+      <ul class="areas">
+        {
+          AREAS.map((a) => (
+            <li>
+              <span>
+                <strong>{a.name}</strong> — {a.note}
+              </span>
+              <em class:list={['status', a.status]}>{statusLabel[a.status]}</em>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="corrections">
+      <h2>Corrections welcome</h2>
+      <p>
+        If a fare has changed, a bath has closed or a rule has moved, tell me and I will fix it and credit you. That is
+        the fastest way this site stays worth reading.
+      </p>
+      <p><a href={OPERATOR.contactUrl} rel="noopener">Send a correction →</a></p>
+    </section>
+
+    <section class="publisher" id="publisher">
+      <h2>Publisher</h2>
+      <dl>
+        <dt>Site</dt>
+        <dd>{SITE_NAME}</dd>
+        <dt>Published by</dt>
+        <dd>{OPERATOR.name}</dd>
+        <dt>Representative</dt>
+        <dd>{OPERATOR.representative}（{AUTHOR.nameJa}）</dd>
+        <dt>Address</dt>
+        <dd>{OPERATOR.address}, Japan<br /><span class="ja">{OPERATOR.addressJa}</span></dd>
+        <dt>Contact</dt>
+        <dd><a href={OPERATOR.contactUrl} rel="noopener">Contact form</a></dd>
+      </dl>
+      <p class="note">
+        {OPERATOR.name} is a web marketing studio with a background in finance. This site is a personal publication run
+        under it, not a corporate product.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    display: flex;
+    gap: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  .portrait {
+    flex: 0 0 460px;
+    height: 420px;
+    background: #efe6d6;
+    border-right: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: #8d8375;
+  }
+  .intro {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+  .kicker {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+  .lead {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--ink-2);
+  }
+
+  .credentials {
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .cred-inner {
+    display: flex;
+  }
+  .cred-inner > div {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 22px 30px 22px 0;
+    border-right: 1px solid var(--line);
+  }
+  .cred-inner > div:last-child {
+    border-right: none;
+  }
+  .cred-value {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .cred-label {
+    font-size: 15px;
+    color: var(--ink-2);
+  }
+
+  .body {
+    max-width: 880px;
+    padding-block: 36px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+  .body h2 {
+    font-size: 28px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+  .body p {
+    margin: 0 0 1em;
+    font-size: 18px;
+    line-height: var(--prose-leading);
+    color: var(--ink-3);
+  }
+  .body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 40px;
+  }
+  .principles h3 {
+    font-size: 20px;
+    border-top: 3px solid var(--accent);
+    padding-top: 12px;
+    margin-bottom: 7px;
+  }
+  .principles p {
+    font-size: 17px;
+  }
+
+  .money {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 24px 26px;
+  }
+  .money h2 {
+    font-size: 22px;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+  }
+
+  .areas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .areas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    border-bottom: 1px solid var(--line);
+    padding: 11px 0;
+    font-size: 17px;
+  }
+  .status {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .status.covered {
+    color: var(--confirm);
+  }
+  .status.in-progress {
+    color: var(--accent);
+  }
+  .status.planned {
+    color: var(--muted);
+  }
+
+  .publisher dl {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0;
+    margin: 0;
+  }
+  .publisher dt {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .publisher dd {
+    margin: 0;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+  }
+  .ja {
+    font-family: var(--font-jp);
+    font-size: 15px;
+    color: var(--muted-2);
+  }
+  .note {
+    margin-top: 14px !important;
+    font-size: 15px !important;
+    color: var(--muted-2) !important;
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+    }
+    .portrait {
+      flex: none;
+      width: 100%;
+      height: 260px;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .intro {
+      padding: 24px var(--gutter);
+    }
+    h1 {
+      font-size: 30px;
+    }
+    .cred-inner {
+      flex-wrap: wrap;
+    }
+    .cred-inner > div {
+      flex: 1 1 45%;
+      padding: 16px 16px 16px 0;
+    }
+    .principles {
+      grid-template-columns: 1fr;
+    }
+    .publisher dl {
+      grid-template-columns: 1fr;
+    }
+    .publisher dt {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+</style>
