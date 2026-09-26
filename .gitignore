@@ -23,3 +23,7 @@ inbox/**/*.draft.md
 
 # 写真の原本（変換前）。リポジトリに入れない
 photos-raw/
+
+# wrangler
+.wrangler/
+.dev.vars

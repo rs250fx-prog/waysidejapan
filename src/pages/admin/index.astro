@@ -1,0 +1,501 @@
+---
+/**
+ * 入稿画面。Cloudflare Access ＋ functions/_middleware.ts の二重で守る。
+ *
+ * ここで構造を強制するのが目的。Markdown の雛形だと「体験欄が空のまま」
+ * 「金額に ¥ が混ざる」が通ってしまうので、保存の時点で弾く。
+ *
+ * 公開サイトの Base レイアウトは使わない（ヘッダもフッタも要らない）。
+ */
+import '../../styles/global.css';
+import { CATEGORIES } from '../../config.ts';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>入稿 — Wayside Japan</title>
+  </head>
+  <body class="admin">
+    <header class="bar">
+      <strong>入稿</strong>
+      <nav>
+        <button type="button" id="new-btn" class="btn small">新規</button>
+        <span id="who" class="who"></span>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="list-pane">
+        <div class="filter">
+          <select id="filter-status">
+            <option value="">すべて</option>
+            <option value="draft">draft</option>
+            <option value="ready">ready</option>
+            <option value="written">written</option>
+          </select>
+        </div>
+        <ul id="list" class="list"></ul>
+      </aside>
+
+      <section class="form-pane">
+        <form id="form" novalidate>
+          <p id="msg" class="msg" hidden></p>
+
+          <fieldset>
+            <legend>メタ</legend>
+            <div class="row">
+              <label>カテゴリ<select name="category" required>{CATEGORIES.map((c) => <option value={c}>{c}</option>)}</select></label>
+              <label>状態<select name="status"><option value="draft">draft</option><option value="ready">ready</option><option value="written">written</option></select></label>
+              <label>slug（URL。未定なら空）<input name="slug" placeholder="setouchi-area-pass" /></label>
+            </div>
+            <label>仮タイトル（日本語可）<input name="title" required /></label>
+            <div class="row">
+              <label>エリア（カンマ区切り）<input name="areas" placeholder="setouchi, onomichi" /></label>
+              <label>パス<input name="passes" placeholder="setouchi-area-pass" /></label>
+            </div>
+            <div class="row">
+              <label>取材日<input type="date" name="visitedOn" /></label>
+              <label>料金確認日<input type="date" name="pricesCheckedOn" /></label>
+              <label>移動手段<select name="mode"><option value="train">train</option><option value="bike">bike</option><option value="foot">foot</option><option value="">—</option></select></label>
+            </div>
+            <div class="row">
+              <label>狙うクエリ<input name="query" placeholder="setouchi area pass worth it" /></label>
+              <label>収益導線<select name="revenue"><option value="">なし（集客専用）</option><option value="tour">ツアー</option><option value="esim">eSIM</option><option value="hotel">宿</option></select></label>
+              <label class="check"><input type="checkbox" name="photosOwn" checked /> 自前写真あり</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>結論</legend>
+            <label>向く<input name="buyIf" /></label>
+            <label>向かない<input name="skipIf" /></label>
+            <label>総額の目安（円・数字のみ）<input name="total" inputmode="numeric" /></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>事実データ　★本文に出る数値はここだけ</legend>
+            <table class="facts">
+              <thead><tr><th>項目</th><th>値</th><th>証拠</th><th></th></tr></thead>
+              <tbody id="facts"></tbody>
+            </table>
+            <button type="button" class="btn small ghost" data-add="fact">行を足す</button>
+            <p class="hint">金額は数字のみ（22000）。¥ や「円」を入れない。不確かな値は頭に ? を付ける。</p>
+          </fieldset>
+
+          <fieldset id="cat-block">
+            <legend>カテゴリ固有</legend>
+            <div id="cat-fields" class="row"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>セクション</legend>
+            <div id="sections"></div>
+            <button type="button" class="btn small ghost" data-add="section">セクションを足す</button>
+            <p class="hint">「体験」か「実測」のどちらかが空だと保存できない。一般論で埋めさせないため。</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>FAQ（空でよい。候補は後で AI が出す）</legend>
+            <div id="faqs"></div>
+            <button type="button" class="btn small ghost" data-add="faq">Q&amp;A を足す</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>出典（column は必須）</legend>
+            <div id="sources"></div>
+            <button type="button" class="btn small ghost" data-add="source">出典を足す</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>写真（内容で書く。番号は素材整理で自動）</legend>
+            <textarea name="photos" rows="3" placeholder="福山の発車標&#10;尾道のホーム海側"></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>言い残し</legend>
+            <textarea name="leftovers" rows="4"></textarea>
+          </fieldset>
+
+          <div class="actions">
+            <button type="submit" class="btn">保存</button>
+            <button type="button" id="json-btn" class="btn ghost">JSON を表示</button>
+            <button type="button" id="del-btn" class="btn ghost danger">削除</button>
+          </div>
+        </form>
+
+        <pre id="json-out" class="json" hidden></pre>
+      </section>
+    </main>
+
+    <script is:inline>
+      const $ = (s, r = document) => r.querySelector(s);
+      const api = '/api/intake';
+      let currentId = null;
+
+      const CAT_FIELDS = {
+        rail: [['passOk', 'パス適用（対象/対象外）'], ['transfers', '乗換'], ['duration', '所要'], ['seat', '座席指定']],
+        eat: [['shop', '店名'], ['price', '価格帯'], ['hours', '営業時間'], ['closed', '定休日'], ['englishMenu', '英語メニュー'], ['payment', '支払い']],
+        soak: [['water', '泉質'], ['temp', '泉温'], ['entry', '入浴料（数字）'], ['hours', '営業時間'], ['closed', '定休日'],
+               ['tattoos', '入れ墨（可/不可/条件付き）'], ['towel', 'タオル（備付/有料/持参）'], ['english', '英語対応'],
+               ['fromStation', '駅から徒歩分'], ['bikeParking', 'バイク駐車']],
+        konbini: [['chain', 'チェーン'], ['regional', '地域限定'], ['period', '販売期間'], ['price', '価格']],
+        column: [['topic', '主題'], ['travelLink', 'なぜ旅と関係するか'], ['primarySource', '一次情報の出どころ']],
+        ride: [['distance', '距離'], ['surface', '路面'], ['fuel', '給油所'], ['parking', '駐車'], ['season', '通行止め']],
+      };
+
+      function rowFact(v = {}) {
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><input name="f_item" value="' + (v.item || '') + '"></td>' +
+          '<td><input name="f_value" value="' + (v.value || '') + '"></td>' +
+          '<td><input name="f_evidence" value="' + (v.evidence || '') + '" placeholder="写真07 / 公式URL / 実測"></td>' +
+          '<td><button type="button" class="x" aria-label="削除">×</button></td>';
+        tr.querySelector('.x').onclick = () => tr.remove();
+        return tr;
+      }
+
+      function blockSection(v = {}) {
+        const d = document.createElement('div');
+        d.className = 'sec';
+        d.innerHTML =
+          '<label>見出し<input name="s_heading" value="' + (v.heading || '') + '"></label>' +
+          '<div class="row"><label>運賃<input name="s_fare" value="' + (v.fare || '') + '"></label>' +
+          '<label>所要<input name="s_time" value="' + (v.time || '') + '"></label>' +
+          '<label>乗換<input name="s_transfer" value="' + (v.transfer || '') + '"></label>' +
+          '<label>徒歩<input name="s_walk" value="' + (v.walk || '') + '"></label></div>' +
+          '<label>体験（自分にしか書けないこと）<textarea name="s_experience" rows="2">' + (v.experience || '') + '</textarea></label>' +
+          '<label>実測（自分で測った事実）<textarea name="s_measured" rows="2">' + (v.measured || '') + '</textarea></label>' +
+          '<label>写真<input name="s_photos" value="' + (v.photos || '') + '"></label>' +
+          '<label>メモ<textarea name="s_memo" rows="2">' + (v.memo || '') + '</textarea></label>' +
+          '<button type="button" class="x" aria-label="削除">× このセクションを削除</button>';
+        d.querySelector('.x').onclick = () => d.remove();
+        return d;
+      }
+
+      function pair(cls, a, b, va = '', vb = '', pa = '', pb = '') {
+        const d = document.createElement('div');
+        d.className = 'row ' + cls;
+        d.innerHTML =
+          '<label>' + a + '<input name="' + cls + '_a" value="' + va + '" placeholder="' + pa + '"></label>' +
+          '<label>' + b + '<input name="' + cls + '_b" value="' + vb + '" placeholder="' + pb + '"></label>' +
+          '<button type="button" class="x" aria-label="削除">×</button>';
+        d.querySelector('.x').onclick = () => d.remove();
+        return d;
+      }
+
+      function renderCatFields(cat, values = {}) {
+        const box = $('#cat-fields');
+        box.innerHTML = '';
+        (CAT_FIELDS[cat] || []).forEach(([k, label]) => {
+          const l = document.createElement('label');
+          l.innerHTML = label + '<input name="c_' + k + '" value="' + (values[k] || '') + '">';
+          box.appendChild(l);
+        });
+      }
+
+      function collect() {
+        const f = $('#form');
+        const g = (n) => (f.elements[n]?.value ?? '').trim();
+        const facts = [...$('#facts').children].map((tr) => ({
+          item: tr.querySelector('[name=f_item]').value.trim(),
+          value: tr.querySelector('[name=f_value]').value.trim(),
+          evidence: tr.querySelector('[name=f_evidence]').value.trim(),
+        })).filter((r) => r.item || r.value);
+        const sections = [...$('#sections').children].map((d) => ({
+          heading: d.querySelector('[name=s_heading]').value.trim(),
+          fare: d.querySelector('[name=s_fare]').value.trim(),
+          time: d.querySelector('[name=s_time]').value.trim(),
+          transfer: d.querySelector('[name=s_transfer]').value.trim(),
+          walk: d.querySelector('[name=s_walk]').value.trim(),
+          experience: d.querySelector('[name=s_experience]').value.trim(),
+          measured: d.querySelector('[name=s_measured]').value.trim(),
+          photos: d.querySelector('[name=s_photos]').value.trim(),
+          memo: d.querySelector('[name=s_memo]').value.trim(),
+        }));
+        const faqs = [...$('#faqs').children].map((d) => ({
+          q: d.querySelector('[name=faq_a]').value.trim(),
+          a: d.querySelector('[name=faq_b]').value.trim(),
+        })).filter((x) => x.q || x.a);
+        const sources = [...$('#sources').children].map((d) => ({
+          label: d.querySelector('[name=src_a]').value.trim(),
+          url: d.querySelector('[name=src_b]').value.trim(),
+        })).filter((x) => x.label || x.url);
+        const cat = g('category');
+        const catValues = {};
+        (CAT_FIELDS[cat] || []).forEach(([k]) => (catValues[k] = (f.elements['c_' + k]?.value ?? '').trim()));
+
+        return {
+          locale: 'en',
+          category: cat,
+          slug: g('slug') || null,
+          title: g('title'),
+          status: g('status'),
+          data: {
+            meta: {
+              areas: g('areas').split(',').map((s) => s.trim()).filter(Boolean),
+              passes: g('passes').split(',').map((s) => s.trim()).filter(Boolean),
+              visitedOn: g('visitedOn'), pricesCheckedOn: g('pricesCheckedOn'),
+              mode: g('mode'), query: g('query'), revenue: g('revenue'),
+              photosOwn: f.elements['photosOwn'].checked,
+            },
+            verdict: { buyIf: g('buyIf'), skipIf: g('skipIf'), total: g('total') },
+            facts, category: catValues, sections, faqs, sources,
+            photos: g('photos').split('\\n').map((s) => s.trim()).filter(Boolean),
+            leftovers: g('leftovers'),
+          },
+        };
+      }
+
+      function validate(p) {
+        const errs = [];
+        if (!p.title) errs.push('仮タイトルが空です');
+        if (!p.data.meta.pricesCheckedOn) errs.push('料金確認日が空です');
+        p.data.facts.forEach((r, i) => {
+          if (/[¥円$]/.test(r.value)) errs.push('事実データ ' + (i + 1) + ' 行目：金額は数字のみで入れてください');
+          if (r.value && !r.evidence) errs.push('事実データ ' + (i + 1) + ' 行目：証拠が空です');
+        });
+        p.data.sections.forEach((s, i) => {
+          if (!s.experience && !s.measured) errs.push('セクション ' + (i + 1) + '：体験か実測のどちらかを入れてください');
+        });
+        if (p.category === 'column' && p.data.sources.length === 0) errs.push('column は出典が必須です');
+        return errs;
+      }
+
+      function show(msg, bad) {
+        const el = $('#msg');
+        el.textContent = msg;
+        el.hidden = !msg;
+        el.className = 'msg' + (bad ? ' bad' : ' ok');
+      }
+
+      async function loadList() {
+        const s = $('#filter-status').value;
+        const r = await fetch(api + (s ? '?status=' + s : ''));
+        if (!r.ok) return show('一覧を取得できません（' + r.status + '）', true);
+        const { items } = await r.json();
+        $('#list').innerHTML = items.map((i) =>
+          '<li><button type="button" data-id="' + i.id + '"><span class="li-title">' + (i.title || '（無題）') +
+          '</span><span class="li-meta">' + i.category + ' · ' + i.status + '</span></button></li>').join('');
+        [...document.querySelectorAll('#list button')].forEach((b) => (b.onclick = () => loadOne(b.dataset.id)));
+      }
+
+      async function loadOne(id) {
+        const r = await fetch(api + '/' + id);
+        if (!r.ok) return show('読み込めません', true);
+        const row = await r.json();
+        const f = $('#form'), d = row.data || {};
+        currentId = row.id;
+        f.elements['category'].value = row.category;
+        f.elements['status'].value = row.status;
+        f.elements['slug'].value = row.slug || '';
+        f.elements['title'].value = row.title || '';
+        const m = d.meta || {};
+        f.elements['areas'].value = (m.areas || []).join(', ');
+        f.elements['passes'].value = (m.passes || []).join(', ');
+        f.elements['visitedOn'].value = m.visitedOn || '';
+        f.elements['pricesCheckedOn'].value = m.pricesCheckedOn || '';
+        f.elements['mode'].value = m.mode || '';
+        f.elements['query'].value = m.query || '';
+        f.elements['revenue'].value = m.revenue || '';
+        f.elements['photosOwn'].checked = m.photosOwn !== false;
+        const v = d.verdict || {};
+        f.elements['buyIf'].value = v.buyIf || '';
+        f.elements['skipIf'].value = v.skipIf || '';
+        f.elements['total'].value = v.total || '';
+        $('#facts').innerHTML = ''; (d.facts || []).forEach((x) => $('#facts').appendChild(rowFact(x)));
+        $('#sections').innerHTML = ''; (d.sections || []).forEach((x) => $('#sections').appendChild(blockSection(x)));
+        $('#faqs').innerHTML = ''; (d.faqs || []).forEach((x) => $('#faqs').appendChild(pair('faq', 'Q', 'A', x.q, x.a)));
+        $('#sources').innerHTML = ''; (d.sources || []).forEach((x) => $('#sources').appendChild(pair('src', '名称', 'URL', x.label, x.url)));
+        f.elements['photos'].value = (d.photos || []).join('\\n');
+        f.elements['leftovers'].value = d.leftovers || '';
+        renderCatFields(row.category, d.category || {});
+        show('読み込みました', false);
+      }
+
+      function reset() {
+        currentId = null;
+        $('#form').reset();
+        $('#facts').innerHTML = ''; $('#sections').innerHTML = '';
+        $('#faqs').innerHTML = ''; $('#sources').innerHTML = '';
+        $('#facts').appendChild(rowFact()); $('#sections').appendChild(blockSection());
+        renderCatFields($('#form').elements['category'].value);
+        $('#json-out').hidden = true;
+        show('', false);
+      }
+
+      document.addEventListener('click', (e) => {
+        const add = e.target.dataset?.add;
+        if (!add) return;
+        if (add === 'fact') $('#facts').appendChild(rowFact());
+        if (add === 'section') $('#sections').appendChild(blockSection());
+        if (add === 'faq') $('#faqs').appendChild(pair('faq', 'Q', 'A'));
+        if (add === 'source') $('#sources').appendChild(pair('src', '名称', 'URL', '', '', '公式サイト', 'https://'));
+      });
+
+      $('#form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = collect();
+        const errs = validate(payload);
+        if (errs.length) return show(errs.join(' / '), true);
+        const r = await fetch(currentId ? api + '/' + currentId : api, {
+          method: currentId ? 'PUT' : 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!r.ok) return show('保存できません（' + r.status + '）', true);
+        const out = await r.json();
+        if (out.id) currentId = out.id;
+        show('保存しました', false);
+        loadList();
+      });
+
+      $('#json-btn').onclick = () => {
+        const el = $('#json-out');
+        el.textContent = JSON.stringify(collect(), null, 2);
+        el.hidden = false;
+      };
+      $('#del-btn').onclick = async () => {
+        if (!currentId || !confirm('この入稿を削除します')) return;
+        await fetch(api + '/' + currentId, { method: 'DELETE' });
+        reset(); loadList();
+      };
+      $('#new-btn').onclick = reset;
+      $('#filter-status').onchange = loadList;
+      $('#form').elements['category'].addEventListener('change', (e) => renderCatFields(e.target.value));
+
+      reset();
+      loadList();
+    </script>
+
+    <style is:global>
+      body.admin {
+        background: var(--bg);
+        font-family: var(--font-jp);
+        font-size: 15px;
+      }
+      .admin .bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 20px;
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+      }
+      .admin .layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 20px;
+        padding: 20px;
+        align-items: start;
+      }
+      .admin .list-pane {
+        position: sticky;
+        top: 20px;
+      }
+      .admin .list {
+        list-style: none;
+        margin: 10px 0 0;
+        padding: 0;
+        border-top: 1px solid var(--line);
+      }
+      .admin .list button {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        border-bottom: 1px solid var(--line);
+        padding: 11px 4px;
+        min-height: 44px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      .admin .li-title { font-size: 15px; }
+      .admin .li-meta { font-size: 12px; color: var(--muted); }
+      .admin fieldset {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 14px 16px;
+        margin: 0 0 14px;
+      }
+      .admin legend {
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .admin label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted-2);
+        margin-bottom: 10px;
+      }
+      .admin label.check { display: flex; align-items: center; gap: 6px; }
+      .admin input, .admin select, .admin textarea {
+        display: block;
+        width: 100%;
+        font: inherit;
+        font-size: 15px;
+        padding: 9px 10px;
+        margin-top: 4px;
+        border: 1px solid #d8cfbb;
+        background: #fff;
+        color: var(--ink);
+        min-height: 40px;
+        box-sizing: border-box;
+      }
+      .admin label.check input { width: auto; min-height: 0; margin: 0; }
+      .admin .row { display: flex; gap: 12px; flex-wrap: wrap; }
+      .admin .row > label { flex: 1 1 180px; }
+      .admin .facts { width: 100%; border-collapse: collapse; }
+      .admin .facts th {
+        text-align: left;
+        font-size: 11px;
+        color: var(--muted);
+        padding-bottom: 4px;
+      }
+      .admin .facts td { padding: 0 4px 6px 0; }
+      .admin .sec {
+        border: 1px solid var(--line-2);
+        border-left: 3px solid var(--accent);
+        padding: 12px 14px;
+        margin-bottom: 12px;
+        background: var(--bg);
+      }
+      .admin .x {
+        background: none;
+        border: 1px solid var(--line);
+        color: var(--muted-2);
+        min-height: 40px;
+        padding: 0 10px;
+        cursor: pointer;
+      }
+      .admin .hint { font-size: 12px; color: var(--muted); margin: 4px 0 0; }
+      .admin .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+      .admin .btn.small { min-height: 40px; padding: 8px 14px; font-size: 14px; }
+      .admin .btn.ghost { background: none; color: var(--accent); border: 1px solid var(--line); }
+      .admin .btn.danger { color: #8a2d14; }
+      .admin .msg { padding: 10px 12px; font-size: 14px; border: 1px solid var(--line); }
+      .admin .msg.ok { background: var(--confirm-bg); border-color: var(--confirm-line); color: var(--confirm); }
+      .admin .msg.bad { background: var(--caution-bg); border-color: var(--caution-line); color: #8a2d14; }
+      .admin .json {
+        background: #17161a;
+        color: #f0ece3;
+        padding: 16px;
+        overflow: auto;
+        font-size: 12px;
+        max-height: 400px;
+      }
+      @media (max-width: 800px) {
+        .admin .layout { grid-template-columns: 1fr; }
+        .admin .list-pane { position: static; }
+      }
+    </style>
+  </body>
+</html>
