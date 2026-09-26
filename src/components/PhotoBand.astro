@@ -22,21 +22,14 @@ const { caption, src, alt = '' } = Astro.props;
     margin: 34px calc(50% - 50vw) 0;
     width: 100vw;
   }
+  /* 比率は src/lib/images.ts の band。PC は 21:9、SP は 3:2 に戻す */
   .band img,
-  .ph {
+  .band .ph {
     width: 100%;
-    height: 380px;
+    aspect-ratio: 21 / 9;
     object-fit: cover;
     border-block: 1px solid #ded3bf;
-  }
-  .ph {
-    background: #efe6d6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    color: #8d8375;
+    border-inline: none;
   }
   figcaption {
     padding: 10px var(--gutter) 0;
@@ -48,8 +41,8 @@ const { caption, src, alt = '' } = Astro.props;
 
   @media (max-width: 767px) {
     .band img,
-    .ph {
-      height: 240px;
+    .band .ph {
+      aspect-ratio: 3 / 2;
     }
   }
 </style>

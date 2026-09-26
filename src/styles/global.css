@@ -114,6 +114,53 @@ img {
   margin: 0 0 1.2em;
 }
 
+/* 画像の枠。高さを px で固定せず aspect-ratio で持つ。
+   SP で幅いっぱいになったとき、固定高さだと被写体が潰れるため。
+   比率の根拠は src/lib/images.ts */
+.ph,
+.img {
+  width: 100%;
+  background: #efe6d6;
+  border: 1px solid #ded3bf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #8d8375;
+  overflow: hidden;
+}
+.ph img,
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ratio-hero {
+  aspect-ratio: 3 / 2;
+}
+.ratio-card {
+  aspect-ratio: 3 / 2;
+}
+.ratio-thumb {
+  aspect-ratio: 4 / 3;
+}
+.ratio-portrait {
+  aspect-ratio: 4 / 5;
+}
+.ratio-inline {
+  aspect-ratio: 3 / 2;
+}
+/* 帯だけは PC と SP で比率を変える。同じ 21:9 だと SP で細すぎる */
+.ratio-band {
+  aspect-ratio: 21 / 9;
+}
+@media (max-width: 767px) {
+  .ratio-band {
+    aspect-ratio: 3 / 2;
+  }
+}
+
 /* 換算表示。本文に直接ドル額を書かず、この部品を通す */
 .price {
   border-bottom: 1px dotted #a49a88;
