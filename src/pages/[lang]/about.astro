@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { LOCALES, SITE_NAME, AUTHOR, OPERATOR, SITE_URL, hasAnyAffiliate, ROUTES, type Locale } from '../../config.ts';
-import { AREAS } from '../../data/areas.ts';
+import { REGIONS } from '../../data/regions.ts';
 
 export function getStaticPaths() {
   return LOCALES.map((lang) => ({ params: { lang } }));
@@ -13,17 +13,11 @@ const lang = Astro.params.lang as Locale;
  * 主張する数値（走行距離・ローカルガイドのレベル）は事実でなくなったら直す。
  */
 const credentials = [
-  { value: '30,000 km', label: 'ridden in a typical year' },
+  { value: '30,000 km+', label: 'covered in a typical year' },
   { value: 'Level 8', label: 'Google Local Guide' },
+  { value: 'Since my twenties', label: 'travelling Japan' },
   { value: '40+', label: 'prefectures visited' },
-  { value: '0', label: 'sponsored trips accepted' },
 ];
-
-const statusLabel: Record<string, string> = {
-  covered: 'Covered',
-  'in-progress': 'In progress',
-  planned: 'Planned',
-};
 
 const graph = [
   {
@@ -57,13 +51,13 @@ const graph = [
       <p class="kicker">About</p>
       <h1>I live here, and I stop wherever there is a bath</h1>
       <p class="lead">
-        My name is Ichiro Murase ({AUTHOR.nameJa}). I am Japanese, I live in Japan, and I have spent the better part of
-        two decades travelling this country on a motorcycle — roughly 30,000 kilometres in a normal year, in every
-        season, mostly on the roads that do not appear in guidebooks.
+        My name is Ichiro Murase ({AUTHOR.nameJa}). I am Japanese, I live in Japan, and I have been travelling this
+        country since my twenties — by motorcycle, by car and by train. In a normal year I cover more than 30,000
+        kilometres, in every season, mostly on roads that do not appear in guidebooks.
       </p>
       <p class="lead">
-        Almost everything on this site is somewhere I reached under my own power, paid for myself, and photographed on
-        the day.
+        What I write about here is what I found by going there: the places even Japanese travellers do not know about,
+        and the food that never leaves the town it comes from.
       </p>
     </div>
   </section>
@@ -98,9 +92,9 @@ const graph = [
     <section>
       <h2>How I travel</h2>
       <p>
-        By motorcycle, mostly. Thirty thousand kilometres a year adds up to a lot of small roads, and the reason I take
-        them is what sits along them: hot springs, the inn with six rooms, the counter with no English menu and one dish
-        worth crossing a prefecture for.
+        By motorcycle and by car for the distance, by train for everything else. Thirty thousand kilometres a year adds
+        up to a lot of small roads, and the reason I take them is what sits along them: hot springs, the inn with six
+        rooms, the counter with no English menu and one dish worth crossing a prefecture for.
       </p>
       <p>
         I have slept in campsites and in ryokan that cost more than a flight home, and eaten at both roadside stands and
@@ -108,9 +102,9 @@ const graph = [
         find for a long time.
       </p>
       <p>
-        On this site the travel is by train, because that is what visitors to Japan can actually use. The motorcycle
-        knowledge still shows up — I know which valley the road follows, and which bath is worth the detour, because I
-        rode there first.
+        On this site the travel is by train, because that is what visitors to Japan can actually use. The driving still
+        shows up in the writing — I know which valley the road follows, and which bath is worth the detour, because I
+        got there on my own wheels first.
       </p>
     </section>
 
@@ -125,10 +119,11 @@ const graph = [
           </p>
         </div>
         <div>
-          <h3>Every fare carries a date</h3>
+          <h3>Every price carries a date, or is marked as a guide</h3>
           <p>
-            Prices change and guides rot. Each article states the month its fares were checked, and anything older than
-            six months is pulled back for review before it stays up.
+            Prices change and guides rot. Each figure here either states the month it was checked, or is labelled as an
+            indicative price. I cannot revisit every place often enough to promise more than that, and I would rather
+            tell you which kind of number you are looking at.
           </p>
         </div>
         <div>
@@ -139,59 +134,60 @@ const graph = [
           </p>
         </div>
         <div>
-          <h3>My own photographs</h3>
+          <h3>Mostly my own photographs</h3>
           <p>
-            No stock images. If a photo looks ordinary, it is because that is what the place looked like on the day I
-            was there.
+            Most of what you see here I photographed myself, and I avoid stock imagery. Where a photograph is not mine,
+            it is used with permission or proper credit, and said to be so.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="money">
-      <h2>How this site makes money</h2>
-      {
-        hasAnyAffiliate ? (
-          <>
-            <p>
-              Some links are affiliate links. If you book through one, the company pays me a commission and you pay the
-              same price you would have paid anyway. That is the whole arrangement.
-            </p>
-            <p>
-              What it does not buy is a recommendation. Nothing appears here because a company asked, and I have not
-              accepted a sponsored trip — accepting one would make the next review worthless. Where a booking link
-              exists for something I did not use myself, the article says so in the same sentence as the link.
-            </p>
-            {ROUTES.disclosure && <p><a href={`/${lang}/disclosure/`}>Read the full disclosure →</a></p>}
-          </>
-        ) : (
+    {
+      /* 収益化していないあいだは、この節ごと出さない。
+         提携が通って AFFILIATE が true になったら自動で現れる */
+      hasAnyAffiliate && (
+        <section class="money">
+          <h2>How this site makes money</h2>
           <p>
-            It does not, yet. There are no affiliate links, no advertising and no sponsored posts on this site at the
-            moment. When that changes, it will be stated here and on every article that contains one, before the link
-            rather than after it.
+            Some links are affiliate links. If you book through one, the company pays me a commission and you pay the
+            same price you would have paid anyway. That is the whole arrangement.
           </p>
-        )
-      }
-    </section>
+          <p>
+            What it does not buy is a recommendation. Nothing appears here because a company asked, and I have not
+            accepted a sponsored trip — accepting one would make the next review worthless. Where a booking link exists
+            for something I did not use myself, the article says so in the same sentence as the link.
+          </p>
+          {ROUTES.disclosure && (
+            <p>
+              <a href={`/${lang}/disclosure/`}>Read the full disclosure →</a>
+            </p>
+          )}
+        </section>
+      )
+    }
 
     <section>
-      <h2>Where I cover</h2>
+      <h2>Where I know Japan</h2>
       <p>
-        Western Japan first, because that is where I can go back next weekend. I would rather write twelve good guides
-        about one region than one thin guide about twelve.
+        Two decades of driving leaves an uneven map. These are the regions I can write about from memory rather than
+        research, strongest first. Everywhere on this list I have been more than once.
       </p>
-      <ul class="areas">
+      <ol class="regions">
         {
-          AREAS.map((a) => (
+          REGIONS.map((r, i) => (
             <li>
-              <span>
-                <strong>{a.name}</strong> — {a.note}
-              </span>
-              <em class:list={['status', a.status]}>{statusLabel[a.status]}</em>
+              <span class="rank">{i + 1}</span>
+              <span class="region-name">{r.name}</span>
+              <span class="region-note">{r.note}</span>
             </li>
           ))
         }
-      </ul>
+      </ol>
+      <p class="note">
+        The site does not follow that order. It starts where a visitor's week actually fits together — one pass, a few
+        stops, three islands — and widens from there.
+      </p>
     </section>
 
     <section class="corrections">
@@ -351,36 +347,35 @@ const graph = [
     margin-bottom: 10px;
   }
 
-  .areas {
+  .regions {
     list-style: none;
-    margin: 0;
+    margin: 0 0 16px;
     padding: 0;
+    counter-reset: none;
   }
-  .areas li {
+  .regions li {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
-    gap: 16px;
+    gap: 14px;
     border-bottom: 1px solid var(--line);
     padding: 11px 0;
     font-size: 17px;
   }
-  .status {
+  .rank {
     font-family: var(--font-display);
-    font-style: normal;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-  .status.covered {
-    color: var(--confirm);
-  }
-  .status.in-progress {
+    font-size: 13px;
+    font-weight: 700;
     color: var(--accent);
+    width: 20px;
+    flex-shrink: 0;
   }
-  .status.planned {
-    color: var(--muted);
+  .region-name {
+    font-weight: 600;
+    flex: 0 0 240px;
+  }
+  .region-note {
+    color: var(--ink-2);
+    min-width: 0;
   }
 
   .publisher dl {
@@ -413,6 +408,21 @@ const graph = [
     margin-top: 14px !important;
     font-size: 15px !important;
     color: var(--muted-2) !important;
+  }
+
+  @media (max-width: 767px) {
+    .regions li {
+      flex-wrap: wrap;
+      gap: 4px 12px;
+    }
+    .region-name {
+      flex: 0 0 auto;
+    }
+    .region-note {
+      flex: 1 0 100%;
+      padding-left: 34px;
+      font-size: 15px;
+    }
   }
 
   @media (max-width: 900px) {
