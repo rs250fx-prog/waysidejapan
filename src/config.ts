@@ -47,7 +47,7 @@ export const NAV: { key: Category; enabled: boolean }[] = [
   { key: 'eat', enabled: true },
   { key: 'soak', enabled: true },
   { key: 'konbini', enabled: false },
-  { key: 'column', enabled: false },
+  { key: 'column', enabled: true },
   { key: 'ride', enabled: false },
 ];
 

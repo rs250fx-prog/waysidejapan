@@ -71,6 +71,52 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
     </div>
   </section>
 
+  {
+    columns.length > 0 && (
+      <section class="column-band">
+        <div class="wrap">
+          <div class="cb-head">
+            <div>
+              <p class="kicker">Column</p>
+              <h2 class="cb-title">What a guidebook will not tell you</h2>
+              <p class="cb-dek">
+                The places locals quietly avoid, the everyday knowledge most Japanese people never had to learn, and
+                the reasons behind both. Researched and sourced rather than photographed.
+              </p>
+            </div>
+            <a class="cb-all" href={`/${lang}/column/`}>
+              All columns →
+            </a>
+          </div>
+
+          <div class="cb-grid">
+            <a class="cb-lead" href={hrefOf(columns[0])}>
+              <span class="cb-lead-kicker">Latest column</span>
+              <span class="cb-lead-title">{columns[0].data.title}</span>
+              <span class="cb-lead-dek">{columns[0].data.description}</span>
+              <span class="cb-read">Read the column →</span>
+            </a>
+
+            <div class="cb-more">
+              {columns.slice(1, 4).map((a) => (
+                <a class="cb-item" href={hrefOf(a)}>
+                  <span class="cb-item-title">{a.data.title}</span>
+                  <span class="cb-item-meta">
+                    {a.data.sources.length > 0 ? `${a.data.sources.length} sources` : 'Researched'}
+                  </span>
+                </a>
+              ))}
+              {columns.length === 1 && (
+                <p class="cb-empty">More columns are being written. They take longer than the guides — every figure in
+                one has to come from a source I can name.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   <section class="wrap block">
     <h2 class="section-title">Three ways in</h2>
     <div class="cards grid">
@@ -84,33 +130,6 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
       }
     </div>
   </section>
-
-  {
-    columns.length > 0 && (
-      <section class="wrap block">
-        <div class="head-row">
-          <h2 class="section-title">Column</h2>
-          <a class="more" href={`/${lang}/column/`}>
-            All columns →
-          </a>
-        </div>
-        <p class="block-dek">
-          Things worth knowing before you go, that a guidebook will not tell you — including the places locals quietly
-          avoid, and the everyday knowledge most Japanese people never had to learn.
-        </p>
-        <div class="columns grid">
-          {columns.slice(0, 3).map((a) => (
-            <a class="col-card" href={hrefOf(a)}>
-              <span class="col-kicker">Column</span>
-              <span class="col-title">{a.data.title}</span>
-              <span class="col-dek">{a.data.description}</span>
-              <span class="col-meta">{a.data.sources.length > 0 ? `${a.data.sources.length} sources` : 'Researched'}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-    )
-  }
 
   {
     latest.length > 0 && (
@@ -247,55 +266,127 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
     font-size: 15px;
     text-decoration: none;
   }
-  .block-dek {
-    margin: 0 0 16px;
+
+  /* コラムは全幅の帯で扱う。ガイド記事の流れを一度止めて、
+     「このサイトは調べて書く面も持つ」と示す位置 */
+  .column-band {
+    margin-top: 40px;
+    background: var(--surface-2);
+    border-top: 3px solid var(--accent);
+    border-bottom: 1px solid var(--line);
+    padding-block: 32px 36px;
+  }
+  .cb-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+  }
+  .cb-title {
+    font-size: 34px;
+    line-height: 1.12;
+    margin-top: 4px;
+  }
+  .cb-dek {
+    margin: 8px 0 0;
     font-size: 17px;
     line-height: 1.65;
     color: var(--ink-2);
-    max-width: 720px;
+    max-width: 680px;
   }
-  .columns {
+  .cb-all {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .cb-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 32px;
   }
-  /* コラムは写真ではなく文章で見せる。ガイド記事のカードと意図的に変える */
-  .col-card {
+  .cb-lead {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 12px;
     text-decoration: none;
     color: inherit;
     background: var(--surface);
     border: 1px solid var(--line);
-    border-left: 3px solid var(--accent);
-    padding: 20px 22px;
+    border-left: 4px solid var(--accent);
+    padding: 26px 30px;
   }
-  .col-kicker {
+  .cb-lead-kicker {
     font-family: var(--font-display);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent);
   }
-  .col-title {
+  .cb-lead-title {
     font-family: var(--font-display);
-    font-size: 21px;
+    font-size: 30px;
     font-weight: 600;
-    line-height: 1.28;
+    line-height: 1.2;
+    letter-spacing: -0.012em;
   }
-  .col-dek {
-    font-size: 15px;
-    line-height: 1.6;
+  .cb-lead-dek {
+    font-size: 17px;
+    line-height: 1.65;
     color: var(--ink-2);
   }
-  .col-meta {
+  .cb-read {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .cb-more {
+    display: flex;
+    flex-direction: column;
+  }
+  .cb-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0;
+  }
+  .cb-item:first-child {
+    padding-top: 0;
+  }
+  .cb-item-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .cb-item-meta {
     font-family: var(--font-display);
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+  .cb-empty {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted-2);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
   }
 
   .list {
@@ -346,9 +437,26 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
       width: 100%;
     }
     .cards,
-    .list,
-    .columns {
+    .list {
       grid-template-columns: 1fr;
+    }
+    .cb-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .cb-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .cb-title {
+      font-size: 26px;
+    }
+    .cb-lead {
+      padding: 20px 22px;
+    }
+    .cb-lead-title {
+      font-size: 24px;
     }
     h1 {
       font-size: 32px;
