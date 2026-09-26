@@ -27,10 +27,18 @@ export function formatPrice(jpy: number, currencies: readonly string[] = DISPLAY
 
 export const ratesAsOf = rates.asOf;
 
-/** 記事フッタの注記用。1ドルあたりの円 */
+/** 記事フッタの注記用。1単位あたりの円 */
+export function jpyPer(currency: string): string {
+  const rate = (rates.rates as Record<string, number>)[currency];
+  return rate ? (1 / rate).toFixed(2) : '—';
+}
+
+export function jpyPerEur(): string {
+  return jpyPer('EUR');
+}
+
 export function jpyPerUsd(): string {
-  const usd = (rates.rates as Record<string, number>).USD;
-  return usd ? (1 / usd).toFixed(2) : '—';
+  return jpyPer('USD');
 }
 
 export function formatAsOf(iso: string): string {

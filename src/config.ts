@@ -66,8 +66,12 @@ export const hasAnyAffiliate = Object.values(AFFILIATE).some((group) =>
   Object.values(group).some(Boolean),
 );
 
-/** 換算して表示する通貨。多言語化に合わせて増やす */
-export const DISPLAY_CURRENCIES = ['USD', 'EUR'] as const;
+/**
+ * 換算して表示する通貨。**並び順が表示順**。
+ * 欧州圏を主要層に置くのでユーロを先に出す（2026-09-26 の決定）。
+ * 中国語圏は扱わないので TWD は持たない。韓国語に着手する段で KRW を足す。
+ */
+export const DISPLAY_CURRENCIES = ['EUR', 'USD'] as const;
 
 /** 料金の確認から何か月で検査を落とすか */
 export const PRICE_STALE_MONTHS = 6;

@@ -3,7 +3,7 @@
  * 為替の基準日と料金の確認月を、記事の末尾で1回だけ出す。
  * 各金額に基準日を付けると本文が読めなくなるので、必ずここに集約する。
  */
-import { jpyPerUsd, ratesAsOf, formatAsOf, formatMonth } from '../lib/money.ts';
+import { jpyPerEur, jpyPerUsd, ratesAsOf, formatAsOf, formatMonth } from '../lib/money.ts';
 
 interface Props {
   pricesCheckedOn?: Date;
@@ -12,7 +12,8 @@ const { pricesCheckedOn } = Astro.props;
 ---
 
 <p class="rate-note">
-  Prices are in Japanese yen. Conversions are approximate, at ¥{jpyPerUsd()} to the US dollar as of {formatAsOf(ratesAsOf)}.
+  Prices are in Japanese yen. Conversions are approximate, at ¥{jpyPerEur()} to the euro and ¥{jpyPerUsd()} to the US
+  dollar as of {formatAsOf(ratesAsOf)}. Rates come from the European Central Bank, which publishes on working days only.
   {pricesCheckedOn && <> Fares verified {formatMonth(pricesCheckedOn)} — check the operator before you travel.</>}
 </p>
 

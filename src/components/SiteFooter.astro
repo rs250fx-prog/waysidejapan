@@ -55,8 +55,8 @@ const columns: { title: string; items: Item[] }[] = [
 
 const languages = [
   { code: 'en', label: 'English', ready: true },
-  { code: 'zh-tw', label: '繁體中文', ready: LOCALES.includes('zh-tw' as Locale) },
   { code: 'ko', label: '한국어', ready: LOCALES.includes('ko' as Locale) },
+  // 中国語は扱わない（2026-09-26 の決定）。欧州圏の読者を主要層に置き、通貨はユーロを先に出す
 ];
 ---
 
