@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import DemoRibbon from '../components/DemoRibbon.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import { SITE_NAME, TAGLINE, NAV, GA4_MEASUREMENT_ID, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 
@@ -74,22 +75,7 @@ const here = Astro.url.pathname;
       <slot />
     </main>
 
-    <footer class="footer">
-      <div class="wrap footer-inner">
-        <div class="footer-brand">
-          <div class="brand-name">{SITE_NAME}</div>
-          <p class="footer-line">
-            Written in Japan by someone who rode it.
-            {hasAnyAffiliate && ' Some links are affiliate links; they never change what gets recommended.'}
-          </p>
-        </div>
-        <nav class="footer-nav" aria-label="Site information">
-          {hasAnyAffiliate && <a href={`/${locale}/disclosure/`}>{t(locale, 'footer.disclosure')}</a>}
-          <a href={`/${locale}/privacy/`}>{t(locale, 'footer.privacy')}</a>
-          <a href={`/${locale}/about/`}>{t(locale, 'nav.about')}</a>
-        </nav>
-      </div>
-    </footer>
+    <SiteFooter locale={locale} />
   </body>
 </html>
 
@@ -146,38 +132,6 @@ const here = Astro.url.pathname;
   }
   .nav-link.muted {
     color: var(--muted);
-  }
-
-  .footer {
-    margin-top: 56px;
-    background: var(--surface-2);
-    border-top: 1px solid var(--line);
-  }
-  .footer-inner {
-    display: flex;
-    gap: 40px;
-    justify-content: space-between;
-    padding-block: 26px 30px;
-    flex-wrap: wrap;
-  }
-  .footer-line {
-    margin: 6px 0 0;
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--muted-2);
-    max-width: 460px;
-  }
-  .footer-nav {
-    display: flex;
-    gap: 26px;
-    flex-wrap: wrap;
-  }
-  .footer-nav a {
-    font-size: 15px;
-    color: var(--ink);
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
   }
 
   @media (max-width: 767px) {

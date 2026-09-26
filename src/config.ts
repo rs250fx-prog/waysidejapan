@@ -72,6 +72,23 @@ export const DISPLAY_CURRENCIES = ['USD', 'EUR'] as const;
 /** 料金の確認から何か月で検査を落とすか */
 export const PRICE_STALE_MONTHS = 6;
 
+/**
+ * 実装済みのページ。false のものはフッタで「近日」の非リンク表示になる。
+ * 404 へのリンクを構造で防ぐための表なので、ページを作ったらここも true にする。
+ */
+export const ROUTES = {
+  areaHub: false,
+  passes: false,
+  itineraries: false,
+  about: false,
+  privacy: false,
+  disclosure: false,
+  contact: false,
+  search: false,
+  newsletter: false,
+  budget: false,
+} as const;
+
 export const AUTHOR = {
   name: 'Gal',
   /** バイラインに出す肩書き。実績の主張なので、事実でなくなったら直す */

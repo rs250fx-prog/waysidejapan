@@ -1,0 +1,325 @@
+---
+/**
+ * サイトマップ型のフッタ。
+ *
+ * 実装していないページはリンクにせず「Soon」と出す（ROUTES で管理）。
+ * 404 へのリンクを人間の注意力で防ぐのは無理なので、表で防ぐ。
+ * 未提携のあいだは開示リンクも出ない（AFFILIATE と連動）。
+ */
+import { SITE_NAME, TAGLINE, NAV, ROUTES, LOCALES, hasAnyAffiliate, type Locale } from '../config.ts';
+import { AREAS } from '../data/areas.ts';
+import { t, type UIKey } from '../i18n/ui.ts';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+
+type Item = { label: string; href?: string; note?: string };
+
+const areaItems: Item[] = AREAS.map((a) => ({
+  label: a.name,
+  href: ROUTES.areaHub && a.status !== 'planned' ? `/${locale}/areas/${a.slug}/` : undefined,
+  note: a.status === 'planned' ? 'Planned' : a.status === 'in-progress' ? 'In progress' : undefined,
+}));
+
+const guideItems: Item[] = NAV.map((n) => ({
+  label: t(locale, `nav.${n.key}` as UIKey),
+  href: n.enabled ? `/${locale}/${n.key}/` : undefined,
+  note: n.enabled ? undefined : 'Soon',
+}));
+
+const planItems: Item[] = [
+  { label: 'Rail passes, compared', href: ROUTES.passes ? `/${locale}/passes/` : undefined, note: ROUTES.passes ? undefined : 'Soon' },
+  { label: 'Itineraries', href: ROUTES.itineraries ? `/${locale}/itineraries/` : undefined, note: ROUTES.itineraries ? undefined : 'Soon' },
+  { label: 'Budget calculator', note: 'Soon' },
+  { label: t(locale, 'nav.search'), href: ROUTES.search ? `/${locale}/search/` : undefined, note: ROUTES.search ? undefined : 'Soon' },
+];
+
+const aboutItems: Item[] = [
+  { label: 'Who writes this', href: ROUTES.about ? `/${locale}/about/` : undefined, note: ROUTES.about ? undefined : 'Soon' },
+  { label: 'Send a correction', href: ROUTES.contact ? `/${locale}/contact/` : undefined, note: ROUTES.contact ? undefined : 'Soon' },
+  ...(hasAnyAffiliate
+    ? [{ label: t(locale, 'footer.disclosure'), href: ROUTES.disclosure ? `/${locale}/disclosure/` : undefined, note: ROUTES.disclosure ? undefined : 'Soon' }]
+    : []),
+  { label: t(locale, 'footer.privacy'), href: ROUTES.privacy ? `/${locale}/privacy/` : undefined, note: ROUTES.privacy ? undefined : 'Soon' },
+];
+
+const columns: { title: string; items: Item[] }[] = [
+  { title: 'Areas', items: areaItems },
+  { title: 'Guides', items: guideItems },
+  { title: 'Plan a trip', items: planItems },
+  { title: 'About', items: aboutItems },
+];
+
+const languages = [
+  { code: 'en', label: 'English', ready: true },
+  { code: 'zh-tw', label: '繁體中文', ready: LOCALES.includes('zh-tw' as Locale) },
+  { code: 'ko', label: '한국어', ready: LOCALES.includes('ko' as Locale) },
+];
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <nav class="sitemap" aria-label="Site map">
+      {
+        columns.map((col) => (
+          <div class="col">
+            <h2 class="col-title">{col.title}</h2>
+            <ul>
+              {col.items.map((i) => (
+                <li>
+                  {i.href ? (
+                    <a href={i.href}>{i.label}</a>
+                  ) : (
+                    <span class="soon">
+                      {i.label} <em>{i.note ?? 'Soon'}</em>
+                    </span>
+                  )}
+                  {i.href && i.note && <em class="tag">{i.note}</em>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+
+      <div class="col wide">
+        <h2 class="col-title">One letter a month</h2>
+        <p class="blurb">
+          What changed in fares, what opened, and one place I would go back to. No sponsored posts.
+        </p>
+        {
+          ROUTES.newsletter ? (
+            <form class="signup" method="post" action={`/${locale}/subscribe/`}>
+              <label class="sr" for="footer-email">
+                Email address
+              </label>
+              <input id="footer-email" name="email" type="email" placeholder="you@example.com" required />
+              <button class="btn" type="submit">
+                Subscribe
+              </button>
+            </form>
+          ) : (
+            <p class="soon-block">
+              <em>Soon</em> — the letter starts once there are enough guides to be worth one.
+            </p>
+          )
+        }
+      </div>
+    </nav>
+
+    <div class="statement">
+      <div>
+        <div class="brand">{SITE_NAME}</div>
+        <p>
+          {TAGLINE} Written in Japan by someone who rode it. Every photograph is mine, and every fare says the month it
+          was checked.
+          {hasAnyAffiliate && ' Some links are affiliate links; they never change what gets recommended.'}
+        </p>
+      </div>
+      <div class="langs">
+        <h2 class="col-title">Language</h2>
+        <ul>
+          {
+            languages.map((l) => (
+              <li>
+                {l.ready ? (
+                  <a href={`/${l.code}/`} hreflang={l.code} lang={l.code}>
+                    {l.label}
+                  </a>
+                ) : (
+                  <span class="soon">
+                    {l.label} <em>Soon</em>
+                  </span>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <small>© {year} {SITE_NAME}</small>
+      <a class="totop" href="#main">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 64px;
+    background: var(--surface-2);
+    border-top: 1px solid var(--line);
+    padding-block: 36px 24px;
+  }
+
+  .sitemap {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) 1.4fr;
+    gap: 32px;
+  }
+  .col-title {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 10px;
+  }
+  .col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .col li {
+    border-bottom: 1px solid var(--line-2);
+  }
+  .col li:last-child {
+    border-bottom: none;
+  }
+  .col a,
+  .soon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .col a:hover {
+    color: var(--accent);
+  }
+  /* 未実装のページはリンクにしない。押せないことが見た目で分かるようにする */
+  .soon {
+    color: var(--muted);
+  }
+  .soon em,
+  .tag {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 2px 6px;
+  }
+  .blurb {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .signup {
+    display: flex;
+    gap: 8px;
+  }
+  .signup input {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    padding: 12px 13px;
+    border: 1px solid #d8cfbb;
+    background: #fff;
+    color: var(--ink);
+    min-height: 44px;
+  }
+  .soon-block {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .soon-block em {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--line);
+    padding: 2px 6px;
+  }
+  .sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .statement {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 2px solid var(--ink);
+  }
+  .statement p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted-2);
+    max-width: 620px;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .langs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .langs a,
+  .langs .soon {
+    font-size: 15px;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .totop {
+    font-size: 14px;
+    text-decoration: none;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @media (max-width: 1000px) {
+    .sitemap {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .col.wide {
+      grid-column: 1 / -1;
+    }
+    .statement {
+      flex-direction: column;
+      gap: 22px;
+    }
+  }
+  @media (max-width: 560px) {
+    .sitemap {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
