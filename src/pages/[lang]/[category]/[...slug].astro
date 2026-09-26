@@ -1,0 +1,33 @@
+---
+import { render } from 'astro:content';
+import Article from '../../../layouts/Article.astro';
+import { allRoutable, translationsOf, hrefOf } from '../../../lib/content.ts';
+import { parseId } from '../../../content.config.ts';
+import type { Locale } from '../../../config.ts';
+
+export async function getStaticPaths() {
+  const entries = await allRoutable();
+  return entries.map((entry) => {
+    const { locale, category, slug } = parseId(entry.id);
+    return { params: { lang: locale, category, slug }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const lang = Astro.params.lang as Locale;
+
+// 実在する他言語版だけ hreflang に出す
+const others = await translationsOf(entry);
+const alternates = others.length
+  ? [
+      { locale: lang, path: hrefOf(entry) },
+      ...others.map((o) => ({ locale: parseId(o.id).locale as string, path: hrefOf(o) })),
+    ]
+  : [];
+
+const { Content } = await render(entry);
+---
+
+<Article entry={entry} locale={lang} alternates={alternates}>
+  <Content />
+</Article>

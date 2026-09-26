@@ -1,0 +1,6 @@
+---
+// / → /en/ は public/_redirects の 301 で処理する。
+// これは Cloudflare の設定が効かない環境（ローカルの astro preview 等）向けの保険。
+import { DEFAULT_LOCALE } from '../config.ts';
+return Astro.redirect(`/${DEFAULT_LOCALE}/`, 301);
+---

@@ -1,0 +1,21 @@
+---
+/**
+ * 円を概算換算つきで表示する。
+ * 本文に換算後の金額を直接書かないこと（tools/check-content.mjs が $ の直書きを弾く）。
+ *
+ * <Price jpy={22000} />        → ¥22,000 (≈ $148 / €137)
+ * <Price jpy={700} yenOnly />  → ¥700
+ */
+import { formatJpy, formatPrice } from '../lib/money.ts';
+
+interface Props {
+  jpy: number;
+  yenOnly?: boolean;
+  from?: boolean;
+}
+
+const { jpy, yenOnly = false, from = false } = Astro.props;
+const text = yenOnly ? formatJpy(jpy) : formatPrice(jpy);
+---
+
+<span class="price" data-jpy={jpy}>{from ? 'from ' : ''}{text}</span>

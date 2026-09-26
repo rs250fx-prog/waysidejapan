@@ -1,0 +1,175 @@
+/* デザイントークン。配色は案4 Persimmon（docs/SPEC.md 第10節）
+   明度は --bg / --surface / --ink の3つだけで動かす。
+   後から「明るすぎる」と言われたときに1か所で直せるようにするため。 */
+
+:root {
+  /* 地・面 */
+  --bg: #faf7f0;
+  --surface: #fffefa;
+  --surface-2: #f2ebdd;
+
+  /* 文字 */
+  --ink: #17161a;
+  --ink-2: #3d382f;
+  --ink-3: #2b2720;
+  --muted: #6d665a;
+  --muted-2: #5e574b;
+
+  /* 罫線 */
+  --line: #e3dccc;
+  --line-2: #eee7da;
+
+  /* アクセント：文字用と塗り用を分ける。
+     --accent-fill は小さい文字ではコントラストが足りないので塗りにしか使わない */
+  --accent: #a8441f;
+  --accent-fill: #c0532b;
+  --accent-hover: #8a3618;
+
+  /* 「確認済み・肯定」の符号として予約。これ以外の用途に使わない */
+  --confirm: #2f5d47;
+  --confirm-line: #bacfc3;
+  --confirm-bg: #e8f0ea;
+
+  /* 注意書きの面（入れ墨ポリシー、買わないほうがいい場合、など） */
+  --caution-bg: #f7ece4;
+  --caution-line: #e0c7b5;
+
+  /* 書体。日本語は駅名・店名の数文字だけなのでシステムフォントで足りる */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-jp: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic UI', 'Yu Gothic', Meiryo, sans-serif;
+
+  /* 本文の行間。1段落が5〜7行になるので広めに取る */
+  --prose-leading: 1.78;
+  --measure: 720px;
+
+  --gutter: 40px;
+  --rail: 244px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* グリッド／フレックスの子要素は min-width: 0 を入れないと
+   長い英単語やテーブルで横に溢れる */
+.grid > *,
+.flex > * {
+  min-width: 0;
+}
+
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.prose {
+  max-width: var(--measure);
+  font-size: 19px;
+  line-height: var(--prose-leading);
+  color: var(--ink-3);
+}
+
+.prose p {
+  margin: 0 0 1.2em;
+}
+
+/* 換算表示。本文に直接ドル額を書かず、この部品を通す */
+.price {
+  border-bottom: 1px dotted #a49a88;
+  white-space: nowrap;
+}
+
+.badge-verified {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--confirm);
+  border: 1px solid var(--confirm-line);
+  background: var(--confirm-bg);
+  padding: 4px 9px;
+}
+
+/* タップ領域は 44px 以上 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 13px 24px;
+  background: var(--accent-fill);
+  color: var(--surface);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: var(--gutter);
+  top: 8px;
+  z-index: 10;
+  background: var(--surface);
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --gutter: 16px;
+  }
+  body {
+    font-size: 17px;
+  }
+  .prose {
+    font-size: 17px;
+  }
+}

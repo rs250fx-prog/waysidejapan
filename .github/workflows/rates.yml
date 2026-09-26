@@ -1,0 +1,44 @@
+name: rates
+
+# 為替レートの日次更新。
+# 動きが 0.3% 未満なら何もコミットしないので、Pages のビルドも起きない。
+# 実際の発火は月に10回前後。月500回（アカウント共有）の枠を食い潰さないための設計。
+
+on:
+  schedule:
+    # ECB は欧州時間の午後に更新される。JST 翌 01:10 ごろに取りに行く
+    - cron: '10 16 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      # 成果物を作る前に、出口が開いていることを確かめる。
+      # 権限が無いなら何もせずに落ちる（書いてから気づくと原稿を失う）
+      - name: Check push access
+        run: git push --dry-run origin HEAD:${{ github.ref_name }}
+
+      - name: Fetch rates
+        run: node tools/fetch-rates.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/rates.json; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name "wayside-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/rates.json
+          git commit -m "chore: 為替レートを更新"
+          git push

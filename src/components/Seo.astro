@@ -1,0 +1,72 @@
+---
+/**
+ * title / description / canonical / OG / hreflang / JSON-LD を1か所に集約する。
+ * ページ側で meta を直書きしない。
+ */
+import { SITE_NAME, SITE_URL, IS_PUBLIC, AUTHOR, DEFAULT_LOCALE } from '../config.ts';
+
+interface Props {
+  title: string;
+  description: string;
+  /** サイト名を付けない（トップページ用） */
+  bareTitle?: boolean;
+  locale?: string;
+  noindex?: boolean;
+  ogImage?: string;
+  /** 実在する他言語版だけ渡す */
+  alternates?: { locale: string; path: string }[];
+  /** @graph に足す追加ノード（Article / BreadcrumbList / FAQPage） */
+  graph?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  bareTitle = false,
+  locale = DEFAULT_LOCALE,
+  noindex = false,
+  ogImage = '/og-default.png',
+  alternates = [],
+  graph = [],
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+const fullTitle = bareTitle ? title : `${title} | ${SITE_NAME}`;
+const ogUrl = new URL(ogImage, SITE_URL).href;
+
+// IS_PUBLIC が false のあいだは無条件で noindex（public/_headers の X-Robots-Tag とセット）
+const robots = !IS_PUBLIC || noindex ? 'noindex, nofollow' : 'index, follow';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, url: SITE_URL, name: SITE_NAME, inLanguage: locale },
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#author`,
+      name: AUTHOR.name,
+      description: AUTHOR.credential,
+      url: new URL(AUTHOR.url, SITE_URL).href,
+    },
+    ...graph,
+  ],
+};
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={robots} />
+
+{alternates.map((a) => <link rel="alternate" hreflang={a.locale} href={new URL(a.path, SITE_URL).href} />)}
+{alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(`/${DEFAULT_LOCALE}/`, SITE_URL).href} />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

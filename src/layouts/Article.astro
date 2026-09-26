@@ -1,0 +1,211 @@
+---
+import Base from './Base.astro';
+import RateNote from '../components/RateNote.astro';
+import { AUTHOR, SITE_URL, hasAnyAffiliate, type Locale } from '../config.ts';
+import { t, type UIKey } from '../i18n/ui.ts';
+import { formatMonth } from '../lib/money.ts';
+import { shouldNoindex, hrefOf, type Article } from '../lib/content.ts';
+import { IS_PUBLIC } from '../config.ts';
+
+interface Props {
+  entry: Article;
+  locale: Locale;
+  alternates?: { locale: string; path: string }[];
+}
+
+const { entry, locale, alternates = [] } = Astro.props;
+const d = entry.data;
+const url = new URL(hrefOf(entry), SITE_URL).href;
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Article',
+    headline: d.title,
+    description: d.description,
+    datePublished: d.pubDate.toISOString(),
+    ...(d.updatedDate && { dateModified: d.updatedDate.toISOString() }),
+    author: { '@id': `${SITE_URL}/#author` },
+    mainEntityOfPage: url,
+    inLanguage: locale,
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(`/${locale}/`, SITE_URL).href },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t(locale, `nav.${d.category}` as UIKey),
+        item: new URL(`/${locale}/${d.category}/`, SITE_URL).href,
+      },
+      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+    ],
+  },
+];
+
+if (d.faq.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: d.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+---
+
+<Base
+  locale={locale}
+  title={d.title}
+  description={d.description}
+  noindex={shouldNoindex(entry, IS_PUBLIC)}
+  alternates={alternates}
+  graph={graph}
+>
+  <article class="wrap article">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={`/${locale}/`}>Home</a> ›
+      <a href={`/${locale}/${d.category}/`}>{t(locale, `nav.${d.category}` as UIKey)}</a>
+    </nav>
+
+    <h1>{d.title}</h1>
+
+    <div class="byline">
+      <span class="avatar" aria-hidden="true"></span>
+      <span>
+        <strong>{AUTHOR.name}</strong> · {AUTHOR.credential}
+        {d.experience && <> · Rode this route {d.experience.visitedOn}</>}
+      </span>
+      <span class="badge-verified">
+        {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn)}
+      </span>
+    </div>
+
+    {
+      /* 提携が1つも無いあいだは開示も出さない。出すものが無いのに開示だけ出すのは嘘になる */
+      hasAnyAffiliate && <p class="disclosure">{t(locale, 'disclosure.inline')}</p>
+    }
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    {
+      d.faq.length > 0 && (
+        <section class="faq">
+          <h2>{t(locale, 'article.faq')}</h2>
+          {d.faq.map((f) => (
+            <div class="faq-item">
+              <h3>{f.q}</h3>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </section>
+      )
+    }
+
+    {
+      d.sources.length > 0 && (
+        <section class="sources">
+          <h2>{t(locale, 'article.sources')}</h2>
+          <ul>
+            {d.sources.map((s) => (
+              <li>
+                <a href={s.url} target="_blank" rel="noopener noreferrer">
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <RateNote pricesCheckedOn={d.pricesCheckedOn} />
+  </article>
+</Base>
+
+<style>
+  .article {
+    max-width: 880px;
+    padding-block: 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .crumbs {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .crumbs a {
+    color: var(--muted);
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    border-block: 1px solid var(--line);
+    padding-block: 14px;
+  }
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #efe6d6;
+    border: 1px solid #ded3bf;
+  }
+  .disclosure {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--muted-2);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+  }
+  .faq h2,
+  .sources h2 {
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+  .faq-item {
+    border-top: 1px solid var(--line);
+    padding-top: 13px;
+    margin-bottom: 14px;
+  }
+  .faq-item h3 {
+    font-family: var(--font-body);
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .faq-item p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+  .sources {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    padding: 22px 24px;
+  }
+  .sources ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 2;
+  }
+
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+</style>
