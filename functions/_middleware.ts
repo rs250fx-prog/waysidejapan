@@ -21,6 +21,12 @@ interface Env {
 
 const PROTECTED = [/^\/admin(\/|$)/, /^\/api(\/|$)/];
 
+/**
+ * 認証の外に置く例外。設定が入っているかどうかの確認にしか使わないので、
+ * 値は返さず真偽だけを返すこと（functions/api/health.ts 側で担保する）。
+ */
+const PUBLIC = [/^\/api\/health$/];
+
 let cachedKeys: { at: number; keys: Record<string, CryptoKey> } | null = null;
 
 function deny(reason: string, status = 403): Response {
@@ -102,6 +108,7 @@ async function verify(token: string, env: Required<Pick<Env, 'CF_ACCESS_TEAM_DOM
 
 export const onRequest: PagesFunction<Env> = async (context) => {
   const url = new URL(context.request.url);
+  if (PUBLIC.some((re) => re.test(url.pathname))) return context.next();
   if (!PROTECTED.some((re) => re.test(url.pathname))) return context.next();
 
   const { CF_ACCESS_TEAM_DOMAIN, CF_ACCESS_AUD } = context.env;
