@@ -1,0 +1,36 @@
+---
+/**
+ * デモ内容が載っているあいだの帯。src/config.ts の IS_DEMO と連動する。
+ * 実記事に差し替えたらフラグを false にする（帯だけ消して中身が残るのを防ぐため、
+ * この条件分岐を外さないこと）。
+ */
+import { IS_DEMO } from '../config.ts';
+---
+
+{
+  IS_DEMO && (
+    <div class="demo-ribbon">
+      <strong>Sample</strong>
+      <span>料金・所要時間・写真はモックから流し込んだダミーです。実際の取材内容ではありません。</span>
+    </div>
+  )
+}
+
+<style>
+  .demo-ribbon {
+    background: #7a2d14;
+    color: #fdf6ee;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 8px var(--gutter);
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .demo-ribbon strong {
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+</style>

@@ -23,6 +23,13 @@ export const SITE_URL = 'https://waysidejapan.pages.dev';
  */
 export const IS_PUBLIC = false;
 
+/**
+ * デモ内容（モックから流し込んだ仮の料金・時刻・写真）がサイトに載っている状態。
+ * true のあいだは全ページ上部に帯が出る。実記事に差し替えたら false にする。
+ * 帯を消すだけで中身が残る、という事故を防ぐために設定値と連動させている。
+ */
+export const IS_DEMO = true;
+
 export const LOCALES = ['en'] as const;
 export const DEFAULT_LOCALE = 'en';
 export type Locale = (typeof LOCALES)[number];

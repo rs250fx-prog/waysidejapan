@@ -1,0 +1,106 @@
+---
+title: 'Setouchi Area Pass: costs, coverage and a seven-day route'
+description: 'What the Setouchi Area Pass actually covers, whether it beats buying tickets, and the seven-day route across three islands that I rode in August 2026.'
+translationKey: setouchi-area-pass
+translationStatus: reviewed
+category: rail
+areas: [setouchi, hiroshima, onomichi]
+passes: [setouchi-area-pass]
+pubDate: 2026-09-12
+draft: false
+unlisted: false
+access: public
+heroBand: true
+experience:
+  visitedOn: '2026-08'
+  mode: train
+  photosOwn: true
+pricesCheckedOn: 2026-08-14
+faq:
+  - q: Can I use it on the Nozomi?
+    a: No. Sanyo Shinkansen services are covered except the fastest ones, so plan around Hikari and Sakura departures.
+  - q: Do I have to start on the day I collect it?
+    a: You pick the start date when you exchange the voucher, and the seven days run consecutively from there.
+  - q: Does it cover the ferries?
+    a: One route only. The island hops most people want are paid separately, in cash, at the terminal.
+---
+
+import Price from '../../../components/Price.astro';
+import Verdict from '../../../components/Verdict.astro';
+import FactRow from '../../../components/FactRow.astro';
+import CompareTable from '../../../components/CompareTable.astro';
+import Cta from '../../../components/Cta.astro';
+import PhotoBand from '../../../components/PhotoBand.astro';
+
+Honshu, Shikoku and Kyushu in a single week — what the pass actually covers, where it stops being worth the money, and the route I rode in August.
+
+<Verdict
+  buyIf="You cross Kansai → Kyushu and stop three or more times."
+  skipIf="Osaka–Hiroshima and back. Two point-to-point tickets are cheaper."
+>
+  <Price jpy={53500} /> including food and baths.
+</Verdict>
+
+## Is it cheaper than buying tickets?
+
+Only past a certain number of legs. Here is the same week, priced three ways.
+
+<CompareTable
+  rows={[
+    {
+      name: 'Setouchi Area Pass',
+      note: '7 days, three islands',
+      jpy: 22000,
+      covers: 'Hikari, Sakura, local lines',
+      bestFor: 'Three or more stops',
+      pick: true,
+    },
+    {
+      name: 'Point-to-point',
+      note: 'Four legs',
+      jpy: 18400,
+      covers: 'Only what you book',
+      bestFor: 'One long hop, back again',
+    },
+    {
+      name: 'Nationwide pass, 7 days',
+      jpy: 50000,
+      covers: 'The whole country',
+      bestFor: 'Tokyo in the same week',
+    },
+  ]}
+/>
+
+The arithmetic turns at three long legs. Below that, buying tickets as you go wins and no amount of convenience makes up the difference.
+
+<PhotoBand caption="The channel at Onomichi from the ropeway, an hour after getting off the train. August 2026." />
+
+## Day one — Osaka to Onomichi
+
+<FactRow
+  items={[
+    { label: 'Fare', value: 'Covered' },
+    { label: 'Time', value: '2 h 10 m' },
+    { label: 'Transfers', value: 'One, at Fukuyama' },
+    { label: 'Walk', value: '10 min' },
+  ]}
+/>
+
+Take the early Sanyo Shinkansen out of Shin-Osaka and you are eating ramen in Onomichi before noon. The transfer at Fukuyama is across the platform, which matters when the connection is eight minutes and you are carrying a week of luggage.
+
+From the station it is ten minutes on foot to the ropeway, and the hill behind town is where the day actually starts. Most people do this as a day trip from Hiroshima; staying the night is the better call, because the town empties out after five.
+
+<Cta
+  kind="tour"
+  title="Onomichi evening food walk, six stops"
+  href="#"
+  slot="in-body"
+  jpy={8900}
+  label="Check dates"
+>
+  Three hours with a local guide.
+</Cta>
+
+## What the pass will not do
+
+It will not put you on the fastest train, and it will not cover the island ferries that make the middle of this route worth riding. Budget <Price jpy={5600} /> in cash for boats and buses over the week, and do not plan a tight connection around a service the pass does not include.

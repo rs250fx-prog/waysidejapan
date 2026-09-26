@@ -1,0 +1,148 @@
+---
+/**
+ * 比較表。項目を固定して横に読ませる。
+ * 金額は jpy（数値）で渡し、表示は <Price> と同じ換算を通す。本文に $ を直書きしない。
+ * スマホでは表が潰れるので、1件1ブロックの積み上げに切り替える（CSS ではなく別マークアップ）。
+ */
+import { formatPrice } from '../lib/money.ts';
+
+interface Row {
+  name: string;
+  note?: string;
+  jpy: number;
+  covers: string;
+  bestFor: string;
+  /** 推奨行。左に色帯が付く */
+  pick?: boolean;
+}
+interface Props {
+  rows: Row[];
+  caption?: string;
+}
+const { rows, caption } = Astro.props;
+---
+
+<div class="compare">
+  {caption && <p class="caption">{caption}</p>}
+
+  <table class="wide">
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Cost</th>
+        <th>Covers</th>
+        <th>Best for</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((r) => (
+          <tr class:list={[{ pick: r.pick }]}>
+            <td>
+              <strong>{r.name}</strong>
+              {r.note && <div class="note">{r.note}</div>}
+            </td>
+            <td>
+              <span class="price">{formatPrice(r.jpy)}</span>
+            </td>
+            <td>{r.covers}</td>
+            <td>{r.bestFor}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+
+  <div class="stacked">
+    {
+      rows.map((r) => (
+        <div class:list={['card', { pick: r.pick }]}>
+          <div class="card-head">
+            <strong>{r.name}</strong>
+            <span class="price">{formatPrice(r.jpy)}</span>
+          </div>
+          <p>
+            {r.covers}. Best for {r.bestFor.toLowerCase()}.
+          </p>
+          {r.note && <p class="note">{r.note}</p>}
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .compare {
+    margin-block: 24px;
+  }
+  .caption {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: var(--ink-2);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  thead tr {
+    border-bottom: 2px solid var(--ink);
+    text-align: left;
+  }
+  th {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    font-weight: 700;
+    padding: 10px 12px 10px 0;
+  }
+  td {
+    padding: 14px 12px 14px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  tr.pick {
+    background: var(--surface);
+  }
+  .note {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .stacked {
+    display: none;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card.pick {
+    border-left: 3px solid var(--accent);
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  @media (max-width: 767px) {
+    table.wide {
+      display: none;
+    }
+    .stacked {
+      display: block;
+    }
+  }
+</style>

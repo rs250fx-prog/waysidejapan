@@ -1,0 +1,55 @@
+---
+/**
+ * 記事の中ほどに入れる全幅の写真帯。ここで記事が一度呼吸する。
+ * 「これ」という1枚が無い記事では出さない（frontmatter の heroBand を false に）。
+ * 写真が用意できるまではプレースホルダを出す。
+ */
+interface Props {
+  caption?: string;
+  src?: string;
+  alt?: string;
+}
+const { caption, src, alt = '' } = Astro.props;
+---
+
+<figure class="band">
+  {src ? <img src={src} alt={alt} /> : <div class="ph" aria-hidden="true">OWN PHOTO</div>}
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .band {
+    margin: 34px calc(50% - 50vw) 0;
+    width: 100vw;
+  }
+  .band img,
+  .ph {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-block: 1px solid #ded3bf;
+  }
+  .ph {
+    background: #efe6d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: #8d8375;
+  }
+  figcaption {
+    padding: 10px var(--gutter) 0;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    .band img,
+    .ph {
+      height: 240px;
+    }
+  }
+</style>

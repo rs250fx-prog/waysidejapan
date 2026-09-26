@@ -1,0 +1,133 @@
+---
+/**
+ * アフィリエイトの CTA。
+ *
+ * src/config.ts の AFFILIATE が false のときは、ボタンだけでなく
+ * ブロックごと出さない。「未提携なのに紹介文だけ残る」を構造で防ぐため、
+ * この条件分岐を外さないこと。
+ *
+ * rel="sponsored nofollow noopener" は必ず付ける。
+ * GA4 へ記事slug・プログラム・本文中の位置を載せたイベントを送る。
+ */
+import { AFFILIATE, GA4_MEASUREMENT_ID } from '../config.ts';
+import { formatPrice } from '../lib/money.ts';
+
+type Kind = 'tour' | 'esim' | 'hotel';
+
+interface Props {
+  kind: Kind;
+  title: string;
+  href: string;
+  /** 本文中の位置。計測のパラメータになる */
+  slot?: 'rail-top' | 'in-body' | 'rail-bottom' | 'area';
+  jpy?: number;
+  label?: string;
+  /** 自分で予約・購入したものか。していないなら文面で断る */
+  usedMyself?: boolean;
+}
+
+const { kind, title, href, slot = 'in-body', jpy, label = 'Check dates', usedMyself = true } = Astro.props;
+
+const enabled: Record<Kind, boolean> = {
+  tour: Object.values(AFFILIATE.tours).some(Boolean),
+  esim: Object.values(AFFILIATE.esim).some(Boolean),
+  hotel: Object.values(AFFILIATE.hotels).some(Boolean),
+};
+
+const show = enabled[kind];
+const articleSlug = Astro.url.pathname;
+---
+
+{
+  show && (
+    <aside class="cta">
+      <div class="body">
+        <span class="kicker">{usedMyself ? 'Sponsored · booked this myself' : 'Sponsored · not used by me'}</span>
+        <span class="title">{title}</span>
+        <span class="detail">
+          <slot />
+          {jpy && <> from <span class="price">{formatPrice(jpy)}</span>.</>}
+        </span>
+      </div>
+      <a
+        class="btn"
+        href={href}
+        rel="sponsored nofollow noopener"
+        target="_blank"
+        data-affiliate={kind}
+        data-slot={slot}
+        data-article={articleSlug}
+      >
+        {label}
+      </a>
+    </aside>
+  )
+}
+
+{
+  show && GA4_MEASUREMENT_ID && (
+    <script is:inline>
+      document.querySelectorAll('a[data-affiliate]').forEach((el) => {
+        if (el.dataset.bound) return;
+        el.dataset.bound = '1';
+        el.addEventListener('click', () => {
+          window.gtag?.('event', 'affiliate_click', {
+            program: el.dataset.affiliate,
+            position: el.dataset.slot,
+            article: el.dataset.article,
+          });
+        });
+      });
+    </script>
+  )
+}
+
+<style>
+  .cta {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin-block: 26px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .body {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .kicker {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .detail {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+  .btn {
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    .cta {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 14px;
+    }
+  }
+</style>

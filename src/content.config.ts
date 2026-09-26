@@ -10,7 +10,7 @@ import { CATEGORIES, LOCALES } from './config.ts';
  * その言語版は存在しない、という状態を素直に作る。
  */
 const articles = defineCollection({
-  loader: glob({ base: './src/content', pattern: '**/[^_]*.md' }),
+  loader: glob({ base: './src/content', pattern: '**/[^_]*.{md,mdx}' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),

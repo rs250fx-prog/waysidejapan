@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
+import DemoRibbon from '../components/DemoRibbon.astro';
 import { SITE_NAME, TAGLINE, NAV, GA4_MEASUREMENT_ID, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 
@@ -45,6 +46,7 @@ const here = Astro.url.pathname;
   </head>
   <body>
     <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>
+    <DemoRibbon />
 
     <header class="masthead">
       <div class="wrap masthead-inner">

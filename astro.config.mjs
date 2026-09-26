@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import { SITE_URL, IS_PUBLIC, LOCALES, DEFAULT_LOCALE } from './src/config.ts';
 
 export default defineConfig({
@@ -15,7 +16,7 @@ export default defineConfig({
     },
   },
   // IS_PUBLIC が false のあいだはサイトマップを出さない（_headers の X-Robots-Tag と必ずセット）
-  integrations: IS_PUBLIC ? [sitemap({ i18n: { defaultLocale: DEFAULT_LOCALE, locales: Object.fromEntries(LOCALES.map((l) => [l, l])) } })] : [],
+  integrations: [mdx(), ...(IS_PUBLIC ? [sitemap({ i18n: { defaultLocale: DEFAULT_LOCALE, locales: Object.fromEntries(LOCALES.map((l) => [l, l])) } })] : [])],
   build: {
     format: 'directory',
   },
