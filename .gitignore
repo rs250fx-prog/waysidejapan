@@ -1,0 +1,25 @@
+# build
+dist/
+.astro/
+node_modules/
+.vite/
+
+# env
+.env
+.env.*
+!.env.example
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# OneDrive の同期ゴミ
+~$*
+*.tmp
+
+# 入稿の作業中ファイル（記事になったら src/content/ へ移る）
+inbox/**/*.draft.md
+
+# 写真の原本（変換前）。リポジトリに入れない
+photos-raw/
