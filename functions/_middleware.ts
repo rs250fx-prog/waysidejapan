@@ -11,7 +11,9 @@
  *
  * 必要な環境変数（Pages の Settings → Variables）
  *   CF_ACCESS_TEAM_DOMAIN : 例 example.cloudflareaccess.com
- *   CF_ACCESS_AUD         : Access アプリケーションの Audience Tag
+ *   CF_ACCESS_AUD         : Access アプリケーションの Audience Tag。
+ *                           本番とプレビューでアプリが分かれている場合は
+ *                           カンマ区切りで複数書ける
  */
 
 interface Env {
@@ -95,8 +97,10 @@ async function verify(token: string, env: Required<Pick<Env, 'CF_ACCESS_TEAM_DOM
     email?: string;
   };
 
-  const aud = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
-  if (!aud.includes(env.CF_ACCESS_AUD)) throw new Error('aud mismatch');
+  // トークン側の aud（配列のこともある）と、設定側の許可リストを突き合わせる
+  const tokenAud = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+  const allowed = env.CF_ACCESS_AUD.split(',').map((v) => v.trim()).filter(Boolean);
+  if (!allowed.some((a) => tokenAud.includes(a))) throw new Error('aud mismatch');
 
   const now = Math.floor(Date.now() / 1000);
   if (!payload.exp || payload.exp < now) throw new Error('expired');
