@@ -127,7 +127,7 @@ import { CATEGORIES } from '../../config.ts';
 
           <div class="actions">
             <button type="submit" class="btn">保存</button>
-            <button type="button" id="json-btn" class="btn ghost">JSON を表示</button>
+            <button type="button" id="json-btn" class="btn ghost">JSON をコピー</button>
             <button type="button" id="del-btn" class="btn ghost danger">削除</button>
           </div>
         </form>
@@ -403,10 +403,35 @@ import { CATEGORIES } from '../../config.ts';
         loadList();
       });
 
-      $('#json-btn').onclick = () => {
+      $('#json-btn').onclick = async () => {
+        const text = JSON.stringify({ id: currentId, ...collect() }, null, 2);
         const el = $('#json-out');
-        el.textContent = JSON.stringify(collect(), null, 2);
+        el.hidden = true;
+        try {
+          // clipboard API は https かつユーザー操作が要る。満たせないときは下の退避へ
+          await navigator.clipboard.writeText(text);
+          show('JSON をコピーしました（' + text.length.toLocaleString() + ' 文字）', false);
+          return;
+        } catch {}
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(ta);
+          if (ok) {
+            show('JSON をコピーしました', false);
+            return;
+          }
+        } catch {}
+        // どちらも駄目なら表示して手で選べるようにする
+        el.textContent = text;
         el.hidden = false;
+        show('コピーできませんでした。下の内容を選択してください', true);
       };
       $('#del-btn').onclick = async () => {
         if (!currentId || !confirm('この入稿を削除します')) return;
