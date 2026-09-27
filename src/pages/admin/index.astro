@@ -328,8 +328,23 @@ import { CATEGORIES } from '../../config.ts';
         const { items } = await r.json();
         $('#list').innerHTML = items.map((i) =>
           '<li><button type="button" data-id="' + i.id + '"><span class="li-title">' + (i.title || '（無題）') +
-          '</span><span class="li-meta">' + i.category + ' · ' + i.status + '</span></button></li>').join('');
-        [...document.querySelectorAll('#list button')].forEach((b) => (b.onclick = () => loadOne(b.dataset.id)));
+          '</span><span class="li-meta">' + i.category + ' · ' + i.status + '</span></button>' +
+          '<button type="button" class="li-copy" data-copy="' + i.id + '" title="この入稿の JSON をコピー">⧉</button></li>').join('');
+        [...document.querySelectorAll('#list button[data-id]')].forEach((b) => (b.onclick = () => loadOne(b.dataset.id)));
+        [...document.querySelectorAll('#list button[data-copy]')].forEach((b) => (b.onclick = async (e) => {
+          e.stopPropagation();
+          const r = await fetch(api + '/' + b.dataset.copy);
+          if (!r.ok) return show('読み込めません', true);
+          const text = JSON.stringify(await r.json(), null, 2);
+          try {
+            await navigator.clipboard.writeText(text);
+            show('JSON をコピーしました（' + text.length.toLocaleString() + ' 文字）', false);
+          } catch {
+            $('#json-out').textContent = text;
+            $('#json-out').hidden = false;
+            show('コピーできませんでした。下の内容を選択してください', true);
+          }
+        }));
       }
 
       async function loadOne(id) {
@@ -404,7 +419,21 @@ import { CATEGORIES } from '../../config.ts';
       });
 
       $('#json-btn').onclick = async () => {
-        const text = JSON.stringify({ id: currentId, ...collect() }, null, 2);
+        // 保存済みのものが選ばれていれば、画面の入力ではなく D1 の中身を渡す。
+        // AI が読むのは GET /api/intake/:id なので、それと同じものを配る
+        let text;
+        if (currentId) {
+          const r = await fetch(api + '/' + currentId);
+          if (!r.ok) return show('読み込めません（' + r.status + '）', true);
+          text = JSON.stringify(await r.json(), null, 2);
+        } else {
+          const draft = collect();
+          if (!draft.title && draft.data.sections.every((x) => !x.heading && !x.experience && !x.measured)) {
+            return show('まだ何も入っていません。左の一覧から入稿を選ぶか、先に保存してください', true);
+          }
+          show('未保存の入力をコピーします（保存してからのほうが確実です）', true);
+          text = JSON.stringify({ id: null, ...draft }, null, 2);
+        }
         const el = $('#json-out');
         el.hidden = true;
         try {
@@ -480,12 +509,22 @@ import { CATEGORIES } from '../../config.ts';
         padding: 0;
         border-top: 1px solid var(--line);
       }
-      .admin .list button {
-        width: 100%;
+      .admin .list li { display: flex; align-items: stretch; border-bottom: 1px solid var(--line); }
+      .admin .li-copy {
+        flex: 0 0 auto;
+        background: none;
+        border: none;
+        border-left: 1px solid var(--line);
+        color: var(--muted);
+        min-width: 44px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .admin .list button[data-id] {
+        flex: 1 1 auto;
         text-align: left;
         background: none;
         border: none;
-        border-bottom: 1px solid var(--line);
         padding: 11px 4px;
         min-height: 44px;
         cursor: pointer;
