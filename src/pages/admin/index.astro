@@ -42,7 +42,12 @@ import { CATEGORIES } from '../../config.ts';
       </aside>
 
       <section class="form-pane">
-        <form id="form" novalidate>
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab" role="tab" data-type="guide" aria-selected="true">ガイド記事</button>
+          <button type="button" class="tab" role="tab" data-type="column" aria-selected="false">コラム</button>
+        </div>
+
+        <form id="form" data-type="guide" novalidate>
           <p id="msg" class="msg" hidden></p>
 
           <fieldset>
@@ -58,18 +63,18 @@ import { CATEGORIES } from '../../config.ts';
               <label>パス<input name="passes" placeholder="setouchi-area-pass" /></label>
             </div>
             <div class="row">
-              <label>取材日<input type="date" name="visitedOn" /></label>
-              <label>料金確認日<input type="date" name="pricesCheckedOn" /></label>
-              <label>移動手段<select name="mode"><option value="train">train</option><option value="bike">bike</option><option value="foot">foot</option><option value="">—</option></select></label>
+              <label class="guide-only">取材日<input type="date" name="visitedOn" /></label>
+              <label><span id="lbl-checked">料金確認日</span><input type="date" name="pricesCheckedOn" /></label>
+              <label class="guide-only">移動手段<select name="mode"><option value="train">train</option><option value="bike">bike</option><option value="foot">foot</option><option value="">—</option></select></label>
             </div>
             <div class="row">
               <label>狙うクエリ<input name="query" placeholder="setouchi area pass worth it" /></label>
-              <label>収益導線<select name="revenue"><option value="">なし（集客専用）</option><option value="tour">ツアー</option><option value="esim">eSIM</option><option value="hotel">宿</option></select></label>
-              <label class="check"><input type="checkbox" name="photosOwn" checked /> 自前写真あり</label>
+              <label class="guide-only">収益導線<select name="revenue"><option value="">なし（集客専用）</option><option value="tour">ツアー</option><option value="esim">eSIM</option><option value="hotel">宿</option></select></label>
+              <label class="check guide-only"><input type="checkbox" name="photosOwn" checked /> 自前写真あり</label>
             </div>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="guide-only">
             <legend>結論</legend>
             <label>向く<input name="buyIf" /></label>
             <label>向かない<input name="skipIf" /></label>
@@ -77,13 +82,13 @@ import { CATEGORIES } from '../../config.ts';
           </fieldset>
 
           <fieldset>
-            <legend>事実データ　★本文に出る数値はここだけ</legend>
+            <legend id="lg-facts">事実データ　★本文に出る数値はここだけ</legend>
             <table class="facts">
               <thead><tr><th>項目</th><th>値</th><th>証拠</th><th></th></tr></thead>
               <tbody id="facts"></tbody>
             </table>
             <button type="button" class="btn small ghost" data-add="fact">行を足す</button>
-            <p class="hint">金額は数字のみ（22000）。¥ や「円」を入れない。不確かな値は頭に ? を付ける。</p>
+            <p class="hint" id="hint-facts">金額は数字のみ（22000）。¥ や「円」を入れない。不確かな値は頭に ? を付ける。</p>
           </fieldset>
 
           <fieldset id="cat-block">
@@ -95,7 +100,7 @@ import { CATEGORIES } from '../../config.ts';
             <legend>セクション</legend>
             <div id="sections"></div>
             <button type="button" class="btn small ghost" data-add="section">セクションを足す</button>
-            <p class="hint">「体験」か「実測」のどちらかが空だと保存できない。一般論で埋めさせないため。</p>
+            <p class="hint" id="hint-sections">「体験」か「実測」のどちらかが空だと保存できない。一般論で埋めさせないため。</p>
           </fieldset>
 
           <fieldset>
@@ -105,12 +110,12 @@ import { CATEGORIES } from '../../config.ts';
           </fieldset>
 
           <fieldset>
-            <legend>出典（column は必須）</legend>
+            <legend id="lg-sources">出典（コラムは必須）</legend>
             <div id="sources"></div>
             <button type="button" class="btn small ghost" data-add="source">出典を足す</button>
           </fieldset>
 
-          <fieldset>
+          <fieldset class="guide-only">
             <legend>写真（内容で書く。番号は素材整理で自動）</legend>
             <textarea name="photos" rows="3" placeholder="福山の発車標&#10;尾道のホーム海側"></textarea>
           </fieldset>
@@ -163,12 +168,12 @@ import { CATEGORIES } from '../../config.ts';
         d.className = 'sec';
         d.innerHTML =
           '<label>見出し<input name="s_heading" value="' + (v.heading || '') + '"></label>' +
-          '<div class="row"><label>運賃<input name="s_fare" value="' + (v.fare || '') + '"></label>' +
+          '<div class="row guide-only"><label>運賃<input name="s_fare" value="' + (v.fare || '') + '"></label>' +
           '<label>所要<input name="s_time" value="' + (v.time || '') + '"></label>' +
           '<label>乗換<input name="s_transfer" value="' + (v.transfer || '') + '"></label>' +
           '<label>徒歩<input name="s_walk" value="' + (v.walk || '') + '"></label></div>' +
-          '<label>体験（自分にしか書けないこと）<textarea name="s_experience" rows="2">' + (v.experience || '') + '</textarea></label>' +
-          '<label>実測（自分で測った事実）<textarea name="s_measured" rows="2">' + (v.measured || '') + '</textarea></label>' +
+          '<label><span class="lbl-exp">体験（自分にしか書けないこと）</span><textarea name="s_experience" rows="2">' + (v.experience || '') + '</textarea></label>' +
+          '<label><span class="lbl-mea">実測（自分で測った事実）</span><textarea name="s_measured" rows="2">' + (v.measured || '') + '</textarea></label>' +
           '<label>写真<input name="s_photos" value="' + (v.photos || '') + '"></label>' +
           '<label>メモ<textarea name="s_memo" rows="2">' + (v.memo || '') + '</textarea></label>' +
           '<button type="button" class="x" aria-label="削除">× このセクションを削除</button>';
@@ -195,6 +200,45 @@ import { CATEGORIES } from '../../config.ts';
           l.innerHTML = label + '<input name="c_' + k + '" value="' + (values[k] || '') + '">';
           box.appendChild(l);
         });
+      }
+
+      const GUIDE_CATS = ['rail', 'eat', 'soak', 'konbini', 'ride'];
+
+      function currentType() {
+        return $('#form').dataset.type;
+      }
+
+      /** タブで「何を書く記事か」を切り替える。項目の出し入れと文言、検査が変わる */
+      function setType(type, keepCategory) {
+        const f = $('#form');
+        f.dataset.type = type;
+        document.querySelectorAll('.tab').forEach((b) =>
+          b.setAttribute('aria-selected', String(b.dataset.type === type)),
+        );
+
+        const sel = f.elements['category'];
+        [...sel.options].forEach((o) => {
+          o.hidden = type === 'column' ? o.value !== 'column' : o.value === 'column';
+        });
+        if (!keepCategory) sel.value = type === 'column' ? 'column' : 'rail';
+
+        const col = type === 'column';
+        $('#lbl-checked').textContent = col ? '情報の確認日' : '料金確認日';
+        $('#lg-facts').textContent = col
+          ? '数値と出どころ　★載せる数字はすべてここに、出典つきで'
+          : '事実データ　★本文に出る数値はここだけ';
+        $('#hint-facts').textContent = col
+          ? '数値は必ず出典とセット。一次情報（官公庁・企業IR・自治体）を証拠欄に書く。'
+          : '金額は数字のみ（22000）。¥ や「円」を入れない。不確かな値は頭に ? を付ける。';
+        $('#hint-sections').textContent = col
+          ? '「根拠」が空のセクションは保存できない。コラムは一次体験ではなく出典で立つ記事なので。'
+          : '「体験」か「実測」のどちらかが空だと保存できない。一般論で埋めさせないため。';
+        $('#lg-sources').textContent = col ? '出典　★コラムは必須' : '出典（コラムは必須）';
+
+        document.querySelectorAll('.lbl-exp').forEach((e) => (e.textContent = col ? '要点' : '体験（自分にしか書けないこと）'));
+        document.querySelectorAll('.lbl-mea').forEach((e) => (e.textContent = col ? '根拠（どの出典にもとづくか）' : '実測（自分で測った事実）'));
+
+        renderCatFields(sel.value);
       }
 
       function collect() {
@@ -258,10 +302,15 @@ import { CATEGORIES } from '../../config.ts';
           if (/[¥円$]/.test(r.value)) errs.push('事実データ ' + (i + 1) + ' 行目：金額は数字のみで入れてください');
           if (r.value && !r.evidence) errs.push('事実データ ' + (i + 1) + ' 行目：証拠が空です');
         });
+        const col = p.category === 'column';
         p.data.sections.forEach((s, i) => {
-          if (!s.experience && !s.measured) errs.push('セクション ' + (i + 1) + '：体験か実測のどちらかを入れてください');
+          if (col) {
+            if (!s.measured) errs.push('セクション ' + (i + 1) + '：根拠（どの出典にもとづくか）を入れてください');
+          } else if (!s.experience && !s.measured) {
+            errs.push('セクション ' + (i + 1) + '：体験か実測のどちらかを入れてください');
+          }
         });
-        if (p.category === 'column' && p.data.sources.length === 0) errs.push('column は出典が必須です');
+        if (col && p.data.sources.length === 0) errs.push('コラムは出典が必須です');
         return errs;
       }
 
@@ -312,6 +361,7 @@ import { CATEGORIES } from '../../config.ts';
         $('#sources').innerHTML = ''; (d.sources || []).forEach((x) => $('#sources').appendChild(pair('src', '名称', 'URL', x.label, x.url)));
         f.elements['photos'].value = (d.photos || []).join('\\n');
         f.elements['leftovers'].value = d.leftovers || '';
+        setType(row.category === 'column' ? 'column' : 'guide', true);
         renderCatFields(row.category, d.category || {});
         show('読み込みました', false);
       }
@@ -322,7 +372,7 @@ import { CATEGORIES } from '../../config.ts';
         $('#facts').innerHTML = ''; $('#sections').innerHTML = '';
         $('#faqs').innerHTML = ''; $('#sources').innerHTML = '';
         $('#facts').appendChild(rowFact()); $('#sections').appendChild(blockSection());
-        renderCatFields($('#form').elements['category'].value);
+        setType(currentType() || 'guide');
         $('#json-out').hidden = true;
         show('', false);
       }
@@ -364,9 +414,11 @@ import { CATEGORIES } from '../../config.ts';
         reset(); loadList();
       };
       $('#new-btn').onclick = reset;
+      document.querySelectorAll('.tab').forEach((b) => (b.onclick = () => { setType(b.dataset.type); }));
       $('#filter-status').onchange = loadList;
       $('#form').elements['category'].addEventListener('change', (e) => renderCatFields(e.target.value));
 
+      setType('guide');
       reset();
       loadList();
     </script>
@@ -418,6 +470,26 @@ import { CATEGORIES } from '../../config.ts';
       }
       .admin .li-title { font-size: 15px; }
       .admin .li-meta { font-size: 12px; color: var(--muted); }
+      .admin .tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+      .admin .tab {
+        font: inherit;
+        font-size: 14px;
+        padding: 10px 18px;
+        min-height: 44px;
+        background: none;
+        border: 1px solid var(--line);
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        color: var(--muted-2);
+      }
+      .admin .tab[aria-selected='true'] {
+        background: var(--surface);
+        color: var(--ink);
+        border-bottom-color: var(--accent);
+        font-weight: 700;
+      }
+      /* タブで出し入れする。コラムに運賃欄や結論ボックスは要らない */
+      .admin form[data-type='column'] .guide-only { display: none; }
       .admin fieldset {
         border: 1px solid var(--line);
         background: var(--surface);
