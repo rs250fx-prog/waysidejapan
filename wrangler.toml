@@ -1,5 +1,11 @@
-# Cloudflare Pages の設定。D1 のバインドをコードで持つ。
-# ダッシュボード側にも同じバインドが要る場合があるので、両方で確認すること。
+# Cloudflare Pages の設定。
+#
+# Pages は wrangler.toml があると、ダッシュボードの設定より優先する。
+# バインドと変数の出どころをここ1か所に揃えるため、D1 も Access の設定も
+# コードで持つ。ダッシュボードで足したものは無視される。
+#
+# 注意：env セクションは top-level を継承しない。preview にも同じ内容を書く。
+
 name = "waysidejapan"
 compatibility_date = "2026-09-26"
 pages_build_output_dir = "dist"
@@ -8,3 +14,20 @@ pages_build_output_dir = "dist"
 binding = "DB"
 database_name = "waysidejapan"
 database_id = "8b1c74f6-4535-4a14-bfff-b1119e237b69"
+
+# Access の検証に使う2つ。どちらも秘密ではない
+# （ログインへのリダイレクトURLに平文で現れる）。
+# 秘密にすべきなのは「誰を通すか」のポリシー側であって、この値ではない。
+[vars]
+CF_ACCESS_TEAM_DOMAIN = "restless-poetry-d71d.cloudflareaccess.com"
+CF_ACCESS_AUD = "1391de5dc75b958ecb5427d96fc60992be0ea7ad73ec5b0ffd33723a1ab66573"
+
+# ---- プレビュー環境（継承されないので同じ内容を書く）----
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "waysidejapan"
+database_id = "8b1c74f6-4535-4a14-bfff-b1119e237b69"
+
+[env.preview.vars]
+CF_ACCESS_TEAM_DOMAIN = "restless-poetry-d71d.cloudflareaccess.com"
+CF_ACCESS_AUD = "1391de5dc75b958ecb5427d96fc60992be0ea7ad73ec5b0ffd33723a1ab66573"
