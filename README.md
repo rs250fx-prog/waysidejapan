@@ -5,7 +5,8 @@
 **仕様は [`docs/SPEC.md`](docs/SPEC.md) が起点。** 拡張・修正のときは先にそこを読む。
 
 - 企画の原本（凍結）：[`docs/HANDOFF.md`](docs/HANDOFF.md)
-- 入稿フォーマット：[`templates/`](templates/)
+- 管理画面と Access の手順：[`docs/ACCESS.md`](docs/ACCESS.md)
+- 入稿の項目定義：[`templates/`](templates/)（入力自体は `/admin`）
 - デザイン一式（全17面）：Artifact キャンバス `https://claude.ai/artifact/4RtUPohMiyQ28xoAAdQ3EQ`
 
 ## 開発
@@ -25,6 +26,19 @@ npm run build
 ```
 
 `.astro` だけ消しても足りない。Cloudflare は毎回クリーンなので本番では起きない。
+
+## 入稿
+
+記事は `/admin` から入れる（Cloudflare Access の内側）。ガイド記事とコラムの2種。
+保存は D1 の `intake_article` に入り、`GET /api/intake/:id` が AI の読み口になる。
+
+```bash
+# スキーマの適用
+npx wrangler d1 execute waysidejapan --remote --file=db/schema.sql
+```
+
+配線の確認は `/api/health`、本番に出ているビルドは `/build.json`。どちらも値は返さない。
+`/admin` が 503 を返すのは故障ではなく、Access の設定が無いときの正しい初期状態。
 
 ## いま公開していない
 
