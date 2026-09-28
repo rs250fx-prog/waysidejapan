@@ -1,10 +1,10 @@
 {
   "base": "JPY",
-  "asOf": "2026-09-26",
+  "asOf": "2026-09-28",
   "source": "https://api.frankfurter.app",
   "note": "ECB のデータ。営業日しか更新されないので asOf は直近営業日になる。tools/fetch-rates.mjs が更新する",
   "rates": {
-    "USD": 0.006748,
-    "EUR": 0.006211
+    "USD": 0.00637,
+    "EUR": 0.0056
   }
 }
