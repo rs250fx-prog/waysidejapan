@@ -39,7 +39,18 @@ const articles = defineCollection({
       /** 記事の中ほどに全幅の写真帯を出すか。「これ」という1枚が無い記事では false */
       heroBand: z.boolean().default(true),
 
-      /** 一次体験の証跡 */
+      /**
+       * 記事の根拠。表示と検査がここで分かれる。
+       *
+       * visited    … 自分で行った。experience が必須。確認日バッジを出す
+       * researched … 調べて書いた。sources が2本以上必須。確認日バッジは出さない
+       *
+       * 混ぜると読者が根拠の強さを見分けられなくなり、
+       * 本当に行った記事の価値まで下がる。だから型で分ける。
+       */
+      basis: z.enum(['visited', 'researched']).default('visited'),
+
+      /** 一次体験の証跡（basis: visited では必須。tools/check-content.mjs が見る） */
       experience: z
         .object({
           visitedOn: z.string(), // YYYY-MM
@@ -52,8 +63,14 @@ const articles = defineCollection({
       pricesCheckedOn: z.date(),
 
       faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
-      /** column では必須（tools/check-content.mjs で検査） */
-      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
+      /**
+       * 出典。column と basis: researched では2本以上が必須
+       * （tools/check-content.mjs で検査）。公式サイト・事業者ページを優先する。
+       * published は出典が「いつ時点の情報か」。価格の記事で日付が無いのは致命的
+       */
+      sources: z
+        .array(z.object({ label: z.string(), url: z.string().url(), published: z.string().optional() }))
+        .default([]),
 
       /** soak 固有。外国人読者には料金より重要になることがある */
       facility: z

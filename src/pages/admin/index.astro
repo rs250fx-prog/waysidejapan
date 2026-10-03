@@ -63,14 +63,15 @@ import { CATEGORIES } from '../../config.ts';
               <label>パス<input name="passes" placeholder="setouchi-area-pass" /></label>
             </div>
             <div class="row">
-              <label class="guide-only">取材日<input type="date" name="visitedOn" /></label>
+              <label class="guide-only">根拠<select name="basis"><option value="visited">visited（自分で行った）</option><option value="researched">researched（調べて書く）</option></select></label>
+              <label class="guide-only visited-only">取材日<input type="date" name="visitedOn" /></label>
               <label><span id="lbl-checked">料金確認日</span><input type="date" name="pricesCheckedOn" /></label>
-              <label class="guide-only">移動手段<select name="mode"><option value="train">train</option><option value="bike">bike</option><option value="foot">foot</option><option value="">—</option></select></label>
+              <label class="guide-only visited-only">移動手段<select name="mode"><option value="train">train</option><option value="bike">bike</option><option value="foot">foot</option><option value="">—</option></select></label>
             </div>
             <div class="row">
               <label>狙うクエリ<input name="query" placeholder="setouchi area pass worth it" /></label>
               <label class="guide-only">収益導線<select name="revenue"><option value="">なし（集客専用）</option><option value="tour">ツアー</option><option value="esim">eSIM</option><option value="hotel">宿</option></select></label>
-              <label class="check guide-only"><input type="checkbox" name="photosOwn" checked /> 自前写真あり</label>
+              <label class="check guide-only visited-only"><input type="checkbox" name="photosOwn" checked /> 自前写真あり</label>
             </div>
           </fieldset>
 
@@ -238,7 +239,34 @@ import { CATEGORIES } from '../../config.ts';
         document.querySelectorAll('.lbl-exp').forEach((e) => (e.textContent = col ? '要点' : '体験（自分にしか書けないこと）'));
         document.querySelectorAll('.lbl-mea').forEach((e) => (e.textContent = col ? '根拠（どの出典にもとづくか）' : '実測（自分で測った事実）'));
 
+        // コラムは常に researched。ガイドだけ選べる
+        if (col) f.elements['basis'].value = 'researched';
+        applyBasis();
         renderCatFields(sel.value);
+      }
+
+      /** basis によって、出す欄と検査の条件を切り替える */
+      function applyBasis() {
+        const f = $('#form');
+        const researched = f.elements['basis'].value === 'researched';
+        f.dataset.basis = researched ? 'researched' : 'visited';
+        document.querySelectorAll('.visited-only').forEach((e) => (e.hidden = researched));
+        document.querySelectorAll('.lbl-exp').forEach((e) => {
+          if (f.dataset.type !== 'column') e.textContent = researched ? '要点' : '体験（自分にしか書けないこと）';
+        });
+        document.querySelectorAll('.lbl-mea').forEach((e) => {
+          if (f.dataset.type !== 'column') {
+            e.textContent = researched ? '根拠（どの出典にもとづくか）' : '実測（自分で測った事実）';
+          }
+        });
+        const hint = $('#hint-sections');
+        if (hint && f.dataset.type !== 'column') {
+          hint.textContent = researched
+            ? '「根拠」が空のセクションは保存できない。調べて書く記事は出典で立つので。'
+            : '「体験」か「実測」のどちらかが空だと保存できない。一般論で埋めさせないため。';
+        }
+        const lg = $('#lg-sources');
+        if (lg) lg.textContent = researched ? '出典　★2本以上が必須' : '出典（コラムは必須）';
       }
 
       function collect() {
@@ -279,6 +307,7 @@ import { CATEGORIES } from '../../config.ts';
           title: g('title'),
           status: g('status'),
           data: {
+            basis: g('basis') || 'visited',
             meta: {
               areas: g('areas').split(',').map((s) => s.trim()).filter(Boolean),
               passes: g('passes').split(',').map((s) => s.trim()).filter(Boolean),
@@ -303,14 +332,20 @@ import { CATEGORIES } from '../../config.ts';
           if (r.value && !r.evidence) errs.push('事実データ ' + (i + 1) + ' 行目：証拠が空です');
         });
         const col = p.category === 'column';
+        const researched = col || p.data.basis === 'researched';
         p.data.sections.forEach((s, i) => {
-          if (col) {
+          if (researched) {
             if (!s.measured) errs.push('セクション ' + (i + 1) + '：根拠（どの出典にもとづくか）を入れてください');
           } else if (!s.experience && !s.measured) {
             errs.push('セクション ' + (i + 1) + '：体験か実測のどちらかを入れてください');
           }
         });
         if (col && p.data.sources.length === 0) errs.push('コラムは出典が必須です');
+        // 調べて書く記事は出典が根拠そのもの。1本では裏が取れない
+        if (researched && p.data.sources.length < 2) {
+          errs.push('調べて書く記事は出典が2本以上必要です（いま ' + p.data.sources.length + ' 本）');
+        }
+        if (!researched && !p.data.meta.visitedOn) errs.push('visited の記事は取材日が必要です');
         return errs;
       }
 
@@ -360,6 +395,7 @@ import { CATEGORIES } from '../../config.ts';
         const m = d.meta || {};
         f.elements['areas'].value = (m.areas || []).join(', ');
         f.elements['passes'].value = (m.passes || []).join(', ');
+        f.elements['basis'].value = d.basis || 'visited';
         f.elements['visitedOn'].value = m.visitedOn || '';
         f.elements['pricesCheckedOn'].value = m.pricesCheckedOn || '';
         f.elements['mode'].value = m.mode || '';
@@ -469,6 +505,7 @@ import { CATEGORIES } from '../../config.ts';
       };
       $('#new-btn').onclick = reset;
       document.querySelectorAll('.tab').forEach((b) => (b.onclick = () => { setType(b.dataset.type); }));
+      $('#form').elements['basis'].addEventListener('change', applyBasis);
       $('#filter-status').onchange = loadList;
       $('#form').elements['category'].addEventListener('change', (e) => renderCatFields(e.target.value));
 

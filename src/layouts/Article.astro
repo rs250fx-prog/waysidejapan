@@ -71,16 +71,40 @@ if (d.faq.length > 0) {
 
     <h1>{d.title}</h1>
 
+    {
+      /* 根拠の強さが見た目で分かるようにする。
+         visited は「行った」の証跡と確認日バッジ、researched は出典の本数。
+         同じ装飾を両方に付けると、本当に行った記事の価値まで下がる */
+    }
     <div class="byline">
       <span class="avatar" aria-hidden="true"></span>
       <span>
         <strong>{AUTHOR.name}</strong> · {AUTHOR.credential}
-        {d.experience && <> · Rode this route {d.experience.visitedOn}</>}
+        {d.basis === 'visited' && d.experience && <> · Rode this route {d.experience.visitedOn}</>}
       </span>
-      <span class="badge-verified">
-        {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn)}
-      </span>
+      {
+        d.basis === 'visited' ? (
+          <span class="badge-verified">
+            {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn)}
+          </span>
+        ) : (
+          <span class="badge-researched">
+            Researched · {d.sources.length} {d.sources.length === 1 ? 'source' : 'sources'}
+          </span>
+        )
+      }
     </div>
+
+    {
+      /* 調べて書いた記事は、本文に入る前にそう言う。
+         このサイトの他の記事は一次体験で立っているので、黙ると読者を誤らせる */
+      d.basis === 'researched' && (
+        <p class="basis-note">
+          I have not been to every place in this guide. The figures below are taken from the sources listed at the end,
+          with the date each one was published — not measured by me. Where I have been, the article says so.
+        </p>
+      )
+    }
 
     {
       /* 提携が1つも無いあいだは開示も出さない。出すものが無いのに開示だけ出すのは嘘になる */
@@ -160,6 +184,27 @@ if (d.faq.length > 0) {
     border-radius: 50%;
     background: #efe6d6;
     border: 1px solid #ded3bf;
+  }
+  .badge-researched {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    padding: 4px 9px;
+  }
+  .basis-note {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted-2);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--muted);
+    padding: 14px 16px;
   }
   .disclosure {
     margin: 0;
