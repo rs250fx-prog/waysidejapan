@@ -1,5 +1,5 @@
 {
-  "_note": "小売物価統計調査（総務省統計局）の全国平均。tools/fetch-food-prices.mjs が月次で書き換える。手で編集しない。品目の対応は同スクリプトの ITEMS を見る",
+  "_note": "小売物価統計調査（総務省統計局）の公表値。外食品目に全国平均は無いため東京・特別区部を基準にする。tools/fetch-food-prices.mjs が月次で書き換える。手で編集しない",
   "_updatedAt": "2026-10-04",
   "_source": "e-Stat API / 小売物価統計調査",
   "items": {
