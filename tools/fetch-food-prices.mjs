@@ -64,10 +64,16 @@ try {
   const meta = await api('getMetaInfo', { statsDataId: STATS_DATA_ID });
   const classObjs = meta?.GET_META_INFO?.METADATA_INF?.CLASS_INF?.CLASS_OBJ ?? [];
 
-  const findClass = (...ids) => classObjs.find((c) => ids.includes(c['@id']));
   const asArray = (x) => (Array.isArray(x) ? x : x ? [x] : []);
+  const findClass = (...ids) => classObjs.find((c) => ids.includes(c['@id']));
 
-  const itemClass = findClass('cat01', 'cat02', 'item');
+  // 品目の分類は表によって cat01 だったり cat02 だったりする。
+  // この表では cat01 が「データの種別」（1件）で、cat02 が「銘柄」（872件）。
+  // id を決め打ちせず、cat* のうち項目数が最も多いものを品目とみなす
+  const itemClass = classObjs
+    .filter((c) => /^cat/.test(String(c['@id'])))
+    .map((c) => ({ c, n: asArray(c.CLASS).length }))
+    .sort((a, b) => b.n - a.n)[0]?.c;
   const areaClass = findClass('area');
 
   if (!itemClass) throw new Error('品目の分類が見つからない');
@@ -81,6 +87,7 @@ try {
       const n = asArray(c.CLASS).length;
       console.log(`  @id=${c['@id']}  name=${c['@name']}  件数=${n}`);
     }
+    console.log(`--- 品目に使う分類：@id=${itemClass['@id']} / ${asArray(itemClass.CLASS).length}件 ---`);
     console.log(`--- ${itemClass['@id']} の先頭40件 ---`);
     for (const c of asArray(itemClass.CLASS).slice(0, 40)) {
       console.log(`  ${c['@code']}  ${c['@name']}`);
@@ -106,7 +113,7 @@ try {
     try {
       const data = await api('getStatsData', {
         statsDataId: STATS_DATA_ID,
-        [`cd${itemClass['@id'].replace('cat', 'Cat').replace('item', 'Cat')}`]: code,
+        [`cd${String(itemClass['@id']).charAt(0).toUpperCase()}${String(itemClass['@id']).slice(1)}`]: code,
         cdArea: national,
         limit: '12',
         metaGetFlg: 'N',
