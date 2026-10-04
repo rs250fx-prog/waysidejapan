@@ -1,0 +1,123 @@
+---
+title: 'Kansai Airport to Hiroshima: the three ways, and the one number that decides it'
+description: 'Train, bus or rail pass from Kansai Airport to Hiroshima. What the airport leg costs, why there is no direct bus, and the point at which a seven-day pass starts paying for itself.'
+translationKey: kix-to-hiroshima
+translationStatus: reviewed
+category: rail
+basis: researched
+areas: [kansai, hiroshima, setouchi]
+passes: [setouchi-area-pass]
+pubDate: 2026-10-04
+draft: true
+unlisted: false
+access: public
+heroBand: false
+pricesCheckedOn: 2026-10-04
+faq:
+  - q: Is there a direct bus from Kansai Airport to Hiroshima?
+    a: Chugoku JR Bus lists a Hiroshima–Osaka service but no route starting at Kansai Airport. Any bus journey means getting into Osaka first.
+  - q: Does the Setouchi Area Pass cover the airport train?
+    a: The pass covers JR-WEST conventional lines, which is how the Haruka runs into Shin-Osaka. Check the current area map before travelling, since the covered area is defined by the map rather than a list of services.
+  - q: Can I buy the discounted Haruka ticket?
+    a: JR-WEST sells the HARUKA One-way Ticket to holders of a foreign passport entering Japan as a Temporary Visitor, one per person, with the passport shown at purchase.
+sources:
+  - label: 'JR-WEST — HARUKA One-way Ticket（公式。区間別の価格と購入条件）'
+    url: 'https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/'
+  - label: 'JR-WEST — Setouchi Area Pass（公式。価格・有効日数・範囲・除外区間）'
+    url: 'https://www.westjr.co.jp/travel-information/en/tickets-passes/other/setouchi/'
+  - label: '中国JRバス（公式。広島〜大阪の高速バス運賃）'
+    url: 'https://www.chugoku-jrbus.co.jp/'
+---
+
+import Price from '../../../components/Price.astro';
+import Verdict from '../../../components/Verdict.astro';
+import FactRow from '../../../components/FactRow.astro';
+import CompareTable from '../../../components/CompareTable.astro';
+
+Hiroshima is the first place most people go west of Osaka, and almost everyone arrives at Kansai Airport without having worked out how they are getting there. The honest answer is that there is no clever route. There are three, they are not close in quality, and which one is right depends on a single thing: **whether you are stopping anywhere else in the west.**
+
+<Verdict
+  buyIf="You are stopping at two or more places between Osaka and Hiroshima, or carrying on to Shikoku or Hakata."
+  skipIf="Hiroshima is a single out-and-back from Osaka. Buy the legs separately."
+  totalLabel="Airport leg"
+>
+  <Price jpy={1800} /> on the discounted Haruka ticket to Shin-Osaka.
+</Verdict>
+
+## There is no direct route
+
+Kansai Airport is on an island south of Osaka, and Hiroshima is 300 kilometres west of it. Nothing runs between them directly. **Every option goes through Shin-Osaka**, and the only real question is what you do once you are there.
+
+That also answers the question people ask most often. Chugoku JR Bus runs a Hiroshima–Osaka highway bus from <Price jpy={3500} />, but **no service starts at the airport**. A bus journey means getting yourself into Osaka first, which costs you the airport leg anyway and then four hours or so on top.
+
+## The airport leg
+
+<FactRow
+  items={[
+    { label: 'To Shin-Osaka', value: '¥1,800' },
+    { label: 'To Kyoto', value: '¥2,200' },
+    { label: 'To Tennoji', value: '¥1,300' },
+    { label: 'Seat', value: 'Reserved' },
+  ]}
+/>
+
+The HARUKA One-way Ticket is a discounted fare JR-WEST sells to **holders of a foreign passport entering as a Temporary Visitor** — one ticket per person, passport shown at purchase. Shin-Osaka is <Price jpy={1800} />, Kyoto <Price jpy={2200} />, Tennoji <Price jpy={1300} />, Kobe <Price jpy={2000} />, Nara <Price jpy={1800} />. Children are half.
+
+It is an ordinary-car reserved seat, and the reservation is made separately at a machine or a ticket office. Worth doing with luggage.
+
+## The three ways
+
+<CompareTable
+  caption="Kansai Airport to Hiroshima"
+  rows={[
+    {
+      name: 'Haruka, then Sanyo Shinkansen',
+      note: 'Two legs, both JR',
+      jpy: 1800,
+      covers: 'Airport leg shown; Shinkansen fare on top',
+      bestFor: 'A single trip to Hiroshima and back',
+    },
+    {
+      name: 'Setouchi Area Pass',
+      note: '7 consecutive days',
+      jpy: 22000,
+      covers: 'Both legs, plus Miyajima ferry and JR Shikoku',
+      bestFor: 'Two or more stops in the west',
+      pick: true,
+    },
+    {
+      name: 'Into Osaka, then highway bus',
+      note: 'No direct service from the airport',
+      jpy: 3500,
+      covers: 'Bus leg only; airport leg on top',
+      bestFor: 'A tight budget and a spare afternoon',
+    },
+  ]}
+/>
+
+## The number that decides it
+
+The pass is <Price jpy={22000} /> for seven consecutive days and covers the Sanyo Shinkansen between Shin-Osaka and Hakata, JR-WEST and **JR-SHIKOKU** conventional lines, and the Miyajima ferry. The Tokaido Shinkansen towards Tokyo and the Kyushu Shinkansen south of Hakata are outside it.
+
+So the arithmetic is not "airport to Hiroshima". It is **everything you will do in those seven days**. A return trip to Hiroshima and nothing else will not reach <Price jpy={22000} />. Add Onomichi, add Miyajima, add the crossing to Matsuyama — and the pass stops being a question.
+
+That last one is the part people miss. **JR-SHIKOKU is inside this pass.** If Shikoku is anywhere in your plans, the comparison is already over.
+
+## What I would do
+
+Land, take the Haruka to Shin-Osaka, and do not go west the same day. The flight has already been long, Shin-Osaka is a station rather than a place, and the first morning of a trip is worth more than the last evening of a flight.
+
+Then start west with the pass the following morning, if you are going further than Hiroshima.
+
+<FactRow
+  items={[
+    { label: 'Direct route', value: 'None' },
+    { label: 'Always via', value: 'Shin-Osaka' },
+    { label: 'Pass covers', value: 'Both legs' },
+    { label: 'Pass excludes', value: 'Tokaido, Kyushu' },
+  ]}
+/>
+
+## Still to confirm
+
+The Shin-Osaka to Hiroshima Shinkansen fare and journey time are not stated here, because I have not sourced them from the operator yet. They will be added with the date they were checked. Everything above comes from the pages listed at the end.
