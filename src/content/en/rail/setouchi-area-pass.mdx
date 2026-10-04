@@ -17,13 +17,16 @@ experience:
   mode: train
   photosOwn: true
 pricesCheckedOn: 2026-08-14
+sources:
+  - label: 'JR-WEST — Setouchi Area Pass（公式。価格・有効日数・範囲・除外区間）'
+    url: 'https://www.westjr.co.jp/travel-information/en/tickets-passes/other/setouchi/'
 faq:
-  - q: Can I use it on the Nozomi?
-    a: No. Sanyo Shinkansen services are covered except the fastest ones, so plan around Hikari and Sakura departures.
+  - q: Can I take it towards Tokyo?
+    a: No. JR-WEST lists the Tokaido Shinkansen (Shin-Osaka to Tokyo) and the Kyushu Shinkansen (south of Hakata) as outside the pass. The Sanyo Shinkansen between Shin-Osaka and Hakata is included.
   - q: Do I have to start on the day I collect it?
     a: You pick the start date when you exchange the voucher, and the seven days run consecutively from there.
   - q: Does it cover the ferries?
-    a: One route only. The island hops most people want are paid separately, in cash, at the terminal.
+    a: The Miyajima ferry is included. Other island routes around the inland sea are run by separate operators and are paid at the terminal.
 ---
 
 import Price from '../../../components/Price.astro';
@@ -52,7 +55,7 @@ Only past a certain number of legs. Here is the same week, priced three ways.
       name: 'Setouchi Area Pass',
       note: '7 days, three islands',
       jpy: 22000,
-      covers: 'Hikari, Sakura, local lines',
+      covers: 'Sanyo Shinkansen, JR West and JR Shikoku lines',
       bestFor: 'Three or more stops',
       pick: true,
     },
@@ -104,4 +107,4 @@ From the station it is ten minutes on foot to the ropeway, and the hill behind t
 
 ## What the pass will not do
 
-It will not put you on the fastest train, and it will not cover the island ferries that make the middle of this route worth riding. Budget <Price jpy={5600} /> in cash for boats and buses over the week, and do not plan a tight connection around a service the pass does not include.
+It stops at Hakata. The Tokaido Shinkansen towards Tokyo and the Kyushu Shinkansen south of Hakata are both outside it, so this is a westward pass and nothing else. The Miyajima ferry is included, but the smaller island routes across the inland sea are run by other operators — budget <Price jpy={5600} /> in cash for those boats and the local buses over the week.
