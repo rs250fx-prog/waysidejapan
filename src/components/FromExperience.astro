@@ -1,0 +1,64 @@
+---
+/**
+ * 調べて書いた記事（basis: researched）の中に、運営者が自分で見たことを差し込む。
+ *
+ * 記事全体の根拠は出典だが、この段落だけは一次。読者が根拠の種類を
+ * 取り違えないよう、見た目と日付で区別する。出典で立つ記事に
+ * 一次情報を混ぜられるのが、このサイトの他に無い部分になる。
+ *
+ * 日付は必須。「いつ見たか」が無い実見は、出典の無い数値と同じ。
+ */
+interface Props {
+  /** YYYY-MM または YYYY-MM-DD */
+  on: string;
+  where?: string;
+}
+const { on, where } = Astro.props;
+
+const label = (() => {
+  const d = new Date(on.length === 7 ? `${on}-01` : on);
+  if (Number.isNaN(d.valueOf())) return on;
+  return d.toLocaleDateString('en-GB', {
+    ...(on.length > 7 ? { day: 'numeric' } : {}),
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+})();
+---
+
+<aside class="from-exp">
+  <span class="tag">Seen myself · {label}{where && <> · {where}</>}</span>
+  <div class="body"><slot /></div>
+</aside>
+
+<style>
+  .from-exp {
+    margin: 26px 0;
+    border: 1px solid var(--confirm-line);
+    border-left: 3px solid var(--confirm);
+    background: var(--confirm-bg);
+    padding: 16px 20px;
+  }
+  .tag {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--confirm);
+    margin-bottom: 7px;
+  }
+  .body {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-3);
+  }
+  .body :global(p) {
+    margin: 0 0 0.8em;
+  }
+  .body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

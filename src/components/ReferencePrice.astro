@@ -1,0 +1,122 @@
+---
+/**
+ * 観光地価格と、日本人が払う基準価格を並べる。
+ *
+ * このサイトの看板にする部品。英語圏の訪日記事は「高い／安い」を
+ * 形容詞で書くが、比較対象を持っていない。日本に住んでいる側は
+ * 「いくらなら普通か」を知っているので、そこを数字で出す。
+ *
+ * 基準価格は断定ではなく「日本人の客がその額までなら払う」という水準。
+ * 根拠（公的統計か、運営者の実見か）を必ず添えること。
+ */
+import { formatPrice } from '../lib/money.ts';
+
+interface Props {
+  item: string;
+  /** 観光地で見かける額 */
+  touristJpy: number;
+  touristNote?: string;
+  /** 日本人の基準価格 */
+  referenceJpy: number;
+  referenceNote?: string;
+}
+
+const { item, touristJpy, touristNote, referenceJpy, referenceNote } = Astro.props;
+const ratio = referenceJpy > 0 ? touristJpy / referenceJpy : 0;
+const ratioText = ratio >= 2 ? `${ratio.toFixed(1)}×` : `+${Math.round((ratio - 1) * 100)}%`;
+---
+
+<figure class="refprice">
+  <figcaption>{item}</figcaption>
+  <div class="cols">
+    <div class="col tourist">
+      <span class="label">Tourist-facing stall</span>
+      <span class="amount">{formatPrice(touristJpy)}</span>
+      {touristNote && <span class="note">{touristNote}</span>}
+    </div>
+    <div class="gap" aria-hidden="true">{ratioText}</div>
+    <div class="col reference">
+      <span class="label">What a local pays</span>
+      <span class="amount">{formatPrice(referenceJpy)}</span>
+      {referenceNote && <span class="note">{referenceNote}</span>}
+    </div>
+  </div>
+</figure>
+
+<style>
+  .refprice {
+    margin: 26px 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  figcaption {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .cols {
+    display: flex;
+    align-items: stretch;
+  }
+  .col {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .col.reference {
+    background: var(--confirm-bg);
+  }
+  .label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .reference .label {
+    color: var(--confirm);
+  }
+  .amount {
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .note {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--muted-2);
+  }
+  /* 倍率。数字そのものが記事の主張なので、中央に置いて読ませる */
+  .gap {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--accent);
+    border-inline: 1px solid var(--line);
+  }
+
+  @media (max-width: 600px) {
+    .cols {
+      flex-direction: column;
+    }
+    .gap {
+      padding: 8px 18px;
+      border-inline: none;
+      border-block: 1px solid var(--line);
+      justify-content: flex-end;
+    }
+  }
+</style>

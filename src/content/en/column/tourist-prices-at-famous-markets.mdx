@@ -1,73 +1,106 @@
 ---
-title: "Japan's famous food markets, and what the same dish costs elsewhere"
-description: 'Kuromon, Nishiki and Omicho are on every itinerary. Prices reported at their visitor-facing stalls sit far above what the same dish costs elsewhere — the gap, and what to do instead.'
+title: "Japan's famous food markets, and the price a local would actually pay"
+description: 'Kuromon, Nishiki and Omicho sell seafood bowls at ¥4,000–5,000. Government price statistics and a resident who eats out show what the same meal costs everywhere else — and where the line sits.'
 translationKey: tourist-prices-at-famous-markets
 translationStatus: reviewed
 category: column
 basis: researched
 areas: [osaka, kyoto, kanazawa]
 pubDate: 2026-09-27
-draft: true
+updatedDate: 2026-10-04
+draft: false
 unlisted: false
 access: public
 heroBand: false
-pricesCheckedOn: 2026-09-27
+pricesCheckedOn: 2026-10-04
+faq:
+  - q: Are these markets a tourist trap?
+    a: Not in the legal sense. Prices are posted and nobody is deceived. The point is the size of the gap between those prices and what the same dish costs a few streets away.
+  - q: What is a normal price for a seafood bowl in Japan?
+    a: There is no official figure for kaisendon specifically, but the government price survey puts a bowl of ramen at ¥746 and two pieces of conveyor-belt sushi at ¥221 as of August 2026. A good seafood bowl sits above both, and below ¥2,000 in most of the country.
+  - q: Should I avoid these markets?
+    a: No. Walk through them, and eat one street back. Some of the old trade that made them worth visiting is still there.
 sources:
-  - label: 'ちょこっと、つぶやいてよろしいでしょうか。 — 黒門市場の価格'
-    url: 'https://ameblo.jp/nazono-u-chan/entry-12886898691.html'
+  - label: '総務省統計局 小売物価統計調査（ラーメン外食1杯の全国平均、2026年8月＝746円）'
+    url: 'https://www.jpmarket-conditions.com/2102/'
+    published: '2026-08'
+  - label: '総務省統計局 小売物価統計調査（回転ずし にぎり まぐろ2貫、2026年8月＝221円）'
+    url: 'https://www.jpmarket-conditions.com/2123/'
+    published: '2026-08'
+  - label: '小売物価統計調査 主要品目の都市別小売価格（e-Stat・一次情報）'
+    url: 'https://www.e-stat.go.jp/stat-search/database?layout=dataset&toukei=00200571&statdisp_id=0003421913'
   - label: 'イチオシ — 錦市場の観光地価格'
     url: 'https://ichioshi.allabout.co.jp/articles/news/71946'
+  - label: 'ちょこっと、つぶやいてよろしいでしょうか。 — 黒門市場の価格'
+    url: 'https://ameblo.jp/nazono-u-chan/entry-12886898691.html'
   - label: '岡田香奈の男前な1日 — 近江町市場の海鮮丼'
     url: 'https://ameblo.jp/kanakana019410/entry-12883315568.html'
 ---
 
 import Price from '../../../components/Price.astro';
+import ReferencePrice from '../../../components/ReferencePrice.astro';
+import FromExperience from '../../../components/FromExperience.astro';
 
 Three markets appear on almost every first-time itinerary: Kuromon in Osaka, Nishiki in Kyoto, Omicho in Kanazawa. All three are real working markets with long histories. All three now have a second layer built on top of them — stalls that exist for visitors, priced accordingly.
 
-This is not fraud. The prices are posted, nobody is deceived, and the stalls are within their rights to charge what the traffic will bear. The problem is narrower and more useful to know: **the gap between what those stalls charge and what the same dish costs a few streets away is large enough to change how you plan a day.**
+This is not fraud. The prices are posted, nobody is deceived, and the stalls are within their rights to charge what the traffic will bear. The useful question is narrower: **how far above the normal Japanese price are they, and where is normal?**
 
-## What has been reported
+That second half is the part English-language guides never answer. They will tell you a market is "pricey" — but pricey compared to what?
 
-The figures below come from the posts listed at the end of this article, written by people who ate there. I have not verified them at the stall myself, and market prices move — treat them as the order of magnitude, not as a menu.
+## The line is ¥2,000
 
-### Kuromon Market, Osaka
+<FromExperience on="2026-10">
+  <p>
+    Here is the number I would give any Japanese friend. **Above ¥2,000 for a lunch, ordinary people hesitate** — even
+    somewhere good, even somewhere famous. It is not that nobody spends more; it is that spending more becomes a
+    decision rather than a default.
+  </p>
+  <p>
+    At Kuromon and Nishiki in October 2026, seafood bowls are ¥4,000–5,000. That is not a premium on the normal price.
+    It is a different category of purchase, sold to people who have no way of knowing that.
+  </p>
+</FromExperience>
 
-| Dish | Reported at the market | Typical elsewhere |
+<ReferencePrice
+  item="Seafood bowl (kaisendon)"
+  touristJpy={4500}
+  touristNote="Kuromon and Nishiki, seen October 2026"
+  referenceJpy={2000}
+  referenceNote="The point at which a Japanese customer stops and thinks"
+/>
+
+## What the official figures say
+
+There is no government statistic for seafood bowls. There are statistics for the things a visitor can anchor against, and they are published monthly by the Statistics Bureau.
+
+| Item | National average | As of |
 | --- | --- | --- |
-| Hamburger | <Price jpy={4000} /> | around <Price jpy={2000} /> even at an expensive Tokyo burger shop |
-| Wagyu curry udon | <Price jpy={7000} /> | under <Price jpy={2000} /> for something comparable |
-| Steak bowl | <Price jpy={6000} /> | under <Price jpy={3000} /> at an ordinary steak restaurant |
+| Ramen, soy-sauce, eating out, one bowl | <Price jpy={746} /> | August 2026 |
+| Conveyor-belt sushi, tuna, two pieces | <Price jpy={221} /> | August 2026 |
 
-The wagyu curry udon is the one worth pausing on. It is not a dish with an established price, because it is not a dish most Japanese people order. A combination invented for the counter can be priced at whatever the counter likes, and there is no familiar figure for a visitor to compare it against. That is the mechanism, more than any single number.
+Ten pieces of conveyor-belt sushi come to roughly <Price jpy={1105} />. A bowl of ramen — the second most satisfying meal visitors report eating in Japan — is <Price jpy={746} />.
 
-### Nishiki Market, Kyoto
-
-Nishiki has been covered in the Japanese press for the same reason — prices at the visitor-facing stalls have pulled away from the rest of the city. The market's older trade, selling ingredients to Kyoto kitchens, still operates alongside it.
-
-### Omicho Market, Kanazawa
-
-Seafood bowls reported at <Price jpy={4500} /> and <Price jpy={5500} />. Kanazawa genuinely does have excellent fish, and a good seafood bowl is not cheap anywhere. The question to ask is whether you are paying for the fish or for the address.
+Against that, **a ¥4,500 seafood bowl is six ramen.** The fish is better than it would be in a ¥1,000 bowl. It is not six times better.
 
 ## Why the gap exists
 
 Three things, none of them conspiratorial.
 
-**A captive audience with no reference price.** A visitor eating wagyu for the first time has no idea what wagyu normally costs. Without a reference, any number is plausible.
+**No reference price.** A visitor eating a seafood bowl for the first time has no idea what one normally costs. Without a reference, any number is plausible. That is the whole mechanism, and it is why this article exists.
 
-**One visit, not fifty.** A neighbourhood restaurant survives on people who come back. A stall in front of a station or a famous market arcade does not need you to come back.
+**One visit, not fifty.** A neighbourhood restaurant survives on people who come back. A stall in a famous market arcade does not need you to come back.
 
-**Dishes that exist only there.** Where there is no standard version of a dish, there is no standard price.
+**Dishes with no standard version.** Wagyu curry udon is not a dish most Japanese people order, so there is no familiar price to compare it against. Invented combinations carry the widest pricing latitude.
 
 ## What to do instead
 
-Not "avoid these markets" — they are worth walking through, and some of the old trade is still there. But:
+Not "avoid these markets". Walk through them — some of the old trade is still there, and Nishiki still sells ingredients to Kyoto kitchens. But:
 
-- **Eat where the prices are boring.** A set meal at an ordinary restaurant one street back from the arcade will cost a fraction and, more often than not, be better.
-- **Look for a posted price before you order**, especially for anything cut or grilled to order.
-- **Be suspicious of a dish you have never heard of.** A famous ingredient in an unfamiliar format is the format with the widest pricing latitude.
-- **Ask what the same thing costs at a department store food hall.** Same city, same ingredient, prices set for people who shop there every week.
+- **Eat one street back.** A set meal at an ordinary restaurant behind the arcade will cost a fraction and, more often than not, be better.
+- **Use ¥2,000 as your own line.** Above it, ask what you are getting that a ¥1,500 version would not give you.
+- **Be wary of a dish you have never heard of.** A famous ingredient in an unfamiliar format is the format with the most pricing room.
+- **Compare at a department store food hall.** Same city, same fish, prices set for people who shop there every week.
 
-## A note on these figures
+## How this article is put together
 
-Everything above is reported by others rather than measured by me, and that is stated deliberately. Most of this site is built on things I went and checked; this article is not, and it would be dishonest to present it in the same voice.
+The market prices come from the posts listed at the end and from what I saw myself in October 2026, marked where each applies. The national averages are from the government retail price survey. **Market prices move, and stalls differ from each other within the same arcade** — treat the figures as the order of magnitude rather than as a menu.
