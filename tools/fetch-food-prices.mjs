@@ -117,16 +117,19 @@ try {
    * 自分で各都市を平均して「全国平均」と称するのは、重み付けが違うので誤り。
    */
   const areas = asArray(areaClass?.CLASS);
+  // 表記ゆれが読めないので緩く照合する（東京都区部／都区部／区部）
   const areaEntry =
     areas.find((c) => String(c['@name']).includes('全国')) ??
-    areas.find((c) => String(c['@name']).includes('東京都区部'));
+    areas.find((c) => /区部/.test(String(c['@name']))) ??
+    areas.find((c) => /東京/.test(String(c['@name'])));
   if (DIAG) {
     console.log(`--- 地域：${areas.length}件／全国=${nationalEntry ? 'あり' : 'なし'}／使う=${areaEntry?.['@name']} (${areaEntry?.['@code']}) ---`);
     for (const a of areas.slice(0, 8)) console.log(`  ${a['@code']}  ${a['@name']}`);
   }
   if (!areaEntry) {
     throw new Error(
-      `基準にする地域が取れない（地域 ${areas.length} 件、先頭: ${areas.slice(0, 3).map((a) => a['@name']).join(' / ')}）`,
+      `基準にする地域が取れない（地域 ${areas.length} 件）。` +
+        `東京を含むもの: ${areas.filter((a) => /東京|区部/.test(String(a['@name']))).map((a) => `${a['@code']}:${a['@name']}`).join(' / ') || 'なし'}`,
     );
   }
   const national = areaEntry['@code'];
