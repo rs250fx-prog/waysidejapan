@@ -1,0 +1,47 @@
+name: food-prices
+
+# 小売物価統計調査の全国平均を月次で取り直す。
+# 値が変わったときだけコミットするので、変化が無い月はビルドも起きない。
+#
+# 必要な Secret: ESTAT_APP_ID（e-Stat のアプリケーションID）
+# 未設定でもワークフローは落ちない。スクリプトが何もせずに終わる。
+
+on:
+  schedule:
+    # 小売物価統計は毎月下旬に前月分が公表される。JST 27日 10:10 ごろ
+    - cron: '10 1 27 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      # 成果物を作る前に、出口が開いていることを確かめる
+      - name: Check push access
+        run: git push --dry-run origin HEAD:${{ github.ref_name }}
+
+      - name: Fetch prices
+        env:
+          ESTAT_APP_ID: ${{ secrets.ESTAT_APP_ID }}
+        run: node tools/fetch-food-prices.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/food-prices.official.json; then
+            echo "no change"
+            exit 0
+          fi
+          git config user.name "wayside-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/food-prices.official.json
+          git commit -m "chore: 小売物価統計の全国平均を更新"
+          git push

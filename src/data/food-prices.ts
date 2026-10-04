@@ -17,16 +17,27 @@
  * 数値のうち official だけが自動で入れ替わる。
  */
 
+import officialData from './food-prices.official.json';
+
+export interface Official {
+  jpy: number;
+  /** 統計上の品目定義。言い換えない */
+  definition: string;
+  /** 調査月 YYYY-MM */
+  month: string;
+}
+
 export interface PriceEntry {
   name: string;
   nameJa: string;
-  official?: {
-    jpy: number;
-    /** 統計上の品目定義。言い換えない */
-    definition: string;
-    /** 調査月 YYYY-MM */
-    month: string;
-  };
+  /**
+   * 公的統計の品目キー。数値そのものは food-prices.official.json にあり、
+   * tools/fetch-food-prices.mjs が月次で書き換える。
+   * 分類（手書き）と数値（自動）を分けておかないと、更新のたびに
+   * 編集上の判断を機械が踏む
+   */
+  officialKey?: keyof typeof officialData.items;
+  official?: Official;
   reference?: {
     jpy: number;
     note?: string;
@@ -70,10 +81,10 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'The most reliable anchor in Japanese eating out. Everyday food, sold at prices that barely moved for a decade until recently.',
     items: [
-      { name: 'Ramen', nameJa: 'ラーメン', official: { jpy: 746, definition: '中華そば（しょう油味）外食 1杯', month: '2026-08' } },
+      { name: 'Ramen', nameJa: 'ラーメン', officialKey: 'ramen' },
       { name: 'Tsukemen', nameJa: 'つけ麺' },
-      { name: 'Soba', nameJa: '日本そば', official: { jpy: 742, definition: '日本そば 外食 1枚', month: '2026-07' } },
-      { name: 'Udon', nameJa: 'うどん', official: { jpy: 701, definition: 'うどん 外食 1杯', month: '2026-05' } },
+      { name: 'Soba', nameJa: '日本そば', officialKey: 'soba' },
+      { name: 'Udon', nameJa: 'うどん', officialKey: 'udon' },
       { name: 'Somen', nameJa: 'そうめん' },
       { name: 'Yakisoba', nameJa: '焼きそば' },
       { name: 'Standing soba at a station', nameJa: '立ち食いそば' },
@@ -89,7 +100,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Conveyor-belt sushi',
         nameJa: '回転ずし',
-        official: { jpy: 221, definition: '回転ずし店 にぎりずし／まぐろ（赤身）／2個', month: '2026-08' },
+        officialKey: 'sushi-kaiten',
       },
       { name: 'Sushi restaurant, lunch set', nameJa: '寿司店のランチ' },
       { name: 'Sushi restaurant, dinner', nameJa: '寿司店の夜' },
@@ -104,7 +115,7 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'Where the gap between everyday Japan and tourist Japan opens widest. A seafood bowl has no official figure, which is exactly why its price can be anything.',
     items: [
-      { name: 'Gyudon (beef bowl)', nameJa: '牛丼', official: { jpy: 565, definition: '牛丼 外食 1杯', month: '2026-08' } },
+      { name: 'Gyudon (beef bowl)', nameJa: '牛丼', officialKey: 'gyudon' },
       { name: 'Oyakodon (chicken and egg)', nameJa: '親子丼' },
       { name: 'Katsudon (pork cutlet)', nameJa: 'カツ丼' },
       { name: 'Tendon (tempura)', nameJa: '天丼' },
@@ -203,7 +214,7 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: '喫茶・甘味',
     intro: 'Useful for calibrating everything else. A coffee is the cheapest way to learn what a place thinks it is.',
     items: [
-      { name: 'Coffee, cafe', nameJa: 'コーヒー（喫茶店）', official: { jpy: 356, definition: 'コーヒー 外食 1杯', month: '2026-07' } },
+      { name: 'Coffee, cafe', nameJa: 'コーヒー（喫茶店）', officialKey: 'coffee' },
       { name: 'Matcha with a sweet', nameJa: '抹茶と和菓子' },
       { name: 'Kakigori (shaved ice)', nameJa: 'かき氷' },
       { name: 'Parfait', nameJa: 'パフェ' },
@@ -230,8 +241,8 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: 'ファストフード',
     intro: 'The floor of eating out in Japan, and a useful reminder of how little a meal can cost.',
     items: [
-      { name: 'Hamburger', nameJa: 'ハンバーガー', official: { jpy: 247, definition: 'ハンバーガー 外食 1個', month: '2026-02' } },
-      { name: 'Curry rice', nameJa: 'カレーライス', official: { jpy: 839, definition: 'カレーライス 外食 1皿', month: '2026-08' } },
+      { name: 'Hamburger', nameJa: 'ハンバーガー', officialKey: 'hamburger' },
+      { name: 'Curry rice', nameJa: 'カレーライス', officialKey: 'curry' },
       { name: 'Gyudon chain, regular', nameJa: '牛丼チェーン' },
       { name: 'Family restaurant, lunch', nameJa: 'ファミレスのランチ' },
     ],
@@ -309,6 +320,19 @@ export const FOOD_PRICES: PriceGroup[] = [
     ],
   },
 ];
+
+/** 分類（手書き）と数値（自動）を合成する。ページはこれだけを見る */
+for (const group of FOOD_PRICES) {
+  for (const item of group.items) {
+    if (item.officialKey) {
+      const row = (officialData.items as Record<string, Official>)[item.officialKey];
+      if (row) item.official = row;
+    }
+  }
+}
+
+/** 統計の最終更新日。ページに出す */
+export const officialUpdatedAt = officialData._updatedAt;
 
 export const totalItems = FOOD_PRICES.reduce((n, g) => n + g.items.length, 0);
 export const filledItems = FOOD_PRICES.reduce(

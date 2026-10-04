@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Price from '../../components/Price.astro';
 import RateNote from '../../components/RateNote.astro';
 import { LOCALES, SITE_URL, type Locale } from '../../config.ts';
-import { FOOD_PRICES, OFFICIAL_SOURCE, HESITATION_LINE, totalItems, filledItems } from '../../data/food-prices.ts';
+import { FOOD_PRICES, OFFICIAL_SOURCE, HESITATION_LINE, totalItems, filledItems, officialUpdatedAt } from '../../data/food-prices.ts';
 import { formatPrice } from '../../lib/money.ts';
 
 export function getStaticPaths() {
@@ -88,7 +88,7 @@ const graph = [
           <p>
             The national average from the <a href={OFFICIAL_SOURCE.url} rel="noopener">Retail Price Survey</a> run by the
             Statistics Bureau of Japan. The item definition and the month surveyed are given as published, not rounded or
-            reworded.
+            reworded. <strong>Refreshed monthly</strong> — last checked {officialUpdatedAt}.
           </p>
         </div>
         <div>
