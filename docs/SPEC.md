@@ -9,6 +9,7 @@
 - **リポジトリ**：https://github.com/rs250fx-prog/waysidejapan （`main` への push で自動デプロイ）
 - **ローカル**：`D:\OneDrive\01_仕事・事業\M16BIZ\waysidejapan`
 - **企画の原本**：`docs/HANDOFF.md`（凍結。更新しない）
+- **量産の設計図**：`docs/CONTENT-PLAN.md`（日数×入口空港の12本と枝記事）
 
 ---
 
