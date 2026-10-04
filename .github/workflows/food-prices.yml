@@ -11,6 +11,11 @@ on:
     # 小売物価統計は毎月下旬に前月分が公表される。JST 27日 10:10 ごろ
     - cron: '10 1 27 * *'
   workflow_dispatch:
+    inputs:
+      diagnose:
+        description: '統計表の分類一覧をログに出す（照合が合わないときだけ 1）'
+        required: false
+        default: '0'
 
 permissions:
   contents: write
@@ -32,6 +37,7 @@ jobs:
       - name: Fetch prices
         env:
           ESTAT_APP_ID: ${{ secrets.ESTAT_APP_ID }}
+          ESTAT_DIAG: ${{ inputs.diagnose || '0' }}
         run: node tools/fetch-food-prices.mjs
 
       - name: Commit if changed

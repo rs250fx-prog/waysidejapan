@@ -72,6 +72,25 @@ try {
 
   if (!itemClass) throw new Error('品目の分類が見つからない');
 
+  // 統計表の構造はこちらから見えないので、照合に失敗したとき用に
+  // 分類の一覧を出す。appId を手元に持たずに直せるようにするため
+  const DIAG = process.env.ESTAT_DIAG === '1';
+  if (DIAG) {
+    console.log('--- CLASS_OBJ ---');
+    for (const c of classObjs) {
+      const n = asArray(c.CLASS).length;
+      console.log(`  @id=${c['@id']}  name=${c['@name']}  件数=${n}`);
+    }
+    console.log(`--- ${itemClass['@id']} の先頭40件 ---`);
+    for (const c of asArray(itemClass.CLASS).slice(0, 40)) {
+      console.log(`  ${c['@code']}  ${c['@name']}`);
+    }
+    console.log('--- 「外食」を含む項目 ---');
+    for (const c of asArray(itemClass.CLASS).filter((x) => String(x['@name']).includes('外食')).slice(0, 40)) {
+      console.log(`  ${c['@code']}  ${c['@name']}`);
+    }
+  }
+
   const itemCodes = {};
   for (const [key, words] of Object.entries(ITEMS)) {
     const hit = asArray(itemClass.CLASS).find((c) => words.every((w) => String(c['@name']).includes(w)));
