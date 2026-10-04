@@ -58,7 +58,7 @@ const graph = [
       </div>
 
       <div class="scale">
-        <span class="line-label">Everyday prices, to scale</span>
+        <span class="line-label">Everyday prices, to scale — Tokyo ward area</span>
         <ul>
           {
             scale.map((i) => (
@@ -86,9 +86,10 @@ const graph = [
         <div>
           <span class="chip official">Survey</span>
           <p>
-            The national average from the <a href={OFFICIAL_SOURCE.url} rel="noopener">Retail Price Survey</a> run by the
-            Statistics Bureau of Japan. The item definition and the month surveyed are given as published, not rounded or
-            reworded. <strong>Refreshed monthly</strong> — last checked {officialUpdatedAt}.
+            Published figures from the <a href={OFFICIAL_SOURCE.url} rel="noopener">Retail Price Survey</a> run by the
+            Statistics Bureau of Japan, for the <strong>Tokyo ward area</strong>. The survey does not publish a national
+            average for eating out, so this page does not claim one. The item definition and the month surveyed are given
+            as published, not rounded or reworded. <strong>Refreshed monthly</strong> — last checked {officialUpdatedAt}.
           </p>
         </div>
         <div>
@@ -161,6 +162,7 @@ const graph = [
                           <span class="chip official">Survey</span>
                           <span class="sub">
                             {i.official.definition} · {monthLabel(i.official.month)}
+                            {i.official.area && <> · {i.official.area}</>}
                           </span>
                         </>
                       )}

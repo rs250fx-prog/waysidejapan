@@ -109,19 +109,24 @@ try {
     else console.log(`food-prices: 品目が見つからない — ${key}（${words.join(' + ')}）`);
   }
 
+  /**
+   * この調査の API には外食品目の全国平均が無い（都市別しか提供されない）。
+   * 全国平均は別形式でしか公表されていないため、東京都区部を基準に使い、
+   * ページでも「全国平均」とは名乗らず「東京都区部」と書く。
+   *
+   * 自分で各都市を平均して「全国平均」と称するのは、重み付けが違うので誤り。
+   */
   const areas = asArray(areaClass?.CLASS);
-  const nationalEntry = areas.find((c) => String(c['@name']).includes('全国'));
-  // 全国が無い表なら中止する。別の都市の値を「全国平均」として出すのが
-  // 最悪の失敗で、しかも見た目には気づけない
-  const areaEntry = nationalEntry;
+  const areaEntry =
+    areas.find((c) => String(c['@name']).includes('全国')) ??
+    areas.find((c) => String(c['@name']).includes('東京都区部'));
   if (DIAG) {
     console.log(`--- 地域：${areas.length}件／全国=${nationalEntry ? 'あり' : 'なし'}／使う=${areaEntry?.['@name']} (${areaEntry?.['@code']}) ---`);
     for (const a of areas.slice(0, 8)) console.log(`  ${a['@code']}  ${a['@name']}`);
   }
   if (!areaEntry) {
     throw new Error(
-      `この統計表に全国平均が無い（地域 ${areas.length} 件、先頭: ${areas.slice(0, 3).map((a) => a['@name']).join(' / ')}）。` +
-        'ESTAT_STATS_ID で全国平均を持つ表を指定すること',
+      `基準にする地域が取れない（地域 ${areas.length} 件、先頭: ${areas.slice(0, 3).map((a) => a['@name']).join(' / ')}）`,
     );
   }
   const national = areaEntry['@code'];

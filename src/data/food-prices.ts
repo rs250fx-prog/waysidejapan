@@ -25,6 +25,11 @@ export interface Official {
   definition: string;
   /** 調査月 YYYY-MM */
   month: string;
+  /**
+   * どの地域の値か。この調査の API には外食品目の全国平均が無いので、
+   * 東京都区部を基準に使う。「全国平均」と名乗らないための記録
+   */
+  area?: string;
 }
 
 export interface PriceEntry {
