@@ -81,6 +81,7 @@ export const PRICE_STALE_MONTHS = 6;
  * 404 へのリンクを構造で防ぐための表なので、ページを作ったらここも true にする。
  */
 export const ROUTES = {
+  foodPrices: true,
   areaHub: false,
   passes: false,
   itineraries: false,

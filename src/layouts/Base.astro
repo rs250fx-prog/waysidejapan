@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import DemoRibbon from '../components/DemoRibbon.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { SITE_NAME, TAGLINE, NAV, GA4_MEASUREMENT_ID, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
+import { SITE_NAME, TAGLINE, NAV, ROUTES, GA4_MEASUREMENT_ID, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 
 interface Props {
@@ -65,6 +65,18 @@ const here = Astro.url.pathname;
                 {t(locale, `nav.${n.key}` as UIKey)}
               </a>
             ))
+          }
+          {
+            /* 価格基準は全ページから常時たどれるようにする。
+               どの記事にも金額が出るので、参照先が常に一手で開ける必要がある */
+            ROUTES.foodPrices && (
+              <a
+                href={`/${locale}/food-prices/`}
+                class:list={['nav-link', { current: here.startsWith(`/${locale}/food-prices/`) }]}
+              >
+                Prices
+              </a>
+            )
           }
           <a class="nav-link muted" href={`/${locale}/about/`}>{t(locale, 'nav.about')}</a>
         </nav>

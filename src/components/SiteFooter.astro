@@ -31,6 +31,7 @@ const guideItems: Item[] = NAV.map((n) => ({
 }));
 
 const planItems: Item[] = [
+  { label: 'What food costs', href: ROUTES.foodPrices ? `/${locale}/food-prices/` : undefined, note: ROUTES.foodPrices ? undefined : 'Soon' },
   { label: 'Rail passes, compared', href: ROUTES.passes ? `/${locale}/passes/` : undefined, note: ROUTES.passes ? undefined : 'Soon' },
   { label: 'Itineraries', href: ROUTES.itineraries ? `/${locale}/itineraries/` : undefined, note: ROUTES.itineraries ? undefined : 'Soon' },
   { label: 'Budget calculator', note: 'Soon' },

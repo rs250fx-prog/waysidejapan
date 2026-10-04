@@ -1,0 +1,544 @@
+---
+import Base from '../../layouts/Base.astro';
+import Price from '../../components/Price.astro';
+import RateNote from '../../components/RateNote.astro';
+import { LOCALES, SITE_URL, type Locale } from '../../config.ts';
+import { FOOD_PRICES, OFFICIAL_SOURCE, HESITATION_LINE, totalItems, filledItems } from '../../data/food-prices.ts';
+import { formatPrice } from '../../lib/money.ts';
+
+export function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as Locale;
+
+const monthLabel = (m: string) =>
+  new Date(`${m}-01T00:00:00Z`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+/** 統計のある品目だけを安い順に並べ、ページ冒頭の目盛りにする */
+const scale = FOOD_PRICES.flatMap((g) => g.items)
+  .filter((i) => i.official)
+  .sort((a, b) => a.official!.jpy - b.official!.jpy);
+const scaleMax = Math.max(...scale.map((i) => i.official!.jpy), HESITATION_LINE);
+
+const graph = [
+  {
+    '@type': 'WebPage',
+    name: 'What food costs in Japan',
+    description: 'Reference prices for Japanese food, from the government retail price survey and from a resident.',
+    url: new URL(`/${lang}/food-prices/`, SITE_URL).href,
+  },
+];
+---
+
+<Base
+  locale={lang}
+  title="What food costs in Japan"
+  description="Reference prices for Japanese food in one page: government survey averages for ramen, soba, udon, gyudon and more, the line above which locals hesitate, and what the same dishes cost in tourist areas."
+  graph={graph}
+>
+  <div class="wrap head">
+    <p class="kicker">Reference</p>
+    <h1>What food costs in Japan</h1>
+    <p class="dek">
+      Every guide tells you a place is cheap or expensive. Almost none tell you what the normal price is. This page is
+      the answer in one table: what the government price survey says, what a resident expects to pay, and where tourist
+      areas sit against both.
+    </p>
+  </div>
+
+  <section class="band">
+    <div class="wrap band-inner">
+      <div class="line">
+        <span class="line-label">The line</span>
+        <span class="line-value"><Price jpy={HESITATION_LINE} /></span>
+        <span class="line-note">
+          Above this for a lunch, a Japanese customer stops and decides rather than simply ordering. It holds even
+          somewhere good, even somewhere famous.
+        </span>
+      </div>
+
+      <div class="scale">
+        <span class="line-label">Everyday prices, to scale</span>
+        <ul>
+          {
+            scale.map((i) => (
+              <li>
+                <span class="bar-name">{i.name}</span>
+                <span class="bar" style={`width: ${Math.round((i.official!.jpy / scaleMax) * 100)}%`} />
+                <span class="bar-value">{formatPrice(i.official!.jpy)}</span>
+              </li>
+            ))
+          }
+          <li class="limit">
+            <span class="bar-name">The line</span>
+            <span class="bar line-bar" style={`width: ${Math.round((HESITATION_LINE / scaleMax) * 100)}%`}></span>
+            <span class="bar-value">{formatPrice(HESITATION_LINE)}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap body">
+    <section class="legend">
+      <h2>Two kinds of number on this page</h2>
+      <div class="legend-grid">
+        <div>
+          <span class="chip official">Survey</span>
+          <p>
+            The national average from the <a href={OFFICIAL_SOURCE.url} rel="noopener">Retail Price Survey</a> run by the
+            Statistics Bureau of Japan. The item definition and the month surveyed are given as published, not rounded or
+            reworded.
+          </p>
+        </div>
+        <div>
+          <span class="chip reference">Local</span>
+          <p>
+            My own reference price, for dishes the survey does not cover. It is the level at which a Japanese customer
+            orders without thinking about it, with the month I last checked.
+          </p>
+        </div>
+        <div>
+          <span class="chip tourist">Tourist area</span>
+          <p>What the same dish costs where visitors are the customers. Sourced or seen, with the date either way.</p>
+        </div>
+      </div>
+    </section>
+
+    {
+      FOOD_PRICES.map((group, gi) => (
+        <details class="group" open={gi === 0}>
+          <summary>
+            <span class="g-name">
+              {group.name} <span class="g-ja">{group.nameJa}</span>
+            </span>
+            <span class="g-count">
+              {group.items.filter((i) => i.official || i.reference).length}/{group.items.length}
+            </span>
+          </summary>
+          <div class="group-body">
+            <p class="g-intro">{group.intro}</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Dish</th>
+                  <th>Everyday price</th>
+                  <th>Tourist area</th>
+                  <th>Basis</th>
+                </tr>
+              </thead>
+              <tbody>
+                {group.items.map((i) => (
+                  <tr class:list={[{ empty: !i.official && !i.reference }]}>
+                    <td>
+                      <strong>{i.name}</strong>
+                      <span class="ja">{i.nameJa}</span>
+                    </td>
+                    <td>
+                      {i.official ? (
+                        <span class="price-cell">{formatPrice(i.official.jpy)}</span>
+                      ) : i.reference ? (
+                        <span class="price-cell">{formatPrice(i.reference.jpy)}</span>
+                      ) : i.noFixedPrice ? (
+                        <span class="nofix">No fixed price</span>
+                      ) : (
+                        <span class="todo">not set yet</span>
+                      )}
+                    </td>
+                    <td>
+                      {i.tourist ? (
+                        <>
+                          <span class="price-cell">{formatPrice(i.tourist.jpy)}</span>
+                          <span class="sub">{i.tourist.note}</span>
+                        </>
+                      ) : (
+                        <span class="sub">—</span>
+                      )}
+                    </td>
+                    <td>
+                      {i.official && (
+                        <>
+                          <span class="chip official">Survey</span>
+                          <span class="sub">
+                            {i.official.definition} · {monthLabel(i.official.month)}
+                          </span>
+                        </>
+                      )}
+                      {!i.official && i.reference && (
+                        <>
+                          <span class="chip reference">Local</span>
+                          <span class="sub">
+                            {i.reference.note} · {monthLabel(i.reference.seenOn)}
+                          </span>
+                        </>
+                      )}
+                      {i.noFixedPrice && (
+                        <>
+                          <span class="chip nofix-chip">No number</span>
+                          <span class="sub">{i.noFixedPrice.why}</span>
+                          <span class="sub todo-do">{i.noFixedPrice.whatToDo}</span>
+                        </>
+                      )}
+                      {!i.official && !i.reference && !i.noFixedPrice && <span class="sub">—</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+      ))
+    }
+
+    <section class="fill">
+      <h2>This page is being filled in</h2>
+      <p>
+        {filledItems} of {totalItems} dishes have a number so far. The gaps are dishes the government survey does not
+        cover — seafood bowls, set meals, yakiniku, station bento — where the figure has to come from someone who eats
+        them. Those are being added with the month each was checked, rather than guessed at now.
+      </p>
+    </section>
+
+    <RateNote />
+  </div>
+</Base>
+
+<style>
+  .head {
+    padding-block: 30px 24px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  .kicker {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+  .dek {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: 760px;
+  }
+
+  .band {
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .band-inner {
+    display: flex;
+    gap: 40px;
+    padding-block: 24px 28px;
+    align-items: flex-start;
+  }
+  .line {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .line-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .line-value {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .line-note {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+  .scale {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .scale ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .scale li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+  }
+  .bar-name {
+    flex: 0 0 140px;
+    text-align: right;
+    color: var(--ink-2);
+  }
+  .bar {
+    height: 14px;
+    background: var(--accent);
+    min-width: 2px;
+  }
+  .limit .bar-name,
+  .limit .bar-value {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .line-bar {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent) 0 6px,
+      transparent 6px 10px
+    );
+  }
+  .bar-value {
+    white-space: nowrap;
+    color: var(--muted-2);
+  }
+
+  .body {
+    max-width: 1000px;
+    padding-block: 30px 0;
+  }
+
+  .legend {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 20px 22px;
+    margin-bottom: 26px;
+  }
+  .legend h2 {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .legend p {
+    margin: 7px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  .chip {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+  }
+  .chip.official {
+    color: var(--confirm);
+    border-color: var(--confirm-line);
+    background: var(--confirm-bg);
+  }
+  .chip.reference {
+    color: var(--accent);
+    border-color: #e0c7b5;
+    background: var(--caution-bg);
+  }
+  .chip.tourist {
+    color: var(--muted-2);
+    background: var(--surface-2);
+  }
+
+  /* 大項目のトグル。JS を使わず details で開閉する */
+  .group {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    margin-bottom: 12px;
+  }
+  .group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 15px 20px;
+    cursor: pointer;
+    min-height: 44px;
+    list-style: none;
+  }
+  .group summary::-webkit-details-marker {
+    display: none;
+  }
+  .group summary::before {
+    content: '+';
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--accent);
+    width: 16px;
+    flex-shrink: 0;
+  }
+  .group[open] summary::before {
+    content: '–';
+  }
+  .g-name {
+    flex: 1 1 auto;
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .g-ja {
+    font-family: var(--font-jp);
+    font-size: 14px;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+  .g-count {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .group-body {
+    border-top: 1px solid var(--line);
+    padding: 16px 20px 20px;
+  }
+  .g-intro {
+    margin: 0 0 14px;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  thead th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--ink);
+    padding: 0 10px 8px 0;
+  }
+  td {
+    border-bottom: 1px solid var(--line-2);
+    padding: 11px 10px 11px 0;
+    vertical-align: top;
+  }
+  tr.empty td {
+    color: var(--muted);
+  }
+  .ja {
+    display: block;
+    font-family: var(--font-jp);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .price-cell {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .sub {
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .nofix {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .chip.nofix-chip {
+    color: var(--accent);
+    border-color: #e0c7b5;
+    background: var(--caution-bg);
+  }
+  .todo-do {
+    color: var(--ink-2);
+    margin-top: 5px;
+  }
+  .todo {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .fill {
+    margin: 24px 0;
+    border-left: 3px solid var(--accent);
+    background: var(--surface-2);
+    padding: 18px 20px;
+  }
+  .fill h2 {
+    font-size: 19px;
+    margin-bottom: 8px;
+  }
+  .fill p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+  }
+
+  @media (max-width: 900px) {
+    h1 {
+      font-size: 30px;
+    }
+    .band-inner {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .line {
+      flex: none;
+    }
+    .legend-grid {
+      grid-template-columns: 1fr;
+    }
+    .bar-name {
+      flex: 0 0 90px;
+      font-size: 13px;
+    }
+    table,
+    thead,
+    tbody,
+    tr,
+    td {
+      display: block;
+    }
+    thead {
+      display: none;
+    }
+    tr {
+      border-bottom: 1px solid var(--line);
+      padding-block: 10px;
+    }
+    td {
+      border: none;
+      padding: 3px 0;
+    }
+  }
+</style>
