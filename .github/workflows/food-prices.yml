@@ -12,6 +12,10 @@ on:
     - cron: '10 1 27 * *'
   workflow_dispatch:
     inputs:
+      statsId:
+        description: '統計表ID（空なら既定。全国平均を持つ表を探すとき用）'
+        required: false
+        default: ''
       diagnose:
         description: '統計表の分類一覧をログに出す（照合が合わないときだけ 1）'
         required: false
@@ -38,6 +42,7 @@ jobs:
         env:
           ESTAT_APP_ID: ${{ secrets.ESTAT_APP_ID }}
           ESTAT_DIAG: ${{ inputs.diagnose || '0' }}
+          ESTAT_STATS_ID: ${{ inputs.statsId }}
         run: node tools/fetch-food-prices.mjs
 
       - name: Commit if changed

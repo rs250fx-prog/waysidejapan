@@ -21,7 +21,7 @@ const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const FILE = join(ROOT, 'src', 'data', 'food-prices.official.json');
 
 /** 統計表：小売物価統計調査 主要品目の都市別小売価格（都道府県庁所在市等） */
-const STATS_DATA_ID = '0003421913';
+const STATS_DATA_ID = process.env.ESTAT_STATS_ID || '0003421913';
 /** 全国平均の地域コード。メタから拾えなければこれを使う */
 const AREA_FALLBACK = '00000';
 
@@ -111,15 +111,19 @@ try {
 
   const areas = asArray(areaClass?.CLASS);
   const nationalEntry = areas.find((c) => String(c['@name']).includes('全国'));
-  // この表は「都道府県庁所在市及び人口15万以上の市」なので全国平均が無い場合がある。
-  // そのときは東京都区部を基準にし、どの地域の値かを JSON に残す
-  const fallbackEntry = areas.find((c) => String(c['@name']).includes('東京都区部')) ?? areas[0];
-  const areaEntry = nationalEntry ?? fallbackEntry;
+  // 全国が無い表なら中止する。別の都市の値を「全国平均」として出すのが
+  // 最悪の失敗で、しかも見た目には気づけない
+  const areaEntry = nationalEntry;
   if (DIAG) {
     console.log(`--- 地域：${areas.length}件／全国=${nationalEntry ? 'あり' : 'なし'}／使う=${areaEntry?.['@name']} (${areaEntry?.['@code']}) ---`);
     for (const a of areas.slice(0, 8)) console.log(`  ${a['@code']}  ${a['@name']}`);
   }
-  if (!areaEntry) throw new Error('地域の分類が取れない');
+  if (!areaEntry) {
+    throw new Error(
+      `この統計表に全国平均が無い（地域 ${areas.length} 件、先頭: ${areas.slice(0, 3).map((a) => a['@name']).join(' / ')}）。` +
+        'ESTAT_STATS_ID で全国平均を持つ表を指定すること',
+    );
+  }
   const national = areaEntry['@code'];
   const areaName = String(areaEntry['@name']);
 
@@ -136,6 +140,9 @@ try {
 
       const values = asArray(data?.GET_STATS_DATA?.STATISTICAL_DATA?.DATA_INF?.VALUE)
         .filter((v) => v['$'] && !Number.isNaN(Number(v['$'])))
+        // @time は YYYYMMDD 形式。月が 00 のものは年平均なので除く。
+        // 年平均を月次と混ぜると「いつの値か」が崩れる
+        .filter((v) => /^\d{4}(0[1-9]|1[0-2])/.test(String(v['@time'])))
         .sort((a, b) => String(b['@time']).localeCompare(String(a['@time'])));
 
       if (!values.length) {
