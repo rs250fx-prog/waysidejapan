@@ -86,7 +86,16 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'The most reliable anchor in Japanese eating out. Everyday food, sold at prices that barely moved for a decade until recently.',
     items: [
-      { name: 'Ramen', nameJa: 'ラーメン', officialKey: 'ramen' },
+      {
+        name: 'Ramen',
+        nameJa: 'ラーメン',
+        officialKey: 'ramen',
+        reference: {
+          jpy: 1000,
+          note: 'From ¥800 for a plain bowl in Tokyo, about ¥1,000 once you add toppings',
+          seenOn: '2026-10',
+        },
+      },
       { name: 'Tsukemen', nameJa: 'つけ麺' },
       { name: 'Soba', nameJa: '日本そば', officialKey: 'soba' },
       { name: 'Udon', nameJa: 'うどん', officialKey: 'udon' },

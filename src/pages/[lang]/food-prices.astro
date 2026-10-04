@@ -100,6 +100,13 @@ const graph = [
           </p>
         </div>
         <div>
+          <span class="chip tourist">Both</span>
+          <p>
+            Where the survey and the street disagree, this page shows both. Ramen is the clearest case: the surveyed
+            figure is well under what a bowl actually costs in Tokyo once you order it the way people order it.
+          </p>
+        </div>
+        <div>
           <span class="chip tourist">Tourist area</span>
           <p>What the same dish costs where visitors are the customers. Sourced or seen, with the date either way.</p>
         </div>
@@ -136,7 +143,12 @@ const graph = [
                       <span class="ja">{i.nameJa}</span>
                     </td>
                     <td>
-                      {i.official ? (
+                      {i.official && i.reference ? (
+                        <>
+                          <span class="price-cell">{formatPrice(i.reference.jpy)}</span>
+                          <span class="sub survey-sub">Survey says {formatPrice(i.official.jpy)}</span>
+                        </>
+                      ) : i.official ? (
                         <span class="price-cell">{formatPrice(i.official.jpy)}</span>
                       ) : i.reference ? (
                         <span class="price-cell">{formatPrice(i.reference.jpy)}</span>
@@ -157,7 +169,20 @@ const graph = [
                       )}
                     </td>
                     <td>
-                      {i.official && (
+                      {i.official && i.reference && (
+                        <>
+                          <span class="chip reference">Local</span>
+                          <span class="sub">
+                            {i.reference.note} · {monthLabel(i.reference.seenOn)}
+                          </span>
+                          <span class="chip official">Survey</span>
+                          <span class="sub">
+                            {i.official.definition} · {monthLabel(i.official.month)}
+                            {i.official.area && <> · {i.official.area}</>}
+                          </span>
+                        </>
+                      )}
+                      {i.official && !i.reference && (
                         <>
                           <span class="chip official">Survey</span>
                           <span class="sub">
@@ -331,7 +356,7 @@ const graph = [
   }
   .legend-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
   .legend p {
@@ -482,6 +507,10 @@ const graph = [
   .todo-do {
     color: var(--ink-2);
     margin-top: 5px;
+  }
+  .survey-sub {
+    color: var(--muted);
+    font-style: italic;
   }
   .todo {
     font-size: 13px;
