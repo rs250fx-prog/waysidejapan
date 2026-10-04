@@ -3,13 +3,53 @@
   "_updatedAt": "2026-10-04",
   "_source": "e-Stat API / 小売物価統計調査",
   "items": {
-    "ramen": { "jpy": 746, "definition": "中華そば（しょう油味）外食 1杯", "month": "2026-08" },
-    "soba": { "jpy": 742, "definition": "日本そば 外食 1枚", "month": "2026-07" },
-    "udon": { "jpy": 701, "definition": "うどん 外食 1杯", "month": "2026-05" },
-    "gyudon": { "jpy": 565, "definition": "牛丼 外食 1杯", "month": "2026-08" },
-    "curry": { "jpy": 839, "definition": "カレーライス 外食 1皿", "month": "2026-08" },
-    "hamburger": { "jpy": 247, "definition": "ハンバーガー 外食 1個", "month": "2026-02" },
-    "coffee": { "jpy": 356, "definition": "コーヒー 外食 1杯", "month": "2026-07" },
-    "sushi-kaiten": { "jpy": 221, "definition": "回転ずし店 にぎりずし／まぐろ（赤身）／2個", "month": "2026-08" }
+    "ramen": {
+      "jpy": 883,
+      "definition": "中華そば（しょう油味）外食 1杯",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "soba": {
+      "jpy": 773,
+      "definition": "日本そば 外食 1枚",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "udon": {
+      "jpy": 628,
+      "definition": "うどん 外食 1杯",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "gyudon": {
+      "jpy": 489,
+      "definition": "牛丼 外食 1杯",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "curry": {
+      "jpy": 884,
+      "definition": "カレーライス 外食 1皿",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "hamburger": {
+      "jpy": 288,
+      "definition": "ハンバーガー 外食 1個",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "coffee": {
+      "jpy": 543,
+      "definition": "コーヒー 外食 1杯",
+      "month": "2026-00",
+      "area": "札幌市"
+    },
+    "sushi-kaiten": {
+      "jpy": 330,
+      "definition": "回転ずし店 にぎりずし／まぐろ（赤身）／2個",
+      "month": "2026-00",
+      "area": "札幌市"
+    }
   }
 }
