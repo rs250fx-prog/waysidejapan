@@ -30,14 +30,16 @@ const AREA_FALLBACK = '00000';
  * 名前で照合するので、表記ゆれに耐えるよう短めの語を置く。
  */
 const ITEMS = {
-  ramen: ['中華そば'],
-  soba: ['日本そば'],
-  udon: ['うどん', '外食'],
-  gyudon: ['牛丼'],
-  curry: ['カレーライス'],
-  hamburger: ['ハンバーガー'],
-  coffee: ['コーヒー', '外食'],
-  'sushi-kaiten': ['すし', '外食'],
+  ramen: ['中華そば(外食)'],
+  soba: ['日本そば(外食)'],
+  udon: ['うどん(外食)'],
+  gyudon: ['牛丼(外食)'],
+  curry: ['カレーライス(外食)'],
+  hamburger: ['ハンバーガー(外食)'],
+  // コーヒーは「喫茶店」と「セルフサービス店」の2品目がある。喫茶店を取る
+  coffee: ['コーヒー(外食)', '喫茶店'],
+  // すしは「にぎりずし」と「回転ずし」がある。回転ずしを取る
+  'sushi-kaiten': ['すし(外食)', '回転ずし'],
 };
 
 const APP_ID = process.env.ESTAT_APP_ID;
@@ -64,6 +66,7 @@ try {
   const meta = await api('getMetaInfo', { statsDataId: STATS_DATA_ID });
   const classObjs = meta?.GET_META_INFO?.METADATA_INF?.CLASS_INF?.CLASS_OBJ ?? [];
 
+  const DIAG = process.env.ESTAT_DIAG === '1';
   const asArray = (x) => (Array.isArray(x) ? x : x ? [x] : []);
   const findClass = (...ids) => classObjs.find((c) => ids.includes(c['@id']));
 
@@ -80,7 +83,6 @@ try {
 
   // 統計表の構造はこちらから見えないので、照合に失敗したとき用に
   // 分類の一覧を出す。appId を手元に持たずに直せるようにするため
-  const DIAG = process.env.ESTAT_DIAG === '1';
   if (DIAG) {
     console.log('--- CLASS_OBJ ---');
     for (const c of classObjs) {
@@ -100,13 +102,26 @@ try {
 
   const itemCodes = {};
   for (const [key, words] of Object.entries(ITEMS)) {
-    const hit = asArray(itemClass.CLASS).find((c) => words.every((w) => String(c['@name']).includes(w)));
+    const hit = asArray(itemClass.CLASS)
+      .filter((c) => !String(c['@name']).includes('調査終了'))
+      .find((c) => words.every((w) => String(c['@name']).includes(w)));
     if (hit) itemCodes[key] = { code: hit['@code'], name: hit['@name'] };
     else console.log(`food-prices: 品目が見つからない — ${key}（${words.join(' + ')}）`);
   }
 
-  const national =
-    asArray(areaClass?.CLASS).find((c) => String(c['@name']).includes('全国'))?.['@code'] ?? AREA_FALLBACK;
+  const areas = asArray(areaClass?.CLASS);
+  const nationalEntry = areas.find((c) => String(c['@name']).includes('全国'));
+  // この表は「都道府県庁所在市及び人口15万以上の市」なので全国平均が無い場合がある。
+  // そのときは東京都区部を基準にし、どの地域の値かを JSON に残す
+  const fallbackEntry = areas.find((c) => String(c['@name']).includes('東京都区部')) ?? areas[0];
+  const areaEntry = nationalEntry ?? fallbackEntry;
+  if (DIAG) {
+    console.log(`--- 地域：${areas.length}件／全国=${nationalEntry ? 'あり' : 'なし'}／使う=${areaEntry?.['@name']} (${areaEntry?.['@code']}) ---`);
+    for (const a of areas.slice(0, 8)) console.log(`  ${a['@code']}  ${a['@name']}`);
+  }
+  if (!areaEntry) throw new Error('地域の分類が取れない');
+  const national = areaEntry['@code'];
+  const areaName = String(areaEntry['@name']);
 
   // 2. 品目ごとに最新値を取る
   for (const [key, { code, name }] of Object.entries(itemCodes)) {
@@ -124,7 +139,9 @@ try {
         .sort((a, b) => String(b['@time']).localeCompare(String(a['@time'])));
 
       if (!values.length) {
-        console.log(`food-prices: 値が空 — ${key}`);
+        const status = data?.GET_STATS_DATA?.RESULT?.STATUS;
+        const msg = data?.GET_STATS_DATA?.RESULT?.ERROR_MSG;
+        console.log(`food-prices: 値が空 — ${key}（status=${status} ${msg ?? ''}）`);
         continue;
       }
 
@@ -136,7 +153,7 @@ try {
 
       const before = current.items[key];
       if (!before || before.jpy !== jpy || before.month !== month) {
-        next.items[key] = { jpy, definition: before?.definition ?? name, month };
+        next.items[key] = { jpy, definition: before?.definition ?? name, month, area: areaName };
         console.log(`food-prices: ${key} ${before?.jpy ?? '—'} → ${jpy}（${month}）`);
         changed++;
       }
