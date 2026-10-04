@@ -148,9 +148,9 @@ try {
 
       const values = asArray(data?.GET_STATS_DATA?.STATISTICAL_DATA?.DATA_INF?.VALUE)
         .filter((v) => v['$'] && !Number.isNaN(Number(v['$'])))
-        // @time は YYYYMMDD 形式。月が 00 のものは年平均なので除く。
-        // 年平均を月次と混ぜると「いつの値か」が崩れる
-        .filter((v) => /^\d{4}(0[1-9]|1[0-2])/.test(String(v['@time'])))
+        // e-Stat の月次コードは 2026000808（= 2026年8月）の形。
+        // 年(0-4) + "00" + 月(6-8) + 月(8-10)。年平均は月の位置が 00 になる
+        .filter((v) => /^(0[1-9]|1[0-2])$/.test(String(v['@time']).slice(6, 8)))
         .sort((a, b) => String(b['@time']).localeCompare(String(a['@time'])));
 
       if (!values.length) {
@@ -162,9 +162,8 @@ try {
 
       const latest = values[0];
       const jpy = Math.round(Number(latest['$']));
-      // @time は YYYYMM00 の形で返る
       const t = String(latest['@time']);
-      const month = `${t.slice(0, 4)}-${t.slice(4, 6)}`;
+      const month = `${t.slice(0, 4)}-${t.slice(6, 8)}`;
 
       const before = current.items[key];
       if (!before || before.jpy !== jpy || before.month !== month) {
