@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import RateNote from '../components/RateNote.astro';
+import Icon from '../components/Icon.astro';
 import { AUTHOR, SITE_URL, hasAnyAffiliate, type Locale } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 import { formatMonth } from '../lib/money.ts';
@@ -25,6 +26,9 @@ const graph: Record<string, unknown>[] = [
     datePublished: d.pubDate.toISOString(),
     ...(d.updatedDate && { dateModified: d.updatedDate.toISOString() }),
     author: { '@id': `${SITE_URL}/#author` },
+    publisher: { '@id': `${SITE_URL}/#publisher` },
+    // 記事が自前の写真を持つまでは共有用の既定画像を指す
+    image: new URL('/og-default.png', SITE_URL).href,
     mainEntityOfPage: url,
     inLanguage: locale,
   },
@@ -62,10 +66,14 @@ if (d.faq.length > 0) {
   noindex={shouldNoindex(entry, IS_PUBLIC)}
   alternates={alternates}
   graph={graph}
+  ogType="article"
+  publishedTime={d.pubDate.toISOString()}
+  modifiedTime={d.updatedDate?.toISOString()}
 >
   <article class="wrap article">
     <nav class="crumbs" aria-label="Breadcrumb">
-      <a href={`/${locale}/`}>Home</a> ›
+      <a href={`/${locale}/`}>Home</a>
+      <span aria-hidden="true">›</span>
       <a href={`/${locale}/${d.category}/`}>{t(locale, `nav.${d.category}` as UIKey)}</a>
     </nav>
 
@@ -77,7 +85,7 @@ if (d.faq.length > 0) {
          同じ装飾を両方に付けると、本当に行った記事の価値まで下がる */
     }
     <div class="byline">
-      <span class="avatar" aria-hidden="true"></span>
+      <span class="avatar" aria-hidden="true"><Icon name="about" /></span>
       <span>
         <strong>{AUTHOR.name}</strong> · {AUTHOR.credential}
         {d.basis === 'visited' && d.experience && <> · Rode this route {d.experience.visitedOn}</>}
@@ -85,11 +93,11 @@ if (d.faq.length > 0) {
       {
         d.basis === 'visited' ? (
           <span class="badge-verified">
-            {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn)}
+            <Icon name="verified" /> {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn)}
           </span>
         ) : (
           <span class="badge-researched">
-            Researched · {d.sources.length} {d.sources.length === 1 ? 'source' : 'sources'}
+            <Icon name="sources" /> Researched · {d.sources.length} {d.sources.length === 1 ? 'source' : 'sources'}
           </span>
         )
       }
@@ -184,6 +192,11 @@ if (d.faq.length > 0) {
     border-radius: 50%;
     background: #efe6d6;
     border: 1px solid #ded3bf;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 17px;
   }
   .badge-researched {
     font-family: var(--font-display);

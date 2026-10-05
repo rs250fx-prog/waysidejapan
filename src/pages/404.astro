@@ -1,0 +1,116 @@
+---
+/**
+ * 404。Cloudflare Pages は dist/404.html があるとき、存在しない URL にこれを 404 で返す。
+ * 無いと SPA とみなされ、どの URL にもトップページを 200 で返してしまう
+ * （検索エンジンには重複ページに見える）。
+ *
+ * IS_PUBLIC と無関係に恒久 noindex（docs/SPEC.md 第11節）。
+ */
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { DEFAULT_LOCALE, NAV, ROUTES } from '../config.ts';
+import { t, type UIKey } from '../i18n/ui.ts';
+
+const lang = DEFAULT_LOCALE;
+const nav = NAV.filter((n) => n.enabled);
+---
+
+<Base
+  locale={lang}
+  title="Page not found"
+  description="This page does not exist on Wayside Japan. Start again from the guides, the food price reference or the front page."
+  noindex
+>
+  <div class="wrap nf">
+    <p class="kicker">404</p>
+    <h1>This stop is not on the line</h1>
+    <p class="dek">
+      The page you asked for does not exist, or it has moved. Nothing is broken on your side. Pick up the route from one
+      of these.
+    </p>
+    <ul class="ways">
+      <li>
+        <a href={`/${lang}/`}><Icon name="pin" /> Front page</a>
+      </li>
+      {
+        nav.map((n) => (
+          <li>
+            <a href={`/${lang}/${n.key}/`}>
+              <Icon name={n.key} /> {t(lang, `nav.${n.key}` as UIKey)}
+            </a>
+          </li>
+        ))
+      }
+      {
+        ROUTES.foodPrices && (
+          <li>
+            <a href={`/${lang}/food-prices/`}>
+              <Icon name="prices" /> What food costs in Japan
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .nf {
+    max-width: 760px;
+    padding-block: 56px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .kicker {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-size: 44px;
+    line-height: 1.1;
+  }
+  .dek {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .ways {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+  }
+  .ways li {
+    border-bottom: 1px solid var(--line);
+  }
+  .ways a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .ways a:hover {
+    color: var(--accent);
+  }
+  .ways :global(.icon) {
+    color: var(--accent);
+    font-size: 22px;
+  }
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 32px;
+    }
+  }
+</style>

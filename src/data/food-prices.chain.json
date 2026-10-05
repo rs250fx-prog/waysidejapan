@@ -350,6 +350,81 @@
       "unresolved": [
         { "chainJa": "星乃珈琲店", "url": "https://www.hoshinocoffee.com/menu.html", "reason": "公式サイトに価格の掲載なし" }
       ]
+    },
+    "sushi-lunch": {
+      "what": "Weekday lunch nigiri set, with soup and chawanmushi",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Sushizanmai", "chainJa": "すしざんまい", "product": "つぼみ 1人前〜人気ランキングにぎり", "jpy": 1188, "jpyMax": 2530, "url": "https://www.kiyomura.co.jp/menu/lunch?menu_type=4&store_id=8", "note": "Weekdays until 15:00, at most Tokyo branches. Tax is not stated on the lunch menu", "memo": "有楽町店のランチページ。つぼみ1,188／かすみ1,738／人気ランキングにぎり2,530。赤羽店は1,078〜、本店・浅草雷門店などはランチ設定なし", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "sushi-dinner": {
+      "what": "Nigiri set from the regular menu",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Sushizanmai", "chainJa": "すしざんまい", "product": "こころ粋〜極上まぐろざんまい", "jpy": 3828, "jpyMax": 5478, "url": "https://www.kiyomura.co.jp/menu?menu_id=1", "note": "The same menu and prices all day. There is no separate evening price", "memo": "グランドメニューのにぎりセット4種：こころ粋3,828（12貫＋鉄火巻ハーフ）／まぐろざんまい4,158／特選すしざんまい5,148（13貫）／極上まぐろざんまい5,478。単品は1個140円〜", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "wagyu-lunch": {
+      "what": "Wagyu sirloin steak lunch",
+      "tier": "shop",
+      "chains": [
+        { "chain": "Matsunami", "chainJa": "ステーキハウス松波", "product": "特選サーロインステーキ", "jpy": 6600, "url": "https://www.matsunami.net/lunch.html", "note": "A 10% service charge is added. From the restaurant’s Jul 2025 menu, the latest it publishes", "memo": "ランチPDF（img/lunch__menu.pdf、「新価格ランチ 07.29.2025」）。最安のステーキ・ランチ2,420円は和牛表記なし。特選ヒレ7,150円。サイト内に旧価格の記載が混在", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "wagyu-dinner": {
+      "what": "The cheapest wagyu steak course",
+      "tier": "shop",
+      "chains": [
+        { "chain": "Matsunami", "chainJa": "ステーキハウス松波", "product": "和牛コース", "jpy": 8800, "url": "https://www.matsunami.net/course.html", "note": "The A5 course starts at ¥12,100. A 10% service charge is added. From the restaurant’s Jul 2025 menu", "memo": "コースPDF（img/menu__matsu.pdf、「新価格menu_07.29」）。プレミアム和牛コース12,100〜、神戸牛コース30,800。course.html の見出しには旧価格が残る", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "ekiben": {
+      "what": "Station bento on sale at Tokyo Station",
+      "tier": "chain",
+      "chains": [
+        { "chain": "JR Central (Tokaido Shinkansen)", "chainJa": "JR東海リテイリング・プラス", "product": "東京駅掲載の弁当（特製幕之内御膳 ほか）", "jpy": 700, "jpyMax": 1650, "url": "https://www.jr-plus.co.jp/station/tokyo/", "note": "The standard makunouchi box is ¥1,600", "memo": "東京駅ページの23品。サンド類を除く弁当は700（おむすび弁当）〜1,650（日本の味博覧 粋）。特製幕之内御膳1,600は /bento/000422/", "checkedOn": "2026-10-05" },
+        { "chain": "Ekibenya Matsuri", "chainJa": "駅弁屋 祭", "product": "公式掲載の弁当（幕之内弁当 ほか）", "jpy": 1000, "jpyMax": 2100, "url": "https://foods.jr-cross.co.jp/matsuri/", "note": "The standard makunouchi box is ¥1,300. The shop lists only about 30 of the roughly 150 boxes it sells", "memo": "価格が載るのは自社製造の約30品。最安チキン弁当1,000、最高 東京弁当2,100。幕之内弁当1,300は /matsuri/ekiben/detail/596.html", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "depachika": {
+      "what": "Salad sold by weight, per 100g",
+      "tier": "chain",
+      "chains": [
+        { "chain": "RF1", "chainJa": "RF1（ロック・フィールド）", "product": "量り売りサラダ（100g）", "jpy": 368, "jpyMax": 799, "url": "https://www.rf-one.com/menu/salad/", "note": "A potato croquette is ¥195. Some Tokyo-area branches charge more for certain salads", "memo": "「〜」の付かない商品だけで幅を取る（〜付きは首都圏の一部店舗で別価格）。最安ポテトサラダ368、緑の30品目サラダ486、最高 帆立ときのこのサラダ799（〜11/4の季節品）。男爵コロッケ195は /menu/70819/", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "hotel-breakfast": {
+      "what": "Breakfast buffet, one adult, booked in advance",
+      "tier": "chain",
+      "chains": [
+        { "chain": "APA Hotel", "chainJa": "アパホテル", "product": "朝食ビュッフェ（前売り）", "jpy": 1500, "jpyMax": 2300, "url": "https://www.apahotel.com/hotel/syutoken/tokyo/roppongi-six/", "note": "Four Tokyo hotels in Shinjuku, Asakusa and Roppongi. ¥1,600 to ¥2,500 if paid on the day", "memo": "前売り/当日：六本木SIX Fuji 1,500/1,600・ITSUKI 1,700/1,900、新宿 歌舞伎町タワー 2,000/2,300、浅草 雷門 2,000/2,200、西新宿五丁目駅前タワー 2,300/2,500。税表示の無い六本木駅東（2,400/2,600）と、定食形式の館は幅に入れない。apahotel.com は通常取得だと403、ブラウザで読む", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "tachigui-sushi": {
+      "what": "One piece of nigiri at a standing sushi bar",
+      "tier": "chain",
+      "chains": [],
+      "unresolved": [
+        {"chainJa":"魚がし日本一","url":"https://www.susinippan.co.jp/brand/","reason":"公式サイトに店内の価格の掲載なし。持ち帰りの寿司桶のみ（並10貫 1,400円）"}
+      ]
+    },
+    "monja": {
+      "what": "The basic monjayaki",
+      "tier": "chain",
+      "chains": [],
+      "unresolved": [
+        {"chainJa":"月島もんじゃ もへじ","url":"https://kissuigroup.com/shop/","reason":"運営会社の公式サイトは店舗一覧のみで、メニュー・価格の掲載なし"}
+      ]
+    },
+    "bakery": {
+      "what": "One croissant",
+      "tier": "chain",
+      "chains": [],
+      "unresolved": [
+        {"chainJa":"ジョアン","url":"https://www.johan.co.jp/product/world/","reason":"公式に定番クロワッサンの価格の掲載なし"},
+        {"chainJa":"リトルマーメイド","url":"https://www.littlemermaid.jp/products/breakfast/202411-05.html","reason":"商品ページに価格の掲載なし"}
+      ]
     }
   }
 }

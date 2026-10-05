@@ -439,6 +439,14 @@ Deploy Hook も Worker も KV も使わない。`rates.json` がリポジトリ�
 - 欧文：可変フォント1ファイルを**自己ホスト**（`preload` + `font-display: swap`）
 - 日本語：駅名・店名の数文字のみなのでシステムフォント
 - **使うフォントに実在するウェイトだけを指定する**（存在しないウェイトを指定すると和欧でずれる）
+- **2026-10-05 変更：見出しも本文も Source Serif 4 の1書体にした。** 見出し用だった Fraunces は大きいサイズで字形をわざと崩す設計で、J や h が歪んで見えるため外した。ファイルは `public/fonts/`（OFL、npm の `@fontsource-variable/source-serif-4` 5.3.0 から取得）、定義は `global.css` の `@font-face`。Google Fonts は読み込まない
+
+### マーク・アイコン・共有画像（2026-10-05）
+
+- マークは「路線図の途中駅」（線の上の輪）。原本は `public/favicon.svg`、ヘッダーにも同じ形をインラインで置く
+- `node tools/make-icons.mjs` が `favicon.ico`・`apple-touch-icon.png`・`og-default.png`（1200×630）を書き出す。マークを変えたら実行してコミットする
+- アイコンは `src/components/Icon.astro` の自前の線画 SVG。必ずラベルと並べ、アイコンだけで意味を伝えない
+- 写真の無い枠（`.ph`）は表示しない。中に `img` を置けば出る
 
 ### 配色（確定・案4 Persimmon）
 

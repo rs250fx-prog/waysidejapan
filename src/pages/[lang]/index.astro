@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Price from '../../components/Price.astro';
+import Icon from '../../components/Icon.astro';
 import { LOCALES, SITE_NAME, TAGLINE, NAV, type Locale } from '../../config.ts';
 import { listArticles, hrefOf } from '../../lib/content.ts';
 import { t, type UIKey } from '../../i18n/ui.ts';
@@ -19,13 +20,19 @@ const columns = await listArticles(lang, 'column');
 /** 「Three ways in」は旅の3カテゴリ固定。コラムは別枠で扱う */
 const PRIMARY = ['rail', 'eat', 'soak'] as const;
 const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[]).includes(n.key));
+/** カードの1行説明。写真が入るまでは、これとアイコンが入口の手がかりになる */
+const WAYS: Record<string, string> = {
+  rail: 'Regional passes, model routes, and the transfers that catch people out.',
+  eat: 'What the food along the line costs, and what locals actually pay for it.',
+  soak: 'Onsen you can walk to from a platform, with the rules stated up front.',
+};
 ---
 
 <Base
   locale={lang}
   bareTitle
   title={`${SITE_NAME} — western Japan by train, plate and bath`}
-  description="A Japanese local writing in English about western Japan by rail: regional passes, the food along the line, and onsen within walking distance of a platform. Own photographs, fares with a date."
+  description="A Japanese local writing in English about western Japan by rail: regional passes, food along the line and onsen near the platform. Fares with a date."
 >
   <section class="hero wrap">
     <div class="hero-text">
@@ -38,10 +45,10 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
             <p class="meta">
               {featured.data.experience && <>Rode this route {featured.data.experience.visitedOn} · </>}
               <span class="badge-verified">
-                {t(lang, 'article.verified')} {formatMonth(featured.data.pricesCheckedOn)}
+                <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(featured.data.pricesCheckedOn)}
               </span>
             </p>
-            <a class="btn" href={hrefOf(featured)}>Read the guide</a>
+            <a class="btn" href={hrefOf(featured)}>Read the guide <Icon name="arrow" /></a>
           </>
         ) : (
           <>
@@ -57,15 +64,15 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
   <section class="strip">
     <div class="wrap strip-inner">
       <div>
-        <h2 class="strip-title">Photographed myself</h2>
+        <p class="strip-title"><Icon name="camera" /> Photographed myself</p>
         <p>No stock images. Every photo is one I took, on the day stated.</p>
       </div>
       <div>
-        <h2 class="strip-title">Fares with a date</h2>
+        <p class="strip-title"><Icon name="verified" /> Fares with a date</p>
         <p>Every price says when it was last checked, and gets rechecked.</p>
       </div>
       <div>
-        <h2 class="strip-title">Yen, converted</h2>
+        <p class="strip-title"><Icon name="prices" /> Yen, converted</p>
         <p>Shown as <Price jpy={1200} />, updated daily.</p>
       </div>
     </div>
@@ -85,7 +92,7 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
               </p>
             </div>
             <a class="cb-all" href={`/${lang}/column/`}>
-              All columns →
+              All columns <Icon name="arrow" />
             </a>
           </div>
 
@@ -94,7 +101,7 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
               <span class="cb-lead-kicker">Latest column</span>
               <span class="cb-lead-title">{columns[0].data.title}</span>
               <span class="cb-lead-dek">{columns[0].data.description}</span>
-              <span class="cb-read">Read the column →</span>
+              <span class="cb-read">Read the column <Icon name="arrow" /></span>
             </a>
 
             <div class="cb-more">
@@ -124,7 +131,10 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
         categories.map((c) => (
           <a class="card" href={`/${lang}/${c.key}/`}>
             <span class="card-photo ph ratio-card" aria-hidden="true">OWN PHOTO</span>
+            <span class="card-icon"><Icon name={c.key} /></span>
             <span class="card-title">{t(lang, `nav.${c.key}` as UIKey)}</span>
+            <span class="card-dek">{WAYS[c.key]}</span>
+            <span class="card-go">Browse <Icon name="arrow" /></span>
           </a>
         ))
       }
@@ -211,7 +221,8 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
     flex: 1 1 0;
     min-width: 0;
   }
-  .strip-title {
+  .strip p.strip-title {
+    font-family: var(--font-display);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -250,10 +261,31 @@ const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[])
     padding-top: 14px;
   }
 
+  .card-icon {
+    font-size: 34px;
+    line-height: 1;
+    color: var(--accent);
+  }
   .card-title {
     font-family: var(--font-display);
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
+  }
+  .card-dek {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .card-go {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .btn :global(.icon) {
+    margin-left: 8px;
   }
 
   .head-row {

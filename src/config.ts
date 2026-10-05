@@ -101,7 +101,7 @@ export const AUTHOR = {
   credential: 'Living in Japan · 30,000 km a year',
   url: '/en/about/',
   /** 構造化データの sameAs に入れる外部プロフィール。増えるほど本人性が強まる */
-  sameAs: [] as string[],
+  sameAs: ['https://fam16.com/about/'] as string[],
 } as const;
 
 /** 事業者情報。プライバシーポリシーの法定事項に使う。未記入のあいだは公開しない */
@@ -112,5 +112,7 @@ export const OPERATOR = {
   address: 'Aoyama Marutake Building, 3-1-36 Minami-Aoyama, Minato-ku, Tokyo',
   addressJa: '〒107-0062 東京都港区南青山3丁目1-36 青山丸竹ビル',
   /** 問い合わせは既存サイトのフォームに寄せる。専用フォームを作ったら差し替える */
+  /** 発行元のサイト。構造化データの Organization に入る */
+  url: 'https://fam16.com/',
   contactUrl: 'https://fam16.com/contact/',
 } as const;

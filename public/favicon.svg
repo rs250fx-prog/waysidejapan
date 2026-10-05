@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- 路線図の「駅」。線の上の途中駅 = wayside。16px でも読める形にしてある -->
+  <rect width="32" height="32" rx="7" fill="#c0532b"/>
+  <path d="M4.5 16h6.6M20.9 16h6.6" stroke="#fffefa" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="16" cy="16" r="4.9" fill="none" stroke="#fffefa" stroke-width="3.2"/>
+</svg>

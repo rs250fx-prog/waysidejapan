@@ -67,7 +67,7 @@ const languages = [
       {
         columns.map((col) => (
           <div class="col">
-            <h2 class="col-title">{col.title}</h2>
+            <p class="col-title">{col.title}</p>
             <ul>
               {col.items.map((i) => (
                 <li>
@@ -87,7 +87,7 @@ const languages = [
       }
 
       <div class="col wide">
-        <h2 class="col-title">One letter a month</h2>
+        <p class="col-title">One letter a month</p>
         <p class="blurb">
           What changed in fares, what opened, and one place I would go back to. No sponsored posts.
         </p>
@@ -121,7 +121,7 @@ const languages = [
         </p>
       </div>
       <div class="langs">
-        <h2 class="col-title">Language</h2>
+        <p class="col-title">Language</p>
         <ul>
           {
             languages.map((l) => (
@@ -163,6 +163,10 @@ const languages = [
     gap: 32px;
   }
   .col-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
     font-family: var(--font-display);
     font-size: 12px;
     font-weight: 700;

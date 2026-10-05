@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Price from '../../components/Price.astro';
 import RateNote from '../../components/RateNote.astro';
+import Icon from '../../components/Icon.astro';
 import { LOCALES, SITE_URL, type Locale } from '../../config.ts';
 import {
   FOOD_PRICES,
@@ -34,10 +35,20 @@ const chainLine = (item: ChainItem) => {
   const r = chainRange(item);
   if (!r) return null;
   const many = item.chains.filter((c) => c.tier !== 'premium').length > 1;
-  const label = `${item.tier === 'budget' ? 'Budget chain' : 'Chain'}${many ? 's' : ''}`;
+  // 名指しの1店は「Chain」と呼ばず、店名で出す
+  const label =
+    item.tier === 'shop' ? item.chains[0].chain : `${item.tier === 'budget' ? 'Budget chain' : 'Chain'}${many ? 's' : ''}`;
   return `${label} ${r.from ? 'from ' : ''}${yen(r.min)}${r.max > r.min ? `–${yen(r.max)}` : ''}`;
 };
 const chainChecked = (item: ChainItem) => item.chains.map((c) => c.checkedOn).sort().at(-1)!.slice(0, 7);
+
+const chipLabel = (item: ChainItem) => (item.tier === 'budget' ? 'Budget chain' : item.tier === 'shop' ? 'Named restaurant' : 'Chain');
+/** 折りたたみの見出し。開く前に何社ぶんあるかが分かるようにする */
+const chainCount = (item: ChainItem) => {
+  if (item.tier === 'shop') return 'Menu price and source';
+  const n = item.chains.length;
+  return n === 1 ? `${item.chains[0].chain}: price and source` : `${n} chains: prices and sources`;
+};
 
 /** 統計のある品目だけを安い順に並べ、ページ冒頭の目盛りにする */
 const scale = FOOD_PRICES.flatMap((g) => g.items)
@@ -147,9 +158,14 @@ const graph = [
       </div>
     </section>
 
+    <nav class="jump" aria-label="Categories on this page">
+      <span class="jump-label">Jump to</span>
+      {FOOD_PRICES.map((g) => <a href={`#${g.key}`}>{g.name}</a>)}
+    </nav>
+
     {
       FOOD_PRICES.map((group, gi) => (
-        <details class="group" open={gi === 0}>
+        <details class="group" id={group.key} open={gi === 0}>
           <summary>
             <span class="g-name">
               {group.name} <span class="g-ja">{group.nameJa}</span>
@@ -246,10 +262,12 @@ const graph = [
                       )}
                       {i.chain && (
                         <>
-                          <span class="chip chain">{i.chain.tier === 'budget' ? 'Budget chain' : 'Chain'}</span>
+                          <span class="chip chain">{chipLabel(i.chain)}</span>
                           <span class="sub">
                             {i.chain.what} · {monthLabel(chainChecked(i.chain))}
                           </span>
+                          <details class="chain-more">
+                          <summary>{chainCount(i.chain)} <Icon name="chevron" /></summary>
                           <ul class="chain-list">
                             {i.chain.chains
                               .filter((c) => c.tier !== 'premium')
@@ -276,6 +294,7 @@ const graph = [
                               </ul>
                             </>
                           )}
+                          </details>
                         </>
                       )}
                       {i.noFixedPrice && (
@@ -315,6 +334,19 @@ const graph = [
     <RateNote />
   </div>
 </Base>
+
+<script>
+  // 目次から飛んだ先の分類が閉じていたら開く（details は # で飛んでも自動では開かない）
+  const openTarget = () => {
+    const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el instanceof HTMLDetailsElement) {
+      el.open = true;
+      el.scrollIntoView({ block: 'start' });
+    }
+  };
+  addEventListener('hashchange', openTarget);
+  if (location.hash) openTarget();
+</script>
 
 <style>
   .head {
@@ -484,6 +516,63 @@ const graph = [
   }
   td .chip:not(:first-child) {
     margin-top: 9px;
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+  .jump-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 4px;
+  }
+  .jump a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 4px 12px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink-2);
+  }
+  .jump a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .group {
+    scroll-margin-top: 12px;
+  }
+  /* チェーンの内訳は畳んでおく。価格欄に幅が出ているので、店ごとの額は見たい人だけが開く */
+  /* 分類の見出し（.group summary）の指定が中の summary にも届くので、ここで打ち消す */
+  .group .chain-more summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    min-height: 32px;
+    padding: 0;
+    font-size: 13px;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+  }
+  .group .chain-more summary::before {
+    content: none;
+  }
+  .chain-more summary::-webkit-details-marker {
+    display: none;
+  }
+  .chain-more[open] summary :global(.icon) {
+    transform: rotate(180deg);
   }
   .chain-list {
     list-style: none;

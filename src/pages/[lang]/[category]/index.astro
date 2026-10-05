@@ -1,5 +1,6 @@
 ---
 import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
 import { LOCALES, type Locale, type Category } from '../../../config.ts';
 import { listArticles, hrefOf, enabledCategories } from '../../../lib/content.ts';
 import { t, type UIKey } from '../../../i18n/ui.ts';
@@ -31,7 +32,7 @@ const intro: Record<string, string> = {
 >
   <div class="wrap head">
     <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${lang}/`}>Home</a> › {label}</nav>
-    <h1>{label}</h1>
+    <h1><Icon name={category} /> {label}</h1>
     <p class="dek">{intro[category]}</p>
   </div>
 
@@ -44,7 +45,6 @@ const intro: Record<string, string> = {
       ) : (
         articles.map((a) => (
           <a class="row" href={hrefOf(a)}>
-            <span class="row-photo" aria-hidden="true" />
             <span class="row-text">
               <span class="row-cat">
                 {label} · {a.data.areas[0]}
@@ -52,7 +52,7 @@ const intro: Record<string, string> = {
               <span class="row-title">{a.data.title}</span>
               <span class="row-dek">{a.data.description}</span>
               <span class="badge-verified">
-                {t(lang, 'article.verified')} {formatMonth(a.data.pricesCheckedOn)}
+                <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(a.data.pricesCheckedOn)}
               </span>
             </span>
           </a>

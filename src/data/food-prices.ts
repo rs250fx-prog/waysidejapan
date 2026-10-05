@@ -49,8 +49,11 @@ export interface ChainPrice {
 export interface ChainItem {
   /** 何を比べているか（英語）。「並盛の牛丼」のような条件 */
   what: string;
-  /** budget は格安大衆チェーン（居酒屋の酒）。個人店の額と並べるための区別 */
-  tier: 'chain' | 'budget';
+  /**
+   * budget は格安大衆チェーン（居酒屋の酒）。個人店の額と並べるための区別。
+   * shop はチェーンではない名指しの1店（浅草・松波）。高級店なのでチェーンと呼ばない
+   */
+  tier: 'chain' | 'budget' | 'shop';
   note?: string;
   chains: ChainPrice[];
   /** 公式で価格を確認できなかった社。載せないが、月次確認では毎回見に行く */
@@ -198,11 +201,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Sushi restaurant, lunch set',
         nameJa: '寿司店のランチ',
+        chainKey: 'sushi-lunch',
         reference: { jpy: 1500, note: 'Less than half what the same counter charges in the evening', seenOn: '2026-10' },
       },
       {
         name: 'Sushi restaurant, dinner',
         nameJa: '寿司店の夜',
+        chainKey: 'sushi-dinner',
         reference: { jpy: 4000, from: true, note: 'And upwards with no ceiling', seenOn: '2026-10' },
       },
       {
@@ -324,6 +329,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Wagyu steak, lunch',
         nameJa: '和牛ステーキ（昼）',
+        chainKey: 'wagyu-lunch',
         reference: {
           jpy: 6000,
           from: true,
@@ -334,6 +340,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Wagyu steak, dinner',
         nameJa: '和牛ステーキ（夜）',
+        chainKey: 'wagyu-dinner',
         reference: { jpy: 13000, from: true, note: 'Dinner at the same counter in Asakusa', seenOn: '2026-10' },
       },
       {
@@ -522,11 +529,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Ekiben (station bento)',
         nameJa: '駅弁',
+        chainKey: 'ekiben',
         reference: { jpy: 1200, from: true, note: 'Up to 2,000 for the regional ones. Twice a convenience store bento, and the reason is the box, not the rice', seenOn: '2026-10' },
       },
       {
         name: 'Department store deli, one item',
         nameJa: 'デパ地下惣菜（1品）',
+        chainKey: 'depachika',
         reference: { jpy: 400, from: true, note: 'Sold by weight or by brand, so there is no ceiling. Half price in the last hour before closing', seenOn: '2026-10' },
       },
       {
@@ -568,6 +577,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Hotel breakfast buffet',
         nameJa: 'ホテルの朝食ビュッフェ',
+        chainKey: 'hotel-breakfast',
         reference: { jpy: 2000, from: true, note: 'Depends on the grade of hotel, and Tokyo runs high. Over eleven mornings this is the biggest repeating decision of a two-week trip', seenOn: '2026-10' },
       },
       {
