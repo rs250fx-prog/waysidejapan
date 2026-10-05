@@ -4,6 +4,7 @@
 
 **仕様は [`docs/SPEC.md`](docs/SPEC.md) が起点。** 拡張・修正のときは先にそこを読む。
 
+- **新しいチャットの引き継ぎ：[`docs/HANDOFF-CHAT.md`](docs/HANDOFF-CHAT.md)**
 - 企画の原本（凍結）：[`docs/HANDOFF.md`](docs/HANDOFF.md)
 - 量産の設計図：[`docs/CONTENT-PLAN.md`](docs/CONTENT-PLAN.md)
 - 管理画面と Access の手順：[`docs/ACCESS.md`](docs/ACCESS.md)
