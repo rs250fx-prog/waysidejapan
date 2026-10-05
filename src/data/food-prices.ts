@@ -53,9 +53,16 @@ export interface PriceEntry {
   };
   tourist?: {
     jpy: number;
+    from?: boolean;
     note: string;
     seenOn?: string;
   };
+  /**
+   * 数字の後ろにある事情。「なぜその額なのか」「誰が買っているのか」。
+   * 表のセルに収まらないので行の下に全幅で出す。
+   * ここが、統計にも他サイトにも無い部分になる
+   */
+  context?: string;
   /** 定価が存在しない種類のもの。数字ではなく仕組みを説明する */
   noFixedPrice?: {
     why: string;
@@ -512,9 +519,29 @@ export const FOOD_PRICES: PriceGroup[] = [
         tourist: { jpy: 4500, note: 'Kuromon, Nishiki, ¥4,000–5,000', seenOn: '2026-10' },
         reference: { jpy: 2000, note: 'The same bowl one street back', seenOn: '2026-10' },
       },
-      { name: 'Grilled skewer at a stall', nameJa: '串もの（1本）' },
-      { name: 'One item while walking', nameJa: '食べ歩き1品' },
-      { name: 'Crab leg, grilled', nameJa: '焼きガニ（1本）' },
+      {
+        name: 'Grilled skewer at a stall',
+        nameJa: '串もの（1本）',
+        reference: { jpy: 500, note: 'What a skewer costs at a festival stall', seenOn: '2026-10' },
+        tourist: { jpy: 2000, note: 'Wagyu skewers at a tourist arcade', seenOn: '2026-10' },
+        context:
+          'Eating skewers in the street is not an everyday Japanese habit. It belongs to festivals — yakitori, chocolate-covered bananas, toffee apples — and the ¥500 figure is that world. The ¥2,000 wagyu skewer is a different thing entirely: a format invented in the 2000s aimed at visitors. Japanese people essentially do not buy them.',
+      },
+      {
+        name: 'One item while walking',
+        nameJa: '食べ歩き1品',
+        reference: { jpy: 500, note: 'One coin. The recognised ceiling for street food', seenOn: '2026-10' },
+        tourist: { jpy: 1000, note: 'The upper end in a tourist area', seenOn: '2026-10' },
+        context:
+          'One coin — ¥500 — is what Japanese people understand street food to cost. Spending ¥1,000 on something eaten while walking puts you in comfortable-income territory by local standards. Above ¥1,000 in a tourist area, the price is set for inbound visitors and for nobody else.',
+      },
+      {
+        name: 'Crab leg, grilled',
+        nameJa: '焼きガニ（1本）',
+        tourist: { jpy: 1500, from: true, note: 'Crab regions such as Niigata, at a stall', seenOn: '2026-10' },
+        context:
+          'This is the real selling price where crab is a local product. Two things follow. Tokyo barely eats crab at all, so a crab stall in Tokyo is already out of place. And in the crab regions themselves, people eat it at home rather than at a stall — so even locals are not paying the stall price.',
+      },
     ],
   },
   {
@@ -576,7 +603,8 @@ export const officialUpdatedAt = officialData._updatedAt;
 
 export const totalItems = FOOD_PRICES.reduce((n, g) => n + g.items.length, 0);
 export const filledItems = FOOD_PRICES.reduce(
-  (n, g) => n + g.items.filter((i) => i.official || i.reference || i.noFixedPrice).length,
+  // 焼きガニのように観光地価格しか無いものも「数字がある」に数える
+  (n, g) => n + g.items.filter((i) => i.official || i.reference || i.tourist || i.noFixedPrice).length,
   0,
 );
 /** official を持つ品目の数。自動更新の対象 */

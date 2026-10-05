@@ -137,7 +137,8 @@ const graph = [
               </thead>
               <tbody>
                 {group.items.map((i) => (
-                  <tr class:list={[{ empty: !i.official && !i.reference }]}>
+                  <>
+                  <tr class:list={[{ empty: !i.official && !i.reference && !i.tourist && !i.noFixedPrice }]}>
                     <td>
                       <strong>{i.name}</strong>
                       <span class="ja">{i.nameJa}</span>
@@ -167,7 +168,10 @@ const graph = [
                     <td>
                       {i.tourist ? (
                         <>
-                          <span class="price-cell">{formatPrice(i.tourist.jpy)}</span>
+                          <span class="price-cell">
+                            {i.tourist.from && <span class="from">from </span>}
+                            {formatPrice(i.tourist.jpy)}
+                          </span>
                           <span class="sub">{i.tourist.note}</span>
                         </>
                       ) : (
@@ -215,6 +219,12 @@ const graph = [
                       {!i.official && !i.reference && !i.noFixedPrice && <span class="sub">—</span>}
                     </td>
                   </tr>
+                  {i.context && (
+                    <tr class="context-row">
+                      <td colspan="4">{i.context}</td>
+                    </tr>
+                  )}
+                </>
                 ))}
               </tbody>
             </table>
@@ -224,11 +234,11 @@ const graph = [
     }
 
     <section class="fill">
-      <h2>This page is being filled in</h2>
+      <h2>How complete this is</h2>
       <p>
-        {filledItems} of {totalItems} dishes have a number so far. The gaps are dishes the government survey does not
-        cover — seafood bowls, set meals, yakiniku, station bento — where the figure has to come from someone who eats
-        them. Those are being added with the month each was checked, rather than guessed at now.
+        {filledItems} of {totalItems} dishes have a figure. Eight come from the government price survey; the rest come
+        from someone who eats them, with the month each was checked. Where the survey and the street disagree, both are
+        shown rather than one being quietly dropped.
       </p>
     </section>
 
@@ -518,6 +528,17 @@ const graph = [
     font-size: 13px;
     font-weight: 400;
     color: var(--muted);
+  }
+  /* 背景説明。行の下に全幅で置く。表のセル幅では読めないため */
+  .context-row td {
+    border-bottom: 1px solid var(--line);
+    padding: 0 0 13px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    background: var(--surface-2);
+    padding-inline: 14px;
+    padding-top: 11px;
   }
   .survey-sub {
     color: var(--muted);
