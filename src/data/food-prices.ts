@@ -463,8 +463,16 @@ export const FOOD_PRICES: PriceGroup[] = [
     items: [
       { name: 'Hamburger', nameJa: 'ハンバーガー', officialKey: 'hamburger' },
       { name: 'Curry rice', nameJa: 'カレーライス', officialKey: 'curry' },
-      { name: 'Gyudon chain, regular', nameJa: '牛丼チェーン' },
-      { name: 'Family restaurant, lunch', nameJa: 'ファミレスのランチ' },
+      {
+        name: 'Gyudon chain, regular',
+        nameJa: '牛丼チェーン（並）',
+        reference: { jpy: 490, note: 'The one case on this page where the survey figure and the street agree almost exactly', seenOn: '2026-10' },
+      },
+      {
+        name: 'Family restaurant, lunch',
+        nameJa: 'ファミレスのランチ',
+        reference: { jpy: 980, from: true, note: 'Drink bar usually extra', seenOn: '2026-10' },
+      },
     ],
   },
   {
@@ -474,9 +482,21 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'The decision long-stay visitors make eleven times. A hotel buffet against a set breakfast outside is the single biggest repeating choice in a two-week trip.',
     items: [
-      { name: 'Hotel breakfast buffet', nameJa: 'ホテルの朝食ビュッフェ' },
-      { name: 'Japanese set breakfast', nameJa: '和朝食' },
-      { name: 'Cafe morning set', nameJa: '喫茶店のモーニング' },
+      {
+        name: 'Hotel breakfast buffet',
+        nameJa: 'ホテルの朝食ビュッフェ',
+        reference: { jpy: 2000, from: true, note: 'Depends on the grade of hotel, and Tokyo runs high. Over eleven mornings this is the biggest repeating decision of a two-week trip', seenOn: '2026-10' },
+      },
+      {
+        name: 'Japanese set breakfast',
+        nameJa: '和朝食',
+        reference: { jpy: 600, note: 'Places serving a proper morning teishoku are scarce. The gyudon chains fill the gap with a breakfast set', seenOn: '2026-10' },
+      },
+      {
+        name: 'Cafe morning set',
+        nameJa: '喫茶店のモーニング',
+        reference: { jpy: 1000, note: 'A Tokyo figure. In Kansai and especially around Aichi it is about 500, and often comes free with a coffee — morning service is a western-Japan institution that barely exists in Tokyo', seenOn: '2026-10' },
+      },
     ],
   },
   {
