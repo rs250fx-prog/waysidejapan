@@ -294,11 +294,31 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: '粉もの・B級',
     intro: 'Osaka and Hiroshima food, and the category where a tourist-area version costs triple without tasting better.',
     items: [
-      { name: 'Okonomiyaki', nameJa: 'お好み焼き' },
-      { name: 'Takoyaki, 6–8 pieces', nameJa: 'たこ焼き' },
-      { name: 'Monjayaki', nameJa: 'もんじゃ' },
-      { name: 'Kushikatsu, per skewer', nameJa: '串カツ（1本）' },
-      { name: 'Gyoza, one plate', nameJa: '餃子' },
+      {
+        name: 'Okonomiyaki',
+        nameJa: 'お好み焼き',
+        reference: { jpy: 980, from: true, note: 'Osaka and Hiroshima versions are different dishes at a similar price', seenOn: '2026-10' },
+      },
+      {
+        name: 'Takoyaki, 6-8 pieces',
+        nameJa: 'たこ焼き（6〜8個）',
+        reference: { jpy: 500, from: true, note: 'A snack rather than a meal, and the classic thing to eat while walking', seenOn: '2026-10' },
+      },
+      {
+        name: 'Monjayaki',
+        nameJa: 'もんじゃ',
+        reference: { jpy: 800, from: true, note: 'Tokyo, and almost unknown outside it', seenOn: '2026-10' },
+      },
+      {
+        name: 'Kushikatsu, per skewer',
+        nameJa: '串カツ（1本）',
+        reference: { jpy: 250, from: true, note: 'Priced per skewer. A meal is several, and the sauce is not for dipping twice', seenOn: '2026-10' },
+      },
+      {
+        name: 'Gyoza, one plate',
+        nameJa: '餃子（1皿）',
+        reference: { jpy: 400, from: true, note: 'A side dish in Japan, not a main', seenOn: '2026-10' },
+      },
     ],
   },
   {
@@ -307,10 +327,26 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: '鍋・汁物',
     intro: 'Mostly a dinner-for-two-or-more format, which makes the per-person figure the one that matters.',
     items: [
-      { name: 'Motsunabe', nameJa: 'もつ鍋' },
-      { name: 'Mizutaki', nameJa: '水炊き' },
-      { name: 'Oden, per piece', nameJa: 'おでん（1個）' },
-      { name: 'Miso soup, as a side', nameJa: '味噌汁' },
+      {
+        name: 'Motsunabe, per person',
+        nameJa: 'もつ鍋（1人前）',
+        reference: { jpy: 3000, from: true, note: 'A Fukuoka dish, usually ordered for two or more', seenOn: '2026-10' },
+      },
+      {
+        name: 'Mizutaki, per person',
+        nameJa: '水炊き（1人前）',
+        reference: { jpy: 2500, from: true, note: 'Also Fukuoka, and the gentler of the two', seenOn: '2026-10' },
+      },
+      {
+        name: 'Oden, per piece',
+        nameJa: 'おでん（1個）',
+        reference: { jpy: 250, from: true, note: 'Priced per piece, including at convenience stores in winter', seenOn: '2026-10' },
+      },
+      {
+        name: 'Miso soup, as a side',
+        nameJa: '味噌汁（単品）',
+        reference: { jpy: 200, from: true, note: 'Usually included with a set meal — this is the price when it is not', seenOn: '2026-10' },
+      },
     ],
   },
   {
