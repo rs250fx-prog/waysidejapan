@@ -132,6 +132,12 @@ export const FOOD_PRICES: PriceGroup[] = [
         name: 'Conveyor-belt sushi',
         nameJa: '回転ずし',
         officialKey: 'sushi-kaiten',
+        reference: {
+          jpy: 2000,
+          from: true,
+          note: 'A whole meal for one person. The survey figure beside it is for two pieces of tuna, not a bill',
+          seenOn: '2026-10',
+        },
       },
       {
         name: 'Sushi restaurant, lunch set',
@@ -211,10 +217,31 @@ export const FOOD_PRICES: PriceGroup[] = [
         nameJa: 'とんかつ定食',
         reference: { jpy: 1700, from: true, note: 'Above the ¥2,000 line once you order the better cut', seenOn: '2026-10' },
       },
-      { name: 'Tempura, counter', nameJa: '天ぷら' },
-      { name: 'Sukiyaki', nameJa: 'すき焼き' },
-      { name: 'Shabu-shabu', nameJa: 'しゃぶしゃぶ' },
-      { name: 'Kaiseki course', nameJa: '会席・懐石' },
+      {
+        name: 'Tempura, counter, lunch',
+        nameJa: '天ぷら（カウンターの昼）',
+        reference: { jpy: 2000, from: true, note: 'The same counter in the evening is several times this', seenOn: '2026-10' },
+      },
+      {
+        name: 'Sukiyaki, per person',
+        nameJa: 'すき焼き（1人前）',
+        reference: { jpy: 3500, from: true, note: 'A shared pot, so the figure is per head', seenOn: '2026-10' },
+      },
+      {
+        name: 'Shabu-shabu, per person',
+        nameJa: 'しゃぶしゃぶ（1人前）',
+        reference: { jpy: 3500, from: true, note: 'Same level as sukiyaki, and usually the same kind of restaurant', seenOn: '2026-10' },
+      },
+      {
+        name: 'Kaiseki course, per person',
+        nameJa: '会席・懐石（1人前）',
+        reference: {
+          jpy: 7000,
+          from: true,
+          note: 'The floor, not the typical. This is the one category where there is no ceiling and no reference price',
+          seenOn: '2026-10',
+        },
+      },
     ],
   },
   {
