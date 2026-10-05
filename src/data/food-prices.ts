@@ -84,7 +84,7 @@ export const FOOD_PRICES: PriceGroup[] = [
     name: 'Noodles',
     nameJa: '麺類',
     intro:
-      'The most reliable anchor in Japanese eating out. Everyday food, sold at prices that barely moved for a decade until recently.',
+      'The most reliable anchor in Japanese eating out. Everyday food, sold at prices that barely moved for a decade until recently. Somen is left out: it is a summer dish eaten at home, not a restaurant category.',
     items: [
       {
         name: 'Ramen',
@@ -96,12 +96,27 @@ export const FOOD_PRICES: PriceGroup[] = [
           seenOn: '2026-10',
         },
       },
-      { name: 'Tsukemen', nameJa: 'つけ麺' },
+      {
+        name: 'Tsukemen (dipping noodles)',
+        nameJa: 'つけ麺',
+        reference: { jpy: 900, note: 'Tokyo, a standard bowl', seenOn: '2026-10' },
+      },
       { name: 'Soba', nameJa: '日本そば', officialKey: 'soba' },
       { name: 'Udon', nameJa: 'うどん', officialKey: 'udon' },
-      { name: 'Somen', nameJa: 'そうめん' },
-      { name: 'Yakisoba', nameJa: '焼きそば' },
-      { name: 'Standing soba at a station', nameJa: '立ち食いそば' },
+      {
+        name: 'Yakisoba',
+        nameJa: '焼きそば',
+        reference: { jpy: 600, note: 'Tokyo, as a dish at a restaurant', seenOn: '2026-10' },
+      },
+      {
+        name: 'Standing soba at a station',
+        nameJa: '立ち食いそば',
+        reference: {
+          jpy: 500,
+          note: 'The cheapest hot meal on a Japanese platform, and one of the best-value',
+          seenOn: '2026-10',
+        },
+      },
     ],
   },
   {
