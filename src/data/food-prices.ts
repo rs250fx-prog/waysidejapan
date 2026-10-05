@@ -356,19 +356,40 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'The place visitors most often get a bill they did not expect — usually not because of the food, but because of what was added to it.',
     items: [
-      { name: 'Izakaya, per person with drinks', nameJa: '居酒屋1人あたり' },
+      {
+        name: 'Izakaya, per person with drinks',
+        nameJa: '居酒屋（1人あたり・飲み物込み）',
+        reference: { jpy: 3000, note: 'What a normal night out comes to per head. Not a floor — this is the typical bill', seenOn: '2026-10' },
+      },
       {
         name: 'Otoshi (compulsory small dish)',
         nameJa: 'お通し',
         noFixedPrice: {
           why: 'A small dish arrives unordered and a seat charge is added. It is standard practice, not a scam, and it is rarely written in English.',
-          whatToDo: 'Expect ¥300–500 per person at most izakaya. You cannot usually decline it.',
+          whatToDo:
+            'There is a scale: ¥300 is generous, ¥500 is normal, ¥1,000 means you are being taken. You cannot usually decline it, so read it as a cover charge and judge the place by it.',
         },
       },
-      { name: 'Draft beer', nameJa: '生ビール' },
-      { name: 'Sake, one go (180ml)', nameJa: '日本酒1合' },
-      { name: 'Highball', nameJa: 'ハイボール' },
-      { name: 'Shochu', nameJa: '焼酎' },
+      {
+        name: 'Draft beer',
+        nameJa: '生ビール（1杯）',
+        reference: { jpy: 600, from: true, note: 'Per glass, at an izakaya', seenOn: '2026-10' },
+      },
+      {
+        name: 'Sake, one go (180ml)',
+        nameJa: '日本酒（1合）',
+        reference: { jpy: 1000, from: true, note: 'One go is 180ml, about a glass and a half', seenOn: '2026-10' },
+      },
+      {
+        name: 'Highball',
+        nameJa: 'ハイボール（1杯）',
+        reference: { jpy: 500, from: true, note: 'Whisky and soda, the default cheap drink', seenOn: '2026-10' },
+      },
+      {
+        name: 'Shochu',
+        nameJa: '焼酎（1杯）',
+        reference: { jpy: 450, from: true, note: 'Usually the cheapest thing on the drinks list', seenOn: '2026-10' },
+      },
     ],
   },
   {
@@ -378,10 +399,26 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro: 'Useful for calibrating everything else. A coffee is the cheapest way to learn what a place thinks it is.',
     items: [
       { name: 'Coffee, cafe', nameJa: 'コーヒー（喫茶店）', officialKey: 'coffee' },
-      { name: 'Matcha with a sweet', nameJa: '抹茶と和菓子' },
-      { name: 'Kakigori (shaved ice)', nameJa: 'かき氷' },
-      { name: 'Parfait', nameJa: 'パフェ' },
-      { name: 'Crepe', nameJa: 'クレープ' },
+      {
+        name: 'Matcha with a sweet',
+        nameJa: '抹茶と和菓子',
+        reference: { jpy: 1000, note: 'A guide only. Dedicated tea houses are rare now, so the price varies widely', seenOn: '2026-10' },
+      },
+      {
+        name: 'Kakigori (shaved ice)',
+        nameJa: 'かき氷',
+        reference: { jpy: 700, from: true, note: 'At an old-style specialist. Those have thinned out, and the photogenic cafes that replaced them charge 2,000 to 3,000 for the same bowl of ice. Not worth it on a tight budget', seenOn: '2026-10' },
+      },
+      {
+        name: 'Parfait',
+        nameJa: 'パフェ',
+        reference: { jpy: 800, from: true, note: 'At a cafe', seenOn: '2026-10' },
+      },
+      {
+        name: 'Crepe',
+        nameJa: 'クレープ',
+        reference: { jpy: 500, from: true, note: 'A street stand, eaten walking', seenOn: '2026-10' },
+      },
     ],
   },
   {
@@ -391,11 +428,31 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'Where Japan is genuinely cheap, and where a long trip saves real money. Also the fairest comparison against a tourist-area stall.',
     items: [
-      { name: 'Convenience store onigiri', nameJa: 'コンビニおにぎり' },
-      { name: 'Convenience store bento', nameJa: 'コンビニ弁当' },
-      { name: 'Ekiben (station bento)', nameJa: '駅弁' },
-      { name: 'Department store deli', nameJa: 'デパ地下惣菜' },
-      { name: 'Bakery, one item', nameJa: 'パン' },
+      {
+        name: 'Convenience store onigiri',
+        nameJa: 'コンビニおにぎり',
+        reference: { jpy: 150, from: true, note: 'A wide band — 150 for a plain one, up to 350 for salmon roe or tuna belly', seenOn: '2026-10' },
+      },
+      {
+        name: 'Convenience store bento',
+        nameJa: 'コンビニ弁当',
+        reference: { jpy: 700, note: 'A full meal, hot, at any hour', seenOn: '2026-10' },
+      },
+      {
+        name: 'Ekiben (station bento)',
+        nameJa: '駅弁',
+        reference: { jpy: 1200, from: true, note: 'Up to 2,000 for the regional ones. Twice a convenience store bento, and the reason is the box, not the rice', seenOn: '2026-10' },
+      },
+      {
+        name: 'Department store deli, one item',
+        nameJa: 'デパ地下惣菜（1品）',
+        reference: { jpy: 400, from: true, note: 'Sold by weight or by brand, so there is no ceiling. Half price in the last hour before closing', seenOn: '2026-10' },
+      },
+      {
+        name: 'Bakery, one item',
+        nameJa: 'パン（1個・専門店）',
+        reference: { jpy: 300, from: true, note: 'At a proper bakery. A supermarket loaf is a different purchase', seenOn: '2026-10' },
+      },
     ],
   },
   {
