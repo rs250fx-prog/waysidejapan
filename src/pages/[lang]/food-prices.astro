@@ -145,13 +145,19 @@ const graph = [
                     <td>
                       {i.official && i.reference ? (
                         <>
-                          <span class="price-cell">{formatPrice(i.reference.jpy)}</span>
+                          <span class="price-cell">
+                            {i.reference.from && <span class="from">from </span>}
+                            {formatPrice(i.reference.jpy)}
+                          </span>
                           <span class="sub survey-sub">Survey says {formatPrice(i.official.jpy)}</span>
                         </>
                       ) : i.official ? (
                         <span class="price-cell">{formatPrice(i.official.jpy)}</span>
                       ) : i.reference ? (
-                        <span class="price-cell">{formatPrice(i.reference.jpy)}</span>
+                        <span class="price-cell">
+                          {i.reference.from && <span class="from">from </span>}
+                          {formatPrice(i.reference.jpy)}
+                        </span>
                       ) : i.noFixedPrice ? (
                         <span class="nofix">No fixed price</span>
                       ) : (
@@ -507,6 +513,11 @@ const graph = [
   .todo-do {
     color: var(--ink-2);
     margin-top: 5px;
+  }
+  .from {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
   }
   .survey-sub {
     color: var(--muted);

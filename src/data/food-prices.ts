@@ -45,6 +45,8 @@ export interface PriceEntry {
   official?: Official;
   reference?: {
     jpy: number;
+    /** true なら「この額から」。4,000円〜 のような下限を、代表値と混同させない */
+    from?: boolean;
     note?: string;
     /** 実見の時点 YYYY-MM */
     seenOn: string;
@@ -131,10 +133,26 @@ export const FOOD_PRICES: PriceGroup[] = [
         nameJa: '回転ずし',
         officialKey: 'sushi-kaiten',
       },
-      { name: 'Sushi restaurant, lunch set', nameJa: '寿司店のランチ' },
-      { name: 'Sushi restaurant, dinner', nameJa: '寿司店の夜' },
-      { name: 'Standing sushi bar', nameJa: '立ち食い寿司' },
-      { name: 'Supermarket sushi pack', nameJa: '持ち帰りパック寿司' },
+      {
+        name: 'Sushi restaurant, lunch set',
+        nameJa: '寿司店のランチ',
+        reference: { jpy: 1500, note: 'Less than half what the same counter charges in the evening', seenOn: '2026-10' },
+      },
+      {
+        name: 'Sushi restaurant, dinner',
+        nameJa: '寿司店の夜',
+        reference: { jpy: 4000, from: true, note: 'And upwards with no ceiling', seenOn: '2026-10' },
+      },
+      {
+        name: 'Standing sushi bar',
+        nameJa: '立ち食い寿司',
+        reference: { jpy: 2000, from: true, note: 'Standing does not mean cheap here — it means fast, and often very good', seenOn: '2026-10' },
+      },
+      {
+        name: 'Supermarket sushi pack',
+        nameJa: '持ち帰りパック寿司',
+        reference: { jpy: 1000, from: true, note: 'Half price in the evening at most supermarkets', seenOn: '2026-10' },
+      },
     ],
   },
   {
@@ -145,10 +163,26 @@ export const FOOD_PRICES: PriceGroup[] = [
       'Where the gap between everyday Japan and tourist Japan opens widest. A seafood bowl has no official figure, which is exactly why its price can be anything.',
     items: [
       { name: 'Gyudon (beef bowl)', nameJa: '牛丼', officialKey: 'gyudon' },
-      { name: 'Oyakodon (chicken and egg)', nameJa: '親子丼' },
-      { name: 'Katsudon (pork cutlet)', nameJa: 'カツ丼' },
-      { name: 'Tendon (tempura)', nameJa: '天丼' },
-      { name: 'Unaju (eel)', nameJa: 'うな重' },
+      {
+        name: 'Oyakodon (chicken and egg)',
+        nameJa: '親子丼',
+        reference: { jpy: 780, note: 'Tokyo, a standard shop', seenOn: '2026-10' },
+      },
+      {
+        name: 'Katsudon (pork cutlet)',
+        nameJa: 'カツ丼',
+        reference: { jpy: 980, note: 'Tokyo, a standard shop', seenOn: '2026-10' },
+      },
+      {
+        name: 'Tendon (tempura)',
+        nameJa: '天丼',
+        reference: { jpy: 980, note: 'Tokyo, a standard shop', seenOn: '2026-10' },
+      },
+      {
+        name: 'Unaju (eel)',
+        nameJa: 'うな重',
+        reference: { jpy: 2500, from: true, note: 'Eel is the one everyday dish that is genuinely expensive in Japan', seenOn: '2026-10' },
+      },
       {
         name: 'Kaisendon (seafood bowl)',
         nameJa: '海鮮丼',
@@ -167,8 +201,16 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: '定食・和食',
     intro: 'The default lunch for working Japan, and the format where the price tells you most about the place.',
     items: [
-      { name: 'Grilled fish set', nameJa: '焼魚定食' },
-      { name: 'Tonkatsu set', nameJa: 'とんかつ定食' },
+      {
+        name: 'Grilled fish set',
+        nameJa: '焼魚定食',
+        reference: { jpy: 1200, from: true, note: 'Rice, soup and pickles included — this is the standard Japanese lunch', seenOn: '2026-10' },
+      },
+      {
+        name: 'Tonkatsu set',
+        nameJa: 'とんかつ定食',
+        reference: { jpy: 1700, from: true, note: 'Above the ¥2,000 line once you order the better cut', seenOn: '2026-10' },
+      },
       { name: 'Tempura, counter', nameJa: '天ぷら' },
       { name: 'Sukiyaki', nameJa: 'すき焼き' },
       { name: 'Shabu-shabu', nameJa: 'しゃぶしゃぶ' },
