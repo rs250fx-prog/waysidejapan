@@ -249,14 +249,43 @@ export const FOOD_PRICES: PriceGroup[] = [
     name: 'Meat',
     nameJa: '肉',
     intro:
-      'The single most satisfying thing visitors report eating in Japan — ahead of sushi by a factor of two. Also where "wagyu" on a sign stops meaning anything specific.',
+      'The single most satisfying thing visitors report eating in Japan — ahead of sushi by a factor of two. Also where "wagyu" on a sign stops meaning anything specific. Teppanyaki is left out: in practice it is the same purchase as a wagyu steak.',
     items: [
-      { name: 'Yakiniku, per person', nameJa: '焼肉' },
-      { name: 'Wagyu steak, lunch', nameJa: '和牛ステーキ（昼）' },
-      { name: 'Wagyu steak, dinner', nameJa: '和牛ステーキ（夜）' },
-      { name: 'Yakitori, per skewer', nameJa: '焼鳥（1本）' },
-      { name: 'Teppanyaki', nameJa: '鉄板焼き' },
-      { name: 'Jingisukan (lamb)', nameJa: 'ジンギスカン' },
+      {
+        name: 'Yakiniku, per person',
+        nameJa: '焼肉（1人あたり）',
+        reference: { jpy: 4000, from: true, note: 'Grilling it yourself, one person, with drinks', seenOn: '2026-10' },
+      },
+      {
+        name: 'Wagyu steak, lunch',
+        nameJa: '和牛ステーキ（昼）',
+        reference: {
+          jpy: 6000,
+          from: true,
+          note: 'Lunch at Matsunami in Asakusa. The same counter in the evening is roughly double',
+          seenOn: '2026-10',
+        },
+      },
+      {
+        name: 'Wagyu steak, dinner',
+        nameJa: '和牛ステーキ（夜）',
+        reference: { jpy: 13000, from: true, note: 'Dinner at the same counter in Asakusa', seenOn: '2026-10' },
+      },
+      {
+        name: 'Yakitori, per skewer',
+        nameJa: '焼鳥（1本）',
+        reference: {
+          jpy: 200,
+          from: true,
+          note: 'Priced per skewer, and nobody orders one. A meal is several, plus drinks',
+          seenOn: '2026-10',
+        },
+      },
+      {
+        name: 'Jingisukan (lamb)',
+        nameJa: 'ジンギスカン（1人前）',
+        reference: { jpy: 3000, from: true, note: 'A Hokkaido dish, and cheaper there than in Tokyo', seenOn: '2026-10' },
+      },
     ],
   },
   {
