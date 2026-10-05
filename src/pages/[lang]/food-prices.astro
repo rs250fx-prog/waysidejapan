@@ -3,8 +3,20 @@ import Base from '../../layouts/Base.astro';
 import Price from '../../components/Price.astro';
 import RateNote from '../../components/RateNote.astro';
 import { LOCALES, SITE_URL, type Locale } from '../../config.ts';
-import { FOOD_PRICES, OFFICIAL_SOURCE, HESITATION_LINE, totalItems, filledItems, officialUpdatedAt } from '../../data/food-prices.ts';
-import { formatPrice } from '../../lib/money.ts';
+import {
+  FOOD_PRICES,
+  OFFICIAL_SOURCE,
+  HESITATION_LINE,
+  totalItems,
+  filledItems,
+  officialUpdatedAt,
+  chainCheckedAt,
+  chainItems,
+  chainRange,
+  type ChainItem,
+  type ChainPrice,
+} from '../../data/food-prices.ts';
+import { formatPrice, formatJpy, formatAsOf } from '../../lib/money.ts';
 
 export function getStaticPaths() {
   return LOCALES.map((lang) => ({ params: { lang } }));
@@ -13,6 +25,19 @@ const lang = Astro.params.lang as Locale;
 
 const monthLabel = (m: string) =>
   new Date(`${m}-01T00:00:00Z`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+/** チェーン価格は公式の税込表示のまま出す。コンビニは小数があるので丸めない */
+const yen = (n: number) => (Number.isInteger(n) ? formatJpy(n) : `¥${n.toFixed(2)}`);
+const chainPrice = (c: ChainPrice) => `${c.from ? 'from ' : ''}${yen(c.jpy)}${c.jpyMax ? `–${yen(c.jpyMax)}` : ''}`;
+/** 価格欄に出す1行。平均は出さず、幅で見せる */
+const chainLine = (item: ChainItem) => {
+  const r = chainRange(item);
+  if (!r) return null;
+  const many = item.chains.filter((c) => c.tier !== 'premium').length > 1;
+  const label = `${item.tier === 'budget' ? 'Budget chain' : 'Chain'}${many ? 's' : ''}`;
+  return `${label} ${r.from ? 'from ' : ''}${yen(r.min)}${r.max > r.min ? `–${yen(r.max)}` : ''}`;
+};
+const chainChecked = (item: ChainItem) => item.chains.map((c) => c.checkedOn).sort().at(-1)!.slice(0, 7);
 
 /** 統計のある品目だけを安い順に並べ、ページ冒頭の目盛りにする */
 const scale = FOOD_PRICES.flatMap((g) => g.items)
@@ -81,7 +106,7 @@ const graph = [
 
   <div class="wrap body">
     <section class="legend">
-      <h2>Two kinds of number on this page</h2>
+      <h2>The kinds of number on this page</h2>
       <div class="legend-grid">
         <div>
           <span class="chip official">Survey</span>
@@ -97,6 +122,15 @@ const graph = [
           <p>
             My own reference price, for dishes the survey does not cover. It is the level at which a Japanese customer
             orders without thinking about it, with the month I last checked.
+          </p>
+        </div>
+        <div>
+          <span class="chip chain">Chain</span>
+          <p>
+            Menu prices from the big everyday chains, read from each chain's own website: tax included, eating in,
+            regular size, an ordinary Tokyo branch. Shown as a range with the chains named, never as an average. A
+            chain that does not publish its prices is left out rather than guessed. <strong>Checked monthly</strong> —
+            last checked {formatAsOf(chainCheckedAt)}.
           </p>
         </div>
         <div>
@@ -164,6 +198,7 @@ const graph = [
                       ) : (
                         <span class="todo">not set yet</span>
                       )}
+                      {i.chain && chainLine(i.chain) && <span class="sub chain-sub">{chainLine(i.chain)}</span>}
                     </td>
                     <td>
                       {i.tourist ? (
@@ -209,6 +244,40 @@ const graph = [
                           </span>
                         </>
                       )}
+                      {i.chain && (
+                        <>
+                          <span class="chip chain">{i.chain.tier === 'budget' ? 'Budget chain' : 'Chain'}</span>
+                          <span class="sub">
+                            {i.chain.what} · {monthLabel(chainChecked(i.chain))}
+                          </span>
+                          <ul class="chain-list">
+                            {i.chain.chains
+                              .filter((c) => c.tier !== 'premium')
+                              .map((c) => (
+                                <li>
+                                  <a href={c.url} rel="noopener nofollow">{c.chain}</a> {chainPrice(c)}
+                                  {c.note && <span class="chain-note"> — {c.note}</span>}
+                                </li>
+                              ))}
+                          </ul>
+                          {i.chain.note && <span class="sub">{i.chain.note}</span>}
+                          {i.chain.chains.some((c) => c.tier === 'premium') && (
+                            <>
+                              <span class="chip premium">Premium chain</span>
+                              <ul class="chain-list">
+                                {i.chain.chains
+                                  .filter((c) => c.tier === 'premium')
+                                  .map((c) => (
+                                    <li>
+                                      <a href={c.url} rel="noopener nofollow">{c.chain}</a> {chainPrice(c)}
+                                      {c.note && <span class="chain-note"> — {c.note}</span>}
+                                    </li>
+                                  ))}
+                              </ul>
+                            </>
+                          )}
+                        </>
+                      )}
                       {i.noFixedPrice && (
                         <>
                           <span class="chip nofix-chip">No number</span>
@@ -237,7 +306,8 @@ const graph = [
       <h2>How complete this is</h2>
       <p>
         {filledItems} of {totalItems} dishes have a figure. Eight come from the government price survey; the rest come
-        from someone who eats them, with the month each was checked. Where the survey and the street disagree, both are
+        from someone who eats them, with the month each was checked. {chainItems} also carry menu prices from the
+        everyday chains, last checked against the chains' own websites on {formatAsOf(chainCheckedAt)}. Where the survey and the street disagree, both are
         shown rather than one being quietly dropped.
       </p>
     </section>
@@ -405,6 +475,32 @@ const graph = [
   .chip.tourist {
     color: var(--muted-2);
     background: var(--surface-2);
+  }
+  .chip.chain,
+  .chip.premium {
+    color: var(--ink-2);
+    background: var(--surface);
+    border-color: var(--ink-2);
+  }
+  td .chip:not(:first-child) {
+    margin-top: 9px;
+  }
+  .chain-list {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .chain-list a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 2px;
+  }
+  .chain-note {
+    color: var(--muted);
   }
 
   /* 大項目のトグル。JS を使わず details で開閉する */

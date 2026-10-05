@@ -1,0 +1,355 @@
+{
+  "_note": "大衆チェーンの公式サイトに載っている価格。月次の定期実行（docs/ROUTINES.md）が各 url を見直して書き換える。税込・店内・並盛・東京の通常店。公式で確認できない価格は入れず unresolved に残す。note は英語でページに出る。memo は内部用で出ない",
+  "_checkedAt": "2026-10-05",
+  "items": {
+    "ramen": {
+      "what": "Plain soy-sauce ramen, one bowl",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Hidakaya", "chainJa": "日高屋", "product": "中華そば", "jpy": 420, "url": "https://hidakaya.hiday.co.jp/hits/ja/menu/1/detail/1.html", "checkedOn": "2026-10-05" },
+        { "chain": "Kourakuen", "chainJa": "幸楽苑", "product": "中華そば", "jpy": 490, "url": "https://stores.kourakuen.co.jp/grandmenu/info.html?id=15145", "checkedOn": "2026-10-05" },
+        { "chain": "Gyoza no Ohsho", "chainJa": "餃子の王将", "product": "忘れられない中華そば", "jpy": 748, "url": "https://www.ohsho.co.jp/menu/east/post_510.html", "checkedOn": "2026-10-05", "memo": "東日本メニュー。餃子の王将ラーメン（醤油豚骨）も同額748円" }
+      ]
+    },
+    "tsukemen": {
+      "what": "Standard tsukemen",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Tsukemen TETSU", "chainJa": "つけめんTETSU", "product": "つけめん", "jpy": 990, "url": "https://www.tetsu102.com/1568/menu/", "checkedOn": "2026-10-05", "note": "Tokyo branches; some branches differ", "memo": "三鷹・調布・京王モール新宿で990円。サイズ表記なし。全店共通ページは空" }
+      ],
+      "unresolved": [
+        { "chainJa": "三田製麺所", "url": "https://www.mita-seimen.com/menu", "reason": "公式メニューに価格の掲載なし" },
+        { "chainJa": "舎鈴", "url": "https://tsukemen-sharin.com/menu/", "reason": "公式おしながきに価格の掲載なし" }
+      ]
+    },
+    "udon": {
+      "what": "Plain kake udon, regular",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Hanamaru Udon", "chainJa": "はなまるうどん", "product": "かけ（小）", "jpy": 360, "url": "https://www.hanamaruudon.com/menu/02_6.html", "checkedOn": "2026-10-05", "note": "Small is the one-portion size; medium is ¥550", "memo": "並の区分が無い。小＝1玉を並相当として採用" },
+        { "chain": "Sukesan Udon", "chainJa": "資さんうどん", "product": "かけ（うどん）", "jpy": 438, "url": "https://www.sukesanudon.com/map/branch/125/", "checkedOn": "2026-10-05", "memo": "両国店のおしながきPDF（2026秋冬版・画像）。店舗ページの「店舗のおしながきを見る」から辿る" },
+        { "chain": "Marugame Seimen", "chainJa": "丸亀製麺", "product": "かけうどん（並）", "jpy": 440, "url": "https://jp.marugame.com/menu/udon/kake/", "checkedOn": "2026-10-05", "note": "Kamaage udon is ¥390" }
+      ]
+    },
+    "tachigui-soba": {
+      "what": "Plain kake soba",
+      "tier": "chain",
+      "note": "With a kakiage or tempura topping: ¥550 to ¥620",
+      "chains": [
+        { "chain": "Komoro Soba", "chainJa": "小諸そば", "product": "かけ", "jpy": 390, "url": "https://www.k-mitsuwa.co.jp/business/komoro", "checkedOn": "2026-10-05", "note": "tax not stated on the menu", "memo": "かき揚げ550円。税込・税抜の表記なし" },
+        { "chain": "Yudetaro", "chainJa": "ゆで太郎", "product": "かけ", "jpy": 430, "url": "https://yudetaro.jp/menu/", "checkedOn": "2026-10-05", "memo": "ゆで太郎システムのグランドメニュー画像（2026年10月版）。野菜かきあげそば550円。信越食品運営の店は別メニュー" },
+        { "chain": "Fuji Soba", "chainJa": "名代富士そば", "product": "かけそば", "jpy": 450, "url": "https://fujisoba.co.jp/menu/", "checkedOn": "2026-10-05", "memo": "天ぷらそば620円。2026-08-01に一部価格改定" }
+      ]
+    },
+    "sushi-kaiten": {
+      "what": "Cheapest plate",
+      "tier": "chain",
+      "note": "A plate of lean tuna is ¥120 to ¥150. Branches in central Tokyo charge more per plate",
+      "chains": [
+        { "chain": "Kura Sushi", "chainJa": "くら寿司", "product": "一皿110円〜店舗の最安皿", "jpy": 110, "url": "https://www.kurasushi.co.jp/menu/", "checkedOn": "2026-10-05", "memo": "店舗区分は110/115/125/145円〜の4つ。熟成まぐろは120円（110円〜店舗）" },
+        { "chain": "Hama Sushi", "chainJa": "はま寿司", "product": "標準メニューの最安皿", "jpy": 110, "url": "https://www.hamazushi.com/menu/", "checkedOn": "2026-10-05", "memo": "都市型は121円〜。まぐろ132円（都市型154円）" },
+        { "chain": "Sushiro", "chainJa": "スシロー", "product": "郊外型店舗の最安皿", "jpy": 120, "url": "https://www.akindo-sushiro.co.jp/menu/", "checkedOn": "2026-10-05", "note": "¥150 at central Tokyo branches", "memo": "店舗別表示。川越店・さいたま宮前店120円、新宿東口店150円。厳選まぐろ赤身150円（都心180円）" }
+      ]
+    },
+    "gyudon": {
+      "what": "Beef bowl, regular size",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Matsuya", "chainJa": "松屋", "product": "牛めし 並盛", "jpy": 460, "url": "https://www.matsuyafoods.co.jp/matsuya/menu/gyumeshi/gyumeshi_hp_250422.html", "checkedOn": "2026-10-05", "note": "miso soup included" },
+        { "chain": "Sukiya", "chainJa": "すき家", "product": "牛丼 並盛", "jpy": 480, "url": "https://www.sukiya.jp/menu/in/gyudon/100100/", "checkedOn": "2026-10-05" },
+        { "chain": "Yoshinoya", "chainJa": "吉野家", "product": "牛丼 並盛", "jpy": 498, "url": "https://www.yoshinoya.com/menu/gyudon/gyu-don/", "checkedOn": "2026-10-05", "memo": "店内価格。テイクアウトは489円" }
+      ]
+    },
+    "oyakodon": {
+      "what": "Oyakodon, regular size",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Nakau", "chainJa": "なか卯", "product": "親子丼 並盛", "jpy": 480, "url": "https://www.nakau.co.jp/jp/menu/detail/in/4818.html", "checkedOn": "2026-10-05", "memo": "通常のリクエストは403。ブラウザ相当のヘッダーが要る" }
+      ]
+    },
+    "katsudon": {
+      "what": "Katsudon, regular size",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Nakau", "chainJa": "なか卯", "product": "カツ丼 並盛", "jpy": 650, "url": "https://www.nakau.co.jp/jp/menu/detail/in/4821.html", "checkedOn": "2026-10-05" },
+        { "chain": "Katsuya", "chainJa": "かつや", "product": "カツ丼(梅)", "jpy": 682, "url": "https://www.arclandservice.co.jp/katsuya/menu/", "checkedOn": "2026-10-05" },
+        { "chain": "Matsunoya", "chainJa": "松のや", "product": "ロースかつ丼 並盛", "jpy": 690, "url": "https://www.matsuyafoods.co.jp/matsunoya/menu/donburi/don_rosu_hp_260506.html", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "tendon": {
+      "what": "The standard tempura bowl",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Tenya", "chainJa": "天丼てんや", "product": "元祖てんやの天丼", "jpy": 730, "url": "https://www.tenya.co.jp/pdf/menu.pdf", "checkedOn": "2026-10-05", "note": "The cheapest bowl, chicken and maitake, is ¥630", "memo": "「天丼 並」という商品は無い。メニューPDF（版202609・画像）を目視" }
+      ]
+    },
+    "unaju": {
+      "what": "Unaju, basic grade",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Unatoto", "chainJa": "名代 宇奈とと", "product": "うな重", "jpy": 1060, "url": "https://www.unatoto.com/menu/", "checkedOn": "2026-10-05", "memo": "うな丼640円、うな重上1,740円" },
+        { "chain": "Unagi no Naruse", "chainJa": "鰻の成瀬", "product": "うな重 梅", "jpy": 1900, "url": "https://unagi-naruse.com/", "checkedOn": "2026-10-05", "note": "tax not stated on the menu", "memo": "竹2,500円、松2,900円。税表示なし" }
+      ]
+    },
+    "yakizakana": {
+      "what": "Grilled mackerel set meal",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Yayoiken", "chainJa": "やよい軒", "product": "サバの塩焼定食", "jpy": 1090, "url": "https://www.yayoiken.com/menu_list/index/1", "checkedOn": "2026-10-05" },
+        { "chain": "Ootoya", "chainJa": "大戸屋", "product": "さばの炭火焼き定食", "jpy": 1230, "url": "https://www.ootoya.com/menu_list/index/27183", "checkedOn": "2026-10-05", "memo": "店舗別ページ制。吉祥寺・池袋東口・西荻窪北口駅前・銀座三越前の4店で同額" }
+      ],
+      "unresolved": [
+        { "chainJa": "しんぱち食堂", "url": "https://www.shinpachi-shokudo.com/", "reason": "公式サイトに価格の掲載なし" }
+      ]
+    },
+    "tonkatsu": {
+      "what": "Pork loin cutlet set meal",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Matsunoya", "chainJa": "松のや", "product": "ロースかつ定食", "jpy": 690, "url": "https://www.matsuyafoods.co.jp/matsunoya/menu/teishoku/tei_rosu_hp_260506.html", "checkedOn": "2026-10-05" },
+        { "chain": "Katsuya", "chainJa": "かつや", "product": "ロースカツ定食", "jpy": 913, "url": "https://www.arclandservice.co.jp/katsuya/menu/", "checkedOn": "2026-10-05" },
+        { "chain": "Tonkatsu Wako", "chainJa": "とんかつ和幸", "product": "ロースかつ御飯", "jpy": 1530, "url": "https://wako-group.co.jp/menu/", "checkedOn": "2026-10-05", "memo": "和幸グループ共通メニューの価格。東京の特定店舗では未照合" }
+      ]
+    },
+    "sukiyaki": {
+      "what": "Beef sukiyaki for one, not all-you-can-eat",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Kisoji", "chainJa": "木曽路", "product": "すきやき定食（米国産 100g）／木曽路のすきやき（国産牛ロース 90g）", "jpy": 1430, "jpyMax": 3190, "url": "https://navi.kisoji.co.jp/shop/K267", "checkedOn": "2026-10-05", "note": "¥1,430 is the lunch set with US beef; ¥3,190 is the standard domestic-beef set. Central branches charge more", "memo": "南千住店。新宿三丁目店は平日昼の国産牛すきやきが3,740円" },
+        { "chain": "Washoku Sato", "chainJa": "和食さと", "product": "牛すきうどん鍋定食", "jpy": 1868, "url": "https://cdn.shopify.com/s/files/1/0619/9155/1031/files/26-GrandMenu_260928.pdf", "checkedOn": "2026-10-05", "note": "A one-person sukiyaki hotpot with udon", "memo": "グランドメニューPDF（ファイル名 26-GrandMenu_260928、Shopify CDN）。平日15時〜・土日祝は終日。東京店舗での同一価格は未確認。PDFは版ごとにURLが変わるので、公式サイトのメニューから辿り直す" }
+      ],
+      "unresolved": [
+        { "chainJa": "鍋ぞう（現 MO-MO-PARADISE）", "url": "https://mo-mo-paradise.com/", "reason": "食べ放題のみ。対象外" }
+      ]
+    },
+    "shabu": {
+      "what": "Shabu-shabu for one",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Shabuyo", "chainJa": "しゃぶ葉", "product": "豚ロース しゃぶしゃぶ食べ放題コース（平日ランチ）", "jpy": 1649, "jpyMax": 2089, "url": "https://www.skylark.co.jp/syabuyo/menu/lunch.html", "checkedOn": "2026-10-05", "note": "All-you-can-eat pork; weekday lunch to weekday dinner", "memo": "公式データの税抜1,499／1,899円から、サイト自身の算式（×1.1四捨五入）で税込を算出。都心価格店舗は+110円" },
+        { "chain": "Kisoji", "chainJa": "木曽路", "product": "木曽路のしゃぶしゃぶ（国産牛ロース 90g）", "jpy": 3190, "url": "https://navi.kisoji.co.jp/shop/K267", "checkedOn": "2026-10-05", "note": "A set, not all-you-can-eat. Central branches charge more", "memo": "南千住店" },
+        { "chain": "Onyasai", "chainJa": "しゃぶしゃぶ温野菜", "product": "食べ放題 牛しゃぶコース", "jpy": 3608, "url": "https://www.onyasai.com/menu/menu-tabehoudai.php", "checkedOn": "2026-10-05", "note": "All-you-can-eat beef, the cheapest course" }
+      ]
+    },
+    "yakiniku": {
+      "what": "All-you-can-eat course, cheapest to standard, drinks extra",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Gyukaku", "chainJa": "牛角", "product": "食べ放題 お気軽コース／定番コース", "jpy": 3058, "jpyMax": 3718, "url": "https://www.gyukaku.ne.jp/menu/50item-course.php", "checkedOn": "2026-10-05", "memo": "定番コースは https://www.gyukaku.ne.jp/menu/70item-course.php 。牛角コースは4,158円" },
+        { "chain": "Yakiniku King", "chainJa": "焼肉きんぐ", "product": "58品コース／きんぐコース", "jpy": 3278, "jpyMax": 3828, "from": true, "url": "https://www.yakiniku-king.jp/menu_all/", "checkedOn": "2026-10-05", "note": "varies by branch", "memo": "公式は「〜」表示。東京の店舗別の実額は未確認" },
+        { "chain": "Jojoen", "chainJa": "叙々苑", "product": "焼肉ランチ", "jpy": 3200, "tier": "premium", "url": "https://www.jojoen.co.jp/shop/jojoen/chuohigashi/", "checkedOn": "2026-10-05", "note": "Lunch set at the Shinjuku Chuo-Higashiguchi branch. The weekday standard course is ¥8,000 with service included, for two or more", "memo": "スタンダードコースは https://www.jojoen.co.jp/wp-content/uploads/2026/08/standard_course_260901.pdf 。月会席15,000円＋サービス料。サービス料率は5%表示だがHTMLコメントに10%の旧文面が残る。要再確認" }
+      ]
+    },
+    "yakitori": {
+      "what": "One skewer",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Yakitori no Ogiya", "chainJa": "やきとりの扇屋", "product": "国産もも／ねぎま ほか", "jpy": 154, "jpyMax": 209, "url": "https://movia.jpn.com/shops/info/032286", "checkedOn": "2026-10-05", "note": "Thigh is ¥154, most other skewers ¥209", "memo": "赤羽駅東口店のグランドメニュー画像。備長扇屋（東京に店舗なし）と同額" },
+        { "chain": "Torikizoku", "chainJa": "鳥貴族", "product": "全品均一（焼鳥は各2本）", "jpy": 205, "url": "https://torikizoku.co.jp/assets/uploads/2026/10/menu_jp.pdf", "checkedOn": "2026-10-05", "note": "Everything on the menu is ¥410, and yakitori comes two skewers to a plate", "memo": "メニューPDF（2026 AW）に税込410円均一。205円は410÷2の計算値" }
+      ]
+    },
+    "okonomiyaki": {
+      "what": "Pork okonomiyaki (butatama)",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Chibo", "chainJa": "千房", "product": "豚玉", "jpy": 1180, "url": "https://shop.chibo.com/detail/19/", "checkedOn": "2026-10-05", "note": "Yurakucho branch", "memo": "有楽町ビックカメラ支店のメニューPDF（20260323）" }
+      ],
+      "unresolved": [
+        { "chainJa": "鶴橋風月", "url": "https://fugetsu.jp/?page_id=83", "reason": "公式メニューに価格の掲載なし" },
+        { "chainJa": "道とん堀", "url": "https://dohtonbori.com/menu/okonomiyaki/", "reason": "素の豚玉が無い（チーズin豚玉960円、ミックス990円）。別商品で代替しない" }
+      ]
+    },
+    "takoyaki": {
+      "what": "Takoyaki, eight pieces",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Gindaco", "chainJa": "築地銀だこ", "product": "ぜったいうまい‼ たこ焼（8個入り）", "jpy": 715, "url": "https://www.gindaco.com/menu/", "checkedOn": "2026-10-05", "note": "Eating in; ¥702 to take away" }
+      ]
+    },
+    "kushikatsu": {
+      "what": "One beef skewer",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Kushikatsu Dengana", "chainJa": "串かつでんがな", "product": "牛串", "jpy": 143, "url": "https://www.dengana.jp/menu", "checkedOn": "2026-10-05", "note": "Cheapest skewers ¥110", "memo": "同ページ上部の写真枠は140円、一覧表は143円で不一致。一覧表を採用" },
+        { "chain": "Kushikatsu Tanaka", "chainJa": "串カツ田中", "product": "串カツ牛", "jpy": 209, "url": "https://kushi-tanaka.com/img/files/up/20260917_food.pdf", "checkedOn": "2026-10-05", "note": "Pork ¥198; cheapest regular skewer ¥88", "memo": "グランドメニューPDF（20260917）" }
+      ]
+    },
+    "gyoza": {
+      "what": "Pan-fried gyoza, six pieces",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Hidakaya", "chainJa": "日高屋", "product": "餃子（6個）", "jpy": 300, "url": "https://hidakaya.hiday.co.jp/hits/ja/menu/1/list/5.html", "checkedOn": "2026-10-05" },
+        { "chain": "Osaka Ohsho", "chainJa": "大阪王将", "product": "元祖焼餃子（1人前6ヶ）", "jpy": 330, "url": "https://www.osaka-ohsho.com/store/upload/大阪王将_飯田橋店.pdf", "checkedOn": "2026-10-05", "memo": "全店共通の価格表なし。飯田橋店のメニューブックPDFと新宿店の店舗メニューで330円" },
+        { "chain": "Gyoza no Ohsho", "chainJa": "餃子の王将", "product": "餃子（1人前：6個）", "jpy": 363, "url": "https://www.ohsho.co.jp/menu/east/post.html", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "motsunabe": {
+      "what": "Motsunabe, one portion",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Arizuki", "chainJa": "蟻月", "product": "赤のもつ鍋（九州醤油）一人前", "jpy": 1958, "url": "https://www.arizuki.com/tenpo/menu/shibuya_menu.pdf", "checkedOn": "2026-10-05", "note": "Shibuya branch; miso is ¥2,178; minimum two portions" },
+        { "chain": "Ooyama", "chainJa": "博多もつ鍋おおやま", "product": "もつ鍋 みそ味／しょうゆ味（一人前）", "jpy": 2508, "url": "https://www.motu-ooyama.com/shop/ginza/", "checkedOn": "2026-10-05", "note": "Ginza branch; a ¥550 seat charge is added at night", "memo": "2026-10-01からもつ鍋関連の価格改定の告知あり（/news/6396/）。表示が改定後かは不明。次回要確認" }
+      ],
+      "unresolved": [
+        { "chainJa": "博多もつ鍋やまや", "url": "https://restaurant-yamaya.com/brand/motsu/", "reason": "公式ページに価格の掲載なし" }
+      ]
+    },
+    "oden": {
+      "what": "One piece of daikon",
+      "tier": "chain",
+      "note": "Sold at the counter in the colder months, and not at every branch",
+      "chains": [
+        { "chain": "7-Eleven", "chainJa": "セブン-イレブン", "product": "おでん 味しみ大根", "jpy": 130.68, "url": "https://www.sej.co.jp/products/a/oden/kanto/", "checkedOn": "2026-10-05", "memo": "公式が小数表記。たまご150.12円" },
+        { "chain": "FamilyMart", "chainJa": "ファミリーマート", "product": "厚切大根", "jpy": 145, "url": "https://www.family.co.jp/goods/oden.html", "checkedOn": "2026-10-05" },
+        { "chain": "Lawson", "chainJa": "ローソン", "product": "つゆしみ大根", "jpy": 160, "url": "https://www.lawson.co.jp/recommend/original/oden/", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "miso-soup": {
+      "what": "Miso soup ordered on its own",
+      "tier": "chain",
+      "note": "Matsuya includes it free with any meal eaten in",
+      "chains": [
+        { "chain": "Yoshinoya", "chainJa": "吉野家", "product": "みそ汁", "jpy": 96, "url": "https://www.yoshinoya.com/menu/sidemenu/miso-siru/", "checkedOn": "2026-10-05" },
+        { "chain": "Yayoiken", "chainJa": "やよい軒", "product": "みそ汁", "jpy": 100, "url": "https://www.yayoiken.com/menu_list/index/1", "checkedOn": "2026-10-05" },
+        { "chain": "Sukiya", "chainJa": "すき家", "product": "みそ汁", "jpy": 110, "url": "https://www.sukiya.jp/menu/in/side/701200/index.html", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "beer": {
+      "what": "Draft beer, one glass",
+      "tier": "budget",
+      "chains": [
+        { "chain": "Torikizoku", "chainJa": "鳥貴族", "product": "ザ・プレミアム・モルツ", "jpy": 410, "url": "https://torikizoku.co.jp/assets/uploads/2026/10/menu_jp.pdf", "checkedOn": "2026-10-05", "memo": "容量の表記なし" },
+        { "chain": "Uotami", "chainJa": "魚民", "product": "キリン一番搾り〈生〉中ジョッキ", "jpy": 647, "url": "https://www.monteroza.co.jp/brand/tami/", "checkedOn": "2026-10-05", "memo": "グランドメニュー画像（2026.9版）。22時以降入店は深夜料金10%" },
+        { "chain": "Isomaru Suisan", "chainJa": "磯丸水産", "product": "生ビール（キリン一番搾り）", "jpy": 659, "url": "https://isomaru.jp/menu/", "checkedOn": "2026-10-05", "note": "from its Aug 2025 menu, the latest the chain publishes", "memo": "メニューPDFは2025年8月アップロード。新版が出たら差し替える" }
+      ]
+    },
+    "sake": {
+      "what": "The basic sake on the menu",
+      "tier": "budget",
+      "chains": [
+        { "chain": "Torikizoku", "chainJa": "鳥貴族", "product": "松竹梅 豪快 純米酒〈カップ酒〉", "jpy": 410, "url": "https://torikizoku.co.jp/assets/uploads/2026/10/menu_jp.pdf", "checkedOn": "2026-10-05", "note": "cup sake, volume not stated" },
+        { "chain": "Uotami", "chainJa": "魚民", "product": "白鶴 正一合", "jpy": 548, "url": "https://www.monteroza.co.jp/brand/tami/", "checkedOn": "2026-10-05", "note": "one go (180ml), as stated on the menu" },
+        { "chain": "Isomaru Suisan", "chainJa": "磯丸水産", "product": "磯丸純米酒", "jpy": 549, "url": "https://isomaru.jp/menu/", "checkedOn": "2026-10-05", "note": "volume not stated; from its Aug 2025 menu" }
+      ]
+    },
+    "highball": {
+      "what": "The basic highball",
+      "tier": "budget",
+      "chains": [
+        { "chain": "Torikizoku", "chainJa": "鳥貴族", "product": "角ハイボール", "jpy": 410, "url": "https://torikizoku.co.jp/assets/uploads/2026/10/menu_jp.pdf", "checkedOn": "2026-10-05" },
+        { "chain": "Uotami", "chainJa": "魚民", "product": "ジムビームハイボール", "jpy": 438, "url": "https://www.monteroza.co.jp/brand/tami/", "checkedOn": "2026-10-05" },
+        { "chain": "Isomaru Suisan", "chainJa": "磯丸水産", "product": "オリジナルハイボール「1丁目 ハイボール」", "jpy": 499, "url": "https://isomaru.jp/menu/", "checkedOn": "2026-10-05", "note": "from its Aug 2025 menu" }
+      ]
+    },
+    "shochu": {
+      "what": "Cheapest glass of shochu",
+      "tier": "budget",
+      "chains": [
+        { "chain": "Uotami", "chainJa": "魚民", "product": "本格芋焼酎 モンテローザ（グラス）", "jpy": 328, "url": "https://www.monteroza.co.jp/brand/tami/", "checkedOn": "2026-10-05" },
+        { "chain": "Torikizoku", "chainJa": "鳥貴族", "product": "大隅（麦）／黒霧島（芋）", "jpy": 410, "url": "https://torikizoku.co.jp/assets/uploads/2026/10/menu_jp.pdf", "checkedOn": "2026-10-05" },
+        { "chain": "Isomaru Suisan", "chainJa": "磯丸水産", "product": "本格焼酎 各種", "jpy": 549, "url": "https://isomaru.jp/menu/", "checkedOn": "2026-10-05", "note": "from its Aug 2025 menu" }
+      ]
+    },
+    "coffee": {
+      "what": "Brewed coffee, smallest size",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Doutor", "chainJa": "ドトール", "product": "ブレンドコーヒー S", "jpy": 300, "url": "https://www.doutor.co.jp/dcs/menu/detail/20110907153810.html", "checkedOn": "2026-10-05" },
+        { "chain": "Starbucks", "chainJa": "スターバックス", "product": "ブリュード コーヒー Short", "jpy": 394, "from": true, "url": "https://menu.starbucks.co.jp/4524785000018", "checkedOn": "2026-10-05", "note": "Tall is ¥440" },
+        { "chain": "Komeda's Coffee", "chainJa": "コメダ珈琲店", "product": "コメダブレンド", "jpy": 580, "url": "https://www.komeda.co.jp/menu/category.html?cat=1-2&s=481", "checkedOn": "2026-10-05", "note": "The most common Tokyo price; ¥540 to ¥700 depending on the branch", "memo": "東京都104店を公式メニューAPIで確認。580円が28店で最多。代表は荻窪南口店" }
+      ]
+    },
+    "parfait": {
+      "what": "A standard chocolate sundae or parfait at a family restaurant",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Gusto", "chainJa": "ガスト", "product": "チョコバナナサンデー", "jpy": 439, "url": "https://www.skylark.co.jp/gusto/menu/menu_category.html?cid=200", "checkedOn": "2026-10-05" },
+        { "chain": "Denny's", "chainJa": "デニーズ", "product": "チョコプリンパルフェ", "jpy": 770, "url": "https://www.dennys.jp/menu/dessert/", "checkedOn": "2026-10-05" },
+        { "chain": "Royal Host", "chainJa": "ロイヤルホスト", "product": "ホットファッジサンデー", "jpy": 1298, "url": "https://www.royalhost.jp/menu/grand/dessert/post_347.html", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "crepe": {
+      "what": "Standard crepes, cheapest to most expensive",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Dipper Dan", "chainJa": "ディッパーダン", "product": "定番クレープ（ホットチョコバナナ ほか）", "jpy": 450, "jpyMax": 750, "url": "https://dipperdan.jp/menu/", "checkedOn": "2026-10-05", "note": "tax not stated on the menu" }
+      ],
+      "unresolved": [
+        { "chainJa": "マリオンクレープ", "url": "https://www.marion.co.jp/cream/", "reason": "公式サイトに通常価格の掲載なし" }
+      ]
+    },
+    "onigiri": {
+      "what": "Plain salted rice ball up to the dearest regular one",
+      "tier": "chain",
+      "note": "A salmon onigiri is ¥211 to ¥235",
+      "chains": [
+        { "chain": "7-Eleven", "chainJa": "セブン-イレブン", "product": "塩むすび〜鮭ハラスの西京焼", "jpy": 145.8, "jpyMax": 300.24, "url": "https://www.sej.co.jp/products/a/cat/010010030000000/kanto/1/l100/", "checkedOn": "2026-10-05", "memo": "関東ページ。公式が小数表記。炭火焼銀しゃけ213.84円、ツナマヨ196.56円" },
+        { "chain": "FamilyMart", "chainJa": "ファミリーマート", "product": "塩おむすび〜ぼんご監修 大きなおむすび", "jpy": 149, "jpyMax": 321, "url": "https://www.family.co.jp/goods/omusubi.html", "checkedOn": "2026-10-05", "memo": "手巻 紅しゃけ235円、シーチキンマヨネーズ198円" },
+        { "chain": "Lawson", "chainJa": "ローソン", "product": "塩にぎり〜具！おにぎり", "jpy": 149, "jpyMax": 354, "url": "https://www.lawson.co.jp/recommend/original/rice/", "checkedOn": "2026-10-05", "memo": "炙り熟成紅鮭211円、シーチキンマヨネーズ171円" }
+      ]
+    },
+    "bento": {
+      "what": "The range of boxed meals on sale in the Kanto region",
+      "tier": "chain",
+      "chains": [
+        { "chain": "FamilyMart", "chainJa": "ファミリーマート", "product": "お弁当（関東販売分）", "jpy": 398, "jpyMax": 753, "url": "https://www.family.co.jp/goods/obento.html", "checkedOn": "2026-10-05" },
+        { "chain": "7-Eleven", "chainJa": "セブン-イレブン", "product": "お弁当・チルド弁当（関東ページ掲載品）", "jpy": 429.84, "jpyMax": 753.84, "url": "https://www.sej.co.jp/products/a/cat/010020010000000/kanto/1/l100/", "checkedOn": "2026-10-05", "memo": "最安429.84円は北関東・埼玉のみの商品。東京販売の最安は464.40円のミニ海苔弁" },
+        { "chain": "Lawson", "chainJa": "ローソン", "product": "お弁当・チルド弁当", "jpy": 473, "jpyMax": 754, "url": "https://www.lawson.co.jp/recommend/original/bento/", "checkedOn": "2026-10-05" }
+      ]
+    },
+    "hamburger": {
+      "what": "The plain hamburger",
+      "tier": "chain",
+      "note": "The signature burgers, a Big Mac and a Mos Burger, are ¥500 each",
+      "chains": [
+        { "chain": "McDonald's", "chainJa": "マクドナルド", "product": "ハンバーガー", "jpy": 190, "from": true, "url": "https://www.mcdonalds.co.jp/products/1010/", "checkedOn": "2026-10-05", "note": "more at city-centre branches", "memo": "公式表記は「¥190~」。ビッグマック500~、セット770~" },
+        { "chain": "Mos Burger", "chainJa": "モスバーガー", "product": "ハンバーガー", "jpy": 250, "url": "https://www.mos.jp/menu/category/?c_id=1", "checkedOn": "2026-10-05", "memo": "JS描画。公式JSON /data/menu/menu_category/1.json で確認。モスバーガー500円" }
+      ],
+      "unresolved": [
+        { "chainJa": "バーガーキング", "url": "https://www.burgerking.co.jp/menu/", "reason": "単品の「ハンバーガー」が無い（チーズバーガー360円、ワッパー690円）。別商品で代替しない" }
+      ]
+    },
+    "curry": {
+      "what": "Plain curry rice, regular size",
+      "tier": "chain",
+      "chains": [
+        { "chain": "CoCo Ichibanya", "chainJa": "CoCo壱番屋", "product": "ポークカレー", "jpy": 646, "url": "https://www.ichibanya.co.jp/menu/list.html?cid=1", "checkedOn": "2026-10-05", "memo": "表示価格が東京・神奈川・大阪の価格（他地域は値引き）。地域差の注記は2024年付で古い" },
+        { "chain": "Matsuya", "chainJa": "松屋", "product": "創業ビーフカレー", "jpy": 680, "url": "https://www.matsuyafoods.co.jp/matsuya/menu/curry/beef_hp_260728.html", "checkedOn": "2026-10-05" }
+      ],
+      "unresolved": [
+        { "chainJa": "ゴーゴーカレー", "url": "https://gogocurry.com/pages/menu", "reason": "公式メニューに価格の掲載なし" }
+      ]
+    },
+    "famires-lunch": {
+      "what": "Weekday lunch set, drink bar extra",
+      "tier": "chain",
+      "note": "The drink bar adds ¥200 to ¥330",
+      "chains": [
+        { "chain": "Saizeriya", "chainJa": "サイゼリヤ", "product": "ランチ スパゲッティ／ハンバーグ", "jpy": 500, "jpyMax": 600, "url": "https://book.saizeriya.co.jp/library/site/menu1907/book-lists/", "checkedOn": "2026-10-05", "memo": "ランチメニュー N2606版" },
+        { "chain": "Joyfull", "chainJa": "ジョイフル", "product": "日替りランチ／カフェプレートランチ", "jpy": 500, "jpyMax": 700, "url": "https://www.joyfull.co.jp/menu?category=13", "checkedOn": "2026-10-05", "memo": "関東エリア版PDF（2026.07）" },
+        { "chain": "Gusto", "chainJa": "ガスト", "product": "日替わりランチ", "jpy": 500, "jpyMax": 824, "url": "https://www.skylark.co.jp/gusto/menu/menu_category.html?cid=290", "checkedOn": "2026-10-05", "note": "varies by branch", "memo": "公式が幅で表示。東京の標準店の額は特定できず" }
+      ]
+    },
+    "wa-breakfast": {
+      "what": "Cheapest Japanese breakfast set: rice, miso soup, egg or natto",
+      "tier": "chain",
+      "note": "With grilled fish: ¥530 to ¥700. Served until 11:00",
+      "chains": [
+        { "chain": "Sukiya", "chainJa": "すき家", "product": "たまかけ朝食（ごはん並盛）", "jpy": 330, "url": "https://www.sukiya.jp/menu/in/morning/505000/index.html", "checkedOn": "2026-10-05", "memo": "焼鮭朝食560円" },
+        { "chain": "Matsuya", "chainJa": "松屋", "product": "Wで選べる玉子かけごはん", "jpy": 350, "url": "https://www.matsuyafoods.co.jp/matsuya/menu/morning/index.html", "checkedOn": "2026-10-05", "memo": "\"炙り\"焼鮭朝定食700円" },
+        { "chain": "Yoshinoya", "chainJa": "吉野家", "product": "納豆定食", "jpy": 430, "url": "https://www.yoshinoya.com/menu/morningset/nattou-tei/", "checkedOn": "2026-10-05", "memo": "焼魚定食530円" }
+      ]
+    },
+    "morning": {
+      "what": "Morning set with a coffee",
+      "tier": "chain",
+      "chains": [
+        { "chain": "Doutor", "chainJa": "ドトール", "product": "モーニング・セットA ハムタマゴサラダ", "jpy": 500, "from": true, "url": "https://www.doutor.co.jp/dcs/menu/detail/20221004104238.html", "checkedOn": "2026-10-05", "note": "A sandwich with a small coffee, until 10:30" },
+        { "chain": "Komeda's Coffee", "chainJa": "コメダ珈琲店", "product": "モーニングサービス", "jpy": 580, "url": "https://www.komeda.co.jp/menu/morning_komeda.html", "checkedOn": "2026-10-05", "note": "Toast and an egg come free with any drink until 11:00, so this is just the price of the coffee" }
+      ],
+      "unresolved": [
+        { "chainJa": "星乃珈琲店", "url": "https://www.hoshinocoffee.com/menu.html", "reason": "公式サイトに価格の掲載なし" }
+      ]
+    }
+  }
+}

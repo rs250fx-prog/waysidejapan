@@ -1,8 +1,11 @@
 /**
  * 日本食の価格基準。サイトの看板になる参照データ。
  *
- * 数値は3種類あり、混ぜない。
+ * 数値は4種類あり、混ぜない。
  *
+ *   chain     … 大衆チェーンの公式サイトの価格（food-prices.chain.json）。
+ *               **月次の定期実行が見直す**（docs/ROUTINES.md）。平均は出さず、
+ *               店名つきの幅で見せる
  *   official  … 公的統計（総務省統計局 小売物価統計調査）の全国平均。
  *               品目の定義と調査月をそのまま持つ。勝手に丸めない。
  *               **月次で自動更新する**（tools/fetch-food-prices.mjs）
@@ -14,10 +17,45 @@
  * 空欄ではなく、基準価格が存在しないという情報そのもの。
  *
  * 分類（14大項目・72中項目）は編集上の判断なので手で持つ。
- * 数値のうち official だけが自動で入れ替わる。
+ * 数値のうち official と chain が自動で入れ替わる。
  */
 
 import officialData from './food-prices.official.json';
+import chainData from './food-prices.chain.json';
+
+/** チェーン1社ぶんの価格。公式サイトで確認できたものだけが入る */
+export interface ChainPrice {
+  chain: string;
+  chainJa: string;
+  /** 公式メニュー上の商品名。言い換えない */
+  product: string;
+  /** 公式の税込表示そのまま。コンビニは小数のことがある */
+  jpy: number;
+  /** 幅で出すときの上限（食べ放題の最安〜標準、店舗差など） */
+  jpyMax?: number;
+  /** 公式が「〜」で出している下限 */
+  from?: boolean;
+  /** premium は高級チェーン。幅の計算に混ぜず、別枠で出す */
+  tier?: 'premium';
+  url: string;
+  /** 確認日 YYYY-MM-DD */
+  checkedOn: string;
+  /** ページに出す補足（英語） */
+  note?: string;
+  /** 内部用の覚え書き。ページに出さない */
+  memo?: string;
+}
+
+export interface ChainItem {
+  /** 何を比べているか（英語）。「並盛の牛丼」のような条件 */
+  what: string;
+  /** budget は格安大衆チェーン（居酒屋の酒）。個人店の額と並べるための区別 */
+  tier: 'chain' | 'budget';
+  note?: string;
+  chains: ChainPrice[];
+  /** 公式で価格を確認できなかった社。載せないが、月次確認では毎回見に行く */
+  unresolved?: { chainJa: string; url: string; reason: string }[];
+}
 
 export interface Official {
   jpy: number;
@@ -43,6 +81,13 @@ export interface PriceEntry {
    */
   officialKey?: keyof typeof officialData.items;
   official?: Official;
+  /**
+   * 大衆チェーンの公式価格のキー。数値は food-prices.chain.json にあり、
+   * 月次の定期実行が書き換える。reference（運営者の実見）とは別の数字で、
+   * 上書きしない。ラーメンのようにチェーンと実勢が離れる品目があるため
+   */
+  chainKey?: keyof typeof chainData.items;
+  chain?: ChainItem;
   reference?: {
     jpy: number;
     /** true なら「この額から」。4,000円〜 のような下限を、代表値と混同させない */
@@ -98,6 +143,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Ramen',
         nameJa: 'ラーメン',
+        chainKey: 'ramen',
         officialKey: 'ramen',
         reference: {
           jpy: 1000,
@@ -108,10 +154,11 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Tsukemen (dipping noodles)',
         nameJa: 'つけ麺',
+        chainKey: 'tsukemen',
         reference: { jpy: 900, note: 'Tokyo, a standard bowl', seenOn: '2026-10' },
       },
       { name: 'Soba', nameJa: '日本そば', officialKey: 'soba' },
-      { name: 'Udon', nameJa: 'うどん', officialKey: 'udon' },
+      { name: 'Udon', nameJa: 'うどん', chainKey: 'udon', officialKey: 'udon' },
       {
         name: 'Yakisoba',
         nameJa: '焼きそば',
@@ -120,6 +167,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Standing soba at a station',
         nameJa: '立ち食いそば',
+        chainKey: 'tachigui-soba',
         reference: {
           jpy: 500,
           note: 'The cheapest hot meal on a Japanese platform, and one of the best-value',
@@ -138,6 +186,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Conveyor-belt sushi',
         nameJa: '回転ずし',
+        chainKey: 'sushi-kaiten',
         officialKey: 'sushi-kaiten',
         reference: {
           jpy: 2000,
@@ -175,25 +224,29 @@ export const FOOD_PRICES: PriceGroup[] = [
     intro:
       'Where the gap between everyday Japan and tourist Japan opens widest. A seafood bowl has no official figure, which is exactly why its price can be anything.',
     items: [
-      { name: 'Gyudon (beef bowl)', nameJa: '牛丼', officialKey: 'gyudon' },
+      { name: 'Gyudon (beef bowl)', nameJa: '牛丼', chainKey: 'gyudon', officialKey: 'gyudon' },
       {
         name: 'Oyakodon (chicken and egg)',
         nameJa: '親子丼',
+        chainKey: 'oyakodon',
         reference: { jpy: 780, note: 'Tokyo, a standard shop', seenOn: '2026-10' },
       },
       {
         name: 'Katsudon (pork cutlet)',
         nameJa: 'カツ丼',
+        chainKey: 'katsudon',
         reference: { jpy: 980, note: 'Tokyo, a standard shop', seenOn: '2026-10' },
       },
       {
         name: 'Tendon (tempura)',
         nameJa: '天丼',
+        chainKey: 'tendon',
         reference: { jpy: 980, note: 'Tokyo, a standard shop', seenOn: '2026-10' },
       },
       {
         name: 'Unaju (eel)',
         nameJa: 'うな重',
+        chainKey: 'unaju',
         reference: { jpy: 2500, from: true, note: 'Eel is the one everyday dish that is genuinely expensive in Japan', seenOn: '2026-10' },
       },
       {
@@ -217,11 +270,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Grilled fish set',
         nameJa: '焼魚定食',
+        chainKey: 'yakizakana',
         reference: { jpy: 1200, from: true, note: 'Rice, soup and pickles included — this is the standard Japanese lunch', seenOn: '2026-10' },
       },
       {
         name: 'Tonkatsu set',
         nameJa: 'とんかつ定食',
+        chainKey: 'tonkatsu',
         reference: { jpy: 1700, from: true, note: 'Above the ¥2,000 line once you order the better cut', seenOn: '2026-10' },
       },
       {
@@ -232,11 +287,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Sukiyaki, per person',
         nameJa: 'すき焼き（1人前）',
+        chainKey: 'sukiyaki',
         reference: { jpy: 3500, from: true, note: 'A shared pot, so the figure is per head', seenOn: '2026-10' },
       },
       {
         name: 'Shabu-shabu, per person',
         nameJa: 'しゃぶしゃぶ（1人前）',
+        chainKey: 'shabu',
         reference: { jpy: 3500, from: true, note: 'Same level as sukiyaki, and usually the same kind of restaurant', seenOn: '2026-10' },
       },
       {
@@ -261,6 +318,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Yakiniku, per person',
         nameJa: '焼肉（1人あたり）',
+        chainKey: 'yakiniku',
         reference: { jpy: 4000, from: true, note: 'Grilling it yourself, one person, with drinks', seenOn: '2026-10' },
       },
       {
@@ -281,6 +339,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Yakitori, per skewer',
         nameJa: '焼鳥（1本）',
+        chainKey: 'yakitori',
         reference: {
           jpy: 200,
           from: true,
@@ -304,11 +363,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Okonomiyaki',
         nameJa: 'お好み焼き',
+        chainKey: 'okonomiyaki',
         reference: { jpy: 980, from: true, note: 'Osaka and Hiroshima versions are different dishes at a similar price', seenOn: '2026-10' },
       },
       {
         name: 'Takoyaki, 6-8 pieces',
         nameJa: 'たこ焼き（6〜8個）',
+        chainKey: 'takoyaki',
         reference: { jpy: 500, from: true, note: 'A snack rather than a meal, and the classic thing to eat while walking', seenOn: '2026-10' },
       },
       {
@@ -319,11 +380,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Kushikatsu, per skewer',
         nameJa: '串カツ（1本）',
+        chainKey: 'kushikatsu',
         reference: { jpy: 250, from: true, note: 'Priced per skewer. A meal is several, and the sauce is not for dipping twice', seenOn: '2026-10' },
       },
       {
         name: 'Gyoza, one plate',
         nameJa: '餃子（1皿）',
+        chainKey: 'gyoza',
         reference: { jpy: 400, from: true, note: 'A side dish in Japan, not a main', seenOn: '2026-10' },
       },
     ],
@@ -337,6 +400,7 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Motsunabe, per person',
         nameJa: 'もつ鍋（1人前）',
+        chainKey: 'motsunabe',
         reference: { jpy: 3000, from: true, note: 'A Fukuoka dish, usually ordered for two or more', seenOn: '2026-10' },
       },
       {
@@ -347,11 +411,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Oden, per piece',
         nameJa: 'おでん（1個）',
+        chainKey: 'oden',
         reference: { jpy: 250, from: true, note: 'Priced per piece, including at convenience stores in winter', seenOn: '2026-10' },
       },
       {
         name: 'Miso soup, as a side',
         nameJa: '味噌汁（単品）',
+        chainKey: 'miso-soup',
         reference: { jpy: 200, from: true, note: 'Usually included with a set meal — this is the price when it is not', seenOn: '2026-10' },
       },
     ],
@@ -380,21 +446,25 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Draft beer',
         nameJa: '生ビール（1杯）',
-        reference: { jpy: 600, from: true, note: 'Per glass, at an izakaya', seenOn: '2026-10' },
+        chainKey: 'beer',
+        reference: { jpy: 650, note: 'Per glass, at an independent izakaya', seenOn: '2026-10' },
       },
       {
         name: 'Sake, one go (180ml)',
         nameJa: '日本酒（1合）',
+        chainKey: 'sake',
         reference: { jpy: 1000, from: true, note: 'One go is 180ml, about a glass and a half', seenOn: '2026-10' },
       },
       {
         name: 'Highball',
         nameJa: 'ハイボール（1杯）',
+        chainKey: 'highball',
         reference: { jpy: 500, from: true, note: 'Whisky and soda, the default cheap drink', seenOn: '2026-10' },
       },
       {
         name: 'Shochu',
         nameJa: '焼酎（1杯）',
+        chainKey: 'shochu',
         reference: { jpy: 450, from: true, note: 'Usually the cheapest thing on the drinks list', seenOn: '2026-10' },
       },
     ],
@@ -405,7 +475,7 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: '喫茶・甘味',
     intro: 'Useful for calibrating everything else. A coffee is the cheapest way to learn what a place thinks it is.',
     items: [
-      { name: 'Coffee, cafe', nameJa: 'コーヒー（喫茶店）', officialKey: 'coffee' },
+      { name: 'Coffee, cafe', nameJa: 'コーヒー（喫茶店）', chainKey: 'coffee', officialKey: 'coffee' },
       {
         name: 'Matcha with a sweet',
         nameJa: '抹茶と和菓子',
@@ -419,11 +489,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Parfait',
         nameJa: 'パフェ',
+        chainKey: 'parfait',
         reference: { jpy: 800, from: true, note: 'At a cafe', seenOn: '2026-10' },
       },
       {
         name: 'Crepe',
         nameJa: 'クレープ',
+        chainKey: 'crepe',
         reference: { jpy: 500, from: true, note: 'A street stand, eaten walking', seenOn: '2026-10' },
       },
     ],
@@ -438,11 +510,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Convenience store onigiri',
         nameJa: 'コンビニおにぎり',
+        chainKey: 'onigiri',
         reference: { jpy: 150, from: true, note: 'A wide band — 150 for a plain one, up to 350 for salmon roe or tuna belly', seenOn: '2026-10' },
       },
       {
         name: 'Convenience store bento',
         nameJa: 'コンビニ弁当',
+        chainKey: 'bento',
         reference: { jpy: 700, note: 'A full meal, hot, at any hour', seenOn: '2026-10' },
       },
       {
@@ -468,16 +542,18 @@ export const FOOD_PRICES: PriceGroup[] = [
     nameJa: 'ファストフード',
     intro: 'The floor of eating out in Japan, and a useful reminder of how little a meal can cost.',
     items: [
-      { name: 'Hamburger', nameJa: 'ハンバーガー', officialKey: 'hamburger' },
-      { name: 'Curry rice', nameJa: 'カレーライス', officialKey: 'curry' },
+      { name: 'Hamburger', nameJa: 'ハンバーガー', chainKey: 'hamburger', officialKey: 'hamburger' },
+      { name: 'Curry rice', nameJa: 'カレーライス', chainKey: 'curry', officialKey: 'curry' },
       {
         name: 'Gyudon chain, regular',
         nameJa: '牛丼チェーン（並）',
+        chainKey: 'gyudon',
         reference: { jpy: 490, note: 'The one case on this page where the survey figure and the street agree almost exactly', seenOn: '2026-10' },
       },
       {
         name: 'Family restaurant, lunch',
         nameJa: 'ファミレスのランチ',
+        chainKey: 'famires-lunch',
         reference: { jpy: 980, from: true, note: 'Drink bar usually extra', seenOn: '2026-10' },
       },
     ],
@@ -497,11 +573,13 @@ export const FOOD_PRICES: PriceGroup[] = [
       {
         name: 'Japanese set breakfast',
         nameJa: '和朝食',
+        chainKey: 'wa-breakfast',
         reference: { jpy: 600, note: 'Places serving a proper morning teishoku are scarce. The gyudon chains fill the gap with a breakfast set', seenOn: '2026-10' },
       },
       {
         name: 'Cafe morning set',
         nameJa: '喫茶店のモーニング',
+        chainKey: 'morning',
         reference: { jpy: 1000, note: 'A Tokyo figure. In Kansai and especially around Aichi it is about 500, and often comes free with a coffee — morning service is a western-Japan institution that barely exists in Tokyo', seenOn: '2026-10' },
       },
     ],
@@ -595,7 +673,24 @@ for (const group of FOOD_PRICES) {
       const row = (officialData.items as Record<string, Official>)[item.officialKey];
       if (row) item.official = row;
     }
+    if (item.chainKey) {
+      const row = (chainData.items as Record<string, ChainItem>)[item.chainKey];
+      if (row?.chains.length) item.chain = row;
+    }
   }
+}
+
+/** チェーン価格の最終確認日。ページに出す */
+export const chainCheckedAt = chainData._checkedAt;
+export const chainItems = FOOD_PRICES.reduce((n, g) => n + g.items.filter((i) => i.chain).length, 0);
+
+/** 幅の計算。高級チェーンは混ぜない */
+export function chainRange(item: ChainItem): { min: number; max: number; from: boolean } | null {
+  const rows = item.chains.filter((c) => c.tier !== 'premium');
+  if (!rows.length) return null;
+  const min = Math.min(...rows.map((c) => c.jpy));
+  const max = Math.max(...rows.map((c) => c.jpyMax ?? c.jpy));
+  return { min, max, from: rows.length === 1 && !!rows[0].from };
 }
 
 /** 統計の最終更新日。ページに出す */
