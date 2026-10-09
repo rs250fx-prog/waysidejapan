@@ -6,6 +6,7 @@ import { AUTHOR, SITE_URL, hasAnyAffiliate, type Locale } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 import { formatMonth } from '../lib/money.ts';
 import { shouldNoindex, hrefOf, type Article } from '../lib/content.ts';
+import { dishHub } from '../lib/lineages.ts';
 import { IS_PUBLIC } from '../config.ts';
 
 interface Props {
@@ -17,6 +18,8 @@ interface Props {
 const { entry, locale, alternates = [] } = Astro.props;
 const d = entry.data;
 const url = new URL(hrefOf(entry), SITE_URL).href;
+// 系譜ページは品目ハブの下にぶら下がる。ハブが無ければ普通のパンくず
+const hub = d.kind === 'lineage' && d.dish ? await dishHub(locale, d.dish) : null;
 
 const graph: Record<string, unknown>[] = [
   {
@@ -42,7 +45,10 @@ const graph: Record<string, unknown>[] = [
         name: t(locale, `nav.${d.category}` as UIKey),
         item: new URL(`/${locale}/${d.category}/`, SITE_URL).href,
       },
-      { '@type': 'ListItem', position: 3, name: d.title, item: url },
+      ...(hub
+        ? [{ '@type': 'ListItem', position: 3, name: hub.data.title, item: new URL(hrefOf(hub), SITE_URL).href }]
+        : []),
+      { '@type': 'ListItem', position: hub ? 4 : 3, name: d.title, item: url },
     ],
   },
 ];
@@ -75,6 +81,12 @@ if (d.faq.length > 0) {
       <a href={`/${locale}/`}>Home</a>
       <span aria-hidden="true">›</span>
       <a href={`/${locale}/${d.category}/`}>{t(locale, `nav.${d.category}` as UIKey)}</a>
+      {hub && (
+        <>
+          <span aria-hidden="true">›</span>
+          <a href={hrefOf(hub)}>{hub.data.title.split(':')[0]}</a>
+        </>
+      )}
     </nav>
 
     <h1>{d.title}</h1>

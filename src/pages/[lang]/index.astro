@@ -18,21 +18,21 @@ const latest = articles.filter((a) => a.data.category !== 'column').slice(1, 7);
 const columns = await listArticles(lang, 'column');
 
 /** 「Three ways in」は旅の3カテゴリ固定。コラムは別枠で扱う */
-const PRIMARY = ['rail', 'eat', 'soak'] as const;
+const PRIMARY = ['eat', 'soak', 'rail'] as const;
 const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[]).includes(n.key));
 /** カードの1行説明。写真が入るまでは、これとアイコンが入口の手がかりになる */
 const WAYS: Record<string, string> = {
-  rail: 'Regional passes, model routes, and the transfers that catch people out.',
-  eat: 'What the food along the line costs, and what locals actually pay for it.',
+  eat: 'What each dish is, why it is the way it is, what locals pay for it, and where its lineages come from.',
   soak: 'Onsen you can walk to from a platform, with the rules stated up front.',
+  rail: 'Getting there: regional passes, model routes, and the transfers that catch people out.',
 };
 ---
 
 <Base
   locale={lang}
   bareTitle
-  title={`${SITE_NAME} — western Japan by train, plate and bath`}
-  description="A Japanese local writing in English about western Japan by rail: regional passes, food along the line and onsen near the platform. Fares with a date."
+  title={`${SITE_NAME} — what Japan eats, and why`}
+  description="A Japanese local explaining what Japan eats and why: the price locals pay, the lineages behind each dish, and the trains and baths on the way."
 >
   <section class="hero wrap">
     <div class="hero-text">
@@ -53,7 +53,7 @@ const WAYS: Record<string, string> = {
         ) : (
           <>
             <h1>{SITE_NAME}</h1>
-            <p class="dek">{TAGLINE} — western Japan by train, plate and bath. The first guides are being written.</p>
+            <p class="dek">{TAGLINE} — what Japan eats, and why. The first guides are being written.</p>
           </>
         )
       }

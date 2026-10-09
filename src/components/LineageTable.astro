@@ -1,0 +1,143 @@
+---
+/**
+ * 系譜の横並び表。品目ハブに置く。
+ * 列は品目ごとの比較軸（JSON の axes）で、全系譜が同じ列を持つから比べられる。
+ * 系譜ページがある行だけ名前をリンクにする。
+ */
+import { lineagesOf, publishedLineagePages } from '../lib/lineages.ts';
+import Icon from './Icon.astro';
+
+interface Props {
+  dish: string;
+  locale?: string;
+}
+const { dish, locale = 'en' } = Astro.props;
+const data = lineagesOf(dish);
+const published = await publishedLineagePages(locale, dish);
+---
+
+{
+  data && (
+    <div class="lineages">
+      <table>
+        <thead>
+          <tr>
+            <th>Lineage</th>
+            <th>Origin</th>
+            {data.axes.map((a) => (
+              <th>{a.label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.lineages.map((l) => (
+            <tr class:list={[{ planned: !published.has(l.key) }]}>
+              <td>
+                {published.has(l.key) ? (
+                  <a href={`/${locale}/eat/${dish}-${l.key}/`}>
+                    {l.name} <Icon name="arrow" />
+                  </a>
+                ) : (
+                  <span class="name">{l.name}</span>
+                )}
+                <span class="ja">{l.nameJa}</span>
+              </td>
+              <td>
+                {l.origin.place}
+                <span class="era">{l.origin.era}</span>
+              </td>
+              {data.axes.map((a) => (
+                <td>{l.cells[a.key] ?? '—'}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        Lineages without a link are on the list but not written yet. The table is kept in one place so every lineage is
+        described on the same terms.
+      </p>
+    </div>
+  )
+}
+
+<style>
+  .lineages {
+    margin: 22px 0 28px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  thead th {
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--ink);
+    padding: 0 12px 8px 0;
+  }
+  td {
+    border-bottom: 1px solid var(--line-2);
+    padding: 11px 12px 11px 0;
+    vertical-align: top;
+    color: var(--ink-2);
+  }
+  td:first-child {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  td a {
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .ja,
+  .era {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .ja {
+    font-family: var(--font-jp);
+  }
+  .planned td:first-child {
+    color: var(--muted-2);
+  }
+  .note {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  @media (max-width: 767px) {
+    /* 列が多いので、1系譜1ブロックに積む */
+    table,
+    thead,
+    tbody,
+    tr,
+    td {
+      display: block;
+    }
+    thead {
+      display: none;
+    }
+    tr {
+      border-bottom: 1px solid var(--line);
+      padding-block: 10px;
+    }
+    td {
+      border: none;
+      padding: 3px 0;
+    }
+    td:first-child {
+      white-space: normal;
+      font-size: 18px;
+    }
+  }
+</style>

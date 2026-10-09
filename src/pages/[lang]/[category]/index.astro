@@ -12,7 +12,10 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Locale;
 const category = Astro.params.category as Category;
-const articles = await listArticles(lang, category);
+const RANK = { dish: 0, lineage: 1, guide: 2 } as const;
+// 食の一覧は型で並べる。品目ハブが入口で、系譜がその下、店や街の記事は最後
+const articles = (await listArticles(lang, category)).sort((a, b) => RANK[a.data.kind] - RANK[b.data.kind]);
+const KIND_LABEL = { dish: 'Dish', lineage: 'Lineage', guide: '' } as const;
 const label = t(lang, `nav.${category}` as UIKey);
 
 const intro: Record<string, string> = {
@@ -47,7 +50,7 @@ const intro: Record<string, string> = {
           <a class="row" href={hrefOf(a)}>
             <span class="row-text">
               <span class="row-cat">
-                {label} · {a.data.areas[0]}
+                {KIND_LABEL[a.data.kind] || label} · {a.data.areas[0]}
               </span>
               <span class="row-title">{a.data.title}</span>
               <span class="row-dek">{a.data.description}</span>

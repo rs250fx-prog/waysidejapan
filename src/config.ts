@@ -6,7 +6,8 @@
  */
 
 export const SITE_NAME = 'Wayside Japan';
-export const TAGLINE = 'Ride, Eat, Soak.';
+/** 2026-10-09 に Ride を外した。主軸は食、温泉は食と組む地方旅（docs/CONTENT-PLAN-EAT.md） */
+export const TAGLINE = 'Eat, Soak.';
 
 /**
  * 実際に配信されているホストを curl で確認してから設定する。
@@ -43,9 +44,10 @@ export type Category = (typeof CATEGORIES)[number];
 
 /** 記事が出たカテゴリだけ true にする。false のものはナビにも一覧にも出ない */
 export const NAV: { key: Category; enabled: boolean }[] = [
-  { key: 'rail', enabled: true },
+  // 並び順がナビの順。食が主軸、鉄道は「食べに行くための移動」
   { key: 'eat', enabled: true },
   { key: 'soak', enabled: true },
+  { key: 'rail', enabled: true },
   { key: 'konbini', enabled: false },
   { key: 'column', enabled: true },
   { key: 'ride', enabled: false },

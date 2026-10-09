@@ -50,8 +50,8 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
   <circle cx="820" cy="470" r="11" fill="#c0532b"/>
   <circle cx="1060" cy="470" r="11" fill="#c0532b"/>
   <text x="90" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" fill="#17161a">Wayside Japan</text>
-  <text x="94" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="30" letter-spacing="9" fill="#a8441f">RIDE, EAT, SOAK.</text>
-  <text x="94" y="566" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#3d382f">Western Japan by train, plate and bath — fares with a date.</text>
+  <text x="94" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="30" letter-spacing="9" fill="#a8441f">EAT, SOAK.</text>
+  <text x="94" y="566" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#3d382f">What Japan eats, and why — the price locals pay, with a date.</text>
 </svg>`;
 await sharp(Buffer.from(og)).png().toFile(fileURLToPath(new URL('og-default.png', PUB)));
 

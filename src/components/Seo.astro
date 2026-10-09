@@ -97,7 +97,7 @@ const jsonLd = {
 <meta property="og:image" content={ogUrl} />
 {isDefaultOg && <meta property="og:image:width" content="1200" />}
 {isDefaultOg && <meta property="og:image:height" content="630" />}
-<meta property="og:image:alt" content={isDefaultOg ? `${SITE_NAME} — western Japan by train, plate and bath` : title} />
+<meta property="og:image:alt" content={isDefaultOg ? `${SITE_NAME} — what Japan eats, and why` : title} />
 {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
 {ogType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 {ogType === 'article' && <meta property="article:author" content={new URL(AUTHOR.url, SITE_URL).href} />}

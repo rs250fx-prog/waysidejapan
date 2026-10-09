@@ -1,0 +1,172 @@
+---
+/**
+ * 品目ハブの「What it costs」。基準価格ページのデータをそのまま出す。
+ * 本文に数字を書き写さない。価格が更新されれば、ここも同時に変わる。
+ */
+import { FOOD_PRICES, chainRange, type PriceEntry, type PriceGroup } from '../data/food-prices.ts';
+import { formatPrice, formatJpy } from '../lib/money.ts';
+import Icon from './Icon.astro';
+
+interface Props {
+  /** food-prices.ts の chainKey か officialKey。複数渡せる（寿司店の昼・夜など） */
+  keys: string[];
+  locale?: string;
+}
+const { keys, locale = 'en' } = Astro.props;
+
+const rows: { group: PriceGroup; item: PriceEntry }[] = [];
+for (const group of FOOD_PRICES) {
+  for (const item of group.items) {
+    if ((item.chainKey && keys.includes(item.chainKey)) || (item.officialKey && keys.includes(item.officialKey))) {
+      rows.push({ group, item });
+    }
+  }
+}
+const yen = (n: number) => (Number.isInteger(n) ? formatJpy(n) : `¥${n.toFixed(2)}`);
+const monthLabel = (m: string) =>
+  new Date(`${m.slice(0, 7)}-01T00:00:00Z`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+---
+
+{
+  rows.length > 0 && (
+    <div class="dish-prices">
+      {rows.map(({ group, item }) => {
+        const r = item.chain ? chainRange(item.chain) : null;
+        return (
+          <div class="row">
+            <p class="dish">
+              {item.name} <span class="ja">{item.nameJa}</span>
+            </p>
+            <dl>
+              {item.official && (
+                <>
+                  <dt>Survey</dt>
+                  <dd>
+                    {formatPrice(item.official.jpy)}
+                    <span class="sub">
+                      {item.official.definition} · {monthLabel(item.official.month)}
+                      {item.official.area && <> · {item.official.area}</>}
+                    </span>
+                  </dd>
+                </>
+              )}
+              {item.chain && r && (
+                <>
+                  <dt>{item.chain.tier === 'budget' ? 'Budget chains' : item.chain.tier === 'shop' ? item.chain.chains[0].chain : 'Chains'}</dt>
+                  <dd>
+                    {r.from && 'from '}
+                    {yen(r.min)}
+                    {r.max > r.min && <>–{yen(r.max)}</>}
+                    <span class="sub">
+                      {item.chain.what} ·{' '}
+                      {item.chain.chains
+                        .filter((c) => c.tier !== 'premium')
+                        .map((c) => c.chain)
+                        .join(', ')}
+                    </span>
+                  </dd>
+                </>
+              )}
+              {item.reference && (
+                <>
+                  <dt>Local</dt>
+                  <dd>
+                    {item.reference.from && 'from '}
+                    {formatPrice(item.reference.jpy)}
+                    <span class="sub">
+                      {item.reference.note} · {monthLabel(item.reference.seenOn)}
+                    </span>
+                  </dd>
+                </>
+              )}
+              {item.tourist && (
+                <>
+                  <dt>Tourist area</dt>
+                  <dd>
+                    {item.tourist.from && 'from '}
+                    {formatPrice(item.tourist.jpy)}
+                    <span class="sub">{item.tourist.note}</span>
+                  </dd>
+                </>
+              )}
+            </dl>
+            <a class="more" href={`/${locale}/food-prices/#${group.key}`}>
+              All {group.name.toLowerCase()} prices, with sources <Icon name="arrow" />
+            </a>
+          </div>
+        );
+      })}
+    </div>
+  )
+}
+
+<style>
+  .dish-prices {
+    margin: 18px 0 26px;
+    border-top: 2px solid var(--ink);
+  }
+  .row {
+    border-bottom: 1px solid var(--line);
+    padding: 14px 0 16px;
+  }
+  .dish {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .ja {
+    font-family: var(--font-jp);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 6px;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 8px 16px;
+    margin: 0;
+    font-size: 16px;
+  }
+  dt {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+  dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+  .sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  @media (max-width: 767px) {
+    dl {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    dt {
+      margin-top: 8px;
+    }
+  }
+</style>
