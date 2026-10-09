@@ -229,7 +229,7 @@
       "where": [
         "Yokohama"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "tokyo-shoyu",
@@ -248,7 +248,7 @@
       "where": [
         "Tokyo"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "onomichi",
