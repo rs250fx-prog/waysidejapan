@@ -1,0 +1,368 @@
+{
+  "_note": "ラーメンの系譜。品目ハブ（/en/eat/ramen/）の横並び表と、各系譜ページがここから描く。cells は axes の key ごとの短い英語。status が published でも記事（en/eat/ramen-<key>.mdx）が無ければリンクしない。出典は各系譜ページの sources に置く。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）",
+  "dish": "ramen",
+  "name": "Ramen",
+  "nameJa": "ラーメン",
+  "axes": [
+    {
+      "key": "soup",
+      "label": "Soup"
+    },
+    {
+      "key": "noodle",
+      "label": "Noodle"
+    },
+    {
+      "key": "topping",
+      "label": "On top"
+    },
+    {
+      "key": "howToEat",
+      "label": "How it is eaten"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "hakata",
+      "name": "Hakata (Fukuoka)",
+      "nameJa": "博多ラーメン",
+      "origin": {
+        "place": "Fukuoka city",
+        "era": "1940s–50s"
+      },
+      "cells": {
+        "soup": "Pork bones boiled hard until white; salt or light soy seasoning",
+        "noodle": "Extra-thin, straight, low-water (24–28%)",
+        "topping": "Spring onion, pork, wood-ear; ginger, sesame and garlic on the counter",
+        "howToEat": "Choose noodle hardness; order kaedama (a paid second portion) into the soup you keep"
+      },
+      "where": [
+        "Fukuoka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kurume",
+      "name": "Kurume",
+      "nameJa": "久留米ラーメン",
+      "origin": {
+        "place": "Kurume, Fukuoka",
+        "era": "1937 / 1947"
+      },
+      "cells": {
+        "soup": "Stronger, thicker pork bone, cooked in a cauldron; yobimodoshi (never-emptied kettle)",
+        "noodle": "Straight, firm, slightly thicker than Hakata",
+        "topping": "Pork, spring onion, often pickled greens",
+        "howToEat": "Mostly no kaedama"
+      },
+      "where": [
+        "Kurume"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "kumamoto",
+      "name": "Kumamoto",
+      "nameJa": "熊本ラーメン",
+      "origin": {
+        "place": "Tamana / Kumamoto",
+        "era": "1950s"
+      },
+      "cells": {
+        "soup": "Pork bone with chicken; finished with black garlic oil (mā-yu)",
+        "noodle": "Medium, firmer and thicker than Hakata",
+        "topping": "Fried garlic chips, pork, wood-ear, egg",
+        "howToEat": "Garlic is cooked, not raw"
+      },
+      "where": [
+        "Kumamoto"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "kagoshima",
+      "name": "Kagoshima",
+      "nameJa": "鹿児島ラーメン",
+      "origin": {
+        "place": "Kagoshima city",
+        "era": "1947"
+      },
+      "cells": {
+        "soup": "Pork with chicken and vegetables; milder",
+        "noodle": "Soft, pale, made without lye water",
+        "topping": "Scorched spring onion, pork",
+        "howToEat": "Free pickled radish and a pot of tea at most shops"
+      },
+      "where": [
+        "Kagoshima"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "kitakata",
+      "name": "Kitakata",
+      "nameJa": "喜多方ラーメン",
+      "origin": {
+        "place": "Kitakata, Fukushima",
+        "era": "mid-1920s"
+      },
+      "cells": {
+        "soup": "Light soy on pork stock; salt and back-fat versions too",
+        "noodle": "Flat, thick, wavy, very high in water (jukusei takasui)",
+        "topping": "Slow-cooked pork belly, sometimes covering the bowl (niku soba)",
+        "howToEat": "From 7 a.m. — asa-rā, morning ramen"
+      },
+      "where": [
+        "Kitakata"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "shirakawa",
+      "name": "Shirakawa",
+      "nameJa": "白河ラーメン",
+      "origin": {
+        "place": "Shirakawa, Fukushima",
+        "era": "1921"
+      },
+      "cells": {
+        "soup": "Clear soy on chicken and pork",
+        "noodle": "Hand-cut wavy, soba-making technique",
+        "topping": "Pork, bamboo shoot, naruto",
+        "howToEat": "—"
+      },
+      "where": [
+        "Shirakawa"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "yonezawa",
+      "name": "Yonezawa",
+      "nameJa": "米沢ラーメン",
+      "origin": {
+        "place": "Yonezawa, Yamagata",
+        "era": "early 20th c."
+      },
+      "cells": {
+        "soup": "Light soy on chicken and dried sardine",
+        "noodle": "Thin, wavy, high-water, hand-kneaded after resting",
+        "topping": "Pork, bamboo shoot, spring onion",
+        "howToEat": "—"
+      },
+      "where": [
+        "Yonezawa"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "sapporo",
+      "name": "Sapporo",
+      "nameJa": "札幌ラーメン",
+      "origin": {
+        "place": "Sapporo",
+        "era": "1954 / 1958"
+      },
+      "cells": {
+        "soup": "Miso; vegetables and mince fried in lard before the stock goes in",
+        "noodle": "Medium-thick, strongly waved, with egg, aged (Nishiyama type, 1955)",
+        "topping": "Bean sprouts, onion, pork; butter and corn optional, not standard",
+        "howToEat": "—"
+      },
+      "where": [
+        "Sapporo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "hakodate",
+      "name": "Hakodate",
+      "nameJa": "函館ラーメン",
+      "origin": {
+        "place": "Hakodate",
+        "era": "1884 advertisement"
+      },
+      "cells": {
+        "soup": "Clear salt on pork, chicken, kelp and scallop",
+        "noodle": "Thin, straight",
+        "topping": "Pork, bamboo shoot, a slice of wheat gluten (fu)",
+        "howToEat": "—"
+      },
+      "where": [
+        "Hakodate"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "asahikawa",
+      "name": "Asahikawa",
+      "nameJa": "旭川ラーメン",
+      "origin": {
+        "place": "Asahikawa",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Soy on pork and seafood stock",
+        "noodle": "Medium-thin, wavy",
+        "topping": "Pork, bamboo shoot, spring onion",
+        "howToEat": "—"
+      },
+      "where": [
+        "Asahikawa"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "iekei",
+      "name": "Yokohama iekei",
+      "nameJa": "横浜家系ラーメン",
+      "origin": {
+        "place": "Yokohama",
+        "era": "1974"
+      },
+      "cells": {
+        "soup": "Pork bone and soy, with chicken oil",
+        "noodle": "Thick, short, straight",
+        "topping": "Spinach, three sheets of nori, pork",
+        "howToEat": "Set richness, oil and hardness; wrap rice in the soup-soaked nori"
+      },
+      "where": [
+        "Yokohama"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "tokyo-shoyu",
+      "name": "Tokyo soy (chūka soba)",
+      "nameJa": "東京醤油ラーメン",
+      "origin": {
+        "place": "Tokyo",
+        "era": "1910 / postwar Ogikubo"
+      },
+      "cells": {
+        "soup": "Soy on chicken, pork and dried sardine",
+        "noodle": "Medium, wavy",
+        "topping": "Pork, bamboo shoot, naruto, spinach, nori",
+        "howToEat": "—"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "onomichi",
+      "name": "Onomichi",
+      "nameJa": "尾道ラーメン",
+      "origin": {
+        "place": "Onomichi, Hiroshima",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Soy on chicken and small fish from the Inland Sea, with cubes of pork back-fat",
+        "noodle": "Flat, medium",
+        "topping": "Pork, bamboo shoot, spring onion",
+        "howToEat": "—"
+      },
+      "where": [
+        "Onomichi"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "tokushima",
+      "name": "Tokushima",
+      "nameJa": "徳島ラーメン",
+      "origin": {
+        "place": "Tokushima",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Dark, sweet soy on pork bone (the 'brown' type)",
+        "noodle": "Medium-thin, straight",
+        "topping": "Sweet-simmered pork belly, a raw egg",
+        "howToEat": "Eaten with rice, as a side dish"
+      },
+      "where": [
+        "Tokushima"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "wakayama",
+      "name": "Wakayama",
+      "nameJa": "和歌山ラーメン",
+      "origin": {
+        "place": "Wakayama",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Pork bone and soy",
+        "noodle": "Thin, straight",
+        "topping": "Pork, kamaboko, spring onion",
+        "howToEat": "Pressed mackerel sushi and boiled eggs on the table, counted at the end"
+      },
+      "where": [
+        "Wakayama"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "toyama-black",
+      "name": "Toyama black",
+      "nameJa": "富山ブラック",
+      "origin": {
+        "place": "Toyama",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Very dark, salty soy with coarse black pepper",
+        "noodle": "Thick, firm",
+        "topping": "Pork, bamboo shoot, lots of spring onion",
+        "howToEat": "Made to go with rice"
+      },
+      "where": [
+        "Toyama"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "jiro",
+      "name": "Jirō-style",
+      "nameJa": "二郎系",
+      "origin": {
+        "place": "Tokyo (Mita)",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Pork bone and soy, heavy with back-fat",
+        "noodle": "Very thick, chewy, large portion",
+        "topping": "A mountain of bean sprouts and cabbage; garlic on request",
+        "howToEat": "Call out your extras when asked; a culture with its own rules"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "tsukemen",
+      "name": "Tsukemen (dipping)",
+      "nameJa": "つけ麺",
+      "origin": {
+        "place": "Tokyo (Higashi-Ikebukuro)",
+        "era": "—"
+      },
+      "cells": {
+        "soup": "Thick, served separately for dipping; fish-and-pork in the modern style",
+        "noodle": "Thick, cold or warm, large portion",
+        "topping": "Pork, egg, bamboo shoot in the dipping soup",
+        "howToEat": "Dip; ask for the soup to be thinned with stock (soup-wari) at the end"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    }
+  ]
+}
