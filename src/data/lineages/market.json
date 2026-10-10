@@ -1,0 +1,65 @@
+{
+  "_note": "市場と海鮮丼の系譜。品目ハブ（/en/eat/market/）の横並び表と、各系譜ページがここから描く。出典は docs/research/market-kaisendon-2026-10-10.md と各系譜ページの sources。海鮮丼の税込価格は取れていないので、価格の列は作らない。近江町と函館朝市は1ページにまとめた（slug: market-omicho-hakodate）",
+  "dish": "market",
+  "name": "Markets and seafood bowls",
+  "nameJa": "市場と海鮮丼",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What kind of market"
+    },
+    {
+      "key": "who",
+      "label": "Who can buy"
+    },
+    {
+      "key": "hours",
+      "label": "When"
+    },
+    {
+      "key": "bowl",
+      "label": "The seafood bowl"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "toyosu",
+      "name": "Toyosu (Tokyo)",
+      "nameJa": "豊洲市場",
+      "origin": {
+        "place": "Kōtō, Tokyo",
+        "era": "Tsukiji 1935; Toyosu from 11 Oct 2018"
+      },
+      "cells": {
+        "what": "Tokyo's central wholesale market; fish auctioned and sold on to intermediate wholesalers",
+        "who": "Inside: trade buyers only, visitors on the gallery and in the restaurant area. Next door: Senkyaku Banrai, open to all",
+        "hours": "Visitor route 05:00–17:00; closed Sundays, holidays and market holidays. Senkyaku Banrai opens on market holidays",
+        "bowl": "Served inside and next door; Tokyo says the outer complex cooks with fish chosen by the wholesalers"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "omicho-hakodate",
+      "name": "Ōmichō (Kanazawa) and Hakodate morning market",
+      "nameJa": "近江町市場・函館朝市",
+      "origin": {
+        "place": "Kanazawa / Hakodate",
+        "era": "Ōmichō about 300 years; Hakodate from 1945"
+      },
+      "cells": {
+        "what": "Ōmichō: a city's kitchen of about 170 shops. Hakodate: about 250 shops, born from farmers selling by the station",
+        "who": "Anyone; both describe themselves as markets where townspeople buy",
+        "hours": "Hakodate opens 05:00 (May–Dec) or 06:00 (Jan–Apr) until after 14:00; Ōmichō shop by shop",
+        "bowl": "Named by count and choice — three toppings you pick, ten kinds, the chef's choice — and some bowls at market price"
+      },
+      "where": [
+        "Kanazawa",
+        "Hakodate"
+      ],
+      "status": "published"
+    }
+  ]
+}
