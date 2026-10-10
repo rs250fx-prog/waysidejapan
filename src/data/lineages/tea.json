@@ -1,0 +1,69 @@
+{
+  "_note": "日本茶の系譜。品目ハブ（/en/eat/tea/）の横並び表と、各系譜ページがここから描く。出典は docs/research/tea-cafe-2026-10-10.md と各系譜ページの sources。メモの指定どおり、産地の型（宇治・西尾・八女・静岡を1ページ）と、かき氷・喫茶店の2本。鹿児島・三重などの産地は個別ページの素材が無いので行を作っていない",
+  "dish": "tea",
+  "name": "Japanese tea",
+  "nameJa": "日本茶",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What you get"
+    },
+    {
+      "key": "made",
+      "label": "How it is made"
+    },
+    {
+      "key": "place",
+      "label": "Where"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "regions",
+      "name": "The tea regions",
+      "nameJa": "産地の型（宇治・西尾・八女・静岡）",
+      "origin": {
+        "place": "Uji, Nishio, Yame, Shizuoka",
+        "era": "local accounts from 1191 (Uji), 1271 (Nishio), 1423 (Yame)"
+      },
+      "cells": {
+        "what": "Matcha (Uji, Nishio), gyokuro (Yame), sencha and deep-steamed sencha (Shizuoka)",
+        "made": "Shade growing for matcha and gyokuro; deep steaming in Shizuoka from research begun around 1952",
+        "place": "Uji tea is defined by finishing in Kyoto, from leaf of four prefectures",
+        "know": "Kagoshima now produces the most crude tea and the most tencha"
+      },
+      "where": [
+        "Uji",
+        "Nishio",
+        "Yame",
+        "Shizuoka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kakigori-kissaten",
+      "name": "Kakigori and the kissaten",
+      "nameJa": "かき氷と喫茶店",
+      "origin": {
+        "place": "Nagatoro, Saitama; Ueno, Tokyo",
+        "era": "first coffee house 1888; Asami Reizo gives 1890"
+      },
+      "cells": {
+        "what": "Shaved ice; coffee, tea and simple meals at a coffee house",
+        "made": "Natural ice cut in winter, replaced by pure ice when stock runs out",
+        "place": "Coffee houses most common per person in Kochi, Gifu and Wakayama",
+        "know": "Coffee houses peaked at 154,630 in 1981; 58,669 in 2021"
+      },
+      "where": [
+        "Nagatoro",
+        "Uji",
+        "Nagoya"
+      ],
+      "status": "published"
+    }
+  ]
+}
