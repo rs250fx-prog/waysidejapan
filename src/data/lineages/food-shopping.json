@@ -1,0 +1,86 @@
+{
+  "_note": "買って食べる場（中食）の系譜。品目ハブ（/en/eat/food-shopping/）の横並び表と、各系譜ページがここから描く。出典は docs/research/retail-ekiben-2026-10-10.md と各系譜ページの sources。デパ地下・駅弁の2本は published。スーパー（業務スーパー含む）は素材が薄いので planned、era は「—」。コンビニは別ハブ（conbini）なのでここには行を作らない",
+  "dish": "food-shopping",
+  "name": "Buying food to eat",
+  "nameJa": "買って食べる（デパ地下・駅弁・スーパー）",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "buy",
+      "label": "What you buy"
+    },
+    {
+      "key": "numbers",
+      "label": "In the numbers"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "depachika",
+      "name": "Department store food floors",
+      "nameJa": "デパ地下",
+      "origin": {
+        "place": "Department stores, often joined to stations",
+        "era": "Hankyu’s station market 1925; basement date unconfirmed"
+      },
+      "cells": {
+        "what": "The food floor of a department store, usually in the basement",
+        "buy": "Prepared dishes, sweets for gifts, fresh food, sake; some deli food sold by weight",
+        "numbers": "Food was 25.2% of department store sales in August 2026; sweets 8.7%, deli 6.2% (ex tax)",
+        "know": "Free samples at some counters; JNTO suggests visiting near closing time"
+      },
+      "where": [
+        "Tokyo",
+        "Osaka",
+        "Most large cities"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "ekiben",
+      "name": "Ekiben (station bento)",
+      "nameJa": "駅弁",
+      "origin": {
+        "place": "Several stations claim it; the first is not settled",
+        "era": "1877–1885, by competing accounts"
+      },
+      "cells": {
+        "what": "A boxed meal sold at stations, made to be eaten cold",
+        "buy": "Regional boxes from under ¥1,000 to about ¥3,000 (JNTO)",
+        "numbers": "83 member makers in the trade association (July 2023); over 400 at the peak, by JR West’s report",
+        "know": "Most buyers now eat it at home; department store ekiben fairs since 1953"
+      },
+      "where": [
+        "Major stations",
+        "Department store ekiben fairs"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "supermarket",
+      "name": "Supermarkets",
+      "nameJa": "スーパー",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Everyday grocery stores with a prepared-food section",
+        "buy": "Deli, bento, onigiri, sushi and in-store bakery, counted together as sōzai",
+        "numbers": "Sōzai was 11.3% of sales in 2025 (panel of 270 companies, ex tax)",
+        "know": "Stores discount food to sell it out before closing; how and when varies by store"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "planned"
+    }
+  ]
+}
