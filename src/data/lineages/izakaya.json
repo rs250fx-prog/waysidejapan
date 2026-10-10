@@ -1,0 +1,104 @@
+{
+  "_note": "居酒屋の型。品目ハブ（/en/eat/izakaya/）の横並び表。出典は docs/research/izakaya-2026-10-10.md と各ページの sources。お通しなど勘定の仕組みは系譜ではなく izakaya-otoshi（lineage: otoshi）として書き、ハブ本文からリンクする（表には載せない）。planned の行の era は出典付きの記事ができるまで「—」",
+  "dish": "izakaya",
+  "name": "Izakaya",
+  "nameJa": "居酒屋",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "seats",
+      "label": "Seats"
+    },
+    {
+      "key": "money",
+      "label": "How you pay"
+    },
+    {
+      "key": "found",
+      "label": "Where you find it"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "yakitori",
+      "name": "Yakitori shop",
+      "nameJa": "焼鳥屋",
+      "origin": {
+        "place": "Nationwide; regional 'yakitori' in Higashimatsuyama, Muroran, Imabari",
+        "era": "Muroran's first shop 1937"
+      },
+      "cells": {
+        "what": "Charcoal-grilled skewers, salt or sweet soy tare; in some towns 'yakitori' is pork",
+        "seats": "Counter, tables, or standing 'beer bar' style",
+        "money": "By the skewer",
+        "found": "Everywhere, from standing bars to refined counters, festival stalls and convenience stores"
+      },
+      "where": [
+        "Higashimatsuyama",
+        "Muroran",
+        "Imabari"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "yokocho",
+      "name": "Yokochō alley bar",
+      "nameJa": "横丁の居酒屋",
+      "origin": {
+        "place": "Tokyo and other cities",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Tiny bars in narrow alleys, marked by red or white lanterns and a noren curtain",
+        "seats": "Often about ten; some take four or five",
+        "money": "Often Japanese-only, handwritten menus",
+        "found": "Alleys near big stations"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "kakuuchi",
+      "name": "Kaku-uchi (liquor-shop standing bar)",
+      "nameJa": "角打ち",
+      "origin": {
+        "place": "Kitakyushu and elsewhere",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Drinking at the counter of a liquor shop",
+        "seats": "Mostly standing",
+        "money": "Often cash only, a drink for a few hundred yen",
+        "found": "Liquor shops"
+      },
+      "where": [
+        "Kitakyushu"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "yatai",
+      "name": "Fukuoka yatai",
+      "nameJa": "屋台（福岡）",
+      "origin": {
+        "place": "Fukuoka city",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Licensed street stalls serving food and drink at night",
+        "seats": "A few; best for two or three",
+        "money": "Mostly cash; most have no cover, bar-style stalls may",
+        "found": "Nakasu, Tenjin, Nagahama"
+      },
+      "where": [
+        "Fukuoka"
+      ],
+      "status": "planned"
+    }
+  ]
+}
