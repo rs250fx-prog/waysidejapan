@@ -1,0 +1,125 @@
+{
+  "_note": "和菓子以外の甘味の系譜。品目ハブ（/en/eat/sweets/）の横並び表と、各系譜ページがここから描く。出典は docs/research/sweets-minor-2026-10-10.md と各系譜ページの sources。起源の年はほぼ企業の自社説明（不二家・千疋屋・ホテルニューグランド・マリオン）で、第三者の裏付けは未確認。パフェ・喫茶店のプリン・たい焼き・わらび餅の屋台はメモに素材が無いので行を作っていない（かき氷・喫茶は tea、今川焼系は wagashi）",
+  "dish": "sweets",
+  "name": "Sweets beyond wagashi",
+  "nameJa": "甘味・洋菓子・コンビニスイーツ",
+  "axes": [
+    {
+      "key": "base",
+      "label": "What it is built on"
+    },
+    {
+      "key": "sold",
+      "label": "Where it is sold"
+    },
+    {
+      "key": "story",
+      "label": "Whose story it is"
+    },
+    {
+      "key": "changes",
+      "label": "What changes with season or place"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "amamidokoro",
+      "name": "Sweet shops",
+      "nameJa": "甘味処（あんみつ・ぜんざい・わらび餅）",
+      "origin": {
+        "place": "Ginza, Tokyo (anmitsu); Nara and Yoshino (warabi, kuzu)",
+        "era": "1930 for anmitsu (tourism association and newspaper)"
+      },
+      "cells": {
+        "base": "Adzuki beans; kuzu-root and bracken-root starch; sugar",
+        "sold": "Sit-down sweet shops and tea houses; in Nara, warabi-mochi mainly at confectioners",
+        "story": "Ginza Wakamatsu credited with anmitsu; closed end of 2023",
+        "changes": "Zenzai means bean soup in Kyoto–Osaka, paste on mochi in Tokyo; menus turn with the season"
+      },
+      "where": [
+        "Tokyo",
+        "Kyoto",
+        "Nara"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "yogashi",
+      "name": "Western-style cakes made in Japan",
+      "nameJa": "洋菓子（ショートケーキ・プリンアラモード・フルーツパーラー）",
+      "origin": {
+        "place": "Yokohama and Tokyo",
+        "era": "1922 shortcake; occupation-era pudding à la mode (company accounts)"
+      },
+      "cells": {
+        "base": "Sponge, cream and strawberries; pudding with fruit and ice cream",
+        "sold": "Cake shops, a Yokohama hotel, fruit parlours",
+        "story": "Fujiya, Hotel New Grand and Sembikiya, each by its own account",
+        "changes": "Strawberries reach Tokyo’s market from November and peak in March; until the 1960s they were a May–June fruit"
+      },
+      "where": [
+        "Yokohama",
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "crepe",
+      "name": "Harajuku crepes",
+      "nameJa": "クレープ（原宿）",
+      "origin": {
+        "place": "Shibuya, then Harajuku, Tokyo",
+        "era": "1976 (company account)"
+      },
+      "cells": {
+        "base": "A crepe rolled in paper; whipped cream or ice cream",
+        "sold": "Street stands, eaten walking",
+        "story": "Marion Crepes, by its own account",
+        "changes": "First sold with Western spirits for adults; cream and ice cream later"
+      },
+      "where": [
+        "Harajuku"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "yakiimo",
+      "name": "Roast sweet potato",
+      "nameJa": "焼き芋",
+      "origin": {
+        "place": "Edo, with potatoes from around Kawagoe",
+        "era": "late Edo"
+      },
+      "cells": {
+        "base": "Whole sweet potato, e.g. beni haruka",
+        "sold": "Edo-era sellers called ‘thirteen ri’; how it is sold today is not covered",
+        "story": "Farm ministry and Kawagoe city",
+        "changes": "Beni haruka gets sweeter after two to three months’ storage"
+      },
+      "where": [
+        "Kawagoe",
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "conbini",
+      "name": "Convenience-store sweets",
+      "nameJa": "コンビニスイーツ",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "base": "Roll cakes, cream puffs, puddings",
+        "sold": "Lawson, FamilyMart, Seven-Eleven",
+        "story": "—",
+        "changes": "New items weekly or in stages; some sold only in certain prefectures, Okinawa prices differ"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    }
+  ]
+}
