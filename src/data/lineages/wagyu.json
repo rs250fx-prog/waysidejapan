@@ -1,0 +1,121 @@
+{
+  "_note": "牛肉（和牛）の系譜。銘柄牛と、すき焼き・焼肉という食べ方の系譜を同じ表に置く。planned の行の era は出典が付くまで「—」",
+  "dish": "wagyu",
+  "name": "Wagyu and beef",
+  "nameJa": "和牛・牛肉",
+  "axes": [
+    { "key": "what", "label": "What it is" },
+    { "key": "rule", "label": "The rule" },
+    { "key": "price", "label": "Price marker" },
+    { "key": "howToEat", "label": "How it is eaten" }
+  ],
+  "lineages": [
+    {
+      "key": "kobe",
+      "name": "Kobe beef",
+      "nameJa": "神戸ビーフ",
+      "origin": { "place": "Hyōgo", "era": "name from the 1868 port; defined 1983" },
+      "cells": {
+        "what": "Tajima cattle, Hyōgo-born and raised, that pass a grade",
+        "rule": "A/B 4+ with marbling BMS 6+, 28–60 months; about 7,000 head a year; sold only through registered shops with a bronze statue",
+        "price": "Lunch steak ¥8,020 (round) to ¥21,780 (A5 sirloin) at a Kobe house",
+        "howToEat": "Steak on a teppan, or sukiyaki"
+      },
+      "where": ["Kobe"],
+      "status": "published"
+    },
+    {
+      "key": "matsusaka",
+      "name": "Matsusaka beef",
+      "nameJa": "松阪牛",
+      "origin": { "place": "Matsusaka, Mie", "era": "council 2004" },
+      "cells": {
+        "what": "Virgin heifers of the Kuroge breed fattened longest in the Matsusaka area",
+        "rule": "Brought in by 12 months, tracked by ID; 'Tokusan' = Hyōgo calves fed 900+ days (GI 2017)",
+        "price": "Sukiyaki-cut 300 g ¥7,050 from the oldest house's shop",
+        "howToEat": "Sukiyaki at Wadakin, the house that made the name"
+      },
+      "where": ["Matsusaka"],
+      "status": "published"
+    },
+    {
+      "key": "omi",
+      "name": "Ōmi beef",
+      "nameJa": "近江牛",
+      "origin": { "place": "Shiga", "era": "miso-cured beef to the shogun, 1687–1771" },
+      "cells": {
+        "what": "Kuroge cattle raised longest in Shiga; the oldest beef-eating tradition in Japan",
+        "rule": "Certified Ōmi = A4/B4 and up (GI 2017); shipped as 'Kobe beef' via the port in 1879",
+        "price": "Sukiyaki-cut 500 g ¥4,320–10,800 from a certified shop",
+        "howToEat": "Sukiyaki, shabu-shabu, and the Hikone miso-cure"
+      },
+      "where": ["Hikone", "Ōmi-Hachiman"],
+      "status": "published"
+    },
+    {
+      "key": "tajima",
+      "name": "Tajima cattle",
+      "nameJa": "但馬牛",
+      "origin": { "place": "Northern Hyōgo", "era": "GI 2015" },
+      "cells": {
+        "what": "The closed bloodline behind Kobe, and the seed stock of most Japanese Kuroge",
+        "rule": "Hyōgo sires only, Hyōgo-raised, A/B 2+",
+        "price": "—",
+        "howToEat": "—"
+      },
+      "where": ["Tajima"],
+      "status": "planned"
+    },
+    {
+      "key": "yonezawa",
+      "name": "Yonezawa beef",
+      "nameJa": "米沢牛",
+      "origin": { "place": "Yamagata", "era": "an English teacher took one to Yokohama, 1875" },
+      "cells": {
+        "what": "Kuroge heifers from the Okitama district, 33 months and up",
+        "rule": "Grade 3+ (GI 2017); about 20% above the Tokyo market average",
+        "price": "—",
+        "howToEat": "Sukiyaki"
+      },
+      "where": ["Yonezawa"],
+      "status": "planned"
+    },
+    {
+      "key": "sukiyaki",
+      "name": "Sukiyaki",
+      "nameJa": "すき焼き",
+      "origin": { "place": "Yokohama and Tokyo", "era": "beef hotpot 1867–68" },
+      "cells": {
+        "what": "Thin beef cooked at the table with sugar and soy, dipped in raw egg",
+        "rule": "Kanto simmers in warishita broth; Kansai sears the meat first, then seasons — but Kyoto's oldest house uses a broth",
+        "price": "¥8,200 at the 1868 Yokohama house; ¥13,530 set at Imahan; ¥1,430–3,190 at a chain",
+        "howToEat": "At New Year, above all"
+      },
+      "where": ["Tokyo", "Kyoto"],
+      "status": "published"
+    },
+    {
+      "key": "yakiniku",
+      "name": "Yakiniku",
+      "nameJa": "焼肉",
+      "origin": { "place": "Postwar Osaka and Tokyo", "era": "black markets, 1940s" },
+      "cells": {
+        "what": "Grill-it-yourself beef, a Korean-Japanese creation; tongue-with-lemon from the 1970s",
+        "rule": "'Rōsu' and 'karubi' are menu names, not cuts, by the trade's own admission; ID numbers posted by law",
+        "price": "All-you-can-eat ¥3,058–3,828; Jojoen lunch ¥3,200",
+        "howToEat": "Smokeless grill since 1980; one-person counters since 2018"
+      },
+      "where": ["Tsuruhashi", "Tokyo"],
+      "status": "published"
+    },
+    {
+      "key": "shabu",
+      "name": "Shabu-shabu",
+      "nameJa": "しゃぶしゃぶ",
+      "origin": { "place": "Osaka", "era": "—" },
+      "cells": { "what": "—", "rule": "—", "price": "¥1,649–3,608 at the chains", "howToEat": "—" },
+      "where": ["Osaka"],
+      "status": "planned"
+    }
+  ]
+}
