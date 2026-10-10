@@ -102,6 +102,28 @@
         "Nationwide"
       ],
       "status": "planned"
+    },
+    {
+      "key": "horumon",
+      "name": "Horumon and motsu (offal)",
+      "nameJa": "もつ・ホルモン",
+      "origin": {
+        "place": "Hakata, Osaka, Kokura, Sayo (Hyōgo)",
+        "era": "postwar (Hakata motsunabe; Sayo horumon yaki-udon)"
+      },
+      "cells": {
+        "meat": "Beef and pork offal, officially 'livestock by-products'; horumon and motsu are trade words",
+        "eaten": "Yakiniku, motsu stew, Hakata motsunabe (soy, miso or salt), pork skewers in Kantō, chiritori-nabe in Osaka",
+        "rules": "Raw beef liver banned since July 2012; raw pork meat and offal since 12 June 2015",
+        "marker": "Kansai calls the small intestine maruchō (whole) or kotecchan (split); two accounts of the name"
+      },
+      "where": [
+        "Fukuoka",
+        "Osaka",
+        "Kitakyushu",
+        "Sayo"
+      ],
+      "status": "published"
     }
   ]
 }

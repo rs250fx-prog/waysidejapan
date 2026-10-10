@@ -176,6 +176,28 @@
         "Osaka"
       ],
       "status": "published"
+    },
+    {
+      "key": "steak",
+      "name": "Steak and teppanyaki",
+      "nameJa": "ステーキ・鉄板焼",
+      "origin": {
+        "place": "Kobe (teppanyaki, by the restaurant’s own account); chains from Maebashi, Nagoya, Ginza",
+        "era": "teppanyaki claimed from 1945; chains 1976, 1978, 2013"
+      },
+      "cells": {
+        "what": "Teppanyaki: a chef grills steak on an iron griddle in front of the guest; a steakhouse is a type of restaurant",
+        "rule": "Chains price by weight; cut names differ between 11 retail cuts and 13 wholesale names",
+        "price": "Ikinari Wild Steak 150 g ¥1,710; Steak no Don 130 g ¥1,738; Bronco Billy sirloin 150 g ¥2,893 (tax incl., 2026-10-11)",
+        "howToEat": "At a chain, choose the weight"
+      },
+      "where": [
+        "Kobe",
+        "Maebashi",
+        "Nagoya",
+        "Ginza"
+      ],
+      "status": "published"
     }
   ]
 }
