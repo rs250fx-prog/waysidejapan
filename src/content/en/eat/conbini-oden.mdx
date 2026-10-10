@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/conbini-oden-hero.webp
+heroAlt: 'Illustration of a steaming oden pot by a convenience store register, its compartments holding radish, eggs, konjac, fish cakes and fried tofu, with a ladle and a stack of paper cups beside it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: When is oden sold?
@@ -51,6 +53,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import odenRegions from '../../../assets/eat/conbini-oden-regions.webp';
 
 In the cold months many Japanese convenience stores set up a pot by the counter: radish, eggs, konjac, fish cakes and fried tofu simmering in broth, sold a piece at a time. JNTO calls it a staple winter dish at convenience stores across the country. It is cheap, it is hot, and it is one of the few konbini foods that openly changes from region to region.
 
@@ -88,6 +92,12 @@ The figures above are kept on the price reference page and update there. From th
 - **Local ways to eat it.** JNTO says many convenience stores in Aomori serve oden with ginger miso, and describes Shizuoka's oden as beef-tendon stock.
 
 I could not find an official account of *why* oden differs east to west, so this page records the differences, not their origins.
+
+<Figure
+  src={odenRegions}
+  alt="A paper cup of oden with radish, egg, konjac and fish cakes, a mustard packet and chopsticks, surrounded by three smaller cups: one under a miso sauce, one in a dark broth, one topped with grated ginger"
+  caption="One cup at the counter, and three of the ways it changes: a miso topping, a darker stock, ginger on top. Illustration."
+/>
 
 ## How to order it
 

@@ -1,6 +1,8 @@
 # 記事画像のプロンプト（URL ごと）
 
-2026-10-10 作成。対象は origin/main に push 済みの記事のうち公開中の 79 本（下書きの `/en/column/how-japanese-rice-is-actually-cooked/` は除外）。
+2026-10-10 作成、2026-10-11 更新。対象は origin/main に push 済みで公開中の記事のうち、**まだ画像が入っていないもの**（下書きの `/en/column/how-japanese-rice-is-actually-cooked/` は除外）。
+
+**画像を入れてコミットした記事は、このファイルから消す。** 残っている見出しが、そのまま未着手の一覧になる。
 
 各記事には **ヒーロー1枚** と **本文1枚以上** が要る（`src/layouts/Article.astro`）。どちらも無いあいだは noimage の仮枠が出る。
 
@@ -26,31 +28,27 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Column
 
-### /en/column/eating-while-walking-in-japan/
-- **ヒーロー**：`A quiet old shopping street in Kamakura with a small food stall; a visitor stands just beside the stall eating a skewer, other people walk past without eating; a single public bin is notably absent, wooden storefronts and a temple roof in the distance.`
-- **本文**：`Side-by-side comparison scene: on the left a person eating a snack while walking through a crowd, on the right the same person standing still next to the shop where they bought it, holding the wrapper; small icons of a bin and a pocket bag between them.`
+### /en/column/chopsticks-in-japan/
+- **ヒーロー**：`A pair of lacquered chopsticks resting on a small ceramic chopstick rest beside a bowl of rice and a bowl of miso soup, no spoon anywhere on the table, a wooden tray beneath.`
+- **本文**：`Five small panels in a row, each showing a pair of hands with chopsticks making a move considered bad form: sticking chopsticks upright in rice, passing food chopstick to chopstick, spearing food, hovering over dishes, pulling a dish toward you with chopsticks; drawn gently, no text.`
 
-### /en/column/how-meal-ticket-machines-work/
-- **ヒーロー**：`A meal ticket vending machine at the entrance of a small Japanese noodle shop, rows of blank buttons with small food pictures, a customer feeding a banknote in, the counter and steam visible behind.`
-- **本文**：`Three-step sequence in one picture: choosing a button on a ticket machine, handing the paper ticket to the cook over the counter, a bowl of noodles arriving; arrows between the steps drawn as simple lines.`
+### /en/column/food-souvenirs-omiyage/
+- **ヒーロー**：`An airport souvenir shop counter piled with neatly wrapped boxes of Japanese sweets in seasonal paper, a traveller with a rolling suitcase choosing one, a departure gate faintly behind.`
+- **本文**：`Close view of the back of a gift box of sweets, a fingertip pointing at a small blank date panel; beside it two small icons, a clock and a calendar, to suggest the two kinds of date label; no readable text.`
 
-### /en/column/reading-menu-prices-in-japan/
-- **ヒーロー**：`A wooden restaurant table with a printed menu, a small bill tray with a folded receipt, a glass of water and a cash tray; no tip jar anywhere; warm restaurant interior softly behind.`
-- **本文**：`Close view of a restaurant bill on a tray broken into stacked blank lines, with small symbolic icons beside each line: a coin for the price, a small percent sign shape for tax, a chair for a seating charge, a fish for market price; no readable text.`
+### /en/column/food-vending-machines-in-japan/
+- **ヒーロー**：`A row of brightly lit drink vending machines on a quiet residential street at dusk, a bicycle parked nearby, warm light from the houses behind.`
+- **本文**：`A small unstaffed gyoza shop with a freezer cabinet and a simple wooden cash box on the wall, a customer taking a frozen bag; beside it a person paying at a vending machine by tapping a phone.`
 
-### /en/column/tourist-prices-at-famous-markets/
-- **ヒーロー**：`A crowded covered food market street with seafood bowls displayed in front of stalls, tourists queueing; in the foreground, a local quietly turning into a side street toward a plain small diner.`
-- **本文**：`Two seafood rice bowls side by side on a counter: one large, decorated and heaped with crab and sea urchin as sold at a famous market, the other a simple everyday bowl from a neighborhood restaurant; a small scale balance drawn between them.`
+### /en/column/japanese-table-customs/
+- **ヒーロー**：`A family-style Japanese dinner table with shared plates in the middle, small individual bowls, a folded hot hand towel at each place, two people with palms pressed together before eating.`
+- **本文**：`Three small scenes side by side: wiping hands with a rolled oshibori towel, taking food from a shared plate with serving chopsticks onto a small plate, and lifting a rice bowl to the chest to eat.`
+
+### /en/column/roadside-stations-and-farm-stands/
+- **ヒーロー**：`A Japanese roadside rest station in the countryside: a low wooden building with a market hall, crates of local vegetables outside, a parking area with a few cars and motorbikes, green hills behind.`
+- **本文**：`An unstaffed farm stand at the edge of a field: a small wooden shelf with bags of vegetables, a little coin box, a hand-drawn sign shown blank, a farmer working in the field behind.`
 
 ## Eat — Konbini
-
-### /en/eat/conbini/
-- **ヒーロー**：`The interior of a Japanese convenience store at night: a wall of rice balls and sandwiches in a chilled shelf, a hot-food case by the counter, a microwave, a clerk at the register, bright but calm.`
-- **本文**：`A shopper at a convenience store register paying by tapping a card, a basket with a rice ball, a bottle of tea and a bento on the counter, the clerk offering to heat the bento; view from the side.`
-
-### /en/eat/conbini-oden/
-- **ヒーロー**：`A steaming oden pot beside a convenience store counter, divided compartments holding daikon, eggs, fish cakes and konjac in clear broth, a ladle and a stack of paper cups next to it, winter coats in the background.`
-- **本文**：`A paper cup of oden seen from above with daikon, a boiled egg and fish cake, a small packet of mustard and wooden chopsticks beside it; three small regional variations drawn around it: one with miso sauce, one with dark broth, one with ginger.`
 
 ### /en/eat/conbini-onigiri/
 - **ヒーロー**：`Several triangular rice balls in plastic wrap on a convenience store shelf, nori sealed separately inside the wrapper, a hand reaching to pick one.`
@@ -365,7 +363,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Yatai
 
-> **メモ**：この3本は作成時点で未 push（手元にのみある記事）。先回りで用意した。
 
 ### /en/eat/yatai/
 - **ヒーロー**：`A row of yatai food stalls along a river at night with lanterns glowing, customers seated at small counters, steam rising.`
@@ -378,6 +375,260 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 ### /en/eat/yatai-matsuri/
 - **ヒーロー**：`A Japanese summer festival with a lane of food stalls under strings of lanterns: yakisoba, candied apples, shaved ice, people in yukata.`
 - **本文**：`A child in a yukata holding a candied apple and a cup of shaved ice, stall awnings and lanterns above.`
+
+## Eat — Sashimi
+
+### /en/eat/sashimi/
+- **ヒーロー**：`A plate of sashimi arranged on shiso leaves and shredded daikon: slices of tuna, sea bream and yellowtail, a small mound of wasabi and a dish of soy sauce beside it.`
+- **本文**：`A chef's knife drawing one long pull through a block of tuna on a cutting board; beside it three small groups of slices showing different cuts: flat thick slices, thin translucent slices, and small cubes.`
+
+### /en/eat/sashimi-shime/
+- **ヒーロー**：`Slices of vinegar-cured mackerel with silver skin on a plate, and white fish fillets pressed between sheets of kombu on a board beside it.`
+- **本文**：`A fillet of white fish being laid between two sheets of kombu and wrapped, then the same fish unwrapped and sliced, slightly translucent and amber at the edges.`
+
+### /en/eat/sashimi-shusse-uo/
+- **ヒーロー**：`A fish market counter with yellowtail of four different sizes laid out in a row from small to large on ice, a buyer looking along the row.`
+- **本文**：`A growth chart drawn as one fish growing larger in four stages from left to right, with a small blank tag above each stage; no readable names.`
+
+## Eat — Seafood
+
+### /en/eat/seafood/
+- **ヒーロー**：`A Japanese harbor fish market table with salted salmon, a puffer fish, dried horse mackerel on a rack, a bundle of kombu and a tray of fish cakes, fishing boats behind.`
+- **本文**：`A row of preserved seafood laid out like a specimen chart: a salted salmon fillet, a split dried fish, a fish-paste log, a sheet of nori and a strip of kombu; no labels.`
+
+### /en/eat/seafood-salmon/
+- **ヒーロー**：`Whole salmon hanging to cure under the eaves of a northern fishing house, snow on the ground, a cold grey sea behind.`
+- **本文**：`Two small bowls side by side: loose, glistening orange salmon roe on the left, and roe still held together in its membrane on the right; a salmon fillet on the board behind.`
+
+### /en/eat/seafood-fugu/
+- **ヒーロー**：`A large round platter of fugu sashimi sliced so thin the blue pattern of the plate shows through, arranged like a chrysanthemum, a small dish of ponzu beside it.`
+- **本文**：`A licensed chef in white working carefully at a clean board, separating a puffer fish into parts, a covered container set apart at the side for the parts that must be discarded.`
+
+### /en/eat/seafood-anago-hamo/
+- **ヒーロー**：`A box of grilled conger eel sliced over rice, the island shrine gate of Miyajima standing in the sea behind.`
+- **本文**：`A Kyoto chef making many fine cuts across a pike conger fillet with a heavy knife, without cutting through the skin; next to it, the cut fish blooming open like a white flower in clear soup.`
+
+### /en/eat/seafood-himono/
+- **ヒーロー**：`Split horse mackerel drying on bamboo racks in the sun by the sea, a fishing village roof and nets behind.`
+- **本文**：`Four small scenes in a row showing ways to preserve fish: drying in the sun, salting in a tub, boiling in a large pot, and grilling over charcoal; drawn without words.`
+
+## Eat — Meat
+
+### /en/eat/meat/
+- **ヒーロー**：`A table spread with Japanese meats beyond beef: grilled black pork, a domed lamb grill with vegetables, a plate of raw horse sashimi, and a pot of venison stew.`
+- **本文**：`A simple outline map of Japan with four small food icons placed far apart: lamb in the north, horse sashimi in the south-west, black pork at the southern tip, a deer in the mountains; no names.`
+
+### /en/eat/meat-pork/
+- **ヒーロー**：`A black pig grazing in a field of sweet potato plants in southern Kyushu, a volcano gently smoking in the distance.`
+- **本文**：`Two dishes side by side: an Obihiro pork bowl with grilled pork slices glazed in sweet sauce over rice, and a square of braised pork belly kakuni in a small bowl.`
+
+### /en/eat/meat-jingisukan/
+- **ヒーロー**：`A domed iron grill on a table with lamb slices on the crown and bean sprouts and onions around the rim, smoke rising, a Hokkaido field behind.`
+- **本文**：`Cross-section of a domed lamb grill showing the fat and juices running down the ridges from the meat onto the vegetables at the edge.`
+
+### /en/eat/meat-basashi/
+- **ヒーロー**：`A plate of horse sashimi with marbled pink slices, grated ginger and garlic, and a small dish of sweet soy sauce, Mount Aso faintly behind.`
+- **本文**：`Two scenes side by side: on the left a deer and a wild boar in a forest, on the right a pot of deer stew bubbling on a stove with a thermometer standing in it.`
+
+## Eat — Chicken
+
+### /en/eat/chicken/
+- **ヒーロー**：`A farmyard of free-ranging Japanese chickens under trees, a wooden coop behind.`
+- **本文**：`A chicken drawn as a simple outline with the cuts shown as separate soft-colored areas (thigh, breast, tender, wing, skin, heart, liver), no labels.`
+
+### /en/eat/chicken-karaage/
+- **ヒーロー**：`A paper boat of freshly fried karaage chicken pieces with a wedge of lemon, steam rising, a small takeaway shop counter in Oita behind.`
+- **本文**：`A cook dropping marinated pieces of chicken coated in starch into a deep pot of oil, a tray of finished golden pieces draining beside it.`
+
+### /en/eat/chicken-mizutaki/
+- **ヒーロー**：`A clay hotpot of Hakata mizutaki with chicken on the bone in a cloudy white broth, cabbage and leeks around it, a dish of ponzu beside it.`
+- **本文**：`The order of a mizutaki meal in three panels: drinking a cup of the broth first, then eating the chicken, then rice cooked into the leftover broth as porridge.`
+
+## Eat — Soups and hotpots
+
+### /en/eat/nabe/
+- **ヒーロー**：`A table set for a winter hotpot meal: a clay pot simmering on a portable burner, plates of vegetables and fish, a ladle, steam rising.`
+- **本文**：`Three bowls side by side: a bowl of miso soup, a bowl of oden in clear broth, and a small portion of hotpot ladled into a bowl.`
+
+### /en/eat/nabe-miso/
+- **ヒーロー**：`A row of large cedar barrels of miso in an old brewery, stacked river stones weighing the lids, light through high windows.`
+- **本文**：`Four small dishes of miso in a row showing different colors from very dark red to cream white, with a small heap of soybeans, rice and barley in front of them.`
+
+### /en/eat/nabe-oden/
+- **ヒーロー**：`A large square oden pot at an old oden shop counter with daikon, eggs, tofu and fish cakes in clear brown broth, a cook ladling a portion.`
+- **本文**：`Three oden plates side by side: blocks of tofu grilled with sweet miso on skewers, Tokyo-style oden in soy broth, and Shizuoka-style oden in a very dark broth topped with fish powder.`
+
+## Eat — Rice and what goes with it
+
+### /en/eat/rice-sides/
+- **ヒーロー**：`A bowl of white rice in the center surrounded by small dishes: pickles, natto, a sprinkle of furikake, simmered seaweed and a piece of grilled mochi.`
+- **本文**：`A pantry shelf with jars of pickles, a tub of natto, a box of furikake and a pot of tsukudani, arranged neatly with no labels.`
+
+### /en/eat/rice-sides-tsukemono/
+- **ヒーロー**：`A Kyoto pickle shop with wooden barrels of pickled vegetables at the front, a shopkeeper lifting a large pickled turnip with tongs.`
+- **本文**：`Three small dishes in a row: colorful pickles, a dark simmered tsukudani of small fish, and a little pile of furikake over rice.`
+
+### /en/eat/rice-sides-tofu-natto/
+- **ヒーロー**：`A tofu maker's workshop at dawn, blocks of tofu resting in a water tank, a wooden mold being lifted.`
+- **本文**：`Two blocks of tofu cut side by side showing the rough pressed texture of momen and the smooth silky texture of kinugoshi; beside them a bowl of sticky natto being stirred with chopsticks.`
+
+### /en/eat/rice-sides-mochi/
+- **ヒーロー**：`Two people pounding mochi with a wooden mallet in a stone mortar on New Year's morning, steam rising from the rice.`
+- **本文**：`Two bowls of New Year zōni side by side: square grilled mochi in clear broth on the left, round mochi in white miso soup on the right.`
+
+### /en/eat/rice-sides-takikomi/
+- **ヒーロー**：`A clay rice pot with the lid lifted, rice cooked with a whole sea bream on top, steam rising.`
+- **本文**：`Three bowls of mixed rice in a row: rice cooked with chestnuts, rice cooked with vegetables and mushrooms, and a small individual kamameshi pot with a wooden lid.`
+
+## Eat — Sōmen and more noodles
+
+### /en/eat/somen/
+- **ヒーロー**：`A glass bowl of chilled thin white somen noodles in iced water, a small cup of dipping sauce and grated ginger, a summer porch with a wind chime behind.`
+- **本文**：`Thin noodles hanging in long white curtains from wooden poles to dry in a winter workshop, a worker stretching them by hand.`
+
+### /en/eat/somen-miwa/
+- **ヒーロー**：`Long strands of somen drying on wooden racks in front of a mountain shrine gate in Nara, winter light.`
+- **本文**：`Hands kneading dough, rolling it into a rope, twisting and stretching it between two poles, shown as four small steps.`
+
+### /en/eat/somen-banshu/
+- **ヒーロー**：`Bundles of somen tied with paper bands stacked in wooden boxes in a warehouse, a quiet country town in Hyogo behind.`
+- **本文**：`A large pot of boiling water with somen being stirred, then the noodles rinsed in cold water in a strainer.`
+
+### /en/eat/udon-kishimen/
+- **ヒーロー**：`A bowl of kishimen, flat wide udon noodles in dark broth topped with bonito flakes and spinach, at a station noodle counter.`
+- **本文**：`A plate of cold flat kishimen noodles in summer with a small amount of sauce poured over and grated daikon on top.`
+
+### /en/eat/udon-hoto/
+- **ヒーロー**：`An iron pot of hoto simmering, wide flat noodles with pumpkin, mushrooms and vegetables in miso broth, Mount Fuji visible through the window.`
+- **本文**：`A cook dropping freshly cut flat noodles straight into a pot of simmering miso soup without boiling them first.`
+
+### /en/eat/udon-dagojiru/
+- **ヒーロー**：`A bowl of Kyushu dumpling soup with torn flat flour dumplings, root vegetables and pork in miso broth.`
+- **本文**：`Hands tearing pieces of dough into a pot on the left; on the right, hands stretching dough into long thin strips over another pot.`
+
+### /en/eat/ramen-tsukemen/
+- **ヒーロー**：`A plate of thick cold noodles beside a bowl of rich hot dipping soup, a hand lifting noodles toward the soup, a ramen counter behind.`
+- **本文**：`A kitchen scene of noodle shop staff eating a quick meal by dipping leftover noodles in soup, the shop still closed.`
+
+### /en/eat/ramen-hiyashi-chuka/
+- **ヒーロー**：`A plate of chilled ramen noodles topped with strips of ham, cucumber, egg and tomato arranged in a fan, a summer window behind.`
+- **本文**：`Two small restaurant storefronts in the 1930s style side by side, one in a northern city and one in Tokyo, each with a plate of chilled noodles in the window.`
+
+### /en/eat/champon/
+- **ヒーロー**：`A large bowl of Nagasaki champon with thick noodles, cabbage, seafood and pork in milky white soup, a harbor with ships behind.`
+- **本文**：`A cook stir-frying vegetables and seafood in a wok, then pouring soup and noodles into the same wok to stew them together.`
+
+### /en/eat/champon-sara-udon/
+- **ヒーロー**：`A plate of crisp thin fried noodles topped with a thick glossy sauce of seafood and vegetables, a bottle of sauce beside it.`
+- **本文**：`Two plates side by side: crisp thin fried noodles on the left, soft thick fried noodles on the right, both under the same vegetable sauce.`
+
+### /en/eat/yakisoba/
+- **ヒーロー**：`A festival stall cook tossing yakisoba on a large iron griddle with two spatulas, cabbage and pork, steam and lanterns around.`
+- **本文**：`A bread roll split open and filled with yakisoba, topped with pickled ginger, on a paper napkin.`
+
+### /en/eat/yakisoba-fujinomiya/
+- **ヒーロー**：`A plate of Fujinomiya yakisoba with chewy noodles, cabbage and pork crackling, sprinkled with sardine powder, Mount Fuji behind.`
+- **本文**：`Steamed noodles being cooled on a tray and coated with oil in a small noodle factory.`
+
+### /en/eat/yakisoba-yokote/
+- **ヒーロー**：`A plate of Yokote yakisoba with thick straight noodles and minced pork, a runny fried egg on top and red pickles on the side, snow outside.`
+- **本文**：`A cook sliding a soft fried egg onto a plate of yakisoba, the yolk breaking slightly.`
+
+## Eat — Local dishes
+
+### /en/eat/kyodo-ryori/
+- **ヒーロー**：`A long table set with regional dishes from across Japan in small bowls and plates, rice paddies and mountains seen through a farmhouse window.`
+- **本文**：`An outline of Japan with small dish icons scattered over the regions, like pins on a map; no names.`
+
+### /en/eat/kyodo-ryori-akita/
+- **ヒーロー**：`Sticks of rice toasted by an open hearth fire, a clay hotpot of chicken broth with burdock and mushrooms beside it, snow outside.`
+- **本文**：`A bottle of fish sauce beside a pot of hatahata fish simmering with vegetables and tofu.`
+
+### /en/eat/kyodo-ryori-okinawa/
+- **ヒーロー**：`A bowl of Okinawa soba with wheat noodles, slices of braised pork belly and pickled ginger, a red-tiled Okinawan roof and a shisa statue behind.`
+- **本文**：`A plate of rafute, dark glazed cubes of braised pork belly, beside a small cup of awamori and a bowl of pig's trotter soup.`
+
+## Eat — Izakaya (additions)
+
+### /en/eat/izakaya-kakuuchi/
+- **ヒーロー**：`A small liquor shop with bottles on wooden shelves and a narrow counter at the back where a few customers stand drinking from glasses, a cash register at the front.`
+- **本文**：`Split scene: on the left a customer buying a bottle to take home, on the right the same shop's standing counter with a glass and a small plate of snacks.`
+
+### /en/eat/izakaya-snack/
+- **ヒーロー**：`A narrow lane of small bars at night with doors and soft glowing signs shown blank, one door slightly open with warm light inside.`
+- **本文**：`Inside a small snack bar: a counter with a few stools, a hostess behind the counter pouring a drink, a karaoke screen dark on the wall.`
+
+## Eat — Food shopping
+
+### /en/eat/food-shopping/
+- **ヒーロー**：`A busy department store basement food floor with glass cases of prepared food and sweets, staff in white caps behind the counters.`
+- **本文**：`A supermarket deli shelf in the evening with a staff member placing discount stickers on bento boxes, shown as blank round stickers.`
+
+### /en/eat/food-shopping-depachika/
+- **ヒーロー**：`A department store food hall counter with beautiful boxed sweets and prepared salads, a shopper being handed a sample on a toothpick.`
+- **本文**：`A staff member weighing a portion of salad on a small scale behind a glass counter, a customer waiting.`
+
+### /en/eat/food-shopping-ekiben/
+- **ヒーロー**：`A station platform kiosk stacked with bento boxes, a bullet train at the platform behind.`
+- **本文**：`A traveller opening a bento box on a train seat, the window showing passing countryside.`
+
+## Eat — Sweets
+
+### /en/eat/sweets/
+- **ヒーロー**：`A table with a bowl of anmitsu, a strawberry shortcake, a paper-wrapped crepe, a roasted sweet potato in paper and a convenience-store pudding cup.`
+- **本文**：`A simple map-like layout with five dessert icons spread out, each in its own soft colored circle; no words.`
+
+### /en/eat/sweets-amamidokoro/
+- **ヒーロー**：`A traditional sweet shop interior with a glass bowl of anmitsu topped with fruit and red bean paste, a pot of black sugar syrup, a teacup.`
+- **本文**：`Two bowls side by side: a thick red bean soup with toasted mochi, and a lighter bowl of sweet bean soup with rice dumplings.`
+
+### /en/eat/sweets-yogashi/
+- **ヒーロー**：`A strawberry shortcake slice with whipped cream on a plate in an old-style cake shop window, a pudding à la mode in a glass dish beside it.`
+- **本文**：`A fruit parlour counter with perfectly arranged fruit in a glass case and a parfait being served.`
+
+### /en/eat/sweets-crepe/
+- **ヒーロー**：`A paper-wrapped crepe with strawberries and cream held in a hand on a busy Harajuku street, crepe stalls behind.`
+- **本文**：`A crepe maker spreading batter on a round griddle with a wooden spreader, then folding it into a cone with paper.`
+
+### /en/eat/sweets-yakiimo/
+- **ヒーロー**：`A roasted sweet potato truck at dusk with a stone oven, potatoes in paper bags, a customer buying one.`
+- **本文**：`A broken roasted sweet potato showing its golden glossy inside, steam rising, beside a crate of raw potatoes being stored.`
+
+### /en/eat/sweets-conbini/
+- **ヒーロー**：`A convenience store chilled dessert shelf with roll cakes, cream puffs and puddings in clear packages, a hand reaching for one.`
+- **本文**：`Three desserts in a row on a table: a slice of roll cake, a cream puff and a cup of pudding, each with a plastic spoon.`
+
+## Eat — Tea
+
+### /en/eat/tea/
+- **ヒーロー**：`A teapot pouring green tea into a small cup on a wooden table, a tin of loose leaf tea beside it, tea fields seen through the window.`
+- **本文**：`Three cups side by side showing different teas: pale green sencha, deep green gyokuro, and frothy bright green matcha in a bowl with a bamboo whisk.`
+
+### /en/eat/tea-regions/
+- **ヒーロー**：`Rows of rounded tea bushes covering rolling hills in Shizuoka, Mount Fuji behind.`
+- **本文**：`A tea field partly covered with black shade cloth, workers picking leaves by hand under it.`
+
+### /en/eat/tea-kakigori-kissaten/
+- **ヒーロー**：`A tall bowl of fluffy shaved ice with syrup in a summer café, a block of natural ice on a wooden counter behind.`
+- **本文**：`An old-style Japanese coffee house interior with dark wood booths, a siphon coffee maker on the counter and a cup of coffee being served.`
+
+## Eat — Western foods made Japanese
+
+### /en/eat/western/
+- **ヒーロー**：`A table with a plate of Napolitan spaghetti, a teriyaki burger and a glass bottle of milk, a retro diner interior behind.`
+- **本文**：`A timeline drawn as objects on a long table from left to right: a macaroni box, a hotel plate of spaghetti, a burger, a milk bottle; no words.`
+
+### /en/eat/western-italian/
+- **ヒーロー**：`A plate of Napolitan spaghetti with ketchup sauce, sliced sausage, green pepper and onion, on an old hotel restaurant table.`
+- **本文**：`A delivery scooter carrying a pizza box through a Japanese residential street at evening.`
+
+### /en/eat/western-burger/
+- **ヒーロー**：`A tall hamburger on a plate at a small burger shop near a harbor, navy ships faintly in the distance.`
+- **本文**：`A teriyaki burger cut in half showing the glazed patty, lettuce and mayonnaise, on a paper wrapper.`
+
+### /en/eat/western-dairy/
+- **ヒーロー**：`Dairy cows grazing in a wide green Hokkaido pasture with a red barn and a silo.`
+- **本文**：`A school lunch tray with a small carton of milk, a bowl of rice, a soup and a side dish, on a classroom desk.`
 
 ## Rail
 
