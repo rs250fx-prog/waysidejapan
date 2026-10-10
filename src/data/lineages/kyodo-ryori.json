@@ -1,0 +1,66 @@
+{
+  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田と沖縄の2本。他の都道府県は素材が無いので行を作っていない",
+  "dish": "kyodo-ryori",
+  "name": "Local dishes by region",
+  "nameJa": "郷土料理",
+  "axes": [
+    {
+      "key": "signature",
+      "label": "Signature dishes"
+    },
+    {
+      "key": "why",
+      "label": "What shaped it"
+    },
+    {
+      "key": "when",
+      "label": "When it is eaten"
+    },
+    {
+      "key": "listed",
+      "label": "Official lists"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "akita",
+      "name": "Akita",
+      "nameJa": "秋田",
+      "origin": {
+        "place": "Akita prefecture",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Kiritanpo hotpot, shottsuru hotpot, iburi-gakko",
+        "why": "Mountain workers' rice on sticks; hatahata fish that arrive with winter thunder",
+        "when": "Kiritanpo with the new rice; shottsuru in November–December",
+        "listed": "29 dishes in the farm ministry database; 10 '100-year foods'"
+      },
+      "where": [
+        "Ōdate",
+        "Kazuno",
+        "Oga"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "okinawa",
+      "name": "Okinawa",
+      "nameJa": "沖縄",
+      "origin": {
+        "place": "Okinawa prefecture",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Rafute, Okinawa soba, tibichi (pig's trotters)",
+        "why": "Pork cooking shaped by the Ryūkyū kingdom's contact with China",
+        "when": "Rafute at celebrations and memorial rites; soba every day",
+        "listed": "30 dishes in the farm ministry database; 5 '100-year foods'"
+      },
+      "where": [
+        "Okinawa"
+      ],
+      "status": "published"
+    }
+  ]
+}
