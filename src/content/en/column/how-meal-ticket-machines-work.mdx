@@ -11,6 +11,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/ticket-machine-hero.webp
+heroAlt: 'Illustration of a customer feeding a banknote into a meal ticket machine at the entrance of a small noodle shop, the cook working behind the counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: How do I use a meal ticket machine?
@@ -39,6 +41,9 @@ sources:
     published: '2026-04-28'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import ticketSteps from '../../../assets/column/ticket-machine-steps.webp';
+
 Walk into many ramen shops in Japan and the first thing you meet is not a person but a machine: a panel of buttons by the door, each with a dish name and a price. You pay the machine, take a paper ticket, hand it to the cook, and sit. Nobody takes your order at the table and nobody brings a bill. It is simple once you know the sequence, and the reasons for it are mostly about the kitchen.
 
 ## What happens
@@ -53,6 +58,12 @@ Japan's national tourism organisation sets out the steps in its ramen guide:
 Tokyo's official tourism site describes the same: at ramen shops and other casual places there may be a machine near the entrance; buy your ticket first, hand it to staff, then sit where you are shown. Many shops have multilingual menus. Exactly when you hand the ticket over — before you are seated, or once you are — differs from shop to shop.
 
 Not every shop uses one. Both sources note that some take your order from staff in the usual way.
+
+<Figure
+  src={ticketSteps}
+  alt="Three panels: a customer pressing a button on a meal ticket machine, handing the paper ticket to the cook across the counter, and a bowl of tempura soba being set down in front of them"
+  caption="Press the button, hand over the ticket, and the bowl comes to you. Illustration."
+/>
 
 ## What the machine accepts
 
