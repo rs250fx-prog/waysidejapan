@@ -1,0 +1,103 @@
+{
+  "_note": "丼の系譜。品目ハブ（/en/eat/donburi/）の横並び表と、各系譜ページがここから描く。出典は docs/research/donburi-2026-10-10.md と各系譜ページの sources。鰻丼は unagi、海鮮丼は market で扱う。planned の行は農水省「うちの郷土料理」で確認できた範囲のみ。親子丼・天丼は起源の出典が無いので行を作っていない",
+  "dish": "donburi",
+  "name": "Donburi (rice bowls)",
+  "nameJa": "丼",
+  "axes": [
+    {
+      "key": "topping",
+      "label": "On the rice"
+    },
+    {
+      "key": "seasoning",
+      "label": "How it is seasoned"
+    },
+    {
+      "key": "where",
+      "label": "Typical place"
+    },
+    {
+      "key": "order",
+      "label": "How it is ordered"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "gyudon",
+      "name": "Gyūdon (beef bowl)",
+      "nameJa": "牛丼",
+      "origin": {
+        "place": "Nihonbashi fish market, Tokyo",
+        "era": "Yoshinoya 1899"
+      },
+      "cells": {
+        "topping": "Beef and onion",
+        "seasoning": "The shop's simmering sauce (tsuyu)",
+        "where": "Chains: Yoshinoya, Sukiya, Matsuya (which calls it gyūmeshi)",
+        "order": "By size, from mini to mega; extra sauce, onion or meat as named options"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "katsudon",
+      "name": "Katsudon (cutlet bowl)",
+      "nameJa": "カツ丼",
+      "origin": {
+        "place": "Waseda, Tokyo (claimed); Fukui, Komagane",
+        "era": "1913 / 1918 / 1921 (three claims)"
+      },
+      "cells": {
+        "topping": "Fried pork cutlet",
+        "seasoning": "Mostly simmered and set with egg; in Fukui and Komagane, dipped in sauce",
+        "where": "Soba shops, diners, cutlet chains; sauce-katsudon specialists in Fukui and Komagane",
+        "order": "In Fukui or Komagane, ask for the egg version by name"
+      },
+      "where": [
+        "Fukui",
+        "Komagane"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "butadon",
+      "name": "Obihiro butadon (pork bowl)",
+      "nameJa": "帯広の豚丼",
+      "origin": {
+        "place": "Obihiro, Hokkaido",
+        "era": "—"
+      },
+      "cells": {
+        "topping": "Grilled pork loin or belly, shredded leek",
+        "seasoning": "Sweet soy tare, in the style of eel kabayaki",
+        "where": "—",
+        "order": "—"
+      },
+      "where": [
+        "Obihiro"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "niigata-tare-katsu",
+      "name": "Niigata tare-katsudon",
+      "nameJa": "新潟のタレかつ丼",
+      "origin": {
+        "place": "Niigata",
+        "era": "—"
+      },
+      "cells": {
+        "topping": "Two or more cutlets",
+        "seasoning": "Dipped in sweet soy tare, no egg",
+        "where": "—",
+        "order": "—"
+      },
+      "where": [
+        "Niigata"
+      ],
+      "status": "planned"
+    }
+  ]
+}
