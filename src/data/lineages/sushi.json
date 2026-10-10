@@ -4,123 +4,175 @@
   "name": "Sushi",
   "nameJa": "寿司",
   "axes": [
-    { "key": "form", "label": "Form" },
-    { "key": "rice", "label": "Rice and fish" },
-    { "key": "where", "label": "Eaten where" },
-    { "key": "howToEat", "label": "How it is eaten" }
+    {
+      "key": "form",
+      "label": "Form"
+    },
+    {
+      "key": "rice",
+      "label": "Rice and fish"
+    },
+    {
+      "key": "where",
+      "label": "Eaten where"
+    },
+    {
+      "key": "howToEat",
+      "label": "How it is eaten"
+    }
   ],
   "lineages": [
     {
       "key": "edomae",
       "name": "Edomae (Tokyo nigiri)",
       "nameJa": "江戸前寿司",
-      "origin": { "place": "Edo (Tokyo)", "era": "early 1800s" },
+      "origin": {
+        "place": "Edo (Tokyo)",
+        "era": "early 1800s"
+      },
       "cells": {
         "form": "Hand-pressed nigiri, made in front of you",
         "rice": "Red-vinegar rice; fish 'worked' — cured, simmered, marinated — not simply raw",
         "where": "A counter; originally a street stall",
         "howToEat": "A little soy on the fish side, one bite; set lunch at half the evening price"
       },
-      "where": ["Tokyo"],
+      "where": [
+        "Tokyo"
+      ],
       "status": "published"
     },
     {
       "key": "kaiten",
       "name": "Kaiten (conveyor belt)",
       "nameJa": "回転寿司",
-      "origin": { "place": "Higashi-Ōsaka", "era": "1958" },
+      "origin": {
+        "place": "Higashi-Ōsaka",
+        "era": "1958"
+      },
       "cells": {
         "form": "Nigiri on plates, on a belt or ordered to your seat by screen",
         "rice": "Machine-pressed; salmon is the most-ordered topping, 15 years running",
         "where": "Suburban roadside and shopping malls; 4,000-plus shops",
         "howToEat": "Pick or order, pay by the plate; ¥110–150 for the cheapest plate"
       },
-      "where": ["Nationwide"],
+      "where": [
+        "Nationwide"
+      ],
       "status": "published"
     },
     {
       "key": "osaka-hako",
       "name": "Osaka box sushi",
       "nameJa": "大阪の箱寿司・押し寿司",
-      "origin": { "place": "Osaka (Senba)", "era": "Meiji era; battera 1891" },
+      "origin": {
+        "place": "Osaka (Senba)",
+        "era": "Meiji era; battera 1891"
+      },
       "cells": {
         "form": "Rice and fish pressed in a wooden box and cut; battera (mackerel)",
         "rice": "Rice cooked with kelp stock and sweetened; fish marinated so no soy is needed",
         "where": "A shop or a box to take away; the theatre interval meal",
         "howToEat": "Without soy sauce; keeps for hours"
       },
-      "where": ["Osaka"],
+      "where": [
+        "Osaka"
+      ],
       "status": "published"
     },
     {
       "key": "masu",
       "name": "Toyama masu-zushi",
       "nameJa": "ます寿司",
-      "origin": { "place": "Toyama", "era": "Kyōhō era; station bento from 1912" },
+      "origin": {
+        "place": "Toyama",
+        "era": "Kyōhō era; station bento from 1912"
+      },
       "cells": {
         "form": "A round pressed cake of trout and rice in bamboo leaves",
         "rice": "Lightly vinegared; cherry salmon",
         "where": "Station kiosks and 20-plus specialist shops in Toyama city",
         "howToEat": "Cut like a cake; eaten cold, hours later"
       },
-      "where": ["Toyama"],
-      "status": "planned"
+      "where": [
+        "Toyama"
+      ],
+      "status": "published"
     },
     {
       "key": "funa",
       "name": "Shiga funa-zushi",
       "nameJa": "鮒鮨（なれずし）",
-      "origin": { "place": "Lake Biwa", "era": "the ancestor of all sushi" },
+      "origin": {
+        "place": "Lake Biwa",
+        "era": "the ancestor of all sushi"
+      },
       "cells": {
         "form": "Whole crucian carp fermented in rice for months to years",
         "rice": "The rice is a fermentation medium and was once discarded",
         "where": "Festivals and homes around the lake; ¥5,400 for one fish",
         "howToEat": "Sliced thin; pungent; the bones are soft enough to eat"
       },
-      "where": ["Shiga"],
-      "status": "planned"
+      "where": [
+        "Shiga"
+      ],
+      "status": "published"
     },
     {
       "key": "kakinoha",
       "name": "Nara kakinoha-zushi",
       "nameJa": "柿の葉寿司",
-      "origin": { "place": "Yoshino, Nara", "era": "mid-Edo" },
+      "origin": {
+        "place": "Yoshino, Nara",
+        "era": "mid-Edo"
+      },
       "cells": {
         "form": "Salted mackerel on rice, wrapped in a persimmon leaf",
         "rice": "—",
         "where": "Summer festivals; station bento; 30-plus makers",
         "howToEat": "Better the next day"
       },
-      "where": ["Nara"],
-      "status": "planned"
+      "where": [
+        "Nara"
+      ],
+      "status": "published"
     },
     {
       "key": "saba",
       "name": "Kyoto saba-zushi",
       "nameJa": "鯖寿司",
-      "origin": { "place": "Kyoto", "era": "Edo period; Izuu 1781" },
+      "origin": {
+        "place": "Kyoto",
+        "era": "Edo period; Izuu 1781"
+      },
       "cells": {
         "form": "A whole cured mackerel fillet pressed on rice, in kelp",
         "rice": "—",
         "where": "The three great festivals; take-away",
         "howToEat": "No soy needed"
       },
-      "where": ["Kyoto"],
-      "status": "planned"
+      "where": [
+        "Kyoto"
+      ],
+      "status": "published"
     },
     {
       "key": "kanazawa",
       "name": "Kanazawa and Hokuriku",
       "nameJa": "金沢・北陸の寿司",
-      "origin": { "place": "Kanazawa", "era": "—" },
+      "origin": {
+        "place": "Kanazawa",
+        "era": "—"
+      },
       "cells": {
         "form": "Nigiri; 'conveyor' shops that take orders instead",
         "rice": "Gas shrimp, sweet shrimp, nodoguro, white shrimp",
         "where": "The city that spends most on sushi in Japan",
         "howToEat": "Order from the counter, not the belt"
       },
-      "where": ["Kanazawa"],
-      "status": "planned"
+      "where": [
+        "Kanazawa"
+      ],
+      "status": "published"
     }
   ]
 }
