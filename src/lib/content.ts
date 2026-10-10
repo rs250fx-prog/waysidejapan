@@ -4,7 +4,16 @@ import { NAV, type Category, type Locale } from '../config.ts';
 
 export type Article = CollectionEntry<'articles'>;
 
-const isBuildVisible = (a: Article) => !a.data.draft;
+/** ビルド時点の日本の日付（YYYY-MM-DD）。pubDate は UTC 0時で入るので日付文字列で比べる */
+const todayJst = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+
+/**
+ * 公開してよい記事か。draft でなく、pubDate が日本の今日以前であること。
+ * pubDate が未来の記事は、その日のビルドまで出ない（予約公開。毎日0時JSTにビルドする）
+ */
+export const isPublished = (a: Article) => !a.data.draft && a.data.pubDate.toISOString().slice(0, 10) <= todayJst();
+
+const isBuildVisible = isPublished;
 
 /** 一覧・サイトマップに出すもの。unlisted は URL では見られるが一覧には出さない */
 export async function listArticles(locale: Locale, category?: Category): Promise<Article[]> {
