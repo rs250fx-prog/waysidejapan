@@ -1,0 +1,102 @@
+{
+  "_note": "餃子の系譜。品目ハブ（/en/eat/gyoza/）の横並び表と、各系譜ページがここから描く。出典は docs/research/gyoza-2026-10-10.md と各系譜ページの sources。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）。羽根つき（蒲田）・ホワイト餃子などはメモに素材が無いので行を作っていない",
+  "dish": "gyoza",
+  "name": "Gyoza",
+  "nameJa": "餃子",
+  "axes": [
+    {
+      "key": "cooked",
+      "label": "How it is cooked"
+    },
+    {
+      "key": "plate",
+      "label": "On the plate"
+    },
+    {
+      "key": "sauce",
+      "label": "Sauce"
+    },
+    {
+      "key": "marker",
+      "label": "What the town is known for"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "utsunomiya",
+      "name": "Utsunomiya",
+      "nameJa": "宇都宮餃子",
+      "origin": {
+        "place": "Utsunomiya, Tochigi",
+        "era": "postwar; brand from 1993"
+      },
+      "cells": {
+        "cooked": "Pan-fried, deep-fried and boiled, often at the same price",
+        "plate": "No fixed style; one leading shop serves six pieces of 20 g, mostly vegetable",
+        "sauce": "Soy, vinegar and chilli oil, mixed to taste",
+        "marker": "Top household spender on gyoza for 15 years to 2010; a trademarked town brand and a November festival"
+      },
+      "where": [
+        "Utsunomiya"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "hamamatsu",
+      "name": "Hamamatsu",
+      "nameJa": "浜松餃子",
+      "origin": {
+        "place": "Hamamatsu, Shizuoka",
+        "era": "1953 (one shop's story)"
+      },
+      "cells": {
+        "cooked": "Pan-fried, laid in a circle around the pan",
+        "plate": "A round 'wheel' of 20 or 25, boiled bean sprouts in the middle",
+        "sauce": "A slightly sweet vinegar-soy; chilli oil to taste",
+        "marker": "Top household spender on gyoza since 2011 in most years, and on the 2023–25 average"
+      },
+      "where": [
+        "Hamamatsu"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kobe-miso",
+      "name": "Kobe miso-sauce gyoza",
+      "nameJa": "味噌だれ餃子（神戸）",
+      "origin": {
+        "place": "Shinkaichi, Kobe",
+        "era": "—"
+      },
+      "cells": {
+        "cooked": "Pan-fried",
+        "plate": "—",
+        "sauce": "Miso mixed with soy, vinegar, sugar and chilli oil; varies by house",
+        "marker": "Listed by the farm ministry as a Hyōgo local dish"
+      },
+      "where": [
+        "Kobe"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "hakata-hitokuchi",
+      "name": "Hakata one-bite gyoza",
+      "nameJa": "博多一口餃子",
+      "origin": {
+        "place": "Fukuoka city",
+        "era": "—"
+      },
+      "cells": {
+        "cooked": "Pan-fried",
+        "plate": "Bite-sized",
+        "sauce": "—",
+        "marker": "Small dumplings for drinking; a Nakasu shop dates itself to 1949"
+      },
+      "where": [
+        "Fukuoka"
+      ],
+      "status": "planned"
+    }
+  ]
+}
