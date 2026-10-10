@@ -1,0 +1,66 @@
+{
+  "_note": "和菓子の系譜。品目ハブ（/en/eat/wagashi/）の横並び表と、各系譜ページがここから描く。出典は docs/research/wagashi-2026-10-10.md と各系譜ページの sources。今川焼系の slug は wagashi-imagawayaki。八ツ橋・ういろう・たい焼きは素材が無いので行を作っていない",
+  "dish": "wagashi",
+  "name": "Wagashi (Japanese sweets)",
+  "nameJa": "和菓子",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "keeps",
+      "label": "How long it keeps"
+    },
+    {
+      "key": "where",
+      "label": "Where you buy it"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "yokan",
+      "name": "Yōkan",
+      "nameJa": "羊羹",
+      "origin": {
+        "place": "From China via Zen monks; Ogi, Saga as a later centre",
+        "era": "neri-yōkan dated variously from early Edo to c. 1800"
+      },
+      "cells": {
+        "what": "A bar of sweet bean paste set with agar (neri) or steamed with flour (mushi)",
+        "keeps": "Toraya: one year from manufacture, unopened, at room temperature",
+        "where": "Confectioners, airports, department stores",
+        "know": "The name means 'mutton soup'; it began as a meatless soup"
+      },
+      "where": [
+        "Kyoto",
+        "Tokyo",
+        "Ogi"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "imagawayaki",
+      "name": "Imagawayaki / ōbanyaki / kaitenyaki",
+      "nameJa": "今川焼・大判焼き・回転焼き",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "what": "A thick, round baked cake with a filling",
+        "keeps": "—",
+        "where": "Specialist shops such as Himeji's Gozasōrō",
+        "know": "Its name changes by region: imagawayaki in Kantō, ōbanyaki in Chūgoku–Shikoku, kaitenyaki in Kyushu"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    }
+  ]
+}
