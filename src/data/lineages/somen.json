@@ -1,0 +1,83 @@
+{
+  "_note": "素麺の系譜。品目ハブ（/en/eat/somen/）の横並び表と、各系譜ページがここから描く。出典は docs/research/noodles-minor-2026-10-10.md と各系譜ページの sources。三輪と播州（揖保乃糸）の2本。小豆島・島原は素材が無いので planned",
+  "dish": "somen",
+  "name": "Sōmen",
+  "nameJa": "素麺",
+  "axes": [
+    {
+      "key": "noodle",
+      "label": "Noodle"
+    },
+    {
+      "key": "made",
+      "label": "How it is made"
+    },
+    {
+      "key": "story",
+      "label": "Oldest claim"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "miwa",
+      "name": "Miwa (Nara)",
+      "nameJa": "三輪素麺",
+      "origin": {
+        "place": "Sakurai, Nara",
+        "era": "legend of about 1,300 (or 1,200+) years"
+      },
+      "cells": {
+        "noodle": "Hand-stretched; graded by strands per 10 g, up to 120+ for the finest",
+        "made": "December to March, over two days, with repeated resting",
+        "story": "A shrine priest's son sowed wheat to relieve famine, as the legend goes",
+        "know": "A geographical indication; aged 'hine' noodles are prized"
+      },
+      "where": [
+        "Sakurai"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "banshu",
+      "name": "Banshū (Ibo no Ito, Hyōgo)",
+      "nameJa": "播州素麺（揖保乃糸）",
+      "origin": {
+        "place": "Tatsuno area, Hyōgo",
+        "era": "written record 1418; industry from c. 1804–18"
+      },
+      "cells": {
+        "noodle": "Hand-stretched, twisted like rope and stretched repeatedly",
+        "made": "October to April",
+        "story": "A temple diary of 1418 mentions sōmen",
+        "know": "'Yaku': aged noodles improve through the rainy season"
+      },
+      "where": [
+        "Tatsuno"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "shodoshima",
+      "name": "Shōdoshima",
+      "nameJa": "小豆島素麺",
+      "origin": {
+        "place": "Kagawa",
+        "era": "—"
+      },
+      "cells": {
+        "noodle": "—",
+        "made": "—",
+        "story": "—",
+        "know": "—"
+      },
+      "where": [
+        "Shōdoshima"
+      ],
+      "status": "planned"
+    }
+  ]
+}

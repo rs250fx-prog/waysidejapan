@@ -115,6 +115,48 @@
       "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
       "where": ["Fujiyoshida"],
       "status": "planned"
+    },
+    {
+      "key": "kishimen",
+      "name": "Kishimen (Aichi)",
+      "nameJa": "きしめん",
+      "origin": { "place": "Aichi", "era": "—" },
+      "cells": {
+        "noodle": "Flat, about 1 mm thick and 7–8 mm wide",
+        "broth": "Traditionally muroaji fish stock and tamari; now dashi and soy",
+        "topping": "Nagoya's red fish cake; curry or mochi versions",
+        "howToEat": "All year; cold 'koro' in summer"
+      },
+      "where": ["Nagoya"],
+      "status": "published"
+    },
+    {
+      "key": "hoto",
+      "name": "Hōtō (Yamanashi)",
+      "nameJa": "ほうとう",
+      "origin": { "place": "Yamanashi", "era": "popular from the Edo period" },
+      "cells": {
+        "noodle": "Wide, flat, not rested, simmered raw",
+        "broth": "Miso with niboshi stock; the flour thickens it",
+        "topping": "Pumpkin and seasonal vegetables, meat",
+        "howToEat": "Big pot at home, an iron pot per person in restaurants"
+      },
+      "where": ["Kōfu"],
+      "status": "published"
+    },
+    {
+      "key": "dagojiru",
+      "name": "Dagojiru (Kumamoto) and dangojiru (Ōita)",
+      "nameJa": "だご汁・だんご汁",
+      "origin": { "place": "Kumamoto / Ōita", "era": "—" },
+      "cells": {
+        "noodle": "Torn or stretched flour dumplings; noodle-like 'nobe-dago' in Aso",
+        "broth": "Miso or soy (Kumamoto); barley miso (Ōita)",
+        "topping": "Burdock, radish, carrot; often sweet potato in Kumamoto",
+        "howToEat": "Everyday home food; especially autumn and winter"
+      },
+      "where": ["Kumamoto", "Ōita"],
+      "status": "published"
     }
   ]
 }

@@ -363,6 +363,26 @@
         "Tokyo"
       ],
       "status": "planned"
+    },
+    {
+      "key": "hiyashi-chuka",
+      "name": "Hiyashi chūka (chilled)",
+      "nameJa": "冷やし中華",
+      "origin": {
+        "place": "Sendai / Tokyo (two claims)",
+        "era": "1930s"
+      },
+      "cells": {
+        "soup": "Served cold; the Sendai shop calls it 'ryanbanmen'",
+        "noodle": "Chilled under running water",
+        "topping": "Tokyo's Yōsukō Saikan serves a five-colour version",
+        "howToEat": "A summer dish"
+      },
+      "where": [
+        "Sendai",
+        "Tokyo"
+      ],
+      "status": "published"
     }
   ]
 }
