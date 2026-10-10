@@ -1,0 +1,50 @@
+---
+/**
+ * 記事のサムネイル。一覧・トップ・関連記事で、記事のヒーロー画像を縮めて出す。
+ * ヒーローが無い記事は noimage の仮当て（記事ページのヒーローと同じ扱い）。
+ * 比率と配信幅は src/lib/images.ts の kind に従う。リンクの中に置く前提なので
+ * alt は空にする（同じリンクの見出しが行き先を言うので、読み上げで二度言わせない）。
+ */
+import { Image } from 'astro:assets';
+import { IMAGE_SPEC, type ImageKind } from '../lib/images.ts';
+import type { Article } from '../lib/content.ts';
+import noimage from '../assets/noimage.webp';
+
+interface Props {
+  entry: Article;
+  kind: Extract<ImageKind, 'hero' | 'card' | 'thumb'>;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const { entry, kind, class: className, loading } = Astro.props;
+const spec = IMAGE_SPEC[kind];
+const src = entry.data.heroImage ?? noimage;
+---
+
+<span class:list={['thumb', `thumb-${kind}`, className]} style={`aspect-ratio: ${spec.ratio}`}>
+  <Image
+    src={src}
+    alt=""
+    width={spec.widths.at(-1)}
+    widths={spec.widths}
+    sizes={spec.sizes}
+    loading={loading ?? spec.loading}
+  />
+</span>
+
+<style>
+  .thumb {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+  }
+  .thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

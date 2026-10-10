@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import RateNote from '../components/RateNote.astro';
+import Related from '../components/Related.astro';
 import Icon from '../components/Icon.astro';
 import { AUTHOR, SITE_URL, hasAnyAffiliate, type Locale } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
@@ -206,6 +207,8 @@ if (d.faq.length > 0) {
     }
 
     <RateNote pricesCheckedOn={d.pricesCheckedOn} />
+
+    <Related entry={entry} locale={locale} />
   </article>
 </Base>
 

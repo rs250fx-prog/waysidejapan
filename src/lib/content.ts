@@ -49,6 +49,35 @@ export function hrefOf(entry: Article): string {
   return `/${locale}/${category}/${slug}/`;
 }
 
+/**
+ * 記事末尾の関連記事。近い順に詰めて limit 本まで。
+ *   1. 同じ品目の記事（系譜ページなら品目ハブと兄弟の系譜、ハブならその系譜）
+ *   2. 同じ地域を扱う記事
+ *   3. 同じカテゴリの新しい記事
+ * 一覧に出ない記事（unlisted・下書き・予約中）は listArticles の時点で落ちる
+ */
+export async function relatedOf(entry: Article, limit = 3): Promise<Article[]> {
+  const locale = parseId(entry.id).locale as Locale;
+  const all = (await listArticles(locale)).filter((a) => a.id !== entry.id);
+  const d = entry.data;
+  const picked: Article[] = [];
+  const add = (list: Article[]) => {
+    for (const a of list) {
+      if (picked.length >= limit) return;
+      if (!picked.includes(a)) picked.push(a);
+    }
+  };
+  if (d.dish) {
+    const sameDish = all.filter((a) => a.data.dish === d.dish);
+    // 系譜ページからはまずハブへ戻す
+    add(sameDish.filter((a) => a.data.kind === 'dish'));
+    add(sameDish);
+  }
+  add(all.filter((a) => a.data.category === d.category && a.data.areas.some((x) => d.areas.includes(x))));
+  add(all.filter((a) => a.data.category === d.category));
+  return picked;
+}
+
 /** 記事が出たカテゴリだけ。config の enabled と連動させる */
 export function enabledCategories(): Category[] {
   return NAV.filter((n) => n.enabled).map((n) => n.key);

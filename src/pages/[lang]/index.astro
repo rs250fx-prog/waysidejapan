@@ -9,6 +9,7 @@ import { formatMonth } from '../../lib/money.ts';
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { IMAGE_SPEC } from '../../lib/images.ts';
+import Thumb from '../../components/Thumb.astro';
 /* トップの絵はイラスト。写真ではないので「Photographed myself」の約束とは別扱い */
 import eatArt from '../../assets/home/way-eat.webp';
 import soakArt from '../../assets/home/way-soak.webp';
@@ -71,7 +72,15 @@ const cardSpec = IMAGE_SPEC.card;
         )
       }
     </div>
-    <div class="hero-photo ph ratio-hero" aria-hidden="true">OWN PHOTO</div>
+    {
+      /* 先頭記事のヒーロー。見出しの「Read the guide」と同じ行き先なので、
+         読み上げとタブ移動からは外す（同じリンクを二度言わせない） */
+      featured && (
+        <a class="hero-photo" href={hrefOf(featured)} aria-hidden="true" tabindex="-1">
+          <Thumb entry={featured} kind="hero" />
+        </a>
+      )
+    }
   </section>
 
   <section class="strip">
@@ -174,7 +183,7 @@ const cardSpec = IMAGE_SPEC.card;
         <div class="list grid">
           {latest.map((a) => (
             <a class="row" href={hrefOf(a)}>
-              <span class="row-photo ph ratio-thumb" aria-hidden="true">IMG</span>
+              <Thumb entry={a} kind="thumb" class="row-photo" />
               <span class="row-text">
                 <span class="row-cat">{t(lang, `nav.${a.data.category}` as UIKey)}</span>
                 <span class="row-title">{a.data.title}</span>
@@ -475,8 +484,9 @@ const cardSpec = IMAGE_SPEC.card;
     border-bottom: 1px solid var(--line);
     padding-bottom: 16px;
   }
-  .row-photo {
+  .row :global(.row-photo) {
     flex: 0 0 120px;
+    align-self: flex-start;
   }
   .row-text {
     min-width: 0;

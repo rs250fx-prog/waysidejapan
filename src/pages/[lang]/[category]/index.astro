@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
+import Thumb from '../../../components/Thumb.astro';
 import { LOCALES, type Locale, type Category } from '../../../config.ts';
 import { listArticles, hrefOf, enabledCategories } from '../../../lib/content.ts';
 import { t, type UIKey } from '../../../i18n/ui.ts';
@@ -48,6 +49,7 @@ const intro: Record<string, string> = {
       ) : (
         articles.map((a) => (
           <a class="row" href={hrefOf(a)}>
+            <Thumb entry={a} kind="card" class="row-photo" />
             <span class="row-text">
               <span class="row-cat">
                 {KIND_LABEL[a.data.kind] || label} · {a.data.areas[0]}
@@ -115,11 +117,10 @@ const intro: Record<string, string> = {
   .row:last-child {
     border-bottom: 1px solid var(--line);
   }
-  .row-photo {
+  /* サムネイルは記事のヒーローを 3:2 のまま縮める（Thumb.astro）。高さは比率に任せる */
+  .row :global(.row-photo) {
     flex: 0 0 200px;
-    height: 134px;
-    background: #efe6d6;
-    border: 1px solid #ded3bf;
+    align-self: flex-start;
   }
   .row-text {
     min-width: 0;
@@ -156,10 +157,9 @@ const intro: Record<string, string> = {
       flex-direction: column;
       gap: 12px;
     }
-    .row-photo {
+    .row :global(.row-photo) {
       flex: none;
       width: 100%;
-      height: 200px;
     }
   }
 </style>

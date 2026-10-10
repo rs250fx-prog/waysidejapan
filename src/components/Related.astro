@@ -1,0 +1,83 @@
+---
+/**
+ * 記事末尾の関連記事。サムネイル付きのカードを3枚。
+ * 文字だけのリンクより押されやすく、次の1本へ自然に送れる。選び方は lib/content.ts の relatedOf
+ */
+import Thumb from './Thumb.astro';
+import { relatedOf, hrefOf, type Article } from '../lib/content.ts';
+import { t, type UIKey } from '../i18n/ui.ts';
+import type { Locale } from '../config.ts';
+
+interface Props {
+  entry: Article;
+  locale: Locale;
+}
+const { entry, locale } = Astro.props;
+const items = await relatedOf(entry);
+---
+
+{
+  items.length > 0 && (
+    <section class="related" aria-labelledby="related-title">
+      <h2 id="related-title">Read next</h2>
+      <div class="related-grid">
+        {items.map((a) => (
+          <a class="related-card" href={hrefOf(a)}>
+            <Thumb entry={a} kind="card" />
+            <span class="related-cat">{t(locale, `nav.${a.data.category}` as UIKey)}</span>
+            <span class="related-title">{a.data.title}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .related {
+    border-top: 2px solid var(--ink);
+    padding-top: 16px;
+  }
+  .related h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+  }
+  .related-cat {
+    margin-top: 2px;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .related-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .related-card:hover .related-title {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 767px) {
+    .related-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  }
+</style>
