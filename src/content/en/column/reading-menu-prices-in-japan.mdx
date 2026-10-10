@@ -11,6 +11,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/menu-prices-hero.webp
+heroAlt: 'Illustration of a restaurant table with a picture menu, a glass of water, a receipt in a small tray and an empty cash tray, diners in the background'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Do menu prices in Japan include tax?
@@ -41,6 +43,9 @@ sources:
     url: 'https://www.gourmet.gotokyo.org/article/95.html'
     published: '2026-03-12'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import menuBill from '../../../assets/column/menu-prices-bill.webp';
 
 A Japanese menu price is usually what you pay. That is the law's intention, and since 2021 it has applied without exception to prices shown in advance. But four things can still make the bill differ from the number you read: a service charge added on top, a different tax rate depending on where you eat, a cover charge, and the items with no price at all. This column explains each, from the official sources.
 
@@ -79,6 +84,12 @@ At izakaya, a small dish called *otoshi* is served to everyone and charged as a 
 ## Market price
 
 Some menus give no price for certain items — *jika*, market price. Market-area restaurants use it for things such as sea urchin bowls or live squid. I found no official rule on how such items must be explained. What the law does say is that tax-included display applies when a price is shown, not when it is not. The practical step is simple: ask the price before you order.
+
+<Figure
+  src={menuBill}
+  alt="A bill in a small tray on a restaurant table, its lines marked with four symbols: coins, a percent sign, a chair and a fish"
+  caption="What sits on a bill besides the menu price: the tax rate, a seat or service charge, and the market-price item. Illustration."
+/>
 
 ## Where you pay
 

@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/market-prices-hero.webp
+heroAlt: 'Illustration of a covered food market crowded with visitors at seafood bowl stalls, while one person turns into a quiet side street toward a small diner'
 pricesCheckedOn: 2026-10-04
 faq:
   - q: Are these markets a tourist trap?
@@ -40,6 +42,8 @@ sources:
 import Price from '../../../components/Price.astro';
 import ReferencePrice from '../../../components/ReferencePrice.astro';
 import FromExperience from '../../../components/FromExperience.astro';
+import Figure from '../../../components/Figure.astro';
+import marketBowls from '../../../assets/column/market-prices-bowls.webp';
 
 Three markets appear on almost every first-time itinerary: Kuromon in Osaka, Nishiki in Kyoto, Omicho in Kanazawa. All three are real working markets with long histories. All three now have a second layer built on top of them — stalls that exist for visitors, priced accordingly.
 
@@ -81,6 +85,12 @@ There is no government statistic for seafood bowls. There are statistics for the
 Ten pieces of conveyor-belt sushi come to roughly <Price jpy={1105} />. A bowl of ramen — the second most satisfying meal visitors report eating in Japan — is <Price jpy={746} />.
 
 Against that, **a ¥4,500 seafood bowl is six ramen.** The fish is better than it would be in a ¥1,000 bowl. It is not six times better.
+
+<Figure
+  src={marketBowls}
+  alt="Two seafood rice bowls on a counter with a small balance scale between them: a heaped market bowl of crab, sea urchin and salmon roe, and a plain everyday bowl of tuna and salmon"
+  caption="The market bowl and the everyday bowl. More on top, not six times the meal. Illustration."
+/>
 
 ## Why the gap exists
 
