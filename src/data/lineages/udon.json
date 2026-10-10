@@ -1,0 +1,120 @@
+{
+  "_note": "うどんの系譜。品目ハブ（/en/eat/udon/）の表と各系譜ページがここから描く。planned の行の era は出典が付くまで「—」",
+  "dish": "udon",
+  "name": "Udon",
+  "nameJa": "うどん",
+  "axes": [
+    { "key": "noodle", "label": "Noodle" },
+    { "key": "broth", "label": "Broth" },
+    { "key": "topping", "label": "On top" },
+    { "key": "howToEat", "label": "How it is eaten" }
+  ],
+  "lineages": [
+    {
+      "key": "sanuki",
+      "name": "Sanuki (Kagawa)",
+      "nameJa": "讃岐うどん",
+      "origin": { "place": "Kagawa", "era": "Edo period; legend from the 9th c." },
+      "cells": {
+        "noodle": "Thick, square-cut, foot-kneaded, firm and springy; 40%+ water, 3%+ salt, rested 2 hours (the 'Honba Sanuki' standard)",
+        "broth": "Iriko (dried anchovy) from the Inland Sea, light soy from Shōdoshima",
+        "topping": "Spring onion, ginger, tempura you pick yourself",
+        "howToEat": "Self-service: warm your own noodles, choose hot/cold noodle and broth (atsu-atsu, hiya-atsu…), kake, bukkake, kama-age, kama-tama"
+      },
+      "where": ["Takamatsu", "Kotohira"],
+      "status": "published"
+    },
+    {
+      "key": "hakata",
+      "name": "Hakata (Fukuoka)",
+      "nameJa": "博多うどん",
+      "origin": { "place": "Fukuoka", "era": "1241 (legend of the temple Jōtenji)" },
+      "cells": {
+        "noodle": "Soft, pre-boiled, little bite",
+        "broth": "'Sume': kelp and bonito with flying fish or anchovy, light soy, slightly sweet",
+        "topping": "Gobō-ten (burdock tempura), maru-ten (fish-cake disc)",
+        "howToEat": "Fast; a merchant's lunch. Some chains let you choose softness"
+      },
+      "where": ["Fukuoka"],
+      "status": "published"
+    },
+    {
+      "key": "osaka",
+      "name": "Osaka",
+      "nameJa": "大阪うどん",
+      "origin": { "place": "Osaka (Senba)", "era": "kitsune udon 1893" },
+      "cells": {
+        "noodle": "Soft, chewy, not too thick — made to carry the broth",
+        "broth": "Ma-kombu kelp and dried fish, light soy; pale and clear",
+        "topping": "Sweet-simmered fried tofu (kitsune); 'tanuki' here means that tofu on soba",
+        "howToEat": "Drink the broth; udon-suki hotpot in winter"
+      },
+      "where": ["Osaka"],
+      "status": "published"
+    },
+    {
+      "key": "ise",
+      "name": "Ise (Mie)",
+      "nameJa": "伊勢うどん",
+      "origin": { "place": "Ise", "era": "Edo period; named 1972" },
+      "cells": {
+        "noodle": "About three times the usual thickness, boiled an hour, very soft",
+        "broth": "No broth: a small pool of dark tamari-soy sauce with bonito",
+        "topping": "Chopped spring onion only",
+        "howToEat": "Mix and eat; the pilgrim's quick meal at the shrine"
+      },
+      "where": ["Ise"],
+      "status": "planned"
+    },
+    {
+      "key": "inaniwa",
+      "name": "Inaniwa (Akita)",
+      "nameJa": "稲庭うどん",
+      "origin": { "place": "Inaniwa, Akita", "era": "1665 / 1860" },
+      "cells": {
+        "noodle": "Hand-stretched, dried, flat and thin, no oil; a one-family secret until 1972",
+        "broth": "Light dipping sauce or clear broth",
+        "topping": "Minimal",
+        "howToEat": "Cold with dipping sauce, or hot"
+      },
+      "where": ["Yuzawa"],
+      "status": "planned"
+    },
+    {
+      "key": "mizusawa",
+      "name": "Mizusawa (Gunma)",
+      "nameJa": "水沢うどん",
+      "origin": { "place": "Ikaho, Gunma", "era": "—" },
+      "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
+      "where": ["Ikaho"],
+      "status": "planned"
+    },
+    {
+      "key": "goto",
+      "name": "Gotō (Nagasaki)",
+      "nameJa": "五島うどん",
+      "origin": { "place": "Gotō islands", "era": "—" },
+      "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
+      "where": ["Gotō"],
+      "status": "planned"
+    },
+    {
+      "key": "miso-nikomi",
+      "name": "Miso-nikomi (Nagoya)",
+      "nameJa": "味噌煮込みうどん",
+      "origin": { "place": "Nagoya", "era": "—" },
+      "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
+      "where": ["Nagoya"],
+      "status": "planned"
+    },
+    {
+      "key": "yoshida",
+      "name": "Yoshida (Yamanashi)",
+      "nameJa": "吉田のうどん",
+      "origin": { "place": "Fujiyoshida", "era": "—" },
+      "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
+      "where": ["Fujiyoshida"],
+      "status": "planned"
+    }
+  ]
+}

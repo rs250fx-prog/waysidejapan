@@ -1,0 +1,125 @@
+{
+  "_note": "そばの系譜。品目ハブ（/en/eat/soba/）の表と各系譜ページがここから描く。planned の行の era は出典が付くまで「—」",
+  "dish": "soba",
+  "name": "Soba",
+  "nameJa": "そば",
+  "axes": [
+    { "key": "flour", "label": "Flour and cut" },
+    { "key": "serving", "label": "Served" },
+    { "key": "sauce", "label": "Sauce" },
+    { "key": "howToEat", "label": "How it is eaten" }
+  ],
+  "lineages": [
+    {
+      "key": "edo",
+      "name": "Edo / Tokyo",
+      "nameJa": "江戸そば",
+      "origin": { "place": "Edo (Tokyo)", "era": "1700s; shops from 1789" },
+      "cells": {
+        "flour": "Three houses: Sarashina (white first-milling), Yabu, Sunaba; 'ni-hachi' 8:2 with wheat",
+        "serving": "Cold on a bamboo tray (mori / zaru), or hot in broth (kake)",
+        "sauce": "Strong dark 'kaeshi' soy with bonito; dip only halfway",
+        "howToEat": "Slurp; finish with soba-yu, the cooking water, in the leftover sauce"
+      },
+      "where": ["Tokyo"],
+      "status": "published"
+    },
+    {
+      "key": "tachigui",
+      "name": "Standing soba",
+      "nameJa": "立ち食いそば",
+      "origin": { "place": "Tokyo stations", "era": "chains from 1966" },
+      "cells": {
+        "flour": "Mostly wheat with some buckwheat; made for speed",
+        "serving": "Hot, in a bowl, with kakiage",
+        "sauce": "Dark broth",
+        "howToEat": "Standing, under five minutes, ¥390–450"
+      },
+      "where": ["Tokyo"],
+      "status": "planned"
+    },
+    {
+      "key": "izumo",
+      "name": "Izumo (Shimane)",
+      "nameJa": "出雲そば",
+      "origin": { "place": "Matsue / Izumo", "era": "1638 or 1666, with the Matsudaira lord" },
+      "cells": {
+        "flour": "Hikigurumi — whole grain milled with the husk: dark, fragrant; about 20% wheat",
+        "serving": "Wariko: three stacked round red-lacquer dishes; or kama-age in its cooking water",
+        "sauce": "Poured over the noodles, not dipped; passed down from dish to dish",
+        "howToEat": "Grated daikon with chilli; the cooking water is part of the dish"
+      },
+      "where": ["Izumo", "Matsue"],
+      "status": "published"
+    },
+    {
+      "key": "togakushi",
+      "name": "Togakushi (Nagano)",
+      "nameJa": "戸隠そば",
+      "origin": { "place": "Togakushi, Nagano", "era": "Heian-era mountain ascetics; soba-kiri in the Edo period" },
+      "cells": {
+        "flour": "Pale green, thin",
+        "serving": "'Botchi-mori': five or six horseshoe-shaped bundles on a round bamboo tray, barely drained",
+        "sauce": "Dipping sauce with spicy daikon",
+        "howToEat": "A shrine offering turned hospitality dish"
+      },
+      "where": ["Togakushi"],
+      "status": "published"
+    },
+    {
+      "key": "wanko",
+      "name": "Wanko (Iwate)",
+      "nameJa": "わんこそば",
+      "origin": { "place": "Hanamaki / Morioka", "era": "legend of the Nambu lord, 1600s" },
+      "cells": {
+        "flour": "Ordinary soba in mouthful portions",
+        "serving": "A server refills a small lacquer bowl until you close the lid",
+        "sauce": "Pre-sauced; condiments change the bowl as you go",
+        "howToEat": "15 bowls ≈ one normal serving; the record is 632"
+      },
+      "where": ["Morioka", "Hanamaki"],
+      "status": "published"
+    },
+    {
+      "key": "jindaiji",
+      "name": "Jindaiji (Tokyo)",
+      "nameJa": "深大寺そば",
+      "origin": { "place": "Chōfu, Tokyo", "era": "Edo period" },
+      "cells": { "flour": "—", "serving": "—", "sauce": "—", "howToEat": "—" },
+      "where": ["Chōfu"],
+      "status": "planned"
+    },
+    {
+      "key": "hegi",
+      "name": "Hegi (Niigata)",
+      "nameJa": "へぎそば",
+      "origin": { "place": "Ojiya / Tōkamachi", "era": "—" },
+      "cells": { "flour": "—", "serving": "—", "sauce": "—", "howToEat": "—" },
+      "where": ["Niigata"],
+      "status": "planned"
+    },
+    {
+      "key": "echizen-oroshi",
+      "name": "Echizen oroshi (Fukui)",
+      "nameJa": "越前おろしそば",
+      "origin": { "place": "Fukui", "era": "—" },
+      "cells": { "flour": "—", "serving": "—", "sauce": "—", "howToEat": "—" },
+      "where": ["Fukui"],
+      "status": "planned"
+    },
+    {
+      "key": "toshikoshi",
+      "name": "New Year's Eve soba",
+      "nameJa": "年越しそば",
+      "origin": { "place": "Nationwide", "era": "Edo period custom" },
+      "cells": {
+        "flour": "Any",
+        "serving": "At home or by delivery, on 31 December",
+        "sauce": "—",
+        "howToEat": "Eaten by more than 60% of households; long for long life, easily cut to cut off the year's troubles"
+      },
+      "where": [],
+      "status": "planned"
+    }
+  ]
+}
