@@ -1,0 +1,198 @@
+{
+  "_note": "行事の食（年中行事）の系譜。品目ハブ（/en/eat/seasonal/）の横並び表と、各系譜ページがここから描く。出典は docs/research/events-kids-minor-2026-10-10.md と各系譜ページの sources。正月・節分・ひな祭りの3本を published。端午・七夕/お盆・十五夜・冬至・大晦日・クリスマスは planned（era は「—」）。雑煮・餅・赤飯は rice-sides、年越しそばはそば、七夕・お盆のそうめんは somen 側で扱う。彼岸・七五三・重陽はメモの素材が名称程度なので行を作っていない",
+  "dish": "seasonal",
+  "name": "Food for annual events",
+  "nameJa": "行事食",
+  "axes": [
+    {
+      "key": "when",
+      "label": "When"
+    },
+    {
+      "key": "food",
+      "label": "What is eaten"
+    },
+    {
+      "key": "meaning",
+      "label": "The reason given"
+    },
+    {
+      "key": "varies",
+      "label": "How it varies"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "new-year",
+      "name": "New Year",
+      "nameJa": "正月（おせち・七草粥）",
+      "origin": {
+        "place": "Nationwide",
+        "era": "Osechi's basic form late Edo; seven-herb porridge Muromachi to Edo"
+      },
+      "cells": {
+        "when": "The New Year days; seven-herb porridge on 7 January",
+        "food": "Osechi with three iwai-zakana (black beans, tazukuri, herring roe); rice porridge with seven spring herbs",
+        "meaning": "A wish for each dish (health, harvest, children, luck); the herbs’ vigour for a long life",
+        "varies": "—"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "setsubun",
+      "name": "Setsubun",
+      "nameJa": "節分（豆まき・いわし・恵方巻）",
+      "origin": {
+        "place": "Nationwide; ehōmaki told as an Osaka custom",
+        "era": "Bean-throwing said to begin in the Muromachi period; ehōmaki national from the 1990s"
+      },
+      "cells": {
+        "when": "Around 3 February, the day before the start of spring",
+        "food": "Roasted soybeans, grilled sardines, the sushi roll called ehōmaki",
+        "meaning": "Driving out evil and wishing for good health; ehōmaki eaten facing the year’s lucky direction",
+        "varies": "Sardines mainly in western Japan; peanuts in parts of Hokkaido; konnyaku or oden in Sorachi"
+      },
+      "where": [
+        "Nationwide",
+        "Osaka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "hinamatsuri",
+      "name": "Hinamatsuri",
+      "nameJa": "ひな祭り（上巳の節句）",
+      "origin": {
+        "place": "Nationwide",
+        "era": "Doll display for girls from the Edo period"
+      },
+      "cells": {
+        "when": "3 March",
+        "food": "Chirashi-zushi, clam soup, three-coloured diamond mochi, white sake or amazake, hina-arare",
+        "meaning": "A girl’s growth; clams for a well-matched marriage; the mochi’s colours for spring",
+        "varies": "Hina-arare round and salty in Kansai, rice-shaped and sweet in Kanto"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "tango",
+      "name": "Tango (Children’s Day)",
+      "nameJa": "端午の節句",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "when": "5 May; old-calendar 5 June in eastern Shimane",
+        "food": "Kashiwa-mochi, chimaki",
+        "meaning": "Kashiwa-mochi for life passing from parent to child; chimaki to ward off evil",
+        "varies": "Eastern Shimane wraps rice-flour dumplings in bamboo leaves; called maki or kayamaki in Oki"
+      },
+      "where": [
+        "Shimane"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "tanabata-obon",
+      "name": "Tanabata and Obon",
+      "nameJa": "七夕・お盆",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "when": "7 July; around 13 to 16 August",
+        "food": "Sōmen at both; Buddhist shōjin meals and dumplings at Obon",
+        "meaning": "Different stories for the same noodles; for Obon, the reins of the ancestors’ horse",
+        "varies": "Obon foods differ by region (zunda mochi in Miyagi, bon-jiru in Matsusaka, kainoko-jiru in Kagoshima)"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "tsukimi",
+      "name": "Moon viewing",
+      "nameJa": "十五夜（月見）",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "when": "Full moon of the old eighth month (mid-September to early October)",
+        "food": "Moon-viewing dumplings, taro",
+        "meaning": "Thanks for the harvest and a wish for the next",
+        "varies": "Slightly flattened in parts of Kanto; three-coloured in Nagoya; hollowed in Shizuoka; fuchagi in Okinawa"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "toji",
+      "name": "Winter solstice",
+      "nameJa": "冬至",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "when": "Around 22 December",
+        "food": "Pumpkin; pumpkin simmered with azuki (itoko-ni)",
+        "meaning": "Several given together: the n sound brings luck; it keeps and feeds you in winter",
+        "varies": "—"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "omisoka",
+      "name": "New Year’s Eve",
+      "nameJa": "大晦日（年越しそば）",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "when": "31 December",
+        "food": "Toshikoshi soba",
+        "meaning": "Three given together: a long life, cutting off the year’s troubles, good health",
+        "varies": "Names, the day it is eaten, the kind of soba and the broth differ by region"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "christmas",
+      "name": "Christmas",
+      "nameJa": "クリスマス（フライドチキン・ケーキ）",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "when": "25 December",
+        "food": "Fried chicken, Christmas cake",
+        "meaning": "—",
+        "varies": "—"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    }
+  ]
+}
