@@ -1,0 +1,121 @@
+{
+  "_note": "焼きそばの系譜。品目ハブ（/en/eat/yakisoba/）の横並び表と、各系譜ページがここから描く。出典は docs/research/noodles-mid-2026-10-10.md と各系譜ページの sources。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）。太田は市・のれん会とも味の定義を書いていないので cells の多くが「—」。「日本三大焼きそば」は公的定義が無いので行の名前に使わない",
+  "dish": "yakisoba",
+  "name": "Yakisoba",
+  "nameJa": "焼きそば",
+  "axes": [
+    {
+      "key": "noodle",
+      "label": "Noodle"
+    },
+    {
+      "key": "topping",
+      "label": "What goes on it"
+    },
+    {
+      "key": "sauce",
+      "label": "Sauce"
+    },
+    {
+      "key": "marker",
+      "label": "What the town is known for"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "fujinomiya",
+      "name": "Fujinomiya",
+      "nameJa": "富士宮やきそば",
+      "origin": {
+        "place": "Fujinomiya, Shizuoka",
+        "era": "no year given; society from 2000"
+      },
+      "cells": {
+        "noodle": "Steamed, quickly cooled and coated in oil; low in water, firm; from four makers in the city",
+        "topping": "Nikukasu (pork back-fat left after pressing lard) and sardine powder",
+        "sauce": "—",
+        "marker": "B-1 Grand Prix gold in 2006 and 2007; a 100-Year Food (fiscal 2021)"
+      },
+      "where": [
+        "Fujinomiya"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "yokote",
+      "name": "Yokote",
+      "nameJa": "横手やきそば",
+      "origin": {
+        "place": "Yokote, Akita",
+        "era": "just after the Second World War (said to be)"
+      },
+      "cells": {
+        "noodle": "Thick, straight, boiled",
+        "topping": "Cabbage and minced pork; a half-cooked fried egg on top, fukujinzuke on the side",
+        "sauce": "Worcestershire base with each shop’s additions; mild, not hot",
+        "marker": "A regional collective trademark; B-1 Grand Prix gold in 2009"
+      },
+      "where": [
+        "Yokote"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "ota",
+      "name": "Ota",
+      "nameJa": "太田焼そば",
+      "origin": {
+        "place": "Ota, Gunma",
+        "era": "—"
+      },
+      "cells": {
+        "noodle": "—",
+        "topping": "—",
+        "sauce": "Each shop’s own; no common recipe described",
+        "marker": "Said to have come with seasonal workers from Tohoku after the war; 44 association shops"
+      },
+      "where": [
+        "Ota"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "tokyo-sauce",
+      "name": "Tokyo sauce yakisoba",
+      "nameJa": "ソース焼そば（東京）",
+      "origin": {
+        "place": "Tokyo (Asakusa noodle makers)",
+        "era": "—"
+      },
+      "cells": {
+        "noodle": "Chinese-style wheat noodles",
+        "topping": "—",
+        "sauce": "Worcestershire",
+        "marker": "Thought by a sauce maker to copy Chinese fried noodles; a festival-stall standard"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "pan",
+      "name": "Yakisoba bun",
+      "nameJa": "焼きそばパン",
+      "origin": {
+        "place": "Minami-Senju, Tokyo (one theory)",
+        "era": "—"
+      },
+      "cells": {
+        "noodle": "—",
+        "topping": "Yakisoba inside a bread roll (koppe-pan)",
+        "sauce": "—",
+        "marker": "Leading theory names a shop, Nozawaya, closed in 2010"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    }
+  ]
+}

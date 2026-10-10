@@ -350,19 +350,19 @@
       "name": "Tsukemen (dipping)",
       "nameJa": "つけ麺",
       "origin": {
-        "place": "Tokyo (Higashi-Ikebukuro)",
-        "era": "—"
+        "place": "Nakano, Tokyo (one account); Higashi-Ikebukuro from 1961",
+        "era": "1955 (one account)"
       },
       "cells": {
-        "soup": "Thick, served separately for dipping; fish-and-pork in the modern style",
-        "noodle": "Thick, cold or warm, large portion",
-        "topping": "Pork, egg, bamboo shoot in the dipping soup",
-        "howToEat": "Dip; ask for the soup to be thinned with stock (soup-wari) at the end"
+        "soup": "Served separately for dipping; the first was ramen soup with extra soy in a teacup",
+        "noodle": "Chūka soba noodles served apart; some shops sell several weights at one price",
+        "topping": "—",
+        "howToEat": "Dip the noodles in the soup, like a Chinese-style zaru soba"
       },
       "where": [
         "Tokyo"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "hiyashi-chuka",

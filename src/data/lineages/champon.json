@@ -1,0 +1,83 @@
+{
+  "_note": "ちゃんぽんの系譜。品目ハブ（/en/eat/champon/）の横並び表と、各系譜ページがここから描く。出典は docs/research/noodles-mid-2026-10-10.md と各系譜ページの sources。長崎ちゃんぽん本体はハブで書いたので系譜ページは無く planned（era は規則どおり「—」）。小浜ちゃんぽんは農水省の1行（鶏ガラ主体であっさり）しか素材が無い",
+  "dish": "champon",
+  "name": "Champon",
+  "nameJa": "ちゃんぽん",
+  "axes": [
+    {
+      "key": "cooked",
+      "label": "How the noodle is cooked"
+    },
+    {
+      "key": "base",
+      "label": "Soup or sauce"
+    },
+    {
+      "key": "topping",
+      "label": "What goes in"
+    },
+    {
+      "key": "atTable",
+      "label": "At the table"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "nagasaki",
+      "name": "Nagasaki champon",
+      "nameJa": "長崎ちゃんぽん",
+      "origin": {
+        "place": "Nagasaki (Shikairou)",
+        "era": "—"
+      },
+      "cells": {
+        "cooked": "Toppings fried, then the noodles stewed in the soup, in one wok",
+        "base": "Rich, mainly pork bone",
+        "topping": "Pork, hanpen, cabbage, spring onion, bean sprouts, squid, prawns; clams in summer, oysters in winter",
+        "atTable": "In Kyushu, sauce is sometimes poured on"
+      },
+      "where": [
+        "Nagasaki"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "obama",
+      "name": "Obama champon",
+      "nameJa": "小浜ちゃんぽん",
+      "origin": {
+        "place": "Obama, Nagasaki prefecture",
+        "era": "—"
+      },
+      "cells": {
+        "cooked": "—",
+        "base": "Light, mainly chicken bone",
+        "topping": "—",
+        "atTable": "—"
+      },
+      "where": [
+        "Obama"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "sara-udon",
+      "name": "Sara udon",
+      "nameJa": "皿うどん",
+      "origin": {
+        "place": "Nagasaki (Shikairou)",
+        "era": "1899 (said to be)"
+      },
+      "cells": {
+        "cooked": "Thick: fried until no soup is left. Thin: deep-fried",
+        "base": "Thick: a little soup absorbed. Thin: a thickened sauce poured over",
+        "topping": "Vegetables, pork and seafood",
+        "atTable": "Nagasaki Worcestershire sauce or vinegar"
+      },
+      "where": [
+        "Nagasaki"
+      ],
+      "status": "published"
+    }
+  ]
+}
