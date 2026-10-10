@@ -193,6 +193,17 @@ img {
   height: 100%;
   object-fit: cover;
 }
+/* 本文に画像が無い記事へ自動で入る仮枠（src/layouts/Article.astro）。
+   Figure.astro の .fig と同じ寸法で見せる */
+.fig-noimage {
+  margin: 30px 0 34px;
+}
+.fig-noimage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+}
 .ratio-hero {
   aspect-ratio: 3 / 2;
 }

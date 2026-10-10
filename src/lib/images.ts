@@ -17,7 +17,7 @@
  * 4. CLS を出さないよう width/height を必ず出力し、hero 以外は lazy。
  */
 
-export type ImageKind = 'hero' | 'band' | 'card' | 'thumb' | 'portrait' | 'inline';
+export type ImageKind = 'hero' | 'articleHero' | 'band' | 'card' | 'thumb' | 'portrait' | 'inline';
 
 export interface ImageSpec {
   /** CSS の aspect-ratio に入れる値 */
@@ -40,6 +40,21 @@ export const IMAGE_SPEC: Record<ImageKind, ImageSpec> = {
     sizes: '(max-width: 900px) 100vw, 640px',
     loading: 'eager',
     note: 'ファーストビュー。lazy にしない',
+  },
+
+  /**
+   * 記事ページのヒーロー。見出しと署名の直下に、本文幅（880px）いっぱいで出す。
+   * 入稿は 3:2・2400×1600px（最低 2000×1333px）。PC の 880px を DPR 2 で
+   * 1760px、SP の 390px を DPR 3 で 1170px。どちらも 2400 から縮めて足りる。
+   * 共有画像（OG）は同じ1枚を 1200px 幅に縮めて使う（src/layouts/Article.astro）。
+   * 画像が無い記事は src/assets/noimage.webp を出す（OG には使わない）
+   */
+  articleHero: {
+    ratio: '3 / 2',
+    widths: [640, 960, 1280, 1760],
+    sizes: '(max-width: 900px) calc(100vw - 32px), 880px',
+    loading: 'eager',
+    note: 'ファーストビュー。lazy にしない。入稿 2400×1600',
   },
 
   /** 記事の中ほどに入れる全幅の帯。PC だけ横長に切る */

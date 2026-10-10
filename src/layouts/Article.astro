@@ -8,7 +8,9 @@ import { formatMonth } from '../lib/money.ts';
 import { shouldNoindex, hrefOf, type Article } from '../lib/content.ts';
 import { dishHub } from '../lib/lineages.ts';
 import { IS_PUBLIC } from '../config.ts';
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
+import { IMAGE_SPEC } from '../lib/images.ts';
+import noimage from '../assets/noimage.webp';
 
 interface Props {
   entry: Article;
@@ -28,6 +30,24 @@ const hero = d.heroImage ? await getImage({ src: d.heroImage, width: 1200, forma
 const ogImage = hero
   ? { src: hero.src, width: Number(hero.attributes.width), height: Number(hero.attributes.height), alt: d.heroAlt }
   : '/og-default.png';
+
+// 記事ヒーローは必ず1枚出す。画像が無いあいだは仮当て（共有画像には使わない）
+const heroSpec = IMAGE_SPEC.articleHero;
+const heroSrc = d.heroImage ?? noimage;
+const heroAltText = d.heroImage ? (d.heroAlt ?? '') : '';
+
+// 本文にも必ず1枚以上。<Figure> も src 付きの <PhotoBand> も描画後は <img> になるので、
+// 描画済みの本文に <img> が無ければ仮枠を差し込む（src の無い PhotoBand は img を持たない）。
+// .mdx を1本ずつ書き換えないのは、記事が並行して増えていくため。
+// 位置は2つ目の見出しの直前。最初の節を読み終えたところで一度目を休ませる。無ければ末尾
+const NOIMAGE_FIGURE =
+  '<figure class="fig-noimage"><img src="/images/noimage.webp" alt="" width="1320" height="880" loading="lazy" decoding="async"></figure>';
+let body = await Astro.slots.render('default');
+if (!/<img[\s>]/.test(body)) {
+  const h2s = [...body.matchAll(/<h2[\s>]/g)];
+  const at = h2s.length >= 2 ? h2s[1].index! : body.length;
+  body = body.slice(0, at) + NOIMAGE_FIGURE + body.slice(at);
+}
 
 const graph: Record<string, unknown>[] = [
   {
@@ -124,6 +144,18 @@ if (d.faq.length > 0) {
       }
     </div>
 
+    <figure class={d.heroImage ? 'article-hero' : 'article-hero is-noimage'}>
+      <Image
+        src={heroSrc}
+        alt={heroAltText}
+        width={heroSpec.widths.at(-1)}
+        widths={heroSpec.widths}
+        sizes={heroSpec.sizes}
+        loading={heroSpec.loading}
+        fetchpriority="high"
+      />
+    </figure>
+
     {
       /* 調べて書いた記事は、本文に入る前にそう言う。
          このサイトの他の記事は一次体験で立っているので、黙ると読者を誤らせる */
@@ -140,9 +172,7 @@ if (d.faq.length > 0) {
       hasAnyAffiliate && <p class="disclosure">{t(locale, 'disclosure.inline')}</p>
     }
 
-    <div class="prose">
-      <slot />
-    </div>
+    <div class="prose" set:html={body} />
 
     {
       d.faq.length > 0 && (
@@ -221,6 +251,22 @@ if (d.faq.length > 0) {
     justify-content: center;
     color: var(--muted);
     font-size: 17px;
+  }
+  /* 比率と配信幅は src/lib/images.ts の articleHero（3:2・入稿 2400×1600） */
+  .article-hero {
+    margin: 0;
+  }
+  .article-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+  .article-hero.is-noimage img {
+    border: none;
   }
   .badge-researched {
     font-family: var(--font-display);
