@@ -1,0 +1,65 @@
+{
+  "_note": "一汁三菜と定食・朝食の系譜。品目ハブ（/en/eat/teishoku/）の横並び表と、各系譜ページがここから描く。出典は docs/research/teishoku-2026-10-10.md と各系譜ページの sources。和朝食（旅館・ホテル）と、喫茶店モーニング＋牛丼チェーンの朝定食の2本",
+  "dish": "teishoku",
+  "name": "Set meals and breakfast",
+  "nameJa": "一汁三菜・定食・朝食",
+  "axes": [
+    {
+      "key": "plate",
+      "label": "What comes"
+    },
+    {
+      "key": "where",
+      "label": "Where"
+    },
+    {
+      "key": "money",
+      "label": "How it is priced"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "washoku-breakfast",
+      "name": "Japanese breakfast",
+      "nameJa": "和朝食",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "plate": "Rice and miso soup with fish, pickles, tofu, vegetables, nori, egg",
+        "where": "Ryokan, hotel buffets and set-breakfast restaurants",
+        "money": "At a ryokan, with the room; at a Tokyo hotel buffet, about ¥6,400",
+        "know": "Many small dishes, not one plate; at a buffet, take what you will finish"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "morning",
+      "name": "Café 'morning' and chain breakfast sets",
+      "nameJa": "喫茶店モーニング・牛丼チェーンの朝定食",
+      "origin": {
+        "place": "Ichinomiya, Aichi (as told there)",
+        "era": "Shōwa 30s (from 1955)"
+      },
+      "cells": {
+        "plate": "Café: toast and boiled egg with your coffee. Chain: rice, soup, and egg, fish, nattō or beef",
+        "where": "Cafés in Nagoya and Ichinomiya; beef-bowl and set-meal chains everywhere",
+        "money": "Café: the price of the drink. Chain: about ¥430–640",
+        "know": "Ichinomiya has about 500 cafés serving it, and a trademark"
+      },
+      "where": [
+        "Ichinomiya",
+        "Nagoya"
+      ],
+      "status": "published"
+    }
+  ]
+}
