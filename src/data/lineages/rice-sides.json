@@ -1,0 +1,137 @@
+{
+  "_note": "ご飯まわり（ご飯に添えるもの・ご飯に入れるもの）の系譜。品目ハブ（/en/eat/rice-sides/）の横並び表と、各系譜ページがここから描く。出典は docs/research/staples-minor-2026-10-10.md と各系譜ページの sources。汁物は nabe（味噌汁）・dashi と重なるので planned のまま。おにぎりは conbini、駅弁の釜めしは food-shopping で扱う。価格はメモで1つも確認できていないので、どの行にも書かない。planned の行の era は「—」",
+  "dish": "rice-sides",
+  "name": "Rice and what goes with it",
+  "nameJa": "ご飯まわり",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "rice",
+      "label": "How it meets the rice"
+    },
+    {
+      "key": "regional",
+      "label": "Where it changes"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "takikomi",
+      "name": "Rice cooked with things in it",
+      "nameJa": "炊き込みご飯・釜飯",
+      "origin": {
+        "place": "Nationwide",
+        "era": "said to begin as a way to stretch rice (Nara's account)"
+      },
+      "cells": {
+        "what": "Rice cooked together with vegetables, fish or chestnuts, or rice with a topping poured over",
+        "rice": "Inside it; the rice is the dish",
+        "regional": "Ehime's tai-meshi is cooked-in in Tōyo and poured-over raw in Nanyo; Nara calls soy-seasoned versions iro-gohan",
+        "know": "The origin of kamameshi as a dish is not settled in any source I could use"
+      },
+      "where": [
+        "Ehime",
+        "Kyoto (Tanba)",
+        "Nara",
+        "Yokokawa, Gunma"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "mochi",
+      "name": "Mochi, zōni and sekihan",
+      "nameJa": "餅・雑煮・赤飯",
+      "origin": {
+        "place": "Nationwide",
+        "era": "zōni with mochi at New Year from the Heian period (ministry account)"
+      },
+      "cells": {
+        "what": "Pounded glutinous rice, the New Year soup it goes into, and glutinous rice coloured with beans",
+        "rice": "Made from rice; eaten at festivals and celebrations",
+        "regional": "Square mochi east, round mochi west, roughly at Sekigahara, with exceptions; Hokkaido sekihan is sweet",
+        "know": "The Consumer Affairs Agency has issued a New Year warning about choking on mochi"
+      },
+      "where": [
+        "Tokyo",
+        "Kyoto",
+        "Akita",
+        "Hokkaido"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "tofu-natto",
+      "name": "Tofu and nattō",
+      "nameJa": "豆腐・納豆",
+      "origin": {
+        "place": "Nationwide; Mito for small-bean nattō",
+        "era": "two traditional stories for nattō, unsettled"
+      },
+      "cells": {
+        "what": "Soy milk set with a coagulant; boiled soybeans fermented with nattō bacteria",
+        "rice": "Nattō is eaten with soy sauce or in soup; Mito’s small beans are said to cling to rice",
+        "regional": "Mito sells small beans and straw-wrapped nattō; Yamagata makes nattō soup; Kyoto’s tera-nattō is a salty, dried kind",
+        "know": "Momen tofu is broken up and pressed; kinugoshi is set as it is"
+      },
+      "where": [
+        "Mito, Ibaraki",
+        "Yamagata",
+        "Kyoto"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "tsukemono",
+      "name": "Pickles, tsukudani and furikake",
+      "nameJa": "漬物・佃煮・ふりかけ",
+      "origin": {
+        "place": "Nationwide; Kyoto pickles; Tsukudajima and Osaka’s Tsukuda village for tsukudani",
+        "era": "tsukudani linked to fishermen from Tsukuda village in the Edo period (told several ways)"
+      },
+      "cells": {
+        "what": "Salted, fermented or seasoned vegetables; small fish and seaweed simmered down in soy; dry seasonings to sprinkle",
+        "rice": "Pickles are part of the basic one-soup, three-dish meal; tsukudani goes in ochazuke and onigiri",
+        "regional": "Smoked iburi-gakko in Akita, salt-free sunki in Kiso, Kyoto’s senmaizuke, suguki and shibazuke",
+        "know": "The origin of furikake could not be confirmed from an industry or company source"
+      },
+      "where": [
+        "Kyoto",
+        "Akita",
+        "Tokyo (Tsukudajima)"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "shiru",
+      "name": "Local soups",
+      "nameJa": "汁物（郷土の汁）",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Pork miso soup, kenchin-jiru, noppe, clam soup, dango-jiru",
+        "rice": "The ‘one soup’ of the one-soup, three-dish meal",
+        "regional": "Kenchin-jiru differs between Kanagawa and Iwate; Shimane and Shiga use different clams",
+        "know": "—"
+      },
+      "where": [
+        "Kagoshima",
+        "Kanagawa",
+        "Iwate",
+        "Niigata",
+        "Shimane",
+        "Shiga",
+        "Oita"
+      ],
+      "status": "planned"
+    }
+  ]
+}
