@@ -1,0 +1,64 @@
+{
+  "_note": "とんかつの系譜。品目ハブ（/en/eat/tonkatsu/）の横並び表と、各系譜ページがここから描く。出典は docs/research/tonkatsu-2026-10-10.md と各系譜ページの sources。カツ丼は丼（donburi）側で扱う。planned の行の era は「—」",
+  "dish": "tonkatsu",
+  "name": "Tonkatsu",
+  "nameJa": "とんかつ",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "sauce",
+      "label": "Sauce"
+    },
+    {
+      "key": "served",
+      "label": "How it is served"
+    },
+    {
+      "key": "rule",
+      "label": "The thing to know"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "miso-katsu",
+      "name": "Nagoya miso-katsu",
+      "nameJa": "名古屋の味噌かつ",
+      "origin": {
+        "place": "Nagoya",
+        "era": "early postwar (a stall story); Yabaton 1947"
+      },
+      "cells": {
+        "what": "Pork cutlet or kushikatsu with a sauce built on bean miso",
+        "sauce": "Bean-miso base blended differently by each shop; thick or thin and sweet",
+        "served": "Poured over, dipped in a pot of sauce, or on the side",
+        "rule": "Not on the farm ministry's list of Aichi local dishes; the miso behind it is"
+      },
+      "where": [
+        "Nagoya"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kushikatsu",
+      "name": "Osaka kushikatsu",
+      "nameJa": "大阪の串カツ",
+      "origin": {
+        "place": "Shinsekai, Osaka",
+        "era": "one shop dates itself to 1929"
+      },
+      "cells": {
+        "what": "Meat, seafood and vegetables on skewers, battered, crumbed and deep-fried",
+        "sauce": "A shared tray of thin sauce on the counter",
+        "served": "By the skewer, with free raw cabbage",
+        "rule": "No double-dipping in the shared sauce; scoop with cabbage instead"
+      },
+      "where": [
+        "Osaka"
+      ],
+      "status": "published"
+    }
+  ]
+}
