@@ -6,6 +6,14 @@ import { LOCALES, SITE_NAME, TAGLINE, NAV, type Locale } from '../../config.ts';
 import { listArticles, hrefOf } from '../../lib/content.ts';
 import { t, type UIKey } from '../../i18n/ui.ts';
 import { formatMonth } from '../../lib/money.ts';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { IMAGE_SPEC } from '../../lib/images.ts';
+/* トップの絵はイラスト。写真ではないので「Photographed myself」の約束とは別扱い */
+import heroArt from '../../assets/home/hero-gyoza.webp';
+import eatArt from '../../assets/home/way-eat.webp';
+import soakArt from '../../assets/home/way-soak.webp';
+import railArt from '../../assets/home/way-rail.webp';
 
 export function getStaticPaths() {
   return LOCALES.map((lang) => ({ params: { lang } }));
@@ -26,6 +34,13 @@ const WAYS: Record<string, string> = {
   soak: 'Onsen you can walk to from a platform, with the rules stated up front.',
   rail: 'Getting there: regional passes, model routes, and the transfers that catch people out.',
 };
+const WAY_ART: Record<string, { src: ImageMetadata; alt: string }> = {
+  eat: { src: eatArt, alt: 'Illustration of a bowl of soba with tempura and green onion, beside a plate of yakitori skewers' },
+  soak: { src: soakArt, alt: 'Illustration of a small stone outdoor onsen with a wooden bucket, a local train waiting at the platform behind' },
+  rail: { src: railArt, alt: 'Illustration of a two-car local train crossing a bridge over rice paddies, with a rail pass in the corner' },
+};
+const heroSpec = IMAGE_SPEC.hero;
+const cardSpec = IMAGE_SPEC.card;
 ---
 
 <Base
@@ -58,7 +73,17 @@ const WAYS: Record<string, string> = {
         )
       }
     </div>
-    <div class="hero-photo ph ratio-hero" aria-hidden="true">OWN PHOTO</div>
+    <div class="hero-photo ph ratio-hero">
+      <Image
+        src={heroArt}
+        alt="Illustration of pan-fried gyoza fanned on a plate, with dipping sauce, a bowl of rice and chopsticks"
+        width={heroSpec.widths.at(-1)}
+        widths={heroSpec.widths}
+        sizes={heroSpec.sizes}
+        loading={heroSpec.loading}
+        fetchpriority="high"
+      />
+    </div>
   </section>
 
   <section class="strip">
@@ -130,7 +155,18 @@ const WAYS: Record<string, string> = {
       {
         categories.map((c) => (
           <a class="card" href={`/${lang}/${c.key}/`}>
-            <span class="card-photo ph ratio-card" aria-hidden="true">OWN PHOTO</span>
+            <span class="card-photo ph ratio-card">
+              {WAY_ART[c.key] && (
+                <Image
+                  src={WAY_ART[c.key].src}
+                  alt={WAY_ART[c.key].alt}
+                  width={cardSpec.widths.at(-1)}
+                  widths={cardSpec.widths}
+                  sizes={cardSpec.sizes}
+                  loading={cardSpec.loading}
+                />
+              )}
+            </span>
             <span class="card-icon"><Icon name={c.key} /></span>
             <span class="card-title">{t(lang, `nav.${c.key}` as UIKey)}</span>
             <span class="card-dek">{WAYS[c.key]}</span>
