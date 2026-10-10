@@ -31,9 +31,9 @@ const here = Astro.url.pathname;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {/* マークを変えたら node tools/make-icons.mjs で .ico と .png を作り直す */}
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {/* マークを変えたら tools/brand/site-icon-source.webp を差し替え、node tools/make-icons.mjs で作り直す */}
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {/* 書体は自己ホスト（global.css の @font-face）。最初の描画で使う1本だけ先読みする */}
     <link rel="preload" href="/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -56,12 +56,8 @@ const here = Astro.url.pathname;
     <header class="masthead">
       <div class="wrap masthead-inner">
         <a class="brand" href={`/${locale}/`}>
-          {/* 路線図の途中駅。public/favicon.svg と同じ形 */}
-          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-            <rect width="32" height="32" rx="7" fill="var(--accent-fill)"></rect>
-            <path d="M4.5 16h6.6M20.9 16h6.6" stroke="var(--surface)" stroke-width="3.2" stroke-linecap="round"></path>
-            <circle cx="16" cy="16" r="4.9" fill="none" stroke="var(--surface)" stroke-width="3.2"></circle>
-          </svg>
+          {/* 赤い日と丘を抜ける道。ファビコンと同じ1枚（tools/make-icons.mjs が書き出す） */}
+          <img class="brand-mark" src="/icon-192.png" width="38" height="38" alt="" />
           <span class="brand-text">
             <span class="brand-name">{SITE_NAME}</span>
             <span class="brand-tag">{TAGLINE}</span>
