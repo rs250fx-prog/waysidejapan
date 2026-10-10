@@ -67,19 +67,19 @@
       "name": "Kaku-uchi (liquor-shop standing bar)",
       "nameJa": "角打ち",
       "origin": {
-        "place": "Kitakyushu and elsewhere",
-        "era": "—"
+        "place": "Kitakyushu (said to have originated there); also Tokyo liquor shops",
+        "era": "linked by a Kitakyushu group to the 1901 Yawata steelworks"
       },
       "cells": {
-        "what": "Drinking at the counter of a liquor shop",
-        "seats": "Mostly standing",
-        "money": "Often cash only, a drink for a few hundred yen",
-        "found": "Liquor shops"
+        "what": "Drinking at a liquor shop; distinct from standing bars run as restaurants",
+        "seats": "Standing, in or at the front of a liquor shop",
+        "money": "No prices confirmed; glasses and water are favours, not guaranteed",
+        "found": "Liquor shops; 94 in Kitakyushu in a 2018 survey"
       },
       "where": [
         "Kitakyushu"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "yatai",
@@ -99,6 +99,25 @@
         "Fukuoka"
       ],
       "status": "planned"
+    },
+    {
+      "key": "snack",
+      "name": "Snack bar",
+      "nameJa": "スナック",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Small bar, often run by a 'mama', with conversation and karaoke",
+        "seats": "—",
+        "money": "No official price data; check charges and time limits first",
+        "found": "Nightlife districts"
+      },
+      "where": [
+        "Hakodate"
+      ],
+      "status": "published"
     }
   ]
 }
