@@ -1,0 +1,172 @@
+{
+  "_note": "刺身・寿司以外の魚介の系譜。品目ハブ（/en/eat/seafood/）の横並び表と、各系譜ページがここから描く。出典は docs/research/seafood-minor-2026-10-10.md と各系譜ページの sources。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）。刺身・寿司・鰻・市場は別の品目ハブがあるので行を作っていない。価格はメモで1つも確認できていないので cells に入れない",
+  "dish": "seafood",
+  "name": "Seafood beyond sushi and sashimi",
+  "nameJa": "魚介（刺身・寿司以外）",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "method",
+      "label": "How it is prepared"
+    },
+    {
+      "key": "season",
+      "label": "Season"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "salmon",
+      "name": "Salmon, ikura and sujiko",
+      "nameJa": "鮭・いくら・筋子",
+      "origin": {
+        "place": "Hokkaido, Iwate, Miyagi, Niigata",
+        "era": "Salted salmon paid as tax from the late 7th century (farm ministry)"
+      },
+      "cells": {
+        "what": "Salted salmon, roe in the sac (sujiko) or loosened (ikura), and dishes that use the whole fish",
+        "method": "Dry-salting for large fish, brining for roe; soy-marinated ikura is common at home",
+        "season": "Autumn runs; harako-meshi around September to November",
+        "know": "The word ikura is said to come from Russian; how it arrived has more than one story"
+      },
+      "where": [
+        "Hokkaido",
+        "Miyagi",
+        "Iwate",
+        "Murakami"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "fugu",
+      "name": "Fugu (pufferfish)",
+      "nameJa": "河豚（下関では「ふく」）",
+      "origin": {
+        "place": "Shimonoseki, Yamaguchi",
+        "era": "Legalised in Yamaguchi in 1888"
+      },
+      "cells": {
+        "what": "Pufferfish, best known as thin-sliced sashimi with ponzu",
+        "method": "Only licensed handlers may prepare it; the liver may not be sold or served",
+        "season": "Fishing season September to March",
+        "know": "The toxin is not destroyed by cooking; licences differ by prefecture"
+      },
+      "where": [
+        "Shimonoseki"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "anago-hamo",
+      "name": "Anago and hamo",
+      "nameJa": "穴子・鱧",
+      "origin": {
+        "place": "Tokyo Bay; Miyajima; Kyoto",
+        "era": "Anago-meshi sold as a station lunch from 1901"
+      },
+      "cells": {
+        "what": "Two long-bodied fish: conger eel (anago) and pike conger (hamo)",
+        "method": "Edomae anago is simmered and brushed with tsume; Miyajima anago is grilled over rice; hamo needs honekiri, cutting the small bones",
+        "season": "Anago: traditionally late spring to summer; hamo: early summer to autumn",
+        "know": "Kyoto’s hamo mostly comes from the Seto Inland Sea and Genkai Sea"
+      },
+      "where": [
+        "Tokyo",
+        "Miyajima",
+        "Kyoto"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "himono",
+      "name": "Himono (dried fish)",
+      "nameJa": "干物",
+      "origin": {
+        "place": "Coasts across Japan",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Fish dried whole or after removing guts and gills, to keep it",
+        "method": "Sun-dried, salted then dried, boiled then dried, or grilled then dried",
+        "season": "Year-round; salmon toba is made when it is below 10°C",
+        "know": "Most are split from the belly; Odawara-biraki keeps the head and splits from the back"
+      },
+      "where": [
+        "Odawara",
+        "Hokkaido"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "nerimono",
+      "name": "Nerimono (fish paste)",
+      "nameJa": "練り物",
+      "origin": {
+        "place": "Many regions",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Fish ground with salt and set by heat: kamaboko, chikuwa, hanpen and more",
+        "method": "Grilled, boiled, steamed or fried",
+        "season": "—",
+        "know": "Each region has its own: sasa-kamaboko in Miyagi, steamed board kamaboko in Odawara, jakoten in Ehime"
+      },
+      "where": [
+        "Miyagi",
+        "Odawara",
+        "Ehime",
+        "Kagoshima"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "kombu",
+      "name": "Kombu",
+      "nameJa": "昆布",
+      "origin": {
+        "place": "Hokkaido",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Kelp, mostly from Hokkaido, used for stock and simmered dishes",
+        "method": "Dried; wiped rather than washed before making stock",
+        "season": "—",
+        "know": "Grown in the north, but eaten most distinctively in Osaka and Okinawa"
+      },
+      "where": [
+        "Hokkaido",
+        "Osaka",
+        "Okinawa"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "seaweed",
+      "name": "Nori, wakame and mozuku",
+      "nameJa": "海苔・わかめ・もずく",
+      "origin": {
+        "place": "Ariake Sea; Sanriku; Okinawa",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Farmed seaweeds: sheet nori, salted wakame, mozuku",
+        "method": "Nori is farmed on nets; wakame is blanched and salted",
+        "season": "New nori from early November; wakame March to April; mozuku harvest around April",
+        "know": "Over 95% of mozuku was from Okinawa in a 2007 prefectural report"
+      },
+      "where": [
+        "Ariake Sea",
+        "Sanriku",
+        "Okinawa"
+      ],
+      "status": "planned"
+    }
+  ]
+}
