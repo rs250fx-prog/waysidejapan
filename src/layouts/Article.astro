@@ -8,6 +8,7 @@ import { formatMonth } from '../lib/money.ts';
 import { shouldNoindex, hrefOf, type Article } from '../lib/content.ts';
 import { dishHub } from '../lib/lineages.ts';
 import { IS_PUBLIC } from '../config.ts';
+import { getImage } from 'astro:assets';
 
 interface Props {
   entry: Article;
@@ -21,6 +22,13 @@ const url = new URL(hrefOf(entry), SITE_URL).href;
 // 系譜ページは品目ハブの下にぶら下がる。ハブが無ければ普通のパンくず
 const hub = d.kind === 'lineage' && d.dish ? await dishHub(locale, d.dish) : null;
 
+// 記事が自前の画像を持てば、共有画像と構造化データの image に使う。
+// 3:2 のまま 1200px 幅に縮める。OG の推奨 1.91:1 ではないが、切り抜いて図の文字を欠くよりよい
+const hero = d.heroImage ? await getImage({ src: d.heroImage, width: 1200, format: 'jpg' }) : null;
+const ogImage = hero
+  ? { src: hero.src, width: Number(hero.attributes.width), height: Number(hero.attributes.height), alt: d.heroAlt }
+  : '/og-default.png';
+
 const graph: Record<string, unknown>[] = [
   {
     '@type': 'Article',
@@ -30,8 +38,8 @@ const graph: Record<string, unknown>[] = [
     ...(d.updatedDate && { dateModified: d.updatedDate.toISOString() }),
     author: { '@id': `${SITE_URL}/#author` },
     publisher: { '@id': `${SITE_URL}/#publisher` },
-    // 記事が自前の写真を持つまでは共有用の既定画像を指す
-    image: new URL('/og-default.png', SITE_URL).href,
+    // 自前の画像が無い記事は共有用の既定画像を指す
+    image: new URL(typeof ogImage === 'string' ? ogImage : ogImage.src, SITE_URL).href,
     mainEntityOfPage: url,
     inLanguage: locale,
   },
@@ -73,6 +81,7 @@ if (d.faq.length > 0) {
   alternates={alternates}
   graph={graph}
   ogType="article"
+  ogImage={ogImage}
   publishedTime={d.pubDate.toISOString()}
   modifiedTime={d.updatedDate?.toISOString()}
 >

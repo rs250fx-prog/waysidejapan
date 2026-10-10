@@ -1,0 +1,83 @@
+---
+/**
+ * 本文中の図版。図解・イラスト用で、運営者の写真には使わない
+ * （写真は PhotoBand / 本文の .img 枠。根拠の見た目を分けるため）。
+ *
+ * 画像の中の文字は検索エンジンにも読み上げにも届かない。
+ * だから transcript で同じ文言を本文に持ち、折りたたんで出す。
+ * 比率と配信幅は src/lib/images.ts の inline。
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { IMAGE_SPEC } from '../lib/images.ts';
+
+interface Props {
+  src: ImageMetadata;
+  /** 何が描かれているか。キーワードの羅列にしない */
+  alt: string;
+  caption?: string;
+  /** 画像内の文言そのまま。改行で段落を分ける */
+  transcript?: string;
+  loading?: 'eager' | 'lazy';
+}
+
+const spec = IMAGE_SPEC.inline;
+const { src, alt, caption, transcript, loading = spec.loading } = Astro.props;
+const lines = (transcript ?? '')
+  .split('\n')
+  .map((s) => s.trim())
+  .filter(Boolean);
+---
+
+<figure class="fig">
+  <Image src={src} alt={alt} width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading={loading} />
+  {caption && <figcaption>{caption}</figcaption>}
+  {
+    lines.length > 0 && (
+      <details class="transcript">
+        <summary>Text in this illustration</summary>
+        {lines.map((l) => (
+          <p>{l}</p>
+        ))}
+      </details>
+    )
+  }
+</figure>
+
+<style>
+  .fig {
+    margin: 30px 0 34px;
+  }
+  .fig img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+  figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--muted);
+  }
+  .transcript {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+  .transcript summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 13px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .transcript p {
+    margin: 6px 0 0;
+  }
+</style>

@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/soba-what-is.webp
+heroAlt: 'Illustrated guide to soba: a tray of cold buckwheat noodles with dipping sauce, a buckwheat plant, and three steps for eating it with chopsticks'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is soba gluten-free?
@@ -56,12 +58,25 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import sobaWhatIs from '../../../assets/eat/soba-what-is.webp';
+import sobaAcrossJapan from '../../../assets/eat/soba-across-japan.webp';
 
 Soba is the thin grey-brown noodle made from buckwheat, and it is the noodle of the other half of Japan: the east, the north, the mountains, the places where rice and wheat grew badly and buckwheat grew in seventy days on poor soil. Udon is the noodle of the warm west; soba is what Edo ate, what Nagano and Shimane and Iwate made into regional cuisines, and what most of the country still eats on the last night of the year. It is also the Japanese noodle with the most ritual attached to eating it, and the one where the raw material is now mostly imported.
 
 ## What it is
 
 Buckwheat is not wheat; it is a seed from a plant related to rhubarb, and it has no gluten. The ministry's own account is that it has been grown in Japan since the Jōmon period, probably from China, and was eaten for most of that time as *sobagaki* — a porridge or dumpling of buckwheat flour and hot water. The noodle, *soba-kiri*, "cut soba", is comparatively recent. The oldest record is a document from Jōshōji temple in Ōkuwa, Kiso, in Nagano, noting that soba-kiri was served to the craftsmen who repaired the main hall in 1574; the prefecture calls Kiso the birthplace of the noodle, with the usual caveat about other theories. The noodle reached Edo and became a city food in the eighteenth century.
+
+<Figure
+  src={sobaWhatIs}
+  alt="Illustrated guide to soba: a tray of cold buckwheat noodles with dipping sauce, a buckwheat plant, and three steps for eating it with chopsticks"
+  caption="Soba in one picture: the cold plate, the plant it comes from, and the Edo way of eating it. Illustration."
+  transcript={`What is soba? Soba is a traditional Japanese noodle made from buckwheat. It has a unique nutty aroma, a light texture, and a refreshing flavor. Soba is enjoyed in many styles, from cold with dipping sauce to hot in a bowl of soup.
+Buckwheat is not wheat. Soba is made from buckwheat, a different plant from wheat. Most soba contains some wheat, so it is not gluten-free.
+How to eat soba: 1. Pick up a few strands. 2. Dip only the lower half. 3. Slurp to enjoy the aroma.
+Soba-yu: add the cooking water to your leftover sauce.`}
+/>
 
 Because buckwheat has no gluten, pure buckwheat noodles are hard to make and break easily, so most soba contains wheat. The names tell you the ratio: *jūwari* is 100% buckwheat, *ni-hachi* is 80:20, *kuichi* 90:10. The national noodle association's explanation of *ni-hachi* is simply the ratio; a food-industry paper notes the folk etymology — two times eight is sixteen *mon*, the Edo price of a bowl — and rejects it. The flour itself is graded by how deep into the grain the mill goes: the first milling from the kernel's centre is the white *sarashina* flour, the second takes the germ, the third the inner husk, and grinding the whole grain with its husk gives the dark *hikigurumi* of Izumo.
 
@@ -82,6 +97,18 @@ Because buckwheat has no gluten, pure buckwheat noodles are hard to make and bre
 The spread is the widest of any noodle. A standing counter in a Tokyo station charges ¥390–450 for a hot bowl and expects you gone in five minutes. The statistical plate in central Tokyo is ¥788. The old Edo houses charge ¥1,000 (Sarashina Horii's mori) to ¥1,320 (Kanda Yabu's seiro) for the plain cold plate and ¥2,310–2,860 for one with tempura. In the household survey, the city that spends most on soba and udon eaten out is Takamatsu — for udon — and the soba cities are further down: Nagano 13th (¥8,705), Tokyo 22nd (¥8,166), Matsue 32nd, Morioka 38th.
 
 ## The lineages
+
+<Figure
+  src={sobaAcrossJapan}
+  alt="Four regional soba styles drawn side by side: Edo-style cold soba on a tray, Izumo soba in stacked red bowls, Togakushi bundles on a round basket, and Wanko soba in small lidded bowls"
+  caption="The same noodle in four places. Edo dips, Izumo pours, Togakushi bundles, Iwate keeps refilling. Illustration."
+  transcript={`Soba across Japan. One noodle. Many regions. Many ways to enjoy it.
+Edo / Tokyo: Dip the noodles into a concentrated soy-and-bonito sauce.
+Izumo, Shimane: Pour the sauce over the noodles instead of dipping.
+Togakushi, Nagano: Small bundles served on a round tray.
+Wanko, Iwate: Tiny servings arrive one after another; close the lid when you are done.
+What to know before you order: Station counters: quick, inexpensive meals. Tempura makes a classic pairing. Ask about ingredients if you avoid wheat — most soba contains wheat.`}
+/>
 
 <LineageTable dish="soba" />
 

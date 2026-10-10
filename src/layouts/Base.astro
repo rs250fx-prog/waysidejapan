@@ -16,7 +16,7 @@ interface Props {
   graph?: Record<string, unknown>[];
   /** 記事ページだけ 'article'。公開日・更新日とセットで渡す */
   ogType?: 'website' | 'article';
-  ogImage?: string;
+  ogImage?: string | { src: string; width: number; height: number; alt?: string };
   publishedTime?: string;
   modifiedTime?: string;
 }
