@@ -1,0 +1,66 @@
+{
+  "_note": "日本酒の産地の系譜。品目ハブ（/en/eat/sake/）の横並び表と、各系譜ページがここから描く。出典は docs/research/sake-2026-10-10.md と各系譜ページの sources。灘と伏見は1ページにまとめた（slug: sake-nada-fushimi）。GI一覧にある他の産地はメモに素材が無いので行を作っていない",
+  "dish": "sake",
+  "name": "Sake",
+  "nameJa": "日本酒",
+  "axes": [
+    {
+      "key": "water",
+      "label": "Water"
+    },
+    {
+      "key": "conditions",
+      "label": "Climate and people"
+    },
+    {
+      "key": "style",
+      "label": "In the official description"
+    },
+    {
+      "key": "gi",
+      "label": "Protected name"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "nada-fushimi",
+      "name": "Nada and Fushimi",
+      "nameJa": "灘・伏見",
+      "origin": {
+        "place": "Kobe–Nishinomiya / Kyoto",
+        "era": "Fushimi from the Momoyama period; Miyamizu found late Edo"
+      },
+      "cells": {
+        "water": "Nada: Miyamizu, hard, almost no iron. Fushimi: moderately hard spring water",
+        "conditions": "Nada: cold Rokkō wind for winter brewing, Tanba brewers. Fushimi: river port between Kyoto and Osaka",
+        "style": "Nada: balanced, clean finish, rounder after summer. Kyoto: soft and round, made to sit beside food",
+        "gi": "Nada Gogō (2018); Fushimi falls under the Kyoto GI (2025)"
+      },
+      "where": [
+        "Kobe",
+        "Nishinomiya",
+        "Kyoto"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "niigata",
+      "name": "Niigata",
+      "nameJa": "新潟",
+      "origin": {
+        "place": "Niigata prefecture",
+        "era": "Echigo brewers from the mid-Edo period"
+      },
+      "cells": {
+        "water": "Plentiful, generally soft",
+        "conditions": "Heavy snow and steady cold; Echigo tōji brewers; a prefectural brewing institute since 1930",
+        "style": "Tanrei — clean, with few off-flavours. The official text does not say dry",
+        "gi": "Niigata (2022)"
+      },
+      "where": [
+        "Niigata"
+      ],
+      "status": "published"
+    }
+  ]
+}
