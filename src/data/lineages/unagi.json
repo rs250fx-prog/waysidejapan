@@ -1,0 +1,85 @@
+{
+  "_note": "鰻の系譜（焼き方の系統）。品目ハブ（/en/eat/unagi/）の横並び表と、各系譜ページがここから描く。出典は docs/research/unagi-2026-10-10.md と各系譜ページの sources。ひつまぶしは関西式ページで軽く扱い、柳川は planned（1681年は独立史料が無いので era は「—」）",
+  "dish": "unagi",
+  "name": "Unagi (eel)",
+  "nameJa": "鰻",
+  "axes": [
+    {
+      "key": "cut",
+      "label": "How it is opened"
+    },
+    {
+      "key": "cooked",
+      "label": "How it is cooked"
+    },
+    {
+      "key": "result",
+      "label": "What you notice"
+    },
+    {
+      "key": "howToEat",
+      "label": "How it is eaten"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "kanto",
+      "name": "Kantō style",
+      "nameJa": "関東式（背開き・蒸し）",
+      "origin": {
+        "place": "Edo (Tokyo)",
+        "era": "steaming said to date from the Bunsei era (1818–30)"
+      },
+      "cells": {
+        "cut": "Along the back",
+        "cooked": "Grilled plain, steamed, then grilled again with tare over charcoal",
+        "result": "Soft; steaming takes out excess fat",
+        "howToEat": "Unajū in a lacquer box, with liver soup; sanshō pepper after the first bite"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kansai",
+      "name": "Kansai style (jiyaki)",
+      "nameJa": "関西式（腹開き・地焼き）",
+      "origin": {
+        "place": "Kyoto / Osaka",
+        "era": "kabayaki from the Genroku era in Kyoto"
+      },
+      "cells": {
+        "cut": "Along the belly",
+        "cooked": "Grilled over charcoal with tare, no steaming",
+        "result": "Crisp, fragrant skin",
+        "howToEat": "Called mamushi in Kansai; in Nagoya, hitsumabushi eaten in three ways"
+      },
+      "where": [
+        "Osaka",
+        "Kyoto",
+        "Nagoya"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "yanagawa",
+      "name": "Yanagawa seiro-mushi",
+      "nameJa": "柳川のせいろ蒸し",
+      "origin": {
+        "place": "Yanagawa, Fukuoka",
+        "era": "—"
+      },
+      "cells": {
+        "cut": "—",
+        "cooked": "Steamed in a basket over rice",
+        "result": "—",
+        "howToEat": "—"
+      },
+      "where": [
+        "Yanagawa"
+      ],
+      "status": "planned"
+    }
+  ]
+}
