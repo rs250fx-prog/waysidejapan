@@ -1,0 +1,85 @@
+{
+  "_note": "粉もの（小麦粉の生地を鉄板・銅板で焼くもの）の系譜。品目ハブ（/en/eat/konamono/）の横並び表と、各系譜ページがここから描く。出典は docs/research/konamono-2026-10-10.md と各系譜ページの sources。お好み焼きは大阪と広島を1ページ、たこ焼きと明石焼を1ページにまとめた。もんじゃはメモに素材が無いので planned",
+  "dish": "konamono",
+  "name": "Konamono (batter dishes)",
+  "nameJa": "粉もの",
+  "axes": [
+    {
+      "key": "batter",
+      "label": "Batter"
+    },
+    {
+      "key": "cooked",
+      "label": "How it is cooked"
+    },
+    {
+      "key": "finish",
+      "label": "Finished with"
+    },
+    {
+      "key": "howToEat",
+      "label": "How it is eaten"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "okonomiyaki",
+      "name": "Okonomiyaki (Osaka and Hiroshima)",
+      "nameJa": "お好み焼き（大阪・広島）",
+      "origin": {
+        "place": "Osaka / Hiroshima",
+        "era": "prewar snacks; present forms postwar, Hiroshima's name c. 1950"
+      },
+      "cells": {
+        "batter": "Osaka: flour and dashi, often with grated yam, cabbage mixed in. Hiroshima: a thin crêpe of batter",
+        "cooked": "Osaka: mixed and grilled. Hiroshima: layered — cabbage, pork, noodles and egg stacked and steamed",
+        "finish": "A thick, sweet sauce",
+        "howToEat": "Osaka: sometimes as a side with rice. Hiroshima: with noodles, not rice, eaten with a spatula or chopsticks"
+      },
+      "where": [
+        "Osaka",
+        "Hiroshima"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "takoyaki",
+      "name": "Takoyaki and Akashi-yaki",
+      "nameJa": "たこ焼き・明石焼（玉子焼）",
+      "origin": {
+        "place": "Osaka / Akashi",
+        "era": "Osaka: early Shōwa stalls. Akashi: shop trade said to date from 1919"
+      },
+      "cells": {
+        "batter": "Takoyaki: flour, dashi, egg. Akashi: more egg, plus wheat starch (jinko), so it stays soft",
+        "cooked": "Takoyaki: a takoyaki pan at about 220°C, turned 90° at a time into balls. Akashi: copper pan",
+        "finish": "Takoyaki: thick sauce, green laver, bonito flakes. Akashi: none — dipped in dashi",
+        "howToEat": "Takoyaki: from a boat-shaped tray with a toothpick. Akashi: on a wooden board (age-ita), 20 to a portion at one old shop"
+      },
+      "where": [
+        "Osaka",
+        "Akashi"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "monja",
+      "name": "Monjayaki",
+      "nameJa": "もんじゃ焼き",
+      "origin": {
+        "place": "Tokyo",
+        "era": "—"
+      },
+      "cells": {
+        "batter": "—",
+        "cooked": "—",
+        "finish": "—",
+        "howToEat": "—"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    }
+  ]
+}
