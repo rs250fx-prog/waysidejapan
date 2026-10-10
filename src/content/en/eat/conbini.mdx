@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/conbini-hero.webp
+heroAlt: 'Illustration of a Japanese convenience store at night: chilled shelves of rice balls, sandwiches and bento, a hot-food case of fried chicken by the counter, a clerk at the register'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why does the price change if I eat in the store?
@@ -75,6 +77,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import conbiniRegister from '../../../assets/eat/conbini-register.webp';
 
 The Japanese convenience store — *konbini* — is, in JNTO's words, a place to eat relatively cheaply at any hour: a rice ball, fried chicken, a bento heated at the counter. It is also a piece of national infrastructure with a rulebook visitors never see: a tax line that changes if you sit down, payment rules that differ by chain, and food engineered to survive the shelf. This page is the map. The lineage pages cover the two foods most worth understanding: the rice ball and oden.
 
@@ -114,6 +118,12 @@ The Japanese convenience store — *konbini* — is, in JNTO's words, a place to
 **Cash machines.** JNTO says some stores have ATMs that accept selected international cards, with major chains — mainly Seven-Eleven, mainly in cities — offering multilingual machines, and that service can depend on the time and card.
 
 **Heating.** JNTO points to the store microwave. Seven-Eleven heats bento, side dishes and noodles that show a time for its 1,500 W ovens; items marked only with household 500 or 600 W times are, as a rule, not heated, because the strong oven may burst them.
+
+<Figure
+  src={conbiniRegister}
+  alt="A customer paying by card at a convenience store register, a basket with a rice ball, a bottle of tea and a bento on the counter, the clerk gesturing to the microwave behind her"
+  caption="At the till: pay by card or IC card, and the clerk offers to heat the bento. Illustration."
+/>
 
 ## What it costs
 
