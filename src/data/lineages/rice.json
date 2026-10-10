@@ -1,0 +1,86 @@
+{
+  "_note": "米の系譜。品目ハブ（/en/eat/rice/）の横並び表と、各系譜ページがここから描く。出典は docs/research/rice-curry-2026-10-10.md と各系譜ページの sources。おにぎり・カレーライスの2本を書いた。めはりずし（和歌山）はメモに素材があるが記事は未執筆なので planned。コンビニおにぎりは conbini の系譜（conbini-onigiri）にあるのでここには作らない。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま",
+  "dish": "rice",
+  "name": "Rice",
+  "nameJa": "米・ごはん",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "origin",
+      "label": "Origin, as the sources tell it"
+    },
+    {
+      "key": "regional",
+      "label": "Regional versions"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "onigiri",
+      "name": "Onigiri (rice balls)",
+      "nameJa": "おにぎり・おむすび",
+      "origin": {
+        "place": "Several accounts; this site does not choose",
+        "era": "Yayoi find, Heian tonjiki, or 1885 station sale"
+      },
+      "cells": {
+        "what": "Cooked rice pressed by hand into a shape you can hold; called onigiri or omusubi",
+        "origin": "A carbonised rice lump said to be the oldest (Ishikawa, about 2,000 years ago); Heian tonjiki; first sold as a station bento in 1885",
+        "regional": "Local-chain rice balls (bear meat in Toyama, luncheon meat in Okinawa, scallop miso in Aomori); mehari-zushi in Wakayama",
+        "know": "Two onigiri days set by Nakanoto town, 18 June and 18 November; no official rule on shaping or wrapping"
+      },
+      "where": [
+        "Everywhere",
+        "Nakanoto, Ishikawa"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "curry",
+      "name": "Curry rice",
+      "nameJa": "カレーライス",
+      "origin": {
+        "place": "India via Britain; spread through the navy",
+        "era": "Meiji (first recipes 1872)"
+      },
+      "cells": {
+        "what": "A flour-thickened curry sauce with meat, potato, carrot and onion, served with rice",
+        "origin": "British curry powder arrived with recipes in early Meiji; the navy adopted curry against beriberi",
+        "regional": "Yokosuka navy curry (salad and milk, served in the city); Kanazawa curry (thick sauce, cabbage, steel plate); curry udon in soba shops",
+        "know": "Solid roux from 1950; at CoCo Ichibanya you choose the rice by weight, 300 g standard"
+      },
+      "where": [
+        "Yokosuka",
+        "Kanazawa",
+        "Everywhere"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "mehari",
+      "name": "Mehari-zushi",
+      "nameJa": "めはりずし",
+      "origin": {
+        "place": "Wakayama",
+        "era": "—"
+      },
+      "cells": {
+        "what": "A large rice ball wrapped in salted takana leaves",
+        "origin": "A packed lunch for mountain work and between fishing trips",
+        "regional": "—",
+        "know": "Two explanations of the name; once the size of a softball"
+      },
+      "where": [
+        "Wakayama"
+      ],
+      "status": "planned"
+    }
+  ]
+}
