@@ -1,0 +1,131 @@
+{
+  "_note": "汁と鍋の系譜。品目ハブ（/en/eat/nabe/）の横並び表と、各系譜ページがここから描く。出典は docs/research/soup-nabe-2026-10-10.md と各系譜ページの sources。味噌汁と味噌の地域差（miso）、おでん（oden）の2本を執筆。ちゃんこ・石狩鍋・牡丹鍋はハブ本文で扱い planned（era は「—」）。だしは dashi、コンビニおでんは conbini-oden、雑煮・豚汁・しじみ汁は別メモの範囲。湯豆腐・あんこう鍋はメモに素材が無いので行を作っていない",
+  "dish": "nabe",
+  "name": "Soups and hotpots",
+  "nameJa": "汁と鍋",
+  "axes": [
+    {
+      "key": "stock",
+      "label": "Stock"
+    },
+    {
+      "key": "seasoning",
+      "label": "Seasoned with"
+    },
+    {
+      "key": "contents",
+      "label": "In the pot"
+    },
+    {
+      "key": "marker",
+      "label": "What the place is known for"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "miso",
+      "name": "Miso soup and regional miso",
+      "nameJa": "味噌汁と味噌の地域差",
+      "origin": {
+        "place": "Nationwide; soybean miso in Aichi, Gifu and Mie",
+        "era": "Hatcho miso GI 2017"
+      },
+      "cells": {
+        "stock": "Dashi of kombu, dried sardines and similar",
+        "seasoning": "Rice, barley or soybean miso, by region",
+        "contents": "Varies by home and region; a full-of-ingredients bowl in Nagano",
+        "marker": "Aichi soybean miso, Kyoto white miso for New Year, Shinshu rice miso, barley miso in Ehime and Kagoshima"
+      },
+      "where": [
+        "Aichi",
+        "Kyoto",
+        "Nagano",
+        "Ehime",
+        "Kagoshima"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "oden",
+      "name": "Oden",
+      "nameJa": "おでん",
+      "origin": {
+        "place": "From tofu dengaku; simmered oden in Edo (Tokyo)",
+        "era": "Grilled dengaku in Edo; simmered oden from the modern era"
+      },
+      "cells": {
+        "stock": "Katsuobushi and kombu in Tokyo; light broth in Osaka; beef-tendon broth in Shizuoka",
+        "seasoning": "Dark soy in Tokyo, light soy or white dashi in Kyoto, miso sauce in Aichi",
+        "contents": "Chikuwabu in Tokyo; black hanpen in Shizuoka; kurumafu and seasonal crab in Kanazawa",
+        "marker": "Mustard in Tokyo, miso in Aichi, green laver and fish powder in Shizuoka, ginger-soy in Himeji"
+      },
+      "where": [
+        "Tokyo",
+        "Osaka",
+        "Kyoto",
+        "Aichi",
+        "Shizuoka",
+        "Kanazawa",
+        "Himeji"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "chanko",
+      "name": "Chanko nabe",
+      "nameJa": "ちゃんこ鍋",
+      "origin": {
+        "place": "Sumida, Tokyo",
+        "era": "—"
+      },
+      "cells": {
+        "stock": "Chicken",
+        "seasoning": "Soy sauce or miso",
+        "contents": "Traditionally no four-legged meat such as beef or pork",
+        "marker": "In sumo, chanko means anything a wrestler cooks; shops run by former wrestlers across Tokyo"
+      },
+      "where": [
+        "Tokyo"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "ishikari",
+      "name": "Ishikari nabe",
+      "nameJa": "石狩鍋",
+      "origin": {
+        "place": "Ishikari, Hokkaido",
+        "era": "—"
+      },
+      "cells": {
+        "stock": "Kombu",
+        "seasoning": "Miso, finished with sansho",
+        "contents": "Salmon chunks and trimmings; some homes add salmon roe or butter",
+        "marker": "A fishermen’s dish that spread after visitors came to see beach-seine fishing"
+      },
+      "where": [
+        "Ishikari"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "botan",
+      "name": "Botan nabe",
+      "nameJa": "牡丹鍋（ぼたん鍋）",
+      "origin": {
+        "place": "Tamba-Sasayama",
+        "era": "—"
+      },
+      "cells": {
+        "stock": "—",
+        "seasoning": "Mostly a blend of red and white miso, different at each shop",
+        "contents": "Wild boar; sansho; udon or rice porridge to finish",
+        "marker": "The town says the name came before the peony-shaped plating"
+      },
+      "where": [
+        "Tamba-Sasayama"
+      ],
+      "status": "planned"
+    }
+  ]
+}
