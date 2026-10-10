@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/dashi-hero.webp
+heroAlt: 'Illustration of a ladle pouring clear golden dashi back into a pot on the stove, with sheets of kombu and a basket of bonito flakes beside it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is dashi vegetarian?
@@ -68,6 +70,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import dashiIngredients from '../../../assets/eat/dashi-ingredients.webp';
 
 Most Japanese food tastes the way it does because of a stock you never see. *Dashi* — usually kelp (*kombu*) and dried, smoked bonito (*katsuobushi*), sometimes dried sardines, flying fish or shiitake — is the base of miso soup, of the broth under udon and soba, of simmered dishes, and of a great many sauces. It is also why so much Japanese food that looks vegetarian is not. This page explains what dashi is, what umami is, where the ingredients come from, and what to ask if you do not eat fish. The lineage pages cover the regional split: kombu in Kansai and bonito in Kantō, and the sardine and flying-fish stocks of the west.
 
@@ -99,6 +103,12 @@ The farm ministry's booklet on *washoku* calls dashi the key to every dish. It i
 - **Niboshi / iriko.** Boiled and dried anchovy. The National Diet Library says there is little clear record before the 18th century, and that from about the Kyōhō era (1716–36), when katsuobushi was too expensive except for festivals, dried sardines and cheaper fish flakes became the everyday stock, especially in western Japan.
 - **Ago.** Flying fish, the stock of northern Kyushu (see the lineage page).
 - **Dried shiitake.** The center gives fresh shiitake 70 mg of glutamate per 100 g, dried shiitake 1,060 mg of glutamate and 150 mg of guanylate — the guanylate forms in drying. The soaking water is used as stock.
+
+<Figure
+  src={dashiIngredients}
+  alt="Dashi ingredients laid out separately: sheets of kombu, a heap of bonito flakes, dried shiitake, dried anchovies and dried flying fish"
+  caption="The stock cupboard: kombu, bonito flakes, dried shiitake, niboshi and ago. Illustration."
+/>
 
 **A long history.** The farm ministry records bonito bones at Jōmon sites, and *katsuo* products in law codes of 701 and 905; it says the near-modern method began in Kii in 1674 and is said to have reached Makurazaki in 1707, and on another page that mould-curing was devised in Tosa in the mid-1600s. The National Diet Library says fishermen from Kii devised the improved, mould-cured bonito in Tosa in the late 17th century. These accounts overlap without agreeing, so I give them side by side. The library dates the first source for something like modern dashi to the late Muromachi period, and says bonito and kombu stocks reached ordinary households in the Meiji era, as home cookbooks spread.
 

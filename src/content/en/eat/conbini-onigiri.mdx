@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/conbini-onigiri-hero.webp
+heroAlt: 'Illustration of a hand taking a wrapped triangular rice ball from a convenience store shelf, rows of rice balls with nori and different fillings behind it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Should I keep onigiri in the fridge?
@@ -53,6 +55,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import onigiriOpen from '../../../assets/eat/conbini-onigiri-open.webp';
 
 JNTO describes the convenience-store *onigiri* as a fist-sized rice ball covered in dry seaweed, and the franchise association names rice balls among the strongest sellers of 2025. The hard part, for the chains, is the seaweed. Nori that sits against damp rice goes limp, and each chain publishes what it does to stop that. This page covers that engineering, how to keep one, what goes inside, and what it costs.
 
@@ -98,6 +102,12 @@ Seven-Eleven notes that size, price and release dates may vary by region, and th
 
 - **Keep it out of the fridge**, as Seven-Eleven advises.
 - **Read the label** if you avoid fish or mayonnaise; JNTO points out that tuna-mayonnaise and dashi are common.
+
+<Figure
+  src={onigiriOpen}
+  alt="Three steps of opening a wrapped rice ball: pulling the centre strip of film down, pulling one side of the film away, then the other, leaving the rice ball wrapped in nori"
+  caption="The usual way to open one: pull the centre strip down, then each side out. Illustration."
+/>
 
 ## The same rice ball, a different region
 

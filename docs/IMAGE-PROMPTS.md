@@ -48,17 +48,7 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 - **ヒーロー**：`A Japanese roadside rest station in the countryside: a low wooden building with a market hall, crates of local vegetables outside, a parking area with a few cars and motorbikes, green hills behind.`
 - **本文**：`An unstaffed farm stand at the edge of a field: a small wooden shelf with bags of vegetables, a little coin box, a hand-drawn sign shown blank, a farmer working in the field behind.`
 
-## Eat — Konbini
-
-### /en/eat/conbini-onigiri/
-- **ヒーロー**：`Several triangular rice balls in plastic wrap on a convenience store shelf, nori sealed separately inside the wrapper, a hand reaching to pick one.`
-- **本文**：`Three-step diagram of opening a convenience store onigiri: pulling the center tab down, pulling the left side, pulling the right side, the nori wrapping crisp around the rice at the end; drawn as three hands in sequence.`
-
 ## Eat — Dashi
-
-### /en/eat/dashi/
-- **ヒーロー**：`A pot of clear golden dashi on a stove, a sheet of dried kombu and a pile of shaved bonito flakes beside it on a wooden board, a ladle lifting the broth.`
-- **本文**：`An arrangement of dashi ingredients laid out like a specimen chart: kombu, bonito flakes, dried shiitake, dried sardines, dried flying fish; each separated with space, no labels.`
 
 ### /en/eat/dashi-east-west/
 - **ヒーロー**：`Two bowls of udon side by side: the left with a pale, clear kombu broth (Kansai), the right with a darker soy and bonito broth (Kanto); a simple outline of Japan's main island behind them, split in the middle.`
