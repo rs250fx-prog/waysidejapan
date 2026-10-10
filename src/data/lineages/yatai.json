@@ -1,0 +1,83 @@
+{
+  "_note": "屋台の系譜。品目ハブ（/en/eat/yatai/）の横並び表と、各系譜ページがここから描く。出典は docs/research/yatai-2026-10-10.md と各系譜ページの sources。福岡の常設屋台と、祭り・縁日の露店の2本。キッチンカーは planned",
+  "dish": "yatai",
+  "name": "Yatai (food stalls)",
+  "nameJa": "屋台",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "rules",
+      "label": "The rules"
+    },
+    {
+      "key": "food",
+      "label": "What it sells"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "hakata",
+      "name": "Fukuoka yatai",
+      "nameJa": "博多・福岡の屋台",
+      "origin": {
+        "place": "Fukuoka city",
+        "era": "c. 1946; ordinance 2013"
+      },
+      "cells": {
+        "what": "A cart set up at the same place every night on a street or in a park",
+        "rules": "Road-use, road-occupancy and restaurant permits; a city ordinance since 2013; new pitches by public competition since 2016",
+        "food": "Pork-bone ramen, yakitori, oden; no raw food",
+        "know": "About 100 stalls; few seats; mostly cash; at least one drink and one dish each"
+      },
+      "where": [
+        "Fukuoka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "matsuri",
+      "name": "Festival stalls (roten)",
+      "nameJa": "祭り・縁日の露店",
+      "origin": {
+        "place": "Nationwide",
+        "era": "stalls in Edo from the 1770s"
+      },
+      "cells": {
+        "what": "Stalls assembled for each festival or fair",
+        "rules": "Restaurant permit, or a temporary notice by a local organiser; road-use permit on streets",
+        "food": "Simple food heated just before serving, such as takoyaki, karaage, oden (Osaka's rules)",
+        "know": "Run by travelling traders known as tekiya or yashi"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kitchen-car",
+      "name": "Kitchen cars",
+      "nameJa": "キッチンカー",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Vehicles that cook on board",
+        "rules": "Restaurant permit (vehicle); in Fukuoka valid six years, city-wide",
+        "food": "—",
+        "know": "—"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "planned"
+    }
+  ]
+}
