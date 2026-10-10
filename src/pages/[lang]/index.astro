@@ -10,7 +10,6 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { IMAGE_SPEC } from '../../lib/images.ts';
 /* トップの絵はイラスト。写真ではないので「Photographed myself」の約束とは別扱い */
-import heroArt from '../../assets/home/hero-gyoza.webp';
 import eatArt from '../../assets/home/way-eat.webp';
 import soakArt from '../../assets/home/way-soak.webp';
 import railArt from '../../assets/home/way-rail.webp';
@@ -39,7 +38,6 @@ const WAY_ART: Record<string, { src: ImageMetadata; alt: string }> = {
   soak: { src: soakArt, alt: 'Illustration of a small stone outdoor onsen with a wooden bucket, a local train waiting at the platform behind' },
   rail: { src: railArt, alt: 'Illustration of a two-car local train crossing a bridge over rice paddies, with a rail pass in the corner' },
 };
-const heroSpec = IMAGE_SPEC.hero;
 const cardSpec = IMAGE_SPEC.card;
 ---
 
@@ -73,17 +71,7 @@ const cardSpec = IMAGE_SPEC.card;
         )
       }
     </div>
-    <div class="hero-photo ph ratio-hero">
-      <Image
-        src={heroArt}
-        alt="Illustration of pan-fried gyoza fanned on a plate, with dipping sauce, a bowl of rice and chopsticks"
-        width={heroSpec.widths.at(-1)}
-        widths={heroSpec.widths}
-        sizes={heroSpec.sizes}
-        loading={heroSpec.loading}
-        fetchpriority="high"
-      />
-    </div>
+    <div class="hero-photo ph ratio-hero" aria-hidden="true">OWN PHOTO</div>
   </section>
 
   <section class="strip">
