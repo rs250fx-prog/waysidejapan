@@ -1,0 +1,104 @@
+{
+  "_note": "鶏料理の系譜。品目ハブ（/en/eat/chicken/）の横並び表と、各系譜ページがここから描く。出典は docs/research/chicken-2026-10-10.md と各系譜ページの sources。唐揚げ（中津・宇佐）と博多の水炊きの2本を published。とり天（別府）とせんざんき（今治）は planned で era は「—」。焼鳥は izakaya、親子丼は donburi の系譜で扱うためここには行を作っていない",
+  "dish": "chicken",
+  "name": "Chicken dishes",
+  "nameJa": "鶏料理",
+  "axes": [
+    {
+      "key": "cooked",
+      "label": "How it is cooked"
+    },
+    {
+      "key": "chicken",
+      "label": "The chicken"
+    },
+    {
+      "key": "eaten",
+      "label": "How it is eaten"
+    },
+    {
+      "key": "marker",
+      "label": "What the place is known for"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "karaage",
+      "name": "Karaage (Nakatsu and Usa)",
+      "nameJa": "唐揚げ（中津・宇佐）",
+      "origin": {
+        "place": "Usa and Nakatsu, Oita",
+        "era": "specialist shops from the Shōwa 30s (1955–64)"
+      },
+      "cells": {
+        "cooked": "Marinated (soy or salt base, garlic, ginger), dusted with flour or starch, fried to order",
+        "chicken": "Thigh, breast or a mix; also neck, gizzard, cartilage, wings, skin",
+        "eaten": "As it comes, hot or cold; each shop’s marinade differs",
+        "marker": "Usa named by the Japan Karaage Association as birthplace of the specialist shop; Nakatsu has 60 or more shops"
+      },
+      "where": [
+        "Nakatsu",
+        "Usa"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "mizutaki",
+      "name": "Hakata mizutaki",
+      "nameJa": "博多の水炊き",
+      "origin": {
+        "place": "Fukuoka city",
+        "era": "1905 (Hayashida Heizaburō, Suigetsu)"
+      },
+      "cells": {
+        "cooked": "Bone-in young chicken simmered in stock from head and bones, in an earthenware pot",
+        "chicken": "Bone-in pieces, liver, heart, gizzard; carcass for stock",
+        "eaten": "Soup first, then chicken, then vegetables; zōsui or noodles to finish",
+        "marker": "Cloudy or clear soup by shop; eaten all year; served at the Hakata Gion Yamakasa"
+      },
+      "where": [
+        "Fukuoka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "toriten",
+      "name": "Toriten",
+      "nameJa": "とり天（大分）",
+      "origin": {
+        "place": "Beppu, Oita",
+        "era": "—"
+      },
+      "cells": {
+        "cooked": "Fried in tempura batter",
+        "chicken": "Boneless thigh, in bite-sized pieces",
+        "eaten": "Vinegared soy with mustard, or ponzu or kabosu",
+        "marker": "Traced by the farm ministry to Tōyōken in Beppu; eaten across Oita"
+      },
+      "where": [
+        "Beppu",
+        "Oita"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "senzanki",
+      "name": "Senzanki",
+      "nameJa": "せんざんき（今治）",
+      "origin": {
+        "place": "Imabari",
+        "era": "—"
+      },
+      "cells": {
+        "cooked": "Fried; counted as a kind of karaage by the Japan Karaage Association",
+        "chicken": "—",
+        "eaten": "—",
+        "marker": "Two origin stories, no written record"
+      },
+      "where": [
+        "Imabari"
+      ],
+      "status": "planned"
+    }
+  ]
+}
