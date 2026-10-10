@@ -1,0 +1,64 @@
+{
+  "_note": "コンビニの食の系譜。品目ハブ（/en/eat/conbini/）の横並び表と、各系譜ページがここから描く。出典は docs/research/conbini-2026-10-10.md と各系譜ページの sources。ホットスナックは素材が薄いので行を作っていない",
+  "dish": "conbini",
+  "name": "Convenience-store food",
+  "nameJa": "コンビニの食",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "engineering",
+      "label": "The engineering"
+    },
+    {
+      "key": "price",
+      "label": "Price marker"
+    },
+    {
+      "key": "regional",
+      "label": "Regional difference"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "onigiri",
+      "name": "Onigiri (rice balls)",
+      "nameJa": "おにぎり",
+      "origin": {
+        "place": "Nationwide",
+        "era": "Seven-Eleven from 1978"
+      },
+      "cells": {
+        "what": "Rice with a filling, wrapped in nori that stays crisp until you open it",
+        "engineering": "Sealed, moisture-proof film; rice kept at about 20°C, never refrigerated",
+        "price": "About ¥146–378 including 8% tax at Seven-Eleven",
+        "regional": "Some lines sold only in some regions, such as pork-and-egg in Okinawa"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "oden",
+      "name": "Oden",
+      "nameJa": "おでん",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Fish cakes, radish, egg and more simmered in broth by the counter, mainly in the cold months",
+        "engineering": "FamilyMart blends its broth four ways by region",
+        "price": "About ¥130–200 a piece including tax",
+        "regional": "Hanpen in the east, gobō-maki in the west, chikuwabu in Kantō"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    }
+  ]
+}
