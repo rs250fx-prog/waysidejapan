@@ -1,0 +1,86 @@
+{
+  "_note": "日本化した外来食（洋食の小品）の系譜。品目ハブ（/en/eat/western/）の横並び表と、各系譜ページがここから描く。出典は docs/research/western-minor-2026-10-10.md と各系譜ページの sources。とんかつ・カツ丼・牛丼は別の品目で扱うのでここには入れない。価格はメモで1つも確認できていないので、どの行にも書かない。窯焼きピッツェリア・ソフトクリームはメモに素材が無いので行を作っていない",
+  "dish": "western",
+  "name": "Western foods made Japanese",
+  "nameJa": "日本化した洋食",
+  "axes": [
+    {
+      "key": "arrived",
+      "label": "How it arrived"
+    },
+    {
+      "key": "changed",
+      "label": "What Japan changed"
+    },
+    {
+      "key": "where",
+      "label": "Where it is made or served"
+    },
+    {
+      "key": "marker",
+      "label": "What the record shows"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "italian",
+      "name": "Napolitan, pasta and pizza",
+      "nameJa": "ナポリタン・パスタ・ピザ",
+      "origin": {
+        "place": "Nagasaki (pasta); Yokohama (Napolitan, by one hotel’s account); Ebisu, Tokyo (delivery pizza)",
+        "era": "pasta from about 1883; Napolitan after 1952; delivery pizza 1985 (company claim)"
+      },
+      "cells": {
+        "arrived": "A missionary’s macaroni works; American soldiers’ spaghetti with ketchup during the occupation; an American delivery chain",
+        "changed": "Early domestic pasta blended several flours for Japanese taste; delivery pizza added tuna, teriyaki chicken and mayonnaise-potato toppings",
+        "where": "Hotel New Grand’s café in Yokohama for the hotel’s Napolitan; delivery chains for pizza",
+        "marker": "1955 called the first year of pasta; durum-only domestic pasta in homes from about 1986"
+      },
+      "where": [
+        "Yokohama",
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "burger",
+      "name": "Hamburgers",
+      "nameJa": "ハンバーガー",
+      "origin": {
+        "place": "Sasebo, Nagasaki (city tourism account); Ginza, Tokyo (McDonald’s Japan)",
+        "era": "about 1950 (Sasebo’s account); 1971 (McDonald’s Japan); 1972 (MOS Burger)"
+      },
+      "cells": {
+        "arrived": "Recipes from the US naval base in Sasebo; an American chain’s Japanese company",
+        "changed": "Teriyaki burgers (MOS 1973, McDonald’s Japan 1989), rice burgers, katsu burgers, a moon-viewing egg burger",
+        "where": "Sasebo shops; national chains everywhere",
+        "marker": "Sasebo’s tourism site sets conditions for the name, including a head office in Sasebo"
+      },
+      "where": [
+        "Sasebo",
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "dairy",
+      "name": "Milk and dairy",
+      "nameJa": "牛乳・乳製品",
+      "origin": {
+        "place": "Akasaka, Tokyo (first milk shop in the city); Hokkaido (most raw milk today)",
+        "era": "1870 (first Tokyo milk shop)"
+      },
+      "cells": {
+        "arrived": "A Meiji government campaign for meat and milk",
+        "changed": "Milk in school lunches; strict naming rules for what may be called milk; a 1-litre carton built on an American base",
+        "where": "Hokkaido makes most raw milk, mostly for butter, cheese and other products; other regions mostly for drinking",
+        "marker": "Hokkaido 58% of national raw milk; domestic share of cheese eaten 15.5% (FY2025)"
+      },
+      "where": [
+        "Hokkaido",
+        "Tokyo"
+      ],
+      "status": "published"
+    }
+  ]
+}
