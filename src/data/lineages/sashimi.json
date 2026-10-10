@@ -1,0 +1,85 @@
+{
+  "_note": "刺身の系譜。品目ハブ（/en/eat/sashimi/）の横並び表と、各系譜ページがここから描く。出典は docs/research/sashimi-2026-10-10.md と各系譜ページの sources。出世魚（ブリ・スズキ）と〆（昆布〆・酢〆）の2本。かつおのたたきはハブで軽く扱い、行は planned",
+  "dish": "sashimi",
+  "name": "Sashimi",
+  "nameJa": "刺身",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "why",
+      "label": "Why it is done"
+    },
+    {
+      "key": "regional",
+      "label": "Regional difference"
+    },
+    {
+      "key": "safety",
+      "label": "Safety note"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "shusse-uo",
+      "name": "Promotion fish (buri, suzuki)",
+      "nameJa": "出世魚（ブリ・スズキ）",
+      "origin": {
+        "place": "Nationwide, names by region",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Fish renamed as they grow: inada, warasa, buri; seigo, fukko, suzuki",
+        "why": "Size and age change the fish, and the market names follow",
+        "regional": "Kantō says inada, Kansai hamachi; Toyama has up to five stages",
+        "safety": "—"
+      },
+      "where": [
+        "Chiba",
+        "Mie",
+        "Toyama"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "shime",
+      "name": "Cured fish (kobujime, shimesaba)",
+      "nameJa": "〆（昆布〆・酢〆）",
+      "origin": {
+        "place": "Toyama (kobujime)",
+        "era": "kobujime from the Edo period"
+      },
+      "cells": {
+        "what": "Raw fish pressed between kombu, or cured in vinegar",
+        "why": "Kombu draws out water and adds umami; the fish firms up",
+        "regional": "Toyama is the kobujime prefecture; swordfish is its standard",
+        "safety": "Vinegar does not kill anisakis; shimesaba needs freezing"
+      },
+      "where": [
+        "Toyama"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "tataki",
+      "name": "Katsuo no tataki",
+      "nameJa": "かつおのたたき",
+      "origin": {
+        "place": "Kōchi",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Bonito with citrus-vinegar and soy dressing",
+        "why": "—",
+        "regional": "Always with sliced garlic in Kōchi",
+        "safety": "—"
+      },
+      "where": [
+        "Kōchi"
+      ],
+      "status": "planned"
+    }
+  ]
+}
