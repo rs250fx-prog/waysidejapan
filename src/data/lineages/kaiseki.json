@@ -1,0 +1,102 @@
+{
+  "_note": "懐石・会席・精進・弁当（日本の構えた食事の型）の系譜。品目ハブ（/en/eat/kaiseki/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kaiseki-shojin-bento-2026-10-11.md と各系譜ページの sources。tea は茶懐石と会席を1ページで扱う。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）。本膳・弁当はメモに素材があるが系譜ページ未執筆",
+  "dish": "kaiseki",
+  "name": "Kaiseki and the formal meal",
+  "nameJa": "懐石・会席",
+  "axes": [
+    {
+      "key": "occasion",
+      "label": "The occasion it came from"
+    },
+    {
+      "key": "structure",
+      "label": "How the meal is built"
+    },
+    {
+      "key": "rice",
+      "label": "When the rice comes"
+    },
+    {
+      "key": "marker",
+      "label": "What sets it apart"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "tea",
+      "name": "Tea kaiseki and banquet kaiseki",
+      "nameJa": "茶懐石・会席",
+      "origin": {
+        "place": "The tea gathering; banquet kaiseki at restaurants",
+        "era": "Tea kaiseki completed in the Momoyama period (farm ministry)"
+      },
+      "cells": {
+        "occasion": "Tea: a light meal before the tea. Banquet: a meal for drinking sake",
+        "structure": "Tea: one tray, one soup and three dishes, then dishes for sake. Banquet: many dishes, order set by the cook",
+        "rice": "Tea: first, with the soup. Banquet: near the end",
+        "marker": "Tea kaiseki ends with matcha; the banquet is what restaurants now usually call kaiseki"
+      },
+      "where": [
+        "Kyoto",
+        "Tokyo",
+        "Nagoya"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "shojin",
+      "name": "Shōjin ryōri",
+      "nameJa": "精進料理",
+      "origin": {
+        "place": "Zen temples",
+        "era": "About 700 years ago, or the Kamakura period (sources differ)"
+      },
+      "cells": {
+        "occasion": "Monks’ food as part of training; separately, hospitality for temple visitors",
+        "structure": "Monks: one soup, one dish. Hospitality: trays in the honzen style (Kōya lunches of two or three trays)",
+        "rice": "—",
+        "marker": "No meat or fish; tofu, yuba and fu; kombu and dried shiitake for stock"
+      },
+      "where": [
+        "Kōya",
+        "Kyoto",
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "honzen",
+      "name": "Honzen ryōri",
+      "nameJa": "本膳料理",
+      "origin": {
+        "place": "Warrior households",
+        "era": "—"
+      },
+      "cells": {
+        "occasion": "Ceremonial food",
+        "structure": "From a first tray (the honzen) up to a fifth",
+        "rice": "—",
+        "marker": "Said by Kyoto city’s education board to be the base of formal Japanese cooking"
+      },
+      "where": [],
+      "status": "planned"
+    },
+    {
+      "key": "bento",
+      "name": "Bento",
+      "nameJa": "弁当",
+      "origin": {
+        "place": "Food carried out: theatre, travel, tea gatherings",
+        "era": "—"
+      },
+      "cells": {
+        "occasion": "Theatre intervals, rail travel, the simplified meal at a tea gathering",
+        "structure": "Rice and several side dishes in one box; the Shōkadō box has four compartments",
+        "rice": "In the box",
+        "marker": "Makunouchi from the theatre; Shōkadō from a ryōtei in 1937"
+      },
+      "where": [],
+      "status": "planned"
+    }
+  ]
+}
