@@ -27,3 +27,7 @@ photos-raw/
 # wrangler
 .wrangler/
 .dev.vars
+
+# 記事画像の受け取り口（tools/ingest-images.mjs が src/assets/ へ移す）
+inbox/images/*
+!inbox/images/README.md
