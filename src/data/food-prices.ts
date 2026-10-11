@@ -530,13 +530,13 @@ export const FOOD_PRICES: PriceGroup[] = [
         name: 'Ekiben (station bento)',
         nameJa: '駅弁',
         chainKey: 'ekiben',
-        reference: { jpy: 1200, from: true, note: 'Up to 2,000 for the regional ones. Twice a convenience store bento, and the reason is the box, not the rice', seenOn: '2026-10' },
+        reference: { jpy: 1200, from: true, note: 'Up to 2,000 for the regional ones. About twice a convenience store bento', seenOn: '2026-10' },
       },
       {
         name: 'Department store deli, one item',
         nameJa: 'デパ地下惣菜（1品）',
         chainKey: 'depachika',
-        reference: { jpy: 400, from: true, note: 'Sold by weight or by brand, so there is no ceiling. Half price in the last hour before closing', seenOn: '2026-10' },
+        reference: { jpy: 400, from: true, note: 'Sold by weight or by brand, so there is no ceiling. Some counters mark prices down in the last two or three hours, not always (JNTO)', seenOn: '2026-10' },
       },
       {
         name: 'Bakery, one item',
