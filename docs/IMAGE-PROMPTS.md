@@ -48,12 +48,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 - **ヒーロー**：`A Japanese roadside rest station in the countryside: a low wooden building with a market hall, crates of local vegetables outside, a parking area with a few cars and motorbikes, green hills behind.`
 - **本文**：`An unstaffed farm stand at the edge of a field: a small wooden shelf with bags of vegetables, a little coin box, a hand-drawn sign shown blank, a farmer working in the field behind.`
 
-## Eat — Dashi
-
-### /en/eat/dashi-iriko-ago/
-- **ヒーロー**：`A small heap of dried sardines (iriko) and a few dried flying fish (ago) on a bamboo tray, a bowl of Sanuki udon in pale broth beside them, sea and islands of the Inland Sea faintly behind.`
-- **本文**：`A flying fish in flight over the sea, and below it the same fish grilled and dried on a rack; a bowl of Kyushu-style clear soup at the bottom corner.`
-
 ## Eat — Donburi
 
 ### /en/eat/donburi/
@@ -69,10 +63,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 - **本文**：`Two katsudon bowls side by side: on the left the egg-simmered version, on the right a sauce katsudon with the cutlet dipped in dark Worcestershire-style sauce over shredded cabbage.`
 
 ## Eat — Gyoza
-
-### /en/eat/gyoza/
-- **ヒーロー**：`A plate of pan-fried gyoza fanned out with crisp golden bottoms facing up, a small dish of soy-vinegar dipping sauce with chili oil, a bowl of white rice beside it, chopsticks on a ceramic rest.`
-- **本文**：`Two plates side by side: Chinese boiled dumplings served in a bowl as a meal on the left, Japanese pan-fried gyoza next to a bowl of rice on the right.`
 
 ### /en/eat/gyoza-hamamatsu/
 - **ヒーロー**：`Hamamatsu-style gyoza: dumplings arranged in a circle in a frying pan like a wheel, a mound of boiled bean sprouts in the center, viewed from above.`
@@ -111,10 +101,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 - **本文**：`A wooden board of soft, egg-rich Akashi-yaki dumplings next to a small bowl of dashi for dipping, with one dumpling being dipped by chopsticks; the Akashi Strait bridge faintly in the background.`
 
 ## Eat — Market
-
-### /en/eat/market/
-- **ヒーロー**：`A Japanese fish market at early morning: styrofoam crates of fish on ice, rubber-booted workers, a forklift cart, and a small queue outside a seafood bowl shop.`
-- **本文**：`A seafood rice bowl seen from above: salmon roe, tuna, sea urchin, crab and egg on rice, a small dish of soy sauce and wasabi.`
 
 ### /en/eat/market-omicho-hakodate/
 - **ヒーロー**：`A town market arcade with crab and squid displays on ice, a stall owner handing over a bowl; snow on the roof edges outside the entrance.`
@@ -623,10 +609,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 ### /en/rail/kansai-12-days-setouchi/
 - **ヒーロー**：`A train running along the coast of the Seto Inland Sea, small islands and bridges in the background, a calm sea under a soft sky.`
 - **本文**：`A simple illustrated route along the Inland Sea drawn as a line connecting small station dots, with tiny icons of a castle, a torii gate and a bridge along the way; no names.`
-
-### /en/rail/kix-to-hiroshima/
-- **ヒーロー**：`Kansai Airport with an airport express train in the foreground and a plane taking off behind, a long bridge across the sea.`
-- **本文**：`Three options for travelling drawn side by side: a bullet train, a highway bus and a regional train, each with a small clock beside it.`
 
 ### /en/rail/setouchi-area-pass/
 - **ヒーロー**：`A regional train crossing a bridge with the Seto Inland Sea and islands behind it, a paper rail pass shown as a blank card in the foreground corner.`

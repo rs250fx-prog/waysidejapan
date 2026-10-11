@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/rail/kix-to-hiroshima-hero.webp
+heroAlt: 'Illustration of an airport express train crossing the bridge from Kansai Airport, a plane taking off over the terminal and the sea'
 pricesCheckedOn: 2026-10-04
 faq:
   - q: Is there a direct bus from Kansai Airport to Hiroshima?
@@ -33,6 +35,8 @@ import Price from '../../../components/Price.astro';
 import Verdict from '../../../components/Verdict.astro';
 import FactRow from '../../../components/FactRow.astro';
 import CompareTable from '../../../components/CompareTable.astro';
+import Figure from '../../../components/Figure.astro';
+import threeWays from '../../../assets/rail/kix-to-hiroshima-three-ways.webp';
 
 Hiroshima is the first place most people go west of Osaka, and almost everyone arrives at Kansai Airport without having worked out how they are getting there. The honest answer is that there is no clever route. There are three, they are not close in quality, and which one is right depends on a single thing: **whether you are stopping anywhere else in the west.**
 
@@ -93,6 +97,12 @@ It is an ordinary-car reserved seat, and the reservation is made separately at a
       bestFor: 'A tight budget and a spare afternoon',
     },
   ]}
+/>
+
+<Figure
+  src={threeWays}
+  alt="Three panels, each with a clock above it: a bullet train on a viaduct, a highway bus on an expressway, and a local train in the countryside"
+  caption="Bullet train, highway bus or local line: the same trip, traded between time and money. Illustration."
 />
 
 ## The number that decides it
