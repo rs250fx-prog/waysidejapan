@@ -1,0 +1,103 @@
+{
+  "_note": "B級ご当地グルメ・街の揚げ物の系譜。品目ハブ（/en/eat/bkyu/）の横並び表と、各系譜ページがここから描く。出典は docs/research/monja-bkyu-fry-2026-10-11.md と各系譜ページの sources。記事にしたのはコロッケ（天ぷらの屋台史・みしまコロッケを含む）だけ。せんべい汁・甲府鳥もつ煮・トルコライスはメモに素材があるが記事を書いていないので planned で era は「—」。もんじゃは konamono の系譜。富士宮・横手やきそばは yakisoba、ソースカツ丼は donburi、串カツは tonkatsu にあるので行を作っていない",
+  "dish": "bkyu",
+  "name": "B-grade local food and town fried food",
+  "nameJa": "B級ご当地グルメ・街の揚げ物",
+  "axes": [
+    {
+      "key": "what",
+      "label": "What it is"
+    },
+    {
+      "key": "roots",
+      "label": "Where it comes from"
+    },
+    {
+      "key": "fame",
+      "label": "How it became known"
+    },
+    {
+      "key": "know",
+      "label": "Worth knowing"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "korokke",
+      "name": "Korokke and town fried food",
+      "nameJa": "コロッケ・街の揚げ物",
+      "origin": {
+        "place": "From the French croquette, via Meiji-era magazines",
+        "era": "A recipe printed in 1895; potato korokke after c. 1907; a hit song c. 1918"
+      },
+      "cells": {
+        "what": "A breaded, deep-fried croquette; early recipes used shrimp or meat, the cheap version potato",
+        "roots": "Butchers made a potato-based korokke from scraps and fat; the danshaku potato spread around 1907",
+        "fame": "The Korokke Song of about 1918 spread the name; third-favourite dish in a 1922 army survey",
+        "know": "Mishima korokke (2008) is defined only by using Mishima potatoes; fillings and shape are each shop’s choice"
+      },
+      "where": [
+        "Tokyo",
+        "Mishima"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "senbei-jiru",
+      "name": "Hachinohe senbei-jiru",
+      "nameJa": "八戸せんべい汁",
+      "origin": {
+        "place": "Hachinohe, Aomori",
+        "era": "—"
+      },
+      "cells": {
+        "what": "A chicken-stock soy hotpot with vegetables and konjac noodles, with Nanbu senbei broken into it",
+        "roots": "Nanbu senbei, a flour-salt-water cracker, kept as food where cold summers hurt the rice crop; a soup cracker made after the war",
+        "fame": "The name took hold in Heisei when Hachinohe tourism groups promoted it; B-1 gold in 2012",
+        "know": "About 200 restaurants in Hachinohe serve it, by the farm ministry’s count"
+      },
+      "where": [
+        "Hachinohe"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "torimotsu",
+      "name": "Kofu torimotsu-ni",
+      "nameJa": "甲府鳥もつ煮",
+      "origin": {
+        "place": "Kofu, Yamanashi",
+        "era": "—"
+      },
+      "cells": {
+        "what": "The name means simmered chicken giblets; the recipe is not confirmed here",
+        "roots": "Said to have been created around 1950 at Okuto, a soba shop founded in 1913",
+        "fame": "B-1 gold in 2010",
+        "know": "—"
+      },
+      "where": [
+        "Kofu"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "toruko-rice",
+      "name": "Nagasaki Toruko rice",
+      "nameJa": "トルコライス（長崎）",
+      "origin": {
+        "place": "Nagasaki",
+        "era": "—"
+      },
+      "cells": {
+        "what": "Pilaf (or dry curry), a cutlet and spaghetti Napolitan on one plate",
+        "roots": "One restaurant is said to have devised the original",
+        "fame": "Called a grown-up’s kids’ lunch; Nagasaki city presents it as a local speciality",
+        "know": "Shops vary it with korokke, carbonara and more; the name’s origin is unconfirmed"
+      },
+      "where": [
+        "Nagasaki"
+      ],
+      "status": "planned"
+    }
+  ]
+}

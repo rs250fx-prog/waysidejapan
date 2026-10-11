@@ -1,5 +1,5 @@
 {
-  "_note": "粉もの（小麦粉の生地を鉄板・銅板で焼くもの）の系譜。品目ハブ（/en/eat/konamono/）の横並び表と、各系譜ページがここから描く。出典は docs/research/konamono-2026-10-10.md と各系譜ページの sources。お好み焼きは大阪と広島を1ページ、たこ焼きと明石焼を1ページにまとめた。もんじゃはメモに素材が無いので planned",
+  "_note": "粉もの（小麦粉の生地を鉄板・銅板で焼くもの）の系譜。品目ハブ（/en/eat/konamono/）の横並び表と、各系譜ページがここから描く。出典は docs/research/konamono-2026-10-10.md と各系譜ページの sources。お好み焼きは大阪と広島を1ページ、たこ焼きと明石焼を1ページにまとめた。もんじゃは konamono-monja（出典は docs/research/monja-bkyu-fry-2026-10-11.md）",
   "dish": "konamono",
   "name": "Konamono (batter dishes)",
   "nameJa": "粉もの",
@@ -67,19 +67,19 @@
       "name": "Monjayaki",
       "nameJa": "もんじゃ焼き",
       "origin": {
-        "place": "Tokyo",
-        "era": "—"
+        "place": "Tsukishima, Tokyo (shitamachi)",
+        "era": "farm ministry: just after the war; shop union: from mid-Meiji"
       },
       "cells": {
-        "batter": "—",
-        "cooked": "—",
-        "finish": "—",
-        "howToEat": "—"
+        "batter": "Flour, sauce and dashi mixed thin; cabbage, dried squid, tempura bits, sakura shrimp",
+        "cooked": "Fillings fried and chopped on the plate, pushed into a ring, batter poured into the middle",
+        "finish": "Green laver when bubbles form; sauce, cheese or curry flavours",
+        "howToEat": "Pressed onto the plate a little at a time with a small spatula; usually cooked by the diner"
       },
       "where": [
         "Tokyo"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
