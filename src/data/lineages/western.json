@@ -1,5 +1,5 @@
 {
-  "_note": "日本化した外来食（洋食の小品）の系譜。品目ハブ（/en/eat/western/）の横並び表と、各系譜ページがここから描く。出典は docs/research/western-minor-2026-10-10.md と各系譜ページの sources。とんかつ・カツ丼・牛丼は別の品目で扱うのでここには入れない。価格はメモで1つも確認できていないので、どの行にも書かない。窯焼きピッツェリア・ソフトクリームはメモに素材が無いので行を作っていない",
+  "_note": "日本化した外来食（洋食の小品）の系譜。品目ハブ（/en/eat/western/）の横並び表と、各系譜ページがここから描く。出典は docs/research/western-minor-2026-10-10.md と各系譜ページの sources。とんかつ・カツ丼・牛丼は別の品目で扱うのでここには入れない。価格はメモで1つも確認できていないので、どの行にも書かない。窯焼きピッツェリア・ソフトクリームはメモに素材が無いので行を作っていない。洋食・町中華・パンは docs/research/yoshoku-chuka-pan-2026-10-11.md（税込価格は各ページに日付つき）",
   "dish": "western",
   "name": "Western foods made Japanese",
   "nameJa": "日本化した洋食",
@@ -78,6 +78,65 @@
       },
       "where": [
         "Hokkaido",
+        "Tokyo"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "yoshoku",
+      "name": "Yōshoku (Western-style cooking)",
+      "nameJa": "洋食",
+      "origin": {
+        "place": "Ginza, Tokyo; Osaka; navy kitchens",
+        "era": "sources differ: meat ban lifted 1872; navy cookbook 1908"
+      },
+      "cells": {
+        "arrived": "Treaty-port Western restaurants after the meat ban was lifted; the navy's Western-style meals",
+        "changed": "Dishes taken one by one into a rice-centred diet: pork cutlet, croquette, omurice, hayashi rice",
+        "where": "Ginza restaurants (Rengatei, Shiseido Parlour); Hokkyokusei in Osaka; navy-style stew in port towns",
+        "marker": "No official definition found; two shops named as the origin of omurice"
+      },
+      "where": [
+        "Tokyo",
+        "Osaka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "machichuka",
+      "name": "Machi-chūka (neighbourhood Chinese)",
+      "nameJa": "町中華",
+      "origin": {
+        "place": "Small owner-run Chinese restaurants",
+        "era": "Chinese food popular after the 1923 earthquake; the name spread in the 2010s"
+      },
+      "cells": {
+        "arrived": "Dish by dish, chosen as side dishes for rice; popular after the 1923 earthquake",
+        "changed": "Dishes not found in China: tenshinhan, chūkadon; pan-fried rather than boiled gyoza",
+        "where": "Small shops where the owner cooks; chains such as Hidakaya and Gyoza no Ohsho sell the same dishes",
+        "marker": "Tenshinhan's origin unsettled: Tokyo and Osaka stories"
+      },
+      "where": [
+        "Tokyo",
+        "Osaka"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "pan",
+      "name": "Japanese bread",
+      "nameJa": "パン",
+      "origin": {
+        "place": "Ginza, Tokyo (Kimuraya's anpan)",
+        "era": "1874 (anpan); 1927 (curry bread, as regarded)"
+      },
+      "cells": {
+        "arrived": "—",
+        "changed": "Bean paste in sake-yeast bread (1874), jam bread, curry bread, yakisoba bread",
+        "where": "Wholesale makers, convenience stores, bakeries",
+        "marker": "Household spending on bread passed rice in 2011 (households of two or more)"
+      },
+      "where": [
         "Tokyo"
       ],
       "status": "published"
