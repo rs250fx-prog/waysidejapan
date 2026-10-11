@@ -1,0 +1,106 @@
+{
+  "_note": "調味料の系譜。品目ハブ（/en/eat/seasoning/）の横並び表と、各系譜ページがここから描く。出典は docs/research/ferment-egg-2026-10-11.md と各系譜ページの sources。醤油・卵は published。酢・みりんはメモの A 項に素材があるが系譜ページ未執筆のため planned、era は「—」。味噌は nabe、だしは dashi、漬物・納豆は rice-sides の系譜で扱うのでここには行を作らない",
+  "dish": "seasoning",
+  "name": "Seasonings",
+  "nameJa": "調味料",
+  "axes": [
+    {
+      "key": "made",
+      "label": "How it is made"
+    },
+    {
+      "key": "types",
+      "label": "Main kinds"
+    },
+    {
+      "key": "use",
+      "label": "How it is used"
+    },
+    {
+      "key": "marker",
+      "label": "What to know"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "shoyu",
+      "name": "Soy sauce",
+      "nameJa": "醤油",
+      "origin": {
+        "place": "From Chinese jiang; Yuasa (Wakayama) by tradition, Noda and Choshi (Chiba) for dark soy",
+        "era": "Word recorded 1568 or 1597, by source"
+      },
+      "cells": {
+        "made": "Soybeans, wheat and salt; koji mash matured about 6–8 months in tanks, a year or more in barrels",
+        "types": "Dark koikuchi (84.9% of 2024 shipments), light usukuchi, tamari, saishikomi, white shiro",
+        "use": "Cooking and at the table; light soy where the colour of the food should show",
+        "marker": "Chiba ships 37.6%; many factories take visitors, mostly by booking"
+      },
+      "where": [
+        "Noda",
+        "Choshi",
+        "Tatsuno",
+        "Shodoshima",
+        "Yuasa"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "egg",
+      "name": "Eggs",
+      "nameJa": "卵",
+      "origin": {
+        "place": "Nationwide",
+        "era": "Eaten from the early Edo period; raw-egg rules from 1999"
+      },
+      "cells": {
+        "made": "Washed, disinfected, inspected and packed at grading centres; 96% domestic",
+        "types": "Raw on rice, onsen tamago, rolled omelette (sweet atsuyaki in Kanto, dashimaki in Kansai)",
+        "use": "Best-before date is for eating raw, 21 days at most; cook thoroughly after it",
+        "marker": "320 eggs a person in 2023, fourth in one international count"
+      },
+      "where": [
+        "Nationwide"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "vinegar",
+      "name": "Vinegar",
+      "nameJa": "酢",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "made": "Brewed vinegar (grain, black, fruit) or synthetic vinegar",
+        "types": "Rice vinegar; sake-lees vinegar (kasuzu) from the later Edo period",
+        "use": "Sake-lees vinegar spread with Edo-style sushi",
+        "marker": "—"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    },
+    {
+      "key": "mirin",
+      "name": "Mirin",
+      "nameJa": "みりん",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "made": "Steamed glutinous rice and rice koji in shochu, 40–60 days at 20–30 °C, then pressed",
+        "types": "—",
+        "use": "Sweetness, shine, flavour soaking in, keeps food from falling apart, masks smells",
+        "marker": "Two origin stories; this site does not choose"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    }
+  ]
+}
