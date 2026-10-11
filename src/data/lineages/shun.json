@@ -1,0 +1,67 @@
+{
+  "_note": "旬（季節の食材と季節限定商品）の系譜。品目ハブ（/en/eat/shun/）の横並び表と、各系譜ページがここから描く。出典は docs/research/seasons-2026-10-11.md と各系譜ページの sources。季節を「春と夏」「秋と冬」の2本に分けて published。行事食（正月・節分・ひな祭り・冬至など）は seasonal、鰻は unagi、鍋は nabe、ぶり・牡蠣・蟹・ふぐは sashimi / seafood、かき氷は tea、素麺は somen 側で扱う。二十四節気・七十二候と旬の対応は公的資料が取れなかったので軸にしていない。era は旬の考え方そのものに年号の出典が無いので「—」",
+  "dish": "shun",
+  "name": "Shun (food in season)",
+  "nameJa": "旬",
+  "axes": [
+    {
+      "key": "land",
+      "label": "From the land (farm ministry lists)"
+    },
+    {
+      "key": "sea",
+      "label": "From the sea and rivers"
+    },
+    {
+      "key": "marker",
+      "label": "What the sources single out"
+    },
+    {
+      "key": "shops",
+      "label": "In the chains"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "spring-summer",
+      "name": "Spring and summer",
+      "nameJa": "春と夏の旬",
+      "origin": {
+        "place": "Nationwide; bamboo shoots start in Kyushu",
+        "era": "—"
+      },
+      "cells": {
+        "land": "Spring: bamboo shoots, rape blossoms, butterbur buds, bitter mountain greens, strawberries. Summer: cucumbers and other gourds, tomatoes, watermelon, edamame",
+        "sea": "Spring: asari clams, sea bream. Summer: horse mackerel, eel, sweetfish, pike conger",
+        "marker": "Bamboo shoots moving north from Kyushu, March to May; a ministry warning about poisonous lookalikes of wild greens",
+        "shops": "Starbucks Japan’s sakura drinks from 18 February 2026, from ¥579 tax included"
+      },
+      "where": [
+        "Nationwide",
+        "Kyushu"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "autumn-winter",
+      "name": "Autumn and winter",
+      "nameJa": "秋と冬の旬",
+      "origin": {
+        "place": "Nationwide",
+        "era": "—"
+      },
+      "cells": {
+        "land": "Autumn: sweet potatoes, chestnuts, persimmons, grapes, matsutake and other mushrooms, new rice, new soba. Winter: daikon, Chinese cabbage, leeks, mikan",
+        "sea": "Autumn: saury, salmon. Winter: yellowtail, monkfish, crab, oysters, fugu",
+        "marker": "Matsutake down to 15 tonnes nationally in 2025; saury at record lows; shinmai only if packed within the harvest year",
+        "shops": "McDonald’s Tsukimi Burger from ¥460 and Starbucks Japan’s sweet-potato drinks, both from 2 September 2026"
+      },
+      "where": [
+        "Nationwide",
+        "Kyoto",
+        "Nagano"
+      ],
+      "status": "published"
+    }
+  ]
+}
