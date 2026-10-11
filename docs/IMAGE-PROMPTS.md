@@ -50,10 +50,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Dashi
 
-### /en/eat/dashi-east-west/
-- **ヒーロー**：`Two bowls of udon side by side: the left with a pale, clear kombu broth (Kansai), the right with a darker soy and bonito broth (Kanto); a simple outline of Japan's main island behind them, split in the middle.`
-- **本文**：`Two tidy piles side by side on a wooden counter: kombu sheets on the left, bonito flakes and a dried katsuobushi block with a shaving box on the right; a gentle arrow between them suggesting east and west.`
-
 ### /en/eat/dashi-iriko-ago/
 - **ヒーロー**：`A small heap of dried sardines (iriko) and a few dried flying fish (ago) on a bamboo tray, a bowl of Sanuki udon in pale broth beside them, sea and islands of the Inland Sea faintly behind.`
 - **本文**：`A flying fish in flight over the sea, and below it the same fish grilled and dried on a rack; a bowl of Kyushu-style clear soup at the bottom corner.`

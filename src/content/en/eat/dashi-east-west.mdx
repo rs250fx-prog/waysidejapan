@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/dashi-east-west-hero.webp
+heroAlt: 'Illustration of two bowls of udon side by side, a pale kombu broth on the left and a dark soy-and-bonito broth on the right, with a map of Japan behind them coloured west and east'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why does Kansai use kombu and Kantō bonito?
@@ -56,6 +58,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import kombuBonito from '../../../assets/eat/dashi-east-west-kombu-bonito.webp';
 
 The most quoted fact about Japanese stock is that the west uses kelp and the east uses bonito. As a tendency it holds: the National Diet Library puts it in those terms, and a bowl of udon in Osaka is pale where Tokyo's is dark. But the reasons usually given are less certain than they sound, and household spending today does not split neatly along the line. This page sets out the tendency, the two explanations and how far the evidence for each goes.
 
@@ -84,6 +88,12 @@ Weaker than it is usually told. A study presented to the Japan Society of Cooker
 **Kantō.** On the same chain: in hard water kombu gives less, so more bonito is used; more bonito leaves a fishy note, so a fragrant soy is used — and the broth darkens. That is a restaurateur's explanation. I could not find an official Tokyo recipe for soba or udon broth, so I give no proportions. The two main katsuobushi producers are Kagoshima and Shizuoka, not Tokyo.
 
 **The soy.** The farm ministry says dark *koikuchi* soy is about 85% of production and light *usukuchi* about 11%; light soy is used mainly in Kansai and keeps the colour of ingredients, while dark soy has a stronger aroma said to cover fishiness. Kikkoman's account adds that Kantō became the great dark-soy region from the mid-Edo period (Noda, Chōshi), and that soba, tempura, eel and nigiri sushi are said to have grown up with it. I found no official source saying dark soy was chosen to make up for weak stock, so I do not say so.
+
+<Figure
+  src={kombuBonito}
+  alt="Sheets of dried kombu in a bamboo tray on the left and a heap of bonito flakes on the right, beside a katsuobushi block on a wooden shaving box, with an arrow between them"
+  caption="The two leads: kombu for the west, bonito for the east. A tendency, not a border. Illustration."
+/>
 
 ## What household spending shows
 
