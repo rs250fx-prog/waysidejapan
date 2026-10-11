@@ -324,6 +324,7 @@ AI翻訳 → **固有名詞・料金・乗り換えを人間が確認**。これ
 
 - `column` のみ `sources: {label, url}[]` **必須**。リンク付きリストで出力する（素のURL列挙は1段落に潰れる）
 - `soak` は泉質・営業時間・駅からの所要を構造化して持つ（既存の日本語温泉レビュー資産と項目を揃える）
+- `soak` の**温泉ランク（S/A/B/C）**は `docs/ONSEN-LABEL.md` に従う。4条件（`dilution` `heating` `circulation` `disinfection`）から `onsenRank` を導出し、根拠項目（`rankBasis` `rankCheckedOn` `rankEvidenceUrl` `rankEvidenceText`）を持つ。確認日から12か月超は検査で落とす
 
 ### 表示用の数値
 
