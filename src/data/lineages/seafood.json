@@ -167,6 +167,53 @@
         "Okinawa"
       ],
       "status": "planned"
+    },
+    {
+      "key": "oyster-crab",
+      "name": "Oysters and snow crab",
+      "nameJa": "牡蠣・蟹（ズワイガニ）",
+      "origin": {
+        "place": "Hiroshima Bay; Miyagi; Tottori; Fukui",
+        "era": "Hiroshima oyster farming thought to have begun in the 1500s–1600s (farm ministry)"
+      },
+      "cells": {
+        "what": "Farmed oysters, sold as raw-eating or cooking oysters; male and female snow crab under regional names",
+        "method": "Oysters farmed on hanging lines; raw-eating shell oysters purified 22 hours or more in Miyagi",
+        "season": "Hiroshima oysters October to May, best December to February; Fukui crab males 6 Nov–20 Mar, females to 31 Dec",
+        "know": "Raw or cooking is decided by harvest water, not freshness; Fukui crab carries a port tag with the GI mark"
+      },
+      "where": [
+        "Hiroshima",
+        "Miyagi",
+        "Tottori",
+        "Fukui"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "saba-katsuo-maguro",
+      "name": "Mackerel, bonito and tuna",
+      "nameJa": "鯖・鰹・鮪",
+      "origin": {
+        "place": "Saganoseki, Ōita; Wakasa; Kōchi; Yaizu; Misaki; Ōma",
+        "era": "heshiko said to be made by the mid-Edo period (farm ministry)"
+      },
+      "cells": {
+        "what": "Seki saba and heshiko; seared bonito tataki; tuna cuts from akami to toro",
+        "method": "Seki saba: single line, live tank, ikejime. Tataki: seared over straw; sources differ on cold water",
+        "season": "Kōchi boats follow bonito March to November; tuna fat tends to be higher in winter (industry body)",
+        "know": "Toro was a low-grade food in the Edo period; Japan halved its catch of small bluefin from 2015"
+      },
+      "where": [
+        "Saganoseki",
+        "Wakasa",
+        "Kōchi",
+        "Yaizu",
+        "Misaki",
+        "Sakaiminato",
+        "Ōma"
+      ],
+      "status": "published"
     }
   ]
 }
