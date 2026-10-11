@@ -1,0 +1,91 @@
+{
+  "_note": "酒類（日本酒以外）の系譜。品目ハブ（/en/eat/drinks/）の横並び表と、各系譜ページがここから描く。出典は docs/research/drinks-2026-10-11.md と各系譜ページの sources。日本酒は sake.json、居酒屋・角打ちは izakaya.json で扱うのでここには行を作らない。whisky は素材（表示基準・山崎）があるが記事は beer-highball に含めたため planned。planned の行の era は「—」のまま（記憶の年号を出さない）。価格は税込の公式表示が確認できず、どの行にも載せていない",
+  "dish": "drinks",
+  "name": "Drinks",
+  "nameJa": "酒類（焼酎・ビール・ハイボールほか）",
+  "axes": [
+    {
+      "key": "made",
+      "label": "How it is made"
+    },
+    {
+      "key": "law",
+      "label": "What the law or label says"
+    },
+    {
+      "key": "served",
+      "label": "How it is drunk"
+    },
+    {
+      "key": "marker",
+      "label": "What it is known for"
+    }
+  ],
+  "lineages": [
+    {
+      "key": "shochu",
+      "name": "Shōchū and awamori",
+      "nameJa": "焼酎・泡盛",
+      "origin": {
+        "place": "Okinawa, southern Kyushu, Iki, Kuma, Amami, the Izu Islands",
+        "era": "distilling in Okinawa from the 15th century (two accounts)"
+      },
+      "cells": {
+        "made": "Kōji and yeast in one vessel; continuous still, or a single still often used once",
+        "law": "Continuous-still under 36%, single-still 45% or less; only some single-still may say honkaku",
+        "served": "With water, hot water (6:4 suggested), on the rocks, with soda; maewari rested in advance",
+        "marker": "GIs for Iki, Kuma, Ryūkyū, Satsuma and Tokyo Shimazake; brown-sugar shōchū only in Amami"
+      },
+      "where": [
+        "Kagoshima",
+        "Miyazaki",
+        "Iki",
+        "Kuma",
+        "Amami Islands",
+        "Okinawa",
+        "Izu Islands"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "beer-highball",
+      "name": "Beer and the highball",
+      "nameJa": "ビール・ハイボール",
+      "origin": {
+        "place": "Yokohama, Sapporo, Osaka; the highball revival by Suntory",
+        "era": "from 1870 (each brewer’s own account); highball revival 2008"
+      },
+      "cells": {
+        "made": "Beer from malt, hops and water; happoshu with malt or barley as part; highball is whisky with soda",
+        "law": "Beer, happoshu and new genre taxed at one rate from October 2026; craft beer has no legal definition",
+        "served": "Suntory’s highball rule: mug full of ice, chilled soda poured gently, whisky 1 to soda 4",
+        "marker": "430 local-beer sites at March 2025 after the 1994 licence change; highball spread through izakaya"
+      },
+      "where": [
+        "Nationwide",
+        "Suita (Asahi museum)",
+        "Yamazaki (Suntory distillery)"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "whisky",
+      "name": "Japanese whisky",
+      "nameJa": "ジャパニーズウイスキー",
+      "origin": {
+        "place": "—",
+        "era": "—"
+      },
+      "cells": {
+        "made": "Malt, grains and Japanese water; distilled in Japan; three years or more in wood in Japan",
+        "law": "A makers’ association standard from 2021, not a law; no GI on the tax agency’s list",
+        "served": "—",
+        "marker": "A logo for the standard from March 2025"
+      },
+      "where": [
+        "—"
+      ],
+      "status": "planned"
+    }
+  ]
+}
