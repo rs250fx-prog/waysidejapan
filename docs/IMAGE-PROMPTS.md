@@ -54,19 +54,6 @@ Create one image. An airport souvenir shop counter piled with neatly wrapped box
 Create one image. Close view of the back of a gift box of sweets, a fingertip pointing at a small blank date panel; beside it two small icons, a clock and a calendar, to suggest the two kinds of date label; no readable text. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/column/food-vending-machines-in-japan/
-**ヒーロー** → 保存名 `food-vending-machines-in-japan-hero`
-
-```
-Create one image. A row of brightly lit drink vending machines on a quiet residential street at dusk, a bicycle parked nearby, warm light from the houses behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `food-vending-machines-in-japan-body`
-
-```
-Create one image. A small unstaffed gyoza shop with a freezer cabinet and a simple wooden cash box on the wall, a customer taking a frozen bag; beside it a person paying at a vending machine by tapping a phone. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/column/japanese-table-customs/
 **ヒーロー** → 保存名 `japanese-table-customs-hero`
 

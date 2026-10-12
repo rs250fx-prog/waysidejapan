@@ -45,18 +45,38 @@ for (let i = 0; i < lines.length; i++) {
   }
 }
 
+// 記事の今の状態を見て、設定済みの画像に印を付ける。一覧から消し忘れても二重に作らないように。
+// 記事が無くなっていたら（削除・改名）一覧から外す
+const CONTENT = path.join(ROOT, 'src', 'content');
+const gone = [];
+for (const g of groups) {
+  g.articles = g.articles.filter((a) => {
+    const file = path.join(CONTENT, `${a.url.replace(/^\/|\/$/g, '')}.mdx`);
+    if (!fs.existsSync(file)) {
+      gone.push(a.url);
+      return false;
+    }
+    const mdx = fs.readFileSync(file, 'utf8');
+    const has = { hero: /^heroImage:/m.test(mdx), body: /<Figure\b|<PhotoBand\b[^>]*\bsrc=|!\[/.test(mdx) };
+    for (const it of a.items) it.done = has[it.save.endsWith('-hero') ? 'hero' : 'body'];
+    a.done = a.items.length > 0 && a.items.every((it) => it.done);
+    return true;
+  });
+}
+
 const total = groups.reduce((n, g) => n + g.articles.length, 0);
+const left = groups.reduce((n, g) => n + g.articles.filter((a) => !a.done).length, 0);
 const sections = groups
   .filter((g) => g.articles.length)
   .map(
     (g) => `<section><h2>${esc(g.title)}</h2>${g.articles
       .map(
-        (a) => `<article data-url="${esc(a.url)}">
-  <header><label><input type="checkbox" class="done"> <span class="url">${esc(a.url)}</span></label>${a.note ? `<span class="note">${esc(a.note)}</span>` : ''}</header>
+        (a) => `<article data-url="${esc(a.url)}"${a.done ? ' data-auto-done' : ''}>
+  <header><label><input type="checkbox" class="done"${a.done ? ' checked disabled' : ''}> <span class="url">${esc(a.url)}</span></label>${a.done ? '<span class="set">ページに設定済み</span>' : ''}${a.note ? `<span class="note">${esc(a.note)}</span>` : ''}</header>
   ${a.items
     .map(
-      (it) => `<div class="item">
-    <div class="row"><span class="kind">${esc(it.label)}</span>
+      (it) => `<div class="item${it.done ? ' item-done' : ''}">
+    <div class="row"><span class="kind">${esc(it.label)}</span>${it.done ? '<span class="set">設定済み</span>' : ''}
       <code class="save">${esc(it.save)}</code>
       <button data-copy="${esc(it.save)}">保存名をコピー</button>
       <button class="primary" data-copy="${esc(it.prompt)}">プロンプトをコピー</button></div>
@@ -97,9 +117,11 @@ const html = `<!doctype html>
   button.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
   button.copied { background:#2f6b3a; border-color:#2f6b3a; color:#fff; }
   .prompt { margin:8px 0 0; color:var(--muted); font-size:13px; }
+  .set { font-size:12px; font-weight:600; color:#2f6b3a; background:#e3efe4; padding:2px 8px; border-radius:10px; }
+  .item-done { opacity:.5; }
 </style></head>
 <body>
-<div class="top"><h1>Image prompts</h1><span class="count">${total} 本</span>
+<div class="top"><h1>Image prompts</h1><span class="count">残り ${left} 本／${total} 本</span>
   <label><input type="checkbox" id="hide"> 済を隠す</label>
   <span class="count">保存先：inbox/images/</span></div>
 <main>${sections}</main>
@@ -110,6 +132,8 @@ const html = `<!doctype html>
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch {} };
   document.querySelectorAll('article').forEach((a) => {
     const box = a.querySelector('.done');
+    // ページに設定済みの記事は、記事の状態が正。手元の印より優先する
+    if (a.hasAttribute('data-auto-done')) { a.classList.add('is-done'); return; }
     box.checked = !!done[a.dataset.url];
     a.classList.toggle('is-done', box.checked);
     box.addEventListener('change', () => { done[a.dataset.url] = box.checked; a.classList.toggle('is-done', box.checked); save(); });
@@ -131,4 +155,5 @@ const html = `<!doctype html>
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT_DIR, 'index.html'), html);
-console.log(`inbox/prompts-view/index.html を書き出しました（${total} 本）`);
+console.log(`inbox/prompts-view/index.html を書き出しました（残り ${left} 本／${total} 本）`);
+for (const u of gone) console.log(`× 記事が無いので外しました：${u}（docs/IMAGE-PROMPTS.md からも消す）`);
