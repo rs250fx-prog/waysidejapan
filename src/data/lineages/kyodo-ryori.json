@@ -1,5 +1,5 @@
 {
-  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）の4本。他の都道府県は素材が無いので行を作っていない",
+  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）の5本。他の都道府県は素材が無いので行を作っていない",
   "dish": "kyodo-ryori",
   "name": "Local dishes by region",
   "nameJa": "郷土料理",
@@ -107,6 +107,30 @@
         "Beppu",
         "Nobeoka",
         "Amami"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "tohoku",
+      "name": "Tohoku",
+      "nameJa": "東北",
+      "origin": {
+        "place": "Aomori, Iwate, Miyagi, Yamagata, Fukushima",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Senbei-jiru, hittsumi, harako-meshi, imoni, kozuyu",
+        "why": "Cold summers that failed the rice, so flour food; keeping food for long winters",
+        "when": "Harako-meshi September–November; ichigo-ni urchin around July; imoni in autumn",
+        "listed": "147 dishes in the farm ministry database (Aomori 29, Iwate 30, Miyagi 29, Yamagata 29, Fukushima 30)"
+      },
+      "where": [
+        "Hachinohe",
+        "Kuji",
+        "Watari",
+        "Yamagata",
+        "Zao Onsen",
+        "Aizu"
       ],
       "status": "published"
     }
