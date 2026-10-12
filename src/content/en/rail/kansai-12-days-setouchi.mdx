@@ -31,6 +31,8 @@ import Price from '../../../components/Price.astro';
 import Verdict from '../../../components/Verdict.astro';
 import FactRow from '../../../components/FactRow.astro';
 import CompareTable from '../../../components/CompareTable.astro';
+import Figure from '../../../components/Figure.astro';
+import routeMap from '../../../assets/rail/kansai-12-days-setouchi-body.webp';
 
 Twelve days is the length most British, Australian and Canadian visitors actually take, and it is an awkward number. Long enough that Kyoto and Osaka alone will not fill it. Short enough that you cannot simply drift west and see what happens.
 
@@ -118,6 +120,12 @@ Day 11–12 — **Back to Kansai, and out.** The pass expires at the end of day 
     { label: 'Pass days used', value: '7 of 12' },
     { label: 'Longest single leg', value: 'Kyoto → Okayama' },
   ]}
+/>
+
+<Figure
+  src={routeMap}
+  alt="An illustrated route map along the Inland Sea: a line of stations past a castle, a shrine gate in the water, a long bridge and a pagoda, a local train in the foreground"
+  caption="The route west along the Inland Sea and over to Shikoku. Illustration."
 />
 
 ## What I would change

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/izakaya-yakitori-hero.webp
+heroAlt: 'Illustration of yakitori skewers on a charcoal grill, a cook brushing tare onto some while others are salted'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Should I order yakitori with salt or tare?
@@ -44,6 +46,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import yakitoriCuts from '../../../assets/eat/izakaya-yakitori-body.webp';
 
 Yakitori is sold everywhere in Japan, from standing bars to refined counters, festival stalls and convenience stores. Ordering it is easy. Two things are worth knowing before you do: what the shop is asking when it says *shio* or *tare*, and that in at least three Japanese towns, the word "yakitori" does not mean chicken.
 
@@ -66,6 +70,12 @@ JNTO's guides list the skewers you will most often see:
 - **Rebā** — liver.
 - **Nankotsu** — cartilage.
 - **Sasami wasabi** — breast tenderloin with wasabi.
+
+<Figure
+  src={yakitoriCuts}
+  alt="A long plate of yakitori skewers in a row, thigh with leek, skin, liver, heart, meatball and wing, with small dishes of salt and tare beside it"
+  caption="Thigh, skin, liver, heart, meatball, wing — and salt or tare. Illustration."
+/>
 
 ## How to order it
 

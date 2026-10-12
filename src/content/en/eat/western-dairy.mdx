@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/western-dairy-hero.webp
+heroAlt: 'Illustration of dairy cows grazing in a wide green pasture with a red barn and silo, mountains behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between milk and a milk drink on a Japanese label?
@@ -52,6 +54,9 @@ sources:
   - label: '農林水産省 aff「昭和から令和まで、年代別にみる学校給食の変遷」'
     url: 'https://www.maff.go.jp/j/pr/aff/2006/food01.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import schoolLunch from '../../../assets/eat/western-dairy-body.webp';
 
 Milk is the least foreign-looking of the Western foods Japan adopted, and the one with the most official paperwork. It was promoted by the Meiji government, written into school lunches, and is now sold under labelling rules detailed enough that the category name on the carton tells you exactly what is inside. Most of the information on this page comes from J-Milk, the dairy industry’s association, and from the farm ministry.
 
@@ -102,6 +107,12 @@ After the war, at the suggestion of the occupation authorities, aid of milk cont
 The farm ministry’s magazine says the drink changed from skimmed milk powder to milk. The sources I opened do not agree on the year, so this page does not give one.
 
 J-Milk also notes that Japan’s demand for drinking milk peaks in June and September — June because it has no public holidays, so school milk is not interrupted — and is lowest at the year-end holidays and the end of the school year.
+
+<Figure
+  src={schoolLunch}
+  alt="A school lunch tray on a classroom desk: rice, miso soup, a stir-fried main dish, a small side dish and a carton of milk"
+  caption="School lunch, with its carton of milk. Illustration."
+/>
 
 ## Hokkaido and the rest
 

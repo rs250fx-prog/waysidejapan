@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: true
+heroImage: ../../../assets/rail/setouchi-area-pass-hero.webp
+heroAlt: 'Illustration of a local train crossing a bridge with the islands of the Seto Inland Sea behind, a rail pass card in the corner'
 experience:
   visitedOn: '2026-08'
   mode: train
@@ -35,6 +37,8 @@ import FactRow from '../../../components/FactRow.astro';
 import CompareTable from '../../../components/CompareTable.astro';
 import Cta from '../../../components/Cta.astro';
 import PhotoBand from '../../../components/PhotoBand.astro';
+import Figure from '../../../components/Figure.astro';
+import passGate from '../../../assets/rail/setouchi-area-pass-body.webp';
 
 Honshu, Shikoku and Kyushu in a single week — what the pass actually covers, where it stops being worth the money, and the route I rode in August.
 
@@ -104,6 +108,12 @@ From the station it is ten minutes on foot to the ropeway, and the hill behind t
 >
   Three hours with a local guide.
 </Cta>
+
+<Figure
+  src={passGate}
+  alt="A traveller with a backpack handing a rail pass to a station attendant at the ticket gates, a train waiting at the platform"
+  caption="Seven days on the pass. Illustration."
+/>
 
 ## What the pass will not do
 

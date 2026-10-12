@@ -110,46 +110,7 @@ Create one image. A small dish of otoshi (a seasonal appetizer) placed on a wood
 Create one image. Five different otoshi dishes in small bowls arranged in a row: simmered vegetables, edamame, a tiny salad, pickles and a small piece of fish. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/izakaya-yakitori/
-**ヒーロー** → 保存名 `izakaya-yakitori-hero`
-
-```
-Create one image. Yakitori skewers on a charcoal grill, smoke rising, a cook's hand brushing tare sauce; some skewers salted, some glazed. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `izakaya-yakitori-body`
-
-```
-Create one image. A tray of yakitori skewers laid out in a row showing different cuts: thigh with leek, skin, liver, heart, meatball and wings; two small dishes for salt and tare beside them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Konamono
-
-### /en/eat/konamono/
-**ヒーロー** → 保存名 `konamono-hero`
-
-```
-Create one image. A hot iron griddle with an okonomiyaki, a pan of takoyaki balls, and a wooden board of soft Akashi-yaki with a small bowl of dashi, all seen from above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `konamono-body`
-
-```
-Create one image. A bag of wheat flour in the center with three lines leading out to an okonomiyaki, takoyaki and Akashi-yaki; a simple family-tree layout without words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/konamono-okonomiyaki/
-**ヒーロー** → 保存名 `konamono-okonomiyaki-hero`
-
-```
-Create one image. Okonomiyaki on a teppan griddle, brown sauce and mayonnaise drizzled in a lattice, bonito flakes dancing, two small metal spatulas. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `konamono-okonomiyaki-body`
-
-```
-Create one image. Cross-sections of two okonomiyaki side by side: Osaka style with batter and cabbage mixed together, Hiroshima style built in stacked layers with noodles in the middle. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/konamono-takoyaki/
 **ヒーロー** → 保存名 `konamono-takoyaki-hero`
@@ -1651,19 +1612,6 @@ Create one image. A tall hamburger on a plate at a small burger shop near a harb
 Create one image. A teriyaki burger cut in half showing the glazed patty, lettuce and mayonnaise, on a paper wrapper. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/western-dairy/
-**ヒーロー** → 保存名 `western-dairy-hero`
-
-```
-Create one image. Dairy cows grazing in a wide green Hokkaido pasture with a red barn and a silo. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `western-dairy-body`
-
-```
-Create one image. A school lunch tray with a small carton of milk, a bowl of rice, a soup and a side dish, on a classroom desk. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Rail
 
 > **メモ**：`setouchi-area-pass` は `basis: visited` の記事。ヒーローは、ご自身が撮った写真のほうが記事の根拠と合う。写真が用意できるまで、下のイラストで仮置きする。
@@ -1673,24 +1621,5 @@ Create one image. A school lunch tray with a small carton of milk, a bowl of ric
 
 ```
 Create one image. A train running along the coast of the Seto Inland Sea, small islands and bridges in the background, a calm sea under a soft sky. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `kansai-12-days-setouchi-body`
-
-```
-Create one image. A simple illustrated route along the Inland Sea drawn as a line connecting small station dots, with tiny icons of a castle, a torii gate and a bridge along the way; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/rail/setouchi-area-pass/
-**ヒーロー** → 保存名 `setouchi-area-pass-hero`
-
-```
-Create one image. A regional train crossing a bridge with the Seto Inland Sea and islands behind it, a paper rail pass shown as a blank card in the foreground corner. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `setouchi-area-pass-body`
-
-```
-Create one image. A traveller at a station ticket gate showing a rail pass to a staff member, a train waiting at the platform beyond. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 

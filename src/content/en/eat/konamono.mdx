@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/konamono-hero.webp
+heroAlt: 'Illustration of an okonomiyaki on an iron griddle, a pan of takoyaki, and a board of soft Akashi-yaki with a bowl of dashi'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between Osaka and Hiroshima okonomiyaki?
@@ -58,12 +60,20 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import konamonoFlour from '../../../assets/eat/konamono-body.webp';
 
 *Konamono* — "flour things" — is the Kansai word for dishes made from a wheat batter cooked on a hot plate: okonomiyaki, takoyaki, and their relatives. In the words of Osaka's tourism bureau they are the city's soul food, and they come with more competing origin stories than almost anything else on a Japanese menu. This page is the map: what the dishes are, what the official sources say about where they came from, and how the people of Osaka, Hiroshima and Tokyo actually eat them. The lineage pages go deep on okonomiyaki and on takoyaki with its Akashi cousin.
 
 ## What it is
 
 There is no official definition of *konamono* that I could find; the farm ministry's Osaka okonomiyaki recipe credits a body called the Japan Konamon Association. What the official sources do record is which dishes belong to which place. The farm ministry's database of local dishes lists okonomiyaki and takoyaki as Osaka's two, okonomiyaki also as Hiroshima's, and Akashi-yaki (*tamagoyaki*) as Hyōgo's. Osaka's tourism bureau calls okonomiyaki, alongside takoyaki, Osaka people's soul food, and points out what they share: wheat flour mixed with dashi.
+
+<Figure
+  src={konamonoFlour}
+  alt="A sack of wheat flour with lines leading down to an okonomiyaki, a boat of takoyaki and a board of Akashi-yaki with dashi"
+  caption="One flour, three dishes: okonomiyaki, takoyaki and Akashi-yaki. Illustration."
+/>
 
 ## Where it came from
 
