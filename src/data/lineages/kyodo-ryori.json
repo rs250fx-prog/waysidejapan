@@ -1,5 +1,5 @@
 {
-  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）、北陸ブロック（新潟・富山・石川・福井。docs/research/kyodo-hokuriku-2026-10-11.md）、近畿ブロック（京都・大阪・兵庫・奈良・和歌山・滋賀・三重。docs/research/kyodo-kinki-2026-10-11.md）、関東ブロック（茨城・栃木・群馬・埼玉・千葉・東京・神奈川。docs/research/kyodo-kanto-2026-10-12.md）、中部ブロック（山梨・長野・岐阜・静岡・愛知。docs/research/kyodo-chubu-2026-10-12.md）の9本。他の都道府県は素材が無いので行を作っていない",
+  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）、北陸ブロック（新潟・富山・石川・福井。docs/research/kyodo-hokuriku-2026-10-11.md）、近畿ブロック（京都・大阪・兵庫・奈良・和歌山・滋賀・三重。docs/research/kyodo-kinki-2026-10-11.md）、関東ブロック（茨城・栃木・群馬・埼玉・千葉・東京・神奈川。docs/research/kyodo-kanto-2026-10-12.md）、中部ブロック（山梨・長野・岐阜・静岡・愛知。docs/research/kyodo-chubu-2026-10-12.md）、北海道・山陰（鳥取・島根）・四国（徳島・高知。香川・愛媛は瀬戸内の行。docs/research/kyodo-hokkaido-sanin-shikoku-2026-10-12.md）の12本。他の都道府県は素材が無いので行を作っていない",
   "dish": "kyodo-ryori",
   "name": "Local dishes by region",
   "nameJa": "郷土料理",
@@ -228,6 +228,76 @@
         "Okuhida Onsen",
         "Shizuoka",
         "Nagoya"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "hokkaido",
+      "name": "Hokkaido",
+      "nameJa": "北海道",
+      "origin": {
+        "place": "Hokkaido",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Ishikari-nabe, sanpei-jiru, salmon chanchan-yaki, ruibe, butadon, zangi",
+        "why": "Salmon and herring; Ainu food and settlers from Honshu, as the farm ministry puts it",
+        "when": "Ishikari-nabe and chanchan-yaki with the salmon; izushi pickled in late autumn for New Year",
+        "listed": "27 dishes in the farm ministry database; 15 '100-year foods'"
+      },
+      "where": [
+        "Ishikari",
+        "Obihiro",
+        "Kushiro",
+        "Matsumae",
+        "Tokachigawa Onsen"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "sanin",
+      "name": "San'in",
+      "nameJa": "山陰",
+      "origin": {
+        "place": "Tottori, Shimane",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Tōfu chikuwa, oyagani miso soup, Izumo soba, shijimi-jiru, uzume-meshi",
+        "why": "Tofu where fish was scarce; Japan Sea crab and mackerel; Lake Shinji's brackish water",
+        "when": "Oyagani November–December; matsuba-gani November–March; rakkyō picked late May–mid-June",
+        "listed": "55 dishes in the farm ministry database (Tottori 27, Shimane 28)"
+      },
+      "where": [
+        "Tottori",
+        "Chizu",
+        "Matsue",
+        "Izumo",
+        "Iwami",
+        "Misasa"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "shikoku",
+      "name": "Shikoku (Tokushima and Kochi)",
+      "nameJa": "四国（徳島・高知）",
+      "origin": {
+        "place": "Tokushima, Kochi",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Iya soba, Handa sōmen, dekomawashi, katsuo tataki, sawachi, inaka-zushi",
+        "why": "Mountains where rice grew poorly, so buckwheat; Kuroshio bonito; Kochi's okyaku banquets",
+        "when": "Handa sōmen made November–March; bonito best in autumn; sawachi for okyaku",
+        "listed": "60 dishes in the farm ministry database (Tokushima 30, Kochi 30)"
+      },
+      "where": [
+        "Iya",
+        "Handa",
+        "Kaiyō",
+        "Kochi",
+        "Tosa"
       ],
       "status": "published"
     }
