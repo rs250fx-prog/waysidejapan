@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/tea-hero.webp
+heroAlt: 'Illustration of green tea being poured from a pot into a cup on a wooden table, a tin of loose leaf beside it, rows of tea bushes and the sea seen through the window'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between sencha, gyokuro and matcha?
@@ -57,6 +59,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import teaKinds from '../../../assets/eat/tea-body.webp';
 
 Japanese green tea looks like one drink and is really several, made from the same plant and separated by two decisions: whether the bushes are shaded before picking, and what is done to the leaf afterwards. This page is the map — what the main kinds are, how the price of the leaf is set, why the bottle overtook the teapot in Japanese homes, and what a cup or a matcha sweet costs in Uji. The lineage pages go deeper: one on the producing regions, one on shaved ice and the old-style coffee house.
 
@@ -77,6 +81,12 @@ The farm ministry's 2017 feature on tea and its 2026 report on the tea industry 
 Gyokuro, kabusecha and tencha are grouped together as *ōi-cha*, "covered tea". The sources agree closely on how long gyokuro is shaded: about 20 days in the ministry's report, 20 days or more on the ministry's Uji page, and from about 20 days before picking in Fukuoka prefecture's account of Yame.
 
 **How much of each?** The ministry's report gives production shares for 2025, from the national federation of tea producers: sencha 48.1%, tencha 8.6%, kabusecha 2.0%, tamaryokucha 2.0%, gyokuro 1.0%. Shizuoka prefecture, on its own page, says sencha and deep-steamed sencha make up about 85% of tea in circulation. The two figures use different categories and different years, so I give both rather than choose.
+
+<Figure
+  src={teaKinds}
+  alt="Three teas side by side with their leaf in front: pale sencha, deeper green gyokuro, and frothy matcha in a bowl with powdered tea and a bamboo whisk"
+  caption="Sencha, gyokuro and matcha: the same plant, shaded or not, rolled or ground. Illustration."
+/>
 
 ## Why it is the way it is
 

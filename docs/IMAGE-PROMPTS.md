@@ -1491,19 +1491,6 @@ Create one image. A strawberry shortcake slice with whipped cream on a plate in 
 Create one image. A fruit parlour counter with perfectly arranged fruit in a glass case and a parfait being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/sweets-crepe/
-**ヒーロー** → 保存名 `sweets-crepe-hero`
-
-```
-Create one image. A paper-wrapped crepe with strawberries and cream held in a hand on a busy Harajuku street, crepe stalls behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sweets-crepe-body`
-
-```
-Create one image. A crepe maker spreading batter on a round griddle with a wooden spreader, then folding it into a cone with paper. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/sweets-yakiimo/
 **ヒーロー** → 保存名 `sweets-yakiimo-hero`
 
@@ -1531,19 +1518,6 @@ Create one image. Three desserts in a row on a table: a slice of roll cake, a cr
 ```
 
 ## Eat — Tea
-
-### /en/eat/tea/
-**ヒーロー** → 保存名 `tea-hero`
-
-```
-Create one image. A teapot pouring green tea into a small cup on a wooden table, a tin of loose leaf tea beside it, tea fields seen through the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tea-body`
-
-```
-Create one image. Three cups side by side showing different teas: pale green sencha, deep green gyokuro, and frothy bright green matcha in a bowl with a bamboo whisk. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/tea-regions/
 **ヒーロー** → 保存名 `tea-regions-hero`
@@ -1573,53 +1547,7 @@ Create one image. An old-style Japanese coffee house interior with dark wood boo
 
 ## Eat — Western foods made Japanese
 
-### /en/eat/western/
-**ヒーロー** → 保存名 `western-hero`
-
-```
-Create one image. A table with a plate of Napolitan spaghetti, a teriyaki burger and a glass bottle of milk, a retro diner interior behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `western-body`
-
-```
-Create one image. A timeline drawn as objects on a long table from left to right: a macaroni box, a hotel plate of spaghetti, a burger, a milk bottle; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/western-italian/
-**ヒーロー** → 保存名 `western-italian-hero`
-
-```
-Create one image. A plate of Napolitan spaghetti with ketchup sauce, sliced sausage, green pepper and onion, on an old hotel restaurant table. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `western-italian-body`
-
-```
-Create one image. A delivery scooter carrying a pizza box through a Japanese residential street at evening. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/western-burger/
-**ヒーロー** → 保存名 `western-burger-hero`
-
-```
-Create one image. A tall hamburger on a plate at a small burger shop near a harbor, navy ships faintly in the distance. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `western-burger-body`
-
-```
-Create one image. A teriyaki burger cut in half showing the glazed patty, lettuce and mayonnaise, on a paper wrapper. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Rail
 
 > **メモ**：`setouchi-area-pass` は `basis: visited` の記事。ヒーローは、ご自身が撮った写真のほうが記事の根拠と合う。写真が用意できるまで、下のイラストで仮置きする。
-
-### /en/rail/kansai-12-days-setouchi/
-**ヒーロー** → 保存名 `kansai-12-days-setouchi-hero`
-
-```
-Create one image. A train running along the coast of the Seto Inland Sea, small islands and bridges in the background, a calm sea under a soft sky. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/western-burger-hero.webp
+heroAlt: 'Illustration of a tall hamburger with a fried egg, cheese and fries on a harbourside table, a lighthouse and naval ships in the bay behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is a Sasebo burger?
@@ -30,6 +32,9 @@ sources:
   - label: 'モスフードサービス 公式「沿革 1972〜1989年」'
     url: 'https://www.mos.co.jp/company/outline/history/1972_1989/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import teriyakiBurger from '../../../assets/eat/western-burger-body.webp';
 
 The hamburger came to Japan through two doors that are easy to tell apart on the record. One is a navy town in Nagasaki prefecture, where the city says local shops learned it from the American base. The other is the Japanese arm of an American chain, which opened in Ginza in 1971, and a Japanese chain that started a year later. Most of what is distinctively Japanese about the burger — teriyaki, rice buns, a katsu patty — is written down in the two chains’ own timelines.
 
@@ -66,6 +71,12 @@ The adaptations are dated on the companies’ own timelines.
 | February 2020 | McDonald’s Japan | Three "gohan" (rice) burgers, limited time, which the company calls a first in its history in Japan |
 
 On these timelines MOS’s teriyaki burger comes 16 years before McDonald’s Japan’s. Whether MOS was the first in Japan, I did not check against other companies’ records, so this site does not say.
+
+<Figure
+  src={teriyakiBurger}
+  alt="A teriyaki burger cut in half on paper, showing a glazed patty, shredded lettuce and mayonnaise"
+  caption="The teriyaki burger, the adaptation the chains' timelines date first. Illustration."
+/>
 
 **Made to order, in Sasebo.** Sasebo’s tourism site sets three conditions for a Sasebo burger: it is made after the order is taken; the company has its head office in Sasebo; it uses fresh raw vegetables and an original sauce. It is a definition by method and by place, not by recipe.
 
