@@ -26,74 +26,7 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ---
 
-## Column
-
-### /en/column/chopsticks-in-japan/
-**ヒーロー** → 保存名 `chopsticks-in-japan-hero`
-
-```
-Create one image. A pair of lacquered chopsticks resting on a small ceramic chopstick rest beside a bowl of rice and a bowl of miso soup, no spoon anywhere on the table, a wooden tray beneath. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `chopsticks-in-japan-body`
-
-```
-Create one image. Five small panels in a row, each showing a pair of hands with chopsticks making a move considered bad form: sticking chopsticks upright in rice, passing food chopstick to chopstick, spearing food, hovering over dishes, pulling a dish toward you with chopsticks; drawn gently, no text. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/column/food-souvenirs-omiyage/
-**ヒーロー** → 保存名 `food-souvenirs-omiyage-hero`
-
-```
-Create one image. An airport souvenir shop counter piled with neatly wrapped boxes of Japanese sweets in seasonal paper, a traveller with a rolling suitcase choosing one, a departure gate faintly behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `food-souvenirs-omiyage-body`
-
-```
-Create one image. Close view of the back of a gift box of sweets, a fingertip pointing at a small blank date panel; beside it two small icons, a clock and a calendar, to suggest the two kinds of date label; no readable text. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/column/japanese-table-customs/
-**ヒーロー** → 保存名 `japanese-table-customs-hero`
-
-```
-Create one image. A family-style Japanese dinner table with shared plates in the middle, small individual bowls, a folded hot hand towel at each place, two people with palms pressed together before eating. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `japanese-table-customs-body`
-
-```
-Create one image. Three small scenes side by side: wiping hands with a rolled oshibori towel, taking food from a shared plate with serving chopsticks onto a small plate, and lifting a rice bowl to the chest to eat. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/column/roadside-stations-and-farm-stands/
-**ヒーロー** → 保存名 `roadside-stations-and-farm-stands-hero`
-
-```
-Create one image. A Japanese roadside rest station in the countryside: a low wooden building with a market hall, crates of local vegetables outside, a parking area with a few cars and motorbikes, green hills behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `roadside-stations-and-farm-stands-body`
-
-```
-Create one image. An unstaffed farm stand at the edge of a field: a small wooden shelf with bags of vegetables, a little coin box, a hand-drawn sign shown blank, a farmer working in the field behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Donburi
-
-### /en/eat/donburi/
-**ヒーロー** → 保存名 `donburi-hero`
-
-```
-Create one image. Four Japanese rice bowl dishes on a wooden counter: gyudon, katsudon, oyakodon and tendon, each in a lidded donburi bowl with the lid set beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `donburi-body`
-
-```
-Create one image. A cross-section of a donburi bowl showing layers: rice at the bottom, sauce soaking in, toppings on top, the lid above; drawn as a clean cutaway. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/donburi-gyudon/
 **ヒーロー** → 保存名 `donburi-gyudon-hero`
@@ -493,19 +426,6 @@ Create one image. A sushi counter with a chef pressing nigiri, pieces of tuna, s
 
 ```
 Create one image. A timeline drawn as a row of objects: a fermented fish in a jar, a pressed sushi box, a street stall with nigiri, a conveyor belt, an upscale counter; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-edomae/
-**ヒーロー** → 保存名 `sushi-edomae-hero`
-
-```
-Create one image. An Edomae sushi counter seen from the guest seat: the chef's hands, a cypress counter, nigiri of cured gizzard shad and marinated tuna. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-edomae-body`
-
-```
-Create one image. The preparation behind "raw" fish: a fish fillet being salted, rinsed in vinegar, marinated in soy, and lightly simmered; four small trays side by side. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
 ### /en/eat/sushi-funa/

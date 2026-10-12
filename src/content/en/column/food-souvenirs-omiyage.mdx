@@ -11,6 +11,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/food-souvenirs-omiyage-hero.webp
+heroAlt: 'Illustration of a traveller with a suitcase choosing a box of sweets in seasonal wrapping at an airport souvenir shop, planes at the gates behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between the two date labels on Japanese food?
@@ -49,6 +51,9 @@ sources:
   - label: '植物防疫所「海外へ野菜や果物を持ち出す際の規制」'
     url: 'https://www.maff.go.jp/pps/j/search/exp_index.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import dateLabel from '../../../assets/column/food-souvenirs-omiyage-body.webp';
 
 Boxes of sweets, crackers and jellies fill the shops at Japanese stations and airports. This column sets out what the official sources and the makers' own pages say about buying food souvenirs (*omiyage*): where JNTO suggests buying them, what two well-known sweets say about themselves, how to read the date on the box, and what the rules say about tax-free shopping and taking food home. It gives no prices; I could not confirm a tax-inclusive price on any maker's site.
 
@@ -89,6 +94,12 @@ Japanese food carries one of two date labels. The Consumer Affairs Agency define
 **Who sets the date.** The agency says these two labels replaced the earlier date-of-manufacture label in 2003. Industry guidelines for setting them rest on a joint notice from the health and farm ministries in February 2005. Dates are set from objective tests — chemical, microbiological and sensory — and the basic approach is to multiply by a safety factor below 1, setting the date on the short side. The agency's page on date labels says dates are to be set on a scientific and rational basis.
 
 So for a box of sweets, the date is set by the maker. I could not find the number of days for any of the sweets above on their makers' pages.
+
+<Figure
+  src={dateLabel}
+  alt="Hands holding a gift box of sweets, a finger pointing at the date panel on its label, with a clock and a calendar drawn beside it"
+  caption="Two kinds of date: use-by for food that goes off quickly, best-before for food that keeps. Illustration."
+/>
 
 ## Tax-free shopping, from 1 November 2026
 

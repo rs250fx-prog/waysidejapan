@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-edomae-hero.webp
+heroAlt: 'Illustration of a sushi chef setting a piece of cured silver-skinned fish beside a piece of tuna on a pale wooden counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What does "Edomae" mean?
@@ -55,6 +57,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import edomaeWork from '../../../assets/eat/sushi-edomae-body.webp';
 
 The sushi the world copies is this one: a chef behind a plain wood counter, a ball of vinegared rice pressed in the palm, a slice of fish laid over it, handed across one piece at a time. It is Tokyo's invention, it is about two hundred years old, and almost everything people believe about it — that it is raw, that it is ancient, that it is expensive — is only partly true.
 
@@ -71,6 +75,12 @@ The stall is why the counter exists. The ministry's account is that when stalls 
 **The work.** *Edomae* means Tokyo Bay, and the bay's fish — gizzard shad, horse mackerel, mackerel, conger eel, prawn, clams, whiting — spoiled fast in a city without ice. So the craft was *shigoto*: curing shad and mackerel in salt and vinegar, simmering conger and clam, steaming prawn, marinating tuna in soy, pressing with kelp. The ministry's definition of Edomae sushi is exactly this list. Raw fish straight from the knife is the exception the style was built to avoid. The library adds a detail: Edo did not like fatty tuna and ate the lean cut marinated; *toro* only got its name, by the shop's own account, at Yoshino-zushi in the 1920s, when a regular asked for the "melting" belly.
 
 **The counter.** One piece at a time, made to order, eaten at once. The Tokyo tourism office's etiquette is short: a little soy sauce, on the fish rather than the rice, and one bite; go easy on perfume.
+
+<Figure
+  src={edomaeWork}
+  alt="Four steps of preparing fish for Edomae sushi: salting a fillet, rinsing it, marinating fillets in soy, and simmering fish in a pan"
+  caption="The work behind the word: salting, rinsing, marinating in soy, simmering. Illustration."
+/>
 
 ## Why Edo
 

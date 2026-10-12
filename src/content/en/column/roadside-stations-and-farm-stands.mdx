@@ -11,6 +11,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/roadside-stations-and-farm-stands-hero.webp
+heroAlt: 'Illustration of a roadside station in the countryside: a wooden market hall with crates of vegetables outside, cars and motorbikes in the car park, wooded hills behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is a michi-no-eki?
@@ -37,6 +39,9 @@ sources:
     url: 'https://www.maff.go.jp/j/nousin/inobe/chisan_chisyo/toikumi_chokubai.html'
     published: '2016-05-31'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import farmStand from '../../../assets/column/roadside-stations-and-farm-stands-body.webp';
 
 Drive or ride a bus through rural Japan and you will pass buildings signed 道の駅, *michi-no-eki*, literally "road station". They are part of a government registration system, not a chain. This column sets out what the official sources say about how that system began, what a visitor can expect to find, and what the farm ministry's figures say about the farm stands that sell local produce. It does not cover prices; I could not confirm any tax-inclusive price for this page.
 
@@ -101,6 +106,12 @@ That is about 1.13 trillion yen in fiscal 2024. The same page puts the number of
 **An older count.** A farm ministry collection of case studies, last updated 31 May 2016, gives about 23,700 stands nationwide and total sales of about 900 billion yen in fiscal 2013. It also says some stands are struggling to keep going, partly because the farmers who supply them are getting older. That survey and the newer one may differ in method and scope, so I do not compare the two to say sales have grown.
 
 **What I could not confirm.** Who sets the prices at a farm stand, what commission the operator takes, and how suppliers and operators split the work — I found nothing on these in the farm ministry's materials, so this page does not describe them.
+
+<Figure
+  src={farmStand}
+  alt="A small wooden farm stand by a road with bagged vegetables on its shelves and a box beside them, a farmer working in the field behind"
+  caption="A farm stand at the edge of a field. Illustration."
+/>
 
 ## Getting there
 

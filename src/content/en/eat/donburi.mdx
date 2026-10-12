@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/donburi-hero.webp
+heroAlt: 'Illustration of four rice bowl dishes on a wooden counter, each with its lid beside it: beef bowl, pork cutlet bowl, chicken and egg bowl, and tempura bowl'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What does donburi mean?
@@ -56,6 +58,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import donburiSection from '../../../assets/eat/donburi-body.webp';
 
 *Donburi* is first the name of a bowl, and then of everything served in it: a deep bowl of rice with something on top and a sauce soaking down. It runs from the beef-bowl chains to the cutlet bowls of soba shops. It is also a lesson in how much a word can change between towns. Order *katsudon* in Tokyo and you get a cutlet simmered with egg; order it in Fukui and you get one dipped in sauce, no egg at all. This page is the map; the lineage pages cover the beef bowl and the cutlet bowl.
 
@@ -66,6 +70,12 @@ import LineageTable from '../../../components/LineageTable.astro';
 **Where the word came from** is unclear. One dictionary guesses at the sound of something dropped into a well; an encyclopedia mentions the sound of something thrown into water and says the origin is not certain. The same encyclopedia records the word from the late 17th century and a "Nanking blue-and-white donburi" in a 1781 menu book, and says that as rice topped with eel or tempura (*donburi-meshi*) spread, *donburi-mono* became the general name. I could not find an official date for when the rice-bowl dish itself took shape.
 
 **Why on rice.** The farm ministry's account of the eel bowl gives one reason: eel and rice were originally served separately, and the eel bowl spread because placing the eel on hot rice kept it warm for delivery.
+
+<Figure
+  src={donburiSection}
+  alt="A cutaway of a lidded beef bowl showing white rice at the bottom, sauce soaking into it, and simmered beef and onion on top"
+  caption="A rice bowl dish in section: rice below, the topping and its sauce on top, and a lid that keeps it warm. Illustration."
+/>
 
 ## Why it is the way it is
 
