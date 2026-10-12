@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sweets-hero.webp
+heroAlt: 'Illustration of a table with a bowl of anmitsu, a strawberry shortcake, a paper-wrapped crepe, a roast sweet potato and a convenience-store pudding'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is zenzai the same as oshiruko?
@@ -68,6 +70,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import sweetsMap from '../../../assets/eat/sweets-body.webp';
 
 Japan’s traditional confectionery — *wagashi*, with its classes, seasons and bean pastes — has its own overview on this site. So do tea, the shaved ice and coffee houses that go with it, and the convenience store. This page is about the rest: the sweets a visitor actually walks past. A bowl at an old-fashioned sweet shop. A strawberry shortcake in a cake-shop window. A crepe rolled in paper on a Harajuku street. A roast sweet potato. A pudding from a convenience-store chiller that was not there last week.
 
@@ -84,6 +88,12 @@ Five groups, each with a lineage page:
 - **Convenience-store sweets.** Roll cakes, cream puffs and puddings from the three big chains, priced to the yen and replaced on a schedule.
 
 Two sweets you might expect here live elsewhere: shaved ice (*kakigori*) is on the tea and kissaten page, and *taiyaki* and *imagawayaki* are with wagashi.
+
+<Figure
+  src={sweetsMap}
+  alt="Five sweets in coloured circles on a drawn map of roads, rivers and trees: anmitsu, strawberry shortcake, a crepe, a roast sweet potato and a pudding"
+  caption="The five groups on this page: sweet shop, Western-style cake, crepe, roast potato, convenience store. Illustration."
+/>
 
 ## Why it is the way it is
 

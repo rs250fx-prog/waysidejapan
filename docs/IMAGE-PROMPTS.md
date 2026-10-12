@@ -274,19 +274,6 @@ Create one image. A family tree drawn as branching noodles: one clear soy ramen 
 
 ## Eat — Sake
 
-### /en/eat/sake/
-**ヒーロー** → 保存名 `sake-hero`
-
-```
-Create one image. A sake bottle and a small ceramic tokkuri with two cups on a wooden counter, one cup warm with faint steam, one cold with condensation. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sake-body`
-
-```
-Create one image. A row of sake vessels showing serving temperatures: a cold glass in an ice bucket, a room-temperature cup, a warm tokkuri in a small pot of hot water. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/sake-nada-fushimi/
 **ヒーロー** → 保存名 `sake-nada-fushimi-hero`
 
@@ -1130,19 +1117,6 @@ Create one image. A Kyoto pickle shop with wooden barrels of pickled vegetables 
 Create one image. Three small dishes in a row: colorful pickles, a dark simmered tsukudani of small fish, and a little pile of furikake over rice. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/rice-sides-tofu-natto/
-**ヒーロー** → 保存名 `rice-sides-tofu-natto-hero`
-
-```
-Create one image. A tofu maker's workshop at dawn, blocks of tofu resting in a water tank, a wooden mold being lifted. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `rice-sides-tofu-natto-body`
-
-```
-Create one image. Two blocks of tofu cut side by side showing the rough pressed texture of momen and the smooth silky texture of kinugoshi; beside them a bowl of sticky natto being stirred with chopsticks. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/rice-sides-mochi/
 **ヒーロー** → 保存名 `rice-sides-mochi-hero`
 
@@ -1249,19 +1223,6 @@ Create one image. A bowl of Kyushu dumpling soup with torn flat flour dumplings,
 Create one image. Hands tearing pieces of dough into a pot on the left; on the right, hands stretching dough into long thin strips over another pot. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/ramen-tsukemen/
-**ヒーロー** → 保存名 `ramen-tsukemen-hero`
-
-```
-Create one image. A plate of thick cold noodles beside a bowl of rich hot dipping soup, a hand lifting noodles toward the soup, a ramen counter behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-tsukemen-body`
-
-```
-Create one image. A kitchen scene of noodle shop staff eating a quick meal by dipping leftover noodles in soup, the shop still closed. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/ramen-hiyashi-chuka/
 **ヒーロー** → 保存名 `ramen-hiyashi-chuka-hero`
 
@@ -1355,19 +1316,6 @@ Create one image. A long table set with regional dishes from across Japan in sma
 Create one image. An outline of Japan with small dish icons scattered over the regions, like pins on a map; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/kyodo-ryori-akita/
-**ヒーロー** → 保存名 `kyodo-ryori-akita-hero`
-
-```
-Create one image. Sticks of rice toasted by an open hearth fire, a clay hotpot of chicken broth with burdock and mushrooms beside it, snow outside. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `kyodo-ryori-akita-body`
-
-```
-Create one image. A bottle of fish sauce beside a pot of hatahata fish simmering with vegetables and tofu. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/kyodo-ryori-okinawa/
 **ヒーロー** → 保存名 `kyodo-ryori-okinawa-hero`
 
@@ -1452,19 +1400,6 @@ Create one image. A traveller opening a bento box on a train seat, the window sh
 
 ## Eat — Sweets
 
-### /en/eat/sweets/
-**ヒーロー** → 保存名 `sweets-hero`
-
-```
-Create one image. A table with a bowl of anmitsu, a strawberry shortcake, a paper-wrapped crepe, a roasted sweet potato in paper and a convenience-store pudding cup. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sweets-body`
-
-```
-Create one image. A simple map-like layout with five dessert icons spread out, each in its own soft colored circle; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/sweets-amamidokoro/
 **ヒーロー** → 保存名 `sweets-amamidokoro-hero`
 
@@ -1544,8 +1479,6 @@ Create one image. A tall bowl of fluffy shaved ice with syrup in a summer café,
 ```
 Create one image. An old-style Japanese coffee house interior with dark wood booths, a siphon coffee maker on the counter and a cup of coffee being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Western foods made Japanese
 
 ## Rail
 

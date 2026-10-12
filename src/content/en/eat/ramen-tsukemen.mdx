@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-tsukemen-hero.webp
+heroAlt: 'Illustration of a plate of thick noodles with chashu, egg and nori beside a bowl of hot dipping soup, noodles lifted into it with chopsticks at a ramen counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Who invented tsukemen?
@@ -45,6 +47,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import staffMeal from '../../../assets/eat/ramen-tsukemen-body.webp';
 
 *Tsukemen* — "dipping noodles" — is ramen taken apart. The noodles come on one plate, the soup in a separate bowl, and you dip as you eat. It is a Tokyo dish, and it is young: the best-documented account puts it on a menu for the first time in 1955. It is also a dish with more than one claimant, because the man most associated with it worked inside a family of shops that each tell the story a little differently.
 
@@ -65,6 +69,12 @@ There are three accounts, and they overlap more than they conflict. This site do
 **Higashi-Ikebukuro, 1961.** Yamagishi opened his own shop in Higashi-Ikebukuro in 1961, according to *PRESIDENT Online* in 2025. A 2013 company press release says the *tokusei morisoba* he devised during his training years became Taishoken's signature, and gives the same 1961 date.
 
 I found no ward or local government that officially recognises a birthplace of tsukemen.
+
+<Figure
+  src={staffMeal}
+  alt="Two ramen shop staff in head scarves eating noodles dipped in small bowls of soup at the kitchen counter, the shop closed behind them"
+  caption="Noodles dipped in soup as a staff meal, before it was on any menu. Illustration."
+/>
 
 ## What makes it tsukemen
 

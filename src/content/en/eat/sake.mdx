@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sake-hero.webp
+heroAlt: 'Illustration of a sake bottle, a ceramic flask and two cups, one steaming, on a wooden counter, snow falling outside the window'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between sake and nihonshu?
@@ -70,6 +72,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import sakeTemps from '../../../assets/eat/sake-body.webp';
 
 Sake is the one Japanese drink most visitors want to understand and the one whose label is hardest to read. The good news is that most of the label is regulated. The words *junmai*, *ginjō* and *daiginjō* are legal terms with fixed meanings; the percentage on the back is a measurement; and a place name on the front is a promise. This page is the map: what sake is in law, how to read the label, why it is served at temperatures from near-freezing to hot, and what the regions are known for. The lineage pages go deep on one region at a time.
 
@@ -132,6 +136,12 @@ The association's recommended ranges by type:
 Japanese has a word for each temperature, describing what you feel rather than a number. In the association's descriptions: *yuki-bie* ("snow-cold", the bottle beads with water, aroma subdued); *hana-bie* (you feel the cold through the bottle; the aroma opens as you drink); *suzu-bie* (out of the fridge a while; a brighter aroma and a slight thickness); *jōon*, the temperature of an old Japanese earth-floored kitchen; *hinata-kan* (neither warm nor cold); *hitohada-kan* ("skin warm", rice and kōji aroma come up); *nuru-kan* (about body heat, the fullest aroma); *jō-kan* (steam rises, aroma tightens); *atsu-kan* (hot, sharper and drier); *tobikiri-kan* (very hot). The association says the range from *hitohada-kan* (35–40°C) to *jō-kan* (45–50°C) is generally considered the best for warm sake, and that warming makes sweetness and savouriness easier to taste.
 
 Two more words: *hiyaoroshi*, sake brewed in winter, matured over summer and bottled in autumn after only one heating, and *yawaragi-mizu*, water drunk alongside sake. Because sake is fairly strong, the association recommends about as much water as sake, and Niigata's brewers add that it lets you keep track of how drunk you are.
+
+<Figure
+  src={sakeTemps}
+  alt="A glass flask of sake in a wooden tub of ice on the left, a cup in the middle, and a ceramic flask warming in a pot of hot water on the right"
+  caption="Chilled, at room temperature, or warmed in hot water. Illustration."
+/>
 
 ## How it is served
 
