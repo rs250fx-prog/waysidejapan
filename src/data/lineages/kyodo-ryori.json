@@ -1,5 +1,5 @@
 {
-  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）、北陸ブロック（新潟・富山・石川・福井。docs/research/kyodo-hokuriku-2026-10-11.md）の6本。他の都道府県は素材が無いので行を作っていない",
+  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）、北陸ブロック（新潟・富山・石川・福井。docs/research/kyodo-hokuriku-2026-10-11.md）、近畿ブロック（京都・大阪・兵庫・奈良・和歌山・滋賀・三重。docs/research/kyodo-kinki-2026-10-11.md）の7本。他の都道府県は素材が無いので行を作っていない",
   "dish": "kyodo-ryori",
   "name": "Local dishes by region",
   "nameJa": "郷土料理",
@@ -155,6 +155,30 @@
         "Kanazawa",
         "Wakura Onsen",
         "Echizen"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "kinki",
+      "name": "Kinki",
+      "nameJa": "近畿",
+      "origin": {
+        "place": "Kyoto, Osaka, Hyogo, Nara, Wakayama, Shiga, Mie",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Kyoto pickles, Senba-jiru, botan-nabe, chagayu, mehari-zushi, funa-zushi, Ise udon",
+        "why": "A capital far from the sea, so cured fish; Osaka's trade and kelp; salted mackerel carried inland",
+        "when": "Suguki mid-November–January; ikanago from late February; matsuba-gani November–March",
+        "listed": "207 dishes in the farm ministry database (Kyoto 30, Osaka 30, Hyogo 30, Nara 30, Wakayama 27, Shiga 30, Mie 30)"
+      },
+      "where": [
+        "Kyoto",
+        "Osaka",
+        "Tamba-Sasayama",
+        "Kumano Hongū",
+        "Ōmi-Hachiman",
+        "Ise"
       ],
       "status": "published"
     }
