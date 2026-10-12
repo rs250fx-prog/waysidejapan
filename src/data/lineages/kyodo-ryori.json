@@ -1,5 +1,5 @@
 {
-  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田と沖縄の2本。他の都道府県は素材が無いので行を作っていない",
+  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）の3本。他の都道府県は素材が無いので行を作っていない",
   "dish": "kyodo-ryori",
   "name": "Local dishes by region",
   "nameJa": "郷土料理",
@@ -59,6 +59,30 @@
       },
       "where": [
         "Okinawa"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "setouchi",
+      "name": "Setouchi",
+      "nameJa": "瀬戸内",
+      "origin": {
+        "place": "Okayama, Hiroshima, Yamaguchi, Kagawa, Ehime",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Festival bara-zushi, oyster dote-nabe, fugu sashimi, kawara soba, tai-meshi",
+        "why": "Fast Inland Sea tides cited for fish quality; Edo-era thrift and Sanuki sugar",
+        "when": "Bara-zushi at festivals; oysters in January–February; wild fugu September–March",
+        "listed": "143 dishes in the farm ministry database (Okayama 28, Hiroshima 30, Yamaguchi 30, Kagawa 30, Ehime 25)"
+      },
+      "where": [
+        "Okayama",
+        "Miyajima",
+        "Shimonoseki",
+        "Kawatana Onsen",
+        "Uwajima",
+        "Matsuyama"
       ],
       "status": "published"
     }
