@@ -1,5 +1,5 @@
 {
-  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）、北陸ブロック（新潟・富山・石川・福井。docs/research/kyodo-hokuriku-2026-10-11.md）、近畿ブロック（京都・大阪・兵庫・奈良・和歌山・滋賀・三重。docs/research/kyodo-kinki-2026-10-11.md）、関東ブロック（茨城・栃木・群馬・埼玉・千葉・東京・神奈川。docs/research/kyodo-kanto-2026-10-12.md）の8本。他の都道府県は素材が無いので行を作っていない",
+  "_note": "郷土料理の系譜（地方別）。品目ハブ（/en/eat/kyodo-ryori/）の横並び表と、各系譜ページがここから描く。出典は docs/research/kyodo-ryori-2026-10-10.md と各系譜ページの sources。秋田・沖縄と、瀬戸内ブロック（岡山・広島・山口・香川・愛媛。docs/research/kyodo-setouchi-2026-10-11.md）、九州ブロック（福岡・佐賀・長崎・熊本・大分・宮崎・鹿児島。docs/research/kyodo-kyushu-2026-10-11.md）、東北ブロック（青森・岩手・宮城・山形・福島。秋田は別行。docs/research/kyodo-tohoku-2026-10-11.md）、北陸ブロック（新潟・富山・石川・福井。docs/research/kyodo-hokuriku-2026-10-11.md）、近畿ブロック（京都・大阪・兵庫・奈良・和歌山・滋賀・三重。docs/research/kyodo-kinki-2026-10-11.md）、関東ブロック（茨城・栃木・群馬・埼玉・千葉・東京・神奈川。docs/research/kyodo-kanto-2026-10-12.md）、中部ブロック（山梨・長野・岐阜・静岡・愛知。docs/research/kyodo-chubu-2026-10-12.md）の9本。他の都道府県は素材が無いので行を作っていない",
   "dish": "kyodo-ryori",
   "name": "Local dishes by region",
   "nameJa": "郷土料理",
@@ -204,6 +204,30 @@
         "Bōsō coast",
         "Fukagawa",
         "Yokohama"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "chubu",
+      "name": "Chūbu",
+      "nameJa": "中部",
+      "origin": {
+        "place": "Yamanashi, Nagano, Gifu, Shizuoka, Aichi",
+        "era": "—"
+      },
+      "cells": {
+        "signature": "Hōtō, oyaki, gohei-mochi, hoba miso, Shizuoka oden, miso-nikomi udon",
+        "why": "Mountain land unsuited to rice, so flour food; bean miso; sea food carried inland",
+        "when": "New soba mid-October–early November; sakura shrimp in spring and autumn; hoba-zushi May–August",
+        "listed": "147 dishes in the farm ministry database (Yamanashi 30, Nagano 29, Gifu 30, Shizuoka 28, Aichi 30)"
+      },
+      "where": [
+        "Kōfu",
+        "Isawa Onsen",
+        "Ina valley",
+        "Okuhida Onsen",
+        "Shizuoka",
+        "Nagoya"
       ],
       "status": "published"
     }
