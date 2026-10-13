@@ -3,9 +3,13 @@
  * 品目ハブのタイル。/en/eat/ の目次で使う。
  *
  * 写真が無い記事が多数なので、文字（漢字1字＋品目名）で成立させる。
- * heroImage がある記事だけ写真に切り替わる。下段に系譜ページのリンクを名前で並べ、
+ * heroImage がある記事だけ写真に切り替わる。下段に系譜ページをチップで並べ、
  * 171本の一覧を「39タイル＋系譜リンク」に圧縮する。
  * 系譜の表示名は src/data/lineages/<dish>.json の name（記事タイトルは長すぎる）。
+ *
+ * SP では縦に積まない。漢字／写真を左の小さな正方形にして1行に畳み（高さ 1/3 以下）、
+ * 系譜チップは 40px 以上の高さでタップできるようにする。ハブへのリンクは
+ * 面全体ではなく見出し部分だけにして、チップとの押し間違いを防ぐ。
  */
 import { Image } from 'astro:assets';
 import type { Article } from '../lib/content.ts';
@@ -13,6 +17,7 @@ import { hrefOf } from '../lib/content.ts';
 import { lineagesOf } from '../lib/lineages.ts';
 import { GLYPHS } from '../data/genres.ts';
 import { IMAGE_SPEC } from '../lib/images.ts';
+import Icon from './Icon.astro';
 
 interface Props {
   hub: Article;
@@ -43,7 +48,7 @@ const spec = IMAGE_SPEC.card;
   <a class="face" href={hrefOf(hub)}>
     {
       hub.data.heroImage ? (
-        <span class="pic" style={`aspect-ratio: ${spec.ratio}`}>
+        <span class="pic" style={`--ratio: ${spec.ratio}`}>
           <Image src={hub.data.heroImage} alt="" width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading="lazy" />
         </span>
       ) : (
@@ -58,19 +63,25 @@ const spec = IMAGE_SPEC.card;
         {nameJa && <span class="ja" lang="ja">{nameJa}</span>}
       </span>
       <span class="tagline">{tagline}</span>
+      <span class="go">
+        Read the guide <Icon name="arrow" />
+      </span>
     </span>
   </a>
   {
     links.length > 0 && (
-      <p class="lineages">
-        <span class="lin-label">Lineages</span>
-        {links.map((l, i) => (
-          <>
-            {i > 0 && <span class="sep"> · </span>}
-            <a href={l.href}>{l.name}</a>
-          </>
-        ))}
-      </p>
+      <div class="lineages">
+        <span class="lin-label">
+          {links.length} {links.length === 1 ? 'lineage' : 'lineages'}
+        </span>
+        <ul>
+          {links.map((l) => (
+            <li>
+              <a href={l.href}>{l.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
     )
   }
 </article>
@@ -87,13 +98,13 @@ const spec = IMAGE_SPEC.card;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding: 16px 16px 12px;
+    padding: 16px 16px 14px;
     color: inherit;
     text-decoration: none;
-    flex: 1;
   }
-  .face:hover .name {
-    color: var(--accent);
+  .face:hover .name,
+  .face:hover .go {
+    color: var(--accent-hover);
   }
   .glyph {
     display: block;
@@ -112,6 +123,7 @@ const spec = IMAGE_SPEC.card;
     overflow: hidden;
     background: var(--surface-2);
     margin: -16px -16px 0;
+    aspect-ratio: var(--ratio);
   }
   .pic img {
     display: block;
@@ -152,13 +164,23 @@ const spec = IMAGE_SPEC.card;
   .large .tagline {
     font-size: 16px;
   }
-  .lineages {
-    margin: 0;
-    padding: 10px 16px 14px;
-    border-top: 1px solid var(--line-2);
+  /* ハブへ行くことを言葉で示す。面全体が押せると分からない読者のため */
+  .go {
+    margin-top: 2px;
+    font-family: var(--font-display);
     font-size: 14px;
-    line-height: 1.7;
-    color: var(--muted);
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* 系譜はチップ。小さな下線リンクだと目立たず、SP では押せない */
+  .lineages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px 16px;
+    border-top: 1px solid var(--line-2);
+    background: var(--surface-2);
   }
   .lin-label {
     font-family: var(--font-display);
@@ -167,16 +189,69 @@ const spec = IMAGE_SPEC.card;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-right: 8px;
+  }
+  .lineages ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .lineages a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 8px 13px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 14px;
+    line-height: 1.25;
     color: var(--ink);
-    text-decoration: underline;
-    text-decoration-color: var(--line);
-    text-underline-offset: 3px;
+    text-decoration: none;
   }
   .lineages a:hover {
+    border-color: var(--accent);
     color: var(--accent);
-    text-decoration-color: var(--accent);
+  }
+
+  /* SP：漢字・写真を左の 64px 正方形に畳み、1タイルの高さを 1/3 にする */
+  @media (max-width: 767px) {
+    .face {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+    }
+    .glyph,
+    .large .glyph {
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      background: var(--surface-2);
+    }
+    .pic {
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      margin: 0;
+      aspect-ratio: 1;
+    }
+    .name,
+    .large .name {
+      font-size: 20px;
+    }
+    .tagline,
+    .large .tagline {
+      font-size: 14px;
+    }
+    .lineages {
+      padding: 10px 14px 14px;
+    }
   }
 </style>
