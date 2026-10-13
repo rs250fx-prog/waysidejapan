@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sake-niigata-hero.webp
+heroAlt: 'Illustration of a sake brewery in deep snow, steam rising from its chimney, snowy fields and mountains around it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is Niigata sake dry?
@@ -48,6 +50,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import tastingMachines from '../../../assets/eat/sake-niigata-body.webp';
 
 Niigata sake is commonly sold with a two-word phrase, *tanrei karakuchi* — clean and dry. The official description of Niigata sake, written by the national tax agency when it gave the prefecture a protected name in 2022, uses the first word and not the second. That gap is a good way into what Niigata sake is, and what the label can and cannot promise.
 
@@ -88,6 +92,12 @@ By comparison, Nada Gogō in Hyōgo caps added alcohol at 25% and requires rice 
 Those are national figures for a basic glass. In Niigata itself:
 
 **Ponshukan.** Tasting rooms inside Niigata, Nagaoka and Echigo-Yuzawa stations, with machines pouring the representative sakes of every brewery in the prefecture. You pay at the desk and receive a borrowed cup and five tasting coins, enough for up to five pours. From 1 July 2026 that costs ¥1,000 including tax; it had been ¥500 for 31 years. The machines hold 129 sakes at Echigo-Yuzawa and 111 at Niigata and Nagaoka. Over 20s only, and children may not come in. From the same date there is a concierge and food pairing, the food also paid in coins.
+
+<Figure
+  src={tastingMachines}
+  alt="Visitors at a long row of sake tasting machines, one holding a small tasting cup"
+  caption="A station tasting room: one machine pour per brewery. Illustration."
+/>
 
 **The prefecture's sake festival.** The Niigata brewers' association has announced Niigata Sake no Jin 2027. I have not confirmed the dates, venue or price, so they are not given here.
 

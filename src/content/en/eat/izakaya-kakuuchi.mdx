@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/izakaya-kakuuchi-hero.webp
+heroAlt: 'Illustration of a small liquor shop with bottles on wooden shelves, a register at the front and customers standing at a counter at the back'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is kaku-uchi?
@@ -56,6 +58,9 @@ sources:
     url: 'https://www.pref.saitama.lg.jp/documents/280222/edamame.pdf'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import shopAndCounter from '../../../assets/eat/izakaya-kakuuchi-body.webp';
+
 *Kaku-uchi* (角打ち) is drinking at a liquor shop: you buy from the shelves or the counter and drink it there, usually standing. It looks like a standing bar, and the people who study it insist it is not one. This page covers what a private research group in Kitakyushu says about its history and customs, how Japan's tax agency separates selling alcohol from serving it, and what I could not confirm, which includes every price.
 
 For izakaya in general, start from the izakaya overview.
@@ -85,6 +90,12 @@ I could not find the origin of the word *kaku-uchi* in the group's pages or in a
 - When one operator runs both a restaurant and a liquor shop, drinks served in the restaurant need no sales licence, but drinks sold in the shop do. So the two must be kept apart: separate spaces, and purchases, sales and stock of the two kinds of alcohol kept separately and checkable in the books.
 
 So selling and serving are two separately organised things in the rules, and a business that does both keeps them apart by space and by books. The research group's line that a liquor shop is not a restaurant sits alongside this, but neither source links the two, and I am not drawing the link for them.
+
+<Figure
+  src={shopAndCounter}
+  alt="Two scenes in one liquor shop: a customer buying a bottle to take home, and a glass and a small plate at the standing counter"
+  caption="Selling a bottle and pouring a glass, kept apart in the same shop. Illustration."
+/>
 
 ## How to drink at one
 

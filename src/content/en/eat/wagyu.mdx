@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagyu-hero.webp
+heroAlt: 'Illustration of a raw marbled steak on a wooden board, black cattle grazing in a green valley behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What does A5 mean?
@@ -68,6 +70,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import marbling from '../../../assets/eat/wagyu-body.webp';
 
 Visitors to Japan rank beef the most satisfying thing they eat here — ahead of sushi by a factor of two in the tourism agency's survey — and almost none of them could say what the word on the sign means. "Wagyu" is a legal category, "A5" is a trading grade, "Kobe" is a certification with a bronze statue, and none of the three is a promise about how dinner will taste. This page is the glossary, the price map, and the way in to the brands and the two great ways of eating it, sukiyaki and yakiniku.
 
@@ -78,6 +82,12 @@ Visitors to Japan rank beef the most satisfying thing they eat here — ahead of
 **A5 is two numbers for traders.** The Japan Meat Grading Association grades every carcass twice. The letter is yield: A means 72% or more of the carcass becomes saleable meat, B 69–72%, C less. The number is quality, 1 to 5, and it is the *lowest* of four marks — marbling, meat colour, firmness and texture, fat colour and quality. Marbling itself is scored 1 to 12 (the Beef Marbling Standard); a 5 needs BMS 8 or above, a 4 needs 5–7, a 3 needs 3–4. The association describes the system as "a yardstick for carcass trade" so that producers and buyers can deal fairly. It does not describe it as a measure of flavour, and this site has not found a public body that does. A5 means a lot of fat, evenly spread, in a carcass that butchers well. Whether you want that much fat is your business.
 
 **Every animal has a number.** Under the traceability law each beef animal carries a ten-digit ID from ear tag to shop counter, and restaurants serving yakiniku, shabu-shabu, sukiyaki or steak are required to display it. Anyone can look it up on the livestock centre's site and see the birth date, breed, sex and farms. If a shop will not show you the number, that tells you something.
+
+<Figure
+  src={marbling}
+  alt="Three slices of marbled beef laid side by side on leaves on a wooden board"
+  caption="Marbling: the part of the grade you can see on the plate. Illustration."
+/>
 
 ## Why it is the way it is
 

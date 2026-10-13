@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagyu-kobe-hero.webp
+heroAlt: 'Illustration of a teppanyaki chef slicing a seared steak beside garlic chips, Kobe Port Tower and the harbour at sunset behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What qualifies as Kobe beef?
@@ -56,6 +58,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import bronzeCow from '../../../assets/eat/wagyu-kobe-body.webp';
 
 Kobe beef is the most famous food name Japan has exported, and the one with the most paperwork behind it. It is not a breed, a cut or a recipe. It is a certificate awarded to a few thousand carcasses a year from one prefecture's cattle, by a council that licenses every farmer, slaughterhouse, wholesaler and restaurant allowed to touch them, and marks the restaurants with a bronze cow. Understand the certificate and you understand why the word is on so many menus that have never seen the animal.
 
@@ -74,6 +78,12 @@ The rules came in 1983, when producers and distributors formed the Kobe Beef Mar
 **The numbers.** About 7,500 animals a year qualify as Tajima beef and about 7,000 as Kobe beef — under 0.2% of the beef eaten in Japan.
 
 **The chain of custody.** Every farm, slaughterhouse, wholesaler, retailer and restaurant must be a registered member. Shops display a certificate and a bronze cow; the council runs DNA checks on them. On the day this page was written the council's register listed 408 outlets in Hyōgo, 181 in Osaka and 147 in Tokyo (36 in Minato ward, 31 in Chūō). The meat carries the ten-digit ID required by law, so the animal can be looked up.
+
+<Figure
+  src={bronzeCow}
+  alt="A small bronze cow statue and a framed certificate in a restaurant window, a chef at the grill behind"
+  caption="The bronze cow and the certificate a registered shop displays. Illustration."
+/>
 
 ## Why Kobe
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sake-nada-fushimi-hero.webp
+heroAlt: 'Illustration of old sake breweries with dark wood and white plaster along a canal, a small wooden boat and a ball of cedar leaves at a brewery door'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is Miyamizu?
@@ -68,6 +70,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import springWater from '../../../assets/eat/sake-nada-fushimi-body.webp';
 
 Nada, on the coast between Kobe and Nishinomiya, and Fushimi, in the south of Kyoto, are two of the historic sake districts of the Kansai region, and both owe their position to the same thing: water. They are on one page here because the comparison is the point. The official documents describe them in almost opposite terms — one hard-watered, cold-winded and built for shipping, the other soft-watered and built, in the tax agency's phrase, to sit beside food.
 
@@ -99,6 +103,12 @@ For what sake is and how to read a label, start from the sake overview.
 - **Kyoto**: soft and round in the mouth, with moderate savouriness and sweetness and a refined aroma — "sake that does not get in the way of food, and brings each other out". The GI document links this to Kyoto cooking and its dashi.
 
 The common shorthand that Nada makes "masculine" sake and Fushimi "feminine" does not appear in any of the official or industry sources I used, so it is not used here.
+
+<Figure
+  src={springWater}
+  alt="A visitor filling a bottle from a spring flowing out of a stone wall, brewery buildings and a large wooden vat behind"
+  caption="The water first: the springs the breweries were built on. Illustration."
+/>
 
 ## Why here
 

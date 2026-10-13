@@ -26,41 +26,7 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ---
 
-## Eat — Donburi
-
-## Eat — Gyoza
-
-## Eat — Izakaya
-
-## Eat — Konamono
-
 ## Eat — Market
-
-### /en/eat/market-omicho-hakodate/
-**ヒーロー** → 保存名 `market-omicho-hakodate-hero`
-
-```
-Create one image. A town market arcade with crab and squid displays on ice, a stall owner handing over a bowl; snow on the roof edges outside the entrance. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `market-omicho-hakodate-body`
-
-```
-Create one image. At a Hakodate morning market, a visitor fishing a live squid from a tank with a short rod, the squid then served as translucent sashimi on a plate. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/market-toyosu/
-**ヒーロー** → 保存名 `market-toyosu-hero`
-
-```
-Create one image. A modern, clean wholesale fish market hall with rows of whole tuna on the floor, buyers inspecting them; seen from a visitor gallery behind glass. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `market-toyosu-body`
-
-```
-Create one image. Split view: on one side the closed wholesale floor seen through an observation window, on the other side an open food court next door where visitors eat sushi at a counter. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Ramen
 
@@ -182,32 +148,6 @@ Create one image. A family tree drawn as branching noodles: one clear soy ramen 
 ```
 
 ## Eat — Sake
-
-### /en/eat/sake-nada-fushimi/
-**ヒーロー** → 保存名 `sake-nada-fushimi-hero`
-
-```
-Create one image. A row of old sake breweries with dark wooden walls and white plaster in Fushimi, a canal with a small wooden boat, a ball of cedar leaves hanging at the brewery door. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sake-nada-fushimi-body`
-
-```
-Create one image. A spring of clear water flowing from a stone spout outside a brewery, a person filling a bottle, brewery buildings behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sake-niigata/
-**ヒーロー** → 保存名 `sake-niigata-hero`
-
-```
-Create one image. A sake brewery in deep snow in Niigata, steam rising from the roof, rice fields buried white around it, mountains behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sake-niigata-body`
-
-```
-Create one image. A tasting corner with a long row of small sake vending dispensers, a visitor holding a tiny tasting cup; drawn without readable labels. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Soba
 
@@ -595,32 +535,6 @@ Create one image. A historical scene of a soldier's ration pack including bars o
 ```
 
 ## Eat — Wagyu
-
-### /en/eat/wagyu/
-**ヒーロー** → 保存名 `wagyu-hero`
-
-```
-Create one image. A raw marbled wagyu steak on a wooden board, a black Japanese cow grazing in a green valley behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagyu-body`
-
-```
-Create one image. Three slices of beef side by side showing increasing marbling, from lightly marbled to very heavily marbled, drawn like a specimen chart. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/wagyu-kobe/
-**ヒーロー** → 保存名 `wagyu-kobe-hero`
-
-```
-Create one image. A teppanyaki chef searing a thick Kobe beef steak on a hot iron plate, garlic chips crisping, the Kobe harbor at dusk through the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagyu-kobe-body`
-
-```
-Create one image. A small bronze cow statue in a restaurant window, with a certificate frame shown as a blank decorated document beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/wagyu-matsusaka/
 **ヒーロー** → 保存名 `wagyu-matsusaka-hero`
@@ -1225,46 +1139,7 @@ Create one image. A long table set with regional dishes from across Japan in sma
 Create one image. An outline of Japan with small dish icons scattered over the regions, like pins on a map; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/kyodo-ryori-okinawa/
-**ヒーロー** → 保存名 `kyodo-ryori-okinawa-hero`
-
-```
-Create one image. A bowl of Okinawa soba with wheat noodles, slices of braised pork belly and pickled ginger, a red-tiled Okinawan roof and a shisa statue behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `kyodo-ryori-okinawa-body`
-
-```
-Create one image. A plate of rafute, dark glazed cubes of braised pork belly, beside a small cup of awamori and a bowl of pig's trotter soup. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Izakaya (additions)
-
-### /en/eat/izakaya-kakuuchi/
-**ヒーロー** → 保存名 `izakaya-kakuuchi-hero`
-
-```
-Create one image. A small liquor shop with bottles on wooden shelves and a narrow counter at the back where a few customers stand drinking from glasses, a cash register at the front. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `izakaya-kakuuchi-body`
-
-```
-Create one image. Split scene: on the left a customer buying a bottle to take home, on the right the same shop's standing counter with a glass and a small plate of snacks. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/izakaya-snack/
-**ヒーロー** → 保存名 `izakaya-snack-hero`
-
-```
-Create one image. A narrow lane of small bars at night with doors and soft glowing signs shown blank, one door slightly open with warm light inside. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `izakaya-snack-body`
-
-```
-Create one image. Inside a small snack bar: a counter with a few stools, a hostess behind the counter pouring a drink, a karaoke screen dark on the wall. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Food shopping
 
@@ -1335,19 +1210,6 @@ Create one image. A strawberry shortcake slice with whipped cream on a plate in 
 Create one image. A fruit parlour counter with perfectly arranged fruit in a glass case and a parfait being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/sweets-yakiimo/
-**ヒーロー** → 保存名 `sweets-yakiimo-hero`
-
-```
-Create one image. A roasted sweet potato truck at dusk with a stone oven, potatoes in paper bags, a customer buying one. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sweets-yakiimo-body`
-
-```
-Create one image. A broken roasted sweet potato showing its golden glossy inside, steam rising, beside a crate of raw potatoes being stored. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/sweets-conbini/
 **ヒーロー** → 保存名 `sweets-conbini-hero`
 
@@ -1360,8 +1222,6 @@ Create one image. A convenience store chilled dessert shelf with roll cakes, cre
 ```
 Create one image. Three desserts in a row on a table: a slice of roll cake, a cream puff and a cup of pudding, each with a plastic spoon. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Tea
 
 ## Rail
 

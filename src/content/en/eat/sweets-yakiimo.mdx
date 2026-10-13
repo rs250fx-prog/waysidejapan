@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sweets-yakiimo-hero.webp
+heroAlt: 'Illustration of a roast sweet potato truck with a stone oven at dusk, a vendor handing a paper bag to a customer'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why were roast-potato sellers called thirteen ri?
@@ -31,6 +33,9 @@ sources:
   - label: '川越市「川越とサツマイモ」'
     url: 'https://www.city.kawagoe.saitama.jp/kurashi/nogyo/1003193/1003197.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import storedPotatoes from '../../../assets/eat/sweets-yakiimo-body.webp';
 
 *Yaki-imo* (焼き芋) is a whole sweet potato roasted until soft. Of the street sweets on these pages, it has the oldest date in a public source: the farm ministry places its popularity in late Edo. This is a short page, because the sources are short.
 
@@ -51,6 +56,12 @@ For sweets in Japan beyond wagashi in general, start from the sweets overview.
 **The variety.** The ministry’s *aff* says 100 sweet-potato varieties are registered. The one it profiles is *beni haruka* (written べにはるか in the article): selected in 1996, named in 2007, well-shaped with a refined sweetness, reddish-purple skin, yellowish-white flesh, a slightly floury texture and strong sweetness.
 
 **The storage.** The same article says beni haruka gets sweeter when stored for two to three months after harvest at the right temperature and humidity. It does not explain why. A Chiba prefecture study of the storage conditions exists, but I could not read it, so I say no more.
+
+<Figure
+  src={storedPotatoes}
+  alt="A roast sweet potato broken open, golden and steaming, in front of crates of raw potatoes in storage"
+  caption="The potato on the right waits months in storage to taste like the one on the left. Illustration."
+/>
 
 ## The shops, and what they charge
 
