@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-tokyo-shoyu-hero.webp
+heroAlt: 'Illustration of a bowl of Tokyo soy ramen with chashu, bamboo shoots, a naruto fish cake slice and spinach in a clear brown broth'
 pricesCheckedOn: 2026-10-09
 faq:
   - q: What is chūka soba?
@@ -74,6 +76,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import familyTree from '../../../assets/eat/ramen-tokyo-shoyu-body.webp';
 
 Every other lineage on this site is defined by how it departs from this one. The Tokyo bowl is the plain sentence of Japanese ramen: a clear brown soup that tastes of chicken, pork and dried fish, seasoned with soy sauce; a wavy yellow noodle; a slice of pork, a few strips of bamboo shoot, a pink-and-white swirl of fish cake, some spinach, a square of nori. In Tokyo it is still called *chūka soba* on the menus of the shops that have been making it longest, and that is also what the government calls it when it prices a bowl every month.
 
@@ -94,6 +98,12 @@ The museum's description of the old Tokyo bowl is the one to keep: clear stock f
 **Harukiya's version**, by the shop's own account: a stock of dried sardine and shaved dried fish with vegetables and kelp, the house soy *tare*, and a noodle made in-house from several flours with *kansui* and a crimp worked in by hand.
 
 **On top:** pork, bamboo shoot, *naruto* fish cake, spinach, nori. No system of hardness or oil — you order a bowl and you get the shop's bowl.
+
+<Figure
+  src={familyTree}
+  alt="A tree of ramen bowls drawn with noodles as branches: a clear soy bowl at the root and many regional bowls above it"
+  caption="The clear soy bowl, and the bowls that grew out of it. Illustration."
+/>
 
 ## Why Tokyo
 

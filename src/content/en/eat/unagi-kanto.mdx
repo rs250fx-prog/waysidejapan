@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/unagi-kanto-hero.webp
+heroAlt: 'Illustration of a cook fanning skewered eel over charcoal, smoke rising, a lacquer box of glazed eel on the counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why is Tokyo eel opened along the back?
@@ -54,6 +56,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import steamSteps from '../../../assets/eat/unagi-kanto-body.webp';
 
 In Tokyo an eel is opened along the back, skewered, grilled plain, steamed, and only then grilled with tare over charcoal. The result is soft: the steaming, in the research accounts, takes out fat and tenderises the flesh. It is a longer process than the Kansai way, and the extra step — the steaming — is the whole difference. It also comes with an argument about why Tokyo cuts from the back that is worth knowing, because the most famous answer is the least supported.
 
@@ -83,6 +87,12 @@ The farm ministry's method: open along the back, remove bone and guts, skewer, g
 
 - **Nihonbashi Izumoya**, founded 1946: plain grill, steam, grill with tare. It says late in the day some dishes sell out, recommends booking early, and asks for some dishes to be ordered the day before.
 - **Unagi Edogawa**, in Nara: back-opened, plain grill, steam, final grill — a Kantō method in the Kansai region.
+
+<Figure
+  src={steamSteps}
+  alt="Three steps: an eel opened on a board, fillets steamed in a bamboo steamer, then brushed with sauce over charcoal"
+  caption="Opened, steamed, then grilled with tare. Illustration."
+/>
 
 ## The shops, and what they charge
 

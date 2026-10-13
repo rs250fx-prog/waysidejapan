@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-saba-hero.webp
+heroAlt: 'Illustration of a whole cured mackerel on a log of rice, sliced, on a lacquer tray, a Kyoto townhouse street behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is saba-zushi?
@@ -34,6 +36,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import mackerelRoad from '../../../assets/eat/sushi-saba-body.webp';
 
 Kyoto is a capital without a coast, and its sushi is a solution to that. Saba-zushi — a whole cured mackerel fillet laid over a long bar of vinegared rice, pressed, wrapped in translucent kelp and sliced thick — is the sushi of the city's three great festivals, and it exists because of a road. Mackerel landed at Obama on the Sea of Japan, salted on the quay and carried over the mountains, reached the capital two or three days later with the salt, the ministry says, "at just the right strength". Kyoto did not invent a way to eat fresh fish. It made a dish out of the delay.
 
@@ -42,6 +46,12 @@ Kyoto is a capital without a coast, and its sushi is a solution to that. Saba-zu
 The agriculture ministry's entry dates *saba-zushi* to the Edo period and places it in the festival calendar: the Aoi festival in May, Gion in July, Jidai in October, and the autumn festivals of the villages, when households made or bought it for guests. The mackerel came along the Saba Kaidō, the "mackerel road" from Wakasa, a day's walk north; by the time a salted fish arrived it had cured itself. The city's great house of the dish is Izuu, founded in the first year of Tenmei (1781) by a man named Izumiya Uhei, who — by the shop's own history — took a commoners' food and refined it with a cook's technique into *saba-sugata-zushi*, the whole-fish form, sold to the teahouses of Gion. It added seats for eating in only around 1970; for two centuries it was a shop you carried from.
 
 The form belongs to the Kansai family. The National Diet Library's history records that when Edo went over to hand-pressed nigiri around the 1820s, Kyoto and Osaka kept pressed sushi; Osaka's *battera*, mackerel pressed in a box, is this dish's city cousin.
+
+<Figure
+  src={mackerelRoad}
+  alt="A traveller on a mountain path carrying salted mackerel on a frame on their back, a city with a pagoda in the valley below"
+  caption="Salted mackerel carried over the mountains to Kyoto. Illustration."
+/>
 
 ## What makes it saba-zushi
 

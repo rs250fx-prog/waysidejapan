@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-kurume-hero.webp
+heroAlt: 'Illustration of a cook stirring a huge steaming cauldron of pork-bone broth with a long paddle in a ramen kitchen'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Did tonkotsu ramen start in Kurume or Hakata?
@@ -45,6 +47,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import toppingUp from '../../../assets/eat/ramen-kurume-body.webp';
 
 Kurume is forty kilometres south of Fukuoka, a tyre-making city on the Chikugo river, and it is where the white pork-bone soup of Kyushu was — by one of the two accounts on record — made for the first time, by mistake. Its ramen is the heavy, smelly, honest original from which Hakata, Kumamoto and the rest descend, and the city calls itself the birthplace of tonkotsu ramen on its own municipal pages.
 
@@ -63,6 +67,12 @@ The white soup came ten years later. In 1947 a stall called Sankyū, run by Sugi
 **The noodle.** Straight and firm, a little thicker than Hakata's thin strand.
 
 **No refill.** Kurume mostly does not do *kaedama*; the museum says most shops here never adopted it. The refill was a Nagahama fish-market solution to a noodle that went soft in a minute, and Kurume's noodle does not.
+
+<Figure
+  src={toppingUp}
+  alt="A cook adding fresh bones to an old cauldron of broth over a fire, water running in, a bowl being filled beside it"
+  caption="Topped up, not emptied: the pot is kept going with new bones and water. Illustration."
+/>
 
 ## Why Kurume
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/soba-wanko-hero.webp
+heroAlt: 'Illustration of a server tossing a mouthful of soba into a diner’s bowl, a growing stack of small red bowls on the table'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: How does wanko soba work?
@@ -49,6 +51,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import closeLid from '../../../assets/eat/soba-wanko-body.webp';
 
 Wanko soba is the only noodle dish in Japan with a referee. You sit; a server in an apron stands at your shoulder with a tray of small lacquer bowls, each holding a single mouthful of soba; the instant your bowl is empty, another mouthful drops into it with a cry of *hai, jan-jan!* and it does not stop until you put the lid on. It is Iwate's idea of hospitality, and it has become Iwate's idea of a sport.
 
@@ -65,6 +69,12 @@ Both towns institutionalised it. Hanamaki's "Original Wanko Soba All-Japan Tourn
 **The rules.** Azumaya's are the ones you will hear at the table: the first bowl is eaten without condiments, to taste the soba; when the sauce builds up in your bowl you pour it into the slop bucket; condiments — tuna sashimi, grated daikon, nori, spring onion, pickles — are there to change the taste as you go; and you cannot stop until you have put the lid on while the server is watching. Lid on, contest over. Eat a hundred and you get a wooden tally plaque.
 
 **The noodle.** Ordinary soba, pre-sauced so that it can be eaten without a dipping cup. This is not a dish about the buckwheat; it is a dish about the counting.
+
+<Figure
+  src={closeLid}
+  alt="A diner putting the lid on their bowl while the server waits with the next serving"
+  caption="Close the lid, and the refills stop. Illustration."
+/>
 
 ## Why Iwate
 

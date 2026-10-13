@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/unagi-hero.webp
+heroAlt: 'Illustration of grilled eel over rice in a lacquer box, with clear soup and a dish of sansho pepper'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why is unagi so expensive?
@@ -65,6 +67,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import boxSizes from '../../../assets/eat/unagi-body.webp';
 
 Grilled eel (*kabayaki*) on rice is one of the most expensive everyday dishes in Japan, and one of the least understood by visitors. The price has a cause you can trace back to a fish 0.2 grams in weight. The grade names on the menu — *ume*, *take*, *matsu* — sound like a national system and are not. And the reason a whole country queues for eel on one summer day is an argument historians have not settled. This page is the map. The lineage pages cover the two ways of cooking it: Kantō, opened along the back and steamed, and Kansai, opened along the belly and grilled straight.
 
@@ -118,6 +122,12 @@ The figures above are kept on the price reference page and update there. On any 
 So at one shop the grade is the amount, at another the quality of the eel, at a third the number of pieces. Ask.
 
 **Where else.** On the ox day, the farm ministry notes, eel is sold in quantity at supermarkets and convenience stores as well as eel shops.
+
+<Figure
+  src={boxSizes}
+  alt="Three lacquer boxes of eel on rice in a row, from small to large, with soup and pickles"
+  caption="Three boxes, three grades. What each grade means is the shop's own rule. Illustration."
+/>
 
 ## How to order and eat it
 

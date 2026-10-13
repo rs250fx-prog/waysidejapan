@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/soba-togakushi-hero.webp
+heroAlt: 'Illustration of small bundles of soba on a round bamboo tray, a cedar forest and a shrine gate in the mist outside'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is botchi-mori?
@@ -57,6 +59,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import bundles from '../../../assets/eat/soba-togakushi-body.webp';
 
 Togakushi is a mountain, a shrine complex and a village an hour above Nagano city, at around a thousand metres, in the fog belt where buckwheat likes to grow. Its soba is served in a way no other place uses: five or six small bundles of noodles laid around a round bamboo tray like horseshoes, still wet from the water. The arrangement looks decorative and began as quality control for the gods.
 
@@ -71,6 +75,12 @@ The village tourism association's history starts in the Heian period, when buckw
 **The noodle.** A prefectural comparison of the three great soba traditions describes Togakushi's as pale green and thin — the colour of flour milled with a little of the green inner husk — against Izumo's black whole-grain noodle.
 
 **The condiment.** Spicy grated daikon (*karami daikon*) rather than wasabi, which also marks it as mountain rather than city soba.
+
+<Figure
+  src={bundles}
+  alt="A cook laying soba in small horseshoe-shaped bundles on a round bamboo tray"
+  caption="Laid out in small bundles, one by one. Illustration."
+/>
 
 ## Why Togakushi
 

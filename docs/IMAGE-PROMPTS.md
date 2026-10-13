@@ -28,120 +28,9 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Ramen
 
-### /en/eat/ramen-kurume/
-**ヒーロー** → 保存名 `ramen-kurume-hero`
-
-```
-Create one image. A large cauldron of pork bone broth simmering in a Kurume ramen shop kitchen, a cook stirring with a long paddle, steam filling the room. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-kurume-body`
-
-```
-Create one image. A cook topping up an old cauldron of broth with fresh bones and water, the level kept full instead of emptied; a ladle filling a bowl beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-sapporo/
-**ヒーロー** → 保存名 `ramen-sapporo-hero`
-
-```
-Create one image. A bowl of Sapporo miso ramen topped with stir-fried bean sprouts, corn, a pat of butter and ground pork, snow falling outside a steamy window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-sapporo-body`
-
-```
-Create one image. A cook tossing bean sprouts and ground pork in a wok, then adding miso and broth to the same wok before pouring it over noodles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-tokyo-shoyu/
-**ヒーロー** → 保存名 `ramen-tokyo-shoyu-hero`
-
-```
-Create one image. A classic Tokyo shoyu ramen: clear brown soy broth, curly thin noodles, a slice of chashu, menma, a naruto fish cake slice and spinach. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-tokyo-shoyu-body`
-
-```
-Create one image. A family tree drawn as branching noodles: one clear soy ramen bowl at the root, with branches leading to miso, tonkotsu and other bowls; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Soba
 
-### /en/eat/soba/（本文の2枚はそのまま。ヒーローのみ）
-**ヒーロー** → 保存名 `soba-hero`
-
-```
-Create one image. A quiet soba shop counter: a bamboo tray of cold soba noodles, a cup of dipping sauce, a small plate of green onion and wasabi, and a red lacquer pot of soba-yu; a buckwheat field in white flower seen through the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/soba-edo/
-**ヒーロー** → 保存名 `soba-edo-hero`
-
-```
-Create one image. A traditional Tokyo soba house interior with tatami seating and a wooden lattice, a lacquered tray of cold soba, a cup of dark dipping sauce. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `soba-edo-body`
-
-```
-Create one image. A pair of chopsticks lifting soba noodles and dipping only the lower half into dark sauce; beside it, a small standing soba counter at a station with a customer eating quickly. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/soba-izumo/
-**ヒーロー** → 保存名 `soba-izumo-hero`
-
-```
-Create one image. Izumo warigo soba: three round red lacquer dishes stacked with dark whole-grain soba, toppings of grated daikon, seaweed and green onion. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `soba-izumo-body`
-
-```
-Create one image. A hand pouring dipping sauce directly onto the top dish of stacked red lacquer soba dishes, then pouring the leftover sauce into the next dish down. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/soba-togakushi/
-**ヒーロー** → 保存名 `soba-togakushi-hero`
-
-```
-Create one image. Five small bundles of soba arranged on a round bamboo tray, a cedar forest and a mountain shrine gate in mist behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `soba-togakushi-body`
-
-```
-Create one image. A cook arranging soba into small horseshoe-shaped bundles on a bamboo tray one by one. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/soba-wanko/
-**ヒーロー** → 保存名 `soba-wanko-hero`
-
-```
-Create one image. Wanko soba: a server standing beside a diner, tossing a small mouthful of soba into the diner's bowl, a stack of empty little bowls growing on the table. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `soba-wanko-body`
-
-```
-Create one image. A diner closing the lid on a small bowl to signal they are finished, the server pausing with the next serving in hand. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Sushi
-
-### /en/eat/sushi-saba/
-**ヒーロー** → 保存名 `sushi-saba-hero`
-
-```
-Create one image. Kyoto saba-zushi: a whole cured mackerel laid over a log of rice wrapped in kombu, sliced, on a lacquer plate; a Kyoto townhouse lattice behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-saba-body`
-
-```
-Create one image. A traveler on an old mountain road carrying salted mackerel on a frame on their back toward Kyoto, wooded hills around them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Teishoku
 
@@ -183,8 +72,6 @@ Create one image. A traditional Japanese breakfast at an inn: rice, miso soup, g
 ```
 Create one image. A guest at a ryokan seated on a cushion, lifting the lid of a miso soup bowl, many small breakfast dishes arranged in front of them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Tonkatsu
 
 ## Eat — Udon
 
@@ -242,59 +129,7 @@ Create one image. A pair of hands kneading udon dough by stepping on it wrapped 
 
 ## Eat — Unagi
 
-### /en/eat/unagi/
-**ヒーロー** → 保存名 `unagi-hero`
-
-```
-Create one image. An unadon in a lacquered box: grilled eel glazed in sweet sauce over rice, a small dish of sansho pepper and a bowl of clear eel liver soup. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `unagi-body`
-
-```
-Create one image. Three lacquer eel boxes of increasing size in a row, showing the grades by how much eel covers the rice. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/unagi-kansai/
-**ヒーロー** → 保存名 `unagi-kansai-hero`
-
-```
-Create one image. Hitsumabushi: grilled eel chopped over rice in a round wooden tub, with condiments and a small pot of dashi beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `unagi-kansai-body`
-
-```
-Create one image. An eel being opened along the belly and grilled directly over charcoal without steaming, crisp on the outside. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/unagi-kanto/
-**ヒーロー** → 保存名 `unagi-kanto-hero`
-
-```
-Create one image. A Tokyo eel restaurant with a cook fanning skewered eel over charcoal, smoke rising, a lacquer box of soft glazed eel ready on the counter. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `unagi-kanto-body`
-
-```
-Create one image. Three steps of Kanto-style eel: opening it along the back, steaming the fillets in a bamboo basket, then glazing and grilling them over charcoal. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Wagashi
-
-### /en/eat/wagashi/
-**ヒーロー** → 保存名 `wagashi-hero`
-
-```
-Create one image. An assortment of seasonal wagashi on a lacquer tray: a cherry blossom nerikiri, a chestnut sweet, a translucent summer jelly, beside a bowl of matcha. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagashi-body`
-
-```
-Create one image. Four wagashi representing the four seasons in a row: a pink spring blossom, a blue summer water jelly, an orange autumn leaf, a white winter snow sweet. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/wagashi-imagawayaki/
 **ヒーロー** → 保存名 `wagashi-imagawayaki-hero`
