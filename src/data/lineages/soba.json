@@ -28,15 +28,15 @@
       "key": "tachigui",
       "name": "Standing soba",
       "nameJa": "立ち食いそば",
-      "origin": { "place": "Tokyo stations", "era": "chains from 1966" },
+      "origin": { "place": "Railway stations; Tokyo chains", "era": "station soba known by c. 1897 (one theory); chains from 1966" },
       "cells": {
-        "flour": "Mostly wheat with some buckwheat; made for speed",
-        "serving": "Hot, in a bowl, with kakiage",
-        "sauce": "Dark broth",
-        "howToEat": "Standing, under five minutes, ¥390–450"
+        "flour": "—",
+        "serving": "At a counter, standing: hot kake or cold mori, tempura soba on the same menu",
+        "sauce": "Kanto stock is mostly bonito-based; two counters of one Shinagawa caterer make it to different strengths",
+        "howToEat": "Often between trains; Fuji Soba kake ¥450 tax included (Oct 2026)"
       },
       "where": ["Tokyo"],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "izumo",
@@ -85,9 +85,14 @@
       "name": "Jindaiji (Tokyo)",
       "nameJa": "深大寺そば",
       "origin": { "place": "Chōfu, Tokyo", "era": "Edo period" },
-      "cells": { "flour": "—", "serving": "—", "sauce": "—", "howToEat": "—" },
+      "cells": {
+        "flour": "Historically flour paid to the temple by farmers in place of rice; stone-milled",
+        "serving": "Mori (seiro at some shops, zaru with nori) and hot bowls; tempura soba usually with prawn",
+        "sauce": "Dipping sauce, thinned with soba-yu after the meal",
+        "howToEat": "Spring onion and wasabi, shichimi to taste; many shops close with the temple gate at about 5 p.m."
+      },
       "where": ["Chōfu"],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "hegi",
