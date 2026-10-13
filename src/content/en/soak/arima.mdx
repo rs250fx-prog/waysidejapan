@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/arima-hero.webp
+heroAlt: 'Illustration of a narrow stone lane in an old hot spring town in autumn, wooden houses on both sides and steam rising from a stone source'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: What are kinsen and ginsen?
@@ -108,6 +110,9 @@ sources:
     url: 'https://www.japan.travel/en/see-and-do/onsen/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import twoWaters from '../../../assets/soak/arima-body.webp';
+
 Arima Onsen sits in Kita ward of Kobe, in a valley at the foot of the northern side of the Rokko mountains, as its tourism association puts it. It is known for two kinds of water — a brown *kinsen*, "gold spring", and a clear *ginsen*, "silver spring" — and, among geologists, for being hot with no volcano nearby. This page covers where the water comes from, what the town’s sources say about its age, and how its two public bathhouses work. The ten official spring types and how to read the analysis sign are explained in the separate guide to onsen water types, and what free-flowing water means in the piece on *kakenagashi*; the Honshu overview puts Arima alongside the rest of Kansai.
 
 ## Where it came from
@@ -168,6 +173,12 @@ Kobe city publishes the legally required notice for the Tansan source, at Sugiga
 ### Salt, and how salty
 
 The same 2015 English article says kinsen is 1.5 to 2 times as salty as seawater. The University of Tsukuba’s 2024 release says "more than twice". I give both.
+
+<Figure
+  src={twoWaters}
+  alt="Two empty outdoor baths side by side, one of cloudy reddish-brown water and one of clear water, wooden buckets on the edge"
+  caption="Kinsen and ginsen: the two kinds of water, reddish-brown and clear. Illustration."
+/>
 
 ## Why here: hot water without a volcano
 
