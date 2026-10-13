@@ -1,0 +1,238 @@
+/en/column/chopsticks-in-japan/ | guide | [kanto, kansai] | Chopsticks in Japan: why only chopsticks, the five moves called bad form, and what the off
+/en/column/eating-in-japan-allergies/ | guide | [kansai, kanto] | Food allergies and gluten in Japan: how often restaurants are asked, the official pictogra
+/en/column/eating-in-japan-vegetarian/ | guide | [kanto] | Vegetarian and vegan in Japan: what the word leaves open, the 2022 national standards, and
+/en/column/eating-out-with-children-in-japan/ | guide | [kanto, tohoku] | Eating out with children in Japan: family restaurants, the okosama lunch, allergy labels, 
+/en/column/eating-while-walking-in-japan/ | guide | [kanto, kansai] | Eating while walking in Japan: what Kamakura and Kyoto actually ask, and why bins are scar
+/en/column/food-souvenirs-omiyage/ | guide | [tokai, tohoku, kansai, kanto] | Food souvenirs from Japan: where to buy them, how to read the date on the box, and what yo
+/en/column/how-meal-ticket-machines-work/ | guide | [kanto, kansai] | Meal ticket machines: why some Japanese restaurants make you pay before you sit
+/en/column/japanese-table-customs/ | guide | [kanto, kansai] | At the Japanese table: itadakimasu, the hand towel, shared plates and lifting your bowl
+/en/column/paying-at-restaurants-in-japan/ | guide | [kanto, kyushu] | Paying at Japanese restaurants: cards, cash-only places, when you pay and splitting the bi
+/en/column/queues-and-shared-tables/ | guide | [kanto] | Queues, waiting lists and how long to stay at a Japanese restaurant
+/en/column/reading-menu-prices-in-japan/ | guide | [kanto, kansai] | Reading a Japanese menu price: tax included, service charges, market price and no tipping
+/en/column/restaurant-reservations-in-japan/ | guide | [kanto] | Restaurant reservations in Japan: how to book, why no-shows matter, and what the law says 
+/en/column/roadside-stations-and-farm-stands/ | guide | [tohoku, hokuriku, kanto, chubu, chugoku] | Roadside stations and farm stands in Japan: what a michi-no-eki is, how the system began, 
+/en/column/slurping-noodles/ | guide | [kanto] | Slurping noodles in Japan: what the official sources say, the explanations given, and the 
+/en/column/tourist-prices-at-famous-markets/ | guide | [osaka, kyoto, kanazawa] | Japan's famous food markets, and the price a local would actually pay
+/en/eat/bkyu-korokke/ | lineage | [kanto, tokai] | Korokke: how a French croquette became Japan’s butcher-counter potato snack, and the song 
+/en/eat/bkyu/ | dish | [tohoku, kanto, chubu, tokai, kyushu] | B-grade local food: what “B-kyū gurume” means, how the B-1 Grand Prix works, and the fried
+/en/eat/champon-sara-udon/ | lineage | [kyushu] | Sara udon: champon without the soup, the thick noodle and the thin, and the sauce or vineg
+/en/eat/champon/ | dish | [kyushu] | Champon: Nagasaki’s noodles stewed in their soup, the 1899 restaurant, and three stories f
+/en/eat/chicken-karaage/ | lineage | [kyushu, shikoku, kanto] | Karaage: a frying method with several origin stories, and why Oita is its home
+/en/eat/chicken-mizutaki/ | lineage | [kyushu] | Hakata mizutaki: a chicken hotpot with a founder, a broader origin story, and an order to 
+/en/eat/chicken/ | dish | [kyushu, tokai, tohoku, kanto] | Chicken in Japan: what jidori legally means, how the parts are named, and where karaage an
+/en/eat/conbini-oden/ | lineage | [kanto, kansai, tohoku, tokai] | Konbini oden: the winter pot by the counter, what a piece costs, and why it changes by reg
+/en/eat/conbini-onigiri/ | lineage | [kanto, kansai, kyushu] | Konbini onigiri: how the nori stays crisp, why you should not refrigerate it, and what it 
+/en/eat/conbini/ | dish | [kanto, kansai] | Konbini food: how Japan’s convenience stores work, what the tax line means, and how to pay
+/en/eat/dashi-east-west/ | lineage | [kansai, kanto] | Kombu in Kansai, bonito in Kantō: the east–west dashi split and the two explanations for i
+/en/eat/dashi-iriko-ago/ | lineage | [shikoku, kyushu] | Iriko and ago: the dried-sardine stock of Sanuki udon and the flying-fish stock of Kyushu
+/en/eat/dashi/ | dish | [kansai, kanto, shikoku, kyushu] | Dashi: the stock under Japanese food, what umami is, and what vegetarians need to know
+/en/eat/donburi-gyudon/ | lineage | [kanto] | Gyūdon: the beef bowl from a fish market, and how the three big chains differ
+/en/eat/donburi-katsudon/ | lineage | [kanto, hokuriku, chubu] | Katsudon: three origin claims, two ways to make it, and the towns where it means sauce
+/en/eat/donburi/ | dish | [kanto, hokuriku, chubu, hokkaido] | Donburi: the bowl, the rice bowl dishes, and why "katsudon" means different things in diff
+/en/eat/drinks-beer-highball/ | lineage | [kanto, kansai, hokkaido] | Beer and the highball in Japan: three names on one shelf, a tax change, and a revival buil
+/en/eat/drinks-shochu/ | lineage | [kyushu, kanto] | Shōchū: two stills, many ingredients, and why the islands each have their own
+/en/eat/drinks/ | dish | [kyushu, kanto, kansai, hokkaido] | Drinks in Japan: how the law sorts alcohol, why the drinking age is still 20, and what you
+/en/eat/food-shopping-depachika/ | lineage | [kanto, kansai] | Depachika: Japan’s department store food floors, what sells there, and what the record doe
+/en/eat/food-shopping-ekiben/ | lineage | [kanto, kansai] | Ekiben: the station bento, its competing birthplaces, what it costs, and why most are now 
+/en/eat/food-shopping/ | dish | [kanto, kansai] | Buying food to eat in Japan: department store food floors, ekiben and supermarket delis
+/en/eat/gyoza-hamamatsu/ | lineage | [tokai] | Hamamatsu gyoza: the wheel on the plate, the bean sprouts in the middle, and the survey it
+/en/eat/gyoza-utsunomiya/ | lineage | [kanto] | Utsunomiya gyoza: a town brand built on a statistic, and what the plate costs there
+/en/eat/gyoza/ | dish | [kanto, tokai, kansai, kyushu] | Gyoza: why Japan fries a dumpling China boils, what a plate costs, and what the town rival
+/en/eat/izakaya-kakuuchi/ | lineage | [kyushu, kanto] | Kaku-uchi: drinking inside a liquor shop, and why it is not a bar
+/en/eat/izakaya-otoshi/ | lineage | [kanto, kansai, kyushu] | Otoshi: the izakaya dish you did not order, and the other lines on the bill
+/en/eat/izakaya-snack/ | lineage | [kanto, hokkaido] | Snack bars in Japan: what the name covers, the line called settai, and the warnings for vi
+/en/eat/izakaya-yakitori/ | lineage | [kanto, hokkaido, shikoku] | Yakitori: salt or tare, what the cuts are, and the towns where yakitori is not chicken
+/en/eat/izakaya/ | dish | [kanto, kansai, kyushu] | Izakaya: how a Japanese pub works, from the door to the bill
+/en/eat/kaiseki-shojin/ | lineage | [kansai, kanto] | Shōjin ryōri: temple food, the monks’ meal and the guests’ meal, and why it is not automat
+/en/eat/kaiseki-tea/ | lineage | [kansai, kanto, tokai] | Tea kaiseki and banquet kaiseki: rice first or rice last, and why
+/en/eat/kaiseki/ | dish | [kansai, kanto, tokai] | Kaiseki: tea meal, banquet, temple food and the box, and where each form came from
+/en/eat/konamono-monja/ | lineage | [kanto] | Monjayaki: Tsukishima’s runny batter dish, the ring of cabbage, and two stories about wher
+/en/eat/konamono-okonomiyaki/ | lineage | [kansai, chugoku] | Okonomiyaki: Osaka mixes, Hiroshima layers, and why the official histories disagree
+/en/eat/konamono-takoyaki/ | lineage | [kansai] | Takoyaki and Akashi-yaki: the octopus ball, its soft-egg cousin, and a story told only in 
+/en/eat/konamono/ | dish | [kansai, chugoku, kanto] | Konamono: okonomiyaki, takoyaki and Akashi-yaki — what they are, where they came from, and
+/en/eat/kyodo-ryori-akita/ | lineage | [tohoku] | Akita’s local dishes: kiritanpo, shottsuru and the towns that argue over the birthplace
+/en/eat/kyodo-ryori-chubu/ | lineage | [chubu, tokai] | Chūbu’s local dishes: hōtō, oyaki, gohei-mochi, hoba miso, sakura ebi and miso-nikomi udon
+/en/eat/kyodo-ryori-hokkaido/ | lineage | [hokkaido] | Hokkaido’s local dishes: Ishikari-nabe, sanpei-jiru, ruibe, butadon and zangi
+/en/eat/kyodo-ryori-hokuriku/ | lineage | [hokuriku] | Hokuriku’s local dishes: hegi soba, masu-zushi, jibu-ni, kabura-zushi and oroshi soba acro
+/en/eat/kyodo-ryori-kanto/ | lineage | [kanto] | Kantō’s local dishes: monkfish, shimotsukare, okirikomi, festival futomaki, Fukagawa-meshi
+/en/eat/kyodo-ryori-kinki/ | lineage | [kansai] | Kinki’s local dishes: Kyoto pickles, Senba-jiru, botan-nabe, tea gruel, funa-zushi and Ise
+/en/eat/kyodo-ryori-kyushu/ | lineage | [kyushu] | Kyushu’s local dishes: mizutaki, karashi renkon, toriten, hiyajiru and keihan across seven
+/en/eat/kyodo-ryori-okinawa/ | lineage | [kyushu] | Okinawa’s local dishes: rafute, Okinawa soba without buckwheat, and pork from head to tail
+/en/eat/kyodo-ryori-sanin/ | lineage | [chugoku] | San’in’s local dishes: tofu chikuwa, crab miso soup, Izumo soba, shijimi and uzume-meshi
+/en/eat/kyodo-ryori-setouchi/ | lineage | [setouchi] | Setouchi’s local dishes: festival sushi, sea bream rice, fugu and kawara soba around the I
+/en/eat/kyodo-ryori-shikoku/ | lineage | [shikoku] | Shikoku’s local dishes: Iya soba, Handa sōmen, katsuo tataki and sawachi in Tokushima and 
+/en/eat/kyodo-ryori-tohoku/ | lineage | [tohoku] | Tohoku’s local dishes: senbei-jiru, hittsumi, harako-meshi, imoni and kozuyu across five p
+/en/eat/kyodo-ryori/ | dish | [tohoku, kyushu] | Kyōdo ryōri: Japan’s local dishes, who decides what counts, and the two official lists
+/en/eat/market-omicho-hakodate/ | lineage | [hokuriku, hokkaido] | Ōmichō and the Hakodate morning market: town markets, seafood bowls, and what the menus ac
+/en/eat/market-toyosu/ | lineage | [kanto] | Toyosu market: what replaced Tsukiji, what visitors can see, and the difference between in
+/en/eat/market/ | dish | [kanto, hokuriku, hokkaido] | Fish markets and seafood bowls: how a Japanese market works, and what visitors can actuall
+/en/eat/meat-basashi/ | lineage | [kyushu, chubu, tohoku] | Basashi: raw horse in Kumamoto, Yamanashi and Aizu, and why deer and boar are never eaten 
+/en/eat/meat-horumon/ | lineage | [kyushu, kansai, kanto] | Horumon and motsu: offal in Japan, the names Kansai and Kanto use, Hakata motsunabe, and t
+/en/eat/meat-jingisukan/ | lineage | [hokkaido] | Jingisukan: Hokkaido’s grilled lamb, the domed pan, and why most of the meat is imported
+/en/eat/meat-pork/ | lineage | [kyushu, hokkaido] | Japanese pork: Kagoshima black pork, the Obihiro pork bowl, and Nagasaki’s kakuni
+/en/eat/meat/ | dish | [hokkaido, kyushu, tohoku, chubu] | Meat beyond wagyu: black pork, Hokkaido lamb, raw horse, and the deer you must cook throug
+/en/eat/nabe-miso/ | lineage | [tokai, kansai, chubu, shikoku, kyushu] | Miso soup and regional miso: Aichi red, Kyoto white, Shinshu and the barley miso of the so
+/en/eat/nabe-oden/ | lineage | [kanto, kansai, tokai, hokuriku] | Oden: from miso-grilled tofu to Tokyo soy, Kansai kantō-daki, and the odens of Shizuoka, K
+/en/eat/nabe/ | dish | [hokkaido, tohoku, kanto, chubu, tokai, hokuriku, kansai, shikoku, kyushu] | Soups and hotpots: miso soup, oden and nabe, and why the seasoning tells them apart
+/en/eat/ramen-hakata/ | lineage | [kyushu] | Hakata ramen: why the noodles are thin, why you order a refill, and what Fukuoka actually 
+/en/eat/ramen-hiyashi-chuka/ | lineage | [tohoku, kanto] | Hiyashi chūka: Japan’s chilled ramen, and the two restaurants that claim it
+/en/eat/ramen-iekei/ | lineage | [kanto] | Yokohama iekei ramen: one shop in 1974, three hundred successors, and a bowl you order in 
+/en/eat/ramen-kagoshima/ | lineage | [kyushu] | Kagoshima ramen: the Kyushu bowl that owes nothing to Kurume, with pickles and tea on the 
+/en/eat/ramen-kitakata/ | lineage | [tohoku] | Kitakata ramen: a town of 40,000 that eats noodles for breakfast
+/en/eat/ramen-kumamoto/ | lineage | [kyushu] | Kumamoto ramen: Kurume’s descendant with chicken in the pot and black garlic oil on top
+/en/eat/ramen-kurume/ | lineage | [kyushu] | Kurume ramen: the cauldron that started Kyushu tonkotsu, and the soup that is never emptie
+/en/eat/ramen-sapporo/ | lineage | [hokkaido] | Sapporo ramen: the miso bowl is younger than your parents, and the corn is optional
+/en/eat/ramen-tokyo-shoyu/ | lineage | [kanto] | Tokyo soy ramen: the clear brown bowl that everything else diverged from
+/en/eat/ramen-tsukemen/ | lineage | [kanto] | Tsukemen: dipping ramen, the staff meal it grew from, and the shops that each claim the or
+/en/eat/ramen/ | dish | [kanto, kyushu, tohoku, hokkaido] | Ramen: what it is, why a bowl costs what it does, and the lineages behind the word
+/en/eat/rice-curry/ | lineage | [kanto, tokai, hokuriku] | Japanese curry rice: how it came through Britain, why the navy ate it, and what a plate co
+/en/eat/rice-onigiri/ | lineage | [hokuriku, kansai, hokkaido, tohoku, tokai, kanto] | Onigiri: three origin stories, two names, and the local rice balls you only find in one re
+/en/eat/rice-sides-mochi/ | lineage | [kanto, kansai, tohoku, hokkaido, chubu, shikoku, kyushu] | Mochi, zōni and sekihan: square or round, clear or white miso, and the New Year choking wa
+/en/eat/rice-sides-takikomi/ | lineage | [shikoku, kansai, kanto] | Takikomi gohan and kamameshi: rice cooked with things in it, from Ehime’s two tai-meshi to
+/en/eat/rice-sides-tofu-natto/ | lineage | [kanto, tohoku, kansai] | Tofu and nattō: how momen and kinugoshi differ, and why Mito’s nattō beans are small
+/en/eat/rice-sides-tsukemono/ | lineage | [kansai, kanto, tohoku, chubu, kyushu] | Pickles, tsukudani and furikake: the small things eaten with rice, and the stories behind 
+/en/eat/rice-sides/ | dish | [kanto, kansai, tohoku, hokkaido, shikoku, chugoku, chubu, kyushu] | Rice and what goes with it: pickles, nattō, mochi and mixed rice in Japan, and why each pl
+/en/eat/rice/ | dish | [hokkaido, tohoku, kanto, chubu, hokuriku, kyushu] | Rice in Japan: what the bag label means, why Koshihikari is everywhere, and how the price 
+/en/eat/sake-nada-fushimi/ | lineage | [kansai] | Nada and Fushimi: two sake towns built on water, and what you can taste there today
+/en/eat/sake-niigata/ | lineage | [hokuriku] | Niigata sake: what tanrei means, why snow matters, and where to taste a whole prefecture
+/en/eat/sake/ | dish | [kansai, hokuriku, kanto] | Sake: what the label is telling you, why it is served hot or cold, and where the regions d
+/en/eat/sashimi-shime/ | lineage | [hokuriku, shikoku] | Kobujime and shimesaba: raw fish cured with kombu or vinegar, and what curing does not do
+/en/eat/sashimi-shusse-uo/ | lineage | [kanto, kansai, hokuriku] | Promotion fish: why yellowtail and sea bass change their names as they grow, and why the n
+/en/eat/sashimi/ | dish | [kanto, kansai, hokuriku, shikoku] | Sashimi: how it is cut, what the garnishes do and do not do, and what the label tells you
+/en/eat/seafood-anago-hamo/ | lineage | [kanto, chugoku, setouchi, kansai] | Anago and hamo: simmered in Tokyo, grilled on Miyajima, bone-cut in Kyoto
+/en/eat/seafood-fugu/ | lineage | [chugoku, kyushu] | Fugu in Japan: the toxin, the licence, and why Shimonoseki calls it fuku
+/en/eat/seafood-himono/ | lineage | [kanto, hokkaido] | Himono: why Japan dries its fish, and the four ways it is done
+/en/eat/seafood-oyster-crab/ | lineage | [setouchi, chugoku, tohoku, hokuriku] | Oysters and snow crab in Japan: harvest waters, port tags, and the rules behind the names
+/en/eat/seafood-saba-katsuo-maguro/ | lineage | [kyushu, hokuriku, shikoku, tokai, kanto, tohoku, chugoku] | Mackerel, bonito and tuna in Japan: Seki saba, Kochi tataki, and the bluefin quota
+/en/eat/seafood-salmon/ | lineage | [hokkaido, tohoku, hokuriku] | Salmon, ikura and sujiko in Japan: salted at the port, eaten head to tail
+/en/eat/seafood/ | dish | [hokkaido, tohoku, hokuriku, kanto, kansai, chugoku, setouchi, kyushu] | Japanese seafood beyond sushi and sashimi: salted, dried, licensed and carried alive
+/en/eat/seasonal-hinamatsuri/ | lineage | [kanto, kansai, hokkaido] | Hinamatsuri food: scattered sushi, clam soup, diamond mochi and hina-arare, and why Kanto 
+/en/eat/seasonal-new-year/ | lineage | [kanto, kansai] | New Year food in Japan: what each dish in osechi is said to mean, and why seven herbs go i
+/en/eat/seasonal-setsubun/ | lineage | [kansai, hokkaido] | Setsubun food: roasted beans, grilled sardines and the ehōmaki roll, and the several stori
+/en/eat/seasonal/ | dish | [kanto, kansai, hokkaido, tohoku, tokai, chugoku, kyushu] | Food for the calendar: what Japan eats at New Year, Setsubun, Hinamatsuri and the rest of 
+/en/eat/seasoning-egg/ | lineage | [kanto, kansai] | Eggs in Japan: why they are sold to be eaten raw, what 320 a year means, and egg on rice
+/en/eat/seasoning-shoyu/ | lineage | [kanto, kansai, chubu, chugoku, shikoku, setouchi, kyushu] | Soy sauce by region: Noda, Choshi, Tatsuno, Shodoshima and Yuasa, and the five types they 
+/en/eat/seasoning/ | dish | [kanto, kansai, chubu, chugoku, shikoku, kyushu] | Japanese seasonings: the basic five, how soy sauce is brewed, and what its five types are 
+/en/eat/shun-autumn-winter/ | lineage | [kansai, chubu, hokuriku, kanto, tohoku, chugoku] | Autumn and winter in season: matsutake, saury, new rice, new soba, chestnuts, mikan, and t
+/en/eat/shun-spring-summer/ | lineage | [kyushu, shikoku] | Spring and summer in season: bamboo shoots moving north, bitter mountain greens, cooling g
+/en/eat/shun/ | dish | [kanto, kansai, kyushu, chubu] | Shun: what “in season” means in Japanese food, why the shops sell the season early, and wh
+/en/eat/soba-edo/ | lineage | [kanto] | Edo soba: three old houses, a dark sauce you only half-dip, and the standing counter that 
+/en/eat/soba-izumo/ | lineage | [chugoku] | Izumo soba: the dark whole-grain noodle in three red dishes, and the one place you pour th
+/en/eat/soba-togakushi/ | lineage | [chubu] | Togakushi soba: five little bundles on a bamboo tray, from a shrine in the mountains above
+/en/eat/soba-wanko/ | lineage | [tohoku] | Wanko soba: the Iwate meal where a server keeps refilling your bowl until you close the li
+/en/eat/soba/ | dish | [kanto, chubu, chugoku, tohoku] | Soba: the buckwheat noodle, its three Edo houses, and why 70% of it is grown abroad
+/en/eat/somen-banshu/ | lineage | [kansai] | Banshū sōmen and Ibo no Ito: Hyōgo’s hand-stretched noodle, its records and the rainy-seas
+/en/eat/somen-miwa/ | lineage | [kansai] | Miwa sōmen: Nara’s hand-stretched noodle, its legend, its grades and its GI
+/en/eat/somen/ | dish | [kansai] | Sōmen: a fine hand-stretched noodle, made in winter, eaten in summer
+/en/eat/sushi-edomae/ | lineage | [kanto] | Edomae sushi: the Tokyo counter, the cured fish behind the word "raw", and what lunch and 
+/en/eat/sushi-funa/ | lineage | [kansai] | Funa-zushi: the fermented carp of Lake Biwa, the ancestor of all sushi, and why it smells 
+/en/eat/sushi-kaiten/ | lineage | [kansai, kanto] | Conveyor-belt sushi: a brewery line in Osaka, a patent that ran out, and the ¥110 plate
+/en/eat/sushi-kakinoha/ | lineage | [kansai] | Kakinoha-zushi: salted mackerel on rice in a persimmon leaf, the mountain festival food of
+/en/eat/sushi-kanazawa/ | lineage | [hokuriku] | Kanazawa sushi: the city that spends most on sushi in Japan, and its conveyor shops that d
+/en/eat/sushi-masu/ | lineage | [hokuriku] | Toyama masu-zushi: a round cake of trout and rice that a station kiosk made famous
+/en/eat/sushi-osaka-hako/ | lineage | [kansai] | Osaka box sushi: the pressed, sweetened, soy-free sushi that Tokyo forgot
+/en/eat/sushi-saba/ | lineage | [kansai] | Kyoto saba-zushi: a whole cured mackerel on a log of rice, carried over the mountains sinc
+/en/eat/sushi/ | dish | [kanto, kansai, hokuriku] | Sushi: a fermented fish that became a street snack, a conveyor belt, and the most expensiv
+/en/eat/sweets-amamidokoro/ | lineage | [kanto, kansai] | Amamidokoro: Japan’s sweet shops, the anmitsu credited to Ginza, and why zenzai changes me
+/en/eat/sweets-conbini/ | lineage | [kanto, tokai, chubu, hokuriku, chugoku, tohoku] | Convenience-store sweets: what a roll cake, cream puff or pudding costs, and how the chain
+/en/eat/sweets-crepe/ | lineage | [kanto] | Harajuku crepes: how a French plate became a paper-wrapped walking snack, by Marion Crepes
+/en/eat/sweets-yakiimo/ | lineage | [kanto] | Yaki-imo: Edo’s roast sweet potato, the “thirteen ri” sign, and why beni haruka is stored 
+/en/eat/sweets-yogashi/ | lineage | [kanto] | Yōgashi: the strawberry shortcake, the pudding à la mode and the fruit parlour, as the com
+/en/eat/sweets/ | dish | [kanto, kansai, tokai, chugoku] | Sweets beyond wagashi: sweet shops, Japanese-made Western cakes, crepes, roast potatoes an
+/en/eat/tea-kakigori-kissaten/ | lineage | [kanto, kansai, tokai] | Kakigori and the kissaten: natural ice in Nagatoro, and how the Japanese coffee house rose
+/en/eat/tea-regions/ | lineage | [kansai, tokai, kyushu] | Tea regions of Japan: Uji and Nishio matcha, Yame gyokuro, Shizuoka sencha, and the prefec
+/en/eat/tea/ | dish | [kansai, tokai, kyushu, kanto] | Japanese tea: what shade does to the leaf, why the bottle overtook the teapot, and what a 
+/en/eat/teishoku-morning/ | lineage | [tokai, kanto] | Morning: the free breakfast that comes with a coffee in Nagoya, and the beef-bowl chains’ 
+/en/eat/teishoku-washoku-breakfast/ | lineage | [kanto] | The Japanese breakfast: rice, miso soup, fish and many small dishes, and where to find it
+/en/eat/teishoku/ | dish | [kanto, tokai] | Teishoku: the Japanese set meal, the shape behind it, and the rice you can refill
+/en/eat/tonkatsu-kushikatsu/ | lineage | [kansai] | Kushikatsu: Osaka’s fried skewers, the shared sauce, and why you dip only once
+/en/eat/tonkatsu-miso-katsu/ | lineage | [tokai] | Miso-katsu: Nagoya’s pork cutlet in bean-miso sauce, and the three ways it reaches the tab
+/en/eat/tonkatsu/ | dish | [kanto, tokai, kansai] | Tonkatsu: how a European cutlet became a Japanese set meal, and what the menu words mean
+/en/eat/udon-dagojiru/ | lineage | [kyushu] | Dagojiru and dangojiru: Kyushu’s flour-dumpling soups, Kumamoto’s five kinds and Ōita’s
+/en/eat/udon-hakata/ | lineage | [kyushu] | Hakata udon: the soft noodle Fukuoka eats instead of ramen, with burdock on top
+/en/eat/udon-hoto/ | lineage | [chubu] | Hōtō: Yamanashi’s flat noodle simmered raw in miso, and why wheat beat rice there
+/en/eat/udon-kishimen/ | lineage | [tokai] | Kishimen: Aichi’s flat udon, its strong broth, and the cold “koro” of summer
+/en/eat/udon-osaka/ | lineage | [kansai] | Osaka udon: the pale kelp broth, the fried tofu that started it, and why tanuki means some
+/en/eat/udon-sanuki/ | lineage | [setouchi] | Sanuki udon: the one noodle in Japan with a written standard, and the prefecture that call
+/en/eat/udon/ | dish | [setouchi, kyushu, kansai] | Udon: the plain wheat noodle that every region of Japan eats differently
+/en/eat/unagi-kansai/ | lineage | [kansai, tokai] | Kansai-style eel: opened along the belly, grilled without steaming, and Nagoya’s hitsumabu
+/en/eat/unagi-kanto/ | lineage | [kanto] | Kantō-style eel: opened along the back, steamed, then grilled — and the three explanations
+/en/eat/unagi/ | dish | [kanto, kansai, tokai, kyushu] | Unagi: why eel costs what it does, what the grades mean, and the summer day Japan eats it
+/en/eat/wagashi-imagawayaki/ | lineage | [kanto, kansai, chugoku, kyushu] | Imagawayaki, ōbanyaki, kaitenyaki: one bean-filled griddle cake, a different name in every
+/en/eat/wagashi-yokan/ | lineage | [kansai, kanto, kyushu] | Yōkan: the bean-paste bar that began as mutton soup, keeps for a year, and fed an army
+/en/eat/wagashi/ | dish | [kansai, kanto, kyushu] | Wagashi: Japanese sweets, how the seasons get into them, and how to keep them
+/en/eat/wagyu-kobe/ | lineage | [kansai] | Kobe beef: the strictest beef certification in Japan, about 7,000 animals a year, and the 
+/en/eat/wagyu-matsusaka/ | lineage | [tokai] | Matsusaka beef: virgin heifers, a defined valley, and the house that made the name with su
+/en/eat/wagyu-omi/ | lineage | [kansai] | Ōmi beef: the oldest beef in Japan, sent to the shogun as medicine and sold as Kobe beef t
+/en/eat/wagyu-shabu/ | lineage | [kansai, kanto] | Shabu-shabu: the swish-swish hotpot, and why it is the all-you-can-eat form of wagyu
+/en/eat/wagyu-steak/ | lineage | [kansai, kanto, chubu] | Steak and teppanyaki in Japan: a chef at the griddle, a steak sold by the gram, and the na
+/en/eat/wagyu-sukiyaki/ | lineage | [kanto, kansai] | Sukiyaki: the beef hotpot that made Japan eat beef, and the east–west argument about the b
+/en/eat/wagyu-tajima/ | lineage | [kansai] | Tajima cattle: the closed bloodline behind Kobe beef, and the seed stock of Japanese Black
+/en/eat/wagyu-yakiniku/ | lineage | [kansai, kanto] | Yakiniku: a Korean-Japanese dish from the black markets, a smokeless grill, and the ¥3,000
+/en/eat/wagyu-yonezawa/ | lineage | [tohoku] | Yonezawa beef: the Yamagata brand an English teacher took to Yokohama in 1875
+/en/eat/wagyu/ | dish | [kansai, kanto, tohoku] | Wagyu: what the word legally means, what A5 does and does not tell you, and why the sign i
+/en/eat/western-burger/ | lineage | [kanto, kyushu] | Hamburgers in Japan: Sasebo’s navy-base story, the 1971 Ginza opening and the teriyaki bur
+/en/eat/western-dairy/ | lineage | [hokkaido, kanto] | Milk in Japan: a Meiji campaign, school lunch, strict labels and a shipload from Hokkaido
+/en/eat/western-italian/ | lineage | [kanto, kyushu] | Napolitan, pasta and pizza in Japan: a hotel’s story, a pasta timeline and a delivery chai
+/en/eat/western-machichuka/ | lineage | [kanto, kansai] | Machi-chūka: Japan’s neighbourhood Chinese restaurants, tenshinhan and the chain price
+/en/eat/western-pan/ | lineage | [kanto] | Japanese bread: anpan, curry bread and the legal line between shokupan and kashi-pan
+/en/eat/western-yoshoku/ | lineage | [kanto, kansai] | Yōshoku: Western cooking made Japanese, from Ginza’s Rengatei to an Osaka omurice shop
+/en/eat/western/ | dish | [kanto, kyushu, hokkaido] | Western foods made Japanese: Napolitan, teriyaki burgers and a nation of milk drinkers
+/en/eat/yakisoba-fujinomiya/ | lineage | [tokai] | Fujinomiya yakisoba: a noodle made to keep, pork crackling, sardine powder, and two gold m
+/en/eat/yakisoba-yokote/ | lineage | [tohoku] | Yokote yakisoba: thick boiled noodles, a soft fried egg, and a name protected by trademark
+/en/eat/yakisoba/ | dish | [kanto, tohoku, tokai] | Yakisoba: fried noodles with Worcestershire sauce, the festival stall, and the towns that 
+/en/eat/yatai-hakata/ | lineage | [kyushu] | Fukuoka’s yatai: how about 100 street stalls survive under Japan’s first stall ordinance
+/en/eat/yatai-matsuri/ | lineage | [kansai, kanto] | Festival stalls: what the rules let a roten sell, who the tekiya are, and why takoyaki fit
+/en/eat/yatai/ | dish | [kyushu, kanto, kansai] | Yatai: Japan’s food stalls, from Edo’s fire rules to Fukuoka’s licensed street kitchens
+/en/rail/kansai-12-days-setouchi/ | guide | [kansai, setouchi, hiroshima, onomichi, matsuyama] | Twelve days from Kansai Airport: the Setouchi route, and which seven days the pass should 
+/en/rail/kix-to-hiroshima/ | guide | [kansai, hiroshima, setouchi] | Kansai Airport to Hiroshima: the three ways, and the one number that decides it
+/en/rail/setouchi-area-pass/ | guide | [setouchi, hiroshima, onomichi] | Setouchi Area Pass: costs, coverage and a seven-day route
+/en/soak/acidic-sulphur-radioactive-springs/ | guide | [japan] | Acidic, sulphur and radioactive springs: the official thresholds, how the names are read, 
+/en/soak/akanko/ | guide | [hokkaido] | Akanko Onsen: a caldera lake of marimo, an Ainu kotan on the shore, and a spring with no o
+/en/soak/arima/ | guide | [kansai] | Arima Onsen: gold and silver water, a hot spring with no volcano, and the two public bathh
+/en/soak/atami/ | guide | [tokai] | Atami Onsen: a city that pipes its own hot water, and the seven springs you cannot bathe i
+/en/soak/beppu/ | guide | [kyushu] | Beppu Onsen: eight bath towns, hells you look at, and a hundred neighbourhood baths
+/en/soak/carbon-dioxide-chloride-iron-springs/ | guide | [japan] | Carbon dioxide, chloride and iron springs: the official thresholds, how the names are read
+/en/soak/dogo/ | guide | [shikoku] | Dōgo Onsen: blended water from many sources, three public bathhouses, and a main building 
+/en/soak/gero/ | guide | [chubu] | Gero Onsen: one managed supply of alkaline water, a riverside spring you can no longer bat
+/en/soak/hakone/ | guide | [kanto] | Hakone Onsen: seventeen hot spring areas on one volcano, and why the numbers never agree
+/en/soak/hydrogen-carbonate-sulphate-iodine-simple-springs/ | guide | [japan] | Hydrogen-carbonate, sulphate, iodine and simple springs, plus where "moor" and "oil" water
+/en/soak/ibusuki/ | guide | [kyushu] | Ibusuki Onsen: sand baths on a volcanic shore, more than a thousand springs, and eggs cook
+/en/soak/ikaho/ | guide | [kanto] | Ikaho Onsen: golden and silver water, and a town built on 365 stone steps
+/en/soak/ito/ | guide | [tokai] | Itō Onsen: hundreds of pumped sources, shared baths with lucky gods, and an English pilot’
+/en/soak/jozankei/ | guide | [hokkaido] | Jozankei Onsen: a salt spring in a river gorge an hour from Sapporo, a monk’s founding sto
+/en/soak/kakenagashi-explained/ | guide | [japan, kyushu] | Kakenagashi explained: what free-flowing onsen water means, who defines it, and the notice
+/en/soak/kawayu/ | guide | [hokkaido] | Kawayu Onsen: a strongly acidic spring under a steaming sulphur mountain, a mining past an
+/en/soak/kinosaki/ | guide | [kansai] | Kinosaki Onsen: seven public baths, one shared supply, and a town that calls itself a sing
+/en/soak/kinugawa/ | guide | [kanto] | Kinugawa Onsen: a gorge of large inns, alkaline simple water, and the train from Asakusa
+/en/soak/kirishima/ | guide | [kyushu] | Kirishima Onsen: highland springs below an active volcano, a famous honeymoon, and one of 
+/en/soak/kurokawa/ | guide | [kyushu] | Kurokawa Onsen: thirty inns, one entry pass, and an open-air bath tour that remade a valle
+/en/soak/kusatsu/ | guide | [kanto] | Kusatsu Onsen: strongly acidic water, the Yubatake, and the paddles that cool the bath
+/en/soak/minakami/ | guide | [kanto] | Minakami Onsen: eighteen springs, a railway town on the Tone, and the big baths of Takarag
+/en/soak/misasa/ | guide | [chugoku] | Misasa Onsen: a radon spring town, a free riverside bath, and the white wolf legend
+/en/soak/nagayu/ | guide | [kyushu] | Nagayu Onsen: a carbonated-spring town in the Oita hills, a drinking culture, and a declar
+/en/soak/naruko/ | guide | [tohoku] | Naruko Onsen: five districts, seven spring types, and a volcano with a crater lake
+/en/soak/nasu/ | guide | [kanto] | Nasu Onsen: the white deer, the killing stone, and a bath at six temperatures
+/en/soak/noboribetsu/ | guide | [hokkaido] | Noboribetsu Onsen: water from Hell Valley, nine or ten spring types, and a town of steam a
+/en/soak/nozawa/ | guide | [chubu] | Nozawa Onsen: thirteen village baths, the yu-nakama who keep them, and a boiling spring
+/en/soak/nyuto/ | guide | [tohoku] | Nyūtō Onsen: seven inns, seven sources, and a bus that links them
+/en/soak/onsen-hokkaido/ | guide | [hokkaido] | Hokkaido hot springs: the most onsen areas in Japan, the volcanoes behind some of them, an
+/en/soak/onsen-honshu/ | guide | [tohoku, kanto, chubu, hokuriku, tokai, kansai, chugoku] | Honshu hot springs: five regions, a volcanic front, and hot water where there is no volcan
+/en/soak/onsen-kyushu/ | guide | [kyushu] | Kyushu hot springs: over a third of Japan’s springs, the volcanoes some towns name, and ho
+/en/soak/onsen-okinawa/ | guide | [kyushu] | Okinawa hot springs: the fewest springs in Japan, drilled a kilometre down, and what the i
+/en/soak/onsen-shikoku/ | guide | [shikoku] | Shikoku hot springs: no active volcano, cold springs that still count, and how Dōgo’s age 
+/en/soak/onsen-water-types/ | guide | [japan] | Onsen water types: what makes water an onsen in Japanese law, the ten spring types, and ho
+/en/soak/shima/ | guide | [kanto] | Shima Onsen: a long valley of springs, the first health resort onsen, and Shima blue
+/en/soak/shirahama/ | guide | [kansai] | Nanki-Shirahama Onsen: fifteen sources, a bath on the Pacific rocks, and an age nobody cou
+/en/soak/shuzenji/ | guide | [tokai] | Shuzenji Onsen: a founding spring you can only look at, a shogun’s death in the bath, and 
+/en/soak/sounkyo/ | guide | [hokkaido] | Sounkyo Onsen: a gorge of columnar cliffs under Daisetsuzan, a name given in 1921, and the
+/en/soak/takeo/ | guide | [kyushu] | Takeo Onsen: a vermilion gate from 1914, Hideyoshi’s bathing rules, and simple alkaline wa
+/en/soak/tamatsukuri/ | guide | [chugoku] | Tamatsukuri Onsen: a spring in the Izumo fudoki, three free footbaths, and the "bihada" la
+/en/soak/toyako/ | guide | [hokkaido] | Toyako Onsen: a spring born in the 1910 eruption, a caldera lake that does not freeze, and
+/en/soak/unzen/ | guide | [kyushu] | Unzen Onsen: steaming hells on a volcano, a summer retreat for foreign traders, and an ear
+/en/soak/ureshino/ | guide | [kyushu] | Ureshino Onsen: a post town on the Nagasaki road, smooth water named three ways, and hot-s
+/en/soak/wakura/ | guide | [hokuriku] | Wakura Onsen: the "sea onsen" of Noto, its heron legend, and where it stands after the 202
+/en/soak/yamashiro/ | guide | [hokuriku] | Yamashiro Onsen: a sōyu, a rebuilt Meiji bathhouse, and the town laid out around them
+/en/soak/yufuin/ | guide | [kyushu] | Yufuin Onsen: a basin of springs, a town that chose not to become a resort, and its quiete
+/en/soak/yugawara/ | guide | [kanto] | Yugawara Onsen: a town that buys its own hot water, a Man’yōshū poem, and a park with a fo
+/en/soak/zao/ | guide | [tohoku] | Zao Onsen: strongly acidic water, three honesty-box baths, and the snow monsters above
