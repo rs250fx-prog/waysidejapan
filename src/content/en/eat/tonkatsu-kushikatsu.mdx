@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/tonkatsu-kushikatsu-hero.webp
+heroAlt: 'Illustration of a tray of fried skewers and a shared tray of sauce on a counter, cabbage beside them and Tsutenkaku tower outside'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why can't I dip twice?
@@ -40,6 +42,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import dipOnce from '../../../assets/eat/tonkatsu-kushikatsu-body.webp';
 
 Kushikatsu is fried food on a stick: beef, prawn, asparagus, egg, cheese, almost anything, battered, rolled in breadcrumbs and deep-fried, then dipped in a tray of sauce on the counter. Osaka's tourism bureau says the star is the texture of the coating. It is Osaka's bar food, and it comes with the one table rule every visitor hears about — no double-dipping — which turns out to have a plain, practical reason.
 
@@ -60,6 +64,12 @@ That is Daruma's history, not the history of kushikatsu. I have found no indepen
 **The cabbage.** At counter shops the cabbage next to the sauce is free and unlimited, the tourism bureau says. Daruma says it started giving it away in the second generation, from 1945, with the double-dipping rule — the cabbage is the scoop.
 
 **Not universal.** The tourism bureau distinguishes pub-style shops that ban double-dipping from more inventive shops. Look at the sauce: a shared tray means one dip.
+
+<Figure
+  src={dipOnce}
+  alt="A skewer dipped once into the shared sauce pot, then a cabbage leaf used to scoop more sauce onto it"
+  caption="Dip once; for more sauce, use the cabbage. Illustration."
+/>
 
 ## What makes it kushikatsu
 

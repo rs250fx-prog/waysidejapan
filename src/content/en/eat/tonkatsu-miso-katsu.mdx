@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/tonkatsu-miso-katsu-hero.webp
+heroAlt: 'Illustration of a pork cutlet under thick dark miso sauce on a sizzling iron plate, with shredded cabbage'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is miso-katsu?
@@ -47,6 +49,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import threeWays from '../../../assets/eat/tonkatsu-miso-katsu-body.webp';
 
 Miso-katsu is Nagoya's version of tonkatsu: the same breaded pork cutlet, under a dark, sweet sauce built on bean miso instead of the usual brown sauce. It is one of the dishes Nagoya sells as *Nagoya-meshi*, the city's own food, and it has spread well beyond the city. What is less known is that there is no single way to serve it, and no single story of where it began.
 
@@ -73,6 +77,12 @@ Nagoya's tourism site gives the definition: a pork cutlet with a sauce based on 
 3. **On the side**, in a separate dish, at some Western-style restaurants.
 
 Aichi's tourism site adds that sauces fall into two broad types: thick and rich, or thin and sweet.
+
+<Figure
+  src={threeWays}
+  alt="Three ways miso sauce reaches the cutlet: poured over a plate, a skewered cutlet dipped in a pot, and cutlet on rice in a bowl"
+  caption="Poured over, dipped, or on rice. Illustration."
+/>
 
 ## The shops, and what they charge
 

@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/tonkatsu-hero.webp
+heroAlt: 'Illustration of a tonkatsu set: a sliced cutlet with shredded cabbage, rice, miso soup and a pot of sauce at a counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Who invented tonkatsu?
@@ -55,6 +57,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import loinFillet from '../../../assets/eat/tonkatsu-body.webp';
 
 Tonkatsu is a breaded, deep-fried pork cutlet, cut into strips before it reaches you, served with a heap of raw shredded cabbage, rice, miso soup and a thick brown sauce. Every part of that arrangement has a reason, and most of the reasons were worked out in Tokyo's Western-style restaurants between the 1890s and the 1920s. This page is the map: where the dish came from, why it is served the way it is, what the words on the menu mean, and what it costs. The lineage pages cover Nagoya's miso-katsu and Osaka's kushikatsu.
 
@@ -84,6 +88,12 @@ So the tonkatsu set — cut pork, raw cabbage, rice — is Rengatei's answer to 
 
 - **Rōsu and hire.** Loin and fillet. The farm ministry notes that pork cuts are defined in a national retail quality standard; I have not read that standard, so the definitions here are the shops'. Yabaton in Nagoya describes its loin as juicy and its fillet as fried slowly at a lower temperature, tender and light with little fat. It also offers rib, which it says is only about 2% of a pig.
 - **Kurobuta (black pork).** There is no single national definition that I could find. Kagoshima's standard, as the farm ministry describes it, is all Berkshire pigs, not raised with other breeds; the prefecture says its black pigs came from the Ryūkyūs about 400 years ago, were improved with English Berkshire in the Meiji era, and are fed a diet including sweet potato. Okayama calls only pure Berkshire *kurobuta*, and its "Okayama kurobuta" must be raised on approved farms in the prefecture and graded at the prefectural market. These are local standards.
+
+<Figure
+  src={loinFillet}
+  alt="Sliced loin and fillet cutlets side by side on a plate with shredded cabbage, sesame being ground in a bowl beside them"
+  caption="Rōsu (loin, with its fat) and hire (fillet). Illustration."
+/>
 
 ## What it costs
 

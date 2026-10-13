@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-osaka-hako-hero.webp
+heroAlt: 'Illustration of squares of pressed box sushi topped with shrimp, sea bream and egg on a wooden board, Osaka Castle behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is battera?
@@ -41,6 +43,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import pressBox from '../../../assets/eat/sushi-osaka-hako-body.webp';
 
 In Tokyo, "sushi" means nigiri. In Osaka, by the agriculture ministry's own phrasing, the representative sushi is pressed: rice and fish packed into a wooden frame, weighted, turned out and cut into neat blocks. It is older than nigiri, it needs no soy sauce, it keeps for hours, and it is disappearing — because, as the ministry says plainly, it takes too much work.
 
@@ -61,6 +65,12 @@ Osaka then refined the box into something richer. In the Meiji era, the ministry
 **The fish is finished.** Sea bream, conger, prawn, shad and mackerel, cured or simmered. Both ministry entries make the point that the result is eaten without soy sauce — the seasoning is already in it — and that this is what made it the gift and the interval meal.
 
 **Battera.** Cured mackerel, a translucent sheet of white kelp (*shiraita kombu*) on top, cut into slices; the city's everyday pressed sushi, and the one you will find at station counters. Kyoto, forty minutes away, has its own cousin — *saba-zushi*, a whole cured mackerel fillet pressed on rice, the festival dish of the city, made at Izuu since 1781.
+
+<Figure
+  src={pressBox}
+  alt="Three steps: rice and toppings laid in a wooden box, the lid pressed down, and the block lifted out whole"
+  caption="Fill, press, lift out. Illustration."
+/>
 
 ## Why Osaka
 

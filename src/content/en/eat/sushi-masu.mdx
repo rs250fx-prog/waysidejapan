@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-masu-hero.webp
+heroAlt: 'Illustration of a round masu-zushi of trout on rice lined with bamboo leaves, a slice cut out, a train and snowy mountains behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is masu-zushi?
@@ -36,12 +38,20 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import stationKiosk from '../../../assets/eat/sushi-masu-body.webp';
 
 Masu-zushi is the sushi you eat on a train. A flat round of rice under a layer of pink cherry salmon, pressed in a bamboo-lined wooden frame and sold in a box with a plastic knife, it is the station lunch of the Hokuriku line and the only pressed sushi most Japanese people outside Kansai eat regularly. Toyama, the city that makes it, has more than twenty specialist makers and spends more on sushi eaten out than any city but Kanazawa.
 
 ## Where it came from
 
 The agriculture ministry's account begins with a samurai. In the Kyōhō era, Yoshimura Shinpachi of the Toyama domain made a sushi of sweetfish (*ayu*) for the third lord, Maeda Toshioki, who presented it to the shogun Yoshimune and was praised for it. Over time the sweetfish gave way to cherry salmon (*sakura-masu*) from the Jinzū river, and the dish took its present round form. What made it famous was the railway: the ministry dates its national reputation to the Taishō period, when it was sold as a station bento. Minamoto, the maker whose box is the one you will see, began as a hotel in 1900, was licensed to sell bento on Toyama station in 1908, and started selling masu-zushi in 1912; its own chronology records a price of 45 sen in 1932 and ¥110 for a single tier in 1949.
+
+<Figure
+  src={stationKiosk}
+  alt="A traveller buying a round masu-zushi box at a station kiosk stacked with them, a train at the platform"
+  caption="The station kiosk that made it famous. Illustration."
+/>
 
 ## What makes it masu-zushi
 

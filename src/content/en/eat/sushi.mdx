@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-hero.webp
+heroAlt: 'Illustration of a sushi chef pressing nigiri at a counter, pieces of tuna, sea bream and shrimp on a wooden board, a cup of green tea'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is sushi raw fish?
@@ -67,6 +69,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import sushiTimeline from '../../../assets/eat/sushi-body.webp';
 
 Sushi is the Japanese dish the world thinks it knows, and the one Japan itself argues about most. Tokyo means a hand-pressed nigiri at a counter; Osaka means fish pressed on rice in a wooden box; Shiga means a carp fermented for two years that smells like cheese; most of the country, most of the time, means a plate going past on a belt for ¥110. All of them are sushi. What they share is not raw fish — most sushi for most of its history has not been raw — but sour rice.
 
@@ -87,6 +91,12 @@ The characters are a separate argument. *Sushi* can be written 鮨, 鮓 or 寿�
 **The belt made it everyday.** In 1958 a shop owner in Higashi-Ōsaka, who had watched beer bottles ride a conveyor at a brewery, opened the first "revolving" sushi shop; he patented the belt in 1962 and the patent ran out in 1978, after which the format spread to every suburb in Japan. Four chains now run more than 2,400 shops in Japan and the industry body counts more than 4,000 in all. The health ministry's own summary of the trade is a split market: expensive counters on one side, cheap belts on the other, and the mid-priced neighbourhood sushi shop disappearing between them.
 
 **The fish has rules.** Packaged fish for raw eating must be labelled as such, and the health ministry's advice on *anisakis* — the parasite that caused 330 of Japan's 1,037 recorded food-poisoning cases in 2024 — is that vinegar, salt, soy sauce and wasabi do not kill it; freezing at −20 °C for 24 hours or heating to 70 °C does. The cured and frozen fish of a modern sushi shop is safer than the romance of "fresh" suggests.
+
+<Figure
+  src={sushiTimeline}
+  alt="A row of scenes from left to right: fermented fish in a jar, a box of pressed sushi, a street stall selling nigiri, a conveyor belt, and a chef at a counter"
+  caption="From fermented fish to the counter, in five steps. Illustration."
+/>
 
 ## What it costs
 

@@ -15,6 +15,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-kitakata-hero.webp
+heroAlt: 'Illustration of a bowl of Kitakata ramen covered in chashu, a street of white-walled storehouses outside the window'
 pricesCheckedOn: 2026-10-09
 faq:
   - q: What is "asa-rā"?
@@ -72,6 +74,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import morningRamen from '../../../assets/eat/ramen-kitakata-body.webp';
 
 Kitakata is a small town in the Aizu basin of Fukushima, inland and snowy, known for its *kura* — the thick-walled storehouses that line its streets, more than 4,000 of them by the prefecture's count. It has about 40,000 people and around 90 shops serving ramen. Some of them open at seven in the morning, and the people eating there are not tourists.
 
@@ -96,6 +100,12 @@ The style stayed local for half a century. What changed was the storehouses. Fro
 Two things, both to do with the storehouses. The first is water: the town sits on soft water from the Iide mountains (the tourism association cites a hardness of 13, among the softest in Japan), which is why it had brewers of sake, soy sauce and miso in the first place — and good soy sauce and good water are most of a Kitakata soup. The second is the morning. The town has long had the habit of eating ramen early, and the tourism association describes *asa-rā* as a local breakfast first and a tourist attraction second; JR East's campaigns made it famous, but did not invent it.
 
 The density is real but the superlative is not sourced. "Most ramen shops per head in Japan" is a claim you will see everywhere; I could not find a public body that states it, so this page says only what the region's tourism office says: about 90 shops for a town of roughly 40,000–50,000 people.
+
+<Figure
+  src={morningRamen}
+  alt="A few customers eating ramen in a small shop in early morning light, a clock on the wall near seven"
+  caption="Ramen for breakfast: several shops open at seven. Illustration."
+/>
 
 ## The shops, and what they charge
 

@@ -26,87 +26,7 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ---
 
-## Eat — Market
-
 ## Eat — Ramen
-
-### /en/eat/ramen/
-**ヒーロー** → 保存名 `ramen-hero`
-
-```
-Create one image. A bowl of ramen at a counter: noodles in soup with chashu, a soft egg, nori and green onion, steam rising, a ticket machine faintly behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-body`
-
-```
-Create one image. Four ramen bowls in a row showing the main soup types: clear soy, miso with corn and butter, milky white tonkotsu, and pale salt; viewed from slightly above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-hakata/
-**ヒーロー** → 保存名 `ramen-hakata-hero`
-
-```
-Create one image. A bowl of Hakata ramen with very thin straight noodles in milky white pork broth, pickled red ginger and sesame on the counter, a yatai stall roof faintly behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-hakata-body`
-
-```
-Create one image. A server pouring a fresh portion of thin noodles (kaedama) into a customer's remaining soup at a ramen counter. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-iekei/
-**ヒーロー** → 保存名 `ramen-iekei-hero`
-
-```
-Create one image. A bowl of Yokohama iekei ramen: thick noodles in a brown pork-and-soy broth, spinach, three large sheets of nori standing at the edge, a slice of chashu. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-iekei-body`
-
-```
-Create one image. A small blank order slip with three rows of circles to tick (noodle firmness, richness, oil), a pencil beside it, and a bowl of iekei ramen behind; no readable text. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-kagoshima/
-**ヒーロー** → 保存名 `ramen-kagoshima-hero`
-
-```
-Create one image. A bowl of Kagoshima ramen with a cloudy pork broth, thin noodles, bean sprouts and fried onion; a small plate of pickled daikon and a cup of tea served beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-kagoshima-body`
-
-```
-Create one image. A ramen shop table where pickles and green tea are already set out before the bowl arrives, a customer picking up a piece of pickle while waiting; Sakurajima volcano through the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-kitakata/
-**ヒーロー** → 保存名 `ramen-kitakata-hero`
-
-```
-Create one image. A bowl of Kitakata ramen with wide wavy noodles in clear soy broth, layers of chashu covering the surface; a morning street of old storehouses with white walls outside the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-kitakata-body`
-
-```
-Create one image. An early-morning ramen shop with a few customers eating bowls at 7 in the morning, sunlight low through the door, a clock with its hands pointing to seven. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/ramen-kumamoto/
-**ヒーロー** → 保存名 `ramen-kumamoto-hero`
-
-```
-Create one image. A bowl of Kumamoto ramen: milky tonkotsu broth with dark black garlic oil swirled on top, medium noodles, chashu and wood ear mushroom. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ramen-kumamoto-body`
-
-```
-Create one image. A small pan of garlic being slowly fried until black in oil, and the oil being drizzled over a white ramen broth. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/ramen-kurume/
 **ヒーロー** → 保存名 `ramen-kurume-hero`
@@ -146,8 +66,6 @@ Create one image. A classic Tokyo shoyu ramen: clear brown soy broth, curly thin
 ```
 Create one image. A family tree drawn as branching noodles: one clear soy ramen bowl at the root, with branches leading to miso, tonkotsu and other bowls; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Sake
 
 ## Eat — Soba
 
@@ -212,97 +130,6 @@ Create one image. A diner closing the lid on a small bowl to signal they are fin
 
 ## Eat — Sushi
 
-### /en/eat/sushi/
-**ヒーロー** → 保存名 `sushi-hero`
-
-```
-Create one image. A sushi counter with a chef pressing nigiri, pieces of tuna, sea bream and shrimp on a wooden geta board, a cup of green tea. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-body`
-
-```
-Create one image. A timeline drawn as a row of objects: a fermented fish in a jar, a pressed sushi box, a street stall with nigiri, a conveyor belt, an upscale counter; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-funa/
-**ヒーロー** → 保存名 `sushi-funa-hero`
-
-```
-Create one image. Slices of funa-zushi with orange roe showing on a small plate, a wooden fermentation barrel and Lake Biwa with reeds behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-funa-body`
-
-```
-Create one image. Cutaway of a wooden barrel with layers of crucian carp packed in rice under a heavy stone weight, fermenting. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-kaiten/
-**ヒーロー** → 保存名 `sushi-kaiten-hero`
-
-```
-Create one image. A conveyor belt sushi restaurant with colorful plates circling past a row of seated customers, a touch-screen order panel at the table, a tea tap. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-kaiten-body`
-
-```
-Create one image. A beer bottling line conveyor in an old Osaka brewery, its motion echoed by a sushi conveyor belt drawn beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-kakinoha/
-**ヒーロー** → 保存名 `sushi-kakinoha-hero`
-
-```
-Create one image. Kakinoha-zushi: small rectangles of salted mackerel on rice, each wrapped in a green persimmon leaf, packed neatly in a wooden box; mountain village houses behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-kakinoha-body`
-
-```
-Create one image. Hands wrapping a piece of mackerel sushi in a persimmon leaf, a pile of fresh leaves and pressed rice beside them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-kanazawa/
-**ヒーロー** → 保存名 `sushi-kanazawa-hero`
-
-```
-Create one image. A sushi counter in Kanazawa with nigiri of local fish like blackthroat seaperch and sweet shrimp, the Sea of Japan seen through the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-kanazawa-body`
-
-```
-Create one image. A conveyor sushi shop where the belt is stopped and a chef takes orders directly, handing plates across the counter. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-masu/
-**ヒーロー** → 保存名 `sushi-masu-hero`
-
-```
-Create one image. Masu-zushi: a round wooden container lined with bamboo leaves, a cake of pink trout over rice, a slice cut out; a railway platform faintly behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-masu-body`
-
-```
-Create one image. A train station kiosk with round wooden masu-zushi containers stacked on the counter, a traveler buying one before boarding. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sushi-osaka-hako/
-**ヒーロー** → 保存名 `sushi-osaka-hako-hero`
-
-```
-Create one image. Osaka box sushi: a neat rectangular block of pressed rice topped with shrimp, sea bream and egg, cut into squares on a wooden board. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sushi-osaka-hako-body`
-
-```
-Create one image. A wooden press box being filled with rice and toppings, the lid being pressed down, and the block coming out cleanly. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/sushi-saba/
 **ヒーロー** → 保存名 `sushi-saba-hero`
 
@@ -358,45 +185,6 @@ Create one image. A guest at a ryokan seated on a cushion, lifting the lid of a 
 ```
 
 ## Eat — Tonkatsu
-
-### /en/eat/tonkatsu/
-**ヒーロー** → 保存名 `tonkatsu-hero`
-
-```
-Create one image. A tonkatsu set: a sliced golden pork cutlet, a mound of shredded cabbage, rice, miso soup and a pot of thick sauce. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tonkatsu-body`
-
-```
-Create one image. A pork loin cutlet and a fillet cutlet sliced side by side, showing the difference in fat; a bowl of sesame seeds being ground in a mortar beside them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/tonkatsu-kushikatsu/
-**ヒーロー** → 保存名 `tonkatsu-kushikatsu-hero`
-
-```
-Create one image. A plate of kushikatsu skewers at an Osaka counter, a shared stainless steel pot of thin sauce in front, raw cabbage leaves on the side, Tsutenkaku tower faintly through the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tonkatsu-kushikatsu-body`
-
-```
-Create one image. A customer dipping a skewer into a shared sauce pot once, then using a cabbage leaf to scoop more sauce onto the skewer instead of dipping again. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/tonkatsu-miso-katsu/
-**ヒーロー** → 保存名 `tonkatsu-miso-katsu-hero`
-
-```
-Create one image. Miso-katsu: a pork cutlet covered in thick dark red bean-miso sauce on a sizzling iron plate, with cabbage. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tonkatsu-miso-katsu-body`
-
-```
-Create one image. Three ways miso-katsu is served side by side: sauce poured over a plate of cutlet, a cutlet dipped into a pot of miso sauce, and miso-katsu on rice as a bowl. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Udon
 
@@ -1138,8 +926,6 @@ Create one image. A long table set with regional dishes from across Japan in sma
 ```
 Create one image. An outline of Japan with small dish icons scattered over the regions, like pins on a map; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Izakaya (additions)
 
 ## Eat — Food shopping
 

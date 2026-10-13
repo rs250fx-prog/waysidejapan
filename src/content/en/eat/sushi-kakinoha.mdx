@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-kakinoha-hero.webp
+heroAlt: 'Illustration of a wooden box of persimmon-leaf-wrapped sushi, one opened to show mackerel on rice, autumn mountains and a village behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why a persimmon leaf?
@@ -32,6 +34,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import wrapping from '../../../assets/eat/sushi-kakinoha-body.webp';
 
 Kakinoha-zushi is sushi for a place with no sea. In the Yoshino hills of southern Nara, a day's carry from the coast, people pressed a thin slice of salted mackerel onto a mouthful of rice, wrapped it in a persimmon leaf, and stacked the parcels in a box to eat at the summer festival. It is the neatest sushi in Japan — one piece, one leaf — and it is one of the few that is better the day after it is made.
 
@@ -50,6 +54,12 @@ In fiscal 2024 the Agency for Cultural Affairs recognised it as a "100-year food
 **The leaf.** Removed before eating, not eaten. It keeps the rice from drying and lends a faint tannic smell.
 
 **The box.** Sold by the dozen or so, in a wooden or card box, and designed to be carried.
+
+<Figure
+  src={wrapping}
+  alt="Hands wrapping a piece of mackerel sushi in a persimmon leaf, a tub of rice and a basket of leaves beside them"
+  caption="Mackerel on rice, folded into a persimmon leaf. Illustration."
+/>
 
 ## Why Yoshino
 

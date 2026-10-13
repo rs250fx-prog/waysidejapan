@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-hero.webp
+heroAlt: 'Illustration of a bowl of ramen with chashu, a soft egg, nori and green onion at a counter, a ticket machine on the wall behind'
 pricesCheckedOn: 2026-10-09
 faq:
   - q: Is ramen Japanese or Chinese?
@@ -81,6 +83,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import soupTypes from '../../../assets/eat/ramen-body.webp';
 
 Ramen is the dish visitors are most likely to eat on their first night and least likely to understand. It looks like one thing. It is a dozen, and the people of Fukuoka, Sapporo and Kitakata would each tell you the others are eating something else. This page is the map: what the word covers, why a bowl costs what it does in Japan, and where each lineage comes from. The lineage pages go deep on one city at a time.
 
@@ -93,6 +97,12 @@ It is also, by Japanese standards, new. The Shin-Yokohama Ramen Museum's timelin
 The war reset it. Ramen stalls fed the black markets of 1945 as cheap, high-calorie food; the white pork-bone soup of Kyushu appeared in 1947, Sapporo's miso in 1954 by one account and 1958 by another, and dipping noodles (*tsukemen*) in 1955. Nissin's [Chicken Ramen](/en/eat/instant-noodles-bag/) launched in August 1958 at ¥35 a packet when a ball of udon cost ¥6; [Cup Noodle](/en/eat/instant-noodles-cup/) followed in 1971 at ¥100. Japan now produces about 5.9 billion servings of instant noodles a year, 47.9 per person (fiscal 2025, by the industry association's count); more in [instant noodles](/en/eat/instant-noodles/).
 
 The regional boom came in the 1980s — Kitakata in 1984, Ogikubo in 1985, the Tokyo tonkotsu wave in 1989 — and the museum itself opened in Shin-Yokohama in March 1994 so that people could eat the country's ramen "without getting on a plane". In December 2015 a nine-seat shop in Sugamo, Tsuta, became the first ramen shop in the world with a Michelin star.
+
+<Figure
+  src={soupTypes}
+  alt="Four ramen bowls in a row: a clear soy broth, miso with corn and butter, a milky pork-bone broth and a pale salt broth"
+  caption="Soy, miso, pork bone, salt: the four soups most bowls are sorted by. Illustration."
+/>
 
 ## Why it is the way it is
 

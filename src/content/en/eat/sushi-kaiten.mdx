@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-kaiten-hero.webp
+heroAlt: 'Illustration of a conveyor-belt sushi counter with plates passing seated diners, a touch screen and a hot-water tap for tea'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: How much is a plate?
@@ -71,12 +73,20 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import breweryLine from '../../../assets/eat/sushi-kaiten-body.webp';
 
 Conveyor-belt sushi is how Japan actually eats sushi. Two-thirds of people who eat sushi out eat it here; four companies run more than 2,400 shops; and a plate of two pieces costs ¥110, less than a can of coffee. It was invented by a man who could not afford enough staff, in a suburb of Osaka, in 1958, and it has spent the last few years quietly getting rid of the belt.
 
 ## Where it came from
 
 Shiraishi Yoshiaki moved from Ehime to Osaka in 1947 and opened a small standing sushi shop in Fuse, now part of Higashi-Ōsaka, selling four pieces for ¥20. In 1948, by the account the small-business agency and his own company give, he visited a beer factory in Suita and watched bottles ride a conveyor; it took him ten years to build a version that could carry plates round a corner without dropping them — the solution was a fan-shaped crescent plate he called *uroko*, fish scales. The first "revolving Genroku sushi" opened near Fuse station in April 1958, a second in Dōtonbori in 1960. He patented the "rotating dining table" in 1962 and used the patent to warn off imitators; at Expo '70 in Osaka his pavilion shop drew queues down the concourse. The patent expired in 1978, and the format spread across the country; Genroku itself peaked at about 250 shops and opened the trademark "kaiten" to the industry in 1997. In 2021 the machine and its *uroko* plate were designated a Mechanical Engineering Heritage.
+
+<Figure
+  src={breweryLine}
+  alt="Beer bottles moving along a brewery conveyor, beside a sushi conveyor carrying plates past diners"
+  caption="A bottling line gave the idea for the belt. Illustration."
+/>
 
 ## What makes it kaiten
 

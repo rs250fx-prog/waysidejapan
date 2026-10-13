@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sushi-funa-hero.webp
+heroAlt: 'Illustration of slices of funa-zushi with orange roe on a plate, a fermenting tub beside it and Lake Biwa with reeds and a boat behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is funa-zushi?
@@ -35,6 +37,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import fermentingTub from '../../../assets/eat/sushi-funa-body.webp';
 
 Funa-zushi is the sushi that was here before the word meant what it means now. No vinegar, no chef, no counter: a carp from the largest lake in Japan, salted, buried in cooked rice, and left to ferment through a summer and an autumn until the rice has turned to a sour cream and the fish tastes like a very old cheese. It is the dish the agriculture ministry calls the ancestor of all Japanese sushi, and it is eaten today mostly at festivals and funerals around Lake Biwa, by people who grew up with the smell.
 
@@ -51,6 +55,12 @@ The ministry's history of *narezushi* — "matured sushi" — is the history of 
 **The taste.** Sour, salty, sharp, with the roe firm and the flesh soft. It is sliced thin and eaten a piece at a time with rice or sake; the fermented rice around it is eaten too, or stirred into hot water as a broth.
 
 **The status.** Shiga selected funa-zushi as an intangible folk cultural property — a "food cultural asset" — in 1998. It is not among the prefecture's "100-year food" listings, a reminder that the national scheme favours dishes people still cook at home.
+
+<Figure
+  src={fermentingTub}
+  alt="A cutaway of a wooden tub with layers of carp packed in rice under a heavy stone"
+  caption="Carp layered in rice under a stone, left to ferment. Illustration."
+/>
 
 ## Why Lake Biwa
 

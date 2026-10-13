@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-iekei-hero.webp
+heroAlt: 'Illustration of a bowl of iekei ramen with thick noodles, spinach, chashu and sheets of nori standing at the rim'
 pricesCheckedOn: 2026-10-09
 faq:
   - q: What does "iekei" mean?
@@ -86,6 +88,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import orderSlip from '../../../assets/eat/ramen-iekei-body.webp';
 
 If you have eaten ramen in a Japanese suburb in the last decade, there is a fair chance it was this: an opaque brown soup that is both pork-bone and soy sauce, a yellow slick of chicken oil, thick short noodles, a clump of spinach, three sheets of nori standing against the rim, and a bowl of rice on the side. *Iekei* — "the -ya lineage" — began as one man's shop in a Yokohama suburb in 1974 and is now the most copied ramen format in the country, copied so widely that the lineage's own members argue about who belongs.
 
@@ -104,6 +108,12 @@ The name came later and from outside. Shops opened by people who had trained at 
 **On top:** sliced pork, spinach, and sheets of nori — three in the standard bowl, by the trade-press description; Yoshimuraya's chāshū-men carries three slices of pork in the regular size and five in the medium and large. On the counter: grated ginger, garlic, vinegar, chilli-bean paste.
 
 **The three settings.** Yoshimuraya's menu asks for the bowl in three dimensions — noodle: soft, normal, hard; oil: little, normal, more; flavour: light, normal, strong — and every shop in the lineage asks the same three questions. Say *futsū* three times and you get the house bowl.
+
+<Figure
+  src={orderSlip}
+  alt="A blank order slip with three rows of circles and a pencil, beside a bowl of iekei ramen"
+  caption="Noodle firmness, oil, richness: the three settings you choose. Illustration."
+/>
 
 ## Why Yokohama
 

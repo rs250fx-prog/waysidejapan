@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-kumamoto-hero.webp
+heroAlt: 'Illustration of a bowl of Kumamoto ramen in milky broth, dark garlic oil spotted over the surface, with chashu and wood ear mushroom'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is mā-yu?
@@ -35,6 +37,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import garlicOil from '../../../assets/eat/ramen-kumamoto-body.webp';
 
 If Hakata is the famous child of Kyushu tonkotsu and Kurume the parent, Kumamoto is the cousin who went his own way: the same white pork-bone base, but with chicken in the pot, the garlic cooked rather than raw, and a spoon of black garlic oil floating on top that makes the bowl smell of something roasted. It is the one Kyushu ramen you can recognise from across the room.
 
@@ -51,6 +55,12 @@ The Ramen Museum's account begins in 1952, when a man named Shikasho opened a ra
 **The noodle.** Thicker and firmer than Hakata's, with what the museum calls a solid bite.
 
 **On top.** Pork, wood-ear mushroom, often a soft egg, and the garlic chips.
+
+<Figure
+  src={garlicOil}
+  alt="Garlic frying dark in a small pan of oil, then the black oil ladled over a bowl of pale pork-bone ramen"
+  caption="Garlic fried until black, then spooned over the soup. Illustration."
+/>
 
 ## Why Kumamoto
 

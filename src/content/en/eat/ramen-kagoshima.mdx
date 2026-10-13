@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-kagoshima-hero.webp
+heroAlt: 'Illustration of a bowl of Kagoshima ramen with bean sprouts and fried onion, a cup of tea and a dish of pickled daikon beside it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is Kagoshima ramen tonkotsu?
@@ -30,6 +32,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import picklesTea from '../../../assets/eat/ramen-kagoshima-body.webp';
 
 Every other ramen in Kyushu can be traced, by someone's account, back to a cauldron in Kurume. Kagoshima's cannot. At the southern end of the island, the ramen is paler, softer and gentler than the rest, it comes with a dish of pickled radish and a small pot of tea that nobody charges you for, and the Ramen Museum records the local claim that it is the one Kyushu style that owes nothing to Kurume.
 
@@ -46,6 +50,12 @@ The museum's Kagoshima page names the first shop as Noboruya, opened in 1947 by 
 **On top.** Scorched spring onion (*kogashi negi*) is the distinctive addition, with pork and, at many shops, cabbage or bean sprouts.
 
 **On the side.** Pickled daikon, free and refillable at most shops, and a small teapot of tea. The museum lists both as standard.
+
+<Figure
+  src={picklesTea}
+  alt="A diner picking up pickles with chopsticks while waiting, a cup of green tea beside them and Sakurajima smoking through the window"
+  caption="Pickles and tea arrive before the ramen. Illustration."
+/>
 
 ## Why Kagoshima
 
