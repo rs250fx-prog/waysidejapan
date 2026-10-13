@@ -1,0 +1,230 @@
+---
+/**
+ * ガイド記事のタイル。Column / Rail の目次で使う。DishTile・SoakTile と同じ骨格。
+ *
+ * 上段は「絵」：heroImage があれば写真、無ければ地色に薄い漢字（区分ごとの字）。3:2 で高さが揃う。
+ * 名前は絵の左上に札で載せ、下には繰り返さない。
+ * タイトルの「Chopsticks in Japan: why only chopsticks, …」をコロンで割り、後半を一言にする。
+ * SP では絵を左 64px に畳む。
+ */
+import { Image } from 'astro:assets';
+import type { Article } from '../lib/content.ts';
+import { hrefOf } from '../lib/content.ts';
+import { IMAGE_SPEC } from '../lib/images.ts';
+import Icon from './Icon.astro';
+
+interface Props {
+  entry: Article;
+  glyph: string;
+  /** 小さく出す補足（地域など） */
+  kicker?: string;
+}
+const { entry, glyph, kicker } = Astro.props;
+const d = entry.data;
+const [head, ...rest] = d.title.split(/[:：]/);
+const name = head.trim();
+const tagline = rest.join(':').trim() || d.description.split(/(?<=[.!?])\s+/)[0];
+const spec = IMAGE_SPEC.card;
+---
+
+<article class:list={['tile', { photo: !!d.heroImage }]}>
+  <a class="face" href={hrefOf(entry)}>
+    <span class="visual">
+      {
+        d.heroImage ? (
+          <span class="pic">
+            <Image src={d.heroImage} alt="" width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading="lazy" />
+          </span>
+        ) : (
+          <span class="glyph" aria-hidden="true">
+            {glyph}
+          </span>
+        )
+      }
+      <span class="name">
+        <span class="name-glyph" lang="ja" aria-hidden="true">
+          {glyph}
+        </span>
+        <span class="name-text">{name}</span>
+      </span>
+    </span>
+    <span class="text">
+      {kicker && <span class="kicker">{kicker}</span>}
+      <span class="tagline">{tagline}</span>
+      <span class="go">
+        Read <Icon name="arrow" />
+      </span>
+    </span>
+  </a>
+</article>
+
+<style>
+  .tile {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .face {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+  .face:hover .go {
+    color: var(--accent-hover);
+  }
+  .face:hover .name {
+    background: var(--accent-hover);
+  }
+  .visual {
+    position: relative;
+    display: block;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .pic,
+  .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .glyph {
+    position: absolute;
+    right: 6%;
+    bottom: -4%;
+    font-family: var(--font-jp);
+    font-weight: 300;
+    font-size: 150px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.16;
+    user-select: none;
+  }
+  .name {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100% - 24px);
+    padding: 7px 12px 7px 10px;
+    background: var(--accent);
+    color: #fff;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(60, 40, 20, 0.25);
+  }
+  .name-glyph {
+    font-family: var(--font-jp);
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .name-text {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
+    padding: 14px 16px;
+  }
+  .kicker {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .tagline {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .go {
+    margin-top: auto;
+    padding-top: 4px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  @media (max-width: 767px) {
+    .face {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      grid-template-areas:
+        'v n'
+        'v t';
+      column-gap: 14px;
+      row-gap: 4px;
+      padding: 14px;
+      height: auto;
+    }
+    .visual {
+      display: contents;
+    }
+    .pic,
+    .glyph {
+      grid-area: v;
+      position: static;
+      width: 64px;
+      height: 64px;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+    .glyph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      opacity: 0.55;
+    }
+    .name {
+      grid-area: n;
+      position: static;
+      display: block;
+      max-width: none;
+      padding: 0;
+      background: none;
+      color: var(--ink);
+      box-shadow: none;
+    }
+    .face:hover .name {
+      background: none;
+    }
+    .name-glyph {
+      display: none;
+    }
+    .name-text {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 1.2;
+    }
+    .text {
+      grid-area: t;
+      padding: 0;
+    }
+    .tagline {
+      font-size: 14px;
+    }
+  }
+</style>

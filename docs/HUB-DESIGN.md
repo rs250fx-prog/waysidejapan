@@ -90,6 +90,12 @@ SP（767px以下）：ジャンプ行は横スクロール、タイルは1列、
 - **右カラム** `src/components/Rail.astro`：目次（本文 h2 に id を振る。`Article.astro`）→ 型別の箱（dish: 系譜／lineage: 親ハブ＋兄弟／town: 施設パネル＋地域概説／region: 町／explainer: 他の解説）→ 基準価格（Eat ハブ）→ 関連記事（縦積み）。PC は sticky、長ければカラム内スクロール。SP は本文の下、目次だけ本文の前に折りたたみ
 - **札** `src/components/Label.astro`：トップ「Three ways in」の形を部品化。一覧行のサムネ・関連記事カードに展開。DishTile／SoakTile は絵（写真 or 地色＋薄い漢字、3:2）の左上に名前を札で載せ、絵の下に名前を繰り返さない。SP では絵を 64px に畳み、名前は見出しに戻る（`.visual{display:contents}`）
 
+## 実行C（2026-10-13 実装済み）：Column / Rail の目次化、価格・About の左寄せ
+
+- **Column / Rail** も目次型。区切りは `src/data/guides.ts`。Column は frontmatter の `topic`（manners / ordering / needs / buying / kitchen。schema に追加、16本に付与）、Rail は `passes[0]`（無ければ routes）。タイルは `GuideTile.astro`（DishTile と同じ骨格）。新しい topic を使うときは guides.ts にも1行足す。無いとビルド警告のうえ Other に落ちる
+- **基準価格**：`.wrap.body` の 1000px 中央寄せをやめ、`.body > *` を 1000 に抑えて左詰め。右カラムは作らない（決定）
+- **About**：ヒーローを帯＋列に分け、本文 880 ＋ 右カラム 280（実績の数字・On this page・訂正の連絡先）。SP では右カラムを出さず、実績の帯を出す
+
 ## 実行3
 
 - Start here 用の写真（`docs/IMAGE-PROMPTS.md` にプロンプトを追加）

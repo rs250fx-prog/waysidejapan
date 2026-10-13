@@ -45,7 +45,9 @@ const graph = [
   description="Ichiro Murase lives in Japan and rides about 30,000 km a year. How this site is researched, photographed and paid for, and what it will never do."
   graph={graph}
 >
+  {/* 帯（全幅の背景・罫線）と列（1280）を分ける。肖像と見出しは列の中に置き、他ページと左端を揃える */}
   <section class="hero">
+    <div class="wrap hero-inner">
     <div class="portrait ph ratio-portrait" aria-hidden="true">PORTRAIT</div>
     <div class="intro">
       <p class="kicker">About</p>
@@ -62,8 +64,10 @@ const graph = [
         to ride every line first.
       </p>
     </div>
+    </div>
   </section>
 
+  {/* SP だけの実績の帯。PC では右カラムに同じ数字を出す */}
   <section class="credentials">
     <div class="wrap cred-inner">
       {
@@ -77,8 +81,10 @@ const graph = [
     </div>
   </section>
 
-  <div class="wrap body">
-    <section>
+  {/* 本文 880 ＋ 右カラム 280。記事ページと同じ骨格（docs/HUB-DESIGN.md 実行C） */}
+  <div class="wrap about-layout">
+  <div class="body">
+    <section id="why">
       <h2>Why a Japanese person writing in English</h2>
       <p>
         Most English-language writing about Japan is by people passing through. That is not a criticism — a visitor
@@ -91,7 +97,7 @@ const graph = [
       </p>
     </section>
 
-    <section>
+    <section id="travel">
       <h2>How I travel</h2>
       <p>
         By motorcycle and by car for the distance, by train for everything else. Thirty thousand kilometres a year adds
@@ -110,7 +116,7 @@ const graph = [
       </p>
     </section>
 
-    <section>
+    <section id="work">
       <h2>How I work</h2>
       <div class="principles">
         <div>
@@ -151,7 +157,7 @@ const graph = [
       /* 収益化していないあいだは、この節ごと出さない。
          提携が通って AFFILIATE が true になったら自動で現れる */
       hasAnyAffiliate && (
-        <section class="money">
+        <section class="money" id="money">
           <h2>How this site makes money</h2>
           <p>
             Some links are affiliate links. If you book through one, the company pays me a commission and you pay the
@@ -171,7 +177,7 @@ const graph = [
       )
     }
 
-    <section>
+    <section id="regions">
       <h2>Where I know Japan</h2>
       <p>
         Two decades of driving leaves an uneven map. These are the regions I can write about from memory rather than
@@ -196,7 +202,7 @@ const graph = [
       </p>
     </section>
 
-    <section class="corrections">
+    <section class="corrections" id="corrections">
       <h2>Corrections welcome</h2>
       <p>
         If a fare has changed, a bath has closed or a rule has moved, tell me and I will fix it and credit you. That is
@@ -225,24 +231,60 @@ const graph = [
       </p>
     </section>
   </div>
+
+  <aside class="side" aria-label="About this site">
+    <div class="side-inner">
+      <section class="box creds">
+        <h2>In numbers</h2>
+        {
+          credentials.map((c) => (
+            <div class="cred">
+              <span class="cred-value">{c.value}</span>
+              <span class="cred-label">{c.label}</span>
+            </div>
+          ))
+        }
+      </section>
+      <nav class="box toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#why">Why a Japanese person writing in English</a></li>
+          <li><a href="#travel">How I travel</a></li>
+          <li><a href="#work">How I work</a></li>
+          {hasAnyAffiliate && <li><a href="#money">How this site makes money</a></li>}
+          <li><a href="#regions">Where I know Japan</a></li>
+          <li><a href="#corrections">Corrections welcome</a></li>
+          <li><a href="#publisher">Publisher</a></li>
+        </ol>
+      </nav>
+      <a class="box contact" href={OPERATOR.contactUrl} rel="noopener">
+        <span class="contact-title">Seen something wrong?</span>
+        <span class="contact-dek">A fare, a closed bath, a moved rule — tell me and I will fix it and credit you.</span>
+        <span class="contact-go">Send a correction →</span>
+      </a>
+    </div>
+  </aside>
+  </div>
 </Base>
 
 <style>
   .hero {
-    display: flex;
-    gap: 0;
     background: var(--surface);
     border-bottom: 1px solid var(--line);
   }
+  .hero-inner {
+    display: flex;
+    gap: 40px;
+  }
   .portrait {
     flex: 0 0 min(400px, 38%);
-    border: none;
-    border-right: 1px solid var(--line);
+    border: 1px solid var(--line);
+    margin-block: 32px;
   }
   .intro {
     flex: 1 1 auto;
     min-width: 0;
-    padding: 40px;
+    padding: 40px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -268,7 +310,9 @@ const graph = [
     color: var(--ink-2);
   }
 
+  /* 実績の帯は SP だけ。PC は右カラム */
   .credentials {
+    display: none;
     background: var(--surface-2);
     border-bottom: 1px solid var(--line);
   }
@@ -295,12 +339,125 @@ const graph = [
     color: var(--ink-2);
   }
 
-  .body {
-    max-width: 880px;
+  .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 880px) 280px;
+    column-gap: 40px;
+    align-items: start;
+    justify-content: start;
     padding-block: 36px 0;
+  }
+  .body {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 34px;
+  }
+  .side {
+    min-width: 0;
+    align-self: stretch;
+  }
+  .side-inner {
+    position: sticky;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    scrollbar-width: thin;
+  }
+  .box {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .box h2 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: none;
+    padding: 0;
+    margin: 0 0 10px;
+  }
+  .cred {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line-2);
+  }
+  .cred:last-child {
+    border-bottom: 0;
+  }
+  .creds .cred-value {
+    font-size: 26px;
+  }
+  .creds .cred-label {
+    font-size: 14px;
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: toc;
+  }
+  .toc li a {
+    display: flex;
+    gap: 10px;
+    padding: 7px 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-2);
+  }
+  .toc li:last-child a {
+    border-bottom: 0;
+  }
+  .toc li a::before {
+    counter-increment: toc;
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    padding-top: 3px;
+  }
+  .toc li a:hover {
+    color: var(--accent);
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--accent);
+    background: var(--surface-2);
+    color: inherit;
+    text-decoration: none;
+  }
+  .contact:hover {
+    background: var(--surface);
+  }
+  .contact-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .contact-dek {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  .contact-go {
+    margin-top: 4px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
   }
   .body h2 {
     font-size: 28px;
@@ -424,19 +581,31 @@ const graph = [
     }
   }
 
+  @media (max-width: 1023px) {
+    .about-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .credentials {
+      display: block;
+    }
+    .side {
+      display: none;
+    }
+  }
+
   @media (max-width: 900px) {
-    .hero {
+    .hero-inner {
       flex-direction: column;
+      gap: 0;
     }
     .portrait {
       flex: none;
       width: 100%;
       aspect-ratio: 3 / 2;
-      border-right: none;
-      border-bottom: 1px solid var(--line);
+      margin-block: 20px 0;
     }
     .intro {
-      padding: 24px var(--gutter);
+      padding: 24px 0;
     }
     h1 {
       font-size: 30px;

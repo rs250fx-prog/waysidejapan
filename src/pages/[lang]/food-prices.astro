@@ -462,9 +462,12 @@ const graph = [
     color: var(--muted-2);
   }
 
+  /* .wrap（1280・中央）の中で、中身だけ 1000 に抑えて左に寄せる。見出しの左端が他ページと揃う */
   .body {
-    max-width: 1000px;
     padding-block: 30px 0;
+  }
+  .body > * {
+    max-width: 1000px;
   }
 
   .legend {

@@ -5,6 +5,8 @@ import Thumb from '../../../components/Thumb.astro';
 import DishTile from '../../../components/DishTile.astro';
 import SoakTile from '../../../components/SoakTile.astro';
 import Label from '../../../components/Label.astro';
+import GuideTile from '../../../components/GuideTile.astro';
+import { COLUMN_TOPICS, RAIL_GROUPS, OTHER_SECTION, type GuideSection } from '../../../data/guides.ts';
 import { LOCALES, type Locale, type Category } from '../../../config.ts';
 import { listArticles, hrefOf, enabledCategories, type Article } from '../../../lib/content.ts';
 import { parseId } from '../../../content.config.ts';
@@ -109,6 +111,31 @@ const regionSections = REGIONS.map((region) => ({
 const soakLoose = articles.filter((a) => !['town', 'region', 'explainer'].includes(a.data.kind));
 const townCount = [...townsByRegion.values()].reduce((s, l) => s + l.length, 0);
 
+/*
+ * Column / Rail も目次型。Column は topic、Rail は passes[0] で区切る（src/data/guides.ts）。
+ * 区分に無い値は Other に落とし、ビルドログで知らせる
+ */
+const isGuides = category === 'column' || category === 'rail';
+const guideDefs: GuideSection[] = category === 'column' ? COLUMN_TOPICS : RAIL_GROUPS;
+const guideKeyOf = (a: Article) => (category === 'column' ? (a.data.topic ?? '') : a.data.passes[0] ?? 'routes');
+const guideSections: { section: GuideSection; items: Article[] }[] = [];
+if (isGuides) {
+  const byKey = new Map<string, Article[]>();
+  for (const a of articles) {
+    const k = guideKeyOf(a);
+    byKey.set(k, [...(byKey.get(k) ?? []), a]);
+  }
+  const known = new Set(guideDefs.map((g) => g.key));
+  const strays = [...byKey.keys()].filter((k) => !known.has(k));
+  if (strays.length) console.warn(`[${category}] sections not in src/data/guides.ts, shown under "Other": ${strays.join(', ') || '(blank)'}`);
+  for (const g of guideDefs) {
+    const items = byKey.get(g.key) ?? [];
+    if (items.length) guideSections.push({ section: g, items });
+  }
+  const other = strays.flatMap((k) => byKey.get(k) ?? []);
+  if (other.length) guideSections.push({ section: OTHER_SECTION, items: other });
+}
+
 /* ジャンプ行の中身。カテゴリごとに組む */
 const jump: { href: string; label: string }[] = isContents
   ? sections.map((s) => ({ href: `#${s.genre.key}`, label: s.genre.label }))
@@ -117,8 +144,16 @@ const jump: { href: string; label: string }[] = isContents
         ...(explainers.length ? [{ href: '#before-you-go', label: 'Before you go' }] : []),
         ...regionSections.map((s) => ({ href: `#${s.region.key}`, label: s.region.label })),
       ]
-    : [];
-const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineages` : isSoak ? `${townCount} onsen towns · ${regionSections.length} regions` : '';
+    : isGuides
+      ? guideSections.map((s) => ({ href: `#${s.section.key}`, label: s.section.label }))
+      : [];
+const jumpSummary = isContents
+  ? `${hubs.size} dishes · ${totalLineages} lineages`
+  : isSoak
+    ? `${townCount} onsen towns · ${regionSections.length} regions`
+    : isGuides
+      ? `${articles.length} ${articles.length === 1 ? 'guide' : 'guides'} · ${guideSections.length} ${guideSections.length === 1 ? 'section' : 'sections'}`
+      : '';
 ---
 
 <Base
@@ -289,6 +324,29 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
             </div>
           </section>
         )}
+      </div>
+    ) : isGuides && guideSections.length > 0 ? (
+      <div class="wrap contents">
+        {guideSections.map((s, i) => (
+          <section class:list={['genre', { start: i === 0 }]} id={s.section.key} aria-labelledby={`h-${s.section.key}`}>
+            <h2 id={`h-${s.section.key}`} class="sec-head">
+              <span>{s.section.label}</span>
+              <span class="sec-note">
+                {s.items.length} {s.items.length === 1 ? 'guide' : 'guides'}
+              </span>
+            </h2>
+            {s.section.note && <p class="sec-dek">{s.section.note}</p>}
+            <div class="grid">
+              {s.items.map((a) => (
+                <GuideTile
+                  entry={a}
+                  glyph={s.section.glyph}
+                  kicker={category === 'rail' ? a.data.areas[0].charAt(0).toUpperCase() + a.data.areas[0].slice(1) : undefined}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
     ) : (
       <div class="wrap list">

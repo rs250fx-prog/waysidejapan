@@ -31,6 +31,8 @@ const articles = defineCollection({
        */
       kind: z.enum(['guide', 'dish', 'lineage', 'region', 'explainer', 'town']).default('guide'),
       dish: z.string().optional(),
+      /** column の一覧の区切り（src/data/guides.ts の COLUMN_TOPICS の key）。無ければ Other に落ちる */
+      topic: z.string().optional(),
       lineage: z.string().optional(),
       areas: z.array(z.string()).min(1),
       passes: z.array(z.string()).default([]),
