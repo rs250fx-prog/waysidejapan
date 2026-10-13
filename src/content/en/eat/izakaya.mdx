@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/izakaya-hero.webp
+heroAlt: 'Illustration of an izakaya entrance at evening, a red paper lantern and a split curtain at the door, customers at the counter inside'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why is there a charge for a dish I did not order?
@@ -61,6 +63,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import izakayaCounter from '../../../assets/eat/izakaya-body.webp';
 
 An izakaya is a Japanese pub, and its bill is one of the misunderstandings Japan's consumer affairs center names as typical for visitors. Usually nothing is wrong. The bill is built differently from a restaurant's: a small dish you did not order arrives and is charged, food comes in small rounds rather than courses, and in some places a drink-only order is not quite enough. This page explains how the evening runs and why. The otoshi page goes into the bill in detail; the yakitori page covers the most common kind of specialist izakaya.
 
@@ -89,6 +93,12 @@ Drinking at a sake shop's counter survives. In Kitakyushu it is called *kaku-uch
 **The bill.** Some places bring it to the table, some have you pay at the register by the door. Tokyo's official site gives both in different articles and, in a third, says you can ask for the bill or make an X with your fingers, that it usually arrives without a breakdown, and that groups usually split it evenly. If unsure, ask. There is no tipping.
 
 **The hours.** Izakaya are evening places, generally not open at lunch. Many close around midnight, with last orders 30 to 60 minutes before.
+
+<Figure
+  src={izakayaCounter}
+  alt="Glasses of beer raised at an izakaya counter, small shared plates of edamame, sashimi, skewers and fried chicken, a cook grilling behind"
+  caption="Beer first, plates for the table, the grill going behind the counter. Illustration."
+/>
 
 ## The bill, and why it surprises people
 

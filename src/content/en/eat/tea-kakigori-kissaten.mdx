@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/tea-kakigori-kissaten-hero.webp
+heroAlt: 'Illustration of a tall bowl of shaved ice with red syrup in a summer cafe, a block of ice on the counter behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is kakigori in Nagatoro always made with natural ice?
@@ -69,6 +71,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import kissaten from '../../../assets/eat/tea-kakigori-kissaten-body.webp';
 
 Two places sell a sweet or a cup and a seat to sit with it, and both have a history that is easy to get wrong. The shaved-ice shop of Nagatoro is famous for natural ice — which runs out. The Japanese coffee house, the *kissaten*, looks like a fixture of every street — and has fallen to well under half its 1981 number. This page covers both: where they came from, how the ice is made, where coffee houses are thickest on the ground, and what you pay.
 
@@ -118,6 +122,12 @@ People working in them fell from 575,768 in 1981 to 307,693 in 2021.
 **Thickest in Kochi, Gifu and Wakayama.** The association's prefectural figures (2021 census, 2022 population) give one coffee house for every 2,146 people nationally. The fewest people per shop are in Kochi (831), Gifu (834) and Wakayama (981). Aichi has 6,171 shops, one for every 1,220 people; Osaka 6,758 (1,302); Kyoto 1,940 (1,295); Tokyo 6,121 (2,254). The association suggests that where there are more shops per person, residents probably use coffee houses more.
 
 **Morning service and the Napolitan.** Two things often linked with the kissaten have their own stories. Morning service — toast and an egg with a coffee — is covered on the separate page about Nagoya's morning. The chain Komeda Coffee says that from opening until 11:00, ordering a drink brings a free choice of toast or a roll with a boiled egg, egg spread or sweet bean paste, and that this differs by shop. The *Napolitan* spaghetti is credited by the Hotel New Grand to its second head chef, Irie Shigetada: during the postwar occupation (1945–52) American soldiers ate boiled spaghetti with salt, pepper and ketchup, and after the occupation ended the hotel developed a version with garlic and onion fried until brown, fresh and canned tomatoes and tomato paste, bay leaf and olive oil. That is the hotel's own account. How it relates to the coffee-house Napolitan, I could not find.
+
+<Figure
+  src={kissaten}
+  alt="An old-style coffee house with dark wood booths and stools, a cup of coffee on the table and siphon coffee makers at the counter"
+  caption="The kissaten: dark wood, siphons, and fewer of them every decade since 1981. Illustration."
+/>
 
 ## The shops, and what they charge
 

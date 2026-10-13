@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/izakaya-otoshi-hero.webp
+heroAlt: 'Illustration of a small dish of otoshi beside a freshly poured beer and a rolled hand towel on an izakaya counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is the otoshi free?
@@ -57,6 +59,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import otoshiDishes from '../../../assets/eat/izakaya-otoshi-body.webp';
 
 You sit down, order a beer, and before it arrives a small dish appears: a few pieces of simmered vegetable, some edamame, a spoonful of potato salad. You did not order it, and it will be on the bill. This is the *otoshi*, and Japan's consumer affairs center names it as a typical source of disputes with visitors. It has not, in the ordinary case. But the official sources do not agree on everything about it, and the consumer authority's advice is worth knowing.
 
@@ -69,6 +73,12 @@ The descriptions from official tourism bodies line up on the essentials:
 - **Japan National Tourism Organization (JNTO):** a compulsory starter served to each customer, which works as a table charge. Another JNTO page says it is not free and is regarded as a table charge, and to ask staff if unsure. A JNTO blog post describes it as a small dish served before you order — often light, such as edamame, pickles or potato salad — that cannot be swapped.
 - **GO TOKYO, Tokyo's official tourism site:** the otoshi is covered by the seat charge (*otōshi-dai*), can be anything from simmered vegetables to fresh fish, is charged per person, and as a rule cannot be refused.
 - **Kyoto's tourism association:** a small dish brought automatically, about ¥300–500 per person.
+
+<Figure
+  src={otoshiDishes}
+  alt="Five small dishes in a row on a counter: simmered vegetables, edamame, a potato salad, pickles and a piece of simmered fish"
+  caption="What an otoshi can be: whatever the kitchen sends that day. Illustration."
+/>
 
 ## Where it came from
 

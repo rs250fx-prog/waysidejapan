@@ -28,102 +28,11 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Donburi
 
-### /en/eat/donburi-gyudon/
-**ヒーロー** → 保存名 `donburi-gyudon-hero`
-
-```
-Create one image. A bowl of gyudon at a counter chain shop: thin simmered beef and onion over rice, a small bowl of miso soup and a raw egg beside it, a counter seat and a pot of pickled ginger. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `donburi-gyudon-body`
-
-```
-Create one image. An early-morning fish market scene with workers in boots eating beef bowls quickly at a tiny standing counter, crates of fish around them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/donburi-katsudon/
-**ヒーロー** → 保存名 `donburi-katsudon-hero`
-
-```
-Create one image. A bowl of katsudon: a sliced pork cutlet simmered with egg and onion over rice, steam rising, chopsticks resting on the bowl. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `donburi-katsudon-body`
-
-```
-Create one image. Two katsudon bowls side by side: on the left the egg-simmered version, on the right a sauce katsudon with the cutlet dipped in dark Worcestershire-style sauce over shredded cabbage. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Gyoza
-
-### /en/eat/gyoza-hamamatsu/
-**ヒーロー** → 保存名 `gyoza-hamamatsu-hero`
-
-```
-Create one image. Hamamatsu-style gyoza: dumplings arranged in a circle in a frying pan like a wheel, a mound of boiled bean sprouts in the center, viewed from above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `gyoza-hamamatsu-body`
-
-```
-Create one image. A cook flipping a round pan of gyoza onto a plate in one motion, the circular arrangement intact, bean sprouts being added to the middle. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/gyoza-utsunomiya/
-**ヒーロー** → 保存名 `gyoza-utsunomiya-hero`
-
-```
-Create one image. A small gyoza shop counter in Utsunomiya with plates of fried and boiled gyoza, a gyoza-shaped stone statue faintly visible outside the window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `gyoza-utsunomiya-body`
-
-```
-Create one image. Three plates of gyoza in a row: pan-fried, boiled in water, and deep-fried; each with its own dipping sauce dish. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Izakaya
 
-### /en/eat/izakaya/
-**ヒーロー** → 保存名 `izakaya-hero`
-
-```
-Create one image. The entrance of a small Japanese izakaya at evening: a red paper lantern, a short split curtain at the door, warm light inside and a counter with a few customers. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `izakaya-body`
-
-```
-Create one image. Inside an izakaya from the counter: a cook grilling, small plates arriving, glasses of beer being raised, a menu board shown as blank wooden tags on the wall. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/izakaya-otoshi/
-**ヒーロー** → 保存名 `izakaya-otoshi-hero`
-
-```
-Create one image. A small dish of otoshi (a seasonal appetizer) placed on a wooden izakaya counter beside a freshly poured glass of beer and a folded hot towel, before anything has been ordered. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `izakaya-otoshi-body`
-
-```
-Create one image. Five different otoshi dishes in small bowls arranged in a row: simmered vegetables, edamame, a tiny salad, pickles and a small piece of fish. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Konamono
-
-### /en/eat/konamono-takoyaki/
-**ヒーロー** → 保存名 `konamono-takoyaki-hero`
-
-```
-Create one image. A street stall cook turning takoyaki in a cast-iron pan with picks, steam rising, a boat-shaped paper tray of finished takoyaki with sauce and bonito flakes. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `konamono-takoyaki-body`
-
-```
-Create one image. A wooden board of soft, egg-rich Akashi-yaki dumplings next to a small bowl of dashi for dipping, with one dumpling being dipped by chopsticks; the Akashi Strait bridge faintly in the background. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Market
 
@@ -1453,32 +1362,6 @@ Create one image. Three desserts in a row on a table: a slice of roll cake, a cr
 ```
 
 ## Eat — Tea
-
-### /en/eat/tea-regions/
-**ヒーロー** → 保存名 `tea-regions-hero`
-
-```
-Create one image. Rows of rounded tea bushes covering rolling hills in Shizuoka, Mount Fuji behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tea-regions-body`
-
-```
-Create one image. A tea field partly covered with black shade cloth, workers picking leaves by hand under it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/tea-kakigori-kissaten/
-**ヒーロー** → 保存名 `tea-kakigori-kissaten-hero`
-
-```
-Create one image. A tall bowl of fluffy shaved ice with syrup in a summer café, a block of natural ice on a wooden counter behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tea-kakigori-kissaten-body`
-
-```
-Create one image. An old-style Japanese coffee house interior with dark wood booths, a siphon coffee maker on the counter and a cup of coffee being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Rail
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/donburi-gyudon-hero.webp
+heroAlt: 'Illustration of a bowl of gyudon topped with red pickled ginger, with miso soup and a raw egg, at a beef-bowl chain counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Where did the beef bowl come from?
@@ -49,6 +51,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import marketCounter from '../../../assets/eat/donburi-gyudon-body.webp';
 
 The beef bowl is what the big Japanese chains sell for under ¥500. It has a longer history than its chain-shop image suggests. The oldest chain dates itself to 1899, at a fish market, and the dish has been shaped ever since by the people who ate it there: fast, cheap, and with their own words for how they wanted it.
 
@@ -57,6 +61,12 @@ For rice bowls generally, start from the donburi overview.
 ## Where it came from
 
 **Nihonbashi, 1899.** Yoshinoya's history says Matsuda Eikichi, from Osaka, came to Tokyo and opened a shop at Nihonbashi, then home to one of the biggest fish markets in the city, and that his beef bowl, suited to the tastes of the people working there, became popular. The shop's name comes from the cherry blossoms of Yoshino, in Nara, which he loved.
+
+<Figure
+  src={marketCounter}
+  alt="Fish market workers in rubber boots and aprons eating bowls at a small counter at dawn, crates of fish on ice and boats in the harbour behind"
+  caption="The beef bowl began as fast food for a fish market. Illustration."
+/>
 
 **Following the market.** The 1923 Great Kantō Earthquake burned the shop and damaged the market. The fish market moved from Nihonbashi to Tsukiji, and Yoshinoya reopened at Tsukiji in 1926. When the Tsukiji central wholesale market opened in 1935, the market workers asked it to move inside, and it did. It burned again in the 1945 air raids, reopened as a stall after the war, and in 1947, with Matsuda Mizuho joining the management, reopened inside Tsukiji market. The motto became "fast and tasty", and the menu was cut to the beef bowl alone.
 
