@@ -256,37 +256,37 @@
       "nameJa": "尾道ラーメン",
       "origin": {
         "place": "Onomichi, Hiroshima",
-        "era": "—"
+        "era": "1928 / early Shōwa / c. 1947 (accounts differ)"
       },
       "cells": {
-        "soup": "Soy on chicken and small fish from the Inland Sea, with cubes of pork back-fat",
-        "noodle": "Flat, medium",
+        "soup": "Soy on chicken stock with small fish, topped with minced pork back-fat; varies by shop",
+        "noodle": "Flat, medium-thin, straight",
         "topping": "Pork, bamboo shoot, spring onion",
-        "howToEat": "—"
+        "howToEat": "Small bowls, so locals suggest trying several shops; often sold as chūka soba"
       },
       "where": [
         "Onomichi"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "tokushima",
       "name": "Tokushima",
       "nameJa": "徳島ラーメン",
       "origin": {
-        "place": "Tokushima",
-        "era": "—"
+        "place": "Tokushima (Komatsushima, by one account)",
+        "era": "c. 1949 (post-war stalls)"
       },
       "cells": {
-        "soup": "Dark, sweet soy on pork bone (the 'brown' type)",
-        "noodle": "Medium-thin, straight",
-        "topping": "Sweet-simmered pork belly, a raw egg",
-        "howToEat": "Eaten with rice, as a side dish"
+        "soup": "Three types of pork-bone soup; brown (dark soy) is the most common, with white and yellow",
+        "noodle": "Medium-thin, straight, on the soft side",
+        "topping": "Sweet-simmered pork belly; a raw egg at many shops",
+        "howToEat": "Eaten with a bowl of rice"
       },
       "where": [
         "Tokushima"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "wakayama",
