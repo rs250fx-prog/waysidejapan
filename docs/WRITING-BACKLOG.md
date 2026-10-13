@@ -181,3 +181,9 @@
 - **未解決・要照合**：ぽんしゅ館の唎酒1,000円が税込か（sake・sake-niigata は税込と記載、今回の tohoku-chubu2 メモは「税込の明記なし」→ 原ページで確認）。賀茂鶴の創業者名（木村和平／木村静彦）。sake.mdx の「EU・英国・米国で保護」は今回のメモでは未確認（インドのみ確認）。酸ヶ湯FAQの国道102号／103号。温泉津の1971年返還・1973年結審の順序。湯原しし祭りの日程の解釈。instant-noodles の JIFFA 数字（画像の目視）。ローマ字推定多数（各記事の報告どおり）
 - **ハブへの追加提案（未反映）**：ramen（ラーメン店18,041事業所・平成28年経済センサス、小売物価統計で東京は81市中73位）、soba（店の型4つ、もり・ざる・せいろ、そば湯の由来、アレルギー表示は飲食店対象外）、udon（乾麺・干しめん・手延べ干しめんの定義と太さ区分、手延べの2基準、日本三大うどんの3つ目の揺れ）、sake（GI制度の経緯、23件一覧、免許場数・製成数量の県別）、somen（太さ区分は食品表示基準で確認できた）、somen-banshu（揖保乃糸のGI 第154号 2024-08-27 を農水省一覧で確認）
 - 画像：新記事には heroImage なし（sake の兄弟ページは画像あり）
+
+### 第13弾（2026-10-13 執筆。温泉郷20本＋監査対応の第一歩）
+- 温泉郷：nanki-katsuura / yunomine / totsukawa / yunoyama / ogoto / shirahone / okuhida / togura-kamiyamada / isawa / masutomi / akiu / iizaka / higashiyama / hanamaki / asamushi / aso-uchinomaki / tsuetate / hinagu / yamanaka / tsukioka。監査の指摘に合わせ「I found…」を使わない文体で書いた
+- **監査対応**：column/tourist-prices-at-famous-markets を `draft: true`（村瀬さん判断・書き直し待ち。被リンク0）。税込不明の金額は (A) 外す で決定（村瀬さん）→ 記事約25本への適用と DishPrices の条件変更は未着手
+- 既存記事の更新：kyodo-ryori-kinki（勝浦まぐろ 2018年8,979t全国1位＝県資料、紀伊勝浦まで約4時間、おごと×ふなずし等＝観光協会、湯筒 84.3℃＝環境省）、kyodo-ryori-chubu（白骨×温泉粥、戸倉×おしぼりそば、増富の食文化）、acidic-sulphur-radioactive-springs（増富の泉質＝環境省計画書）、kyodo-ryori-tohoku（浅虫まで約20〜30分を出典別に）、kyodo-ryori-hokuriku（山中・月岡へリンク）
+- **要再確認**：shirahama.mdx の「JNTO says Katsuura's market handles the world's largest landings of fresh tuna」は今回のメモの JNTO 記述に無い／visitkaga.jp の運営主体（yamashiro は「明記なし」、新メモは加賀市観光協会）／奥飛騨の湯量 37,000L/分「国内3位」と kusatsu の 32,300L/分・1995年統計の順位の食い違い（統計の種類・年が違う可能性）／kyodo-ryori-kyushu の「だご汁は九州全域」（農水省の熊本ページは「熊本県内全域」）／公開直前に再確認：肥薩おれんじ鉄道 10/13 再開、豊肥本線・九州横断バス、阿蘇山・焼岳・乗鞍の噴火警戒レベル、新穂高の湯（〜10/30）、白骨のバス冬ダイヤ、湯の山ロープウエイ
