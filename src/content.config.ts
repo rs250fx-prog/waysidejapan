@@ -29,7 +29,7 @@ const articles = defineCollection({
        * lineage は src/data/lineages/<dish>.json の key を lineage に持つ。
        * ページの slug は `<dish>-<lineage>` にする（LineageTable がその前提でリンクする）
        */
-      kind: z.enum(['guide', 'dish', 'lineage']).default('guide'),
+      kind: z.enum(['guide', 'dish', 'lineage', 'region', 'explainer', 'town']).default('guide'),
       dish: z.string().optional(),
       lineage: z.string().optional(),
       areas: z.array(z.string()).min(1),

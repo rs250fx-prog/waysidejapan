@@ -1,0 +1,147 @@
+---
+/**
+ * Soak の目次のタイル。温泉町（town）と泉質解説（explainer）で使う。
+ *
+ * 写真は 0/49 なので文字で成立させる。タイトルの「Kusatsu Onsen: strongly acidic water, …」を
+ * コロンで割り、前半を名前、後半を一言にする。explainer は漢字1字を添える。
+ * facility（泉質・駅から○分・入れ墨）が入った記事はその行を出す。いまは全記事が未記入。
+ * SP では DishTile と同じく1行に畳む。
+ */
+import type { Article } from '../lib/content.ts';
+import { hrefOf } from '../lib/content.ts';
+import { EXPLAINER_GLYPHS } from '../data/soak.ts';
+import { parseId } from '../content.config.ts';
+import Icon from './Icon.astro';
+
+interface Props {
+  entry: Article;
+  /** 地域名。town のタイルに小さく出す */
+  region?: string;
+}
+const { entry, region } = Astro.props;
+const d = entry.data;
+const { slug } = parseId(entry.id);
+const [head, ...rest] = d.title.split(/[:：]/);
+const name = head.trim();
+const tagline = rest.join(':').trim() || d.description.split(/(?<=[.!?])\s+/)[0];
+const glyph = d.kind === 'explainer' ? (EXPLAINER_GLYPHS[slug] ?? '湯') : null;
+
+const f = d.facility;
+const facts: string[] = [];
+if (f?.water) facts.push(f.water);
+if (f?.minutesFromStation != null) facts.push(`${f.minutesFromStation} min from the station`);
+if (f?.tattoos === 'allowed') facts.push('Tattoos OK');
+if (f?.tattoos === 'not-allowed') facts.push('No tattoos');
+if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
+---
+
+<article class:list={['tile', d.kind]}>
+  <a class="face" href={hrefOf(entry)}>
+    {glyph && (
+      <span class="glyph" aria-hidden="true">
+        {glyph}
+      </span>
+    )}
+    <span class="text">
+      {region && <span class="region">{region}</span>}
+      <span class="name">{name}</span>
+      <span class="tagline">{tagline}</span>
+      {facts.length > 0 && <span class="facts">{facts.join(' · ')}</span>}
+      <span class="go">
+        {d.kind === 'explainer' ? 'Read' : 'Read the guide'} <Icon name="arrow" />
+      </span>
+    </span>
+  </a>
+</article>
+
+<style>
+  .tile {
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .face {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 16px 14px;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+  }
+  .face:hover .name,
+  .face:hover .go {
+    color: var(--accent-hover);
+  }
+  .glyph {
+    display: block;
+    font-family: var(--font-jp);
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.55;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .region {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .tagline {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .facts {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .go {
+    margin-top: auto;
+    padding-top: 4px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  @media (max-width: 767px) {
+    .face {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px;
+    }
+    .glyph {
+      flex: 0 0 64px;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      background: var(--surface-2);
+    }
+    .name {
+      font-size: 20px;
+    }
+    .tagline {
+      font-size: 14px;
+    }
+  }
+</style>

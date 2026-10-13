@@ -66,7 +66,16 @@ SP（767px以下）：ジャンプ行は横スクロール、タイルは1列、
 - `npm run build` が通り、`tools/check-content.mjs` が通る
 - PC 1280px と SP 375px で崩れない（min-width:0 を忘れない）
 
-## 実行2：Soak（実行1の後に要件を確認）
+## 実行1の補足（2026-10-13 実装後）
+
+- 系譜リンクは40pxのチップ。SPではタイルの漢字／写真を左64pxに畳む。ジャンプ行はSPで上部に固定
+- 実装：`src/data/genres.ts`、`src/components/DishTile.astro`、`src/pages/[lang]/[category]/index.astro`
+
+## 実行2：Soak（2026-10-13 実装済み）
+
+- 実装：`src/data/soak.ts`（9区分・概説の当て先・explainer の漢字）、`src/components/SoakTile.astro`
+- 49本に `kind` を付与（town 39 / region 5 / explainer 5）。判定はタイトルで機械的に：`onsen-*` → region、泉質・かけ流し → explainer、残り → town
+- 沖縄は概説のみ（町の記事が無い）。「Overview only, for now」と出す
 
 - `kind` に `region` / `explainer` / `town` を追加（schema と check-content）
 - 49本の frontmatter に `kind` を1行追記
