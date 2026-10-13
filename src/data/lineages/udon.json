@@ -70,15 +70,15 @@
       "key": "inaniwa",
       "name": "Inaniwa (Akita)",
       "nameJa": "稲庭うどん",
-      "origin": { "place": "Inaniwa, Akita", "era": "1665 / 1860" },
+      "origin": { "place": "Inaniwa, Yuzawa, Akita", "era": "Early Edo period (founder and dates differ by source)" },
       "cells": {
-        "noodle": "Hand-stretched, dried, flat and thin, no oil; a one-family secret until 1972",
-        "broth": "Light dipping sauce or clear broth",
-        "topping": "Minimal",
-        "howToEat": "Cold with dipping sauce, or hot"
+        "noodle": "Dried, thin and flat; hand-twisted on two rods, pressed flat and stretched by hand over 3–4 days; no oil. Method made public in 1972",
+        "broth": "Strong soy dip with bonito stock, or sesame-miso; also hot broth",
+        "topping": "—",
+        "howToEat": "Rinsed in cold water, then cold with a dip or hot; locally, short 'mago-udon' for babies and the elderly"
       },
       "where": ["Yuzawa"],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "mizusawa",
@@ -93,10 +93,15 @@
       "key": "goto",
       "name": "Gotō (Nagasaki)",
       "nameJa": "五島うどん",
-      "origin": { "place": "Gotō islands", "era": "—" },
-      "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
-      "where": ["Gotō"],
-      "status": "planned"
+      "origin": { "place": "Kami-Gotō islands, Nagasaki", "era": "Said to have come with the envoy ships to Tang China (unproven)" },
+      "cells": {
+        "noodle": "Dried, hand-stretched, round, about 1.7 mm; camellia oil brushed on while stretching",
+        "broth": "Ago (flying-fish) stock dip, often with egg and soy",
+        "topping": "Spring onion, bonito flakes, raw egg; yuzu-koshō, ginger",
+        "howToEat": "Jigoku-daki: lifted straight from a bubbling iron pot into the dip; chilled zaru in summer"
+      },
+      "where": ["Shin-Kamigotō"],
+      "status": "published"
     },
     {
       "key": "miso-nikomi",
