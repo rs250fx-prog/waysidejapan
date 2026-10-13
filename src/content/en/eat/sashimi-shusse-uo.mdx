@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sashimi-shusse-uo-hero.webp
+heroAlt: 'Illustration of yellowtail of four sizes laid on ice at a fish market, a buyer looking along the row'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What are the names of buri as it grows?
@@ -44,6 +46,9 @@ sources:
     published: '2026-03-25'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import growth from '../../../assets/eat/sashimi-shusse-uo-body.webp';
+
 On a Japanese menu the same fish can appear under several names, and not because of a translation problem. *Buri* (Japanese amberjack, often called yellowtail) and *suzuki* (Japanese sea bass) are *shusse-uo*, "promotion fish": like a man rising through the ranks, they take a new name at each size. The names differ by region, and so do the official accounts of when the fish is at its best.
 
 For sashimi in general — cuts, labels, safety — start from the sashimi overview.
@@ -60,6 +65,12 @@ Mie prefecture names it by age: *inada* at one year, *warasa* at two, *buri* at 
 **Toyama** has more. A 2015 column in the Sasakawa Peace Foundation's Ocean Newsletter by Nakai Seiichi, a professor at the University of Toyama, maps them: in eastern Toyama, tsubaiso → fukuragi → ganto → buri (or tsubaiso → fukuragi → hamachi → buri); in the west, kozukura → fukuragi → ganto → buri; at Nadaura in Himi, five stages — kozukura → fukuragi → nimaizuru → ganto → buri. Inland, three stages are common; in the mountains, one or two (fukuragi → buri, or just buri). The line between ganto and buri is given as 5 kg. That is a researcher's column, not an official source.
 
 **Suzuki.** Chiba gives seigo → fukko → suzuki. It says Tokyo Bay leads Japan's landings at 2,000 tonnes a year, and that suzuki is famous in summer as *arai*.
+
+<Figure
+  src={growth}
+  alt="One fish drawn four times, growing from left to right, with a blank tag above each size"
+  caption="One fish, a new name at each size. Illustration."
+/>
 
 ## What hamachi means
 

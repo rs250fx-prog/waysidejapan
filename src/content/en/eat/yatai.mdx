@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/yatai-hero.webp
+heroAlt: 'Illustration of a single food stall with a red lantern on a riverside street at dusk, a few customers on stools'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is a yatai?
@@ -55,6 +57,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import counter from '../../../assets/eat/yatai-body.webp';
 
 *Yatai* is usually translated as "food stall", and it covers three quite different things. In Fukuoka it is a cart that sets up on the same pavement every night, licensed under a city ordinance. At a shrine festival it is a stall assembled for a day or a weekend. And there are kitchen cars that cook on board and move around. They share a long history — Edo's street food — and a set of permits that explain much of what they sell. This page is the map; the lineage pages cover Fukuoka's stalls and festival stalls.
 
@@ -65,6 +69,12 @@ import LineageTable from '../../../components/LineageTable.astro';
 - **Mobile trading.** Tokyo classes trading from a vehicle while moving around as mobile restaurant business; Fukuoka licenses kitchen cars, which cook inside a vehicle, as restaurant business (vehicle).
 
 I found no official source that sorts Japan's food stalls into these types as a whole; the list above puts the cities' descriptions side by side.
+
+<Figure
+  src={counter}
+  alt="Customers in coats shoulder to shoulder on stools at a stall counter, the cook serving a bowl"
+  caption="A counter, a few stools, a cook a metre away. Illustration."
+/>
 
 ## The permits
 

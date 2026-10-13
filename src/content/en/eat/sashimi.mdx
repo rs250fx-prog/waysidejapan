@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sashimi-hero.webp
+heroAlt: 'Illustration of a plate of sashimi on shiso leaves and shredded daikon, tuna, sea bream and yellowtail, with wasabi and soy sauce'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Does wasabi make raw fish safe?
@@ -68,6 +70,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import cutting from '../../../assets/eat/sashimi-body.webp';
 
 Sashimi is the simplest-sounding dish in Japanese cooking: raw fish, sliced, with soy sauce and wasabi. Almost every part of that sentence has a history or a rule behind it. The cut depends on the fish. Soy sauce arrived late. The garnishes are often explained as protection, which is only partly true and dangerously misleading in one respect. And the label on the fish follows national rules that tell you more than visitors expect. This page is the map. The lineage pages cover fish that change their names as they grow, and fish cured with kombu or vinegar.
 
@@ -85,6 +89,12 @@ Kikkoman's home-cooking guide gives four basic cuts:
 - **Kaku-zukuri** — cubes of about 1.5 cm. For soft, thick fish such as tuna and bonito.
 
 Tuna and bonito appear under two cuts each: the choice depends on the thickness and firmness of the flesh, not only on the species.
+
+<Figure
+  src={cutting}
+  alt="A knife drawn through a block of tuna, and three cuts laid below it: thick flat slices, thin slices and cubes"
+  caption="One block, three ways of cutting it. Illustration."
+/>
 
 ## What the garnishes do, and do not do
 

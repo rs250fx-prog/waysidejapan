@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/food-shopping-hero.webp
+heroAlt: 'Illustration of a department store food floor with glass cases of prepared food and cakes, staff in white caps and shoppers'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is food really discounted before shops close?
@@ -67,6 +69,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import discounts from '../../../assets/eat/food-shopping-body.webp';
 
 A lot of what Japan eats is not cooked at home and not eaten in a restaurant. It is bought ready-made and carried somewhere else: a box of rice and side dishes from a supermarket, a tray of fried chicken from a department store basement, a bento from a station kiosk eaten on a train or, more often now, at home. Japanese calls this middle ground *nakashoku*, "middle food". This page is the map of where it is sold and what the official numbers say about it. The lineage pages go into the department store food floor and the station bento one at a time.
 
@@ -103,6 +107,12 @@ This is the part visitors ask about most, and the official record is thin.
 - **One chain’s sticker.** The ministry’s magazine *aff* (October 2025) describes the supermarket chain Life changing the stickers on items it discounts to sell out to green ones carrying a message asking shoppers to help reduce food loss, and encouraging *temaedori*, taking the item at the front of the shelf. A 2023 issue explains why: food past the shop’s own sell-by limit is taken off the shelf and becomes waste even when its best-before date has not passed.
 
 What I could not find: any official rule on when discounts start, how much they are, or what sticker colours mean, and any official account of closing-time discounts on department store food floors. Treat the timing as each shop’s decision.
+
+<Figure
+  src={discounts}
+  alt="A supermarket worker putting round stickers on boxed bento and side dishes on a deli shelf"
+  caption="Stickers going on before closing. Illustration."
+/>
 
 ## The lineages
 

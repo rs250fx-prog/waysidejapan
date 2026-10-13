@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/dogo-hero.webp
+heroAlt: 'Illustration of a large old wooden bathhouse with tiered roofs lit up at dusk, visitors in yukata in the square in front'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: How many hot spring sources does Dōgo have?
@@ -118,6 +120,9 @@ sources:
     url: 'https://www.japan.travel/en/spot/821/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import threeHouses from '../../../assets/soak/dogo-body.webp';
+
 Dōgo Onsen is in Matsuyama, Ehime, and its centre is a public bathhouse rather than a single inn: a wooden main building from 1894, still in use, and two newer bathhouses that share the town’s water. The water itself is simple, soft and alkaline, and it reaches the baths through a city-run system that blends hot and cooler sources. This page covers how that system works, how the sources are counted, how the three bathhouses are used, and what I could not confirm. How Dōgo tells its age — the "3,000 years" and the "three ancient springs" — is set out in the Shikoku overview; the ten official spring types are in the guide to onsen water types, and what *kakenagashi* means in the piece on free-flowing water.
 
 ## Where it came from
@@ -194,6 +199,12 @@ Dōgo has three public bathhouses, *sotoyu*, run by Matsuyama city as public bat
 - **Tsubaki-no-Yu.** Buy from the ticket machine inside. Lockers cost ¥10 and the hair dryer ¥10 for three minutes.
 
 The official site also sells a ticket covering one visit each to the three bathhouses’ basic baths, valid two days. I could not find whether its price includes tax on the official or the city’s pages, so the price is not here.
+
+<Figure
+  src={threeHouses}
+  alt="Three public bathhouses drawn side by side, each with a curtain at the door"
+  caption="The town's three public bathhouses. Illustration."
+/>
 
 ## Bathing there
 

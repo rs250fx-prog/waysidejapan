@@ -244,32 +244,6 @@ Create one image. A Meiji-era scene: an English teacher leading a black cow down
 
 ## Eat — Yatai
 
-### /en/eat/yatai/
-**ヒーロー** → 保存名 `yatai-hero`
-
-```
-Create one image. A row of yatai food stalls along a river at night with lanterns glowing, customers seated at small counters, steam rising. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yatai-body`
-
-```
-Create one image. Inside a yatai stall: a narrow counter with six stools, a cook serving ramen and grilled skewers, customers shoulder to shoulder. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/yatai-hakata/
-**ヒーロー** → 保存名 `yatai-hakata-hero`
-
-```
-Create one image. Hakata yatai stalls along the Naka River at night, reflections of lights on the water, a stall with a bowl of ramen being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yatai-hakata-body`
-
-```
-Create one image. A yatai stall being set up in the early evening: a cart being wheeled in, an awning unfolded, stools placed around the counter. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/yatai-matsuri/
 **ヒーロー** → 保存名 `yatai-matsuri-hero`
 
@@ -284,45 +258,6 @@ Create one image. A child in a yukata holding a candied apple and a cup of shave
 ```
 
 ## Eat — Sashimi
-
-### /en/eat/sashimi/
-**ヒーロー** → 保存名 `sashimi-hero`
-
-```
-Create one image. A plate of sashimi arranged on shiso leaves and shredded daikon: slices of tuna, sea bream and yellowtail, a small mound of wasabi and a dish of soy sauce beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sashimi-body`
-
-```
-Create one image. A chef's knife drawing one long pull through a block of tuna on a cutting board; beside it three small groups of slices showing different cuts: flat thick slices, thin translucent slices, and small cubes. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sashimi-shime/
-**ヒーロー** → 保存名 `sashimi-shime-hero`
-
-```
-Create one image. Slices of vinegar-cured mackerel with silver skin on a plate, and white fish fillets pressed between sheets of kombu on a board beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sashimi-shime-body`
-
-```
-Create one image. A fillet of white fish being laid between two sheets of kombu and wrapped, then the same fish unwrapped and sliced, slightly translucent and amber at the edges. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/sashimi-shusse-uo/
-**ヒーロー** → 保存名 `sashimi-shusse-uo-hero`
-
-```
-Create one image. A fish market counter with yellowtail of four different sizes laid out in a row from small to large on ice, a buyer looking along the row. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sashimi-shusse-uo-body`
-
-```
-Create one image. A growth chart drawn as one fish growing larger in four stages from left to right, with a small blank tag above each stage; no readable names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Seafood
 
@@ -447,19 +382,6 @@ Create one image. Two scenes side by side: on the left a deer and a wild boar in
 
 ## Eat — Chicken
 
-### /en/eat/chicken/
-**ヒーロー** → 保存名 `chicken-hero`
-
-```
-Create one image. A farmyard of free-ranging Japanese chickens under trees, a wooden coop behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `chicken-body`
-
-```
-Create one image. A chicken drawn as a simple outline with the cuts shown as separate soft-colored areas (thigh, breast, tender, wing, skin, heart, liver), no labels. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/chicken-karaage/
 **ヒーロー** → 保存名 `chicken-karaage-hero`
 
@@ -487,19 +409,6 @@ Create one image. The order of a mizutaki meal in three panels: drinking a cup o
 ```
 
 ## Eat — Soups and hotpots
-
-### /en/eat/nabe/
-**ヒーロー** → 保存名 `nabe-hero`
-
-```
-Create one image. A table set for a winter hotpot meal: a clay pot simmering on a portable burner, plates of vegetables and fish, a ladle, steam rising. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `nabe-body`
-
-```
-Create one image. Three bowls side by side: a bowl of miso soup, a bowl of oden in clear broth, and a small portion of hotpot ladled into a bowl. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/nabe-miso/
 **ヒーロー** → 保存名 `nabe-miso-hero`
@@ -756,19 +665,6 @@ Create one image. An outline of Japan with small dish icons scattered over the r
 
 ## Eat — Food shopping
 
-### /en/eat/food-shopping/
-**ヒーロー** → 保存名 `food-shopping-hero`
-
-```
-Create one image. A busy department store basement food floor with glass cases of prepared food and sweets, staff in white caps behind the counters. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `food-shopping-body`
-
-```
-Create one image. A supermarket deli shelf in the evening with a staff member placing discount stickers on bento boxes, shown as blank round stickers. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/food-shopping-depachika/
 **ヒーロー** → 保存名 `food-shopping-depachika-hero`
 
@@ -843,32 +739,6 @@ Create one image. Three desserts in a row on a table: a slice of roll cake, a cr
 ## Soak
 
 > 入浴者は描かない（湯船は無人、人は浴衣・上着姿か足湯の足だけ）。記事に無い名所（特に富士山）は足さない。どちらも各プロンプトに入っている。
-
-### /en/soak/nyuto/
-**ヒーロー** → 保存名 `nyuto-hero`
-
-```
-Create one image. An old thatched-roof inn in a beech forest under deep snow, steam rising from a milky white open-air bath, empty, beside it. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `nyuto-body`
-
-```
-Create one image. A small local bus on a snowy forest road stopping in front of a wooden inn, a visitor in a coat stepping down holding a small booklet. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/dogo/
-**ヒーロー** → 保存名 `dogo-hero`
-
-```
-Create one image. A grand three-storey traditional wooden public bathhouse with layered tiled roofs and a small tower on top, lit warmly at dusk, visitors in yukata in the square in front. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `dogo-body`
-
-```
-Create one image. Three different public bathhouse buildings drawn side by side as a set: a large old wooden one, a newer one in an old style, and a modern low one; no people. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/soak/noboribetsu/
 **ヒーロー** → 保存名 `noboribetsu-hero`

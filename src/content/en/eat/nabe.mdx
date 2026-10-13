@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/nabe-hero.webp
+heroAlt: 'Illustration of a clay hotpot simmering on a portable burner, plates of vegetables, tofu and sliced fish around it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What are the kinds of miso in Japan?
@@ -60,6 +62,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import threeBowls from '../../../assets/eat/nabe-body.webp';
 
 A bowl of miso soup at breakfast, a pot of oden, a hotpot: in Japan these feel like three different things. They are built the same way. Stock goes in a pot, things are simmered in it, and what separates one dish from the next is mostly what it is seasoned with — and, when that is miso, which miso. This page is the map. The lineage pages go deeper on miso soup and its regional misos, and on oden.
 
@@ -74,6 +78,12 @@ The farm ministry’s materials on Japanese food treat dashi as the base of soup
 - **Either.** For chanko nabe, the ministry says the pot is seasoned with soy sauce or miso, and that it differs between shops and homes.
 
 That is as far as the sources go. I would not turn it into a rule about east and west, or about which seasoning came first.
+
+<Figure
+  src={threeBowls}
+  alt="Three bowls in a row: miso soup, oden in clear broth, and hotpot being ladled into a bowl"
+  caption="Miso soup, oden, hotpot: stock with things simmered in it. Illustration."
+/>
 
 ## Why it is the way it is
 

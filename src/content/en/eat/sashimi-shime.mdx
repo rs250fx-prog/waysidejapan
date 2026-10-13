@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sashimi-shime-hero.webp
+heroAlt: 'Illustration of sliced vinegar-cured mackerel on a plate, and white fish pressed between sheets of kombu on a board beside it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is kobujime?
@@ -42,6 +44,9 @@ sources:
     published: '2018-02'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import kombuWrap from '../../../assets/eat/sashimi-shime-body.webp';
+
 Not all raw fish in Japan is served as it comes from the knife. Some is cured first: pressed between sheets of kombu (*kobujime*), or cured in salt and vinegar, as with mackerel (*shimesaba*). Both began as ways to keep fish before refrigerators, and both change the taste and texture. One thing curing does not do is make fish safe from parasites, and the farm ministry says so directly.
 
 For sashimi in general, start from the sashimi overview.
@@ -61,6 +66,12 @@ The ministry's explanation:
 **The fish.** Swordfish, which Toyama people call *sasu*, is the standard. Sea bream, flounder and other white fish, white shrimp and firefly squid are used too, and recently meat, vegetables, tofu and mountain greens.
 
 **The method.** The ministry describes brushing vinegar on one side of the kombu, laying sashimi-cut fish and shredded ginger on it, covering with another sheet, weighting lightly and resting overnight. Its printed recipe on the same page, though, is for whelk, so I give only the principle: fish pressed between kombu and rested.
+
+<Figure
+  src={kombuWrap}
+  alt="A white fish fillet laid on kombu, wrapped, then unwrapped and sliced, a little translucent at the edges"
+  caption="Wrapped in kombu, then sliced. Illustration."
+/>
 
 ## Shimesaba and the safety rule
 

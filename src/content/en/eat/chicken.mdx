@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/chicken-hero.webp
+heroAlt: 'Illustration of chickens ranging freely under trees, a wooden coop behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What does jidori mean on a Japanese menu?
@@ -72,6 +74,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import cuts from '../../../assets/eat/chicken-body.webp';
 
 Chicken is everywhere in Japan — skewered at the yakitori counter, fried as karaage, simmered in a Hakata hotpot — and most visitors never think about which chicken it is. Japanese menus do. Words like *jidori* and *meigara-dori* are printed on the board as if they were a promise, and one of them is: *jidori* has a national standard behind it. This page is the map: what those words mean, how the parts are named, and where the two best-documented chicken dishes, karaage and mizutaki, come from. The lineage pages go deep on each.
 
@@ -119,6 +123,12 @@ Japanese menus name chicken by part, and the ministry’s trading standard gives
 - **The rest.** *Kawa* (skin), *koniku* (meat trimmed from the neck), *kimo* (heart and liver, or separately *hāto* and *rebā*), *sunagimo* (gizzard), *nankotsu* (cartilage of the breastbone and joints), *kubi* (neck) and *gara* (bones).
 
 The ministry’s magazine adds three names you will meet at yakitori counters: *furisode*, between breast and wing root; *seseri*, neck meat, only a little per bird; and *bonjiri*, at the base of the tail, the fattiest part. It also says breast meat is said to be rich in imidazole dipeptides, which it describes as helping recovery from fatigue.
+
+<Figure
+  src={cuts}
+  alt="A chicken drawn in outline with its parts shaded, and the cuts laid around it: wing, breast, tender, thigh, skin, heart and liver"
+  caption="The parts of the bird, and the cuts they become. Illustration."
+/>
 
 ## What it costs
 
