@@ -61,6 +61,44 @@
         "Niigata"
       ],
       "status": "published"
+    },
+    {
+      "key": "hiroshima",
+      "name": "Hiroshima (Saijō, Akitsu)",
+      "nameJa": "広島（西条・安芸津）",
+      "origin": {
+        "place": "Higashihiroshima",
+        "era": "Coastal brewing from the late Edo period; Miura's soft-water method, 1898"
+      },
+      "cells": {
+        "water": "Coast (Mitsu): soft. Saijō: Mount Ryūō groundwater, moderately hard, about 80 mg/L",
+        "conditions": "Brewers who overcame spoilage with measurement; Japan's first powered rice mill; public brewing research since 1922",
+        "style": "No GI description. The prefecture links the soft-water method to the birth of ginjō",
+        "gi": "None"
+      },
+      "where": [
+        "Hiroshima"
+      ],
+      "status": "published"
+    },
+    {
+      "key": "akita",
+      "name": "Akita",
+      "nameJa": "秋田",
+      "origin": {
+        "place": "Akita prefecture",
+        "era": "—"
+      },
+      "cells": {
+        "water": "Generally soft, in the brewers' cooperative's words (no measurements given)",
+        "conditions": "Cold, snowy winters and slow low-temperature fermentation; Sannai tōji; own sake rice since 1988; Kyōkai No. 6 yeast (1930)",
+        "style": "No GI description. The research centre says Akita Sake Komachi gives few off-flavours and a light finish",
+        "gi": "None"
+      },
+      "where": [
+        "Akita"
+      ],
+      "status": "published"
     }
   ]
 }
