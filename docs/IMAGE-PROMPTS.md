@@ -28,32 +28,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Teishoku
 
-### /en/eat/teishoku/
-**ヒーロー** → 保存名 `teishoku-hero`
-
-```
-Create one image. A teishoku set meal on a tray: rice, miso soup, grilled fish, pickles and a small side dish, viewed from above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `teishoku-body`
-
-```
-Create one image. A server refilling a customer's rice bowl from a wooden rice tub at a set-meal restaurant. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/teishoku-morning/
-**ヒーロー** → 保存名 `teishoku-morning-hero`
-
-```
-Create one image. A Nagoya coffee shop table with a cup of coffee, a thick slice of toast with sweet red bean paste, a boiled egg, served together in the morning light. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `teishoku-morning-body`
-
-```
-Create one image. A chain beef-bowl restaurant breakfast set on a tray: rice, miso soup, grilled salmon, a raw egg and nori. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/teishoku-washoku-breakfast/
 **ヒーロー** → 保存名 `teishoku-washoku-breakfast-hero`
 
@@ -68,19 +42,6 @@ Create one image. A guest at a ryokan seated on a cushion, lifting the lid of a 
 ```
 
 ## Eat — Udon
-
-### /en/eat/udon/
-**ヒーロー** → 保存名 `udon-hero`
-
-```
-Create one image. A bowl of hot udon with thick white noodles in clear broth, green onion, a slice of fish cake and tempura bits. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `udon-body`
-
-```
-Create one image. Three udon bowls from different regions in a row: thick firm Sanuki udon, soft Hakata udon with burdock tempura, and Osaka kitsune udon with fried tofu. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/udon-hakata/
 **ヒーロー** → 保存名 `udon-hakata-hero`
@@ -243,21 +204,6 @@ Create one image. A Meiji-era scene: an English teacher leading a black cow down
 ```
 
 ## Eat — Yatai
-
-### /en/eat/yatai-matsuri/
-**ヒーロー** → 保存名 `yatai-matsuri-hero`
-
-```
-Create one image. A Japanese summer festival with a lane of food stalls under strings of lanterns: yakisoba, candied apples, shaved ice, people in yukata. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yatai-matsuri-body`
-
-```
-Create one image. A child in a yukata holding a candied apple and a cup of shaved ice, stall awnings and lanterns above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-## Eat — Sashimi
 
 ## Eat — Seafood
 

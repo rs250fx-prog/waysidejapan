@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/udon-hero.webp
+heroAlt: 'Illustration of a bowl of hot udon in clear broth with green onion, tempura bits and a slice of fish cake'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between udon and soba?
@@ -58,6 +60,8 @@ sources:
 
 import DishPrices from '../../../components/DishPrices.astro';
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import threeUdon from '../../../assets/eat/udon-body.webp';
 
 Udon is wheat flour, water and salt, cut into a thick noodle. That is the entire recipe, and it is why a word so simple covers dishes that have almost nothing in common: the hard, chewy Sanuki noodle in a clear anchovy broth; the soft Hakata noodle under a slab of burdock tempura; Osaka's pale kelp broth with a sweet pillow of fried tofu; Ise's enormous soft noodle with no broth at all, just a spoonful of black soy. Japanese people argue about which is real udon. The honest answer is that udon is a method, and every region finished the sentence its own way.
 
@@ -74,6 +78,12 @@ There is no legal definition of how thick udon must be when a shop serves it to 
 **East and west split over the broth.** The ministry's own description: Kanto makes its noodle broth mostly from bonito, Osaka from kelp with bonito added, because the kelp came by sea to Osaka and the local water was soft. The two broths are different colours — dark in the east, pale in the west — and the biggest instant-noodle brand ships two recipes. Nissin's Donbei kitsune udon comes in an East version (bonito and sōda-bonito stock, dark soy, red-chilli *shichimi*) and a West version (bonito and kelp stock, pale soy, *shichimi* with Japanese pepper); Hokkaido gets a third.
 
 **Even the names change at the border.** In Osaka, *kitsune* is udon with fried tofu and *tanuki* is soba with fried tofu; tempura crumbs make it *haikara*. In Tokyo, *tanuki* means the tempura crumbs. Order a tanuki in the wrong city and you will get a different dish, and the person serving you will not think anything is odd.
+
+<Figure
+  src={threeUdon}
+  alt="Three bowls of udon in a row: plain firm noodles with ginger, soft noodles topped with burdock tempura, and noodles under a sheet of fried tofu"
+  caption="Sanuki, Hakata, Osaka: one noodle, three bowls. Illustration."
+/>
 
 ## What it costs
 
