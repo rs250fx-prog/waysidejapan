@@ -10,6 +10,7 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { IMAGE_SPEC } from '../../lib/images.ts';
 import Thumb from '../../components/Thumb.astro';
+import Label from '../../components/Label.astro';
 /* トップの絵はイラスト。写真ではないので「Photographed myself」の約束とは別扱い */
 import eatArt from '../../assets/home/way-eat.webp';
 import soakArt from '../../assets/home/way-soak.webp';
@@ -163,10 +164,7 @@ const cardSpec = IMAGE_SPEC.card;
                   loading={cardSpec.loading}
                 />
               )}
-              <span class="card-label">
-                <Icon name={c.key} />
-                <span class="card-title">{t(lang, `nav.${c.key}` as UIKey)}</span>
-              </span>
+              <Label icon={c.key} text={t(lang, `nav.${c.key}` as UIKey)} />
             </span>
             <span class="card-dek">{WAYS[c.key]}</span>
             <span class="card-go">Browse <Icon name="arrow" /></span>

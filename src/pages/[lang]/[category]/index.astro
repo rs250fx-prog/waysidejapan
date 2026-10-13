@@ -4,6 +4,7 @@ import Icon from '../../../components/Icon.astro';
 import Thumb from '../../../components/Thumb.astro';
 import DishTile from '../../../components/DishTile.astro';
 import SoakTile from '../../../components/SoakTile.astro';
+import Label from '../../../components/Label.astro';
 import { LOCALES, type Locale, type Category } from '../../../config.ts';
 import { listArticles, hrefOf, enabledCategories, type Article } from '../../../lib/content.ts';
 import { parseId } from '../../../content.config.ts';
@@ -125,10 +126,13 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
   title={label}
   description={intro[category] ?? `${label} guides from Wayside Japan, written in Japan and checked in person.`}
 >
-  <div class="wrap head">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${lang}/`}>Home</a> › {label}</nav>
-    <h1><Icon name={category} /> {label}</h1>
-    <p class="dek">{intro[category]}</p>
+  {/* 帯（全幅の背景・罫線）と列（1280）を分ける。見出しの左端が本文・記事ページと揃う */}
+  <div class="head">
+    <div class="wrap head-inner">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${lang}/`}>Home</a> › {label}</nav>
+      <h1><Icon name={category} /> {label}</h1>
+      <p class="dek">{intro[category]}</p>
+    </div>
   </div>
 
   {
@@ -202,7 +206,10 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
             <div class="list list-tight">
               {loose.map((a) => (
                 <a class="row" href={hrefOf(a)}>
-                  <Thumb entry={a} kind="card" class="row-photo" />
+                  <span class="row-photo">
+                    <Thumb entry={a} kind="card" />
+                    <Label icon={category} text={label} />
+                  </span>
                   <span class="row-text">
                     <span class="row-cat">{a.data.areas[0]}</span>
                     <span class="row-title">{a.data.title}</span>
@@ -268,7 +275,10 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
             <div class="list list-tight">
               {soakLoose.map((a) => (
                 <a class="row" href={hrefOf(a)}>
-                  <Thumb entry={a} kind="card" class="row-photo" />
+                  <span class="row-photo">
+                    <Thumb entry={a} kind="card" />
+                    <Label icon={category} text={label} />
+                  </span>
                   <span class="row-text">
                     <span class="row-cat">{a.data.areas[0]}</span>
                     <span class="row-title">{a.data.title}</span>
@@ -289,13 +299,13 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
         ) : (
           articles.map((a) => (
             <a class="row" href={hrefOf(a)}>
-              <Thumb entry={a} kind="card" class="row-photo" />
+              {/* 型（またはカテゴリ）はサムネの札に。下の行には地域だけ */}
+              <span class="row-photo">
+                <Thumb entry={a} kind="card" />
+                <Label icon={category} text={KIND_LABEL[a.data.kind] || label} />
+              </span>
               <span class="row-text">
-                {/* 品目ハブは全国の話なので地域は出さない。系譜・ガイドは最初の地域 */}
-                <span class="row-cat">
-                  {KIND_LABEL[a.data.kind] || label}
-                  {a.data.kind !== 'dish' && <> · {a.data.areas[0]}</>}
-                </span>
+                {a.data.kind !== 'dish' && <span class="row-cat">{a.data.areas[0]}</span>}
                 <span class="row-title">{a.data.title}</span>
                 <span class="row-dek">{a.data.description}</span>
                 {/* 確認日バッジは一次体験の記事だけ（Article.astro と同じ基準） */}
@@ -315,13 +325,14 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
 
 <style>
   .head {
-    padding-block: 26px 22px;
     background: var(--surface);
     border-bottom: 1px solid var(--line);
+  }
+  .head-inner {
+    padding-block: 26px 22px;
     display: flex;
     flex-direction: column;
     gap: 11px;
-    max-width: none;
   }
   .crumbs {
     font-size: 13px;
@@ -531,8 +542,10 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
   .row:last-child {
     border-bottom: 1px solid var(--line);
   }
-  /* サムネイルは記事のヒーローを 3:2 のまま縮める（Thumb.astro）。高さは比率に任せる */
-  .row :global(.row-photo) {
+  /* サムネイルは記事のヒーローを 3:2 のまま縮める（Thumb.astro）。高さは比率に任せる。札を載せるので relative */
+  .row-photo {
+    position: relative;
+    display: block;
     flex: 0 0 200px;
     align-self: flex-start;
   }
@@ -625,7 +638,7 @@ const jumpSummary = isContents ? `${hubs.size} dishes · ${totalLineages} lineag
       flex-direction: column;
       gap: 12px;
     }
-    .row :global(.row-photo) {
+    .row-photo {
       flex: none;
       width: 100%;
     }

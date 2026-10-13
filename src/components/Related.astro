@@ -1,9 +1,15 @@
 ---
 /**
- * 記事末尾の関連記事。サムネイル付きのカードを3枚。
+ * 関連記事。サムネイル付きのカードを3枚。
  * 文字だけのリンクより押されやすく、次の1本へ自然に送れる。選び方は lib/content.ts の relatedOf
+ *
+ * variant
+ *   grid … 本文末尾に3列（SP は1列）
+ *   rail … 記事ページの右カラム用。縦に積み、サムネは左の小さな正方形
+ * カテゴリ名はサムネの左上の札（Label.astro）。サムネの下には繰り返さない
  */
 import Thumb from './Thumb.astro';
+import Label from './Label.astro';
 import { relatedOf, hrefOf, type Article } from '../lib/content.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 import type { Locale } from '../config.ts';
@@ -11,21 +17,27 @@ import type { Locale } from '../config.ts';
 interface Props {
   entry: Article;
   locale: Locale;
+  variant?: 'grid' | 'rail';
 }
-const { entry, locale } = Astro.props;
+const { entry, locale, variant = 'grid' } = Astro.props;
 const items = await relatedOf(entry);
 ---
 
 {
   items.length > 0 && (
-    <section class="related" aria-labelledby="related-title">
+    <section class:list={['related', variant]} aria-labelledby="related-title">
       <h2 id="related-title">Read next</h2>
       <div class="related-grid">
         {items.map((a) => (
           <a class="related-card" href={hrefOf(a)}>
-            <Thumb entry={a} kind="card" />
-            <span class="related-cat">{t(locale, `nav.${a.data.category}` as UIKey)}</span>
-            <span class="related-title">{a.data.title}</span>
+            <span class="related-photo">
+              <Thumb entry={a} kind={variant === 'rail' ? 'thumb' : 'card'} />
+              {variant === 'grid' && <Label icon={a.data.category} text={t(locale, `nav.${a.data.category}` as UIKey)} />}
+            </span>
+            <span class="related-text">
+              {variant === 'rail' && <span class="related-cat">{t(locale, `nav.${a.data.category}` as UIKey)}</span>}
+              <span class="related-title">{a.data.title}</span>
+            </span>
           </a>
         ))}
       </div>
@@ -50,13 +62,22 @@ const items = await relatedOf(entry);
   .related-card {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     min-width: 0;
     text-decoration: none;
     color: inherit;
   }
+  .related-photo {
+    position: relative;
+    display: block;
+  }
+  .related-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
   .related-cat {
-    margin-top: 2px;
     font-family: var(--font-display);
     font-size: 10px;
     font-weight: 700;
@@ -72,6 +93,38 @@ const items = await relatedOf(entry);
   }
   .related-card:hover .related-title {
     text-decoration: underline;
+  }
+
+  /* 右カラム版：縦積み、サムネは左 72px */
+  .rail {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .rail h2 {
+    font-size: 15px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .rail .related-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .rail .related-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .rail .related-photo {
+    flex: 0 0 72px;
+    width: 72px;
+  }
+  .rail .related-title {
+    font-size: 15px;
+    line-height: 1.35;
   }
 
   @media (max-width: 767px) {

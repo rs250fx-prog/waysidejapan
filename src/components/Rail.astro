@@ -1,0 +1,276 @@
+---
+/**
+ * 記事ページの右カラム（docs/HUB-DESIGN.md 実行A）。
+ *
+ * 上から：目次（本文の h2 から。Article.astro が id を振って渡す）→ 記事の型ごとの箱 →
+ * 基準価格への導線（Eat の品目ハブ）→ 関連記事。
+ * 型ごとの箱は、いまある frontmatter と data だけで組む：
+ *   dish      … 系譜ページの一覧（公開済みのみ）
+ *   lineage   … 親の品目ハブと兄弟の系譜
+ *   town      … 施設パネル（facility が入っていれば）と地域概説
+ *   region    … その地域の温泉町
+ *   explainer … 他の解説
+ * PC では sticky。中身が画面より長いときはカラム内でスクロールする（Article.astro の CSS）。
+ * SP では本文の下に落ちる（目次だけは Article.astro が本文の前に別途出す）。
+ */
+import Related from './Related.astro';
+import Icon from './Icon.astro';
+import { hrefOf, listArticles, type Article } from '../lib/content.ts';
+import { lineagesOf, dishHub, publishedLineagePages } from '../lib/lineages.ts';
+import { REGION_LEADS, regionOfArea } from '../data/soak.ts';
+import { parseId } from '../content.config.ts';
+import type { Locale } from '../config.ts';
+
+interface Props {
+  entry: Article;
+  locale: Locale;
+  toc: { id: string; text: string }[];
+}
+const { entry, locale, toc } = Astro.props;
+const d = entry.data;
+const slugOf = (a: Article) => parseId(a.id).slug;
+const shortTitle = (a: Article) => a.data.title.split(/[:：]/)[0].trim();
+
+/* 型ごとの箱。title と links（と town の facts）だけの共通形にして描く */
+type Box = { title: string; note?: string; links: { href: string; text: string; current?: boolean }[] };
+const boxes: Box[] = [];
+
+if (d.kind === 'dish' && d.dish) {
+  const data = lineagesOf(d.dish);
+  const published = await publishedLineagePages(locale, d.dish);
+  const links = (data?.lineages ?? [])
+    .filter((l) => published.has(l.key))
+    .map((l) => ({ href: `/${locale}/eat/${d.dish}-${l.key}/`, text: l.name }));
+  if (links.length) boxes.push({ title: 'Lineages', note: 'Where the dish went, and what changed', links });
+}
+
+if (d.kind === 'lineage' && d.dish) {
+  const data = lineagesOf(d.dish);
+  const hub = await dishHub(locale, d.dish);
+  const published = await publishedLineagePages(locale, d.dish);
+  const links = (data?.lineages ?? [])
+    .filter((l) => published.has(l.key))
+    .map((l) => ({ href: `/${locale}/eat/${d.dish}-${l.key}/`, text: l.name, current: l.key === d.lineage }));
+  if (hub) boxes.push({ title: `Part of ${shortTitle(hub)}`, links: [{ href: hrefOf(hub), text: `${shortTitle(hub)}: the guide` }] });
+  if (links.length > 1) boxes.push({ title: 'Other lineages', links });
+}
+
+let facts: { k: string; v: string }[] = [];
+if (d.category === 'soak') {
+  const soak = await listArticles(locale, 'soak');
+  const region = regionOfArea(d.areas[0]);
+  if (d.kind === 'town') {
+    const f = d.facility;
+    if (f) {
+      const tattoos = { allowed: 'Allowed', 'not-allowed': 'Not allowed', conditional: 'With conditions' } as const;
+      const towel = { included: 'Included', rental: 'Rental', bring: 'Bring your own' } as const;
+      const english = { signs: 'Signs', staff: 'Staff', none: 'None' } as const;
+      if (f.water) facts.push({ k: 'Water', v: f.water });
+      if (f.entry != null) facts.push({ k: 'Entry', v: `¥${f.entry.toLocaleString('en')}` });
+      if (f.hours) facts.push({ k: 'Hours', v: f.hours });
+      if (f.closed) facts.push({ k: 'Closed', v: f.closed });
+      if (f.minutesFromStation != null) facts.push({ k: 'From the station', v: `${f.minutesFromStation} min on foot` });
+      if (f.tattoos) facts.push({ k: 'Tattoos', v: tattoos[f.tattoos] });
+      if (f.towel) facts.push({ k: 'Towel', v: towel[f.towel] });
+      if (f.english) facts.push({ k: 'English', v: english[f.english] });
+      if (f.cashOnly) facts.push({ k: 'Payment', v: 'Cash only' });
+    }
+    const lead = region ? soak.find((a) => a.data.kind === 'region' && (REGION_LEADS[slugOf(a)] ?? []).includes(region.key)) : null;
+    if (lead) boxes.push({ title: `${region!.label} overview`, links: [{ href: hrefOf(lead), text: shortTitle(lead) }] });
+  }
+  if (d.kind === 'region') {
+    const keys = REGION_LEADS[slugOf(entry)] ?? [];
+    const towns = soak
+      .filter((a) => a.data.kind === 'town' && keys.includes(regionOfArea(a.data.areas[0])?.key ?? ''))
+      .sort((a, b) => a.data.title.localeCompare(b.data.title));
+    if (towns.length) boxes.push({ title: 'Onsen towns here', links: towns.map((a) => ({ href: hrefOf(a), text: shortTitle(a) })) });
+  }
+  if (d.kind === 'explainer') {
+    const others = soak.filter((a) => a.data.kind === 'explainer' && a.id !== entry.id);
+    if (others.length) boxes.push({ title: 'More on the water', links: others.map((a) => ({ href: hrefOf(a), text: shortTitle(a) })) });
+  }
+}
+---
+
+<div class="rail">
+  {
+    toc.length > 1 && (
+      <nav class="box toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          {toc.map((h) => (
+            <li>
+              <a href={`#${h.id}`}>{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+
+  {
+    facts.length > 0 && (
+      <section class="box facts">
+        <h2>At a glance</h2>
+        <dl>
+          {facts.map((f) => (
+            <>
+              <dt>{f.k}</dt>
+              <dd>{f.v}</dd>
+            </>
+          ))}
+        </dl>
+      </section>
+    )
+  }
+
+  {
+    boxes.map((b) => (
+      <section class="box">
+        <h2>{b.title}</h2>
+        {b.note && <p class="note">{b.note}</p>}
+        <ul>
+          {b.links.map((l) => (
+            <li>
+              {l.current ? (
+                <span class="current" aria-current="page">
+                  {l.text}
+                </span>
+              ) : (
+                <a href={l.href}>{l.text}</a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+
+  {
+    d.category === 'eat' && d.kind === 'dish' && (
+      <a class="box prices" href={`/${locale}/food-prices/`}>
+        <span class="prices-title">What it costs</span>
+        <span class="prices-dek">68 dishes, three price sources side by side</span>
+        <span class="prices-go">
+          Food prices <Icon name="arrow" />
+        </span>
+      </a>
+    )
+  }
+
+  <Related entry={entry} locale={locale} variant="rail" />
+</div>
+
+<style>
+  .rail {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .box {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .box h2 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .note {
+    margin: -4px 0 10px;
+    font-size: 14px;
+    color: var(--muted-2);
+  }
+  .box ul,
+  .box ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .box li a,
+  .box li .current {
+    display: block;
+    padding: 7px 0;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line-2);
+  }
+  .box li:last-child a,
+  .box li:last-child .current {
+    border-bottom: 0;
+  }
+  .box li a:hover {
+    color: var(--accent);
+  }
+  .box li .current {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .toc ol {
+    counter-reset: toc;
+  }
+  .toc li a {
+    display: flex;
+    gap: 10px;
+  }
+  .toc li a::before {
+    counter-increment: toc;
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    padding-top: 3px;
+  }
+  .facts dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 12px;
+    font-size: 14px;
+  }
+  .facts dt {
+    color: var(--muted);
+  }
+  .facts dd {
+    margin: 0;
+    color: var(--ink);
+  }
+  .prices {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--accent);
+    background: var(--surface-2);
+    color: inherit;
+    text-decoration: none;
+  }
+  .prices:hover {
+    background: var(--surface);
+  }
+  .prices-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .prices-dek {
+    font-size: 14px;
+    color: var(--ink-2);
+  }
+  .prices-go {
+    margin-top: 4px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+</style>

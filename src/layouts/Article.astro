@@ -1,12 +1,12 @@
 ---
 import Base from './Base.astro';
 import RateNote from '../components/RateNote.astro';
-import Related from '../components/Related.astro';
+import Rail from '../components/Rail.astro';
 import Icon from '../components/Icon.astro';
 import { AUTHOR, SITE_URL, hasAnyAffiliate, type Locale } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 import { formatMonth } from '../lib/money.ts';
-import { shouldNoindex, hrefOf, type Article } from '../lib/content.ts';
+import { shouldNoindex, hrefOf, slugify, type Article } from '../lib/content.ts';
 import { dishHub } from '../lib/lineages.ts';
 import { IS_PUBLIC } from '../config.ts';
 import { getImage, Image } from 'astro:assets';
@@ -49,6 +49,26 @@ if (!/<img[\s>]/.test(body)) {
   const at = h2s.length >= 2 ? h2s[1].index! : body.length;
   body = body.slice(0, at) + NOIMAGE_FIGURE + body.slice(at);
 }
+
+// 右カラムの目次。本文の h2 に id を振り（無いものだけ）、見出し文字を集める。
+// id は見出しの文字から作る。同じ文字が2回出たら番号を足して衝突を避ける
+const toc: { id: string; text: string }[] = [];
+const seen = new Set<string>();
+body = body.replace(/<h2([^>]*)>([\s\S]*?)<\/h2>/g, (m, attrs: string, inner: string) => {
+  const text = inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const idMatch = attrs.match(/\sid="([^"]+)"/);
+  let id = idMatch ? idMatch[1] : slugify(text) || 'section';
+  if (!idMatch) {
+    let n = 2;
+    const base = id;
+    while (seen.has(id)) id = `${base}-${n++}`;
+  }
+  seen.add(id);
+  toc.push({ id, text });
+  return idMatch ? m : `<h2 id="${id}"${attrs}>${inner}</h2>`;
+});
+if (d.faq.length > 0) toc.push({ id: 'faq', text: t(locale, 'article.faq') });
+if (d.sources.length > 0) toc.push({ id: 'sources', text: t(locale, 'article.sources') });
 
 const graph: Record<string, unknown>[] = [
   {
@@ -106,7 +126,27 @@ if (d.faq.length > 0) {
   publishedTime={d.pubDate.toISOString()}
   modifiedTime={d.updatedDate?.toISOString()}
 >
-  <article class="wrap article">
+  {
+    /* 本文 880 ＋ 右カラム 280（間 40）を 1280 の列に左詰めで置く。
+       一覧ページと同じ左端から始まるので、ページを渡っても見出しの位置が飛ばない（docs/HUB-DESIGN.md 実行A）。
+       SP では右カラムが本文の下に落ちるので、目次だけ本文の前に折りたたみで出す */
+  }
+  <div class="wrap article-layout">
+  {
+    toc.length > 1 && (
+      <details class="toc-mobile">
+        <summary>On this page</summary>
+        <ol>
+          {toc.map((h) => (
+            <li>
+              <a href={`#${h.id}`}>{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </details>
+    )
+  }
+  <article class="article">
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href={`/${locale}/`}>Home</a>
       <span aria-hidden="true">›</span>
@@ -177,7 +217,7 @@ if (d.faq.length > 0) {
 
     {
       d.faq.length > 0 && (
-        <section class="faq">
+        <section class="faq" id="faq">
           <h2>{t(locale, 'article.faq')}</h2>
           {d.faq.map((f) => (
             <div class="faq-item">
@@ -191,7 +231,7 @@ if (d.faq.length > 0) {
 
     {
       d.sources.length > 0 && (
-        <section class="sources">
+        <section class="sources" id="sources">
           <h2>{t(locale, 'article.sources')}</h2>
           <ul>
             {d.sources.map((s) => (
@@ -207,18 +247,90 @@ if (d.faq.length > 0) {
     }
 
     <RateNote pricesCheckedOn={d.pricesCheckedOn} />
-
-    <Related entry={entry} locale={locale} />
   </article>
+
+  <aside class="side" aria-label="Related">
+    <div class="side-inner">
+      <Rail entry={entry} locale={locale} toc={toc} />
+    </div>
+  </aside>
+  </div>
 </Base>
 
 <style>
-  .article {
-    max-width: 880px;
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 880px) 280px;
+    column-gap: 40px;
+    align-items: start;
+    justify-content: start;
     padding-block: 32px 0;
+  }
+  .article {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 22px;
+  }
+  .side {
+    min-width: 0;
+    align-self: stretch;
+  }
+  /* 右カラムは追従する。画面より長いときはカラム内でスクロール */
+  .side-inner {
+    position: sticky;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding-top: 8px;
+    scrollbar-width: thin;
+  }
+  .toc-mobile {
+    display: none;
+  }
+
+  @media (max-width: 1023px) {
+    .article-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .side {
+      margin-top: 36px;
+      max-width: 720px;
+    }
+    .side-inner {
+      position: static;
+      max-height: none;
+      overflow: visible;
+    }
+    .toc-mobile {
+      display: block;
+      margin-bottom: 20px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+    .toc-mobile summary {
+      cursor: pointer;
+      padding: 12px 16px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .toc-mobile ol {
+      margin: 0;
+      padding: 0 16px 10px;
+      list-style: none;
+    }
+    .toc-mobile li a {
+      display: block;
+      padding: 9px 0;
+      border-top: 1px solid var(--line-2);
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 15px;
+    }
   }
   .crumbs {
     display: flex;

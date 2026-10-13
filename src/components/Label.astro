@@ -1,0 +1,65 @@
+---
+/**
+ * 画像の左上に載せる札。アイコン（または漢字1字）＋名前（大文字・字間広め）。
+ * トップ「Three ways in」で決めた形をサイト共通にしたもの。
+ *
+ * 文字を絵に直接置かず、必ず地色（アクセント色）を敷く。線の多い絵の上でも読める。
+ * 札を載せたら、画像の下に同じ名前を繰り返さない（名前はこの札のテキストとして残る）。
+ * 置く親は position: relative にしておく。
+ */
+import Icon from './Icon.astro';
+
+interface Props {
+  text: string;
+  /** Icon.astro の名前 */
+  icon?: string;
+  /** アイコンの代わりに漢字1字 */
+  glyph?: string;
+  class?: string;
+}
+const { text, icon, glyph, class: className } = Astro.props;
+---
+
+<span class:list={['label', className]}>
+  {icon && <Icon name={icon as never} />}
+  {glyph && (
+    <span class="label-glyph" lang="ja" aria-hidden="true">
+      {glyph}
+    </span>
+  )}
+  <span class="label-text">{text}</span>
+</span>
+
+<style>
+  .label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100% - 24px);
+    padding: 7px 12px 7px 10px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(60, 40, 20, 0.25);
+  }
+  .label-glyph {
+    font-family: var(--font-jp);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .label-text {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    min-width: 0;
+  }
+</style>

@@ -72,14 +72,17 @@ const graph = [
   description="Reference prices for Japanese food in one page: government survey averages for ramen, soba, udon, gyudon and more, the line above which locals hesitate, and what the same dishes cost in tourist areas."
   graph={graph}
 >
-  <div class="wrap head">
-    <p class="kicker">Reference</p>
-    <h1>What food costs in Japan</h1>
-    <p class="dek">
-      Every guide tells you a place is cheap or expensive. Almost none tell you what the normal price is. This page is
-      the answer in one table: what the government price survey says, what a resident expects to pay, and where tourist
-      areas sit against both.
-    </p>
+  {/* 帯（全幅の背景・罫線）と列（1280）を分ける。一覧・記事と見出しの左端を揃える */}
+  <div class="head">
+    <div class="wrap head-inner">
+      <p class="kicker">Reference</p>
+      <h1>What food costs in Japan</h1>
+      <p class="dek">
+        Every guide tells you a place is cheap or expensive. Almost none tell you what the normal price is. This page is
+        the answer in one table: what the government price survey says, what a resident expects to pay, and where tourist
+        areas sit against both.
+      </p>
+    </div>
   </div>
 
   <section class="band">
@@ -350,9 +353,11 @@ const graph = [
 
 <style>
   .head {
-    padding-block: 30px 24px;
     background: var(--surface);
     border-bottom: 1px solid var(--line);
+  }
+  .head-inner {
+    padding-block: 30px 24px;
     display: flex;
     flex-direction: column;
     gap: 11px;

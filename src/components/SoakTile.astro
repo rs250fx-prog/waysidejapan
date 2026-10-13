@@ -1,16 +1,19 @@
 ---
 /**
- * Soak の目次のタイル。温泉町（town）と泉質解説（explainer）で使う。
+ * Soak の目次のタイル。温泉町（town）と泉質解説（explainer）で使う。DishTile と同じ骨格。
  *
- * 写真は 0/49 なので文字で成立させる。タイトルの「Kusatsu Onsen: strongly acidic water, …」を
- * コロンで割り、前半を名前、後半を一言にする。explainer は漢字1字を添える。
+ * 写真は 0/49 なので、上段は地色に薄い漢字（町は「湯」、解説は泉質の字）。
+ * heroImage が入れば写真に切り替わる。名前は絵の左上に札で載せ、下には繰り返さない。
+ * タイトルの「Kusatsu Onsen: strongly acidic water, …」をコロンで割り、後半を一言にする。
  * facility（泉質・駅から○分・入れ墨）が入った記事はその行を出す。いまは全記事が未記入。
- * SP では DishTile と同じく1行に畳む。
+ * SP では絵を左 64px に畳む。
  */
+import { Image } from 'astro:assets';
 import type { Article } from '../lib/content.ts';
 import { hrefOf } from '../lib/content.ts';
 import { EXPLAINER_GLYPHS } from '../data/soak.ts';
 import { parseId } from '../content.config.ts';
+import { IMAGE_SPEC } from '../lib/images.ts';
 import Icon from './Icon.astro';
 
 interface Props {
@@ -24,7 +27,8 @@ const { slug } = parseId(entry.id);
 const [head, ...rest] = d.title.split(/[:：]/);
 const name = head.trim();
 const tagline = rest.join(':').trim() || d.description.split(/(?<=[.!?])\s+/)[0];
-const glyph = d.kind === 'explainer' ? (EXPLAINER_GLYPHS[slug] ?? '湯') : null;
+const glyph = d.kind === 'explainer' ? (EXPLAINER_GLYPHS[slug] ?? '泉') : '湯';
+const spec = IMAGE_SPEC.card;
 
 const f = d.facility;
 const facts: string[] = [];
@@ -35,16 +39,29 @@ if (f?.tattoos === 'not-allowed') facts.push('No tattoos');
 if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
 ---
 
-<article class:list={['tile', d.kind]}>
+<article class:list={['tile', d.kind, { photo: !!d.heroImage }]}>
   <a class="face" href={hrefOf(entry)}>
-    {glyph && (
-      <span class="glyph" aria-hidden="true">
-        {glyph}
+    <span class="visual">
+      {
+        d.heroImage ? (
+          <span class="pic">
+            <Image src={d.heroImage} alt="" width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading="lazy" />
+          </span>
+        ) : (
+          <span class="glyph" aria-hidden="true">
+            {glyph}
+          </span>
+        )
+      }
+      <span class="name">
+        <span class="name-glyph" lang="ja" aria-hidden="true">
+          {glyph}
+        </span>
+        <span class="name-text">{name}</span>
       </span>
-    )}
+    </span>
     <span class="text">
       {region && <span class="region">{region}</span>}
-      <span class="name">{name}</span>
       <span class="tagline">{tagline}</span>
       {facts.length > 0 && <span class="facts">{facts.join(' · ')}</span>}
       <span class="go">
@@ -56,6 +73,8 @@ if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
 
 <style>
   .tile {
+    display: flex;
+    flex-direction: column;
     min-width: 0;
     border: 1px solid var(--line);
     background: var(--surface);
@@ -63,30 +82,78 @@ if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
   .face {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 16px 16px 14px;
+    height: 100%;
     color: inherit;
     text-decoration: none;
-    height: 100%;
   }
-  .face:hover .name,
   .face:hover .go {
     color: var(--accent-hover);
   }
-  .glyph {
+  .face:hover .name {
+    background: var(--accent-hover);
+  }
+  .visual {
+    position: relative;
     display: block;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .pic,
+  .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .glyph {
+    position: absolute;
+    right: 6%;
+    bottom: -4%;
     font-family: var(--font-jp);
     font-weight: 300;
-    font-size: 44px;
+    font-size: 150px;
     line-height: 1;
     color: var(--accent);
-    opacity: 0.55;
+    opacity: 0.16;
+    user-select: none;
+  }
+  .name {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100% - 24px);
+    padding: 7px 12px 7px 10px;
+    background: var(--accent);
+    color: #fff;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(60, 40, 20, 0.25);
+  }
+  .name-glyph {
+    font-family: var(--font-jp);
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .name-text {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.15;
   }
   .text {
     display: flex;
     flex-direction: column;
     gap: 6px;
     min-width: 0;
+    flex: 1;
+    padding: 14px 16px;
   }
   .region {
     font-family: var(--font-display);
@@ -95,12 +162,6 @@ if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--muted);
-  }
-  .name {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.2;
   }
   .tagline {
     font-size: 15px;
@@ -122,23 +183,62 @@ if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
 
   @media (max-width: 767px) {
     .face {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 14px;
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      grid-template-areas:
+        'v n'
+        'v t';
+      column-gap: 14px;
+      row-gap: 4px;
       padding: 14px;
+      height: auto;
     }
+    .visual {
+      display: contents;
+    }
+    .pic,
     .glyph {
-      flex: 0 0 64px;
+      grid-area: v;
+      position: static;
       width: 64px;
       height: 64px;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+    }
+    .glyph {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
-      background: var(--surface-2);
+      font-size: 38px;
+      opacity: 0.55;
     }
     .name {
+      grid-area: n;
+      position: static;
+      display: block;
+      max-width: none;
+      padding: 0;
+      background: none;
+      color: var(--ink);
+      box-shadow: none;
+    }
+    .face:hover .name {
+      background: none;
+    }
+    .name-glyph {
+      display: none;
+    }
+    .name-text {
       font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 1.2;
+    }
+    .text {
+      grid-area: t;
+      padding: 0;
     }
     .tagline {
       font-size: 14px;

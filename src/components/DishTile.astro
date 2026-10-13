@@ -2,14 +2,15 @@
 /**
  * 品目ハブのタイル。/en/eat/ の目次で使う。
  *
- * 写真が無い記事が多数なので、文字（漢字1字＋品目名）で成立させる。
- * heroImage がある記事だけ写真に切り替わる。下段に系譜ページをチップで並べ、
- * 171本の一覧を「39タイル＋系譜リンク」に圧縮する。
+ * 上段は「絵」：heroImage があれば写真、無ければ地色に薄い漢字1字。どちらも 3:2 で高さが揃う。
+ * 名前は絵の左上に札（Label.astro と同じ形）で載せ、絵の下には繰り返さない。
+ * 下段に系譜ページをチップで並べ、171本の一覧を「39タイル＋系譜リンク」に圧縮する。
  * 系譜の表示名は src/data/lineages/<dish>.json の name（記事タイトルは長すぎる）。
  *
- * SP では縦に積まない。漢字／写真を左の小さな正方形にして1行に畳み（高さ 1/3 以下）、
- * 系譜チップは 40px 以上の高さでタップできるようにする。ハブへのリンクは
- * 面全体ではなく見出し部分だけにして、チップとの押し間違いを防ぐ。
+ * SP では絵を左の 64px 正方形に畳み、名前は札ではなく普通の見出しとして横に出す
+ * （.visual を display: contents にして、中身をグリッドに直接置く）。
+ * 系譜チップは 40px 以上の高さでタップできる。ハブへのリンクは上段だけにして、
+ * チップとの押し間違いを防ぐ。
  */
 import { Image } from 'astro:assets';
 import type { Article } from '../lib/content.ts';
@@ -46,22 +47,31 @@ const spec = IMAGE_SPEC.card;
 
 <article class:list={['tile', { large, photo: !!hub.data.heroImage }]}>
   <a class="face" href={hrefOf(hub)}>
-    {
-      hub.data.heroImage ? (
-        <span class="pic" style={`--ratio: ${spec.ratio}`}>
-          <Image src={hub.data.heroImage} alt="" width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading="lazy" />
-        </span>
-      ) : (
-        <span class="glyph" aria-hidden="true">
+    <span class="visual">
+      {
+        hub.data.heroImage ? (
+          <span class="pic">
+            <Image src={hub.data.heroImage} alt="" width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading="lazy" />
+          </span>
+        ) : (
+          <span class="glyph" aria-hidden="true">
+            {glyph}
+          </span>
+        )
+      }
+      <span class="name">
+        <span class="name-glyph" lang="ja" aria-hidden="true">
           {glyph}
         </span>
-      )
-    }
-    <span class="text">
-      <span class="name">
-        {name}
-        {nameJa && <span class="ja" lang="ja">{nameJa}</span>}
+        <span class="name-text">{name}</span>
       </span>
+    </span>
+    <span class="text">
+      {nameJa && (
+        <span class="ja" lang="ja">
+          {nameJa}
+        </span>
+      )}
       <span class="tagline">{tagline}</span>
       <span class="go">
         Read the guide <Icon name="arrow" />
@@ -97,63 +107,91 @@ const spec = IMAGE_SPEC.card;
   .face {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 16px 16px 14px;
     color: inherit;
     text-decoration: none;
   }
-  .face:hover .name,
   .face:hover .go {
     color: var(--accent-hover);
   }
-  .glyph {
-    display: block;
-    font-family: var(--font-jp);
-    font-weight: 300;
-    font-size: 44px;
-    line-height: 1;
-    color: var(--accent);
-    opacity: 0.55;
+  .face:hover .name {
+    background: var(--accent-hover);
   }
-  .large .glyph {
-    font-size: 88px;
-  }
-  .pic {
+
+  /* 絵。写真でも漢字でも 3:2 で、グリッドの行の高さが揃う */
+  .visual {
+    position: relative;
     display: block;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
     background: var(--surface-2);
-    margin: -16px -16px 0;
-    aspect-ratio: var(--ratio);
+    border-bottom: 1px solid var(--line);
   }
+  .pic,
   .pic img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+  .glyph {
+    position: absolute;
+    right: 6%;
+    bottom: -4%;
+    font-family: var(--font-jp);
+    font-weight: 300;
+    font-size: 150px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.16;
+    user-select: none;
+  }
+  .large .glyph {
+    font-size: 200px;
+  }
+
+  /* 名前は札（Label.astro と同じ形） */
+  .name {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: calc(100% - 24px);
+    padding: 7px 12px 7px 10px;
+    background: var(--accent);
+    color: #fff;
+    line-height: 1;
+    box-shadow: 0 1px 3px rgba(60, 40, 20, 0.25);
+  }
+  .name-glyph {
+    font-family: var(--font-jp);
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .name-text {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .large .name-text {
+    font-size: 17px;
+  }
+
   .text {
     display: flex;
     flex-direction: column;
     gap: 6px;
     min-width: 0;
-  }
-  .name {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 600;
-    line-height: 1.2;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 8px;
-  }
-  .large .name {
-    font-size: 30px;
+    padding: 14px 16px;
   }
   .ja {
     font-family: var(--font-jp);
     font-size: 13px;
-    font-weight: 400;
     color: var(--muted);
   }
   .tagline {
@@ -216,35 +254,66 @@ const spec = IMAGE_SPEC.card;
     color: var(--accent);
   }
 
-  /* SP：漢字・写真を左の 64px 正方形に畳み、1タイルの高さを 1/3 にする */
+  /* SP：絵を左の 64px 正方形に畳み、名前は札ではなく見出しとして横に出す */
   @media (max-width: 767px) {
     .face {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 14px;
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      grid-template-areas:
+        'v n'
+        'v t';
+      column-gap: 14px;
+      row-gap: 4px;
       padding: 14px;
+    }
+    .visual {
+      display: contents;
+    }
+    .pic,
+    .glyph {
+      grid-area: v;
+      position: static;
+      width: 64px;
+      height: 64px;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
     }
     .glyph,
     .large .glyph {
-      flex: 0 0 64px;
-      width: 64px;
-      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
-      background: var(--surface-2);
+      font-size: 38px;
+      opacity: 0.55;
     }
-    .pic {
-      flex: 0 0 64px;
-      width: 64px;
-      height: 64px;
-      margin: 0;
-      aspect-ratio: 1;
+    .name {
+      grid-area: n;
+      position: static;
+      display: block;
+      max-width: none;
+      padding: 0;
+      background: none;
+      color: var(--ink);
+      box-shadow: none;
     }
-    .name,
-    .large .name {
+    .face:hover .name {
+      background: none;
+    }
+    .name-glyph {
+      display: none;
+    }
+    .name-text,
+    .large .name-text {
       font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 1.2;
+    }
+    .text {
+      grid-area: t;
+      padding: 0;
     }
     .tagline,
     .large .tagline {
