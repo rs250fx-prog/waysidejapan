@@ -17,7 +17,7 @@ export interface Genre {
 }
 
 export const GENRES: Genre[] = [
-  { key: 'noodles', label: 'Noodles', dishes: ['ramen', 'udon', 'soba', 'yakisoba', 'champon', 'somen'] },
+  { key: 'noodles', label: 'Noodles', dishes: ['ramen', 'udon', 'soba', 'yakisoba', 'champon', 'somen', 'instant-noodles'] },
   { key: 'rice', label: 'Rice, bowls and sushi', dishes: ['sushi', 'donburi', 'unagi', 'rice', 'rice-sides'] },
   { key: 'meat', label: 'Meat', dishes: ['wagyu', 'meat', 'chicken', 'tonkatsu'] },
   { key: 'seafood', label: 'Seafood', dishes: ['seafood', 'sashimi'] },
@@ -47,6 +47,7 @@ export const GLYPHS: Record<string, string> = {
   yakisoba: '焼',
   champon: '皿',
   somen: '素',
+  'instant-noodles': '即',
   sushi: '鮨',
   donburi: '丼',
   unagi: '鰻',

@@ -1,0 +1,42 @@
+{
+  "_note": "インスタント麺の系譜。品目ハブ（/en/eat/instant-noodles/）の表と各系譜ページがここから描く。出典は docs/research/instant-noodles-2026-10-13.md と各系譜ページの sources。地域ではなく形（袋／カップ）で分けている",
+  "dish": "instant-noodles",
+  "name": "Instant noodles",
+  "nameJa": "インスタント麺（即席めん）",
+  "axes": [
+    { "key": "format", "label": "The package" },
+    { "key": "noodle", "label": "Noodle" },
+    { "key": "prep", "label": "How it is made ready" },
+    { "key": "regional", "label": "Regional versions" }
+  ],
+  "lineages": [
+    {
+      "key": "bag",
+      "name": "Packet noodles (Chicken Ramen)",
+      "nameJa": "袋麺（チキンラーメン）",
+      "origin": { "place": "Ikeda, Osaka (Nissin's account)", "era": "25 August 1958" },
+      "cells": {
+        "format": "A dried noodle block in a packet; the first was pre-seasoned, and a separate soup sachet became standard from 1962",
+        "noodle": "Fried, or non-fried (hot-air dried) from 1968; one packet is about 80 strands averaging about 65 cm",
+        "prep": "Chicken Ramen today: 400 ml of hot water poured on for 3 minutes, or simmered for 1 minute",
+        "regional": "Regional packets from 1979 (Umakacchan for Kyushu); a four-city series in 1983"
+      },
+      "where": ["Nationwide"],
+      "status": "published"
+    },
+    {
+      "key": "cup",
+      "name": "Cup noodles (Cup Noodle)",
+      "nameJa": "カップ麺（カップヌードル）",
+      "origin": { "place": "Nissin, Japan", "era": "18 September 1971" },
+      "cells": {
+        "format": "A cup that is package, cooker and bowl; foamed polystyrene or paper-based; first sold with a fork",
+        "noodle": "In Cup Noodle the block is held in the middle of the cup so hot water circulates underneath",
+        "prep": "Lid half open, boiling water to the inside line, about 3 minutes (Cup Noodle 280 ml); some cups use cold water",
+        "regional": "Donbei sold separately in eastern and western Japan; four regional Akai Kitsune broths; cup Okinawa soba sold only in Okinawa"
+      },
+      "where": ["Nationwide"],
+      "status": "published"
+    }
+  ]
+}
