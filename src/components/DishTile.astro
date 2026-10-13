@@ -1,0 +1,182 @@
+---
+/**
+ * 品目ハブのタイル。/en/eat/ の目次で使う。
+ *
+ * 写真が無い記事が多数なので、文字（漢字1字＋品目名）で成立させる。
+ * heroImage がある記事だけ写真に切り替わる。下段に系譜ページのリンクを名前で並べ、
+ * 171本の一覧を「39タイル＋系譜リンク」に圧縮する。
+ * 系譜の表示名は src/data/lineages/<dish>.json の name（記事タイトルは長すぎる）。
+ */
+import { Image } from 'astro:assets';
+import type { Article } from '../lib/content.ts';
+import { hrefOf } from '../lib/content.ts';
+import { lineagesOf } from '../lib/lineages.ts';
+import { GLYPHS } from '../data/genres.ts';
+import { IMAGE_SPEC } from '../lib/images.ts';
+
+interface Props {
+  hub: Article;
+  /** この品目の系譜ページ（公開済みのもの） */
+  lineages: Article[];
+  /** Start here の大判 */
+  large?: boolean;
+}
+const { hub, lineages, large = false } = Astro.props;
+const dish = hub.data.dish ?? '';
+const data = lineagesOf(dish);
+
+/** 「Ramen: what it is, …」の前半を品目名に。コロンが無ければ JSON の name、それも無ければタイトル */
+const name = hub.data.title.split(/[:：]/)[0].trim() || data?.name || hub.data.title;
+const nameJa = data?.nameJa ?? '';
+/** 説明は1文目だけ */
+const tagline = hub.data.description.split(/(?<=[.!?])\s+/)[0];
+const glyph = GLYPHS[dish] ?? name.charAt(0);
+
+const lineageName = (a: Article) => data?.lineages.find((l) => l.key === a.data.lineage)?.name ?? a.data.title.split(/[:：]/)[0];
+const links = lineages
+  .map((a) => ({ href: hrefOf(a), name: lineageName(a) }))
+  .sort((x, y) => x.name.localeCompare(y.name));
+const spec = IMAGE_SPEC.card;
+---
+
+<article class:list={['tile', { large, photo: !!hub.data.heroImage }]}>
+  <a class="face" href={hrefOf(hub)}>
+    {
+      hub.data.heroImage ? (
+        <span class="pic" style={`aspect-ratio: ${spec.ratio}`}>
+          <Image src={hub.data.heroImage} alt="" width={spec.widths.at(-1)} widths={spec.widths} sizes={spec.sizes} loading="lazy" />
+        </span>
+      ) : (
+        <span class="glyph" aria-hidden="true">
+          {glyph}
+        </span>
+      )
+    }
+    <span class="text">
+      <span class="name">
+        {name}
+        {nameJa && <span class="ja" lang="ja">{nameJa}</span>}
+      </span>
+      <span class="tagline">{tagline}</span>
+    </span>
+  </a>
+  {
+    links.length > 0 && (
+      <p class="lineages">
+        <span class="lin-label">Lineages</span>
+        {links.map((l, i) => (
+          <>
+            {i > 0 && <span class="sep"> · </span>}
+            <a href={l.href}>{l.name}</a>
+          </>
+        ))}
+      </p>
+    )
+  }
+</article>
+
+<style>
+  .tile {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .face {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 16px 12px;
+    color: inherit;
+    text-decoration: none;
+    flex: 1;
+  }
+  .face:hover .name {
+    color: var(--accent);
+  }
+  .glyph {
+    display: block;
+    font-family: var(--font-jp);
+    font-weight: 300;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.55;
+  }
+  .large .glyph {
+    font-size: 88px;
+  }
+  .pic {
+    display: block;
+    overflow: hidden;
+    background: var(--surface-2);
+    margin: -16px -16px 0;
+  }
+  .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .large .name {
+    font-size: 30px;
+  }
+  .ja {
+    font-family: var(--font-jp);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .tagline {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .large .tagline {
+    font-size: 16px;
+  }
+  .lineages {
+    margin: 0;
+    padding: 10px 16px 14px;
+    border-top: 1px solid var(--line-2);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .lin-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 8px;
+  }
+  .lineages a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+  }
+  .lineages a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+</style>

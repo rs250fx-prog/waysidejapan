@@ -2,10 +2,12 @@
 import Base from '../../../layouts/Base.astro';
 import Icon from '../../../components/Icon.astro';
 import Thumb from '../../../components/Thumb.astro';
+import DishTile from '../../../components/DishTile.astro';
 import { LOCALES, type Locale, type Category } from '../../../config.ts';
-import { listArticles, hrefOf, enabledCategories } from '../../../lib/content.ts';
+import { listArticles, hrefOf, enabledCategories, type Article } from '../../../lib/content.ts';
 import { t, type UIKey } from '../../../i18n/ui.ts';
 import { formatMonth } from '../../../lib/money.ts';
+import { GENRES, OTHER_GENRE, START_HERE, type Genre } from '../../../data/genres.ts';
 
 export function getStaticPaths() {
   return LOCALES.flatMap((lang) => enabledCategories().map((category) => ({ params: { lang, category } })));
@@ -14,7 +16,6 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as Locale;
 const category = Astro.params.category as Category;
 const RANK = { dish: 0, lineage: 1, guide: 2 } as const;
-// 食の一覧は型で並べる。品目ハブが入口で、系譜がその下、店や街の記事は最後
 const articles = (await listArticles(lang, category)).sort((a, b) => RANK[a.data.kind] - RANK[b.data.kind]);
 const KIND_LABEL = { dish: 'Dish', lineage: 'Lineage', guide: '' } as const;
 const label = t(lang, `nav.${category}` as UIKey);
@@ -27,6 +28,40 @@ const intro: Record<string, string> = {
   column: 'The regions on this site are industries before they are scenery. Sourced, and written from the train window.',
   ride: 'Touring routes in western Japan, with road surface, fuel stops and parking.',
 };
+
+/*
+ * Eat は「雑誌の目次」型（docs/HUB-DESIGN.md）。
+ * 品目ハブをジャンル（src/data/genres.ts）で区切り、系譜はハブのタイルの中にリンクで畳む。
+ * 他のカテゴリは今までどおりのリスト。
+ */
+const isContents = category === 'eat';
+
+const hubs = new Map<string, Article>();
+const lineagesByDish = new Map<string, Article[]>();
+const loose: Article[] = []; // dish を持たない記事（ガイド等）。目次の末尾に出す
+for (const a of articles) {
+  if (a.data.kind === 'dish' && a.data.dish) hubs.set(a.data.dish, a);
+  else if (a.data.kind === 'lineage' && a.data.dish) lineagesByDish.set(a.data.dish, [...(lineagesByDish.get(a.data.dish) ?? []), a]);
+  else loose.push(a);
+}
+const lineagesOf = (dish: string) => lineagesByDish.get(dish) ?? [];
+
+/* ジャンルに入っていないハブは Other に落とし、ビルドログで知らせる */
+const placed = new Set(GENRES.flatMap((g) => g.dishes));
+const orphans = [...hubs.keys()].filter((d) => !placed.has(d));
+if (isContents && orphans.length) console.warn(`[eat] dishes not in src/data/genres.ts, shown under "Other": ${orphans.join(', ')}`);
+
+/* 記事のあるジャンルだけ。見出しだけ残さない */
+const sections: { genre: Genre; hubs: Article[] }[] = [...GENRES, { ...OTHER_GENRE, dishes: orphans }]
+  .map((genre) => ({ genre, hubs: genre.dishes.map((d) => hubs.get(d)).filter((h): h is Article => !!h) }))
+  .filter((s) => s.hubs.length > 0);
+const sectionCount = (s: { hubs: Article[] }) => {
+  const n = s.hubs.length;
+  const m = s.hubs.reduce((sum, h) => sum + lineagesOf(h.data.dish!).length, 0);
+  return `${n} ${n === 1 ? 'dish' : 'dishes'}${m ? ` · ${m} ${m === 1 ? 'lineage' : 'lineages'}` : ''}`;
+};
+const startHere = START_HERE.map((d) => hubs.get(d)).filter((h): h is Article => !!h);
+const totalLineages = [...lineagesByDish.values()].reduce((s, l) => s + l.length, 0);
 ---
 
 <Base
@@ -38,33 +73,120 @@ const intro: Record<string, string> = {
     <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${lang}/`}>Home</a> › {label}</nav>
     <h1><Icon name={category} /> {label}</h1>
     <p class="dek">{intro[category]}</p>
-  </div>
-
-  <div class="wrap list">
     {
-      articles.length === 0 ? (
-        <p class="empty">
-          Nothing published here yet. The first guides are being written — I would rather post none than post a thin one.
-        </p>
-      ) : (
-        articles.map((a) => (
-          <a class="row" href={hrefOf(a)}>
-            <Thumb entry={a} kind="card" class="row-photo" />
-            <span class="row-text">
-              <span class="row-cat">
-                {KIND_LABEL[a.data.kind] || label} · {a.data.areas[0]}
-              </span>
-              <span class="row-title">{a.data.title}</span>
-              <span class="row-dek">{a.data.description}</span>
-              <span class="badge-verified">
-                <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(a.data.pricesCheckedOn)}
-              </span>
-            </span>
-          </a>
-        ))
+      isContents && sections.length > 0 && (
+        <nav class="jump" aria-label="Sections">
+          <span class="jump-label">
+            {hubs.size} dishes · {totalLineages} lineages
+          </span>
+          <ul>
+            {sections.map((s) => (
+              <li>
+                <a href={`#${s.genre.key}`}>{s.genre.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       )
     }
   </div>
+
+  {
+    isContents ? (
+      <div class="wrap contents">
+        {startHere.length > 0 && (
+          <section class="start" aria-labelledby="start-here">
+            <h2 id="start-here" class="sec-head">
+              <span>Start here</span>
+              <span class="sec-note">The three most-asked-about dishes</span>
+            </h2>
+            <div class="grid grid-start">
+              {startHere.map((h) => (
+                <DishTile hub={h} lineages={lineagesOf(h.data.dish!)} large />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {sections.map((s) => (
+          <section class="genre" id={s.genre.key} aria-labelledby={`h-${s.genre.key}`}>
+            <h2 id={`h-${s.genre.key}`} class="sec-head">
+              <span>{s.genre.label}</span>
+              <span class="sec-note">{sectionCount(s)}</span>
+            </h2>
+            {s.genre.note && <p class="sec-dek">{s.genre.note}</p>}
+            <div class="grid">
+              {s.hubs.map((h) => (
+                <DishTile hub={h} lineages={lineagesOf(h.data.dish!)} />
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <a class="band" href={`/${lang}/food-prices/`}>
+          <span class="band-text">
+            <strong>What Japanese people actually pay.</strong> 68 dishes, three price sources side by side: the government survey,
+            the big chains and what a resident sees.
+          </span>
+          <span class="band-cta">
+            Food prices <Icon name="arrow" />
+          </span>
+        </a>
+
+        {loose.length > 0 && (
+          <section class="genre" id="more" aria-labelledby="h-more">
+            <h2 id="h-more" class="sec-head">
+              <span>More from Eat</span>
+              <span class="sec-note">
+                {loose.length} {loose.length === 1 ? 'guide' : 'guides'}
+              </span>
+            </h2>
+            <div class="list list-tight">
+              {loose.map((a) => (
+                <a class="row" href={hrefOf(a)}>
+                  <Thumb entry={a} kind="card" class="row-photo" />
+                  <span class="row-text">
+                    <span class="row-cat">{a.data.areas[0]}</span>
+                    <span class="row-title">{a.data.title}</span>
+                    <span class="row-dek">{a.data.description}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    ) : (
+      <div class="wrap list">
+        {articles.length === 0 ? (
+          <p class="empty">
+            Nothing published here yet. The first guides are being written — I would rather post none than post a thin one.
+          </p>
+        ) : (
+          articles.map((a) => (
+            <a class="row" href={hrefOf(a)}>
+              <Thumb entry={a} kind="card" class="row-photo" />
+              <span class="row-text">
+                {/* 品目ハブは全国の話なので地域は出さない。系譜・ガイドは最初の地域 */}
+                <span class="row-cat">
+                  {KIND_LABEL[a.data.kind] || label}
+                  {a.data.kind !== 'dish' && <> · {a.data.areas[0]}</>}
+                </span>
+                <span class="row-title">{a.data.title}</span>
+                <span class="row-dek">{a.data.description}</span>
+                {/* 確認日バッジは一次体験の記事だけ（Article.astro と同じ基準） */}
+                {a.data.basis === 'visited' && (
+                  <span class="badge-verified">
+                    <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(a.data.pricesCheckedOn)}
+                  </span>
+                )}
+              </span>
+            </a>
+          ))
+        )}
+      </div>
+    )
+  }
 </Base>
 
 <style>
@@ -94,10 +216,133 @@ const intro: Record<string, string> = {
     color: var(--ink-2);
     max-width: 720px;
   }
+
+  /* ジャンプ行：PC は折り返して全部見せる、SP は横スクロール */
+  .jump {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .jump-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .jump ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .jump a {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-2);
+    text-decoration: none;
+    white-space: nowrap;
+    background: var(--surface);
+  }
+  .jump a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* 目次本体 */
+  .contents {
+    padding-block: 8px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .start {
+    padding-top: 24px;
+  }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 16px;
+    padding-top: 18px;
+    border-top: 2px solid var(--ink);
+    font-size: 26px;
+    font-weight: 600;
+    scroll-margin-top: 24px;
+  }
+  .start .sec-head {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .sec-note {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .sec-dek {
+    margin: -6px 0 16px;
+    font-size: 16px;
+    color: var(--ink-2);
+    max-width: 720px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  /* 基準価格への帯 */
+  .band {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 26px;
+    border: 1px solid var(--accent);
+    background: var(--surface-2);
+    color: inherit;
+    text-decoration: none;
+  }
+  .band:hover {
+    background: var(--surface);
+  }
+  .band-text {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .band-text strong {
+    color: var(--ink);
+  }
+  .band-cta {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  /* 従来のリスト */
   .list {
     padding-block: 26px 0;
     display: flex;
     flex-direction: column;
+  }
+  .list-tight {
+    padding-block: 0;
   }
   .empty {
     font-size: 18px;
@@ -149,9 +394,39 @@ const intro: Record<string, string> = {
     color: var(--ink-2);
   }
 
+  @media (max-width: 1023px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   @media (max-width: 767px) {
     h1 {
       font-size: 30px;
+    }
+    .jump ul {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin-inline: calc(-1 * var(--gutter));
+      padding-inline: var(--gutter);
+      scrollbar-width: none;
+    }
+    .jump ul::-webkit-scrollbar {
+      display: none;
+    }
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .sec-head {
+      font-size: 22px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .band {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 18px;
     }
     .row {
       flex-direction: column;
