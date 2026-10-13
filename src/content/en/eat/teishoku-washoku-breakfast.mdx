@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/teishoku-washoku-breakfast-hero.webp
+heroAlt: 'Illustration of a Japanese breakfast on a lacquer tray: rice, miso soup, grilled fish, rolled omelette, natto, pickles and small dishes'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is in a Japanese breakfast?
@@ -47,6 +49,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import innBreakfast from '../../../assets/eat/teishoku-washoku-breakfast-body.webp';
 
 A Japanese breakfast is not a plate but a tray of small bowls: fish, pickles, rice and soup, first thing in the morning. It is the clearest everyday example of the shape the farm ministry calls the basis of Japanese meals — rice, soup and several small dishes — and it is served from ryokan to station chains at very different prices.
 
@@ -61,6 +65,12 @@ For the set-meal shape in general, start from the set-meal overview.
 **The shape behind it.** The farm ministry's *ichijū sansai* — rice, soup, a main and two sides, with pickles alongside the rice — overlaps with the ryokan tray. I have not found an official source saying the ryokan breakfast *is* ichijū sansai, so I say only that the two share a shape.
 
 **How to sit to it.** The ministry's layout: rice on the left, soup on the right, the main dish behind the soup, a side behind the rice, small bowls between. A whole fish lies head to the left.
+
+<Figure
+  src={innBreakfast}
+  alt="A guest in a yukata lifting the lid of a soup bowl, many small breakfast dishes in front of them in a tatami room by the sea"
+  caption="Breakfast at an inn, laid out all at once. Illustration."
+/>
 
 ## Where to find it, and what it costs
 

@@ -28,33 +28,7 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Teishoku
 
-### /en/eat/teishoku-washoku-breakfast/
-**ヒーロー** → 保存名 `teishoku-washoku-breakfast-hero`
-
-```
-Create one image. A traditional Japanese breakfast at an inn: rice, miso soup, grilled fish, rolled omelet, natto, pickles and small dishes on a lacquer tray, morning light from a paper window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `teishoku-washoku-breakfast-body`
-
-```
-Create one image. A guest at a ryokan seated on a cushion, lifting the lid of a miso soup bowl, many small breakfast dishes arranged in front of them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Udon
-
-### /en/eat/udon-hakata/
-**ヒーロー** → 保存名 `udon-hakata-hero`
-
-```
-Create one image. A bowl of soft Hakata udon with a large burdock tempura stick on top, clear broth, a small udon shop counter. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `udon-hakata-body`
-
-```
-Create one image. A cook cutting burdock into thin sticks and frying them into a crisp tempura fan. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/udon-osaka/
 **ヒーロー** → 保存名 `udon-osaka-hero`
@@ -202,8 +176,6 @@ Create one image. Yonezawa beef steak on a plate, snowy mountains of Yamagata ou
 ```
 Create one image. A Meiji-era scene: an English teacher leading a black cow down a road toward a port, wooden houses around them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Yatai
 
 ## Eat — Seafood
 
@@ -555,45 +527,6 @@ Create one image. A plate of crisp thin fried noodles topped with a thick glossy
 Create one image. Two plates side by side: crisp thin fried noodles on the left, soft thick fried noodles on the right, both under the same vegetable sauce. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/yakisoba/
-**ヒーロー** → 保存名 `yakisoba-hero`
-
-```
-Create one image. A festival stall cook tossing yakisoba on a large iron griddle with two spatulas, cabbage and pork, steam and lanterns around. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yakisoba-body`
-
-```
-Create one image. A bread roll split open and filled with yakisoba, topped with pickled ginger, on a paper napkin. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/yakisoba-fujinomiya/
-**ヒーロー** → 保存名 `yakisoba-fujinomiya-hero`
-
-```
-Create one image. A plate of Fujinomiya yakisoba with chewy noodles, cabbage and pork crackling, sprinkled with sardine powder, Mount Fuji behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yakisoba-fujinomiya-body`
-
-```
-Create one image. Steamed noodles being cooled on a tray and coated with oil in a small noodle factory. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/yakisoba-yokote/
-**ヒーロー** → 保存名 `yakisoba-yokote-hero`
-
-```
-Create one image. A plate of Yokote yakisoba with thick straight noodles and minced pork, a runny fried egg on top and red pickles on the side, snow outside. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yakisoba-yokote-body`
-
-```
-Create one image. A cook sliding a soft fried egg onto a plate of yakisoba, the yolk breaking slightly. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Local dishes
 
 ### /en/eat/kyodo-ryori/
@@ -611,46 +544,7 @@ Create one image. An outline of Japan with small dish icons scattered over the r
 
 ## Eat — Food shopping
 
-### /en/eat/food-shopping-depachika/
-**ヒーロー** → 保存名 `food-shopping-depachika-hero`
-
-```
-Create one image. A department store food hall counter with beautiful boxed sweets and prepared salads, a shopper being handed a sample on a toothpick. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `food-shopping-depachika-body`
-
-```
-Create one image. A staff member weighing a portion of salad on a small scale behind a glass counter, a customer waiting. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/food-shopping-ekiben/
-**ヒーロー** → 保存名 `food-shopping-ekiben-hero`
-
-```
-Create one image. A station platform kiosk stacked with bento boxes, a bullet train at the platform behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `food-shopping-ekiben-body`
-
-```
-Create one image. A traveller opening a bento box on a train seat, the window showing passing countryside. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Sweets
-
-### /en/eat/sweets-amamidokoro/
-**ヒーロー** → 保存名 `sweets-amamidokoro-hero`
-
-```
-Create one image. A traditional sweet shop interior with a glass bowl of anmitsu topped with fruit and red bean paste, a pot of black sugar syrup, a teacup. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sweets-amamidokoro-body`
-
-```
-Create one image. Two bowls side by side: a thick red bean soup with toasted mochi, and a lighter bowl of sweet bean soup with rice dumplings. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/sweets-yogashi/
 **ヒーロー** → 保存名 `sweets-yogashi-hero`
@@ -665,19 +559,6 @@ Create one image. A strawberry shortcake slice with whipped cream on a plate in 
 Create one image. A fruit parlour counter with perfectly arranged fruit in a glass case and a parfait being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-### /en/eat/sweets-conbini/
-**ヒーロー** → 保存名 `sweets-conbini-hero`
-
-```
-Create one image. A convenience store chilled dessert shelf with roll cakes, cream puffs and puddings in clear packages, a hand reaching for one. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sweets-conbini-body`
-
-```
-Create one image. Three desserts in a row on a table: a slice of roll cake, a cream puff and a cup of pudding, each with a plastic spoon. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Rail
 
 > **メモ**：`setouchi-area-pass` は `basis: visited` の記事。ヒーローは、ご自身が撮った写真のほうが記事の根拠と合う。写真が用意できるまで、下のイラストで仮置きする。
@@ -686,28 +567,3 @@ Create one image. Three desserts in a row on a table: a slice of roll cake, a cr
 
 > 入浴者は描かない（湯船は無人、人は浴衣・上着姿か足湯の足だけ）。記事に無い名所（特に富士山）は足さない。どちらも各プロンプトに入っている。
 
-### /en/soak/noboribetsu/
-**ヒーロー** → 保存名 `noboribetsu-hero`
-
-```
-Create one image. A volcanic crater valley of grey and orange rock with many small steaming vents, a wooden boardwalk winding through it, clothed visitors walking. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `noboribetsu-body`
-
-```
-Create one image. A large empty indoor bath hall with several pools of different water colours: milky white, clear, and pale green, steam hanging under the roof. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/kurokawa/
-**ヒーロー** → 保存名 `kurokawa-hero`
-
-```
-Create one image. A small valley hot spring town of low wooden inns among dense trees beside a stream, stone steps and paths, soft light, quiet. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `kurokawa-body`
-
-```
-Create one image. A hand holding a small wooden entry pass on a cord, in front of an empty rock-lined open-air bath in the woods. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```

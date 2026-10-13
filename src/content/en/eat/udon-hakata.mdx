@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/udon-hakata-hero.webp
+heroAlt: 'Illustration of a bowl of soft udon topped with a long stick of burdock tempura and green onion at a counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why is Hakata udon so soft?
@@ -53,6 +55,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import burdock from '../../../assets/eat/udon-hakata-body.webp';
 
 Fukuoka is famous abroad for ramen and at home, just as much, for udon. The two are opposites in every way the city could manage: the ramen noodle is hair-thin, dry and ordered hard; the udon noodle is thick, wet and served so soft it barely resists the teeth. Visitors who have learned to say *barikata* at a ramen counter arrive at an udon shop and ask for firm noodles, and the staff smile. Soft is the point.
 
@@ -67,6 +71,12 @@ The city's claim is specific and carved in stone. In 1241 the monk Enni (Shōich
 **The broth.** Called *sume* here: kelp and bonito with flying fish (*ago*) or dried anchovy (*iriko*) from the Genkai Sea, light soy sauce, a touch sweet. Pale and clear.
 
 **On top.** *Gobō-ten*, burdock root in batter — cut into batons or as a loose fritter — and *maru-ten*, a round flat disc of fried fish paste. One or both is the default order, and the burdock soaking up broth is the taste of the city.
+
+<Figure
+  src={burdock}
+  alt="A cook slicing burdock into thin sticks and frying them into a crisp tempura cluster"
+  caption="Burdock cut thin and fried: the topping Hakata asks for. Illustration."
+/>
 
 ## Why Fukuoka
 
