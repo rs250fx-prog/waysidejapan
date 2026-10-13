@@ -73,9 +73,13 @@ const totalLineages = [...lineagesByDish.values()].reduce((s, l) => s + l.length
     <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${lang}/`}>Home</a> › {label}</nav>
     <h1><Icon name={category} /> {label}</h1>
     <p class="dek">{intro[category]}</p>
-    {
-      isContents && sections.length > 0 && (
-        <nav class="jump" aria-label="Sections">
+  </div>
+
+  {
+    /* ジャンプ行は head の外に置く。SP では画面上部に貼り付けて、18,000px のページを行き来できるようにする */
+    isContents && sections.length > 0 && (
+      <nav class="jumpbar" aria-label="Sections">
+        <div class="wrap jump">
           <span class="jump-label">
             {hubs.size} dishes · {totalLineages} lineages
           </span>
@@ -86,10 +90,10 @@ const totalLineages = [...lineagesByDish.values()].reduce((s, l) => s + l.length
               </li>
             ))}
           </ul>
-        </nav>
-      )
-    }
-  </div>
+        </div>
+      </nav>
+    )
+  }
 
   {
     isContents ? (
@@ -217,9 +221,13 @@ const totalLineages = [...lineagesByDish.values()].reduce((s, l) => s + l.length
     max-width: 720px;
   }
 
-  /* ジャンプ行：PC は折り返して全部見せる、SP は横スクロール */
+  /* ジャンプ行：PC は折り返して全部見せる、SP は横スクロール＋上部に固定 */
+  .jumpbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
   .jump {
-    margin-top: 10px;
+    padding-block: 14px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -403,12 +411,27 @@ const totalLineages = [...lineagesByDish.values()].reduce((s, l) => s + l.length
     h1 {
       font-size: 30px;
     }
+    .jumpbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .jump {
+      padding-block: 10px;
+      gap: 6px;
+    }
+    .jump-label {
+      display: none;
+    }
     .jump ul {
       flex-wrap: nowrap;
       overflow-x: auto;
       margin-inline: calc(-1 * var(--gutter));
       padding-inline: var(--gutter);
       scrollbar-width: none;
+    }
+    .sec-head {
+      scroll-margin-top: 64px;
     }
     .jump ul::-webkit-scrollbar {
       display: none;
