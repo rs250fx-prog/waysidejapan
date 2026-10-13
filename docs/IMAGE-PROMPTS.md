@@ -848,3 +848,136 @@ Create one image. Three desserts in a row on a table: a slice of roll cake, a cr
 
 > **メモ**：`setouchi-area-pass` は `basis: visited` の記事。ヒーローは、ご自身が撮った写真のほうが記事の根拠と合う。写真が用意できるまで、下のイラストで仮置きする。
 
+## Soak
+
+> 入浴者は描かない（湯船は無人、人は浴衣・上着姿か足湯の足だけ）。記事に無い名所（特に富士山）は足さない。どちらも各プロンプトに入っている。
+
+### /en/soak/kusatsu/
+**ヒーロー** → 保存名 `kusatsu-hero`
+
+```
+Create one image. The Yubatake at the centre of Kusatsu at dusk: wooden channels carrying steaming hot water down a terraced slope into a pale green pool, the town's inns and lamps around it. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `kusatsu-body`
+
+```
+Create one image. Inside an empty old wooden bathhouse, long wooden paddles resting across a steaming bath of cloudy water, ready for stirring the water to cool it. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/beppu/
+**ヒーロー** → 保存名 `beppu-hero`
+
+```
+Create one image. A hillside town seen from above with dozens of white plumes of steam rising between the roofs from hot spring vents, the sea in the distance. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `beppu-body`
+
+```
+Create one image. A steaming hot spring pond walled by rocks, thick clouds of steam rising from it, a few clothed visitors looking at it from behind a low fence; it is for looking at, not bathing. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/hakone/
+**ヒーロー** → 保存名 `hakone-hero`
+
+```
+Create one image. A forested volcanic valley with yellow-grey slopes and white steam rising from vents, a ropeway gondola crossing above. No Mount Fuji. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `hakone-body`
+
+```
+Create one image. A wooden open-air bath beside a mountain stream in autumn forest, steam rising, the bath empty, a folded yukata on a bench. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/arima/
+**ヒーロー** → 保存名 `arima-hero`
+
+```
+Create one image. A narrow sloping lane of an old hot spring town in the hills, wooden houses and shops, steam rising from a small stone source in the foreground. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `arima-body`
+
+```
+Create one image. Two baths side by side, empty: one filled with cloudy reddish-brown water, the other with clear colourless water, wooden buckets on the edge. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/kinosaki/
+**ヒーロー** → 保存名 `kinosaki-hero`
+
+```
+Create one image. A willow-lined river through a small hot spring town at evening, stone bridges and wooden inns, visitors in yukata and geta walking along the bank. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `kinosaki-body`
+
+```
+Create one image. Visitors in yukata walking between two traditional public bathhouses on a lantern-lit street, carrying small baskets. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/ginzan/
+**ヒーロー** → 保存名 `ginzan-hero`
+
+```
+Create one image. Multi-storey wooden inns on both banks of a narrow river in a snowy mountain gorge at night, gas lamps lit along the street, small bridges across the water. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `ginzan-body`
+
+```
+Create one image. A small shuttle bus at a parking area at the bottom of a snowy mountain valley, day visitors in coats walking toward a footpath into the gorge. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/nyuto/
+**ヒーロー** → 保存名 `nyuto-hero`
+
+```
+Create one image. An old thatched-roof inn in a beech forest under deep snow, steam rising from a milky white open-air bath, empty, beside it. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `nyuto-body`
+
+```
+Create one image. A small local bus on a snowy forest road stopping in front of a wooden inn, a visitor in a coat stepping down holding a small booklet. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/dogo/
+**ヒーロー** → 保存名 `dogo-hero`
+
+```
+Create one image. A grand three-storey traditional wooden public bathhouse with layered tiled roofs and a small tower on top, lit warmly at dusk, visitors in yukata in the square in front. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `dogo-body`
+
+```
+Create one image. Three different public bathhouse buildings drawn side by side as a set: a large old wooden one, a newer one in an old style, and a modern low one; no people. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/noboribetsu/
+**ヒーロー** → 保存名 `noboribetsu-hero`
+
+```
+Create one image. A volcanic crater valley of grey and orange rock with many small steaming vents, a wooden boardwalk winding through it, clothed visitors walking. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `noboribetsu-body`
+
+```
+Create one image. A large empty indoor bath hall with several pools of different water colours: milky white, clear, and pale green, steam hanging under the roof. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+### /en/soak/kurokawa/
+**ヒーロー** → 保存名 `kurokawa-hero`
+
+```
+Create one image. A small valley hot spring town of low wooden inns among dense trees beside a stream, stone steps and paths, soft light, quiet. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
+
+**本文** → 保存名 `kurokawa-body`
+
+```
+Create one image. A hand holding a small wooden entry pass on a cord, in front of an empty rock-lined open-air bath in the woods. No bathers and no nudity: baths are shown empty, people only clothed (yukata, coats) or with feet in a footbath. Do not add famous landmarks that are not described here, especially Mount Fuji, torii gates or castles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+```
