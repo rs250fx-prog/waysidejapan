@@ -28,19 +28,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Wagashi
 
-### /en/eat/wagashi-yokan/
-**ヒーロー** → 保存名 `wagashi-yokan-hero`
-
-```
-Create one image. A bar of dark red bean yokan sliced on a small plate, a cup of green tea, the wrapped bar beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagashi-yokan-body`
-
-```
-Create one image. A historical scene of a soldier's ration pack including bars of yokan, drawn next to a modern wrapped bar of yokan; no words. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Wagyu
 
 ### /en/eat/wagyu-tajima/
@@ -55,16 +42,6 @@ Create one image. A black Tajima cow standing in a mountain pasture in northern 
 ```
 Create one image. A family tree of cattle drawn as branching lines from one Tajima cow at the root, leading to many calves; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Seafood
-
-## Eat — Meat
-
-## Eat — Chicken
-
-## Eat — Soups and hotpots
-
-## Eat — Rice and what goes with it
 
 ## Eat — Sōmen and more noodles
 
