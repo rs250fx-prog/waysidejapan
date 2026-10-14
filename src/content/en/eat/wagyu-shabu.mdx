@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagyu-shabu-hero.webp
+heroAlt: 'Illustration of chopsticks swishing a thin slice of marbled beef through a copper hotpot of kombu broth, vegetables and dipping sauces around it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between shabu-shabu and sukiyaki?
@@ -40,6 +42,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import refills from '../../../assets/eat/wagyu-shabu-body.webp';
 
 Shabu-shabu is wagyu reduced to its simplest form: a slice of marbled beef so thin you can read through it, held in chopsticks and swished through a pot of simmering stock for three or four seconds, then dipped and eaten. The name is the sound of the swish. It is the dish the big all-you-can-eat chains have built on, because it needs no chef at the table and the beef cooks itself, and it is the cleanest way to taste what the marbling actually does.
 
@@ -56,6 +60,12 @@ Honestly: this site could not confirm it from an official source. A founding sho
 **The sauces.** *Ponzu* (citrus and soy) and *goma-dare* (sesame), one of each per person, with grated daikon and spring onion to add. This is where the flavour is; the pot is just hot water with manners.
 
 **The finish.** Noodles or rice in the broth, which by then tastes of everything that passed through it.
+
+<Figure
+  src={refills}
+  alt="A shabu-shabu table with sesame and ponzu dipping bowls, and a server bringing another plate of sliced beef"
+  caption="Sesame sauce, ponzu, and the next plate of beef. Illustration."
+/>
 
 ## Why the chains love it
 

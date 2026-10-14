@@ -26,50 +26,9 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ---
 
-## Eat — Teishoku
-
 ## Eat — Udon
 
-### /en/eat/udon-osaka/
-**ヒーロー** → 保存名 `udon-osaka-hero`
-
-```
-Create one image. Osaka kitsune udon: a sheet of sweet simmered fried tofu floating on pale kelp broth over soft noodles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `udon-osaka-body`
-
-```
-Create one image. Two bowls compared: a Kansai "tanuki" with fried tofu over soba, and a Kanto "tanuki" with tempura bits over udon; placed side by side. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/udon-sanuki/
-**ヒーロー** → 保存名 `udon-sanuki-hero`
-
-```
-Create one image. A self-service Sanuki udon shop: a customer dipping noodles in a strainer into hot water, trays and tempura on a counter, rice fields of Kagawa outside. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `udon-sanuki-body`
-
-```
-Create one image. A pair of hands kneading udon dough by stepping on it wrapped in cloth, and then rolling and cutting it into thick noodles. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Wagashi
-
-### /en/eat/wagashi-imagawayaki/
-**ヒーロー** → 保存名 `wagashi-imagawayaki-hero`
-
-```
-Create one image. A street stall griddle with rows of round imagawayaki cakes being filled with sweet red bean paste, a paper bag of finished cakes. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagashi-imagawayaki-body`
-
-```
-Create one image. A cut imagawayaki showing the red bean filling, with a simple outline map of Japan behind showing different regions in different colors. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/wagashi-yokan/
 **ヒーロー** → 保存名 `wagashi-yokan-hero`
@@ -85,45 +44,6 @@ Create one image. A historical scene of a soldier's ration pack including bars o
 ```
 
 ## Eat — Wagyu
-
-### /en/eat/wagyu-matsusaka/
-**ヒーロー** → 保存名 `wagyu-matsusaka-hero`
-
-```
-Create one image. A pot of Matsusaka beef sukiyaki on a table in a traditional room, thin marbled slices of beef laid in the pot, raw egg in a small bowl. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagyu-matsusaka-body`
-
-```
-Create one image. Black cattle grazing in a quiet valley surrounded by hills, a farmer brushing one of them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/wagyu-omi/
-**ヒーロー** → 保存名 `wagyu-omi-hero`
-
-```
-Create one image. Ōmi beef steak on a plate, Lake Biwa and a castle town faintly behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagyu-omi-body`
-
-```
-Create one image. A historical scene: a lacquer box of preserved beef being presented at the shogun's court as medicine; drawn in a classical style. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/wagyu-shabu/
-**ヒーロー** → 保存名 `wagyu-shabu-hero`
-
-```
-Create one image. Shabu-shabu: a pair of chopsticks swishing a thin slice of wagyu in a pot of boiling kombu broth, a plate of vegetables and tofu beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagyu-shabu-body`
-
-```
-Create one image. A shabu-shabu table with two small dipping bowls of sesame sauce and ponzu, plates of thin beef being brought in as refills. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/wagyu-sukiyaki/
 **ヒーロー** → 保存名 `wagyu-sukiyaki-hero`
@@ -541,8 +461,6 @@ Create one image. A long table set with regional dishes from across Japan in sma
 ```
 Create one image. An outline of Japan with small dish icons scattered over the regions, like pins on a map; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Food shopping
 
 ## Eat — Sweets
 

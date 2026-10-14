@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/udon-sanuki-hero.webp
+heroAlt: 'Illustration of a self-service udon shop: a customer warming noodles in a strainer, trays of tempura on the counter, flat-topped hills over the fields outside'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is Marugame Seimen Sanuki udon?
@@ -70,6 +72,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import kneading from '../../../assets/eat/udon-sanuki-body.webp';
 
 Kagawa is the smallest prefecture in Japan and the one that eats the most noodles. It has 5.08 soba-and-udon shops per 10,000 people against a national average of 1.99; the town of Kotohira has 13.3. Its capital, Takamatsu, spends ¥17,704 a year per household on noodles eaten out, two and a half times the national figure. In 2011 the prefecture ran a campaign announcing it had renamed itself "Udon Prefecture", and the website crashed on launch day. None of this is a joke to the people who live there. Sanuki udon — Sanuki being the old name of the province — is the hard, square, springy wheat noodle that the rest of Japan now calls udon by default, and it is the only noodle in the country with a written standard for what may call itself authentic.
 
@@ -86,6 +90,12 @@ The legend is Kūkai, the monk who founded Shingon Buddhism, bringing the noodle
 **On top.** Spring onion, grated ginger, and whatever tempura you took from the tray.
 
 **The ways to eat it.** *Kake* (hot broth), *bukkake* (a little concentrated broth poured over), *shōyu* (soy sauce only), *kama-age* (straight from the pot in its cooking water, dipped), *kama-tama* (hot noodles with a raw egg and soy). Kagawa also has a vocabulary for temperature: *atsu-atsu* (hot noodle, hot broth), *hiya-atsu* (cold noodle, hot broth), *atsu-hiya*, *hiya-hiya*. Noodle first, broth second.
+
+<Figure
+  src={kneading}
+  alt="Udon dough wrapped in cloth being kneaded underfoot, then rolled flat and cut into thick noodles"
+  caption="Trodden, rolled, cut. Illustration."
+/>
 
 ## Why Kagawa
 

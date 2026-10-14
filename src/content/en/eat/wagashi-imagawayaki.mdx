@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagashi-imagawayaki-hero.webp
+heroAlt: 'Illustration of a stall griddle of round cakes being filled with red bean paste, a paper bag of finished cakes, a snowy street outside'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is this cake called in Japan?
@@ -36,6 +38,9 @@ sources:
   - label: '全国和菓子協会「和菓子の保存」'
     url: 'https://www.wagashi.or.jp/monogatari/kurashi/hozon/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import nameMap from '../../../assets/eat/wagashi-imagawayaki-body.webp';
 
 Ask for this cake by name and you reveal where you grew up. It is a thick, round baked cake with a filling inside. In Tokyo it is *imagawayaki*; in Hiroshima it is likely to be *ōbanyaki*; in Fukuoka *kaitenyaki*; in Himeji, a brand name. The best evidence for the map is a large survey, and it is a company's, which this page says up front.
 
@@ -65,6 +70,12 @@ The Hyōgo brand is Gozasōrō. The company, based in Himeji with its factory th
 ## Where the names come from
 
 The explanations usually given for *imagawayaki*, *ōbanyaki* and *kaitenyaki* could not be confirmed from a primary source — the company page that discusses them was not accessible — so I do not repeat them. Nor could I find a primary source for the origin of *taiyaki*, the fish-shaped cousin.
+
+<Figure
+  src={nameMap}
+  alt="A round griddle cake cut open to show red bean filling, in front of a map of Japan coloured by region"
+  caption="One cake, a different name from region to region. Illustration."
+/>
 
 ## Keeping it
 
