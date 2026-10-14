@@ -26,8 +26,6 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ---
 
-## Eat — Udon
-
 ## Eat — Wagashi
 
 ### /en/eat/wagashi-yokan/
@@ -449,33 +447,7 @@ Create one image. Two plates side by side: crisp thin fried noodles on the left,
 
 ## Eat — Local dishes
 
-### /en/eat/kyodo-ryori/
-**ヒーロー** → 保存名 `kyodo-ryori-hero`
-
-```
-Create one image. A long table set with regional dishes from across Japan in small bowls and plates, rice paddies and mountains seen through a farmhouse window. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `kyodo-ryori-body`
-
-```
-Create one image. An outline of Japan with small dish icons scattered over the regions, like pins on a map; no names. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Eat — Sweets
-
-### /en/eat/sweets-yogashi/
-**ヒーロー** → 保存名 `sweets-yogashi-hero`
-
-```
-Create one image. A strawberry shortcake slice with whipped cream on a plate in an old-style cake shop window, a pudding à la mode in a glass dish beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sweets-yogashi-body`
-
-```
-Create one image. A fruit parlour counter with perfectly arranged fruit in a glass case and a parfait being served. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Rail
 
