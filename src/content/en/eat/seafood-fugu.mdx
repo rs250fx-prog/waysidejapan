@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seafood-fugu-hero.webp
+heroAlt: 'Illustration of a large platter of fugu sliced thin enough to show the blue pattern of the plate, arranged like a chrysanthemum'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Does cooking make fugu safe?
@@ -38,6 +40,9 @@ sources:
   - label: '山口県「ふぐ処理師免許に係る各種申請」'
     url: 'https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/296270.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import handler from '../../../assets/eat/seafood-fugu-body.webp';
 
 Fugu, the pufferfish, is the one fish in Japan where the rules matter more than the recipe. Its toxin cannot be cooked out, so the system is built around who is allowed to cut it and which parts may never be served. In Shimonoseki, the city most associated with it, it is not even called fugu but *fuku*. This page covers the toxin, the licence, the banned parts, and why Shimonoseki is called the home ground. For seafood beyond sushi and sashimi in general, start from the seafood overview.
 
@@ -74,6 +79,12 @@ Fugu, the pufferfish, is the one fish in Japan where the rules matter more than 
 **Not at home.** The health ministry asks people not to prepare fugu they caught themselves or were given.
 
 **The licence differs by prefecture.** The farm ministry says the name of the qualification, the exam and what a holder may prepare all differ by prefecture, and that it is not a national qualification. Even the name varies: the farm ministry writes *fugu chōrishi* (fugu cook), Yamaguchi prefecture *fugu shorishi* (fugu handler). In Yamaguchi, a licence is issued to people who passed its exam, and to people recognised by another prefecture whom Yamaguchi also accepts as equivalent; someone with another prefecture's licence still has to apply to handle fugu in Yamaguchi. The application fee listed by the prefecture is ¥2,890 (checked 2026-10-10). The prefecture may refuse a licence to someone unable to do the work properly because of a mental or physical disability, to drug addicts, or to people punished for breaking the ordinance. I could not confirm the exam rules of other prefectures, such as Tokyo, or the content of the national criteria for approving handlers.
+
+<Figure
+  src={handler}
+  alt="A chef in white separating a puffer fish into parts on a clean board, a covered box set aside for the parts to be discarded"
+  caption="A licensed handler removes the parts that may not be eaten. Illustration."
+/>
 
 ## Why Shimonoseki
 

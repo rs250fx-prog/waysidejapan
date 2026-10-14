@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seafood-salmon-hero.webp
+heroAlt: 'Illustration of whole salted salmon hanging under the eaves of a fishing house by a cold sea in snow'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is ikura a Japanese word?
@@ -38,6 +40,9 @@ sources:
   - label: '農林水産省 うちの郷土料理「鮭の焼漬け」新潟県'
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/sakeno_yakizuke_niigata.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import ikuraSujiko from '../../../assets/eat/seafood-salmon-body.webp';
 
 Salmon in Japan is a northern fish and an autumn fish. It runs up the rivers of Hokkaido, Tōhoku and Niigata in the autumn, and the farm ministry's pages on the dishes of those places share a theme: the whole fish is used, and much of it is salted where it is landed. This page covers salted salmon, the two forms of salmon roe, and the regional dishes built on them. For seafood beyond sushi and sashimi in general, start from the seafood overview.
 
@@ -70,6 +75,12 @@ The ministry's pages do not agree on the date of the *Engishiki*: one gives 905,
 Both are seasoned either with salt, to bring out their own savouriness and sweetness, or with soy-based seasonings; at home, soy is more common. In the Edo period, salted sujiko was broken up into grains and kept as a preserved food, and there was no separate name for the two.
 
 **The word ikura.** It is said to come from Russian, arriving in the Meiji era. The ministry gives two accounts of how: from Russian prisoners of the Russo-Japanese War, or through contact with Russia when the northern fisheries were active. This site does not choose. The ministry's pages also give two dates for the product: one says the method for brined ikura came from Russia in the late Meiji era; another says production of loose-grained ikura began in the Taishō era and spread across the country.
+
+<Figure
+  src={ikuraSujiko}
+  alt="Two bowls of salmon roe: loose glistening eggs, and eggs still held together in the sac, a salmon fillet behind"
+  caption="Ikura, loose; sujiko, still in the sac. Illustration."
+/>
 
 ## The whole fish
 

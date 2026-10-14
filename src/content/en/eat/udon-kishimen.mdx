@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/udon-kishimen-hero.webp
+heroAlt: 'Illustration of a bowl of flat kishimen noodles in dark broth topped with bonito flakes and greens at a station counter'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: How is kishimen different from udon?
@@ -28,6 +30,9 @@ sources:
   - label: '農林水産省 にっぽん伝統食図鑑「ほうとう」'
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/hoto.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import koro from '../../../assets/eat/udon-kishimen-body.webp';
 
 Kishimen is udon rolled flat: a ribbon of a noodle that the farm ministry calls Aichi's soul food, eaten across the whole prefecture. Its shape explains its broth, and its summer form explains why Nagoya eats it in August as well as January.
 
@@ -57,6 +62,12 @@ Other name theories exist, but I could not confirm them, so they are not given.
 - **Nagoya's red fish cake** on top makes it look local.
 - **Variations**: curry kishimen, and *chikara* kishimen with rice cake.
 - **Cook it briefly**; the thin noodle cooks quickly.
+
+<Figure
+  src={koro}
+  alt="A plate of cold flat noodles with grated daikon and greens, sauce being poured over"
+  caption="The cold summer form, with sauce poured over. Illustration."
+/>
 
 ## Not all of Japan's flat noodles are this
 

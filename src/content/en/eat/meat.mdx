@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/meat-hero.webp
+heroAlt: 'Illustration of a table of grilled pork, a domed lamb grill, a plate of raw horse and a pot of venison stew'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is jingisukan a Mongolian dish?
@@ -62,6 +64,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import meatMap from '../../../assets/eat/meat-body.webp';
 
 Wagyu gets the attention, and it has its own page on this site, starting from the wagyu overview. This page is about the rest: the pork that Kagoshima turned into a brand, the grilled lamb that Hokkaido claims as its own, the raw horse eaten in three regions far apart, and the wild deer and boar that the government asks you to cook all the way through. They have little in common except that each has a story, a rule or a statistic that explains what is on the plate. The lineage pages go deeper on each.
 
@@ -85,6 +89,12 @@ Pork cutlets are covered on the tonkatsu pages, and Okinawa’s braised pork *ra
 **Raw horse is eaten where horses were kept.** The ministry ties Yamanashi’s horse dishes to the old province of Kai, which supplied horses to the court and kept many for carrying loads up Mount Fuji. Kumamoto’s story starts with a warlord, Aizu’s with a war. All three are below and on the horse page.
 
 **Wild game is ruled by hygiene.** The health ministry explains that wild animals, unlike livestock, have no controlled feed or health, so nobody knows what pathogens they carry. That is why the rules for deer and boar look nothing like the rules for horse.
+
+<Figure
+  src={meatMap}
+  alt="A drawn map of Japan with a sheep and lamb in the north, a deer in the mountains, a horse in the west and a black pig in the south, each with its dish"
+  caption="Where each meat on this page comes from. Illustration; the placings are indicative."
+/>
 
 ## What it costs
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/somen-banshu-hero.webp
+heroAlt: 'Illustration of bundles of sōmen tied with paper bands in wooden boxes, a country town by a river outside'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is Ibo no Ito?
@@ -36,6 +38,9 @@ sources:
   - label: '農林水産省 にっぽん伝統食図鑑「三輪そうめん」'
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/miwa_soumen.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import boiling from '../../../assets/eat/somen-banshu-body.webp';
 
 Banshū, in Hyōgo, home of the old Tatsuno domain, is the other great home of hand-stretched sōmen, sold under the cooperative brand *Ibo no Ito*. Its claim rests not on a legend but on records, and its makers describe a change in aged noodles that happens only through the rainy season.
 
@@ -63,6 +68,12 @@ The cooperative says it uses a hand-stretching method handed down for about 600 
 - **Boil**: about a litre of water to two bundles (100 g), 1 minute 30 seconds to 2 minutes; drain; rub under running water.
 - **For nyūmen or stir-frying**: 1 minute to 1 minute 30, because it will be heated again.
 - **Beyond cold sōmen**: the cooperative suggests salads, thick-sauce dishes, dipping noodles and hot simmered noodles.
+
+<Figure
+  src={boiling}
+  alt="Sōmen stirred in a pot of boiling water, then rinsed by hand in cold running water"
+  caption="Boiled briefly, then rinsed cold. Illustration."
+/>
 
 ## Banshū sōmen away from Hyōgo
 

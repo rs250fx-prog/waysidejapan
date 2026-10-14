@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/meat-basashi-hero.webp
+heroAlt: 'Illustration of a platter of raw horse meat slices with grated ginger and garlic and a dish of sweet soy sauce, volcanic mountains behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why is horse meat called sakura-niku?
@@ -40,6 +42,9 @@ sources:
   - label: '農林水産省 国産ジビエ認証制度'
     url: 'https://www.maff.go.jp/j/nousin/gibier/ninsyou.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import wildMeat from '../../../assets/eat/meat-basashi-body.webp';
 
 *Basashi* is raw horse, sliced thin and eaten with soy sauce and sharp condiments. The farm ministry’s local-food database has three separate entries for it — Kumamoto, Yamanashi and Aizu in Fukushima — and each region tells a different story about why it eats horse at all. This page covers all three, then turns to wild deer and boar, because the rules for them are the opposite: horse is served raw under controls, and wild meat is never to be eaten raw.
 
@@ -101,6 +106,12 @@ The health ministry adds that hepatitis E in pregnant women tends to become seve
 **A certification scheme.** The farm ministry runs a national certification for game-processing facilities that follow hygiene standards, distribute to a cutting chart, and label for traceability. Its list ran from No. 001 to No. 043 when checked, the latest certified on 4 March 2026, with some numbers missing. Which animals and what standards it covers in detail, I could not confirm.
 
 I could not find an official source on regional deer or boar dishes, so none are described here.
+
+<Figure
+  src={wildMeat}
+  alt="A deer and a wild boar in a forest, and a pot of meat stew on a stove with a thermometer standing in it"
+  caption="Deer and boar: cooked through, never raw. Illustration."
+/>
 
 ## Basashi away from home
 

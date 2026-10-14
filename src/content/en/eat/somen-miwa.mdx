@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/somen-miwa-hero.webp
+heroAlt: 'Illustration of sōmen drying on wooden racks in winter sun, a shrine gate and shrine buildings behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: How old is Miwa sōmen?
@@ -37,6 +39,9 @@ sources:
     url: 'https://www.ibonoito.or.jp/history/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import stretching from '../../../assets/eat/somen-miwa-body.webp';
+
 Miwa, in Sakurai, Nara, is the place that claims the beginning of Japanese sōmen. It has a legend, a set of documents, a protected name, and a grading system that counts strands. This page sets them out, including where the dates do not agree.
 
 For sōmen in general, start from the sōmen overview.
@@ -56,6 +61,12 @@ For sōmen in general, start from the sōmen overview.
 The GI document gives the ingredients — wheat flour, salt, water, edible vegetable oil — and the process: kneading, cutting into a board, first twisting (with oiling and thinning), winding on rods, first pull, dividing, hanging on frames to stretch, drying to 13.5% moisture or less, cutting and weighing. Between steps come resting times for proper hydration and relaxation. The stretching at the first pull or on the frames, or both, is done by hand. After the war, machines took over what they could, but the hand-stretching method was kept.
 
 The farm ministry adds that Miwa's repeated resting stage, *umashi*, drives off moisture and gives a smooth noodle that does not soften quickly.
+
+<Figure
+  src={stretching}
+  alt="Four steps: dough kneaded, rolled into a rope, twisted, and stretched between two poles"
+  caption="Kneaded, rolled, twisted, stretched. Illustration."
+/>
 
 ## Grades
 

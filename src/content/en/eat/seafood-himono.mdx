@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seafood-himono-hero.webp
+heroAlt: 'Illustration of split fish drying on bamboo racks above a fishing harbour, islands in the sea behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Why is fish dried in Japan?
@@ -30,6 +32,9 @@ sources:
   - label: '農林水産省 にっぽん伝統食図鑑「海藻製品」'
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/bunrui/kaisou-seihin.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import methods from '../../../assets/eat/seafood-himono-body.webp';
 
 *Himono* is the Japanese word for dried fish, and it covers a wide range: split horse mackerel, dried squid, dried sardines, salmon strips, *karasumi*. What they share is a reason. Fish spoil fast, and drying slows that down. This page covers why drying works, the main methods, how the fish is split, and how dried fish changed once refrigeration arrived. For seafood beyond sushi and sashimi in general, start from the seafood overview.
 
@@ -60,6 +65,12 @@ One specific origin is given. The ministry says the Ainu cut salmon into thin le
 - **Smoked**, and **freeze-dried** (*tōkan*): *mentai* and *kanten* are the ministry's examples of the latter.
 
 **How it is split.** Most dried fish today is split open from the belly (*hara-biraki*). The ministry notes a custom for *kamasu* and *sayori* of leaving the head on and splitting from the back, called *Odawara-biraki*.
+
+<Figure
+  src={methods}
+  alt="Four panels: fish drying in the sun, fish packed in salt, fish boiling in a pot, and fish grilling over charcoal"
+  caption="Sun-dried, salted, boiled, grilled. Illustration."
+/>
 
 ## How it changed
 

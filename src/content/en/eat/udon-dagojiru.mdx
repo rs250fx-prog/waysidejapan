@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/udon-dagojiru-hero.webp
+heroAlt: 'Illustration of a bowl of soup with torn flat flour dumplings, pork and root vegetables'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is dagojiru?
@@ -30,6 +32,9 @@ sources:
   - label: '農林水産省「だんご汁」大分県'
     url: 'https://www.maff.go.jp/j/seisan/ryutu/engei/aftercovid19/297.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import tornStretched from '../../../assets/eat/udon-dagojiru-body.webp';
 
 In Kumamoto and Ōita the flour goes into the soup not as noodles but as dumplings — torn, stretched, or wrapped round sweet potato. *Dagojiru* (Kumamoto) and *dangojiru* (Ōita) are home food, and the farm ministry says every household makes them differently. This page sits with udon because it is wheat dough in broth; it is really a family of soups.
 
@@ -50,6 +55,12 @@ The ministry lists them:
 - **Ikinari dagojiru** (around Kumamoto city) — sweet potato wrapped in flour dough.
 - **Ohimesama dagojiru** (Kikuchi and Kamoto).
 - **Sen-dago-jiru** (Amakusa) — made with grated potato, said to have begun when the missionary Father Ferrié fed it to children at an orphanage in Kawaura.
+
+<Figure
+  src={tornStretched}
+  alt="Dough torn into a pot of soup by hand, and dough pulled into long strips over another pot"
+  caption="Torn for Kumamoto's dagojiru, stretched for Ōita's dangojiru. Illustration."
+/>
 
 ## Why it is eaten
 

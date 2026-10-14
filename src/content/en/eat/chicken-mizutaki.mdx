@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/chicken-mizutaki-hero.webp
+heroAlt: 'Illustration of a clay hotpot of chicken on the bone in a cloudy white broth with cabbage and leek, ponzu beside it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is mizutaki a winter dish?
@@ -34,6 +36,9 @@ sources:
   - label: '農林水産省 食鶏取引規格（平成23年4月1日適用）'
     url: 'https://www.maff.go.jp/j/press/seisan/c_shokuniku/pdf/110107-01.pdf'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import order from '../../../assets/eat/chicken-mizutaki-body.webp';
 
 Mizutaki is a pot of chicken simmered in its own stock, followed by vegetables, then rice or noodles in what is left. What sets Hakata’s apart, on the official record, is that it has both a named founder with a date and a broader story about how Chinese, Western and Japanese cooking met in it — and that Fukuoka has written down an order in which to eat it.
 
@@ -75,6 +80,12 @@ There is an order, and the official sources describe it slightly differently.
 4. Finish by putting rice cakes (*mochi*), udon or rice into the pot, and make a rice porridge (*zōsui*) with egg and leek.
 
 Fukuoka prefecture’s tourism site gives *zōsui* as the finish and recommends udon too. The point common to all three: the soup comes first, and the last of it is eaten with starch.
+
+<Figure
+  src={order}
+  alt="Three panels: a cup of the broth sipped first, chicken lifted from the pot, and rice simmered in the last of the broth"
+  caption="Broth, then chicken, then rice in what is left. Illustration."
+/>
 
 ## The shops, and what they charge
 

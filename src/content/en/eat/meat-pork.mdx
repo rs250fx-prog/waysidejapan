@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/meat-pork-hero.webp
+heroAlt: 'Illustration of a black pig among sweet potato plants, a smoking volcano across the bay behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What makes pork kagoshima kurobuta?
@@ -46,6 +48,9 @@ sources:
   - label: '農林水産省 うちの郷土料理 沖縄県'
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/area_stories/okinawa.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import butadonKakuni from '../../../assets/eat/meat-pork-body.webp';
 
 Japan has more pork brands than anyone can keep track of, and most of them are a name on a label. Kagoshima’s black pork is different: it has written standards, a history that nearly ended in the 1970s, and a claim to be the first pork brand in the country. This page covers it, then two regional pork dishes with official write-ups — Obihiro’s grilled pork bowl and Nagasaki’s simmered pork belly.
 
@@ -98,6 +103,12 @@ Obihiro city says simply that butadon was born in Obihiro, that the city has man
 The farm ministry’s Nagasaki page traces *kakuni*, simmered cubes of pork, from the Chinese dish *dongpo* pork (*tonpōrō*). During the period of national seclusion it was adapted into *tōbani*, a dish of *shippoku* banquet cooking, and later became pork kakuni eaten on its own. *Shippoku* is one of the "wakaran" foods — Japanese, Chinese and Dutch — that the ministry says grew out of Western cooking arriving through the Dutch on Dejima.
 
 In Nagasaki the method stays close to the original: skin-on pork belly (*sanmai-niku*) simmered until sweet. The ministry calls it "similar but different" from the kakuni found across Japan.
+
+<Figure
+  src={butadonKakuni}
+  alt="A bowl of glazed grilled pork over rice beside a bowl of braised pork belly"
+  caption="Obihiro butadon and Nagasaki kakuni. Illustration."
+/>
 
 ## How to eat it
 

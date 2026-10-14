@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagyu-yakiniku-hero.webp
+heroAlt: 'Illustration of a table grill with beef cooking, plates of meat and small dishes of sauce and kimchi, an extraction hood above'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Is yakiniku Korean or Japanese?
@@ -59,6 +61,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import blackMarket from '../../../assets/eat/wagyu-yakiniku-body.webp';
 
 Yakiniku is how most Japanese people eat beef out: at a table with a grill in the middle, cooking small pieces themselves, with rice and a cold beer and a timer running on an all-you-can-eat course. It is also the one great Japanese beef dish that Japan did not invent alone. It came out of the Korean communities of the postwar black markets, and its menu still speaks a little Korean.
 
@@ -77,6 +81,12 @@ The format then changed three times. In the 1970s Jojoen, opened in Roppongi in 
 **The ID on the wall.** Restaurants serving yakiniku, sukiyaki, shabu-shabu or steak must display the ten-digit traceability number of the beef. It is usually on a small board by the till.
 
 **Tan-shio first.** Tongue, salt, lemon, then the fatty cuts, then the lean, then rice — the order every Japanese table follows, and a 1970s invention.
+
+<Figure
+  src={blackMarket}
+  alt="Offal grilled over charcoal at a crowded postwar market stall, beside a modern table grill"
+  caption="From a postwar market grill to the table grill. Illustration."
+/>
 
 ## Why Tsuruhashi — and everywhere
 
