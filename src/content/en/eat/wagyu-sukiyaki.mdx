@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagyu-sukiyaki-hero.webp
+heroAlt: 'Illustration of an iron sukiyaki pan with marbled beef, tofu, mushrooms and leek, a slice lifted with chopsticks, a raw egg beside it'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between Kanto and Kansai sukiyaki?
@@ -55,6 +57,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import eastWest from '../../../assets/eat/wagyu-sukiyaki-body.webp';
 
 Sukiyaki is the dish that taught Japan to eat beef, and the one the country still reaches for on the last night of the year. Thin slices of marbled beef, cooked at the table in a shallow iron pan with sugar and soy sauce, lifted out and dipped in raw egg — it is sweet, rich and communal, and it has been argued about along the Tokyo–Osaka line for a hundred and fifty years.
 
@@ -75,6 +79,12 @@ The word is older than the dish. Imahan gives three theories — a farmer's "plo
 **The egg.** A raw egg, beaten in a small bowl, as the dip. It is not optional at any house.
 
 **The occasion.** Kikkoman's survey puts about 55% of household sukiyaki at New Year's Eve, the year end and the first days of January. It is the national celebration dinner, which is why the butchers' sukiyaki-cut gift boxes exist.
+
+<Figure
+  src={eastWest}
+  alt="Two sukiyaki pans: prepared broth poured over beef and vegetables on the left, beef seared then sprinkled with sugar and soy on the right"
+  caption="Kantō pours in a prepared broth; Kansai sears the beef and seasons it in the pan. Illustration."
+/>
 
 ## Why Yokohama and Tokyo
 

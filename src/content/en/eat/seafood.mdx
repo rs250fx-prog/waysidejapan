@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seafood-hero.webp
+heroAlt: 'Illustration of a harbour market table with salted salmon, a puffer fish, dried fish on a rack, bundled kombu and fish cakes, boats behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What is the difference between ikura and sujiko?
@@ -60,6 +62,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import preserved from '../../../assets/eat/seafood-body.webp';
 
 Most visitors meet Japanese fish as sushi or sashimi. A great deal of it never arrives raw. It is salted in the port where it lands, dried in the cold, ground into paste, simmered and brushed with a reduced sauce, or carried alive to a city that has no sea. And one fish may only be cut by someone holding a prefectural licence. This page is the map of that side of Japanese seafood. Sushi, sashimi, unagi and the fish markets each have their own overview; this page mentions them but does not repeat them.
 
@@ -87,6 +91,12 @@ The farm ministry's explanations come back to the same few reasons.
 **Some fish travel well alive.** Kyoto is a hamo city because, the ministry says, the fish is hardy enough to be carried alive from the Seto Inland Sea and the Genkai Sea.
 
 **Seaweed is light when dry.** The ministry says kombu, nori, wakame, tengusa, hijiki and funori spread across Japan in the Edo period, helped by how light dried seaweed is.
+
+<Figure
+  src={preserved}
+  alt="Preserved seafood laid out in a row: a salted salmon fillet, a split dried fish, a fish-paste log, a sheet of nori and strips of kombu"
+  caption="Salted, dried, made into paste: how much of Japan's seafood is kept. Illustration."
+/>
 
 ## What it costs
 

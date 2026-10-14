@@ -43,19 +43,6 @@ Create one image. A historical scene of a soldier's ration pack including bars o
 
 ## Eat — Wagyu
 
-### /en/eat/wagyu-sukiyaki/
-**ヒーロー** → 保存名 `wagyu-sukiyaki-hero`
-
-```
-Create one image. A cast-iron sukiyaki pan with marbled beef, tofu, leek, mushrooms and shirataki simmering in sweet soy broth, a raw egg for dipping. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `wagyu-sukiyaki-body`
-
-```
-Create one image. Two sukiyaki pans side by side: Kanto style with a pre-mixed broth poured in, Kansai style with beef seared first, then sugar and soy added directly. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/wagyu-tajima/
 **ヒーロー** → 保存名 `wagyu-tajima-hero`
 
@@ -96,19 +83,6 @@ Create one image. A Meiji-era scene: an English teacher leading a black cow down
 ```
 
 ## Eat — Seafood
-
-### /en/eat/seafood/
-**ヒーロー** → 保存名 `seafood-hero`
-
-```
-Create one image. A Japanese harbor fish market table with salted salmon, a puffer fish, dried horse mackerel on a rack, a bundle of kombu and a tray of fish cakes, fishing boats behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `seafood-body`
-
-```
-Create one image. A row of preserved seafood laid out like a specimen chart: a salted salmon fillet, a split dried fish, a fish-paste log, a sheet of nori and a strip of kombu; no labels. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/eat/seafood-salmon/
 **ヒーロー** → 保存名 `seafood-salmon-hero`
@@ -274,32 +248,6 @@ Create one image. Three oden plates side by side: blocks of tofu grilled with sw
 
 ## Eat — Rice and what goes with it
 
-### /en/eat/rice-sides/
-**ヒーロー** → 保存名 `rice-sides-hero`
-
-```
-Create one image. A bowl of white rice in the center surrounded by small dishes: pickles, natto, a sprinkle of furikake, simmered seaweed and a piece of grilled mochi. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `rice-sides-body`
-
-```
-Create one image. A pantry shelf with jars of pickles, a tub of natto, a box of furikake and a pot of tsukudani, arranged neatly with no labels. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/eat/rice-sides-tsukemono/
-**ヒーロー** → 保存名 `rice-sides-tsukemono-hero`
-
-```
-Create one image. A Kyoto pickle shop with wooden barrels of pickled vegetables at the front, a shopkeeper lifting a large pickled turnip with tongs. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `rice-sides-tsukemono-body`
-
-```
-Create one image. Three small dishes in a row: colorful pickles, a dark simmered tsukudani of small fish, and a little pile of furikake over rice. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/eat/rice-sides-mochi/
 **ヒーロー** → 保存名 `rice-sides-mochi-hero`
 
@@ -444,10 +392,6 @@ Create one image. A plate of crisp thin fried noodles topped with a thick glossy
 ```
 Create one image. Two plates side by side: crisp thin fried noodles on the left, soft thick fried noodles on the right, both under the same vegetable sauce. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Eat — Local dishes
-
-## Eat — Sweets
 
 ## Rail
 
