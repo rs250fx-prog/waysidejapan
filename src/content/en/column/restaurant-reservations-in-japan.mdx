@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/restaurant-reservations-in-japan-hero.webp
+heroAlt: 'Illustration of a small restaurant with empty tables set for guests, the cook preparing at the counter'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Do I need to book restaurants in Japan?
@@ -51,6 +53,9 @@ sources:
     published: '2008-02'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import concierge from '../../../assets/column/restaurant-reservations-in-japan-body.webp';
+
 Booking a table in Japan is mostly straightforward: many restaurants take bookings online, some only by phone, and some not at all. What surprises some visitors is how seriously a booking is taken. The official sources describe it as a promise — the restaurant holds the seat and, for a set meal, buys and prepares the food — and Japanese law has a specific way of deciding how much a restaurant may charge when that promise is broken. This column covers how to book, why no-shows matter, and what the law says about cancellation fees.
 
 ## How to book
@@ -62,6 +67,12 @@ Places without bookings work differently. Fast food, family restaurants and rame
 **Booking sites.** Tokyo’s official dining site lists booking sites alphabetically: byFood, EAT TOKYO, OMAKASE Japan, Rakuten GURUNAVI, SAVOR JAPAN, Tabelog, TableCheck and Tripadvisor, with separate lists for vegan and halal options. The list does not explain their cancellation rules.
 
 **Set-menu restaurants.** JNTO’s *kaiseki* guide marks some of its featured restaurants as booking recommended and some as booking required, and tells readers to check each restaurant’s official site for current information.
+
+<Figure
+  src={concierge}
+  alt="A traveller with a backpack at a hotel front desk while the clerk makes a phone call and writes notes"
+  caption="A hotel desk can phone the restaurant for you. Illustration."
+/>
 
 ## The conditions that come with a booking
 

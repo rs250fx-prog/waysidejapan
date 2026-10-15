@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/eating-out-with-children-in-japan-hero.webp
+heroAlt: 'Illustration of a family at a restaurant booth, a child’s lunch plate with a flag on the rice, a high chair beside the table'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Are children welcome in Japanese restaurants?
@@ -53,6 +55,9 @@ sources:
   - label: '農林水産省 aff「学校給食の歴史」'
     url: 'https://www.maff.go.jp/j/pr/aff/2006/food01.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import schoolLunch from '../../../assets/column/eating-out-with-children-in-japan-body.webp';
 
 Japan has a whole genre of restaurant built around families, a children’s plate with a flag on top that two department stores take part in the story of, a national list of allergens that just grew by one, and a school lunch system written into law. This column sets out what the official and company sources say about each. Where they disagree, both versions are given.
 
@@ -116,6 +121,12 @@ Two gaps matter for visitors. The rules described here are for packaged processe
 **What goes in it.** The education ministry’s standards, under Article 8 of the act, set intake per child per meal as a national average, to be applied flexibly to local conditions; the latest revision took effect on 1 April 2021. The farm ministry says a school lunch is designed to provide about a third of a day’s nutrients. It traces the menu over time: bread rolls, fried whale and powdered skim milk in the early to middle Shōwa years, rice formally introduced in 1976, and local dishes, seasonal festival food and locally grown produce in the Heisei and Reiwa years.
 
 On allergies, the education ministry’s material mentions only that pupils with food allergies are among those individual guidance is meant for. What schools actually do I could not confirm.
+
+<Figure
+  src={schoolLunch}
+  alt="Children eating lunch at their desks in a sunny classroom, a teacher at the front"
+  caption="School lunch, eaten in the classroom. Illustration."
+/>
 
 ## What people get wrong
 

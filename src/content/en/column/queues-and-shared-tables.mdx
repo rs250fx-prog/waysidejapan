@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/queues-and-shared-tables-hero.webp
+heroAlt: 'Illustration of people queueing on marked spots outside a restaurant, a clipboard on a stand by the door'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: How do queues work outside Japanese restaurants?
@@ -41,6 +43,9 @@ sources:
     published: '2011-05-09'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import seated from '../../../assets/column/queues-and-shared-tables-body.webp';
+
 A queue on the pavement outside a small restaurant is one of the first things many visitors notice in Japan. What happens in that queue, and once you are inside, is fairly simple. Why it happens is less well documented than you might expect. This column sets out what the official tourism sources and a few restaurants’ own pages say, and is plain about what I could not find.
 
 ## The queue
@@ -62,6 +67,12 @@ A 2011 press release from Netflowers, a company that sold a queueing system, des
 Tokyo’s tourism site says that even if you can see an empty seat, it is usual to wait until staff show you to one. Some restaurants seat a group only once everyone in it has arrived. If staff tell you to sit anywhere you like, you choose.
 
 At ramen shops with a ticket machine by the door, you buy your ticket before sitting; that sequence has its own column on meal ticket machines.
+
+<Figure
+  src={seated}
+  alt="A server showing a couple to stools at a counter"
+  caption="Shown to a seat, often at the counter. Illustration."
+/>
 
 ## How long to stay
 

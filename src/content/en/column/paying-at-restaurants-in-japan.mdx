@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/paying-at-restaurants-in-japan-hero.webp
+heroAlt: 'Illustration of a customer paying at a small register by the door of a restaurant, a coin tray on the counter'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Can I pay by card at restaurants in Japan?
@@ -49,6 +51,9 @@ sources:
     url: 'https://www.mlit.go.jp/kankocho/shisaku/sangyou/pdf/taiou_manual_pdf01.pdf'
     published: '2008-02'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import askingBill from '../../../assets/column/paying-at-restaurants-in-japan-body.webp';
 
 Paying for a meal in Japan raises four practical questions: will they take my card, do I pay at the table or at the till, how do we split it, and do I tip. The official sources answer the first three only partly — paying by card is now the majority of spending in Japan overall, yet cash-only places remain, and how you pay is left to each restaurant. This column sets out what the sources say.
 
@@ -93,6 +98,12 @@ At ramen shops and others with a ticket machine, you pay first, before sitting.
 **At izakaya.** The small starter dish, *otoshi*, is normally charged per person, Tokyo’s tourism site says. The izakaya overview covers it.
 
 **An older note to restaurants.** A 2008 tourism manual for businesses suggested briefly explaining how Japanese restaurants work to foreign guests on the menu or elsewhere: tax, no tipping, the charge for the starter dish, and whether you pay at the table or at the cashier. It is a 2008 document; I do not know how many restaurants do this now.
+
+<Figure
+  src={askingBill}
+  alt="A diner raising a hand to a server across a busy izakaya"
+  caption="Asking for the bill at the table. Illustration."
+/>
 
 ## Splitting the bill
 
