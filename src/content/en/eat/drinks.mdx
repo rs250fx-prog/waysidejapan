@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/drinks-hero.webp
+heroAlt: 'Illustration of an izakaya counter with a mug of beer, a highball, a sake flask and cups under paper lanterns'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: What is the drinking age in Japan?
@@ -65,6 +67,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import kinds from '../../../assets/eat/drinks-body.webp';
 
 Most of what confuses visitors about drinks in Japan is not taste. It is paperwork. Why is there "beer", "happoshu" and something called "new genre" on the same shelf? Why can a 19-year-old vote but not order a highball? How many bottles can you carry in? All three answers come from the law, and the law is clearer than the shelf. This page is the map: how Japan classifies alcohol, the age rule, what customs allows, and how the two lineage pages — shōchū, and beer with the highball — fit in. Sake has its own overview and is not repeated here; for how a night in an izakaya runs, start from the izakaya overview.
 
@@ -96,6 +100,12 @@ In its 2017 reform the government said that tax gaps between similar drinks were
 - **Other sparkling drinks**, including chūhai, went up to ¥100,000 per kilolitre (¥35 per 350 ml) in October 2026.
 
 In practice, the 1 October 2026 change lowered the tax on beer and raised it on happoshu and the new genre. What that did to shelf prices is up to each maker and shop, and I have not seen the makers' own price announcements, so I give no figures.
+
+<Figure
+  src={kinds}
+  alt="Drinks on four wooden trays: a glass of beer, a sake flask and cup, a dark bottle with a glass of ice, and two bottles of liqueur"
+  caption="Beer, sake, spirits, liqueurs: the tax law sorts them into kinds. Illustration."
+/>
 
 ## Age and ID
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/drinks-beer-highball-hero.webp
+heroAlt: 'Illustration of soda being poured into a whisky highball at an izakaya counter, a mug of beer and a bottle of whisky beside it'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: What is happoshu?
@@ -77,6 +79,9 @@ sources:
     url: 'https://www.asahibeer.co.jp/brewery/qa/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import cans from '../../../assets/eat/drinks-beer-highball-body.webp';
+
 Most visitors’ first drink in Japan is a beer, and many of the cans in a convenience store are not beer in law. The difference is a matter of tax, and on 1 October 2026 the tax changed. This page explains the three names on the beer shelf, where the big brewers and the small ones came from, and how the whisky highball — a drink that was in decline in the 2000s — came back, by its maker’s account, through izakaya rather than distilleries.
 
 For drinks in Japan in general — the tax categories, the drinking age, customs — start from the drinks overview.
@@ -128,6 +133,12 @@ The tax agency counts "local beer" production sites, excluding the five big brew
 At 31 March 2025 there were 394 makers. The jump in 2019 is not a sudden boom: the tax agency explains that the 2017 reform widened the definition of beer, and anyone holding a happoshu licence at 31 March 2018 was given a beer licence. A count for March 2026 was not in the material I read.
 
 **What "craft" means.** There is no legal definition. The JBA’s own, from May 2018, has three parts: independent of the big mass-producing brewers that existed before April 1994; small batches, 20 kilolitres of wort or less per brew, so the brewer can watch over it; and individual beer made by traditional methods or with local ingredients, rooted in its area.
+
+<Figure
+  src={cans}
+  alt="A chilled shelf of canned drinks in three rows, decorated with wheat, oranges and sweet potatoes"
+  caption="The canned shelf. Illustration."
+/>
 
 ## How to order it
 

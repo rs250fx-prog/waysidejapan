@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/wagyu-steak-hero.webp
+heroAlt: 'Illustration of a teppanyaki chef searing steaks on a hot plate in front of diners, the sea through the window'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Who invented teppanyaki?
@@ -63,6 +65,9 @@ sources:
     url: 'https://www.bronco.co.jp/corporate/about/history/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import cuts from '../../../assets/eat/wagyu-steak-body.webp';
+
 Steak in Japan comes in two forms that are easy to confuse. One is teppanyaki, where a chef cooks wagyu on an iron griddle in front of you, and which a Kobe restaurant says it served first. The other is the steak chain, where the same steak is sold at 150 g, 200 g or 300 g and the price goes up with the weight. This page covers both, and the system of cut names that sits behind every steak menu.
 
 For wagyu in general, start from the wagyu overview.
@@ -94,6 +99,12 @@ A steak menu borrows from two different naming systems, and they do not match.
 - **The menu’s cuts.** *Karubi*, the yakiniku word, is Korean for rib, and the ministry’s guide lists it as *karubi* (*tatebara*). The yakiniku page covers how *rōsu* and *karubi* became menu names.
 
 The 11 retail cuts and the 13 wholesale names are two separate yardsticks, one for shops and one for the trade. A steak chain’s rib loin, sirloin and fillet are names that appear on the wholesale list.
+
+<Figure
+  src={cuts}
+  alt="Marbled steaks of different cuts on plates along a counter, a brass scale behind"
+  caption="Cuts and weights to choose from. Illustration."
+/>
 
 ## The shops, and what they charge
 

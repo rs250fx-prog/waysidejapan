@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/konamono-monja-hero.webp
+heroAlt: 'Illustration of two people making monjayaki on a table griddle, a ring of chopped cabbage with batter in the middle, a shopping street outside'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Do I have to cook monjayaki myself?
@@ -42,6 +44,9 @@ sources:
   - label: 'GO TOKYO（東京の観光公式サイト）「月島もんじゃストリート」'
     url: 'https://www.gotokyo.org/jp/spot/85/index.html'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import bank from '../../../assets/eat/konamono-monja-body.webp';
 
 Monjayaki is the one konamono you eat straight off the hot plate. The batter is loose, it is poured into a ring of chopped cabbage on an oiled iron plate, and you eat it a little at a time with a small spatula, pressing it onto the hot metal first. It belongs to Tokyo, and to one street in particular: Nishinaka-dori in Tsukishima, which the farm ministry and Tokyo’s tourism office both call the monja street.
 
@@ -90,6 +95,12 @@ The union publishes a step-by-step method. In outline:
 The farm ministry lists fillings such as cabbage, pork, squid, *mentaiko* (spiced cod roe) and *mochi*, and flavours such as sauce, cheese and curry.
 
 **Why the ring?** The union’s page gives the steps and not the reason. You will see explanations elsewhere; I could not find one in an official source, so I am not offering one.
+
+<Figure
+  src={bank}
+  alt="A close view of the griddle: a ring of cabbage and toppings with thin batter poured into the centre, small spatulas beside it"
+  caption="The ring, then the batter poured into the middle. Illustration."
+/>
 
 ## The shops, and what they charge
 

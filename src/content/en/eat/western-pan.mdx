@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/western-pan-hero.webp
+heroAlt: 'Illustration of a bakery counter of bean-paste buns, curry bread, melon buns and loaves, a street outside'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Who invented anpan?
@@ -42,6 +44,9 @@ sources:
   - label: '総務省統計局 家計調査 平成24年の概況「最近の家計消費の特徴」'
     url: 'https://www.stat.go.jp/data/kakei/2012np/gaikyo/pdf/gk03.pdf'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import threeBreads from '../../../assets/eat/western-pan-body.webp';
 
 Japanese bakeries sell bread filled with sweet bean paste, bread filled with curry, and bread split open and stuffed with fried noodles. The best-documented starting point is a Ginza bakery in 1874. This page is short, because the record I could reach is short: one bakery’s history, the government’s labelling definitions, an industry body’s description of the market, and a household spending survey.
 
@@ -79,6 +84,12 @@ The Japan Bakers Association, in a paper to the Consumer Affairs Agency dated 27
 - **Convenience stores** — a steady number of shops and a high share of own-brand products.
 - **Bakeries** — 12,000 shops, including a good number of high-end ones.
 - **Fast food and café chains** — demand growing, eaten in or taken away.
+
+<Figure
+  src={threeBreads}
+  alt="A sliced square loaf, a bean-paste bun cut open and a curry bread cut open, each on its own tray"
+  caption="Shokupan, anpan, curry bread. Illustration."
+/>
 
 ## How to read the label
 

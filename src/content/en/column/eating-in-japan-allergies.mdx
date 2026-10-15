@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/column/eating-in-japan-allergies-hero.webp
+heroAlt: 'Illustration of a server pointing to a chart of food pictures for a diner at a restaurant table by the sea'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Do restaurants in Japan have to list allergens?
@@ -39,6 +41,9 @@ sources:
   - label: 'JNTO「A Vegetarian and Vegan Guide to Japan」'
     url: 'https://www.japan.travel/en/guide/vegetarian-guide/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import menuBook from '../../../assets/column/eating-in-japan-allergies-body.webp';
 
 Japanese restaurants are used to being asked about allergies by foreign guests. More than a quarter of the businesses in a government survey said it had happened to them. What is thinner is official help for the guest. The tools I could confirm were made by two local governments for restaurants to use, and on gluten the only national standard I found covers rice flour, not restaurant meals. This column sets out what the sources say and where they stop. It is not medical advice, and nothing in it says a dish is safe for you.
 
@@ -68,6 +73,12 @@ The agency’s page on allergy labelling says mandatory labelling is set for **p
 **Hotels, in the tourism agency’s Muslim guidebook.** One hotel it describes showed about 20 ingredient pictograms at its buffet, alcohol among them.
 
 **What I could not confirm.** I found, but could not open, the agency’s page of multilingual allergy-awareness tools. I could not confirm a card or pointing sheet from the tourism agency, JNTO or a restaurant industry body. JNTO’s vegetarian and vegan guide does not discuss allergies or gluten. If you use a card, the tools above suggest how it is meant to work: as the start of a conversation with the restaurant, not a guarantee.
+
+<Figure
+  src={menuBook}
+  alt="An open menu with each dish drawn beside small pictures of its ingredients, a hand holding a pencil"
+  caption="A menu that shows what is in each dish. Illustration."
+/>
 
 ## Gluten
 

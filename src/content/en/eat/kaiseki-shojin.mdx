@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/kaiseki-shojin-hero.webp
+heroAlt: 'Illustration of a temple meal on a lacquer tray in a tatami room, a raked gravel garden outside'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Is shōjin ryōri vegan?
@@ -55,6 +57,9 @@ sources:
     url: 'https://www.tenryuji.com/shigetsu/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import twoTrays from '../../../assets/eat/kaiseki-shojin-body.webp';
+
 Shōjin ryōri is the food of Zen temples: cooking without meat or fish, built on vegetables, tofu and the processed foods made from soy and wheat. Two things are worth knowing before you book it. The meal a visitor eats is not the meal monks eat in training. And "shōjin" on a menu does not settle whether the stock is fish-free or the food is vegan; the official sources say to ask.
 
 For kaiseki in general, start from the kaiseki overview.
@@ -76,6 +81,12 @@ The farm ministry's booklet describes both at Daitokuji:
 - **The guests' meal.** From the late Muromachi into the Edo period, lords, tea masters and wealthy merchants who came to practise at Daitokuji were served a hospitality shōjin in the honzen style, enriched with processed foods such as tofu, yuba, fresh fu and natto. The booklet says it was different from the monks' meal but shared the spirit of wasting nothing and using every ingredient fully. It is said, the booklet adds, to have influenced the tea kaiseki that tea masters later developed. The booklet notes that this kind can still be eaten at restaurants serving Daitokuji.
 
 So the shōjin a visitor eats around a temple is the hospitality kind, not the monks' daily food.
+
+<Figure
+  src={twoTrays}
+  alt="Two lacquer trays side by side: a plain one with rice, soup and one side, and a fuller one with many small tofu and vegetable dishes"
+  caption="The monks' meal and the guests' meal. Illustration."
+/>
 
 ## What makes it shōjin
 

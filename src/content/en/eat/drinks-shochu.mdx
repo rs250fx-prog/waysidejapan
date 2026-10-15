@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/drinks-shochu-hero.webp
+heroAlt: 'Illustration of a glass of shōchū on ice beside an iron kettle, sweet potatoes, rice and barley on a wooden table'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: What is the difference between korui and otsurui shochu?
@@ -46,6 +48,9 @@ sources:
   - label: '霧島酒造 よくあるご質問'
     url: 'https://en.www.kirishima.co.jp/customer/faq/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import stills from '../../../assets/eat/drinks-shochu-body.webp';
 
 Shōchū is the drink most visitors pass over on an izakaya menu, and the one with the most regional variety in Japan. It is a distilled spirit, but it is usually drunk cut with water — cold, hot, or rested for days in advance. What it is made from changes by island and prefecture, and several of those places protect their names in law. This page is about what the label means, where each kind comes from and why, and how it is drunk.
 
@@ -82,6 +87,12 @@ The national brewers’ association explains that a single still is simple in st
 **Two more labels.** Single-still shōchū made only from rice kōji grown with black kōji mould and water is labelled "shōchū otsurui" or "awamori". A blend of the two still types is *konwa* shōchū, labelled "kōrui-otsurui" or "otsurui-kōrui" blend according to which is the larger part.
 
 **How it is made.** In NRIB’s outline, kōji turns the starch into sugar and yeast turns sugar into alcohol, both in the same vessel at once. A first mash of kōji, water and yeast is followed by a second mash where the main ingredient goes in, then a single distillation. The second mash reaches 14–20% alcohol; the spirit comes off the still at 37–43%.
+
+<Figure
+  src={stills}
+  alt="Two copper stills side by side: a pot still over a fire and a tall column still, each dripping into a jar"
+  caption="Two stills, and the law splits shōchū by them. Illustration."
+/>
 
 ## The regions, and what their names promise
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/rice-curry-hero.webp
+heroAlt: 'Illustration of a plate of curry and rice by a harbour window, a naval ship at the quay'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Did Japanese curry come from India?
@@ -71,6 +73,9 @@ sources:
     published: '2025-06-18'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import roux from '../../../assets/eat/rice-curry-body.webp';
+
 Curry rice is everyday Japanese food with a foreign passport. It reached Japan from Britain, not India, in the Meiji era; the navy adopted it; food companies turned it into a block of roux any household could use; and a chain founded outside Nagoya turned it into a menu where you choose how much rice you want, by the 50 g. This page is about how that happened, what the different kinds of curry shop are, what a plate costs, and how to order.
 
 For rice in general, start from the rice overview.
@@ -111,6 +116,12 @@ Who made the first Japanese curry powder depends on whose history you read:
 **School lunches.** House Foods says curry was introduced to school lunches nationwide in 1948. The cooperative's Curry Day, 22 January, comes from 1982, when the national association of school nutritionists asked schools across Japan to put curry on the school-lunch menu, ahead of school-lunch week. 
 
 **How much roux.** The cooperative's survey of its members counted 102,338 tonnes of curry roux in fiscal 2009 and 91,485 tonnes in fiscal 2016. I could not find later figures.
+
+<Figure
+  src={roux}
+  alt="Blocks of curry roux dropped into a pot of simmering meat, potato, carrot and onion"
+  caption="Roux blocks into the pot. Illustration."
+/>
 
 ## The shops, and what they charge
 

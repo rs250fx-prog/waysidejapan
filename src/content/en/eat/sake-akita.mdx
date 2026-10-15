@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/sake-akita-hero.webp
+heroAlt: 'Illustration of a white-walled sake brewery with a brick chimney in deep snow, snowy rice fields in front'
 pricesCheckedOn: 2026-10-13
 faq:
   - q: What is Akita Sake Komachi?
@@ -54,6 +56,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import sakeRice from '../../../assets/eat/sake-akita-body.webp';
 
 *Kome no Akita wa sake no kuni* — "Akita of rice is a land of sake" — is a catchphrase the prefecture quotes on its own website. Its explanation is a list: good rice and water from a rich natural setting, a cold and snowy climate suited to brewing, and brewing skill both traditional and advanced. What sets Akita's official record apart is the rice and the yeast. The prefecture and its brewers bred their own sake rice to stand beside Yamada Nishiki, and a yeast first isolated in Akita in 1930 is still sold to brewers across Japan.
 
@@ -76,6 +80,12 @@ What the national tax statistics do show, for fiscal 2023: Akita produced 12,321
 **The others.** *Miyama Nishiki* was registered in 1978, bred in Nagano by irradiating the variety Takane Nishiki. *Misato Nishiki*, a cross of Yamada Nishiki and Miyama Nishiki, was the first sake rice in the Tōhoku region with Yamada Nishiki as a parent. *Gin no Sei*, the prefecture's first variety, has a small core and is often used for unpasteurised sake. In the 2020 crop inspection figures quoted by the centre, Akita Sake Komachi came to 38,217 bales, Miyama Nishiki 26,483, Misato Nishiki 4,267 and Gin no Sei 3,283. I have not found more recent figures.
 
 **The newest.** *Ichihozumi* (Koshitanrei × Akita Sake Komachi) and *Hyakuden* (an Akita sake line × Misato Nishiki). In the 2021 brewing year eight companies in the prefecture used Ichihozumi and fourteen used Hyakuden. The prefecture's 2023 sake guidebook also introduces its own yeasts, AKITA Yukiguni (UT-1 and UT-2).
+
+<Figure
+  src={sakeRice}
+  alt="Two bowls of polished rice grains, an ear of rice and a wooden scoop on a table"
+  caption="Rice for sake. Illustration."
+/>
 
 ## The yeast
 

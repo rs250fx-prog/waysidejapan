@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/instant-noodles-hero.webp
+heroAlt: 'Illustration of a convenience store shelf of cup noodles beside a hot water dispenser and a window counter with stools'
 pricesCheckedOn: 2026-10-13
 faq:
   - q: Can I use the hot water at a convenience store?
@@ -81,6 +83,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import afterEating from '../../../assets/eat/instant-noodles-body.webp';
 
 Instant noodles are the Japanese meal most visitors eat without sitting down in a restaurant: a cup from a convenience store, some hot water, three minutes. They are also a Japanese invention, by the account of the company that made the first ones and of the industry's own association, and Japan still makes about 5.9 billion servings a year. This page is the map: what the word covers, how the hot water and the lid are meant to work, what a cup costs, and where the empty goes. The two lineage pages go deep on the [packet](/en/eat/instant-noodles-bag/) and the [cup](/en/eat/instant-noodles-cup/).
 
@@ -163,6 +167,12 @@ Japanese bins are sorted by material, and a cup is several materials. Two cities
 - **Yokohama:** rinse lightly or wipe; a paper cup-noodle container is burnable rubbish, not paper recycling.
 
 JIFFA says cups are made either of foamed polystyrene or of paper coated with resin, and the recycling mark on the cup tells you which (PS for polystyrene, PP for polypropylene, or paper). Other cities may divide things differently; I have not checked Tokyo or Kyoto. I found no official advice on what to do with leftover soup.
+
+<Figure
+  src={afterEating}
+  alt="An empty noodle cup, its lid, film and sauce sachet laid out in front of three bins"
+  caption="Cup, lid, film, sachet: how they are sorted depends on the city. Illustration."
+/>
 
 ## The same name, a different cup
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/meat-horumon-hero.webp
+heroAlt: 'Illustration of offal grilling on a charcoal brazier beside a pot of motsunabe with cabbage and chives'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: What does horumon mean on a menu?
@@ -71,6 +73,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import cuts from '../../../assets/eat/meat-horumon-body.webp';
 
 *Horumon* and *motsu* are the two everyday Japanese words for offal: the tripe, intestines, heart and liver that go on the yakiniku grill, into a Hakata hotpot or onto a skewer. The official word is longer and duller, and the everyday ones come with more than one story. This page covers the names, the two rules every visitor should know (raw beef liver and raw pork are banned), and the places where offal is a local dish: Hakata, Osaka, Kokura and Sayo.
 
@@ -106,6 +110,12 @@ The glossary says most are grilled as yakiniku or simmered in *motsu-nikomi*, a 
 **One part, two Kansai names.** The small intestine, *kopuchan*, has two names in Kansai, according to *aff*. Left whole it is *maruchō*; split open it is *kotecchan*. The article does not give the Kanto names.
 
 **Not raw.** The health ministry has banned selling or serving beef liver to be eaten raw since July 2012; Chiba prefecture gives the start date as 1 July 2012. The ministry’s reason is that there is no way to eat raw beef liver safely. Enterohaemorrhagic *E. coli* such as O157 can cause food poisoning in small numbers and has been reported inside the liver as well. Its guide for cooking is 63°C at the centre for 30 minutes or more, or 75°C for one minute or more. Raw pork meat and offal have been banned since 12 June 2015, because of the risk of serious food poisoning from hepatitis E virus and bacteria, with salmonella, campylobacter and parasites also named. At a yakiniku table, the liver is for grilling.
+
+<Figure
+  src={cuts}
+  alt="Six dishes of raw offal on leaves: honeycomb tripe, small intestine, omasum, heart, kidneys and tongue"
+  caption="The cuts that go under horumon and motsu. Illustration."
+/>
 
 ## Hakata motsunabe
 

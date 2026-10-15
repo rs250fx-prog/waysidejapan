@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/rice-hero.webp
+heroAlt: 'Illustration of a bowl of rice on a sill, rice drying on racks in a harvested field outside at sunset'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: How much rice does Japan eat?
@@ -73,6 +75,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import grains from '../../../assets/eat/rice-body.webp';
 
 Rice usually arrives white, plain and unpriced, folded into a set meal. Behind that bowl is a lot of structure: a kind of rice chosen for stickiness, one variety that covers nearly a third of the ordinary rice planted, a grading system that says nothing about taste, a law that tells you where the rice was grown, and a wholesale price the government publishes every month. This page is the map. The lineage pages cover two things Japan does with rice that travel well: the rice ball, and curry rice.
 
@@ -107,6 +111,12 @@ The farm ministry's magazine *aff* (January 2016) says Koshihikari was born in F
 **Every rice ball is traceable.** The rice traceability law requires anyone who sells, imports, processes, makes or serves rice and rice products, farmers included, to record transactions and pass on where the rice was grown. Records can be on paper or electronic and are kept, in principle, for three years, so that a problem can be traced quickly. The Kinki regional farm office lists what is covered: rice itself, rice flour and *kōji*, cooked-rice products from bento and rice balls to rice burgers and packaged cooked rice, and processed foods including mochi, dango, rice crackers, sake and mirin.
 
 How Japanese households cook rice — the soak, the water line, the rest after the switch — is covered in a separate column on cooking rice, not repeated here.
+
+<Figure
+  src={grains}
+  alt="A tray of rice grains with tweezers picking out a few, a scoop of grain beside it"
+  caption="Rice is graded on its grains. Illustration."
+/>
 
 ## What it costs
 

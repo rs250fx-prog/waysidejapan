@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seafood-oyster-crab-hero.webp
+heroAlt: 'Illustration of grilled oysters, a hotpot and a whole boiled snow crab on a table, a snowy bay with oyster rafts outside'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Is a raw-eating oyster fresher than a cooking oyster?
@@ -73,6 +75,9 @@ sources:
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/seige_fukui.html'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import rafts from '../../../assets/eat/seafood-oyster-crab-body.webp';
+
 Oysters and snow crab both come wrapped in rules. Whether an oyster may be eaten raw is decided by the water it was harvested from. Which snow crab may call itself Echizen-gani is decided by law and checked with a tag. This page covers where the two came from, what the official sources say about safety, seasons and names, and what the tags do and do not tell you. For seafood beyond sushi and sashimi in general, start from the seafood overview.
 
 ## Where they came from
@@ -118,6 +123,12 @@ By the fisheries agency’s 2023 figures, Hiroshima produced 60% of Japan’s fa
 A 2011 Hiroshima prefecture release announced *kaki-goya*, oyster huts, opening across the prefecture, on dates from 29 October to 9 December that year. It did not say whether they served raw-eating or cooking oysters, and I could not confirm which huts operate now.
 
 *Kakifune Kanawa*, an oyster boat moored off Ōtemachi in Naka ward, is run by Kanawa, a company founded in 1962 to spread Hiroshima oysters across Japan, which serves oysters from its own rafts. The story that oyster boats began in the Edo period appeared only in search summaries, so it is not given here.
+
+<Figure
+  src={rafts}
+  alt="Oyster rafts on a calm bay, a cutaway below the water showing strings of oysters hanging down"
+  caption="Oysters grown on strings under rafts. Illustration."
+/>
 
 ## How to eat it
 

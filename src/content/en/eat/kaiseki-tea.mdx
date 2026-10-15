@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/kaiseki-tea-hero.webp
+heroAlt: 'Illustration of two guests kneeling by a sunken hearth with an iron kettle in a tea room, a garden outside'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Why does tea kaiseki serve rice first?
@@ -55,6 +57,9 @@ sources:
     url: 'https://www.houraiken.com/'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import firstTray from '../../../assets/eat/kaiseki-tea-body.webp';
+
 Tea kaiseki is the meal served at a tea gathering before the tea itself: one tray, rice and soup first, and matcha at the end. Banquet kaiseki, which is what most restaurants now mean by the word, is a meal for drinking sake, with rice near the end. The farm ministry describes the banquet as developed on the base of tea food, so this page covers both: the tea meal as the sources document it, and how the banquet differs.
 
 For kaiseki in general, start from the kaiseki overview.
@@ -91,6 +96,12 @@ The farm ministry's booklet, partly in the words of a cook it interviewed:
 The Omotesenke school gives the base as soup, mukōzuke, nimono and yakimono, with *shiizakana*, a clear soup and hassun added; these three are there to offer sake and keep the conversation going. It calls the nimono the highlight of the meal, a clear-broth preparation, and says the host brings rice, soup and mukōzuke on the tray. It ends, too, with hot water and pickles.
 
 **Why guests serve themselves.** The farm ministry's booklet explains passing dishes round as a wish to spare the host trouble, and bringing each dish freshly made as part of the spirit of tea.
+
+<Figure
+  src={firstTray}
+  alt="A lacquer tray with rice, miso soup and a small dish of raw fish, a sake flask and cups beside it"
+  caption="The first tray: rice, soup and one dish. Illustration."
+/>
 
 ## Banquet kaiseki: how it differs
 

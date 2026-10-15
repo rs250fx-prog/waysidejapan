@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/ramen-onomichi-hero.webp
+heroAlt: 'Illustration of a ramen stall by the harbour at sunset, a bowl on the counter, boats and cranes on the water'
 pricesCheckedOn: 2026-10-13
 faq:
   - q: Why does the menu say chūka soba, not ramen?
@@ -68,6 +70,8 @@ sources:
 ---
 
 import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import fatBack from '../../../assets/eat/ramen-onomichi-body.webp';
 
 Onomichi is a port on the Inland Sea in Hiroshima prefecture, and its ramen is the kind you can recognise by eye: a dark soy soup, flat noodles, and small white flecks of pork back-fat floating on the surface. The town's tourism association calls it nationally known and, in the same sentence, says every shop tastes different.
 
@@ -96,6 +100,12 @@ They differ on when the stalls started (early Shōwa or after the war) and who s
 **The toppings.** Pork (*chāshū*), bamboo shoots (*menma*) and spring onion, according to both the tourism federation and the *Highlighting Japan* article.
 
 **The variation.** The Ramen Museum says Shukaen used chicken bones with only a little pork bone, and Tsutafuji chicken, pork bone and fish. Small fish, back-fat and soy are the typical bowl, not a definition.
+
+<Figure
+  src={fatBack}
+  alt="A bowl of soy ramen with pork, bamboo shoots and bits of pork fat on the soup, a dish of small dried fish beside it"
+  caption="Soy soup, pork fat on top, small fish in the stock. Illustration."
+/>
 
 ## Why Onomichi
 
