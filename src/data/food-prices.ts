@@ -40,6 +40,12 @@ export interface ChainPrice {
   url: string;
   /** 確認日 YYYY-MM-DD */
   checkedOn: string;
+  /**
+   * 公式ページに税込の明記があるか。false は「税込・税抜の表記なし」。
+   * 記事の DishPrices は false の行を出さない（税込不明の金額は載せない方針。監査 2026-10）。
+   * 基準価格ページは従来どおり note で注記して出す
+   */
+  taxIncluded?: boolean;
   /** ページに出す補足（英語） */
   note?: string;
   /** 内部用の覚え書き。ページに出さない */

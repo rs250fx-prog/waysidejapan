@@ -8,15 +8,27 @@ import { ROUTES, DEFAULT_LOCALE } from '../config.ts';
 
 interface Props {
   pricesCheckedOn?: Date;
+  /** 運賃を載せた記事だけが持つ。rail 以外で "Fares verified" を出す条件 */
+  faresCheckedOn?: Date;
+  /** rail は運賃が本題なので、pricesCheckedOn を運賃の確認日として扱う */
+  category?: string;
   locale?: string;
 }
-const { pricesCheckedOn, locale = DEFAULT_LOCALE } = Astro.props;
+const { pricesCheckedOn, faresCheckedOn, category, locale = DEFAULT_LOCALE } = Astro.props;
+/* 運賃を載せていない記事に "Fares verified" を出すと本文と矛盾する（監査 SUMMARY §1-3） */
+const faresOn = faresCheckedOn ?? (category === 'rail' ? pricesCheckedOn : undefined);
 ---
 
 <p class="rate-note">
   Prices are in Japanese yen. Conversions are approximate, at ¥{jpyPerEur()} to the euro and ¥{jpyPerUsd()} to the US
   dollar as of {formatAsOf(ratesAsOf)}. Rates come from the European Central Bank, which publishes on working days only.
-  {pricesCheckedOn && <> Fares verified {formatMonth(pricesCheckedOn)} — check the operator before you travel.</>}
+  {
+    faresOn ? (
+      <> Fares verified {formatMonth(faresOn)} — check the operator before you travel.</>
+    ) : (
+      pricesCheckedOn && <> Prices checked {formatMonth(pricesCheckedOn)}.</>
+    )
+  }
   {
     /* 金額が出たページからは、必ず価格基準へ戻れるようにする。
        バナーではなく注記の延長に置くことで、読む流れを切らずに常時出せる */

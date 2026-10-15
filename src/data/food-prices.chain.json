@@ -36,7 +36,7 @@
       "tier": "chain",
       "note": "With a kakiage or tempura topping: ¥550 to ¥620",
       "chains": [
-        { "chain": "Komoro Soba", "chainJa": "小諸そば", "product": "かけ", "jpy": 390, "url": "https://www.k-mitsuwa.co.jp/business/komoro", "checkedOn": "2026-10-05", "note": "tax not stated on the menu", "memo": "かき揚げ550円。税込・税抜の表記なし" },
+        { "chain": "Komoro Soba", "chainJa": "小諸そば", "product": "かけ", "jpy": 390, "url": "https://www.k-mitsuwa.co.jp/business/komoro", "checkedOn": "2026-10-05", "taxIncluded": false, "note": "tax not stated on the menu", "memo": "かき揚げ550円。税込・税抜の表記なし" },
         { "chain": "Yudetaro", "chainJa": "ゆで太郎", "product": "かけ", "jpy": 430, "url": "https://yudetaro.jp/menu/", "checkedOn": "2026-10-05", "memo": "ゆで太郎システムのグランドメニュー画像（2026年10月版）。野菜かきあげそば550円。信越食品運営の店は別メニュー" },
         { "chain": "Fuji Soba", "chainJa": "名代富士そば", "product": "かけそば", "jpy": 450, "url": "https://fujisoba.co.jp/menu/", "checkedOn": "2026-10-05", "memo": "天ぷらそば620円。2026-08-01に一部価格改定" }
       ]
@@ -88,7 +88,7 @@
       "tier": "chain",
       "chains": [
         { "chain": "Unatoto", "chainJa": "名代 宇奈とと", "product": "うな重", "jpy": 1060, "url": "https://www.unatoto.com/menu/", "checkedOn": "2026-10-05", "memo": "うな丼640円、うな重上1,740円" },
-        { "chain": "Unagi no Naruse", "chainJa": "鰻の成瀬", "product": "うな重 梅", "jpy": 1900, "url": "https://unagi-naruse.com/", "checkedOn": "2026-10-05", "note": "tax not stated on the menu", "memo": "竹2,500円、松2,900円。税表示なし" }
+        { "chain": "Unagi no Naruse", "chainJa": "鰻の成瀬", "product": "うな重 梅", "jpy": 1900, "url": "https://unagi-naruse.com/", "checkedOn": "2026-10-05", "taxIncluded": false, "note": "tax not stated on the menu", "memo": "竹2,500円、松2,900円。税表示なし" }
       ]
     },
     "yakizakana": {
@@ -272,7 +272,7 @@
       "what": "Standard crepes, cheapest to most expensive",
       "tier": "chain",
       "chains": [
-        { "chain": "Dipper Dan", "chainJa": "ディッパーダン", "product": "定番クレープ（ホットチョコバナナ ほか）", "jpy": 450, "jpyMax": 750, "url": "https://dipperdan.jp/menu/", "checkedOn": "2026-10-05", "note": "tax not stated on the menu" }
+        { "chain": "Dipper Dan", "chainJa": "ディッパーダン", "product": "定番クレープ（ホットチョコバナナ ほか）", "jpy": 450, "jpyMax": 750, "url": "https://dipperdan.jp/menu/", "checkedOn": "2026-10-05", "taxIncluded": false, "note": "tax not stated on the menu" }
       ],
       "unresolved": [
         { "chainJa": "マリオンクレープ", "url": "https://www.marion.co.jp/cream/", "reason": "公式サイトに通常価格の掲載なし" }
@@ -355,7 +355,7 @@
       "what": "Weekday lunch nigiri set, with soup and chawanmushi",
       "tier": "chain",
       "chains": [
-        { "chain": "Sushizanmai", "chainJa": "すしざんまい", "product": "つぼみ 1人前〜人気ランキングにぎり", "jpy": 1188, "jpyMax": 2530, "url": "https://www.kiyomura.co.jp/menu/lunch?menu_type=4&store_id=8", "note": "Weekdays until 15:00, at most Tokyo branches. Tax is not stated on the lunch menu", "memo": "有楽町店のランチページ。つぼみ1,188／かすみ1,738／人気ランキングにぎり2,530。赤羽店は1,078〜、本店・浅草雷門店などはランチ設定なし", "checkedOn": "2026-10-05" }
+        { "chain": "Sushizanmai", "chainJa": "すしざんまい", "product": "つぼみ 1人前〜人気ランキングにぎり", "jpy": 1188, "jpyMax": 2530, "url": "https://www.kiyomura.co.jp/menu/lunch?menu_type=4&store_id=8", "taxIncluded": false, "note": "Weekdays until 15:00, at most Tokyo branches. Tax is not stated on the lunch menu", "memo": "有楽町店のランチページ。つぼみ1,188／かすみ1,738／人気ランキングにぎり2,530。赤羽店は1,078〜、本店・浅草雷門店などはランチ設定なし", "checkedOn": "2026-10-05" }
       ]
     },
     "sushi-dinner": {

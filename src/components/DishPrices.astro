@@ -2,6 +2,9 @@
 /**
  * 品目ハブの「What it costs」。基準価格ページのデータをそのまま出す。
  * 本文に数字を書き写さない。価格が更新されれば、ここも同時に変わる。
+ *
+ * 記事に出すのは税込が確認できたチェーン価格だけ（taxIncluded: false の行は出さない）。
+ * 観光地価格（tourist）は記事には出さない。基準価格ページだけに残す（監査 2026-10）
  */
 import { FOOD_PRICES, chainRange, type PriceEntry, type PriceGroup } from '../data/food-prices.ts';
 import { formatPrice, formatJpy } from '../lib/money.ts';
@@ -31,7 +34,12 @@ const monthLabel = (m: string) =>
   rows.length > 0 && (
     <div class="dish-prices">
       {rows.map(({ group, item }) => {
-        const r = item.chain ? chainRange(item.chain) : null;
+        /* 税込の明記がない社を除いた幅。全社が外れたらチェーン欄ごと出さない */
+        const chain = item.chain ? { ...item.chain, chains: item.chain.chains.filter((c) => c.taxIncluded !== false) } : null;
+        const r = chain && chain.chains.length ? chainRange(chain) : null;
+        const checked = chain?.chains.map((c) => c.checkedOn).sort().at(-1);
+        /* 出せる数字が何も残らない品目は、名前だけの空行にしない */
+        if (!item.official && !r && !item.reference) return null;
         return (
           <div class="row">
             <p class="dish">
@@ -50,42 +58,33 @@ const monthLabel = (m: string) =>
                   </dd>
                 </>
               )}
-              {item.chain && r && (
+              {chain && r && (
                 <>
-                  <dt>{item.chain.tier === 'budget' ? 'Budget chains' : item.chain.tier === 'shop' ? item.chain.chains[0].chain : 'Chains'}</dt>
+                  <dt>{chain.tier === 'budget' ? 'Budget chains' : chain.tier === 'shop' ? chain.chains[0].chain : 'Chains'}</dt>
                   <dd>
                     {r.from && 'from '}
                     {yen(r.min)}
                     {r.max > r.min && <>–{yen(r.max)}</>}
                     <span class="sub">
-                      {item.chain.what} ·{' '}
-                      {item.chain.chains
+                      {chain.what} ·{' '}
+                      {chain.chains
                         .filter((c) => c.tier !== 'premium')
                         .map((c) => c.chain)
                         .join(', ')}
+                      {checked && <> · tax incl. · checked {checked}</>}
                     </span>
                   </dd>
                 </>
               )}
               {item.reference && (
                 <>
-                  <dt>Local</dt>
+                  <dt>Our guide figure</dt>
                   <dd>
                     {item.reference.from && 'from '}
                     {formatPrice(item.reference.jpy)}
                     <span class="sub">
                       {item.reference.note} · {monthLabel(item.reference.seenOn)}
                     </span>
-                  </dd>
-                </>
-              )}
-              {item.tourist && (
-                <>
-                  <dt>Tourist area</dt>
-                  <dd>
-                    {item.tourist.from && 'from '}
-                    {formatPrice(item.tourist.jpy)}
-                    <span class="sub">{item.tourist.note}</span>
                   </dd>
                 </>
               )}

@@ -72,6 +72,11 @@ const articles = defineCollection({
 
       /** 料金の確認日。為替より、これが古いほうが読者に実害が出る */
       pricesCheckedOn: z.date(),
+      /**
+       * 運賃（鉄道・バス）を本文に載せた記事だけが持つ確認日。
+       * RateNote はこれがある記事（と rail）にだけ "Fares verified" を出す
+       */
+      faresCheckedOn: z.date().optional(),
 
       faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
       /**
