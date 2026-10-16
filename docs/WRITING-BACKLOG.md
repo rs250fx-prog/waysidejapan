@@ -197,3 +197,11 @@
 - **確実な誤りの修正**：wagyu-omi（将軍名を外し1771年のみ）、wagyu-sukiyaki（1872年に統一）、wagyu ハブ（近江 1687=製法・1771=献上、叙々苑=1976年六本木）、wagyu-kobe（安い部位は約2/5）、donburi（かつやの持ち帰りは3つとも安い）、onsen-kyushu（黒川の泉質）、ramen-iekei（実体験の主張を削除）
 - **コラム3本**：crowds-and-local-rules-in-japan／new-travel-rules-and-charges-in-japan／japan-laws-and-manners-for-visitors。国籍による一般化をしない立場を固定。富士山の通行料（条例の額）は記載。【要】（要約経由）の引用・数字は各記事の報告どおり原文照合が必要。topic は未設定（一覧では Other）
 - **未着手（監査 SUMMARY）**：§1-4 内部リンク（relatedOf の変更は要承認）、§1-5 作業メモ口調の一掃、§1-6 消費税1%案の共通注記、§3 の記事間の食い違い（udon-sanuki の丸亀、ramen のつけ麺起源、nabe の八丁味噌、sake の添加アルコール、seafood ハブの系譜漏れ、onsen 北海道/本州の順位、nyuto の題名、rail の閾値 ほか）、バッチ別の mid/low。reading-menu-prices の1%案に 10/9 衆院受理を追記、food-souvenirs-omiyage の免税の細部は新コラムで確認できたので更新可
+
+### 第15弾（2026-10-16。監査対応の続き）
+- **本番ビルドの障害を修正**：wagyu-shabu の description（単引用符の中に "chains'"）で YAML が壊れ、10/15 のコミット 44ff223 以降ビルドが止まっていた。修正のうえ `npm run check` に YAML 構文検査を追加（実際に踏んだ失敗）
+- relatedOf：食⇔温泉で地域が重なる記事を1枚必ず入れる（温泉→郷土料理の系譜、食→温泉の地域編を優先）。column の topic に `travel`（Local rules and the law）を追加し訪日コラム3本に設定
+- rail 3本：運賃は公式ページ出典のものだけ確認日つきで残し `faresCheckedOn` を付与。setouchi-area-pass の比較表（未出典の ¥18,400、全国パス ¥50,000）と「¥5,600 in cash」を削除、kix-to-hiroshima は題名を「how to judge the pass」に。**setouchi-area-pass の Verdict「¥53,500 including food and baths」（旅行全体の出費。外した運賃を含むと思われる）を残すかは村瀬さんの判断待ち**
+- reading-menu-prices：1%案に 10/9 衆院受理・成立の記録なしを追記。food-souvenirs-omiyage：11/1からのリファンド方式の要件を反映
+- 記事間の食い違い（SUMMARY §3）18項目を修正（udon-sanuki の丸亀、つけ麺起源、喜多方の三大ラーメン削除、八丁味噌2団体、kyodo-ryori FAQ、sake の添加アルコール枠と冷やおろし、seafood ハブの系譜漏れ、ramen ハブの本数、seasoning、北海道編の順位（福島122→新潟135）と登別の泉質数、泉質総数の1差、公衆浴場衛生要領の改正年、nyuto の題名と一日券、sushi-saba の因果、wagyu の満足度調査削除、和牛の最上級表現、白浜の JNTO 記述、だご汁の範囲）
+- 作業メモ口調（§1-5）第1段：「Fares and travel times are not on this page yet」62本を「Check fares and journey times with the operator before you travel.」に、検索要約の言及2件を削除。**残り：一人称の不在表明 約1,500か所／219本（I could not 727、I found no 532、I have not 168、I did not find 40）。サイトの透明性の書き方として意図的に使ってきた面があり、一律削除は方針判断が要る**
