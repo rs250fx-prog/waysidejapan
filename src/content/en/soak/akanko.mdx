@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/akanko-hero.webp
+heroAlt: 'Illustration of feet in a wooden footbath above a caldera lake in autumn, volcanoes and a sightseeing boat beyond the town'
 pricesCheckedOn: 2026-10-12
 faq:
   - q: What kind of water does Akanko Onsen have?
@@ -65,6 +67,9 @@ sources:
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/area/hokkaido.html'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import marimo from '../../../assets/soak/akanko-body.webp';
+
 Akanko Onsen is on the shore of Lake Akan, in the city of Kushiro, inside Akan-Mashu National Park. The lake is a caldera lake listed under the Ramsar Convention and the home of the marimo, the round green balls of algae that are a special natural monument. Beside the hot spring town is Akan Ainu Kotan, which its own site calls one of the largest kotan (Ainu settlements) in Hokkaido. The lake, the marimo and the kotan are well documented. The water, oddly, is not; official sources give no spring name, opening year or single figure for it. This page sets out what the environment ministry, Kushiro city, the tourism agency, the Agency for Cultural Affairs and the local tourism association say, and marks the gaps. It does not rate any inn, bath or performance.
 
 For how Hokkaido’s onsen towns compare, see the [Hokkaido overview](/en/soak/onsen-hokkaido/). For how to read the analysis posted at a bath, see the guide to [onsen water types](/en/soak/onsen-water-types/).
@@ -85,7 +90,13 @@ The Ramsar leaflet calls Lake Akan the only place in the world where large spher
 
 The marimo are protected: in the agency’s words, it is forbidden to take them from the lake, let alone touch them. The marimo exhibition and observation centre is on Churui island, reached by sightseeing boat.
 
-### How the town grew
+#<Figure
+  src={marimo}
+  alt="A cutaway of the lake showing round green marimo on the lakebed, a boat and a wooded island above"
+  caption="Marimo on the bed of Lake Akan. Illustration."
+/>
+
+## How the town grew
 
 Kushiro city’s page on the former town of Akan gives the history available. It is a history of the lakeshore, not of the spring.
 

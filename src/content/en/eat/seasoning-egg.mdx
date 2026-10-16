@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seasoning-egg-hero.webp
+heroAlt: 'Illustration of soy sauce poured over a raw egg yolk on rice, a basket of eggs beside the bowl'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Is it safe to eat raw eggs in Japan?
@@ -69,6 +71,9 @@ sources:
     url: 'https://www.stat.go.jp/data/kakei/zuhyou/rank04.xlsx'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import washing from '../../../assets/eat/seasoning-egg-body.webp';
+
 In the United States, health authorities have advised against eating raw eggs. In Japan eggs are sold with a date that means "until this day, it can be eaten raw", and the farm ministry calls egg on rice a food culture particular to Japan. This page is about the system behind that, what the official safety advice actually says, how many eggs Japan eats, and the egg dishes the official sources describe.
 
 For seasonings in general, including the soy sauce that goes on the egg, start from the seasoning overview.
@@ -88,6 +93,12 @@ The farm ministry’s magazine *aff* gives the reason: measures at every stage o
 **The date.** *Aff* says the best-before date is the date for eating raw, 21 days at most, including seven in a home fridge. The Japan Poultry Association says eggs past the date should be cooked and eaten soon, and cracked eggs not eaten raw.
 
 **Do not wash them at home.** The Food Safety Commission says they are already washed; washing at home can carry bacteria in through the shell’s pores. Wipe off dirt, or wash just before cooking.
+
+<Figure
+  src={washing}
+  alt="Eggs on a conveyor passing under water sprays and rotating brushes, then lights, in a packing plant"
+  caption="Washed and checked before packing. Illustration."
+/>
 
 ## Is it safe? The official answer
 

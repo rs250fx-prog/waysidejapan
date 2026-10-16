@@ -15,6 +15,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seasoning-shoyu-hero.webp
+heroAlt: 'Illustration of tall wooden soy sauce barrels bound with rope in a dim brewery, bottles in the foreground'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Where was soy sauce invented?
@@ -87,6 +89,9 @@ sources:
     url: 'https://www.stat.go.jp/data/kakei/zuhyou/rank08.xlsx'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import fiveTypes from '../../../assets/eat/seasoning-shoyu-body.webp';
+
 Soy sauce is made all over Japan, but a handful of towns carry its history: Yuasa in Wakayama, which calls itself the place of "the first drop"; Noda and Chōshi in Chiba, which supplied Edo; Tatsuno in Hyōgo, linked to light soy; and the island of Shōdoshima, with its wooden barrels. This page is about where soy sauce came from, how the regions differ, and how to visit a brewery.
 
 For seasonings in general, and how soy sauce is brewed, start from the seasoning overview.
@@ -113,6 +118,12 @@ The five types (see the overview) do not spread evenly. Shares are of 2024 shipm
 - **Saishikomi.** 1.0%. The association says it was born around Yanai, Yamaguchi, and was made mostly from San’in to northern Kyūshū — but Gunma was the top shipper in 2024, with about 20%. Where a type was born and where it is shipped from are different things.
 - **White shiro — Aichi.** 0.6%. Born in Hekinan; Aichi still ships the most. Kikkoman says it is used in clear soups and *chawanmushi*.
 - **Sweet mixed soy — Kyūshū.** Kikkoman says it is common in Kyūshū and in Kōchi and Ehime, and is said to have spread in the 1955–64 period.
+
+<Figure
+  src={fiveTypes}
+  alt="Five small glasses of soy sauce in a row, from very dark to pale amber"
+  caption="Dark to pale: the five types. Illustration."
+/>
 
 ## The towns
 

@@ -14,6 +14,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/eat/seasoning-hero.webp
+heroAlt: 'Illustration of a kitchen shelf of soy sauce, miso, vinegar, mirin, sugar and salt, with leek, wasabi and ginger below'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Is usukuchi soy sauce lower in salt?
@@ -71,6 +73,8 @@ sources:
 ---
 
 import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import ingredients from '../../../assets/eat/seasoning-body.webp';
 
 Japanese cooking leans on a short shelf of bottles: soy sauce, miso, vinegar, mirin, sugar and salt, with wasabi, mustard, ginger or sansho pepper on the side. This page is the map of that shelf — what each one is, where the official sources say it came from, and how soy sauce is actually made. The lineage pages go deeper on soy sauce by region and type, and on eggs, which in Japan are sold to be eaten raw.
 
@@ -105,6 +109,12 @@ The soy association explains the brewing in a few steps.
 **Grades.** Under Japan’s agricultural standard (JAS), umami is measured as total nitrogen. For fully brewed dark soy, 1.20% is standard grade, 1.35% upper, 1.50% special, and 1.65% may be labelled *tokusen*. Licensed inspectors also judge colour and aroma.
 
 **After opening.** Soy darkens as the melanoidins oxidise, faster when warm, so the association says keep it cool and dark. *Mentsuyu* (noodle sauce) is lower in salt and spoils faster: once a glass bottle is open, about 3–5 days for the ready-to-use kind, 2–3 weeks for double strength, 1–1.5 months for triple. *Genen* soy has half the usual salt or less (about 9%), *usu-shio* 80% or less (about 13%); they cost a little more because salt is removed after brewing.
+
+<Figure
+  src={ingredients}
+  alt="Bowls of soybeans, roasted wheat and salt beside a box of koji and a wooden barrel"
+  caption="Soybeans, wheat, salt and koji. Illustration."
+/>
 
 ## The five types
 
