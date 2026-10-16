@@ -9,6 +9,7 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
 
 // パスに日本語が含まれると URL の pathname は percent-encoded のままになる。
 // fileURLToPath を通さないとディレクトリが見つからず「0 本」で素通りする
@@ -60,6 +61,14 @@ for (const file of files) {
   const parsed = frontmatter(readFileSync(file, 'utf8'));
   if (!parsed) {
     errors.push(`${rel}: frontmatter がない`);
+    continue;
+  }
+  // 雑な読み取りでは通るが、本物の YAML として壊れている frontmatter を落とす。
+  // 2026-10-15 に単引用符の description に "chains'" が入り、本番ビルドが止まった
+  try {
+    yaml.load(/^---\r?\n([\s\S]*?)\r?\n---/.exec(readFileSync(file, 'utf8'))[1]);
+  } catch (e) {
+    errors.push(`${rel}: frontmatter が YAML として読めない（${String(e.message).split('\n')[0]}）`);
     continue;
   }
   const { data, body } = parsed;
