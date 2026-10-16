@@ -56,6 +56,15 @@ export function hrefOf(entry: Article): string {
  *   3. 同じカテゴリの新しい記事
  * 一覧に出ない記事（unlisted・下書き・予約中）は listArticles の時点で落ちる
  */
+/** relatedOf の別カテゴリ枠の優先順。小さいほど先 */
+function crossRank(a: Article): number {
+  const slug = parseId(a.id).slug ?? '';
+  if (a.data.dish === 'kyodo-ryori' && a.data.kind === 'lineage') return 0;
+  if (a.data.category === 'soak' && slug.startsWith('onsen-')) return 0;
+  if (a.data.kind === 'dish') return 1;
+  return 2;
+}
+
 export async function relatedOf(entry: Article, limit = 3): Promise<Article[]> {
   const locale = parseId(entry.id).locale as Locale;
   const all = (await listArticles(locale)).filter((a) => a.id !== entry.id);
@@ -67,13 +76,35 @@ export async function relatedOf(entry: Article, limit = 3): Promise<Article[]> {
       if (!picked.includes(a)) picked.push(a);
     }
   };
+  /*
+   * 食と温泉を結ぶ方針なので、地域（areas）が重なる別カテゴリの記事を1枚だけ必ず入れる（監査 SUMMARY §1-4）。
+   * 温泉→食は郷土料理の系譜を、食→温泉は地域編（onsen-*）を優先する。'japan' は全国扱いなので重なりに数えない
+   */
+  const partner = d.category === 'soak' ? 'eat' : d.category === 'eat' ? 'soak' : null;
+  const local = (x: string) => x !== 'japan' && d.areas.includes(x);
+  const cross = partner
+    ? all
+        .filter((a) => a.data.category === partner && a.data.areas.some(local))
+        .sort((a, b) => crossRank(a) - crossRank(b))
+        .slice(0, 1)
+    : [];
+  const sameLimit = limit - cross.length;
+  const addSame = (list: Article[]) => {
+    for (const a of list) {
+      if (picked.length >= sameLimit) return;
+      if (!picked.includes(a)) picked.push(a);
+    }
+  };
   if (d.dish) {
     const sameDish = all.filter((a) => a.data.dish === d.dish);
     // 系譜ページからはまずハブへ戻す
-    add(sameDish.filter((a) => a.data.kind === 'dish'));
-    add(sameDish);
+    addSame(sameDish.filter((a) => a.data.kind === 'dish'));
+    addSame(sameDish);
   }
-  add(all.filter((a) => a.data.category === d.category && a.data.areas.some((x) => d.areas.includes(x))));
+  addSame(all.filter((a) => a.data.category === d.category && a.data.areas.some((x) => d.areas.includes(x))));
+  addSame(all.filter((a) => a.data.category === d.category));
+  add(cross);
+  // 別カテゴリが見つからなければ同カテゴリで埋める
   add(all.filter((a) => a.data.category === d.category));
   return picked;
 }

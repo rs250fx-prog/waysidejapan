@@ -19,6 +19,7 @@ export const COLUMN_TOPICS: GuideSection[] = [
   { key: 'needs', label: 'Dietary needs and children', glyph: '菜' },
   { key: 'buying', label: 'Buying food and souvenirs', glyph: '買' },
   { key: 'kitchen', label: 'How food is made', glyph: '釜' },
+  { key: 'travel', label: 'Local rules and the law', glyph: '規', note: 'Crowds, charges, and where manners end and the law begins' },
 ];
 
 export const RAIL_GROUPS: GuideSection[] = [
