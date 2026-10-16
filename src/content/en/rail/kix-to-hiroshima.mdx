@@ -1,6 +1,6 @@
 ---
-title: 'Kansai Airport to Hiroshima: the three ways, and the one number that decides it'
-description: 'Train, bus or rail pass from Kansai Airport to Hiroshima. What the airport leg costs, why there is no direct bus, and the point at which a seven-day pass starts paying for itself.'
+title: 'Kansai Airport to Hiroshima: the three ways, and how to judge the pass'
+description: 'Train, bus or rail pass from Kansai Airport to Hiroshima. What the airport leg costs, why there is no direct bus, and how to judge a seven-day pass.'
 translationKey: kix-to-hiroshima
 translationStatus: reviewed
 category: rail
@@ -15,6 +15,8 @@ heroBand: false
 heroImage: ../../../assets/rail/kix-to-hiroshima-hero.webp
 heroAlt: 'Illustration of an airport express train crossing the bridge from Kansai Airport, a plane taking off over the terminal and the sea'
 pricesCheckedOn: 2026-10-04
+faresCheckedOn: 2026-10-04
+updatedDate: 2026-10-16
 faq:
   - q: Is there a direct bus from Kansai Airport to Hiroshima?
     a: Chugoku JR Bus lists a Hiroshima–Osaka service but no route starting at Kansai Airport. Any bus journey means getting into Osaka first.
@@ -27,7 +29,7 @@ sources:
     url: 'https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/'
   - label: 'JR-WEST — Setouchi Area Pass（公式。価格・有効日数・範囲・除外区間）'
     url: 'https://www.westjr.co.jp/travel-information/en/tickets-passes/other/setouchi/'
-  - label: '中国JRバス（公式。広島〜大阪の高速バス運賃）'
+  - label: '中国JRバス（公式。広島〜大阪の高速バス）'
     url: 'https://www.chugoku-jrbus.co.jp/'
 ---
 
@@ -41,8 +43,8 @@ import threeWays from '../../../assets/rail/kix-to-hiroshima-three-ways.webp';
 Hiroshima is the first place most people go west of Osaka, and almost everyone arrives at Kansai Airport without having worked out how they are getting there. The honest answer is that there is no clever route. There are three, they are not close in quality, and which one is right depends on a single thing: **whether you are stopping anywhere else in the west.**
 
 <Verdict
-  buyIf="You are stopping at two or more places between Osaka and Hiroshima, or carrying on to Shikoku or Hakata."
-  skipIf="Hiroshima is a single out-and-back from Osaka. Buy the legs separately."
+  buyIf="Your JR fares for the seven days, priced leg by leg, would come to more than the ¥22,000 pass."
+  skipIf="Hiroshima is a single out-and-back from Osaka. Price the legs separately before buying the pass."
   totalLabel="Airport leg"
 >
   <Price jpy={1800} /> on the discounted Haruka ticket to Shin-Osaka.
@@ -52,7 +54,7 @@ Hiroshima is the first place most people go west of Osaka, and almost everyone a
 
 Kansai Airport is on an island south of Osaka, and Hiroshima is 300 kilometres west of it. Nothing runs between them directly. **Every option goes through Shin-Osaka**, and the only real question is what you do once you are there.
 
-That also answers the question people ask most often. Chugoku JR Bus runs a Hiroshima–Osaka highway bus from <Price jpy={3500} />, but **no service starts at the airport**. A bus journey means getting yourself into Osaka first, which costs you the airport leg anyway and then four hours or so on top.
+That also answers the question people ask most often. Chugoku JR Bus lists a Hiroshima–Osaka highway bus, but **no service starts at the airport**. A bus journey means getting yourself into Osaka first, which costs you the airport leg anyway. For the bus fare, check the operator's fare page; this page does not give an unconfirmed fare.
 
 ## The airport leg
 
@@ -65,7 +67,7 @@ That also answers the question people ask most often. Chugoku JR Bus runs a Hiro
   ]}
 />
 
-The HARUKA One-way Ticket is a discounted fare JR-WEST sells to **holders of a foreign passport entering as a Temporary Visitor** — one ticket per person, passport shown at purchase. Shin-Osaka is <Price jpy={1800} />, Kyoto <Price jpy={2200} />, Tennoji <Price jpy={1300} />, Kobe <Price jpy={2000} />, Nara <Price jpy={1800} />. Children are half.
+The HARUKA One-way Ticket is a discounted fare JR-WEST sells to **holders of a foreign passport entering as a Temporary Visitor** — one ticket per person, passport shown at purchase. Shin-Osaka is <Price jpy={1800} />, Kyoto <Price jpy={2200} />, Tennoji <Price jpy={1300} />, Kobe <Price jpy={2000} />, Nara <Price jpy={1800} />.
 
 It is an ordinary-car reserved seat, and the reservation is made separately at a machine or a ticket office. Worth doing with luggage.
 
@@ -86,14 +88,14 @@ It is an ordinary-car reserved seat, and the reservation is made separately at a
       note: '7 consecutive days',
       jpy: 22000,
       covers: 'Both legs, plus Miyajima ferry and JR Shikoku',
-      bestFor: 'Two or more stops in the west',
+      bestFor: 'Several stops in the west',
       pick: true,
     },
     {
       name: 'Into Osaka, then highway bus',
       note: 'No direct service from the airport',
-      jpy: 3500,
-      covers: 'Bus leg only; airport leg on top',
+      jpy: 1800,
+      covers: 'Airport leg to Shin-Osaka shown; bus fare on top',
       bestFor: 'A tight budget and a spare afternoon',
     },
   ]}
@@ -105,13 +107,13 @@ It is an ordinary-car reserved seat, and the reservation is made separately at a
   caption="Bullet train, highway bus or local line: the same trip, traded between time and money. Illustration."
 />
 
-## The number that decides it
+## How to judge the pass
 
 The pass is <Price jpy={22000} /> for seven consecutive days and covers the Sanyo Shinkansen between Shin-Osaka and Hakata, JR-WEST and **JR-SHIKOKU** conventional lines, and the Miyajima ferry. The Tokaido Shinkansen towards Tokyo and the Kyushu Shinkansen south of Hakata are outside it.
 
-So the arithmetic is not "airport to Hiroshima". It is **everything you will do in those seven days**. A return trip to Hiroshima and nothing else will not reach <Price jpy={22000} />. Add Onomichi, add Miyajima, add the crossing to Matsuyama — and the pass stops being a question.
+So the comparison is not "airport to Hiroshima". It is **everything you will do in those seven days**: add up the JR fare for each leg and set the total against <Price jpy={22000} />. **JR-SHIKOKU is inside this pass**, so legs to Matsuyama or Takamatsu count towards that total.
 
-That last one is the part people miss. **JR-SHIKOKU is inside this pass.** If Shikoku is anywhere in your plans, the comparison is already over.
+This page does not give the Shin-Osaka to Hiroshima Shinkansen fare or journey time, because they have not been confirmed from the operator. Check the operator's fare page; this page does not give an unconfirmed fare.
 
 ## What I would do
 
@@ -127,7 +129,3 @@ Then start west with the pass the following morning, if you are going further th
     { label: 'Pass excludes', value: 'Tokaido, Kyushu' },
   ]}
 />
-
-## Still to confirm
-
-The Shin-Osaka to Hiroshima Shinkansen fare and journey time are not stated here, because I have not sourced them from the operator yet. They will be added with the date they were checked. Everything above comes from the pages listed at the end.

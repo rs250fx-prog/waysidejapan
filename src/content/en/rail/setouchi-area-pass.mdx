@@ -19,6 +19,8 @@ experience:
   mode: train
   photosOwn: true
 pricesCheckedOn: 2026-08-14
+faresCheckedOn: 2026-08-14
+updatedDate: 2026-10-16
 sources:
   - label: 'JR-WEST — Setouchi Area Pass（公式。価格・有効日数・範囲・除外区間）'
     url: 'https://www.westjr.co.jp/travel-information/en/tickets-passes/other/setouchi/'
@@ -34,7 +36,6 @@ faq:
 import Price from '../../../components/Price.astro';
 import Verdict from '../../../components/Verdict.astro';
 import FactRow from '../../../components/FactRow.astro';
-import CompareTable from '../../../components/CompareTable.astro';
 import Cta from '../../../components/Cta.astro';
 import PhotoBand from '../../../components/PhotoBand.astro';
 import Figure from '../../../components/Figure.astro';
@@ -43,43 +44,15 @@ import passGate from '../../../assets/rail/setouchi-area-pass-body.webp';
 Honshu, Shikoku and Kyushu in a single week — what the pass actually covers, where it stops being worth the money, and the route I rode in August.
 
 <Verdict
-  buyIf="You cross Kansai → Kyushu and stop three or more times."
-  skipIf="Osaka–Hiroshima and back. Two point-to-point tickets are cheaper."
+  buyIf="Your JR fares for the seven days, priced leg by leg, would come to more than the ¥22,000 pass."
+  skipIf="Your week is Osaka–Hiroshima and back. Price the two tickets on JR-WEST's fare page before buying the pass."
 >
   <Price jpy={53500} /> including food and baths.
 </Verdict>
 
 ## Is it cheaper than buying tickets?
 
-Only past a certain number of legs. Here is the same week, priced three ways.
-
-<CompareTable
-  rows={[
-    {
-      name: 'Setouchi Area Pass',
-      note: '7 days, three islands',
-      jpy: 22000,
-      covers: 'Sanyo Shinkansen, JR West and JR Shikoku lines',
-      bestFor: 'Three or more stops',
-      pick: true,
-    },
-    {
-      name: 'Point-to-point',
-      note: 'Four legs',
-      jpy: 18400,
-      covers: 'Only what you book',
-      bestFor: 'One long hop, back again',
-    },
-    {
-      name: 'Nationwide pass, 7 days',
-      jpy: 50000,
-      covers: 'The whole country',
-      bestFor: 'Tokyo in the same week',
-    },
-  ]}
-/>
-
-The arithmetic turns at three long legs. Below that, buying tickets as you go wins and no amount of convenience makes up the difference.
+Only if your own fares for the week add up to more than the pass. JR-WEST's pass page gives <Price jpy={22000} /> for seven consecutive days on the Sanyo Shinkansen and the JR-WEST and JR-SHIKOKU lines (checked 14 August 2026). Price each leg of your week on the operator's fare page and set the total against that; this page does not give an unconfirmed fare.
 
 <PhotoBand caption="The channel at Onomichi from the ropeway, an hour after getting off the train. August 2026." />
 
@@ -117,4 +90,4 @@ From the station it is ten minutes on foot to the ropeway, and the hill behind t
 
 ## What the pass will not do
 
-It stops at Hakata. The Tokaido Shinkansen towards Tokyo and the Kyushu Shinkansen south of Hakata are both outside it, so this is a westward pass and nothing else. The Miyajima ferry is included, but the smaller island routes across the inland sea are run by other operators — budget <Price jpy={5600} /> in cash for those boats and the local buses over the week.
+It stops at Hakata. The Tokaido Shinkansen towards Tokyo and the Kyushu Shinkansen south of Hakata are both outside it, so this is a westward pass and nothing else. The Miyajima ferry is included, but the smaller island routes across the inland sea are run by other operators and paid separately, as are the local buses. Check each operator's fare page; this page does not give an unconfirmed fare.
