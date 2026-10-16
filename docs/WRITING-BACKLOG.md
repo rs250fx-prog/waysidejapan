@@ -205,3 +205,6 @@
 - reading-menu-prices：1%案に 10/9 衆院受理・成立の記録なしを追記。food-souvenirs-omiyage：11/1からのリファンド方式の要件を反映
 - 記事間の食い違い（SUMMARY §3）18項目を修正（udon-sanuki の丸亀、つけ麺起源、喜多方の三大ラーメン削除、八丁味噌2団体、kyodo-ryori FAQ、sake の添加アルコール枠と冷やおろし、seafood ハブの系譜漏れ、ramen ハブの本数、seasoning、北海道編の順位（福島122→新潟135）と登別の泉質数、泉質総数の1差、公衆浴場衛生要領の改正年、nyuto の題名と一日券、sushi-saba の因果、wagyu の満足度調査削除、和牛の最上級表現、白浜の JNTO 記述、だご汁の範囲）
 - 作業メモ口調（§1-5）第1段：「Fares and travel times are not on this page yet」62本を「Check fares and journey times with the operator before you travel.」に、検索要約の言及2件を削除。**残り：一人称の不在表明 約1,500か所／219本（I could not 727、I found no 532、I have not 168、I did not find 40）。サイトの透明性の書き方として意図的に使ってきた面があり、一律削除は方針判断が要る**
+- **作業メモ口調（§1-5）第2段（2026-10-17、村瀬さん判断 (a)）**：1つの節に一人称の「見つからなかった」が3回以上重なる51本を対象に、節ごとに中立の1文（「Official sources do not give …」「No official source checked for this page …」「… is not confirmed」）へまとめた。数字・リンク・`<FromExperience>` は不変を機械で確認。「開けなかった」を「公式は言っていない」と強めた2か所（unzen・nozawa）と、2か所（unazuki・echigo-yuzawa）を「checked for this page」付きに戻した。**残り：上記51本以外の約170本の単発の一人称表現は、方針 (a) では対象外として残している**
+- 月次ルーティン（trig_01RHFx9dRoZquQaiTnnkS34t）に `taxIncluded` の扱いを1行追加し、RemoteTrigger で登録文面も更新（2026-10-17）。次回 10/28
+- **setouchi-area-pass の Verdict「¥53,500 including food and baths」**：2026-09-26 のデモ内容投入コミット（15d936a）で入った数字。内訳・出典なし。村瀬さんの実際の出費なら内訳つきで FromExperience に、デモなら削除（判断待ち）
