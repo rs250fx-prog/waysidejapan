@@ -43,23 +43,6 @@ Create one image. Porters seen from behind walk in single file along a mountain 
 
 ## Soak — Tohoku
 
-### /en/soak/sukayu/ 本文は「The Sennin-buro」の節に置く
-**ヒーロー** → 保存名 `sukayu-hero`
-
-```
-Create one image. A large old wooden inn on a high mountain slope buried in deep snow, with steam rising from its roof vents, a cleared road running between towering walls of snow, and snow-laden evergreen trees and a rounded mountain peak behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `sukayu-body`
-
-```
-Create one image. The inside of an enormous empty bath hall built entirely of pale hiba wood, with a high wooden ceiling and not a single pillar, four separate wooden tubs set side by side in one vast space, a stream of hot water falling from a wooden spout, and soft light from small windows through the steam. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-## Soak — Water types and how to read the bath
-
-## Soak — Regional overviews
-
 ## Soak — Kanto
 
 ### /en/soak/ikaho/ 本文は「Golden and silver」の節（金の湯と銀の湯の色の違い）に置く
@@ -126,8 +109,6 @@ Create one image. A long narrow valley town strung along a clear river, with old
 ```
 Create one image. A broad reservoir of vivid, perfectly clear blue-green water between steep wooded mountains in spring, with streaks of melting snow on the slopes and thin silver streams running into the lake, a concrete dam wall at one end, a single canoe on the water with one paddler seen from behind, and a short footpath along the shore. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Soak — Tokai
 
 ## Soak — Chubu
 
@@ -557,71 +538,6 @@ Create one image. A narrow stone-paved lane in an old hot spring town lined with
 
 ```
 Create one image. A snowy mountain valley beside a small river, where a stone-edged outdoor pool of steaming water holds a few Japanese macaques with snow on their fur, more monkeys sitting on the snowy rocks around the pool, steaming vents in the snow, and bare winter trees, with no people anywhere. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yufuin/ 本文は「Yunohira’s shared bath」の節（石畳の坂と川沿いの共同浴場）に置く
-**ヒーロー** → 保存名 `yufuin-hero`
-
-```
-Create one image. A broad basin of farmland and farmhouses at the foot of a large rounded mountain, a small lake in the foreground with mist and steam rising from its surface in the cold morning air, a horse-drawn carriage on a country road lined with small shops, and a small railway station. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yufuin-body`
-
-```
-Create one image. A narrow stone-paved slope running beside a small river through a quiet hot spring district, with old wooden inns on both sides behind plain blank curtains, a small communal bathhouse at the bottom of the slope with a curl of steam rising from its roof, and green hills above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yugawara/ 本文は「The town buys the water」の節（所有者から買って町が配る仕組み）に置く
-**ヒーロー** → 保存名 `yugawara-hero`
-
-```
-Create one image. A spa town in a green valley along a small river, with a park beside the water where a thatched teahouse stands among trees and a stone monument carved with a poem sits on the grass, a footbath on a terrace beside a small cafe with one pair of feet in it, mandarin orange trees heavy with fruit on the sunny slopes above the town, and a hint of sea at the mouth of the valley. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yugawara-body`
-
-```
-Create one image. A schematic bird's-eye view of a small town in a valley: several privately owned spring huts at different spots each send a pipe into one thick main pipe running through the middle of the town, a small junction house where the main pipe is checked by the town's staff, and branch pipes running from there to inn roofs and houses with thin steam rising from them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yunomine/ 本文は「The yuzutsu」の節（湯筒で卵や野菜をゆでる）に置く
-**ヒーロー** → 保存名 `yunomine-hero`
-
-```
-Create one image. A tiny hot spring village in a narrow mountain valley, with forested mountains rising steeply on all sides, a small clear river running through, beside it a stone-edged spring well steaming strongly where a wire basket of eggs hangs in the water, a few old wooden inns and a plain public bathhouse with steam rising from its roof, and a stone-paved path where a lone pilgrim in white with a straw hat and a staff, seen from behind, walks away. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yunomine-body`
-
-```
-Create one image. A close view of a steaming stone-edged spring well beside a river, where a person in an apron, seen from behind, lowers a wire basket holding eggs and sweet potatoes into the hot water on a rope, with a second basket resting on the stone edge and a wooden bucket beside it. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yunotsu/ 本文は「The tanuki」の節（傷ついたタヌキが湯で癒した話）に置く
-**ヒーロー** → 保存名 `yunotsu-hero`
-
-```
-Create one image. A small silver-port town in a narrow valley opening onto the sea, with one long street of old wooden houses and inns with tiled roofs running down to a small harbour with a few fishing boats, two bathhouse roofs each with a plume of steam, temple and shrine roofs among the trees on the hillside, and low green headlands closing the bay. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yunotsu-body`
-
-```
-Create one image. A travelling monk in plain robes with a staff and a wide straw hat, seen from the side, stops on a forest path to watch an old tanuki, a Japanese raccoon dog, with a limp, soaking one hind leg in a small steaming pond among rocks, with soft mist and gentle light. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yunoyama/ 本文は「Food」の節（僧兵鍋）に置く
-**ヒーロー** → 保存名 `yunoyama-hero`
-
-```
-Create one image. A small hot spring town at the foot of a high forested mountain, with a ropeway cable rising from the town up the mountain with two small gondolas, inns climbing the lower slope with thin steam, a small waterfall and a temple roof among the trees at the edge of town, and rounded ridges of a mountain range behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yunoyama-body`
-
-```
-Create one image. A big iron pot of hotpot simmering on a charcoal brazier in the middle of a low table, with thick miso broth, slices of boar meat, mushrooms and root vegetables, steam rising, wooden bowls and chopsticks around it, a folded white head cloth of the kind warrior monks wore lying beside the pot, and a window looking out to mountain slopes. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
 ### /en/soak/zao/ 本文は「Skiing and the snow monsters」の節（樹氷）に置く
