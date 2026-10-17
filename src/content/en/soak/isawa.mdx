@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/isawa-hero.webp
+heroAlt: 'Illustration of a town in a basin among vineyards and peach trees in blossom, mountains behind'
 pricesCheckedOn: 2026-10-13
 faq:
   - q: How did Isawa Onsen begin?
@@ -78,6 +80,9 @@ sources:
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/torino_motsuni_yama_nashi.html'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import vineyard from '../../../assets/soak/isawa-body.webp';
+
 Isawa Onsen is a spa town in the city of Fuefuki, in the Kōfu basin of Yamanashi. It is young by Japanese standards: the spa as it is known today dates from 1961, when hot water poured into the rivers and fields around a vineyard district. Much of its water is pumped from wells owned by the prefecture and piped to the inns. This page uses Yamanashi prefecture's enterprise bureau and a prefectural research institute, Fuefuki city and its tourism portal (Fuefuki Kankō Navi, which calls itself the city's official information portal), the Isawa Onsen ryokan cooperative, the prefectural tourism organisation's site and JNTO. Where they disagree, both are given. It does not rate any bath or inn.
 
 For the spring types named below, see [hydrogen-carbonate, sulphate, iodine and simple springs](/en/soak/hydrogen-carbonate-sulphate-iodine-simple-springs/). For reading the sign at any bath, see [onsen water types](/en/soak/onsen-water-types/).
@@ -116,7 +121,13 @@ The tank collects water from all five prefectural sources, so these are figures 
 
 Official sources do not give the total number of sources or the total flow for Isawa as a whole, since privately owned sources are not counted in the prefecture's table. The prefectural tourism site's English page gives **2,000 litres a minute** and says the baths along Isawa Onsen street draw on the same source; it may count differently or from a different year than the bureau's 1,760. Fuefuki city's portal says Isawa's sources run above 60°C.
 
-### Where the heat comes from
+#<Figure
+  src={vineyard}
+  alt="Men around a drilling rig as hot water spurts from the ground in a vineyard, water running into a wooden trough"
+  caption="Hot water from a vineyard, in one account of 1961. Illustration."
+/>
+
+## Where the heat comes from
 
 The prefecture's public health and environment research institute studied the Isawa and Kasugai area in its 2018 annual report. It found:
 

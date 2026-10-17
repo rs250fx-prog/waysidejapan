@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/kakenagashi-explained-hero.webp
+heroAlt: 'Illustration of an empty wooden bath with hot water pouring in and overflowing onto the stone floor'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: What does gensen kakenagashi mean?
@@ -80,6 +82,9 @@ sources:
     published: '2019-03'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import twoBaths from '../../../assets/soak/kakenagashi-explained-body.webp';
+
 *Gensen kakenagashi* — roughly, "source water, poured and let flow" — is one of the most prized phrases on a Japanese onsen sign or website. It is also one of the least explained in English. I could not find a JNTO, tourism agency or environment ministry guide for visitors that sets out the difference between free-flowing and recirculated water. This page tries to: what the term means, who defines it (no one in law, as far as I could find), what an onsen is actually obliged to tell you about its water, and why some baths are filtered and chlorinated. It does not grade or rank any bath.
 
 ## What it is
@@ -141,6 +146,12 @@ The environment ministry’s 2005 leaflet for operators adds detail that is usef
 That last point is the one to remember. The duty is to post what *is* done. A sign with no line about heating does not prove the water is unheated. The ministry also encouraged — but did not require — extra information such as how much water is added, whether it is tap or well water, the source’s flow and pH, and how often the bath is cleaned and refilled. A 2005 government subcommittee considered making the dilution ratio compulsory and decided against it, because the effect on the water’s components did not differ much and the figures vary.
 
 ## Why some water is recirculated and chlorinated
+
+<Figure
+  src={twoBaths}
+  alt="A cutaway of two baths: one overflowing to a drain, one feeding pipes through a filter and back"
+  caption="Flowing through, or filtered and recirculated. Illustration."
+/>
 
 ### The hygiene framework
 

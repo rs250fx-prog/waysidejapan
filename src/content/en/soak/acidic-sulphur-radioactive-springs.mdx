@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/acidic-sulphur-radioactive-springs-hero.webp
+heroAlt: 'Illustration of a steaming volcanic valley in autumn with yellow sulphur deposits, a stream and a small bathhouse'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Is an acidic spring the same as water below pH 3?
@@ -112,6 +114,9 @@ sources:
     url: 'https://www.env.go.jp/nature/onsen/area/pdf/hoyo_031.pdf'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import source from '../../../assets/soak/acidic-sulphur-radioactive-springs-body.webp';
+
 Three of Japan's ten official spring types cause more confusion than the rest: the acidic spring, the sulphur spring and the radioactive spring. Each has a name that sounds alarming in English, each has a popular label that does not match the official one, and two of them come with real safety rules. This page goes deeper on those three, using the environment ministry's documents and a handful of public bodies. The ten types as a whole, and how to read the analysis sign, are in [the guide to onsen water types](/en/soak/onsen-water-types/). This page does not rank any spring and does not say what any water will do for you.
 
 ## What it is
@@ -168,6 +173,12 @@ The public material I found is thinner than the folklore, and mostly specific to
 - **Acidic water and volcanic gas.** The Geological Survey of Japan explains the strongly acidic springs on the south slope of Satsuma-Iōjima as acidic fluid, formed when volcanic gas mixes with groundwater, dissolving volcanic rock as it flows underground. The tourism agency's text for Tamagawa says its strongly acidic water comes from volcanic gas, exists only near active volcanoes, and owes its acidity to hydrochloric and sulphuric acid from the gas. Both are single cases, not a general account of every acidic spring in Japan.
 - **Sulphur.** The ministry's 2017 hydrogen sulphide guideline says the gas is released mainly in volcanic fumarole areas and onsen around volcanoes, but also from building sewage tanks and drains. It also notes that alkaline and weakly alkaline sulphur springs contain almost no hydrogen sulphide, carrying hydrogen sulphide ion and thiosulphate instead. I could not find an official general explanation of how sulphur springs away from volcanoes form.
 - **Radon.** The ministry's radiation primer says radon is a radioactive noble gas produced by the alpha decay of radium, which is widespread underground; radon-222 comes from radium-226 in the uranium series and has a half-life of about 3.8 days. Granite contains relatively more uranium, thorium and potassium, and western Japan, where granite is often exposed, tends to have natural radiation about 1.5 times that of eastern Japan. That supports the chain "uranium series in granite, then radium, then radon". It does not support "granite areas always have radioactive springs", and I found no official explanation of how the radon gets into the spring water.
+
+<Figure
+  src={source}
+  alt="A cutaway of a volcano showing rainwater sinking through the rock, heated near magma and rising back as hot springs"
+  caption="Rain sinks, is heated deep down, and comes back up. Illustration; not to scale."
+/>
 
 ## The official indications and contraindications
 

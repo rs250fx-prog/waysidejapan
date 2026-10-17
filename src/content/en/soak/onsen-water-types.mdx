@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/onsen-water-types-hero.webp
+heroAlt: 'Illustration of a wooden changing room with baskets and a folded yukata, the door open onto a steaming outdoor bath'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Does an onsen have to be hot?
@@ -62,6 +64,9 @@ sources:
     url: 'https://www.japan.travel/en/blog/japanese-Onsen-and-ink-the-tattoo-taboo/'
     published: '2020-12-08'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import twoWaters from '../../../assets/soak/onsen-water-types-body.webp';
 
 Every onsen offered to the public in Japan must post a sheet covered in chemical names and numbers somewhere easy to see. It is worth a minute, because it answers questions people usually guess at: whether this water is "really" an onsen, what kind it is, how hot it was when it came out of the ground, and what the operator does to it before it reaches the bath. This page explains the system behind that sheet, using the environment ministry’s own documents. It does not rank springs, and it does not say what any water will do for you.
 
@@ -116,6 +121,12 @@ The ten spring types below are types of therapeutic spring. The Japan Hot Spring
 ### How many there are
 
 The environment ministry’s survey for fiscal 2024 (as of the end of March 2025) counts **2,839 onsen areas**, counting places that have lodging, and **27,899 sources**. Of those, 4,106 flow naturally and 12,762 are pumped and in use; 3,697 natural and 7,335 pumped sources are not in use. Those four figures add up to 27,900, one more than the total; that is how the table gives them. The year before, the figures were 2,857 areas and 27,920 sources.
+
+<Figure
+  src={twoWaters}
+  alt="Two empty stone baths side by side in a garden, one clear and one rust brown"
+  caption="Different waters, and the sign tells you which. Illustration."
+/>
 
 ## How it works
 
