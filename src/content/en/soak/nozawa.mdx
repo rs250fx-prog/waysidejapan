@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/nozawa-hero.webp
+heroAlt: 'Illustration of a snowy mountain village with steam rising between the roofs, ski slopes behind'
 pricesCheckedOn: 2026-10-10
 faq:
   - q: Are the public baths in Nozawa Onsen free?
@@ -80,6 +82,9 @@ sources:
     url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/oyaki_nagano.html'
 ---
 
+import Figure from '../../../components/Figure.astro';
+import ogama from '../../../assets/soak/nozawa-body.webp';
+
 Nozawa Onsen, a village in Nagano, is organised around thirteen small bathhouses that belong to the village, not to any inn. They are looked after by groups of villagers called *yu-nakama*, and visitors use them in exchange for a voluntary donation. In the village there is also a spring that boils in the open air, where people cook. This page explains how it works using the village office, the village’s tourism bureau, the ski resort’s English site and JNTO. Where they differ, I give each with its source. It does not rate any bath or inn.
 
 For what the spring types and the long chemical names on the sign mean, see the separate guide to onsen water types; for what "free-flowing" and "no added water" mean on a notice, see the piece on *kakenagashi*. The Honshu hot springs guide covers the region as a whole.
@@ -127,7 +132,13 @@ The bureau’s "About Nozawa Onsen" page gives the source as about 90°C, flowin
 
 **What kind of designation.** The bureau calls the Ogama a natural monument designated **by the village**. The village’s own list of cultural properties gives it as a village-designated **place of scenic beauty** (*meishō*), designated on 1 November 1979, owned by the Nozawa-gumi. The village-designated natural monuments on that list are three trees, not the Ogama. So the two official sources agree it is a village designation and differ on the category. This site does not choose. Neither is national.
 
-### Why the water is here
+#<Figure
+  src={ogama}
+  alt="Villagers in aprons lowering baskets of vegetables and eggs into steaming stone pools"
+  caption="Cooking in the hot pools at the Ogama. Illustration."
+/>
+
+## Why the water is here
 
 The bureau says most of the village’s land was formed by material from the Kenashi volcano, and that volcanic activity and faults produce the hot springs. The national geological survey (AIST) lists Mount Kenashi as a composite andesite volcano active roughly 1.6 to 1.0 million years ago, not an active volcano, with no recorded eruptions. So the volcano and its age are on record, but no public source says the heat of Nozawa’s springs comes from it.
 

@@ -41,22 +41,7 @@ Create one image. A low table in an old townhouse, set with a clay pot of boar h
 Create one image. Porters seen from behind walk in single file along a mountain track through tall cedar forest, each carrying a straw-wrapped bundle of salted mackerel on his back, while far below a basin town of tiled roofs spreads out in the haze. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-## Soak — Tohoku
-
 ## Soak — Kanto
-
-### /en/soak/ikaho/ 本文は「Golden and silver」の節（金の湯と銀の湯の色の違い）に置く
-**ヒーロー** → 保存名 `ikaho-hero`
-
-```
-Create one image. A hillside hot spring town built on a long, straight flight of broad stone steps climbing the slope between rows of wooden inns and small shops with plain blank curtains, a narrow channel of steaming water running down the middle of the steps, a footbath at the side of the steps with only one pair of feet in it, a small shrine gate at the top, and the forested rounded dome of a volcano rising behind the town. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ikaho-body`
-
-```
-Create one image. Two stone troughs stand side by side on a stone-paved step, both fed by wooden spouts and left empty of people: the water in the left trough is clear at the spout and turns golden brown as it runs along, staining the stone it passes over, while the water in the right trough stays perfectly clear and colourless all the way down, with thin steam rising from both and a few stone steps behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/soak/kinugawa/ 本文は「The station footbath」の節に置く
 **ヒーロー** → 保存名 `kinugawa-hero`
@@ -111,58 +96,6 @@ Create one image. A broad reservoir of vivid, perfectly clear blue-green water b
 ```
 
 ## Soak — Chubu
-
-### /en/soak/nozawa/ 本文は「The Ogama」の節に置く
-**ヒーロー** → 保存名 `nozawa-hero`
-
-```
-Create one image. A snowy mountain village of narrow lanes between old wooden houses and inns with snow heaped on the roofs, small public bathhouses with steam pouring from their roof vents, an open-air spring steaming in a stone-walled corner, a temple roof up the slope, and a broad forested mountain with ski runs rising behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `nozawa-body`
-
-```
-Create one image. A boiling open-air spring set in a stone-walled corner of a village, with several pools of steaming water side by side, villagers in aprons and rubber boots, seen from behind, lowering wire baskets of vegetables and eggs into the water on ropes, clouds of steam drifting over the wooden roofs, and a small souvenir shop with stacked crates next to the wall. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/okuhida/ 本文は「Falls and the ropeway」の節に置く
-**ヒーロー** → 保存名 `okuhida-hero`
-
-```
-Create one image. A high mountain valley with a clear river and a cluster of old wooden inns, a few thin steam plumes and an open-air bath hut by the water, a route bus on the valley road, and behind the valley a steaming rounded volcano beside jagged snow-capped alpine peaks under a wide sky. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `okuhida-body`
-
-```
-Create one image. A double-decker ropeway gondola with two cabins stacked one above the other hangs from a cable climbing a steep forested slope towards high rocky alpine ridges, with a snow-fed stream below the cable, a small station building with a car park at the foot of the slope, and a second gondola passing in the other direction. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/shirahone/ 本文は「Why it turns white」の節に置く
-**ヒーロー** → 保存名 `shirahone-hero`
-
-```
-Create one image. A small hollow valley high on the flank of a broad volcano, with a handful of old wooden inns, a pale milky white stream running through the hollow, low white-crusted mounds of stone covering the ground, and the broad rounded summit of a mountain rising behind in clear light. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `shirahone-body`
-
-```
-Create one image. A bamboo spout pours perfectly clear water into a small wooden trough at the top of a slope, and the water then flows down through a series of stone and wooden troughs and steps, turning cloudy and then milky white, leaving a pale white crust on the rocks and on fallen branches along the way, with thin steam rising from the first trough. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/togura-kamiyamada/ 本文は「The Zenkōji pilgrims' spa」の節に置く
-**ヒーロー** → 保存名 `togura-kamiyamada-hero`
-
-```
-Create one image. A retro Showa-era spa town lane at dusk, narrow and lined with small wooden-fronted inns, snack bars and an old shooting-gallery stall with shelves of small prizes, plain blank paper lanterns glowing, a woman in a kimono seen from behind walking away, steam rising from a small public bathhouse roof, and a wide river with a low bridge at the end of the street. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `togura-kamiyamada-body`
-
-```
-Create one image. At the end of a day of pilgrimage, a small group of travellers in plain old-style travelling clothes with walking staffs and wide hats, seen from behind, walk into a quiet spa town lane at dusk towards the glow of inn windows and a bathhouse roof with steam rising, with a river and a low railway bridge behind them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Soak — Hokuriku
 
