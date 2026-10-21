@@ -43,41 +43,9 @@ Create one image. Porters seen from behind walk in single file along a mountain 
 
 ## Soak — Chugoku
 
-### /en/soak/tamatsukuri/ 本文は「The fudoki」の節（733年の風土記の記述）に置く
-**ヒーロー** → 保存名 `tamatsukuri-hero`
-
-```
-Create one image. A small spa town on both banks of a narrow clear river, with inns lined along the banks, small footbridges, a roofed free footbath beside the river with two pairs of feet in it, a small comma-shaped island in the river holding a rough blue stone, soft steam rising from a few roofs, and low hills behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `tamatsukuri-body`
-
-```
-Create one image. Long ago, villagers in plain old-style clothes, men and women, young and old, all fully clothed, crowd along a river bank where warm water wells up in a cloud of steam, kneeling to touch the water with their hands, while an official in old court dress sits on a mat to one side writing on a scroll of blank bamboo slips. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yubara/ 本文は「The dam and the salamander」の節（オオサンショウウオ）に置く
-**ヒーロー** → 保存名 `yubara-hero`
-
-```
-Create one image. A wide river running out from below a concrete dam wall, with three large natural open-air pools of different tones side by side on the gravel bank beneath the dam, all empty and steaming, a simple wooden changing screen beside them, and a forested valley with a few inn roofs on the bank above. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yubara-body`
-
-```
-Create one image. A giant salamander with a broad flat head and mottled brown skin rests on the stony bed of a clear shallow river, seen from above, with a small stone shrine and a plain gate on the bank beside it and the dam wall far away in the background. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Soak — Shikoku
 
 ### /en/soak/onsen-shikoku/ 本文は「The towns」の節（香川の冷たい鉱泉。25℃未満でも温泉）に置く
-**ヒーロー** → 保存名 `onsen-shikoku-hero`
-
-```
-Create one image. A hot spring town built around a large old wooden bathhouse of several storeys with a tiled roof and steam rising from it, a small old tram running past on a street beside a covered shopping arcade, a white heron standing on a stone near the bathhouse, and gentle rounded forested mountains behind with no volcano among them. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 **本文** → 保存名 `onsen-shikoku-body`
 
 ```
