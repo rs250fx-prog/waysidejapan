@@ -41,8 +41,6 @@ Create one image. A low table in an old townhouse, set with a clay pot of boar h
 Create one image. Porters seen from behind walk in single file along a mountain track through tall cedar forest, each carrying a straw-wrapped bundle of salted mackerel on his back, while far below a basin town of tiled roofs spreads out in the haze. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-## Soak — Chugoku
-
 ## Soak — Shikoku
 
 ### /en/soak/onsen-shikoku/ 本文は「The towns」の節（香川の冷たい鉱泉。25℃未満でも温泉）に置く
@@ -53,19 +51,6 @@ Create one image. Two stone basins side by side in a quiet wooded hollow, the le
 ```
 
 ## Soak — Kyushu and Okinawa
-
-### /en/soak/aso-uchinomaki/ 本文は「An irrigation well, 1897」の節（灌漑用の井戸を掘って湯が出た）に置く
-**ヒーロー** → 保存名 `aso-uchinomaki-hero`
-
-```
-Create one image. A broad caldera floor of green grassland and rice fields, with a few red-brown cattle grazing, a small spa town of low inn roofs and thin steam along a gentle river with a riverside path, the gently steaming cone of a volcano rising calmly in the middle distance, and the long straight rim of the caldera wall on the horizon under a wide sky. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `aso-uchinomaki-body`
-
-```
-Create one image. A few farmers in plain Meiji-era work clothes, seen from behind, stand around a freshly dug irrigation well in a rice field where hot water has suddenly welled up, steam billowing from the hole and spilling into the field channel, with digging tools lying on the ground and the caldera wall rising behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/soak/hinagu/ 本文は「Banpeiyu baths in winter」の節（大きな柑橘を浮かべた冬の風呂）に置く
 **ヒーロー** → 保存名 `hinagu-hero`
