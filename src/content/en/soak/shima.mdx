@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/shima-hero.webp
+heroAlt: 'Illustration of inns along both banks of a mountain river in autumn, a bridge across'
 pricesCheckedOn: 2026-10-12
 faq:
   - q: How many sources does Shima have?
@@ -80,6 +82,9 @@ sources:
   - label: 'JNTO「Shima」'
     url: 'https://www.japan.travel/en/spot/2080/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import shimaBlue from '../../../assets/soak/shima-body.webp';
 
 Shima Onsen lies in the north-west of Gunma, in the town of Nakanojō, strung out along the Shima river between 600 and 700 m up. It has no central square or source to gather round; it is one long valley of inns, with a reservoir above it whose colour the prefecture calls Shima blue. This page explains how it works using the environment ministry, Nakanojō town, Gunma prefecture, the Agency for Cultural Affairs and JNTO. The fullest single source is the ministry’s plan for Shima as a *kokumin hoyō onsenchi*, a national health resort onsen, dated March 2024, published as an image PDF. Where sources disagree, each is given with its source. It does not rate any inn or bath.
 
@@ -165,6 +170,12 @@ Above the town, the Shima river is held back by Shimagawa dam, a concrete gravit
 The lake behind it is Lake Okushima. The prefecture says its colour changes with the light and the time of day. Its English guide (December 2020) calls the colour "Shima blue", says the vivid blue comes from the water’s great clarity, and that it is deepest in spring, until about May, when snowmelt from the mountains flows into the river. It puts the lake about 5 km from the town. JNTO mentions its cobalt colour and canoe tours. Official sources give no scientific explanation of the colour from a government body or university, so this page goes no further than the prefecture’s.
 
 The prefecture also lists the falls of Maya, Ogura and Koizumi, the Fusenkyō gorge and the Shima potholes, a prefectural natural monument.
+
+<Figure
+  src={shimaBlue}
+  alt="A person in a canoe on a vivid blue reservoir below a dam, snow-capped mountains behind"
+  caption="Lake Okushima and its blue. Illustration."
+/>
 
 ## Bathing there
 

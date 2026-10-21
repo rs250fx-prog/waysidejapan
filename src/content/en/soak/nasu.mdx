@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/nasu-hero.webp
+heroAlt: 'Illustration of a steaming volcanic valley in autumn, a split boulder in the foreground and inns below the mountain'
 pricesCheckedOn: 2026-10-11
 faq:
   - q: Which are the seven springs of Nasu?
@@ -74,6 +76,9 @@ sources:
   - label: 'JNTO「Nasu Onsen」'
     url: 'https://www.japan.travel/en/spot/304/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import shikaNoYu from '../../../assets/soak/nasu-body.webp';
 
 Nasu Onsen, in the town of Nasu in northern Tochigi, is not one spring but a group scattered over the slopes of Chausudake, an active volcano. Its oldest bath, Shika no Yu, still has people bathing in very hot water by a set routine, and a short walk away is Sesshōseki, the "killing stone" of a fox legend. This page explains how it works using the town, Tochigi prefecture, the tourism association, Shika no Yu’s own site, the weather agency, the national geological survey and JNTO. Where sources disagree, each is given with its source. It does not rate any bath or inn.
 
@@ -177,6 +182,12 @@ Shika no Yu explains its routine in Japanese. In summary:
 - Afterwards, do not rinse off, and keep from getting cold.
 
 It lends hourglasses free of charge. JNTO’s English page warns that Shika no Yu is piping hot. The bathhouse also says what it believes the water helps with, which this page does not repeat.
+
+<Figure
+  src={shikaNoYu}
+  alt="An empty old wooden bathhouse with several square tubs of steaming water, wooden boards and an hourglass"
+  caption="Shika no Yu, where you bathe by the clock. Illustration."
+/>
 
 ### Other baths
 
