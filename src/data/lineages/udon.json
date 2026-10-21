@@ -58,7 +58,7 @@
       "nameJa": "伊勢うどん",
       "origin": { "place": "Ise", "era": "Edo period; named 1972" },
       "cells": {
-        "noodle": "About three times the usual thickness, boiled an hour, very soft",
+        "noodle": "Thick and soft, boiled for a long time",
         "broth": "No broth: a small pool of dark tamari-soy sauce with bonito",
         "topping": "Chopped spring onion only",
         "howToEat": "Mix and eat; the pilgrim's quick meal at the shrine"
@@ -107,10 +107,15 @@
       "key": "miso-nikomi",
       "name": "Miso-nikomi (Nagoya)",
       "nameJa": "味噌煮込みうどん",
-      "origin": { "place": "Nagoya", "era": "—" },
-      "cells": { "noodle": "—", "broth": "—", "topping": "—", "howToEat": "—" },
+      "origin": { "place": "Aichi (Ichinomiya, then Nagoya)", "era": "Meiji era (farm ministry); from hōtō (Cultural Agency)" },
+      "cells": {
+        "noodle": "Flour and water only, no salt; stays firm when simmered",
+        "broth": "Hatchō (soybean) miso",
+        "topping": "—",
+        "howToEat": "Simmered and served in an earthenware pot"
+      },
       "where": ["Nagoya"],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "yoshida",
