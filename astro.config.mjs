@@ -16,7 +16,8 @@ export default defineConfig({
     },
   },
   // IS_PUBLIC が false のあいだはサイトマップを出さない（_headers の X-Robots-Tag と必ずセット）
-  integrations: [mdx(), ...(IS_PUBLIC ? [sitemap({ filter: (page) => !page.includes('/admin'), i18n: { defaultLocale: DEFAULT_LOCALE, locales: Object.fromEntries(LOCALES.map((l) => [l, l])) } })] : [])],
+  // 「/」は /en/ への転送なので載せない（filter の第2条件）
+  integrations: [mdx(), ...(IS_PUBLIC ? [sitemap({ filter: (page) => !page.includes('/admin') && page !== `${SITE_URL}/`, i18n: { defaultLocale: DEFAULT_LOCALE, locales: Object.fromEntries(LOCALES.map((l) => [l, l])) } })] : [])],
   build: {
     format: 'directory',
   },
