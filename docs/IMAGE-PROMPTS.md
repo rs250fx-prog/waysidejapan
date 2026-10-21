@@ -41,24 +41,7 @@ Create one image. A low table in an old townhouse, set with a clay pot of boar h
 Create one image. Porters seen from behind walk in single file along a mountain track through tall cedar forest, each carrying a straw-wrapped bundle of salted mackerel on his back, while far below a basin town of tiled roofs spreads out in the haze. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-## Soak — Kanto
-
-## Soak — Hokuriku
-
 ## Soak — Kinki
-
-### /en/soak/nanki-katsuura/ 本文は「Bōkidō, the cave bath」の節（波が削った海食洞の湯）に置く
-**ヒーロー** → 保存名 `nanki-katsuura-hero`
-
-```
-Create one image. A fishing port town on a bay dotted with small rocky islets topped with a few trees, tuna fishing boats moored along a quay beside a low market hall, a row of mid-rise hotels along the shore with soft steam rising from a few rooftops, and wooded hills rising behind the town. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `nanki-katsuura-body`
-
-```
-Create one image. A wide sea cave carved by waves into a mudstone cliff at the water's edge, its mouth open to the ocean, hot water welling up into a few stone-edged pools on the cave floor, all empty, with thin steam drifting out of the mouth and surf rolling in beneath the opening. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ### /en/soak/ogoto/ 本文は「How the city supplies it」の節（市の番号つきの井戸から旅館の内風呂へ配湯）に置く
 **ヒーロー** → 保存名 `ogoto-hero`
