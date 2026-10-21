@@ -41,30 +41,9 @@ Create one image. A low table in an old townhouse, set with a clay pot of boar h
 Create one image. Porters seen from behind walk in single file along a mountain track through tall cedar forest, each carrying a straw-wrapped bundle of salted mackerel on his back, while far below a basin town of tiled roofs spreads out in the haze. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-## Soak — Kinki
-
 ## Soak — Chugoku
 
-### /en/soak/kaike/ 本文は「1900, told three ways」の節（浅瀬で泡立つ湯の発見）に置く
-**ヒーロー** → 保存名 `kaike-hero`
-
-```
-Create one image. A gently curving sandy beach on a calm bay, with low breakwaters standing offshore and sand built up behind them, a row of tall inns and hotels behind the beach with thin steam rising from their roofs, a small seaside park with a few trees, and a broad mountain rising in the distance inland. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `kaike-body`
-
-```
-Create one image. About the year 1900, a fisherman in old-style work clothes, seen from behind, stands knee-deep in the shallows near the shore looking at a patch of bubbles and faint steam rising from the sea surface a few steps away, with wooden fishing boats pulled up on the sand and a few thatched huts behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/soak/misasa/ 本文は「The white wolf」の節（白い狼の伝説）に置く
-**ヒーロー** → 保存名 `misasa-hero`
-
-```
-Create one image. A small hot spring town on a clear mountain river, with a road bridge crossing the water and, on the gravel bank below it, a large open-air pool built of big stones, empty and steaming, beside a simple changing screen, with old inns climbing the bank and wooded hills behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 **本文** → 保存名 `misasa-body`
 
 ```
