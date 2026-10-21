@@ -1,5 +1,5 @@
 {
-  "_note": "汁と鍋の系譜。品目ハブ（/en/eat/nabe/）の横並び表と、各系譜ページがここから描く。出典は docs/research/soup-nabe-2026-10-10.md と各系譜ページの sources。味噌汁と味噌の地域差（miso）、おでん（oden）の2本を執筆。ちゃんこ・石狩鍋・牡丹鍋はハブ本文で扱い planned（era は「—」）。だしは dashi、コンビニおでんは conbini-oden、雑煮・豚汁・しじみ汁は別メモの範囲。湯豆腐・あんこう鍋はメモに素材が無いので行を作っていない",
+  "_note": "汁と鍋の系譜。品目ハブ（/en/eat/nabe/）の横並び表と、各系譜ページがここから描く。出典は docs/research/soup-nabe-2026-10-10.md と各系譜ページの sources。味噌汁と味噌の地域差（miso）、おでん（oden）、ちゃんこ鍋（chanko）、石狩鍋（ishikari）、牡丹鍋（botan）の5本を執筆。ちゃんこ・石狩鍋・牡丹鍋の era は「—」のまま（起源の年代や名の由来に諸説あるため）。だしは dashi、コンビニおでんは conbini-oden、雑煮・豚汁・しじみ汁は別メモの範囲。湯豆腐・あんこう鍋はメモに素材が無いので行を作っていない",
   "dish": "nabe",
   "name": "Soups and hotpots",
   "nameJa": "汁と鍋",
@@ -87,7 +87,7 @@
       "where": [
         "Tokyo"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "ishikari",
@@ -106,7 +106,7 @@
       "where": [
         "Ishikari"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "botan",
@@ -125,7 +125,7 @@
       "where": [
         "Tamba-Sasayama"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
