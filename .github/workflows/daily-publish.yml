@@ -1,11 +1,11 @@
 name: daily-publish
 
 # 予約公開（pubDate が未来の記事）を、その日の日本時間 0時台に出すための再ビルド。
-# 静的サイトなので、日付が変わっても勝手には公開されない。Pages のデプロイフックを叩いて作り直す。
-# ビルド枠は月500回（アカウント共有）。毎日1回＝月30回。
+# 静的サイトなので、日付が変わっても勝手には公開されない。空コミットを push して Pages に作り直させる。
 #
-# 事前準備：Cloudflare Pages の Settings > Builds > Deploy hooks でフックを作り、
-# その URL を GitHub の Secrets に CF_DEPLOY_HOOK として登録する。
+# シークレットは要らない（GITHUB_TOKEN だけで動く。rates.yml と同じ方式）。
+# その日が pubDate の記事が1本も無ければ何もしない。ビルド枠は月500回（アカウント共有）なので、
+# 公開する日だけ消費する。公開計画は docs/publish-plan.json、日付の書き込みは tools/schedule-publish.mjs。
 
 on:
   schedule:
@@ -13,16 +13,27 @@ on:
     - cron: '5 15 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Pages build
-        env:
-          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+      - uses: actions/checkout@v4
+
+      # 権限が無いなら、何もせずに落ちる
+      - name: Check push access
+        run: git push --dry-run origin HEAD:${{ github.ref_name }}
+
+      - name: Push an empty commit if something goes live today
         run: |
-          if [ -z "$HOOK" ]; then
-            echo "CF_DEPLOY_HOOK が未登録です" >&2
-            exit 1
+          TODAY=$(TZ=Asia/Tokyo date +%F)
+          if ! grep -rqE "^pubDate: ${TODAY}\s*$" src/content; then
+            echo "${TODAY} に公開する記事はありません"
+            exit 0
           fi
-          curl -fsS -X POST "$HOOK"
+          git config user.name "wayside-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git commit --allow-empty -m "chore: ${TODAY} の予約公開を反映"
+          git push
