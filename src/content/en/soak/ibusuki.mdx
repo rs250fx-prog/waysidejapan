@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/ibusuki-hero.webp
+heroAlt: 'Illustration of a beach with shallow pits dug in steaming sand and shovels standing beside them, a volcano across the bay at sunset'
 pricesCheckedOn: 2026-10-12
 faq:
   - q: How long do people stay in the sand bath?
@@ -68,6 +70,9 @@ sources:
   - label: 'JNTO, How to Best Enjoy Japan’s Onsen'
     url: 'https://www.japan.travel/en/guide/bathing-manners-and-tips-onsen-bathing-guide/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import sandHeat from '../../../assets/soak/ibusuki-body.webp';
 
 Ibusuki is a hot spring town in Kagoshima prefecture, on a volcanic shore. It is known above all for its sand bath, *sunamushi*: you lie on the beach in a yukata while staff cover you with sand heated by the spring water underneath. This page explains how the town works using Ibusuki city, the Ibusuki tourism association, the Japan Tourism Agency’s multilingual commentary, Kagoshima prefecture, the Japan Meteorological Agency, the farm ministry, the environment ministry, the Japan Hot Spring Association and JNTO. Where sources disagree, I give each. It does not rate any bath or inn.
 
@@ -141,6 +146,12 @@ Ibusuki city says the sand bath is said to be three to four times as effective a
 The tourism agency’s English commentary describes it like this. Geothermal pressure pushes groundwater up; some becomes natural springs, and the rest soaks into the sand. At the water’s edge the hot water meets colder, heavier seawater, floats, and rises into the beach sand. The rising water is **above 90°C**; the agency does not give the temperature of the sand itself.
 
 Staff dig a hollow about 10 cm deep. You change into a yukata (the English text says "robe"), lie on your back, and they cover you with hot, damp sand up to your neck. Most people stay about **ten minutes**, some 30 minutes or more.
+
+<Figure
+  src={sandHeat}
+  alt="A cutaway of the beach showing hot water rising through the rock and seeping into the sand at the shoreline"
+  caption="Hot water rising into the sand at the shore. Illustration; not to scale."
+/>
 
 ### Precautions, as the sources give them
 

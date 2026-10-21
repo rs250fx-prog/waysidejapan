@@ -13,6 +13,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/ureshino-hero.webp
+heroAlt: 'Illustration of a riverside hot spring town among tea fields, a footbath pavilion and a Western-style bathhouse'
 pricesCheckedOn: 2026-10-12
 faq:
   - q: What kind of water does Ureshino have?
@@ -57,6 +59,9 @@ sources:
   - label: 'JNTO, How to Best Enjoy Japan’s Onsen'
     url: 'https://www.japan.travel/en/guide/bathing-manners-and-tips-onsen-bathing-guide/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import tofu from '../../../assets/soak/ureshino-body.webp';
 
 Ureshino is a hot spring town in Saga prefecture, on the old Nagasaki road, and a tea-growing area. Its water is known for feeling smooth, and its best-known dish is tofu simmered in that water. This page explains how the town works using Ureshino city, the Japan Tourism Agency’s multilingual commentary, the Ureshino Onsen tourism association, the Cultural Agency, the Japan Hot Spring Association and JNTO. Much of the history comes from the tourism association, and the page says so where it does. Where sources disagree, each is given. It does not rate any bath or inn.
 
@@ -160,6 +165,12 @@ The tourism association adds its own account:
 - The balance of the water’s components acts on the protein in the tofu. That is the association’s explanation; official sources give no test of it.
 - The method is said to have been brought from Tang China by Japanese envoys.
 - It is made by five tofu shops in the town and served at about 25 inns and hotels.
+
+<Figure
+  src={tofu}
+  alt="A clay pot of tofu simmering in milky hot-spring water at a table, tea fields outside"
+  caption="Tofu simmered in the spring water. Illustration."
+/>
 
 ### Tea
 
