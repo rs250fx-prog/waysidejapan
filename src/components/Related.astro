@@ -5,7 +5,7 @@
  *
  * variant
  *   grid … 本文末尾に3列（SP は1列）
- *   rail … 記事ページの右カラム用。縦に積み、サムネは左の小さな正方形
+ *   rail … 記事ページの右カラム用。縦に積んだバナー（絵は列幅いっぱい、題名はその下）
  * カテゴリ名はサムネの左上の札（Label.astro）。サムネの下には繰り返さない
  */
 import Thumb from './Thumb.astro';
@@ -31,11 +31,10 @@ const items = await relatedOf(entry);
         {items.map((a) => (
           <a class="related-card" href={hrefOf(a)}>
             <span class="related-photo">
-              <Thumb entry={a} kind={variant === 'rail' ? 'thumb' : 'card'} />
-              {variant === 'grid' && <Label icon={a.data.category} text={t(locale, `nav.${a.data.category}` as UIKey)} />}
+              <Thumb entry={a} kind="card" />
+              <Label icon={a.data.category} text={t(locale, `nav.${a.data.category}` as UIKey)} />
             </span>
             <span class="related-text">
-              {variant === 'rail' && <span class="related-cat">{t(locale, `nav.${a.data.category}` as UIKey)}</span>}
               <span class="related-title">{a.data.title}</span>
             </span>
           </a>
@@ -77,14 +76,6 @@ const items = await relatedOf(entry);
     gap: 4px;
     min-width: 0;
   }
-  .related-cat {
-    font-family: var(--font-display);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
   .related-title {
     font-family: var(--font-display);
     font-size: 17px;
@@ -95,7 +86,8 @@ const items = await relatedOf(entry);
     text-decoration: underline;
   }
 
-  /* 右カラム版：縦積み、サムネは左 72px */
+  /* 右カラム版：縦に積んだバナー。絵を列幅いっぱい（3:2）に出し、札を載せ、題名はその下。
+     左に小さな正方形を並べた形はクリックされにくかったので改めた（2026-10-21） */
   .rail {
     border-top: 1px solid var(--line);
     padding-top: 14px;
@@ -111,19 +103,13 @@ const items = await relatedOf(entry);
   }
   .rail .related-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 20px;
   }
   .rail .related-card {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .rail .related-photo {
-    flex: 0 0 72px;
-    width: 72px;
+    gap: 8px;
   }
   .rail .related-title {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.35;
   }
 
