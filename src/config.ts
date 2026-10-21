@@ -13,9 +13,9 @@ export const TAGLINE = 'Eat, Soak.';
  * 実際に配信されているホストを curl で確認してから設定する。
  * pages.dev のサブドメインは全アカウント共通の名前空間で、
  * プロジェクト名が通っても同じホスト名が取れるとは限らない。
- * 独自ドメイン（waysidejapan.com）は取得後に差し替える。
+ * 2026-10-21 に独自ドメインへ切り替えた（apex が正。www は Cloudflare のルールで apex へ 301）。
  */
-export const SITE_URL = 'https://waysidejapan.pages.dev';
+export const SITE_URL = 'https://waysidejapan.com';
 
 /**
  * false のあいだ：全ページ noindex、サイトマップと RSS を出力しない。
@@ -47,7 +47,8 @@ export const NAV: { key: Category; enabled: boolean }[] = [
   // 並び順がナビの順。食が主軸、鉄道は「食べに行くための移動」
   { key: 'eat', enabled: true },
   { key: 'soak', enabled: true },
-  { key: 'rail', enabled: true },
+  // 2026-10-21 初回公開では Rail を出さない（記事ごと非表示）。記事を出す段で true に戻す
+  { key: 'rail', enabled: false },
   { key: 'konbini', enabled: false },
   { key: 'column', enabled: true },
   { key: 'ride', enabled: false },
