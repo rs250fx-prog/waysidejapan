@@ -1,5 +1,5 @@
 {
-  "_note": "B級ご当地グルメ・街の揚げ物の系譜。品目ハブ（/en/eat/bkyu/）の横並び表と、各系譜ページがここから描く。出典は docs/research/monja-bkyu-fry-2026-10-11.md と各系譜ページの sources。記事にしたのはコロッケ（天ぷらの屋台史・みしまコロッケを含む）だけ。せんべい汁・甲府鳥もつ煮・トルコライスはメモに素材があるが記事を書いていないので planned で era は「—」。もんじゃは konamono の系譜。富士宮・横手やきそばは yakisoba、ソースカツ丼は donburi、串カツは tonkatsu にあるので行を作っていない",
+  "_note": "B級ご当地グルメ・街の揚げ物の系譜。品目ハブ（/en/eat/bkyu/）の横並び表と、各系譜ページがここから描く。出典は docs/research/monja-bkyu-fry-2026-10-11.md と各系譜ページの sources。記事にしたのはコロッケ（天ぷらの屋台史・みしまコロッケを含む）、せんべい汁、甲府鳥もつ煮（材料は kyodo-chubu メモの農水省ページ）。トルコライスはメモの素材が薄く記事を書いていないので planned で era は「—」。もんじゃは konamono の系譜。富士宮・横手やきそばは yakisoba、ソースカツ丼は donburi、串カツは tonkatsu にあるので行を作っていない",
   "dish": "bkyu",
   "name": "B-grade local food and town fried food",
   "nameJa": "B級ご当地グルメ・街の揚げ物",
@@ -48,7 +48,7 @@
       "nameJa": "八戸せんべい汁",
       "origin": {
         "place": "Hachinohe, Aomori",
-        "era": "—"
+        "era": "200+ years in the area (Cultural Agency); the name from Heisei"
       },
       "cells": {
         "what": "A chicken-stock soy hotpot with vegetables and konjac noodles, with Nanbu senbei broken into it",
@@ -59,7 +59,7 @@
       "where": [
         "Hachinohe"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "torimotsu",
@@ -67,18 +67,18 @@
       "nameJa": "甲府鳥もつ煮",
       "origin": {
         "place": "Kofu, Yamanashi",
-        "era": "—"
+        "era": "c. 1950 (said to be)"
       },
       "cells": {
-        "what": "The name means simmered chicken giblets; the recipe is not confirmed here",
+        "what": "Chicken liver, gizzard, heart, kinkan and himo, glazed quickly over strong heat in soy sauce and sugar",
         "roots": "Said to have been created around 1950 at Okuto, a soba shop founded in 1913",
         "fame": "B-1 gold in 2010",
-        "know": "—"
+        "know": "Promoted by Kofu city staff from 2008; a 100-Year Food (fiscal 2024)"
       },
       "where": [
         "Kofu"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "toruko-rice",
