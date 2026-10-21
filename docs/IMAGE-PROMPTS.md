@@ -43,19 +43,6 @@ Create one image. Porters seen from behind walk in single file along a mountain 
 
 ## Soak — Chugoku
 
-### /en/soak/nagato-yumoto/ 本文は「A bath over its source」の節（源泉の真上に建つ共同浴場）に置く
-**ヒーロー** → 保存名 `nagato-yumoto-hero`
-
-```
-Create one image. A small hot spring town along a shallow river, with a stone-paved path beside the water, stepping stones across the stream, four wooden terraces built out over the river with benches and soft lamps, old inns and small shops along the banks, and soft steam rising from the roofs. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `nagato-yumoto-body`
-
-```
-Create one image. A cutaway of a public bathhouse built directly over its spring: an empty deep stone-lined tub, hot water welling up through cracks in the bedrock at the bottom and bubbling gently to the surface, a thin sheet of water overflowing the rim, the wooden walls cut away to show the rock below, and steam rising. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ### /en/soak/tamatsukuri/ 本文は「The fudoki」の節（733年の風土記の記述）に置く
 **ヒーロー** → 保存名 `tamatsukuri-hero`
 
