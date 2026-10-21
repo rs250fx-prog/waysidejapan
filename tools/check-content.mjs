@@ -124,6 +124,13 @@ for (const file of files) {
     errors.push(`${rel}: 本文にユーロ額の直書き（${euro.slice(0, 3).join(', ')}）。<Price> を使う`);
   }
 
+  // --- 部品の前に # が付いて見出しに化けていないか ---
+  // 2026-10 に画像の差し込みで "#<Figure" が4本に入り、公開ページで崩れた
+  const brokenTag = bodyWithoutImports.match(/^#+\s*<[A-Z]/gm);
+  if (brokenTag) {
+    errors.push(`${rel}: 行頭の # の直後に部品タグがある（${brokenTag.length}か所）。# を外す`);
+  }
+
   // --- 見出しの階層が飛んでいないか ---
   let last = 1;
   for (const h of bodyWithoutImports.match(/^#{2,6} /gm) || []) {
