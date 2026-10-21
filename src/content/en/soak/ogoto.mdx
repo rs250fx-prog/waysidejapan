@@ -12,6 +12,8 @@ draft: false
 unlisted: false
 access: public
 heroBand: false
+heroImage: ../../../assets/soak/ogoto-hero.webp
+heroAlt: 'Illustration of inns on the shore of Lake Biwa at sunset, mountains behind and a small island in the lake'
 pricesCheckedOn: 2026-10-13
 faq:
   - q: How long does it take from Kyoto to Ogoto Onsen?
@@ -64,6 +66,9 @@ sources:
   - label: '環境省「国民保養温泉地」'
     url: 'https://www.env.go.jp/nature/onsen/area/'
 ---
+
+import Figure from '../../../components/Figure.astro';
+import wells from '../../../assets/soak/ogoto-body.webp';
 
 Ogoto Onsen is a small spring resort on the western shore of **Lake Biwa**, at the foot of **Mt Hiei**, in the city of Ōtsu, Shiga. The resort writes its name in hiragana, おごと温泉, and the station took that name in 2008; the district itself is written 雄琴. Its water comes from deep wells numbered as the city's, and an Ōtsu city ordinance supplies it to the inns. This page uses Ōtsu city, the Ogoto Onsen tourism association and the inns' cooperative (which share a website), the 2019 spring analysis, Shiga's official tourism site, the farm ministry and JR West. Where they disagree, both are given. It does not rate any bath or inn.
 
@@ -121,6 +126,12 @@ The association's English page says all hotels and inns in Ogoto Onsen use hot-s
 - The standard processing time is 14 days, handled by the city's tourism promotion division.
 
 The city's published standards for administrative penalties (updated 15 October 2021) also list suspension of supply and fines under the same ordinance. Read together with the cooperative's list of sources, these describe water from the numbered city sources going to the inns.
+
+<Figure
+  src={wells}
+  alt="A cutaway of numbered wells drawing hot water from deep rock, piped along to inns by the lake"
+  caption="City wells piped to the inns. Illustration; not to scale."
+/>
 
 ## Where it came from
 

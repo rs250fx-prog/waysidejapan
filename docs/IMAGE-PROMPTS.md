@@ -43,45 +43,6 @@ Create one image. Porters seen from behind walk in single file along a mountain 
 
 ## Soak — Kinki
 
-### /en/soak/ogoto/ 本文は「How the city supplies it」の節（市の番号つきの井戸から旅館の内風呂へ配湯）に置く
-**ヒーロー** → 保存名 `ogoto-hero`
-
-```
-Create one image. A calm large lake at sunrise with the low sun just above the water, a small harbour with a few moored boats, a handful of inns along the western shore each with an empty open-air bath terrace facing the lake and thin steam rising, and a broad forested mountain ridge rising behind the town. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `ogoto-body`
-
-```
-Create one image. A cutaway view of a lakeside town: three small well houses beside a road with slender pipes dropping deep into the ground, underground pipes running from them beneath the street to a row of inns, and inside each inn an empty in-house bath receiving the water, with a little steam rising from the baths and the lake beyond. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/shirahama/ 本文は「Saki no Yu」の節（海に面した岩の露天風呂、無人）に置く
-**ヒーロー** → 保存名 `shirahama-hero`
-
-```
-Create one image. A wide crescent of pale quartz-white sand beach beside a calm bay on the Pacific coast, a small rocky island offshore with a natural sea-cave tunnel through its middle, a line of resort hotels behind the beach with thin steam rising from a few rooftops, and a rocky headland at one end of the bay. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `shirahama-body`
-
-```
-Create one image. An open-air rock-pool hot spring on a shoreline facing the open ocean: a few empty pools edged with natural stones and filled with steaming water, waves breaking against the rocks just beyond the lowest pool and throwing spray, a low plain fence along the back, and a small channel where the overflow runs straight into the sea. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/totsukawa/ 本文は「The 2004 free-flowing pledge」の節（かけ流しの仕組み）に置く
-**ヒーロー** → 保存名 `totsukawa-hero`
-
-```
-Create one image. A remote mountain valley covered almost entirely in forest, with layered green ridges, a deep river gorge and a long dam lake, a few inns clustered beside the lake with soft steam, one lone inn on the river bank further up, and a single route bus on a winding road along the valley. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `totsukawa-body`
-
-```
-Create one image. The side of a simple riverside bathhouse with its wall open to the valley: a wooden spout pours fresh hot water straight into a stone tub, the tub is empty of people and brimming, the water spills over the far rim into a channel that runs out to the river, with no pumps, filters, boilers or tanks anywhere in sight, steam rising, and forested mountains beyond. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
 ## Soak — Chugoku
 
 ### /en/soak/kaike/ 本文は「1900, told three ways」の節（浅瀬で泡立つ湯の発見）に置く
