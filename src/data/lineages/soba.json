@@ -98,19 +98,29 @@
       "key": "hegi",
       "name": "Hegi (Niigata)",
       "nameJa": "へぎそば",
-      "origin": { "place": "Ojiya / Tōkamachi", "era": "—" },
-      "cells": { "flour": "—", "serving": "—", "sauce": "—", "howToEat": "—" },
+      "origin": { "place": "Uonuma area, Niigata (said to be)", "era": "—" },
+      "cells": {
+        "flour": "Bound with funori seaweed, once used to stiffen loom threads",
+        "serving": "On a hegi, a square tray of split wood",
+        "sauce": "—",
+        "howToEat": "Spring onion and mustard, not wasabi; mostly at soba shops"
+      },
       "where": ["Niigata"],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "echizen-oroshi",
       "name": "Echizen oroshi (Fukui)",
       "nameJa": "越前おろしそば",
-      "origin": { "place": "Fukui", "era": "—" },
-      "cells": { "flour": "—", "serving": "—", "sauce": "—", "howToEat": "—" },
+      "origin": { "place": "Fukui", "era": "Asakura era from 1473 (held to be); Honda Tomimasa from 1601" },
+      "cells": {
+        "flour": "Thin soba, in the ministry's account",
+        "serving": "Cold, with grated daikon; at weddings, memorials, New Year's Eve and hōonkō",
+        "sauce": "Three ways: broth and daikon apart, daikon in the broth, or daikon juice in the broth",
+        "howToEat": "Paired with sauce katsudon eating out; soba-making session ¥2,200 tax included (Oct 2026)"
+      },
       "where": ["Fukui"],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "toshikoshi",
