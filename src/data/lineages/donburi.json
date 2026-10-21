@@ -67,18 +67,18 @@
       "nameJa": "帯広の豚丼",
       "origin": {
         "place": "Obihiro, Hokkaido",
-        "era": "—"
+        "era": "early Shōwa"
       },
       "cells": {
         "topping": "Grilled pork loin or belly, shredded leek",
         "seasoning": "Sweet soy tare, in the style of eel kabayaki",
-        "where": "—",
+        "where": "Specialist shops in Obihiro (the city publishes a butadon map); restaurants across Tokachi",
         "order": "—"
       },
       "where": [
         "Obihiro"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "niigata-tare-katsu",
