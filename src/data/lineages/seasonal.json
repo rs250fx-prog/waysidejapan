@@ -1,5 +1,5 @@
 {
-  "_note": "行事の食（年中行事）の系譜。品目ハブ（/en/eat/seasonal/）の横並び表と、各系譜ページがここから描く。出典は docs/research/events-kids-minor-2026-10-10.md と各系譜ページの sources。正月・節分・ひな祭りの3本を published。端午・七夕/お盆・十五夜・冬至・大晦日・クリスマスは planned（era は「—」）。雑煮・餅・赤飯は rice-sides、年越しそばはそば、七夕・お盆のそうめんは somen 側で扱う。彼岸・七五三・重陽はメモの素材が名称程度なので行を作っていない",
+  "_note": "行事の食（年中行事）の系譜。品目ハブ（/en/eat/seasonal/）の横並び表と、各系譜ページがここから描く。出典は docs/research/events-kids-minor-2026-10-10.md と各系譜ページの sources。正月・節分・ひな祭り・端午・七夕/お盆・十五夜・冬至・大晦日・クリスマスの9本を published（後の6本は 2026-10-22 執筆、era は「—」）。雑煮・餅・赤飯は rice-sides、年越しそばはそば、七夕・お盆のそうめんは somen 側で扱う。彼岸・七五三・重陽はメモの素材が名称程度なので行を作っていない",
   "dish": "seasonal",
   "name": "Food for annual events",
   "nameJa": "行事食",
@@ -154,7 +154,7 @@
       "where": [
         "—"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "omisoka",
@@ -173,7 +173,7 @@
       "where": [
         "—"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "christmas",
@@ -192,7 +192,7 @@
       "where": [
         "—"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
