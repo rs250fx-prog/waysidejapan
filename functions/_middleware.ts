@@ -110,8 +110,19 @@ async function verify(token: string, env: Required<Pick<Env, 'CF_ACCESS_TEAM_DOM
   return payload;
 }
 
+/**
+ * 旧い既定ホスト（本番の pages.dev）は正規ドメインへ 301。重複索引を防ぐ。
+ * `<hash>.waysidejapan.pages.dev` のプレビューは別ホストなので対象外（Access が守っている）。
+ * _redirects はホスト名を条件にできないので、ここで行う。
+ */
+const LEGACY_HOST = 'waysidejapan.pages.dev';
+const CANONICAL_ORIGIN = 'https://waysidejapan.com';
+
 export const onRequest: PagesFunction<Env> = async (context) => {
   const url = new URL(context.request.url);
+  if (url.hostname === LEGACY_HOST) {
+    return Response.redirect(`${CANONICAL_ORIGIN}${url.pathname}${url.search}`, 301);
+  }
   if (PUBLIC.some((re) => re.test(url.pathname))) return context.next();
   if (!PROTECTED.some((re) => re.test(url.pathname))) return context.next();
 

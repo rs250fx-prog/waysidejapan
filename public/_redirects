@@ -1,5 +1,5 @@
 # / → /en/ は 301。後から zh-tw / ko を足しても設計が変わらない
 /  /en/  301
 
-# 旧ホスト（pages.dev）は正規ドメインへ。重複索引と被リンクの分散を防ぐ
-https://waysidejapan.pages.dev/*  https://waysidejapan.com/:splat  301
+# 旧ホスト（waysidejapan.pages.dev）→ 正規ドメインの転送は functions/_middleware.ts で行う
+# （_redirects はホスト名を条件にできない）
