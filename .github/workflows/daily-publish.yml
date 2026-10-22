@@ -26,14 +26,25 @@ jobs:
       - name: Check push access
         run: git push --dry-run origin HEAD:${{ github.ref_name }}
 
-      - name: Push an empty commit if something goes live today
+      # 1. ヒーローを足したのに計画に無い記事を、計画の末尾に足す（pubDate は未来の日付になる）
+      # 2. その日が pubDate の記事があれば、空コミットで再ビルドさせる
+      - name: Fill the plan, then push if anything changes or goes live today
         run: |
           TODAY=$(TZ=Asia/Tokyo date +%F)
+          git config user.name "wayside-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          node tools/schedule-publish.mjs --fill --apply
+          git add docs/publish-plan.json src/content
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: 公開計画に追加（${TODAY}）"
+            git push
+            exit 0
+          fi
+
           if ! grep -rqE "^pubDate: ${TODAY}\s*$" src/content; then
             echo "${TODAY} に公開する記事はありません"
             exit 0
           fi
-          git config user.name "wayside-bot"
-          git config user.email "actions@users.noreply.github.com"
           git commit --allow-empty -m "chore: ${TODAY} の予約公開を反映"
           git push

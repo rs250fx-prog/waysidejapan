@@ -1,5 +1,6 @@
 {
  "_note": "初回公開と毎日の予約公開の計画。tools/schedule-publish.mjs が pubDate に反映する。2026-10-21 作成。",
+ "start": "2026-10-21",
  "perDay": {
   "eat": 2,
   "soak": 1
@@ -242,7 +243,40 @@
    "togura-kamiyamada",
    "naruko",
    "nyuto",
-   "sukayu"
+   "sukayu",
+   "aso-uchinomaki",
+   "echigo-yuzawa",
+   "kaike",
+   "kinugawa",
+   "nanki-katsuura",
+   "onsen-shikoku",
+   "yudanaka-shibu",
+   "zao",
+   "hinagu",
+   "tsukioka",
+   "misasa",
+   "minakami",
+   "ogoto",
+   "ibusuki",
+   "unazuki",
+   "nagato-yumoto",
+   "nasu",
+   "shirahama",
+   "kirishima",
+   "wakura",
+   "tamatsukuri",
+   "shima",
+   "totsukawa",
+   "nagayu",
+   "yamanaka",
+   "yubara",
+   "onsen-okinawa",
+   "yamashiro",
+   "yuda",
+   "takeo",
+   "tsuetate",
+   "unzen",
+   "ureshino"
   ]
  }
 }
