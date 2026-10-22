@@ -2,6 +2,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { parseId } from '../content.config.ts';
 import { NAV, type Category, type Locale } from '../config.ts';
 import publishPlan from '../../docs/publish-plan.json';
+import { normalizePlan, plannedSlugs } from './publishSchedule.js';
 
 export type Article = CollectionEntry<'articles'>;
 
@@ -14,14 +15,12 @@ const todayJst = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slic
  * （古い pubDate のまま即公開される事故を防ぐ）。計画への追加は tools/schedule-publish.mjs --fill
  * （毎晩 daily-publish.yml が実行する）。Column は計画に関わらず出す。
  */
-const PLANNED = new Set<string>([
-  ...publishPlan.initial.eat,
-  ...publishPlan.initial.soak,
-  ...publishPlan.daily.eat,
-  ...publishPlan.daily.soak,
-]);
+const PLANNED = plannedSlugs(publishPlan);
+/** 公開管理画面で保留にした記事（Column を含む）。計画に載っていても出さない */
+const HELD = new Set<string>(normalizePlan(publishPlan).held);
 const isPlanned = (a: Article) =>
   a.data.category !== 'eat' && a.data.category !== 'soak' ? true : PLANNED.has(parseId(a.id).slug ?? '');
+const isHeld = (a: Article) => HELD.has(parseId(a.id).slug ?? '');
 
 /**
  * 公開してよい記事か。次を全て満たすこと。
@@ -29,10 +28,12 @@ const isPlanned = (a: Article) =>
  *   2. pubDate が日本の今日以前（未来の記事は、その日のビルドまで出ない。毎日0時JSTにビルドする）
  *   3. ヒーロー画像がある（2026-10-21 の決定。画像の無い記事は出さない）
  *   4. Eat / Soak は公開計画に載っている
+ *   5. 保留（plan.held）でない
  * カテゴリが NAV で無効（Rail など）の記事も出さない。ナビだけ消して記事が URL で残る事故を防ぐ
  */
 export const isPublished = (a: Article) =>
   !a.data.draft &&
+  !isHeld(a) &&
   a.data.pubDate.toISOString().slice(0, 10) <= todayJst() &&
   !!a.data.heroImage &&
   isPlanned(a) &&

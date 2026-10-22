@@ -1,0 +1,344 @@
+---
+/**
+ * 公開管理。記事の公開日（時限公開）・保留・今すぐ公開を、画面から操作する。
+ *
+ * 守り：Cloudflare Access ＋ functions/_middleware.ts（/admin と /api）。
+ * 書き込みは functions/api/publish/set.ts が docs/publish-plan.json を GitHub にコミットする。
+ * GITHUB_TOKEN が未設定のあいだは閲覧専用（操作ボタンを出さない）。
+ *
+ * 公開サイトの Base レイアウトは使わない。
+ */
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>公開管理 — Wayside Japan</title>
+  </head>
+  <body>
+    <header class="bar">
+      <strong>公開管理</strong>
+      <nav>
+        <a href="/admin/">入稿</a>
+        <button type="button" id="reload" class="btn">更新</button>
+      </nav>
+    </header>
+
+    <main>
+      <p id="fatal" class="fatal" hidden></p>
+      <p id="ro" class="ro" hidden></p>
+      <p id="note" class="note"></p>
+      <p id="toast" class="toast" hidden></p>
+
+      <details class="days" id="days">
+        <summary>今後の公開予定（日ごと）</summary>
+        <div id="days-body"></div>
+      </details>
+
+      <div class="tools">
+        <div id="tabs" class="tabs" role="tablist"></div>
+        <div class="filters">
+          <select id="cat" aria-label="カテゴリ">
+            <option value="">すべてのカテゴリ</option>
+            <option value="eat">Eat</option>
+            <option value="soak">Soak</option>
+            <option value="column">Column</option>
+          </select>
+          <input id="q" type="search" placeholder="タイトル・slug で検索" aria-label="検索" />
+        </div>
+      </div>
+
+      <ul id="list" class="list"></ul>
+      <p><button type="button" id="more" class="btn" hidden>もっと見る</button></p>
+    </main>
+
+    <script>
+      import { buildSchedule, normalizePlan, applyAction, addDays } from '../../lib/publishSchedule.js';
+
+      const $ = (id) => document.getElementById(id);
+      const LABEL = { live: '公開中', scheduled: '予約中', held: '保留', unplanned: '未計画', nohero: 'ヒーロー無し', draft: '下書き' };
+      const TABS = [['all', 'すべて'], ['live', '公開中'], ['scheduled', '予約中'], ['held', '保留'], ['unplanned', '未計画'], ['nohero', 'ヒーロー無し'], ['draft', '下書き']];
+      const ERR = {
+        github_not_configured: 'GITHUB_TOKEN が未設定です。Pages のシークレットに登録してから、再デプロイしてください。',
+        conflict: '同じ時刻に別の変更がありました。「更新」で最新にしてから、もう一度やり直してください。',
+        date_not_future: '公開日は、明日以降の日付にしてください。',
+        bad_date: '日付が正しくありません。',
+        not_found: '記事が見つかりません。',
+        forbidden: 'この画面からの操作として受け付けられませんでした。ページを開き直してください。',
+        column_cannot_schedule: 'Column は日付の指定ができません（保留と解除だけ）。',
+      };
+      const errText = (c) => ERR[c] || 'エラーが起きました（' + c + '）';
+      const PAGE = 100;
+
+      const state = { articles: [], builtPlan: null, plan: null, readonly: true, today: '', filter: 'all', cat: '', q: '', shown: PAGE, busy: false, builtAt: '' };
+
+      const el = (tag, cls, text) => {
+        const e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text !== undefined) e.textContent = text;
+        return e;
+      };
+      const toast = (msg, isErr) => {
+        const t = $('toast');
+        t.textContent = msg;
+        t.className = 'toast' + (isErr ? ' err' : '');
+        t.hidden = false;
+      };
+
+      /** 計画 plan のもとでの記事の状態と公開日 */
+      function classify(a, plan, sched, today) {
+        if (a.draft) return { status: 'draft', date: a.pubDate };
+        if (!a.hero) return { status: 'nohero', date: a.pubDate };
+        const held = plan.held.includes(a.slug);
+        if (a.category === 'column') {
+          return { status: held ? 'held' : a.pubDate <= today ? 'live' : 'scheduled', date: a.pubDate };
+        }
+        const s = sched.get(a.slug);
+        if (held) return { status: 'held', date: s ? s.date : a.pubDate };
+        if (!s) return { status: 'unplanned', date: '' };
+        return { status: s.date <= today ? 'live' : 'scheduled', date: s.date };
+      }
+
+      function compute() {
+        const plan = normalizePlan(state.plan);
+        const sched = buildSchedule(plan);
+        const built = normalizePlan(state.builtPlan);
+        const builtSched = buildSchedule(built);
+        return state.articles.map((a) => {
+          const now = classify(a, plan, sched, state.today);
+          const was = classify(a, built, builtSched, state.today);
+          // 画面の計画（最新）と、いまの公開サイト（ビルド済み）が食い違えば、ビルド待ち
+          return { ...a, ...now, pending: now.status !== was.status || now.date !== was.date };
+        });
+      }
+
+      function render() {
+        const items = compute();
+        const counts = { all: items.length, live: 0, scheduled: 0, held: 0, unplanned: 0, nohero: 0, draft: 0 };
+        items.forEach((i) => counts[i.status]++);
+
+        const tabs = $('tabs');
+        tabs.textContent = '';
+        TABS.forEach(([k, label]) => {
+          const b = el('button', '', label + '（' + (counts[k] ?? 0) + '）');
+          b.type = 'button';
+          b.setAttribute('aria-pressed', state.filter === k ? 'true' : 'false');
+          b.addEventListener('click', () => { state.filter = k; state.shown = PAGE; render(); });
+          tabs.appendChild(b);
+        });
+
+        $('note').textContent =
+          '今日（日本時間）：' + state.today + '　／　公開サイトの最終ビルド：' + state.builtAt.replace('T', ' ').slice(0, 16) + ' UTC' +
+          (state.readonly ? '' : '　／　変更は数分で公開サイトに反映されます。');
+
+        renderDays(items);
+
+        const q = state.q.trim().toLowerCase();
+        const rows = items
+          .filter((i) => state.filter === 'all' || i.status === state.filter)
+          .filter((i) => !state.cat || i.category === state.cat)
+          .filter((i) => !q || i.slug.includes(q) || i.title.toLowerCase().includes(q))
+          .sort((a, b) => {
+            if (a.status === 'live' && b.status === 'live') return b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug);
+            return (a.date || '9999').localeCompare(b.date || '9999') || a.slug.localeCompare(b.slug);
+          });
+
+        const ul = $('list');
+        ul.textContent = '';
+        if (!rows.length) ul.appendChild(el('li', 'empty', '該当する記事はありません。'));
+        rows.slice(0, state.shown).forEach((i) => ul.appendChild(card(i)));
+        $('more').hidden = rows.length <= state.shown;
+      }
+
+      function renderDays(items) {
+        const days = {};
+        items.filter((i) => i.status === 'scheduled' && i.date).forEach((i) => {
+          (days[i.date] ??= { eat: 0, soak: 0, column: 0 })[i.category]++;
+        });
+        const body = $('days-body');
+        body.textContent = '';
+        const keys = Object.keys(days).sort().slice(0, 21);
+        if (!keys.length) { body.appendChild(el('p', '', '予約中の記事はありません。')); return; }
+        const t = el('table', 'daytbl');
+        const head = el('tr');
+        ['日付', 'Eat', 'Soak', 'Column'].forEach((h) => head.appendChild(el('th', '', h)));
+        t.appendChild(head);
+        keys.forEach((d) => {
+          const r = el('tr');
+          [d, days[d].eat, days[d].soak, days[d].column].forEach((v) => r.appendChild(el('td', '', String(v))));
+          t.appendChild(r);
+        });
+        body.appendChild(t);
+      }
+
+      const button = (label, cls, fn) => {
+        const b = el('button', 'btn ' + cls, label);
+        b.type = 'button';
+        b.addEventListener('click', fn);
+        return b;
+      };
+
+      function card(i) {
+        const li = el('li', 'item');
+        li.appendChild(el('h2', '', i.title));
+        const meta = el('div', 'meta');
+        meta.appendChild(el('span', 'badge ' + i.status, LABEL[i.status]));
+        if (i.date) meta.appendChild(el('span', '', (i.status === 'scheduled' ? '公開予定日 ' : i.status === 'held' ? '元の予定 ' : '公開日 ') + i.date));
+        meta.appendChild(el('span', '', i.category));
+        if (i.kind) meta.appendChild(el('span', '', i.kind));
+        meta.appendChild(el('span', 'slug', i.slug));
+        if (i.pending) meta.appendChild(el('span', 'pending', '反映待ち（ビルド中）'));
+        li.appendChild(meta);
+
+        const acts = el('div', 'acts');
+        const isPlannable = i.category === 'eat' || i.category === 'soak';
+        if (i.status === 'live') {
+          const a = el('a', 'btn', '記事を見る');
+          a.href = '/en/' + i.category + '/' + i.slug + '/';
+          a.target = '_blank';
+          a.rel = 'noopener';
+          acts.appendChild(a);
+        }
+        if (i.status === 'nohero') {
+          acts.appendChild(el('span', 'hint', 'ヒーロー画像を足すと、毎晩の自動実行で計画に入ります。'));
+        } else if (!state.readonly && i.status !== 'draft') {
+          if (i.status === 'live') {
+            acts.appendChild(button('非公開にする（保留）', 'danger', () => run(i, 'hold', '「' + i.title + '」を非公開（保留）にします。サイトから消えます。よろしいですか？')));
+          } else {
+            if (isPlannable) {
+              acts.appendChild(button('今すぐ公開', 'primary', () => run(i, 'publish', '「' + i.title + '」を今日の日付で公開します。よろしいですか？')));
+              const s = el('span', 'sched');
+              const d = document.createElement('input');
+              d.type = 'date';
+              d.min = addDays(state.today, 1);
+              d.setAttribute('aria-label', '公開日');
+              if (i.status === 'scheduled') d.value = i.date;
+              s.appendChild(d);
+              s.appendChild(button(i.status === 'scheduled' ? '公開日を変更' : '日付を指定して予約', '', () => {
+                if (!d.value) { toast('公開日を選んでください。', true); return; }
+                run(i, 'schedule', '「' + i.title + '」を ' + d.value + ' に公開する予約にします。よろしいですか？', d.value);
+              }));
+              acts.appendChild(s);
+            }
+            if (i.status === 'held' || i.status === 'unplanned') {
+              acts.appendChild(button(i.status === 'held' ? '保留を解除（列に戻す）' : '列に入れる', '', () => run(i, 'release', '「' + i.title + '」を公開の列に入れます。よろしいですか？')));
+            }
+            if (i.status === 'scheduled') {
+              acts.appendChild(button('保留にする', 'danger', () => run(i, 'hold', '「' + i.title + '」を保留にします（公開されなくなります）。よろしいですか？')));
+            }
+          }
+        }
+        li.appendChild(acts);
+        return li;
+      }
+
+      async function api(path, opts = {}) {
+        const init = { method: opts.method || 'GET', credentials: 'same-origin', headers: {} };
+        if (opts.body) {
+          init.headers['content-type'] = 'application/json';
+          init.body = JSON.stringify(opts.body);
+        }
+        const r = await fetch(path, init);
+        const text = await r.text();
+        let j = null;
+        try { j = JSON.parse(text); } catch { /* HTML のエラーなどはそのまま扱う */ }
+        return { status: r.status, json: j, text };
+      }
+
+      async function load() {
+        const [meta, live] = await Promise.all([api('/admin/publish-data.json'), api('/api/publish/plan')]);
+        if (!meta.json) {
+          $('fatal').textContent = '記事一覧を読み込めませんでした（' + meta.status + '）。ログインが切れた場合は、ページを開き直してください。';
+          $('fatal').hidden = false;
+          return;
+        }
+        $('fatal').hidden = true;
+        state.articles = meta.json.articles;
+        state.builtPlan = meta.json.plan;
+        state.builtAt = meta.json.builtAt;
+        if (live.json && live.json.ok && !live.json.readonly) {
+          state.plan = live.json.plan;
+          state.today = live.json.today;
+          state.readonly = false;
+        } else {
+          state.plan = meta.json.plan;
+          state.today = (live.json && live.json.today) || new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+          state.readonly = true;
+        }
+        $('ro').hidden = !state.readonly;
+        $('ro').textContent = state.readonly
+          ? '閲覧専用です（' + ((live.json && live.json.note) || '最新の計画を読み込めませんでした。') + '）'
+          : '';
+        render();
+      }
+
+      async function run(item, action, question, date) {
+        if (state.busy || !window.confirm(question)) return;
+        state.busy = true;
+        try {
+          const r = await api('/api/publish/set', { method: 'POST', body: { slug: item.slug, action, date } });
+          if (!r.json || !r.json.ok) { toast(errText((r.json && r.json.error) || 'failed'), true); return; }
+          toast(r.json.unchanged ? 'すでにその状態です。' : '受け付けました。' + (r.json.note || ''));
+          await load();
+        } catch {
+          toast('通信に失敗しました。', true);
+        } finally {
+          state.busy = false;
+        }
+      }
+
+      $('reload').addEventListener('click', () => load());
+      $('more').addEventListener('click', () => { state.shown += PAGE; render(); });
+      $('cat').addEventListener('change', (e) => { state.cat = e.target.value; state.shown = PAGE; render(); });
+      $('q').addEventListener('input', (e) => { state.q = e.target.value; state.shown = PAGE; render(); });
+      load().catch(() => { $('fatal').textContent = '通信に失敗しました。'; $('fatal').hidden = false; });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  :root { --ink: #1c2430; --mute: #5d6878; --line: #d9dfe8; --bg: #f4f6f9; --card: #fff; --blue: #2f6bb8; --ok: #1d7a4d; --warn: #8a5a00; --err: #b3261e; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', sans-serif; }
+  .bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 2; }
+  .bar nav { display: flex; gap: 12px; align-items: center; }
+  .bar a { color: var(--blue); text-decoration: none; }
+  main { max-width: 980px; margin: 0 auto; padding: 16px; }
+  .note { color: var(--mute); font-size: 13px; margin: 0 0 12px; }
+  .ro { background: #fff4d6; border: 1px solid #ecd48a; color: var(--warn); padding: 8px 12px; border-radius: 6px; margin: 0 0 12px; }
+  .fatal { background: #fdecea; border: 1px solid #f3b8b3; color: var(--err); padding: 8px 12px; border-radius: 6px; }
+  .toast { background: #e8f5ee; border: 1px solid #b6dcc6; color: var(--ok); padding: 8px 12px; border-radius: 6px; margin: 0 0 12px; }
+  .toast.err { background: #fdecea; border-color: #f3b8b3; color: var(--err); }
+  .days { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin: 0 0 12px; }
+  .days summary { cursor: pointer; font-weight: 600; }
+  .daytbl { border-collapse: collapse; margin-top: 8px; font-size: 13px; }
+  .daytbl th, .daytbl td { border: 1px solid var(--line); padding: 3px 10px; text-align: center; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; margin-bottom: 12px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tabs button, .btn { font: inherit; border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 6px; padding: 6px 12px; cursor: pointer; text-decoration: none; display: inline-block; }
+  .tabs button[aria-pressed='true'] { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filters select, .filters input { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+  .list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .item h2 { margin: 0 0 6px; font-size: 15px; line-height: 1.4; }
+  .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--mute); font-size: 12.5px; align-items: center; }
+  .meta .slug { font-family: ui-monospace, Menlo, Consolas, monospace; }
+  .badge { padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #e8edf5; color: var(--mute); }
+  .badge.live { background: #e0f3e8; color: var(--ok); }
+  .badge.scheduled { background: #e3edfb; color: var(--blue); }
+  .badge.held { background: #fff4d6; color: var(--warn); }
+  .pending { color: var(--warn); font-weight: 600; }
+  .acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; align-items: center; }
+  .acts .sched { display: inline-flex; gap: 6px; align-items: center; }
+  .acts input[type='date'] { font: inherit; padding: 5px 6px; border: 1px solid var(--line); border-radius: 6px; }
+  .btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .btn.danger { color: var(--err); border-color: #e7b9b5; }
+  .hint { color: var(--mute); font-size: 13px; }
+  .empty { color: var(--mute); padding: 16px; text-align: center; }
+  @media (max-width: 600px) { main { padding: 12px; } .tools { flex-direction: column; } }
+</style>

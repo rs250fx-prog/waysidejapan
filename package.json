@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node tools/unlink-missing.mjs",
+    "build": "node tools/schedule-publish.mjs --apply && astro build && node tools/unlink-missing.mjs",
     "preview": "astro preview",
     "rates": "node tools/fetch-rates.mjs",
     "check": "node tools/check-content.mjs"

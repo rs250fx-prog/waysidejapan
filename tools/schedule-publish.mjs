@@ -7,15 +7,20 @@
  *   --start YYYY-MM-DD で計画の初回日（plan.start）を上書きする
  *
  * plan.start の日に「初回公開」（Eat 50・Soak 15・Column 全件）が出て、
- * その翌日から毎日 Eat 2本・Soak 1本が出る（perDay）。
+ * その翌日から毎日 Eat 2本・Soak 1本が出る（perDay）。日付の計算は src/lib/publishSchedule.js。
+ * 公開管理画面（/admin/publish/）が plan.overrides（手動の日付）と plan.held（保留）を書く。
  *
  * 計画に載っていない Eat / Soak は src/lib/content.ts の isPublished が出さない。
  * ヒーロー画像を足した記事は、--fill で計画の末尾に入る（毎晩 daily-publish.yml が実行する）。
  * 既に計画にある記事の順番は変えない（日付が動かない）。
+ *
+ * npm run build の先頭でも --apply を実行する。公開管理画面が計画だけを書き換えても、
+ * リポジトリ内の pubDate が古いまま公開判定されないようにするため。
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { buildSchedule, isIsoDate, normalizePlan, plannedSlugs } from '../src/lib/publishSchedule.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -23,27 +28,26 @@ const apply = args.includes('--apply');
 const fill = args.includes('--fill');
 
 const planPath = path.join(root, 'docs/publish-plan.json');
-const plan = JSON.parse(fs.readFileSync(planPath, 'utf8'));
-const start = args.includes('--start') ? args[args.indexOf('--start') + 1] : plan.start;
-if (!/^\d{4}-\d{2}-\d{2}$/.test(start ?? '')) {
+const plan = normalizePlan(JSON.parse(fs.readFileSync(planPath, 'utf8')));
+if (args.includes('--start')) plan.start = args[args.indexOf('--start') + 1];
+if (!isIsoDate(plan.start)) {
   console.error('plan.start か --start YYYY-MM-DD が必要です');
   process.exit(1);
 }
 
-const addDays = (iso, n) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
 const dirOf = (cat) => path.join(root, 'src/content/en', cat);
 const fileOf = (cat, slug) => {
   for (const ext of ['.mdx', '.md']) {
     const p = path.join(dirOf(cat), slug + ext);
     if (fs.existsSync(p)) return p;
   }
-  throw new Error(`記事が見つかりません: ${cat}/${slug}`);
+  return null;
 };
 const front = (file) => fs.readFileSync(file, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
 
 // ---- --fill：計画に無く、公開できる記事（ヒーローあり・draft でない・unlisted でない）を末尾へ ----
 if (fill) {
-  const planned = new Set([...plan.initial.eat, ...plan.initial.soak, ...plan.daily.eat, ...plan.daily.soak]);
+  const planned = plannedSlugs(plan);
   const found = { eat: [], soak: [] };
   for (const cat of ['eat', 'soak']) {
     for (const f of fs.readdirSync(dirOf(cat)).sort()) {
@@ -69,15 +73,19 @@ if (fill) {
 
 /** @type {Map<string,string>} file -> date */
 const dates = new Map();
-for (const slug of plan.initial.eat) dates.set(fileOf('eat', slug), start);
-for (const slug of plan.initial.soak) dates.set(fileOf('soak', slug), start);
-if (plan.initial.column === 'all') {
-  for (const f of fs.readdirSync(dirOf('column'))) if (!f.startsWith('_')) dates.set(path.join(dirOf('column'), f), start);
+for (const [slug, e] of buildSchedule(plan)) {
+  const cat = e.cat ?? (fileOf('eat', slug) ? 'eat' : 'soak');
+  if (e.held) continue; // 保留は日付に触らない（isPublished が止める）
+  const file = fileOf(cat, slug);
+  if (!file) throw new Error(`記事が見つかりません: ${cat}/${slug}`);
+  dates.set(file, e.date);
 }
-const spread = (cat, list, perDay) =>
-  list.forEach((slug, i) => dates.set(fileOf(cat, slug), addDays(start, 1 + Math.floor(i / perDay))));
-spread('eat', plan.daily.eat, plan.perDay.eat);
-spread('soak', plan.daily.soak, plan.perDay.soak);
+if (plan.initial.column === 'all') {
+  for (const f of fs.readdirSync(dirOf('column'))) {
+    if (f.startsWith('_')) continue;
+    if (!plan.held.includes(f.replace(/\.mdx?$/, ''))) dates.set(path.join(dirOf('column'), f), plan.start);
+  }
+}
 
 let changed = 0;
 for (const [file, date] of dates) {
@@ -97,4 +105,4 @@ for (const [file, date] of dates) {
 }
 
 const last = [...dates.values()].sort().at(-1);
-console.log(`${apply ? '書き換え' : '変更予定'}: ${changed} 本 / 計画 ${dates.size} 本 / 初回 ${start} / 最終 ${last}`);
+console.log(`${apply ? '書き換え' : '変更予定'}: ${changed} 本 / 計画 ${dates.size} 本 / 初回 ${plan.start} / 最終 ${last}`);
