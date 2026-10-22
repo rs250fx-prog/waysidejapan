@@ -1,0 +1,53 @@
+---
+/**
+ * 未公開の記事のプレビュー。公開管理画面（/admin/publish/）から開く。
+ *
+ * 公開ページ（src/pages/[lang]/[category]/[...slug].astro）と同じレイアウトで描画し、
+ * 上に「プレビュー」帯を出す。/admin 配下なので Cloudflare Access と
+ * functions/_middleware.ts が守る。常に noindex で、サイトマップにも出ない。
+ *
+ * 対象は「いま公開されていない」記事（予約中・保留・未計画・ヒーロー無し・下書き）。
+ * 公開済みの記事は、公開ページで見る。Rail など無効カテゴリは対象外。
+ * 本文中の、まだ公開されていない記事へのリンクは、ビルド後に外れる（tools/unlink-missing.mjs）。
+ */
+import { getCollection, render } from 'astro:content';
+import Article from '../../../layouts/Article.astro';
+import { isPublished } from '../../../lib/content.ts';
+import { parseId } from '../../../content.config.ts';
+import { NAV, type Locale } from '../../../config.ts';
+import publishPlan from '../../../../docs/publish-plan.json';
+import { buildSchedule, normalizePlan } from '../../../lib/publishSchedule.js';
+
+export async function getStaticPaths() {
+  const plan = normalizePlan(publishPlan);
+  const sched = buildSchedule(plan);
+  const enabled = new Set(NAV.filter((n) => n.enabled).map((n) => n.key as string));
+  const all = await getCollection('articles');
+  return all
+    .filter((a) => parseId(a.id).locale !== null && !isPublished(a) && enabled.has(a.data.category))
+    .map((entry) => {
+      const { locale, category, slug } = parseId(entry.id);
+      const d = entry.data;
+      const held = plan.held.includes(slug as string);
+      const s = sched.get(slug as string);
+      const status = d.draft
+        ? '下書き'
+        : !d.heroImage
+          ? 'ヒーロー画像なし'
+          : held
+            ? '保留'
+            : category !== 'column' && !s
+              ? '未計画'
+              : '予約中';
+      const date = held ? '' : (s?.date ?? d.pubDate.toISOString().slice(0, 10));
+      return { params: { slug: `${category}/${slug}` }, props: { entry, locale, preview: { status, date } } };
+    });
+}
+
+const { entry, locale, preview } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Article entry={entry} locale={locale as Locale} preview={preview}>
+  <Content />
+</Article>

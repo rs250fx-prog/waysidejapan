@@ -203,6 +203,14 @@
           a.rel = 'noopener';
           acts.appendChild(a);
         }
+        if (i.status !== 'live') {
+          // 未公開の記事は、公開前に中身を確認できる（/admin/preview/。ビルド時点で未公開のもの）
+          const pv = el('a', 'btn', 'プレビュー');
+          pv.href = '/admin/preview/' + i.category + '/' + i.slug + '/';
+          pv.target = '_blank';
+          pv.rel = 'noopener';
+          acts.appendChild(pv);
+        }
         if (i.status === 'nohero') {
           acts.appendChild(el('span', 'hint', 'ヒーロー画像を足すと、毎晩の自動実行で計画に入ります。'));
         } else if (!state.readonly && i.status !== 'draft') {

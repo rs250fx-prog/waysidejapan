@@ -17,9 +17,11 @@ interface Props {
   entry: Article;
   locale: Locale;
   alternates?: { locale: string; path: string }[];
+  /** 公開管理画面のプレビュー（/admin/preview/）。常に noindex にし、上に帯を出す */
+  preview?: { status: string; date: string };
 }
 
-const { entry, locale, alternates = [] } = Astro.props;
+const { entry, locale, alternates = [], preview } = Astro.props;
 const d = entry.data;
 const url = new URL(hrefOf(entry), SITE_URL).href;
 // 系譜ページは品目ハブの下にぶら下がる。ハブが無ければ普通のパンくず
@@ -118,7 +120,7 @@ if (d.faq.length > 0) {
   locale={locale}
   title={d.title}
   description={d.description}
-  noindex={shouldNoindex(entry, IS_PUBLIC)}
+  noindex={!!preview || shouldNoindex(entry, IS_PUBLIC)}
   alternates={alternates}
   graph={graph}
   ogType="article"
@@ -126,6 +128,18 @@ if (d.faq.length > 0) {
   publishedTime={d.pubDate.toISOString()}
   modifiedTime={d.updatedDate?.toISOString()}
 >
+  {
+    preview && (
+      <div class="preview-bar" role="status">
+        <strong>プレビュー（未公開）</strong>
+        <span>
+          状態：{preview.status}
+          {preview.date ? `／公開予定：${preview.date}` : ''}。公開サイトにはまだ出ていません。
+        </span>
+        <a href="/admin/publish/">公開管理へ戻る</a>
+      </div>
+    )
+  }
   {
     /* 本文 880 ＋ 右カラム 280（間 40）を 1280 の列に左詰めで置く。
        一覧ページと同じ左端から始まるので、ページを渡っても見出しの位置が飛ばない（docs/HUB-DESIGN.md 実行A）。
@@ -258,6 +272,25 @@ if (d.faq.length > 0) {
 </Base>
 
 <style>
+  .preview-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    align-items: baseline;
+    padding: 8px var(--gutter, 16px);
+    background: #fff4d6;
+    border-bottom: 1px solid #ecd48a;
+    color: #6b4a00;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .preview-bar a {
+    margin-left: auto;
+    color: inherit;
+  }
   .article-layout {
     display: grid;
     grid-template-columns: minmax(0, 880px) 280px;
