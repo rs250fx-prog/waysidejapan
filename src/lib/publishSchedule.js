@@ -51,6 +51,7 @@ export function plannedSlugs(plan) {
  *   schedule  date に公開（明日以降）。保留は解く
  *   hold      保留（公開中なら取り下げ）。手動の日付は消す。列の枠はそのまま
  *   release   保留と手動の日付を解き、列に戻す。列に無い記事は毎日の列の末尾へ
+ *   up / down / top / bottom  毎日の列の中で順番を入れ替える（同じカテゴリの中。今日までの枠には動かさない）
  * @returns {{ plan: object, changed: boolean } | { error: string }}
  */
 export function applyAction(plan, { slug, cat, action, date }, today) {
@@ -76,10 +77,35 @@ export function applyAction(plan, { slug, cat, action, date }, today) {
     delete p.overrides[slug];
     // 手動の日付だけで載っていた記事・計画に無い記事は、毎日の列の末尾へ
     if (canPlan && !plannedSlugs(p).has(slug)) p.daily[cat].push(slug);
+  } else if (['up', 'down', 'top', 'bottom'].includes(action)) {
+    if (!canPlan) return { error: 'column_cannot_schedule' };
+    const q = p.daily[cat];
+    const i = q.indexOf(slug);
+    if (i < 0) return { error: 'not_in_queue' };
+    // 過去・今日の枠は動かさない（公開済みの記事が入れ替わると、公開日が変わってしまう）
+    const first = firstFutureIndex(p, cat, today);
+    if (i < first) return { error: 'already_published_slot' };
+    let to = i;
+    if (action === 'up') to = i - 1;
+    else if (action === 'down') to = i + 1;
+    else if (action === 'top') to = first;
+    else to = q.length - 1;
+    if (to < first || to > q.length - 1 || to === i) return { error: 'already_at_edge' };
+    q.splice(i, 1);
+    q.splice(to, 0, slug);
   } else {
     return { error: 'bad_action' };
   }
   return { plan: p, changed: JSON.stringify(p) !== before };
+}
+
+/** 毎日の列のうち、枠の日付が今日より後になる最初の位置 */
+export function firstFutureIndex(plan, cat, today) {
+  const p = normalizePlan(plan);
+  const per = p.perDay[cat];
+  const n = p.daily[cat].length;
+  for (let i = 0; i < n; i++) if (addDays(p.start, 1 + Math.floor(i / per)) > today) return i;
+  return n;
 }
 
 /**

@@ -69,7 +69,10 @@
         bad_date: '日付が正しくありません。',
         not_found: '記事が見つかりません。',
         forbidden: 'この画面からの操作として受け付けられませんでした。ページを開き直してください。',
-        column_cannot_schedule: 'Column は日付の指定ができません（保留と解除だけ）。',
+        column_cannot_schedule: 'Column は日付の指定・順番の入れ替えができません（保留と解除だけ）。',
+        not_in_queue: 'この記事は公開の列に入っていません。先に「列に入れる」を押してください。',
+        already_published_slot: '公開済み（今日まで）の枠は動かせません。',
+        already_at_edge: 'これ以上は動かせません（今日までの枠より前には動かせません）。',
       };
       const errText = (c) => ERR[c] || 'エラーが起きました（' + c + '）';
       const PAGE = 100;
@@ -98,9 +101,9 @@
           return { status: held ? 'held' : a.pubDate <= today ? 'live' : 'scheduled', date: a.pubDate };
         }
         const s = sched.get(a.slug);
-        if (held) return { status: 'held', date: s ? s.date : a.pubDate };
+        if (held) return { status: 'held', date: s ? s.date : a.pubDate, source: s?.source };
         if (!s) return { status: 'unplanned', date: '' };
-        return { status: s.date <= today ? 'live' : 'scheduled', date: s.date };
+        return { status: s.date <= today ? 'live' : 'scheduled', date: s.date, source: s.source };
       }
 
       function compute() {
@@ -235,6 +238,14 @@
             if (i.status === 'held' || i.status === 'unplanned') {
               acts.appendChild(button(i.status === 'held' ? '保留を解除（列に戻す）' : '列に入れる', '', () => run(i, 'release', '「' + i.title + '」を公開の列に入れます。よろしいですか？')));
             }
+            if ((i.status === 'scheduled' || i.status === 'held') && i.source === 'queue') {
+              // 公開の列の中の順番（同じカテゴリの中。今日までの枠には動かせない）
+              const mv = el('span', 'sched');
+              [['top', '先頭へ'], ['up', '1つ前へ'], ['down', '1つ後ろへ'], ['bottom', '最後へ']].forEach(([act, label]) =>
+                mv.appendChild(button(label, '', () => run(i, act, null))),
+              );
+              acts.appendChild(mv);
+            }
             if (i.status === 'scheduled') {
               acts.appendChild(button('保留にする', 'danger', () => run(i, 'hold', '「' + i.title + '」を保留にします（公開されなくなります）。よろしいですか？')));
             }
@@ -285,7 +296,7 @@
       }
 
       async function run(item, action, question, date) {
-        if (state.busy || !window.confirm(question)) return;
+        if (state.busy || (question && !window.confirm(question))) return;
         state.busy = true;
         try {
           const r = await api('/api/publish/set', { method: 'POST', body: { slug: item.slug, action, date } });
