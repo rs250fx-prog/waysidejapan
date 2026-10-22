@@ -28,17 +28,11 @@ Style: editorial ink-line illustration with flat muted watercolor washes, warm c
 
 ## Eat — Local dishes by region
 
-### /en/eat/kyodo-ryori-kinki/ 本文は「What the seven share」の節（海から遠い都）に置く
-**ヒーロー** → 保存名 `kyodo-ryori-kinki-hero`
-
-```
-Create one image. A low table in an old townhouse, set with a clay pot of boar hotpot (thin slices of boar meat fanned out like peony petals in miso broth), a small plate of Kyoto pickles (white sliced turnip, purple aubergine and cucumber) and a few mackerel sushi wrapped in persimmon leaves, while through the open sliding door a tiled-roof old town and low hills are seen in soft light. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
+### /en/eat/kyodo-ryori-kinki/ 本文は「What the seven share」の節（茶粥。土地ごとに理由が違う）に置く。ヒーローは設定済み
 **本文** → 保存名 `kyodo-ryori-kinki-body`
 
 ```
-Create one image. Porters seen from behind walk in single file along a mountain track through tall cedar forest, each carrying a straw-wrapped bundle of salted mackerel on his back, while far below a basin town of tiled roofs spreads out in the haze. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+Create one image. Close view of a farmhouse breakfast on a low wooden table: an iron pot of thin rice gruel cooked in roasted green tea, the gruel pale amber-brown, a ladle resting in it, two small bowls of the gruel, a dish of pickled plum and a dish of sliced pickles, a tea bag of roasted tea leaves draped on the rim of the pot, morning light from a paper screen. No boats, no barrels, no storehouses, no rivers, no porters, no mackerel. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
 ## Soak — Shikoku
@@ -47,10 +41,5 @@ Create one image. Porters seen from behind walk in single file along a mountain 
 **本文** → 保存名 `onsen-shikoku-body`
 
 ```
-Create one image. Two stone basins side by side in a quiet wooded hollow, the left one holding clear hot water and giving off steam, the right one filled with clear cold spring water pouring from a bamboo spout with no steam at all, the same mossy stone rim on both, and a wooden ladle resting on each. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
+Create one image. A single mossy stone basin in a quiet wooded hollow, filled with clear cold spring water pouring from a bamboo spout, small ripples on the surface, a wooden ladle resting on the rim, fallen leaves and ferns around it, cool green-blue shade. The water is cold: no steam, no vapour, no mist anywhere in the picture. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
-
-## Soak — Other
-
-## Eat — Body image still needed (hero already set)
-
