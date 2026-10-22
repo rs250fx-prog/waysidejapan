@@ -1,5 +1,5 @@
 {
-  "_note": "酒類（日本酒以外）の系譜。品目ハブ（/en/eat/drinks/）の横並び表と、各系譜ページがここから描く。出典は docs/research/drinks-2026-10-11.md と各系譜ページの sources。日本酒は sake.json、居酒屋・角打ちは izakaya.json で扱うのでここには行を作らない。whisky は素材（表示基準・山崎）があるが記事は beer-highball に含めたため planned。planned の行の era は「—」のまま（記憶の年号を出さない）。価格は税込の公式表示が確認できず、どの行にも載せていない",
+  "_note": "酒類（日本酒以外）の系譜。品目ハブ（/en/eat/drinks/）の横並び表と、各系譜ページがここから描く。出典は docs/research/drinks-2026-10-11.md と各系譜ページの sources。日本酒は sake.json、居酒屋・角打ちは izakaya.json で扱うのでここには行を作らない。whisky は drinks-whisky で扱う（表示基準は beer-highball にも要約が残る）。origin・served・where はメモで確定させていないので「—」のまま（記憶の年号を出さない）。価格は税込の公式表示が確認できず、どの行にも載せていない",
   "dish": "drinks",
   "name": "Drinks",
   "nameJa": "酒類（焼酎・ビール・ハイボールほか）",
@@ -85,7 +85,7 @@
       "where": [
         "—"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
