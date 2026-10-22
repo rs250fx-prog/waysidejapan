@@ -1,5 +1,5 @@
 {
-  "_note": "刺身・寿司以外の魚介の系譜。品目ハブ（/en/eat/seafood/）の横並び表と、各系譜ページがここから描く。出典は docs/research/seafood-minor-2026-10-10.md と各系譜ページの sources。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）。刺身・寿司・鰻・市場は別の品目ハブがあるので行を作っていない。価格はメモで1つも確認できていないので cells に入れない",
+  "_note": "刺身・寿司以外の魚介の系譜。品目ハブ（/en/eat/seafood/）の横並び表と、各系譜ページがここから描く。出典は docs/research/seafood-minor-2026-10-10.md と各系譜ページの sources。planned の行の era は、系譜ページを書いて出典が付くまで「—」のまま（記憶の年号を出さない）。練り物・昆布・海藻は 2026-10-23 に系譜ページを書いて published（出典は各ページの sources。kyodo-* メモ・dashi メモも使用）。刺身・寿司・鰻・市場は別の品目ハブがあるので行を作っていない。価格はメモで1つも確認できていないので cells に入れない",
   "dish": "seafood",
   "name": "Seafood beyond sushi and sashimi",
   "nameJa": "魚介（刺身・寿司以外）",
@@ -110,7 +110,7 @@
       "nameJa": "練り物",
       "origin": {
         "place": "Many regions",
-        "era": "—"
+        "era": "Oldest surviving kamaboko record 1115 (farm ministry)"
       },
       "cells": {
         "what": "Fish ground with salt and set by heat: kamaboko, chikuwa, hanpen and more",
@@ -124,7 +124,7 @@
         "Ehime",
         "Kagoshima"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "kombu",
@@ -132,7 +132,7 @@
       "nameJa": "昆布",
       "origin": {
         "place": "Hokkaido",
-        "era": "—"
+        "era": "In the Shoku Nihongi (797), per the farm ministry; the Edo-period kombu road"
       },
       "cells": {
         "what": "Kelp, mostly from Hokkaido, used for stock and simmered dishes",
@@ -145,7 +145,7 @@
         "Osaka",
         "Okinawa"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "seaweed",
@@ -153,7 +153,7 @@
       "nameJa": "海苔・わかめ・もずく",
       "origin": {
         "place": "Ariake Sea; Sanriku; Okinawa",
-        "era": "—"
+        "era": "Nori farming began in the Edo period (farm ministry); Miyagi wakame farming from about 1960"
       },
       "cells": {
         "what": "Farmed seaweeds: sheet nori, salted wakame, mozuku",
@@ -166,7 +166,7 @@
         "Sanriku",
         "Okinawa"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "oyster-crab",

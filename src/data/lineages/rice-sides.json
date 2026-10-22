@@ -1,5 +1,5 @@
 {
-  "_note": "ご飯まわり（ご飯に添えるもの・ご飯に入れるもの）の系譜。品目ハブ（/en/eat/rice-sides/）の横並び表と、各系譜ページがここから描く。出典は docs/research/staples-minor-2026-10-10.md と各系譜ページの sources。汁物は nabe（味噌汁）・dashi と重なるので planned のまま。おにぎりは conbini、駅弁の釜めしは food-shopping で扱う。価格はメモで1つも確認できていないので、どの行にも書かない。planned の行の era は「—」",
+  "_note": "ご飯まわり（ご飯に添えるもの・ご飯に入れるもの）の系譜。品目ハブ（/en/eat/rice-sides/）の横並び表と、各系譜ページがここから描く。出典は docs/research/staples-minor-2026-10-10.md と各系譜ページの sources。汁物（shiru）は 2026-10-23 に郷土の汁に絞って系譜ページを書いて published（味噌汁は nabe-miso、だしは dashi に任せる）。おにぎりは conbini、駅弁の釜めしは food-shopping で扱う。価格はメモで1つも確認できていないので、どの行にも書かない。planned の行の era は「—」",
   "dish": "rice-sides",
   "name": "Rice and what goes with it",
   "nameJa": "ご飯まわり",
@@ -114,13 +114,13 @@
       "nameJa": "汁物（郷土の汁）",
       "origin": {
         "place": "Nationwide",
-        "era": "—"
+        "era": "kenchin-jiru’s name told two ways (Kenchōji or fucha ryōri)"
       },
       "cells": {
         "what": "Pork miso soup, kenchin-jiru, noppe, clam soup, dango-jiru",
         "rice": "The ‘one soup’ of the one-soup, three-dish meal",
         "regional": "Kenchin-jiru differs between Kanagawa and Iwate; Shimane and Shiga use different clams",
-        "know": "—"
+        "know": "Niigata’s noppe is closer to a simmered dish than a soup, the farm ministry says"
       },
       "where": [
         "Kagoshima",
@@ -131,7 +131,7 @@
         "Shiga",
         "Oita"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
