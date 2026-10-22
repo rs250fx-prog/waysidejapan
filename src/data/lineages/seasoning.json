@@ -1,5 +1,5 @@
 {
-  "_note": "調味料の系譜。品目ハブ（/en/eat/seasoning/）の横並び表と、各系譜ページがここから描く。出典は docs/research/ferment-egg-2026-10-11.md と各系譜ページの sources。醤油・卵は published。酢・みりんはメモの A 項に素材があるが系譜ページ未執筆のため planned、era は「—」。味噌は nabe、だしは dashi、漬物・納豆は rice-sides の系譜で扱うのでここには行を作らない",
+  "_note": "調味料の系譜。品目ハブ（/en/eat/seasoning/）の横並び表と、各系譜ページがここから描く。出典は docs/research/ferment-egg-2026-10-11.md と各系譜ページの sources。醤油・卵・酢・みりんの4本を published（酢・みりんは 2026-10-23 執筆、他メモの該当事実で補った）。味噌は nabe、だしは dashi、漬物・納豆は rice-sides の系譜で扱うのでここには行を作らない",
   "dish": "seasoning",
   "name": "Seasonings",
   "nameJa": "調味料",
@@ -81,7 +81,7 @@
       "where": [
         "—"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "mirin",
@@ -100,7 +100,7 @@
       "where": [
         "—"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
