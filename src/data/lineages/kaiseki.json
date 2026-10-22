@@ -70,7 +70,7 @@
       "nameJa": "本膳料理",
       "origin": {
         "place": "Warrior households",
-        "era": "—"
+        "era": "Muromachi period (Kyoto city); medieval (farm ministry)"
       },
       "cells": {
         "occasion": "Ceremonial food",
@@ -79,7 +79,7 @@
         "marker": "Said by Kyoto city’s education board to be the base of formal Japanese cooking"
       },
       "where": [],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "bento",
@@ -87,7 +87,7 @@
       "nameJa": "弁当",
       "origin": {
         "place": "Food carried out: theatre, travel, tea gatherings",
-        "era": "—"
+        "era": "Reached Kyoto from China at the end of the 1300s (farm ministry)"
       },
       "cells": {
         "occasion": "Theatre intervals, rail travel, the simplified meal at a tea gathering",
@@ -96,7 +96,7 @@
         "marker": "Makunouchi from the theatre; Shōkadō from a ryōtei in 1937"
       },
       "where": [],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }
