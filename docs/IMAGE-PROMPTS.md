@@ -50,48 +50,7 @@ Create one image. Porters seen from behind walk in single file along a mountain 
 Create one image. Two stone basins side by side in a quiet wooded hollow, the left one holding clear hot water and giving off steam, the right one filled with clear cold spring water pouring from a bamboo spout with no steam at all, the same mossy stone rim on both, and a wooden ladle resting on each. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
 ```
 
-## Soak — Kyushu and Okinawa
-
 ## Soak — Other
-
-### /en/soak/yuda/ 本文は「The white fox」の節（傷ついた白狐が池で足を癒した話）に置く
-**ヒーロー** → 保存名 `yuda-hero`
-
-```
-Create one image. A small station square in a city spa district with a giant white fox statue on a plinth as tall as a house, beside it a row of free footbaths under a small roof with two pairs of feet in them, a small steam locomotive pulling old carriages along the railway line behind, low business hotels with a plume of steam rising from a spring pumping building, and low hills on the horizon. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yuda-body`
-
-```
-Create one image. At night in a temple garden under the moon, a white fox with a limp sits at the edge of a small pond, dipping one front paw in faintly steaming water, while a priest in plain robes watches quietly from the temple veranda and a small golden statue gleams in the water at the bottom of the pond. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/yudanaka-shibu/ 本文は「The monkey park」の節（雪の谷の露天風呂にいるニホンザル）に置く
-**ヒーロー** → 保存名 `yudanaka-shibu-hero`
-
-```
-Create one image. A narrow stone-paved lane in an old hot spring town lined with wooden inns of two and three storeys, a small wooden public bathhouse with a closed latticed door and a plain cotton hand towel hanging on a hook by its entrance, hot-water pipes running along the walls with steam rising from them, a couple of guests in cotton robes seen from behind carrying small towels, and wooded mountains behind. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `yudanaka-shibu-body`
-
-```
-Create one image. A snowy mountain valley beside a small river, where a stone-edged outdoor pool of steaming water holds a few Japanese macaques with snow on their fur, more monkeys sitting on the snowy rocks around the pool, steaming vents in the snow, and bare winter trees, with no people anywhere. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-### /en/soak/zao/ 本文は「Skiing and the snow monsters」の節（樹氷）に置く
-**ヒーロー** → 保存名 `zao-hero`
-
-```
-Create one image. A mountain hot spring town on a steep street of old wooden inns half buried in snow, steam rising from the street gutters and the rooftops, a ropeway line climbing from the top of the street over the forest towards a ridge, and high on the ridge rows of huge white frozen trees like snow-covered giants under a pale winter sky. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
-
-**本文** → 保存名 `zao-body`
-
-```
-Create one image. A winter mountain slope covered with fir trees thickly coated in rime ice and snow so that each tree has become a huge rounded white shape, a ropeway gondola with a warmly lit window gliding on its cable among them, and one tiny skier far in the distance on the open snow. Style: editorial ink-line illustration with flat muted watercolor washes, warm cream paper background (#F7F1E8), accent terracotta (#B8502E), deep brown linework, limited palette, subtle paper grain, calm and observational like a field notebook. 3:2 landscape, 2400x1600. No text, no letters, no numbers, no logos, no signage lettering, not photorealistic.
-```
 
 ## Eat — Body image still needed (hero already set)
 
