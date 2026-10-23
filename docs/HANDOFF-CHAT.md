@@ -34,6 +34,7 @@
 - 壁打ち → 提案 → 「実装しますか？」で承認を得てから実装。ただし系譜ページの執筆はこの型で承認済みなので、GOが出たら書いてよい
 - 村瀬さんが同じリポジトリを並行して触る。`git add -A` は使わず、変更したファイルを明示して add する。push 前に `git fetch && git rebase --autostash origin/main`（為替ボットのコミットが日次で入る）
 - 作業ツリーに村瀬さん側の未コミット変更（`src/pages/[lang]/food-prices.astro`、`src/assets/`）がある。触らない・コミットに含めない
+- **ビルドの Node は `.nvmrc`（`22`）で、Cloudflare は Node 22.22.0 になる。** いまの Astro 7.3.5 は 22.12 以上で足りるが、**Astro を 7.4 以降に上げると 22.23.4 以上が必要になり、ビルドが失敗する**（同じ事が fam16・TEITEN で 2026-10-24 に起きた）。上げる前に `.nvmrc` と Cloudflare の `NODE_VERSION`（秘密情報として登録されていて値は画面で読めない。入れ直す）を `24` にそろえ、push のあと Deployments が成功しているか確かめる
 - コミット末尾に `Co-Authored-By: <使っているモデル名> <noreply@anthropic.com>` を付ける
 - 記事の description は **160字以内**（`npm run check` で落ちる）。FAQ の答えに「: 」（コロン＋空白）を入れない（YAML が壊れる）
 
