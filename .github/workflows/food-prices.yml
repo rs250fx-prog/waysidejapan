@@ -33,6 +33,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
+          # Node のセキュリティ修正（2026-10 の Brotli RCE 等）を確実に拾うため、
+          # ランナーのキャッシュ版ではなく最新の 22.x を取りに行く
+          check-latest: true
 
       # 成果物を作る前に、出口が開いていることを確かめる
       - name: Check push access
