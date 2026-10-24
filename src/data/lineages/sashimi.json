@@ -1,5 +1,5 @@
 {
-  "_note": "刺身の系譜。品目ハブ（/en/eat/sashimi/）の横並び表と、各系譜ページがここから描く。出典は docs/research/sashimi-2026-10-10.md と各系譜ページの sources。出世魚（ブリ・スズキ）と〆（昆布〆・酢〆）の2本。かつおのたたきはハブで軽く扱い、行は planned",
+  "_note": "刺身の系譜。品目ハブ（/en/eat/sashimi/）の横並び表と、各系譜ページがここから描く。出典は docs/research/sashimi-2026-10-10.md と各系譜ページの sources。出世魚（ブリ・スズキ）・〆（昆布〆・酢〆）・かつおのたたきの3本を published。たたきの出典は docs/research/seafood-mid-2026-10-11.md と kyodo-hokkaido-sanin-shikoku-2026-10-12.md",
   "dish": "sashimi",
   "name": "Sashimi",
   "nameJa": "刺身",
@@ -79,7 +79,7 @@
       "where": [
         "Kōchi"
       ],
-      "status": "planned"
+      "status": "published"
     }
   ]
 }

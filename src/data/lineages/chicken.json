@@ -1,5 +1,5 @@
 {
-  "_note": "鶏料理の系譜。品目ハブ（/en/eat/chicken/）の横並び表と、各系譜ページがここから描く。出典は docs/research/chicken-2026-10-10.md と各系譜ページの sources。唐揚げ（中津・宇佐）と博多の水炊きの2本を published。とり天（別府）とせんざんき（今治）は planned で era は「—」。焼鳥は izakaya、親子丼は donburi の系譜で扱うためここには行を作っていない",
+  "_note": "鶏料理の系譜。品目ハブ（/en/eat/chicken/）の横並び表と、各系譜ページがここから描く。出典は docs/research/chicken-2026-10-10.md と各系譜ページの sources。唐揚げ（中津・宇佐）・博多の水炊き・とり天（別府）の3本を published。とり天の era は農水省（昭和初期）と別府市観光協会（大正期）の両論併記。せんざんき（今治）は素材が協会の2説のみのため planned で era は「—」。焼鳥は izakaya、親子丼は donburi の系譜で扱うためここには行を作っていない",
   "dish": "chicken",
   "name": "Chicken dishes",
   "nameJa": "鶏料理",
@@ -67,7 +67,7 @@
       "nameJa": "とり天（大分）",
       "origin": {
         "place": "Beppu, Oita",
-        "era": "—"
+        "era": "early Shōwa (farm ministry) or Taishō (tourism association)"
       },
       "cells": {
         "cooked": "Fried in tempura batter",
@@ -79,7 +79,7 @@
         "Beppu",
         "Oita"
       ],
-      "status": "planned"
+      "status": "published"
     },
     {
       "key": "senzanki",
