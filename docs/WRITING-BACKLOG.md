@@ -208,3 +208,10 @@
 - **作業メモ口調（§1-5）第2段（2026-10-17、村瀬さん判断 (a)）**：1つの節に一人称の「見つからなかった」が3回以上重なる51本を対象に、節ごとに中立の1文（「Official sources do not give …」「No official source checked for this page …」「… is not confirmed」）へまとめた。数字・リンク・`<FromExperience>` は不変を機械で確認。「開けなかった」を「公式は言っていない」と強めた2か所（unzen・nozawa）と、2か所（unazuki・echigo-yuzawa）を「checked for this page」付きに戻した。**残り：上記51本以外の約170本の単発の一人称表現は、方針 (a) では対象外として残している**
 - 月次ルーティン（trig_01RHFx9dRoZquQaiTnnkS34t）に `taxIncluded` の扱いを1行追加し、RemoteTrigger で登録文面も更新（2026-10-17）。次回 10/28
 - **setouchi-area-pass の Verdict「¥53,500 including food and baths」**：2026-09-26 のデモ内容投入コミット（15d936a）で入った数字。内訳・出典なし。村瀬さんの実際の出費なら内訳つきで FromExperience に、デモなら削除（判断待ち）
+
+### 第16弾（2026-10-22〜24。系譜表の planned の消化と検索語の抜け）
+- 書いた：column/how-to-eat-sushi-in-japan、seasonal 6本（tango・tanabata-obon・tsukimi・toji・omisoka・christmas）、nabe 3本（chanko・ishikari・botan）、udon-miso-nikomi、donburi-butadon、soba-hegi・soba-echizen-oroshi、yakisoba-ota、bkyu-senbei-jiru・bkyu-torimotsu、kaiseki-honzen・kaiseki-bento、seasoning-vinegar・seasoning-mirin、seafood-nerimono・-kombu・-seaweed、rice-sides-shiru、meat-gibier、drinks-whisky、soak/onsen-etiquette・onsen-tattoos（検索語メモ keyword-demand-autocomplete-2026-10-22 の抜け）、chicken-toriten、sashimi-tataki。**いずれも heroImage なし＝公開ルール上は画像が入るまで出ない。publish-plan.json にも未登録（公開日の割り振りは村瀬さん）**
+- **素材不足で見送り（planned のまま）**：udon の吉田・伊勢・水沢、donburi の新潟タレかつ、yakisoba の焼きそばパン・東京ソース、bkyu のトルコライス、rice のめはりずし、chicken のせんざんき、champon の長崎（ハブで書き済み）・小浜。ほかの planned（ramen 7本、gyoza 2本、izakaya 2本、unagi 柳川、somen 小豆島、food-shopping スーパー、yatai キッチンカー、soba 年越し＝seasonal-omisoka で扱い済み）は調査が要る
+- 修正：公開中4ページ（seasonal-new-year・akanko・isawa・nozawa）の `#<Figure` を修正し `npm run check` に検査を追加。donburi-katsudon に文化庁の福井への伝わり方を追記。udon.json の伊勢の未出典セルを削除。seafood・rice-sides・meat のハブを新しい系譜へ誘導
+- 要確認：吉野鮨の価格が税込表示か税抜表示か（寿司コラムでは金額を出さず edomae へリンク。edomae は「税抜表示に税込併記」と書く）／sushi-edomae・sushi-kaiten の出典の見えない記述（ガリ、並びで長居しない、アプリ予約6割、粉茶とお湯、65%）／赤酢＝粕酢の同一視（edomae）／八丁味噌の表記揺れ（Hatcho/Hatchō）、Kochi/Kōchi／visitkaga.jp の運営主体の書き方（yamashiro と yamanaka で不一致）／JNTO 温泉ガイドの URL 2通り
+- 寿司コラムの pubDate が作業ツリー上で 10-21 に変わっている（公開管理側の変更とみて未コミットのまま残している）
