@@ -1,54 +1,54 @@
 {
   "_note": "小売物価統計調査（総務省統計局）の公表値。外食品目に全国平均は無いため東京・特別区部を基準にする。tools/fetch-food-prices.mjs が月次で書き換える。手で編集しない",
-  "_updatedAt": "2026-10-04",
+  "_updatedAt": "2026-10-27",
   "_source": "e-Stat API / 小売物価統計調査",
   "items": {
     "ramen": {
       "jpy": 620,
       "definition": "中華そば（しょう油味）外食 1杯",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "soba": {
       "jpy": 788,
       "definition": "日本そば 外食 1枚",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "udon": {
       "jpy": 818,
       "definition": "うどん 外食 1杯",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "gyudon": {
-      "jpy": 489,
+      "jpy": 491,
       "definition": "牛丼 外食 1杯",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "curry": {
-      "jpy": 930,
+      "jpy": 902,
       "definition": "カレーライス 外食 1皿",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "hamburger": {
       "jpy": 280,
       "definition": "ハンバーガー 外食 1個",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "coffee": {
-      "jpy": 637,
+      "jpy": 640,
       "definition": "コーヒー 外食 1杯",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     },
     "sushi-kaiten": {
       "jpy": 241,
       "definition": "回転ずし店 にぎりずし／まぐろ（赤身）／2個",
-      "month": "2026-08",
+      "month": "2026-09",
       "area": "特別区部"
     }
   }
