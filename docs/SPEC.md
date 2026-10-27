@@ -446,7 +446,7 @@ Deploy Hook も Worker も KV も使わない。`rates.json` がリポジトリ�
 - 日本語：駅名・店名の数文字のみなのでシステムフォント
 - **使うフォントに実在するウェイトだけを指定する**（存在しないウェイトを指定すると和欧でずれる）
 - **2026-10-05 変更：見出しも本文も Source Serif 4 の1書体にした。** 見出し用だった Fraunces は大きいサイズで字形をわざと崩す設計で、J や h が歪んで見えるため外した。ファイルは `public/fonts/`（OFL、npm の `@fontsource-variable/source-serif-4` 5.3.0 から取得）、定義は `global.css` の `@font-face`。Google Fonts は読み込まない
-- **2026-10-27 変更：欧文拡張（latin-ext）のファイルを、長音符つき母音（Āā Ēē Īī Ōō Ūū）・声調記号つき母音（Ǎǎ Ěě Ǐǐ Ǒǒ Ǔǔ）・U+0304 だけに絞った（約99KB→約9KB）。**ō が1字でもあると丸ごと読み込まれ、記事ページのモバイル PageSpeed を押し下げていた。全ページで使っていた拡張文字はこの範囲に収まる。`unicode-range` もファイルの中身と同じにしてある。ほかの拡張文字を使い始めたら、`@fontsource-variable/source-serif-4` の latin-ext から作り直す（手順は `global.css` のコメント）
+- **2026-10-27 変更：欧文拡張（latin-ext）のファイルを、長音符つき母音（Āā Ēē Īī Ōō Ūū）・声調記号つき母音（Ǎǎ Ěě Ǐǐ Ǒǒ Ǔǔ）・U+0304 だけに絞った（約99KB→約9KB）。**ō が1字でもあると丸ごと読み込まれ、記事ページのモバイル PageSpeed を押し下げていた。全ページで使っていた拡張文字はこの範囲に収まる。`unicode-range` もファイルの中身と同じにしてある。ファイル名は `source-serif-4-latin-ext-macron.woff2`（`/fonts/` は immutable 配信なので、中身を変えたら名前も変える）。ほかの拡張文字を使い始めたら、`@fontsource-variable/source-serif-4` の latin-ext から作り直す（手順は `global.css` のコメント）
 
 ### マーク・アイコン・共有画像（2026-10-05）
 
