@@ -11,7 +11,8 @@ import { GA4_MEASUREMENT_ID } from '../config.ts';
  *   - 同意の選択は localStorage の 'wsj-consent'（'granted' | 'denied'）に残す（書き込みは ConsentBanner）
  *   - 同意済みの再訪では、最初の操作か load から5秒後のどちらか早いほうで gtag.js を読む
  *     （表示が終わるまで本文の描画と帯域を奪い合わせないため）
- *   - 初めての訪問者がバナーで Accept したときは、ConsentBanner が window.wsjLoadGA() を呼ぶ
+ *   - 初めての訪問者がバナーで Accept したときは、ConsentBanner が consent を 'granted' に更新してから
+ *     window.wsjLoadGA() を呼ぶ（config はその中で積む。順序を逆にすると初回の page_view が落ちる）
  *
  * gtag.js を読み込まないのは、Consent Mode の「advanced」だと同意前でも Google へ
  * Cookie なしの通信が飛ぶため。設計書（docs/SPEC.md 第11節）の「同意前に GA4 を動かさない」に合わせる。
@@ -31,13 +32,14 @@ const id = GA4_MEASUREMENT_ID;
       ad_user_data: 'denied',
       ad_personalization: 'denied',
     });
-    window.gtag('js', new Date());
-    window.gtag('config', id);
 
     let loaded = false;
     window.wsjLoadGA = function () {
       if (loaded) return;
       loaded = true;
+      // config は consent の update より後に積む。先に積むと、同意前の状態で初回の page_view が処理されて落ちる
+      window.gtag('js', new Date());
+      window.gtag('config', id);
       const s = document.createElement('script');
       s.async = true;
       s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
