@@ -6,7 +6,7 @@
  * 404 へのリンクを人間の注意力で防ぐのは無理なので、表で防ぐ。
  * 未提携のあいだは開示リンクも出ない（AFFILIATE と連動）。
  */
-import { SITE_NAME, TAGLINE, NAV, ROUTES, LOCALES, hasAnyAffiliate, type Locale } from '../config.ts';
+import { SITE_NAME, TAGLINE, NAV, ROUTES, LOCALES, GA4_MEASUREMENT_ID, hasAnyAffiliate, type Locale } from '../config.ts';
 import { AREAS } from '../data/areas.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 
@@ -144,6 +144,14 @@ const languages = [
 
     <div class="bottom">
       <small>© {year} {SITE_NAME}</small>
+      {
+        /* 同意の選択を開き直す入口。バナー側（ConsentBanner）が data-consent-open を拾う */
+        GA4_MEASUREMENT_ID && (
+          <button type="button" class="cookie-settings" data-consent-open>
+            Cookie settings
+          </button>
+        )
+      }
       <a class="totop" href="#main">Back to top ↑</a>
     </div>
   </div>
@@ -301,6 +309,20 @@ const languages = [
     border-top: 1px solid var(--line);
     color: var(--muted);
     font-size: 13px;
+  }
+  .cookie-settings {
+    margin-inline: auto 0;
+    padding: 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
   }
   .totop {
     font-size: 14px;

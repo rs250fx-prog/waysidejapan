@@ -1,0 +1,131 @@
+---
+import { GA4_MEASUREMENT_ID } from '../config.ts';
+
+/**
+ * Cookie の同意バナー（Analytics.astro とセット）。
+ *
+ * 測定IDが空のとき、および noindex のページでは出さない。
+ * Accept / Reject は同じ大きさ・同じ目立ち方にする（拒否を選びにくくしない）。
+ * 選択は localStorage の 'wsj-consent' に残し、フッタの「Cookie settings」から開き直せる。
+ */
+interface Props {
+  locale?: string;
+  noindex?: boolean;
+}
+const { locale = 'en', noindex = false } = Astro.props;
+const show = GA4_MEASUREMENT_ID !== '' && !noindex;
+---
+
+{show && (
+  <div id="consent" class="consent" role="dialog" aria-labelledby="consent-title" hidden>
+    <div class="wrap consent-inner">
+      <div class="consent-text">
+        <p id="consent-title" class="consent-title">Cookies</p>
+        <p>
+          With your OK, Google Analytics counts which pages are read, so I know which guides to improve. Nothing is stored
+          or sent until you choose. <a href={`/${locale}/privacy/`}>Privacy policy</a>
+        </p>
+      </div>
+      <div class="consent-actions">
+        <button type="button" class="consent-btn" data-consent="denied">Reject</button>
+        <button type="button" class="consent-btn" data-consent="granted">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var KEY = 'wsj-consent';
+      var box = document.getElementById('consent');
+      if (!box) return;
+      var read = function () { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
+      var open = function () { box.hidden = false; };
+      var apply = function (v) {
+        try { localStorage.setItem(KEY, v); } catch (e) {}
+        if (window.gtag) window.gtag('consent', 'update', { analytics_storage: v });
+        // 同意するまで gtag.js は読み込まれていない。ここで初めて読む
+        if (v === 'granted' && window.wsjLoadGA) window.wsjLoadGA();
+        box.hidden = true;
+      };
+      if (!read()) open();
+      box.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-consent]');
+        if (b) apply(b.getAttribute('data-consent'));
+      });
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('[data-consent-open]')) open();
+      });
+    })();
+  </script>
+)}
+
+<style>
+  .consent {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 50;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -4px 18px rgba(23, 22, 26, 0.08);
+    padding-block: 16px;
+  }
+  .consent[hidden] {
+    display: none;
+  }
+  .consent-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .consent-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-3);
+    max-width: 760px;
+  }
+  .consent-text p {
+    margin: 0;
+  }
+  .consent-title {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px !important;
+  }
+  .consent-actions {
+    display: flex;
+    gap: 12px;
+    flex: none;
+  }
+  .consent-btn {
+    min-height: 44px;
+    min-width: 104px;
+    padding: 10px 22px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1.5px solid var(--ink-2);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .consent-btn:hover {
+    background: var(--surface-2);
+  }
+  @media (max-width: 767px) {
+    .consent-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+    .consent-btn {
+      flex: 1;
+    }
+  }
+</style>

@@ -35,8 +35,14 @@ export const LOCALES = ['en'] as const;
 export const DEFAULT_LOCALE = 'en';
 export type Locale = (typeof LOCALES)[number];
 
-/** 空なら計測タグもプライバシーポリシーの該当節も出ない */
-export const GA4_MEASUREMENT_ID = '';
+/**
+ * 空なら計測タグも同意バナーもプライバシーポリシーの該当節も出ない。
+ * GA4 は同意（Consent Mode v2）が出るまで保存も送信もしない。
+ */
+export const GA4_MEASUREMENT_ID = 'G-1QCYBRDSCE';
+
+/** プライバシーポリシーの最終改定日。内容を変えたら必ず更新する */
+export const PRIVACY_UPDATED = '29 October 2026';
 
 /** カテゴリ。URL に入るので後から変えられない */
 export const CATEGORIES = ['rail', 'eat', 'soak', 'konbini', 'column', 'ride'] as const;
@@ -89,7 +95,7 @@ export const ROUTES = {
   passes: false,
   itineraries: false,
   about: true,
-  privacy: false,
+  privacy: true,
   disclosure: false,
   contact: false,
   search: false,

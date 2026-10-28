@@ -3,7 +3,9 @@ import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import DemoRibbon from '../components/DemoRibbon.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import { SITE_NAME, TAGLINE, NAV, ROUTES, GA4_MEASUREMENT_ID, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
+import Analytics from '../components/Analytics.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+import { SITE_NAME, TAGLINE, NAV, ROUTES, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 
 interface Props {
@@ -38,16 +40,8 @@ const here = Astro.url.pathname;
     {/* 書体は自己ホスト（global.css の @font-face）。最初の描画で使う1本だけ先読みする */}
     <link rel="preload" href="/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
     <Seo locale={locale} {...seo} />
-    {
-      /* 測定IDが空なら計測タグは出ない。プライバシーポリシーの該当節も同じフラグで消える */
-      GA4_MEASUREMENT_ID && (
-        <script
-          is:inline
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
-        />
-      )
-    }
+    {/* 測定IDが空なら計測タグも同意バナーも出ない。プライバシーポリシーの該当節も同じフラグで消える */}
+    <Analytics noindex={seo.noindex} />
   </head>
   <body>
     <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>
@@ -96,6 +90,7 @@ const here = Astro.url.pathname;
     </main>
 
     <SiteFooter locale={locale} />
+    <ConsentBanner locale={locale} noindex={seo.noindex} />
   </body>
 </html>
 

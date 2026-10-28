@@ -81,7 +81,7 @@
 |---|---|---|
 | `IS_PUBLIC` | `false` | 全ページ noindex。サイトマップも出ない |
 | `IS_DEMO` | `true` | デモ帯。中身を実記事に替えたら false |
-| `GA4_MEASUREMENT_ID` | 空 | 計測タグとポリシーの該当節 |
+| `GA4_MEASUREMENT_ID` | 設定済み（空にすると外れる） | 計測タグ・同意バナー・フッタの Cookie settings・ポリシーの該当節 |
 | `AFFILIATE` | 全 false | CTA・開示文・開示ページへのリンク・about の収益節 |
 | `NAV` | rail/eat/soak/column | ナビ・カテゴリ一覧・フッタの該当行 |
 | `ROUTES` | about のみ true | フッタのリンク（false は「Soon」の非リンク） |
@@ -723,6 +723,7 @@ AI が読んで src/content/<locale>/<category>/<slug>.mdx を書く
 | 2026-09-27 | 実装開始（T-08）。Astro 7 + MDX、記事の部品一式、著者ページ、サイトマップ型フッタ、画像比率の規格化、コラムの導線。扱う地域は「地方が主体・関東は強みとして使う」で確定 |
 | 2026-09-26 | 言語と通貨の方針を変更。**中国語は扱わない**、韓国語は最後。通貨は **EUR を先**に表示し、欧州圏を主要層に置く |
 | 2026-09-26 | デザイン確定。配色は案4（Persimmon）、レイアウトは合成案。ページ型の一覧と採否を第10-B節に追加（競合4サイトのナビ・フッタを実地取得）。入稿フォーマット2種を `templates/` に作成 |
+| 2026-10-29 | **GA4 を導入し、同意バナーとプライバシーポリシー（`/en/privacy/`）を新設した。**測定ID は `config.ts` の `GA4_MEASUREMENT_ID`（GA4 はアカウント「Financial and Marketing」〈16murase@gmail.com〉のプロパティ「waysidejapan」）。Consent Mode v2 は既定をすべて denied にし、**同意するまで gtag.js 自体を読み込まない**（advanced だと同意前でも Google へ Cookie なしの通信が飛ぶため）。選択は localStorage の `wsj-consent`、フッタの「Cookie settings」で開き直せる。`affiliate_click` の送出は未実装（第12節の残り）。Cloudflare Web Analytics は有効にしていない（併走案は未実施） |
 
 ---
 
