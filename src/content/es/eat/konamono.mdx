@@ -1,0 +1,140 @@
+---
+title: 'Konamono: okonomiyaki, takoyaki y Akashi-yaki — qué son, de dónde vienen y cómo los come Japón'
+description: 'Los konamono son platos de masa de trigo hechos en plancha: okonomiyaki, takoyaki, Akashi-yaki. Sus orígenes discutidos, Osaka frente a Hiroshima y cuánto cuesta un plato.'
+translationKey: konamono
+translationStatus: reviewed
+category: eat
+kind: dish
+dish: konamono
+basis: researched
+areas: [kansai, chugoku, kanto]
+updatedDate: 2026-12-03
+pubDate: 2026-12-03
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/konamono-hero.webp
+heroAlt: 'Ilustración de un okonomiyaki sobre una plancha de hierro, una sartén de takoyaki y una tabla de Akashi-yaki blandos con un cuenco de dashi'
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: ¿Qué diferencia hay entre el okonomiyaki de Osaka y el de Hiroshima?
+    a: 'En Osaka el repollo y los demás ingredientes se mezclan con la masa y todo se cocina a la plancha. En Hiroshima se extiende una capa fina de masa, se cubre con un montón de repollo, cerdo y fideos, luego huevo, y se cuece al vapor y se da la vuelta. El ministerio de Agricultura señala que los primeros okonomiyaki de Osaka también eran en capas.'
+  - q: ¿Los japoneses comen okonomiyaki con arroz?
+    a: 'Algunos sí, en Osaka. Una encuesta de 2023 del fabricante de salsas Otafuku halló que cerca del 40% de los encuestados de Osaka lo comen con arroz, y la oficina de turismo de Osaka dice que a quienes vienen de otros sitios les sorprende. La versión de Hiroshima lleva fideos y rara vez se come con arroz.'
+  - q: ¿El Akashi-yaki es lo mismo que el takoyaki?
+    a: 'No. El Akashi-yaki, que en Akashi se llama tamagoyaki, lleva más huevo y un almidón de trigo que lo mantiene blando, se cocina en una sartén de cobre y se moja en dashi en lugar de cubrirse de salsa. El takoyaki se termina con una salsa espesa, alga verde y escamas de bonito.'
+  - q: ¿Una cadena cobra lo mismo por comer en el local que por llevar?
+    a: 'No siempre. Tsukiji Gindaco cobra ¥702 para llevar y ¥715 para comer en el local por los mismos ocho takoyaki, ambos con impuestos incluidos, porque el tipo del impuesto sobre el consumo es distinto.'
+sources:
+  - label: '農林水産省 うちの郷土料理「お好み焼き」広島県'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/42_7_hiroshima.html'
+  - label: '農林水産省 うちの郷土料理「お好み焼き」大阪府'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_20_osaka.html'
+  - label: '農林水産省 うちの郷土料理「たこ焼き」大阪府'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_15_osaka.html'
+  - label: '農林水産省 うちの郷土料理「明石焼／玉子焼」兵庫県'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/40_2_hyogo.html'
+  - label: '農林水産省 うちの郷土料理 大阪府の一覧'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/area/osaka.html'
+  - label: '広島県 ひろしまラボ「お好み焼」'
+    url: 'https://www.pref.hiroshima.lg.jp/lab/topics/20211008/01/'
+    published: '2021-10-08'
+  - label: '大阪観光局 OSAKA-INFO「お好み焼き」'
+    url: 'https://osaka-info.jp/gourmet/gastronomy-okonomiyaki/'
+  - label: '大阪観光局 OSAKA-INFO「たこ焼き」'
+    url: 'https://osaka-info.jp/gourmet/gastronomy-takoyaki/'
+  - label: '明石観光協会「明石焼（玉子焼）の達人」'
+    url: 'https://www.yokoso-akashi.jp/akashi/akashi-yaki.html'
+  - label: '明石市「明石のたからもの 明石焼（玉子焼）」'
+    url: 'https://www.city.akashi.lg.jp/seisaku/seisaku_shitsu/20140401_takaramono_10.html'
+    published: '2014-04-01'
+  - label: '農畜産業振興機構「ソース」'
+    url: 'https://www.alic.go.jp/joho-s/joho07_001187.html'
+  - label: '築地銀だこ 公式メニュー'
+    url: 'https://www.gindaco.com/menu/'
+    published: '2026-10'
+  - label: 'オタフクソース プレスリリース「お好み焼に関する意識調査」（企業の調査）'
+    url: 'https://kyodonewsprwire.jp/release/202309209865'
+    published: '2023-09-26'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import konamonoFlour from '../../../assets/eat/konamono-body.webp';
+
+*Konamono* —"cosas de harina"— es la palabra de Kansai para los platos hechos con masa de trigo cocinada en una plancha: el okonomiyaki, el takoyaki y sus parientes. En palabras de la oficina de turismo de Osaka, son la comida del alma de la ciudad, y vienen con más historias de origen enfrentadas que casi cualquier otra cosa en un menú japonés. Esta página es el mapa: qué son los platos, qué dicen las fuentes oficiales sobre su origen y cómo los comen en realidad los habitantes de Osaka, Hiroshima y Tokio. Las páginas de linajes profundizan en el okonomiyaki y en el takoyaki con su primo de Akashi.
+
+## Qué es
+
+No encontré ninguna definición oficial de *konamono*; la receta de okonomiyaki de Osaka del ministerio de Agricultura atribuye el término a un organismo llamado Japan Konamon Association. Lo que sí registran las fuentes oficiales es qué platos pertenecen a qué lugar. La base de datos de platos locales del ministerio de Agricultura incluye el okonomiyaki y el takoyaki como los dos de Osaka, el okonomiyaki también como plato de Hiroshima y el Akashi-yaki (*tamagoyaki*) como el de Hyōgo. La oficina de turismo de Osaka llama al okonomiyaki, junto con el takoyaki, la comida del alma de los habitantes de Osaka, y señala lo que tienen en común: harina de trigo mezclada con dashi.
+
+<Figure
+  src={konamonoFlour}
+  alt="Un saco de harina de trigo con líneas que bajan hasta un okonomiyaki, una bandeja de takoyaki y una tabla de Akashi-yaki con dashi"
+  caption="Una sola harina, tres platos: okonomiyaki, takoyaki y Akashi-yaki. Ilustración."
+/>
+
+## De dónde viene
+
+Los relatos oficiales no coinciden, y discrepan de maneras que no pueden ser todas ciertas. Este sitio los enumera y no elige.
+
+**Okonomiyaki.**
+
+- **De un tentempié de un centavo de antes de la guerra.** La prefectura de Hiroshima dice que el plato empezó con el *issen yōshoku* ("comida occidental de una sen"), un tentempié infantil de antes de la guerra: una crepe fina de harina y agua untada con salsa Worcestershire. En la escasez de alimentos de la posguerra sirvió para alimentar a la gente, y hacia 1950 tomó el nombre de *okonomiyaki* —"a la plancha como te guste"— y añadió repollo y fideos chinos.
+- **De un dulce de la ceremonia del té.** La entrada de Osaka del ministerio de Agricultura dice que se cree que la raíz es el *funoyaki*, un dulce que se servía en las reuniones de té de Sen no Rikyū en el periodo Azuchi–Momoyama, y que se extendió entre la gente corriente a finales de Edo; a finales de la era Meiji apareció un tentempié llamado *yōshoku-yaki* —harina, repollo y salsa—, que los locales desarrollaron hasta convertirlo en okonomiyaki.
+- **De Tokio.** La oficina de turismo de Osaka da dos más: que el *monjayaki* de Tokio se convirtió en el *dondon-yaki* de los puestos callejeros, que se convirtió en el *issen yōshoku* con sabor a salsa de Kansai; o que surgió de un plato lúdico que los clientes cocinaban ellos mismos en la plancha.
+
+**Takoyaki.** El ministerio de Agricultura dice que se cree que deriva del *choboyaki*, un tentempié que se vendía en dulcerías y puestos de feria desde finales de Meiji hasta la era Taishō, con konjac, camarón seco o rábano encurtido en una masa con sabor a salsa de soja. Tras el inicio de la radiodifusión a finales de la era Taishō apareció el *rajio-yaki* ("plancha radio"), y a principios del periodo Shōwa los puestos de Osaka empezaron a usar pulpo. La oficina de turismo de Osaka añade que los locales de takoyaki se multiplicaron en la ciudad solo hacia 1955–64 (los años 30 de Shōwa): "la historia es sorprendentemente corta".
+
+**Akashi-yaki.** La ciudad de Akashi y el ministerio de Agricultura sugieren que empezó con las yemas de huevo sobrantes de la fabricación del *Akashi-dama*, un coral artificial, mezcladas con harina y pulpo local. Los registros de Akashi añaden que, como negocio, se dice que comenzó en un puesto callejero en 1919. La ciudad dice que hay varias teorías.
+
+## Por qué es como es
+
+**Mezclar o apilar.** Las dos entradas del ministerio de Agricultura explican la división básica del okonomiyaki. En Osaka, el repollo y otros ingredientes se mezclan con una masa de harina, dashi y huevo y se cocinan a la plancha; el ministerio señala que se dice que el 70% del resultado depende de cómo se mezcla y se coloca en la plancha, ya que mezclar en exceso saca el agua del repollo. En Hiroshima, un círculo fino de masa se cubre con repollo, brotes de soja, cebolleta, trocitos de tempura y cerdo, se tapa con más masa, se da la vuelta, se coloca sobre fideos fritos y un círculo fino de huevo, y se vuelve a dar la vuelta. Pero el ministerio también dice que los primeros okonomiyaki de Osaka eran principalmente *en capas*, y que la mezcla se extendió más tarde. "Osaka mezcla, Hiroshima apila" es el presente, no toda la historia.
+
+**Salsa.** La norma agrícola de Japón divide las salsas de tipo Worcestershire por su espesor en tres: *Worcester*, *chūnō* (media) y *nōkō* (espesa). Según el ministerio de Agricultura, el takoyaki adquirió su forma actual —salsa espesa, alga verde, escamas de bonito, una bandeja en forma de barca y un palillo— cuando la salsa espesa apareció tras la guerra. La oficina de turismo de Osaka dice que el estilo de salsa, mayonesa, alga y bonito vino del okonomiyaki. El okonomiyaki de Hiroshima usa una salsa espesa, dulce y a base de fruta. No pude encontrar una fuente primaria sobre la historia de la "salsa okonomi" en sí.
+
+**Dashi.** La oficina de turismo de Osaka subraya que tanto la masa del okonomiyaki como la del takoyaki se hacen con dashi, no con agua. El Akashi-yaki lleva esto más lejos: se moja en dashi en lugar de salsa.
+
+## Cuánto cuesta
+
+<DishPrices keys={['okonomiyaki', 'takoyaki']} />
+
+Las cifras de arriba se mantienen en la página de referencia de precios y se actualizan allí. Conviene conocer una estructura de precios. Tsukiji Gindaco, la cadena nacional de takoyaki, publica precios con impuestos incluidos distintos para la misma comida según dónde la comas: ocho takoyaki estándar cuestan ¥702 para llevar y ¥715 para comer en el local; ocho con cebolleta, queso y huevas de bacalao, o con huevo teriyaki, cuestan ¥810 y ¥825. La diferencia coincide con los dos tipos del impuesto sobre el consumo de Japón sobre el mismo precio base de ¥650. Sus paquetes familiares de 16 y 24 piezas (¥1,393 y ¥2,041) son solo para llevar.
+
+Aquí no se dan los precios de los famosos locales de Osaka, Hiroshima y Akashi: los que revisé o no los publican en línea o no dicen si incluyen impuestos.
+
+## Los linajes
+
+La tabla se mantiene en un solo lugar para que cada plato se describa en los mismos términos. Las filas sin enlace están en la lista pero aún no están escritas.
+
+<LineageTable dish="konamono" />
+
+## Dónde comerlo
+
+- **Osaka** — okonomiyaki y takoyaki. La oficina de turismo de Osaka dice que la mayoría de los locales de okonomiyaki de allí lo cocinan por ti en lugar de dejar que lo cocines tú, y que el takoyaki se vende en puestos para comerlo en la calle, dándole la vuelta con un pincho y sirviéndolo en una barquita de bambú.
+- **Hiroshima** — okonomiyaki en capas con fideos. Okonomimura, un edificio de la ciudad, tiene 23 locales que usan todos la misma marca de salsa, según la ciudad.
+- **Akashi** — unos 70 locales que sirven *tamagoyaki*, muchos en torno a la calle comercial Uonotana.
+
+Consulta las tarifas y los tiempos de viaje con la compañía antes de viajar.
+
+## El mismo nombre, un plato distinto
+
+La mejor fuente sobre cómo difieren los hábitos de comer entre ciudades es una encuesta, y es de una empresa: Otafuku, un fabricante de salsas, encuestó en línea en junio de 2023 a 1,010 personas de 20 a 69 años en Tokio, Osaka y Hiroshima. Léela teniendo eso en cuenta.
+
+- **Qué okonomiyaki.** Al pedirles que imaginaran un okonomiyaki, el 76% en Osaka pensó en el estilo de Kansai y el 76% en Hiroshima en el estilo de Hiroshima; en Tokio la respuesta más frecuente, un 38%, fue "ambos".
+- **Arroz.** Alrededor del 40% en Osaka lo come con arroz. Los investigadores de la prefectura de Hiroshima dicen que allí casi no se oye hablar de eso.
+- **Corte.** Cerca de la mitad de los encuestados de Tokio lo corta como una pizza; cerca de la mitad en Osaka y Hiroshima lo corta en cuadrados.
+- **Salsa.** Alrededor del 60% en Osaka y Hiroshima cubre toda la superficie; cerca de la mitad en Tokio deja huecos, y el 40% de los encuestados de Tokio usa salsa media (*chūnō*).
+- **Cuándo.** Más gente en Tokio lo come como tentempié o con bebidas que en Osaka o Hiroshima.
+- **El nombre.** "Akashi-yaki" es el nombre a nivel nacional. En Akashi se llama *tamagoyaki*; el ministerio de Agricultura dice que el otro nombre se difundió después de que el personal de la ciudad lo usara para promocionar el plato hacia 1988.
+
+## Lo que la gente entiende mal
+
+- **"El estilo de Osaka es el original."** Las fuentes no coinciden en un original. Los primeros okonomiyaki de la propia Osaka eran en capas, según el ministerio de Agricultura.
+- **"El takoyaki es una tradición antigua."** El pulpo en la masa data de principios del periodo Shōwa, y los locales se extendieron desde mediados de la década de 1950.
+- **"El Akashi-yaki es takoyaki sin salsa."** Tiene más huevo, usa almidón de trigo, se cocina en cobre y se moja en dashi.
+- **"Te lo cocinas tú."** En Osaka, la oficina de turismo dice que la mayoría de los locales lo cocinan por ti.
+- **"Comer en el local y llevar cuestan lo mismo."** En Gindaco no, por unos pocos yenes, debido al tipo del impuesto.

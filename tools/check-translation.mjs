@@ -81,7 +81,7 @@ for (const root of roots) {
       b = yaml.load(en.fm);
       if (a) {
         const ka = Object.keys(a).sort(), kb = Object.keys(b).sort();
-        const miss = kb.filter((k) => !ka.includes(k)), extra = ka.filter((k) => !kb.includes(k));
+        const miss = kb.filter((k) => !ka.includes(k)), extra = ka.filter((k) => !kb.includes(k) && k !== 'translationStatus'); /* translationStatus は翻訳側にだけ付く（原文は省略可） */
         if (miss.length) errs.push(`キー不足: ${miss.join(', ')}`);
         if (extra.length) errs.push(`原文に無いキー: ${extra.join(', ')}`);
         for (const k of kb) if (!TRANSLATED.has(k) && k in a && !same(a[k], b[k])) errs.push(`訳さない値が変わっている: ${k}`);
