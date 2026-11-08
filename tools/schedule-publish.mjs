@@ -87,6 +87,19 @@ if (plan.initial.column === 'all') {
   }
 }
 
+// 翻訳版（src/content/<lang>/...）の pubDate も英語版と同じ日にそろえる。
+// 翻訳が英語より先に出たり、遅れて出たりしないようにするため（出す／出さないの判定は slug の公開計画で共通）
+const contentRoot = path.join(root, 'src/content');
+const enRoot = path.join(contentRoot, 'en') + path.sep;
+for (const lang of fs.readdirSync(contentRoot)) {
+  if (lang === 'en' || !fs.statSync(path.join(contentRoot, lang)).isDirectory()) continue;
+  for (const [file, date] of [...dates]) {
+    if (!file.startsWith(enRoot)) continue;
+    const other = path.join(contentRoot, lang, file.slice(enRoot.length));
+    if (fs.existsSync(other)) dates.set(other, date);
+  }
+}
+
 let changed = 0;
 for (const [file, date] of dates) {
   const text = fs.readFileSync(file, 'utf8');

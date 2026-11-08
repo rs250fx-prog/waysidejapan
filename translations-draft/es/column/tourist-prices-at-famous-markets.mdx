@@ -1,0 +1,117 @@
+---
+title: "Los famosos mercados de comida de Japón y el precio que pagaría de verdad un local"
+description: 'Kuromon, Nishiki y Omicho venden cuencos de marisco a ¥4,000–5,000. Las estadísticas oficiales muestran cuánto cuesta lo mismo en otros sitios y dónde está el límite.'
+translationKey: tourist-prices-at-famous-markets
+translationStatus: machine
+category: column
+topic: buying
+basis: researched
+areas: [osaka, kyoto, kanazawa]
+pubDate: 2026-10-21
+updatedDate: 2026-10-21
+draft: true
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/column/market-prices-hero.webp
+heroAlt: 'Ilustración de un mercado de comida cubierto, lleno de visitantes ante los puestos de cuencos de marisco, mientras una persona gira hacia una calle tranquila en dirección a un pequeño comedor'
+pricesCheckedOn: 2026-10-04
+faq:
+  - q: ¿Son estos mercados una trampa para turistas?
+    a: No en el sentido legal. Los precios están a la vista y nadie es engañado. Lo que importa es el tamaño de la diferencia entre esos precios y lo que cuesta el mismo plato a unas pocas calles de distancia.
+  - q: ¿Cuál es un precio normal para un cuenco de marisco en Japón?
+    a: No hay una cifra oficial para el kaisendon en concreto, pero la encuesta oficial de precios sitúa un cuenco de ramen en ¥746 y dos piezas de sushi sobre cinta transportadora en ¥221 en agosto de 2026. Un buen cuenco de marisco queda por encima de ambos, y por debajo de ¥2,000 en la mayor parte del país.
+  - q: ¿Debo evitar estos mercados?
+    a: No. Recórrelos y come una calle más atrás. Aún queda parte del comercio antiguo que los hizo dignos de una visita.
+sources:
+  - label: '総務省統計局 小売物価統計調査（ラーメン外食1杯の全国平均、2026年8月＝746円）'
+    url: 'https://www.jpmarket-conditions.com/2102/'
+    published: '2026-08'
+  - label: '総務省統計局 小売物価統計調査（回転ずし にぎり まぐろ2貫、2026年8月＝221円）'
+    url: 'https://www.jpmarket-conditions.com/2123/'
+    published: '2026-08'
+  - label: '小売物価統計調査 主要品目の都市別小売価格（e-Stat・一次情報）'
+    url: 'https://www.e-stat.go.jp/stat-search/database?layout=dataset&toukei=00200571&statdisp_id=0003421913'
+  - label: 'イチオシ — 錦市場の観光地価格'
+    url: 'https://ichioshi.allabout.co.jp/articles/news/71946'
+  - label: 'ちょこっと、つぶやいてよろしいでしょうか。 — 黒門市場の価格'
+    url: 'https://ameblo.jp/nazono-u-chan/entry-12886898691.html'
+  - label: '岡田香奈の男前な1日 — 近江町市場の海鮮丼'
+    url: 'https://ameblo.jp/kanakana019410/entry-12883315568.html'
+---
+
+import Price from '../../../components/Price.astro';
+import ReferencePrice from '../../../components/ReferencePrice.astro';
+import FromExperience from '../../../components/FromExperience.astro';
+import Figure from '../../../components/Figure.astro';
+import marketBowls from '../../../assets/column/market-prices-bowls.webp';
+
+Tres mercados aparecen en casi todos los itinerarios de quien viaja por primera vez: Kuromon en Osaka, Nishiki en Kioto y Omicho en Kanazawa. Los tres son mercados reales, en activo y con una larga historia. Los tres tienen ahora una segunda capa construida encima: puestos que existen para los visitantes y cuyos precios se ajustan a ellos.
+
+Esto no es un fraude. Los precios están a la vista, nadie es engañado y los puestos tienen derecho a cobrar lo que el flujo de gente soporte. La pregunta útil es más concreta: **¿cuánto por encima del precio japonés normal están, y dónde está lo normal?**
+
+Esa segunda mitad es la que las guías en inglés nunca responden. Te dirán que un mercado es "caro", pero ¿caro comparado con qué?
+
+## El límite está en ¥2,000
+
+<FromExperience on="2026-10">
+  <p>
+    Este es el número que le daría a cualquier amigo japonés. **Por encima de ¥2,000 por un almuerzo, la gente normal
+    duda**, incluso en un sitio bueno, incluso en un sitio famoso. No es que nadie gaste más; es que gastar más pasa a
+    ser una decisión y deja de ser lo habitual.
+  </p>
+  <p>
+    En Kuromon y Nishiki, en octubre de 2026, los cuencos de marisco cuestan ¥4,000–5,000. Eso no es un sobreprecio
+    sobre el precio normal. Es otra categoría de compra, vendida a personas que no tienen manera de saberlo.
+  </p>
+</FromExperience>
+
+<ReferencePrice
+  item="Cuenco de marisco (kaisendon)"
+  touristJpy={4500}
+  touristNote="Kuromon y Nishiki, visto en octubre de 2026"
+  referenceJpy={2000}
+  referenceNote="El punto en el que un cliente japonés se detiene a pensarlo"
+/>
+
+## Lo que dicen las cifras oficiales
+
+No hay una estadística oficial sobre los cuencos de marisco. Sí las hay sobre las cosas con las que un visitante puede compararse, y la Oficina de Estadística las publica cada mes.
+
+| Producto | Promedio nacional | A fecha de |
+| --- | --- | --- |
+| Ramen de salsa de soja, comiendo fuera, un cuenco | <Price jpy={746} /> | agosto de 2026 |
+| Sushi sobre cinta transportadora, atún, dos piezas | <Price jpy={221} /> | agosto de 2026 |
+
+Diez piezas de sushi sobre cinta transportadora salen por unos <Price jpy={1105} />. Un cuenco de ramen, la segunda comida más satisfactoria que dicen haber probado los visitantes en Japón, cuesta <Price jpy={746} />.
+
+Frente a eso, **un cuenco de marisco de ¥4,500 equivale a seis de ramen.** El pescado es mejor que el de un cuenco de ¥1,000. No es seis veces mejor.
+
+<Figure
+  src={marketBowls}
+  alt="Dos cuencos de arroz con marisco sobre una barra, con una pequeña balanza entre ellos: un cuenco de mercado colmado de cangrejo, erizo de mar y huevas de salmón, y un cuenco sencillo y cotidiano de atún y salmón"
+  caption="El cuenco del mercado y el cuenco de todos los días. Más cosas encima, no una comida seis veces mejor. Ilustración."
+/>
+
+## Por qué existe la diferencia
+
+Tres razones, ninguna conspirativa.
+
+**Sin precio de referencia.** Un visitante que come un cuenco de marisco por primera vez no tiene idea de lo que cuesta normalmente. Sin referencia, cualquier cifra parece plausible. Ese es todo el mecanismo, y por eso existe este artículo.
+
+**Una visita, no cincuenta.** Un restaurante de barrio sobrevive gracias a quienes vuelven. Un puesto en la galería de un mercado famoso no necesita que vuelvas.
+
+**Platos sin versión estándar.** El curry udon de wagyu no es un plato que pida la mayoría de los japoneses, así que no hay un precio conocido con el que compararlo. Las combinaciones inventadas tienen el mayor margen para fijar precios.
+
+## Qué hacer en su lugar
+
+No se trata de "evitar estos mercados". Recórrelos: parte del comercio antiguo sigue ahí, y Nishiki todavía vende ingredientes a las cocinas de Kioto. Pero:
+
+- **Come una calle más atrás.** Un menú del día en un restaurante normal detrás de la galería costará una fracción y, la mayoría de las veces, será mejor.
+- **Usa ¥2,000 como tu propio límite.** Por encima, pregúntate qué obtienes que una versión de ¥1,500 no te daría.
+- **Desconfía de un plato que no has oído nombrar nunca.** Un ingrediente famoso en un formato desconocido es el formato con más margen de precio.
+- **Compara en la planta de alimentación de unos grandes almacenes.** La misma ciudad, el mismo pescado, con precios fijados para gente que compra allí cada semana.
+
+## Cómo está hecho este artículo
+
+Los precios de los mercados proceden de las publicaciones que figuran al final y de lo que vi yo mismo en octubre de 2026, con la indicación de dónde se aplica cada uno. Los promedios nacionales proceden de la encuesta oficial de precios minoristas. **Los precios de los mercados cambian y los puestos difieren entre sí dentro de la misma galería**: toma las cifras como un orden de magnitud y no como una carta.

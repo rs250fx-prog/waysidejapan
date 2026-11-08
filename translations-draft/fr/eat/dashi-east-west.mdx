@@ -1,0 +1,134 @@
+---
+title: "Kombu dans le Kansai, bonite dans le Kantō : le partage est-ouest du dashi et ses deux explications"
+description: "Le Kansai fonde son bouillon sur le kombu, le Kantō sur la bonite séchée. Les deux explications, commerce et eau, leurs limites, et les dépenses des ménages."
+translationKey: dashi-east-west
+translationStatus: machine
+category: eat
+kind: lineage
+dish: dashi
+lineage: east-west
+basis: researched
+areas: [kansai, kanto]
+updatedDate: 2026-11-27
+pubDate: 2026-11-27
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/dashi-east-west-hero.webp
+heroAlt: "Illustration de deux bols d’udon côte à côte, un bouillon pâle de kombu à gauche et un bouillon foncé de sauce de soja et de bonite à droite, avec derrière eux une carte du Japon colorée à l’ouest et à l’est"
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: "Pourquoi le Kansai utilise-t-il le kombu et le Kantō la bonite ?"
+    a: "La Bibliothèque nationale de la Diète avance deux explications principales. Le meilleur kombu expédié de Hokkaido arrivait d’abord à Osaka et s’y vendait, si bien qu’Edo recevait le reste. Et l’eau plus douce du Kansai extrait plus facilement la saveur du kombu, si bien que les cuisiniers du Kantō utilisaient la bonite pour obtenir un bouillon fort."
+  - q: "L’explication par l’eau est-elle démontrée ?"
+    a: "Pas par les sources utilisées ici. Une étude présentée à un congrès en 2004 a constaté que le type d’eau changeait la quantité de glutamate extraite du kombu, mais son résumé ne montre pas qu’une eau plus dure en donne moins, et elle ne prétend pas expliquer le partage régional."
+  - q: "Pourquoi le bouillon d’udon du Kansai est-il pâle et celui de Tokyo foncé ?"
+    a: "Surtout à cause de la sauce de soja. Le Kansai utilise surtout la sauce claire usukuchi, qui garde la couleur des ingrédients, et le Kantō la foncée koikuchi. Un restaurateur de Kyoto interrogé par le site touristique de la ville ajoute qu’une bonite abondante appelle une sauce de soja foncée et parfumée pour couvrir son odeur de poisson."
+sources:
+  - label: '国立国会図書館 本の万華鏡 第17回 第2章「だし」の誕生と発達'
+    url: 'https://www.ndl.go.jp/kaleido/entry/17/2.html'
+  - label: '農林水産省 にっぽん伝統食図鑑「昆布巻き」'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/kombumaki.html'
+  - label: '農林水産省 にっぽん伝統食図鑑「節類」'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/bunrui/fushirui.html'
+  - label: '農林水産省 うちの郷土料理「きつねうどん」大阪府'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_17_osaka.html'
+  - label: '農林水産省 冊子「和食」英語版'
+    url: 'https://www.maff.go.jp/j/shokusan/export/e_info/attach/pdf/koho_sizai-1.pdf'
+  - label: '農林水産省「こいくち醤油、うすくち醤油について」'
+    url: 'https://www.maff.go.jp/j/heya/kodomo_sodan/0406/05.html'
+  - label: '京都観光Naviぷらす「出汁」（平八茶屋への取材）'
+    url: 'https://plus.kyoto.travel/entry/food-culture-dashi/'
+    published: '2021'
+  - label: '大阪観光局 OSAKA-INFO「だし」'
+    url: 'https://osaka-info.jp/osaka/food/gastronomy-dashi/'
+  - label: 'うま味インフォメーションセンター「昆布」'
+    url: 'https://www.umamiinfo.jp/richfood/foodstuff/kelp.html'
+  - label: 'うま味インフォメーションセンター「かつお節」'
+    url: 'https://www.umamiinfo.jp/richfood/foodstuff/katsuobushi.html'
+  - label: '日本調理科学会 平成16年度大会 研究発表要旨「硬度の異なる水が昆布だしの性質に与える影響」'
+    url: 'https://www.jstage.jst.go.jp/article/ajscs/16/0/16_0_123/_article/-char/ja/'
+    published: '2004'
+  - label: 'キッコーマン「しょうゆの地域特性」（企業サイト）'
+    url: 'https://www.kikkoman.co.jp/enjoys/soysaucemuseum/area.html'
+  - label: '総務省統計局 家計調査 品目別ランキング 乾物・海藻（こんぶ、2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/zuhyou/rank06.xlsx'
+  - label: '総務省統計局 家計調査 品目別ランキング 魚介類（かつお節・削り節、2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/zuhyou/rank02.xlsx'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import kombuBonito from '../../../assets/eat/dashi-east-west-kombu-bonito.webp';
+
+Le fait le plus répété sur le bouillon japonais est que l’ouest utilise l’algue et l’est la bonite. Comme tendance, cela tient : la Bibliothèque nationale de la Diète le formule en ces termes, et un bol d’udon à Osaka est pâle là où celui de Tokyo est foncé. Mais les raisons que l’on donne d’ordinaire sont moins sûres qu’elles n’en ont l’air, et les dépenses des ménages aujourd’hui ne se partagent pas nettement le long de cette ligne. Cette page expose la tendance, les deux explications et jusqu’où va la preuve pour chacune.
+
+Pour le dashi en général — umami, ingrédients, questions végétariennes —, partez de la présentation du dashi.
+
+## D’où il vient
+
+L’essai de la Bibliothèque nationale de la Diète sur le dashi dit que le Kantō a eu tendance à utiliser surtout le katsuobushi et le Kansai surtout le kombu, et que deux raisons sont principalement avancées.
+
+**1. Le commerce.** Le kombu venait de Hokkaido par la mer. À la fin du XVIIe siècle, le marchand d’Edo Kawamura Zuiken a établi la route de l’ouest de Sakata, autour de Shimonoseki, jusqu’à Osaka et Edo, et le kombu de Hokkaido est arrivé à Kyoto et à Osaka, puis à Edo. Le meilleur kombu expédié à Osaka s’y vendait d’abord, dit la bibliothèque, et ce qui restait continuait vers Edo ; le bouillon de kombu ne s’est donc pas développé dans le Kantō. Cette « route du kombu », construite de l’époque d’Edo moyenne jusqu’à la fin du shogunat, allait jusqu’à Kyushu et aux Ryūkyū. Le ministère de l’Agriculture donne l’étape antérieure : à la période Muromachi, le kombu allait de Hokkaido à Kyoto et à Osaka par Tsuruga, et, depuis l’époque d’Edo, par les navires *kitamae* autour de l’ouest. Sa page sur le kitsune udon d’Osaka dit que, à mesure que la route *kitamae* se développait, le kombu, la farine et le sel se sont rassemblés à Osaka.
+
+**2. L’eau.** La seconde raison de la bibliothèque : l’eau douce du Kansai extrait facilement le bouillon de kombu, l’eau plus dure du Kantō non ; les cuisiniers du Kantō ont donc choisi la bonite pour obtenir un bouillon fort. La brochure du ministère de l’Agriculture dit, pour le Japon dans son ensemble, que l’eau douce extrait efficacement la saveur du kombu et du katsuobushi.
+
+La bibliothèque conclut que le goût de base de chaque région est considéré comme fixé à l’époque d’Edo, quand le transport en grande quantité a commencé.
+
+## Quelle est la force de l’explication par l’eau ?
+
+Plus faible qu’on ne la raconte d’ordinaire. Une étude présentée à la Société japonaise de science culinaire en 2004 a extrait du kombu Hidaka dans de l’eau du robinet et dans de l’eau très douce, douce et dure, et constaté que les dégustateurs jugeaient l’umami différemment et que le glutamate du bouillon variait selon l’eau. Mais son résumé ne montre pas qu’une eau plus dure donne *moins* de glutamate, et elle ne prétend pas expliquer le partage est-ouest. L’énoncé honnête est que l’eau peut influer sur la façon dont l’umami du kombu s’extrait ; qu’elle ait décidé de la différence régionale est une explication, pas un constat.
+
+## Ce qui fait le bouillon de chaque côté
+
+**Kansai.** La recette du ministère de l’Agriculture pour le kitsune udon d’Osaka : du ma-kombu avec du maquereau et d’autres copeaux de poisson, ou des sardines séchées ; faire tremper le kombu 40 minutes, porter à ébullition, ajouter les copeaux pendant deux ou trois minutes, assaisonner de sauce de soja claire. Le plat lui-même aurait commencé en 1893 chez Matsubaya, à Senba, quand un client posa un côté de tofu frit sur son udon nature. L’office du tourisme d’Osaka nomme le kombu de Hokkaido et le katsuobushi de Tosa comme la base du bouillon d’Osaka, et ajoute que les anchois séchés bon marché de la baie d’Osaka et de la mer intérieure ont soutenu la culture du dashi de la ville. Le Centre d’information sur l’umami dit que le ma-kombu est utilisé surtout dans le Kansai autour d’Osaka, et que le bouillon d'*arabushi* (bonite avant l’affinage à la moisissure) est aussi apprécié dans le Kansai.
+
+**Kyoto.** Un restaurateur de Kyoto interrogé par le site touristique de la ville en 2021 l’explique comme une chaîne : l’eau de Kyoto est douce, donc le kombu mène et la bonite ne sert que pour l’arôme, assaisonné de sel ou de sauce de soja claire — le bouillon reste donc pâle. Le kombu, dit-il, s’extrait au mieux vers 60°C pendant une heure, et les variétés diffèrent.
+
+**Kantō.** Sur la même chaîne : dans l’eau dure, le kombu donne moins, donc on utilise plus de bonite ; plus de bonite laisse une note de poisson, donc on utilise une sauce de soja parfumée — et le bouillon fonce. C’est l’explication d’un restaurateur. Je n’ai pas trouvé de recette officielle de Tokyo pour le bouillon de soba ou d’udon ; je ne donne donc aucune proportion. Les deux grandes zones productrices de katsuobushi sont Kagoshima et Shizuoka, pas Tokyo.
+
+**La sauce de soja.** Le ministère de l’Agriculture dit que la sauce foncée *koikuchi* représente environ 85 % de la production et la claire *usukuchi* environ 11 % ; la claire est utilisée surtout dans le Kansai et garde la couleur des ingrédients, tandis que la foncée a un arôme plus fort, réputé couvrir l’odeur de poisson. Le récit de Kikkoman ajoute que le Kantō est devenu la grande région de la sauce de soja foncée à partir de l’époque d’Edo moyenne (Noda, Chōshi), et que le soba, le tempura, l’anguille et les sushis nigiri auraient grandi avec elle. Je n’ai trouvé aucune source officielle disant que la sauce foncée a été choisie pour compenser un bouillon faible ; je ne le dis donc pas.
+
+<Figure
+  src={kombuBonito}
+  alt="Des feuilles de kombu séché dans un plateau de bambou à gauche et un tas de copeaux de bonite à droite, à côté d’un bloc de katsuobushi sur une boîte à raboter en bois, avec une flèche entre eux"
+  caption="Les deux têtes de file : le kombu pour l’ouest, la bonite pour l’est. Une tendance, pas une frontière. Illustration."
+/>
+
+## Ce que montrent les dépenses des ménages
+
+L’enquête gouvernementale sur les ménages (moyenne 2023–25) consigne ce que les ménages dépensent chaque année en kombu et en katsuobushi. Le fichier ne donne d’autre unité que « montant » ; les chiffres sont vraisemblablement des yens par ménage.
+
+- **Kombu**, moyenne nationale 727 : Toyama 1,587, Fukui 1,285, Aomori 1,174, Yamagata 1,112, Sakai 1,044, Kyoto 1,034. Tokyo centre 765, Osaka 761.
+- **Katsuobushi et copeaux**, moyenne nationale 859 : Naha 2,033, Kōchi 1,346, Hamamatsu 1,120, Gifu 1,107, Shizuoka 1,061. Tokyo centre 913, Osaka 848.
+
+Les plus gros acheteurs de kombu se trouvent donc sur l’ancienne côte *kitamae* et dans le Tōhoku, avec Kyoto et Sakai aussi en haut ; parmi les plus gros acheteurs de bonite figurent des zones productrices. Tokyo et Osaka dépensent presque autant en kombu, et Tokyo un peu plus seulement en bonite. Ce sont des achats pour la maison, pas des bouillons de restaurant, et l’enquête n’en donne pas les raisons ; je n’en tire donc aucune cause — seulement que la ligne est-ouest ne se voit pas dans ce qu’achètent les ménages des deux grandes villes.
+
+<DishPrices keys={['udon', 'miso-soup']} />
+
+Ce sont les prix de l’udon et de la soupe miso tirés de la page de référence des prix.
+
+## Tous les dashi du Japon ne sont pas ainsi
+
+- **Sanuki (Kagawa)** utilise l’anchois séché, l'*iriko*, ou la bonite, selon la boutique.
+- **Gotō et Hakata** utilisent le poisson volant, l'*ago*.
+
+Voir la page sur l’iriko et l’ago.
+
+## Le goûter chez lui, et s’y rendre
+
+Le kitsune udon d’Osaka et la cuisine de Kyoto pour un bouillon mené par le kombu ; le soba et l’udon de Tokyo pour la bonite et la sauce de soja foncée. Vérifiez les tarifs et les durées de trajet auprès de l’exploitant avant de partir.
+
+## Le bouillon du Kansai hors du Kansai
+
+- **Les ingrédients viennent d’ailleurs des deux côtés.** Plus de 90 % du kombu vient de Hokkaido ; la plus grande partie du katsuobushi, de Kagoshima et de Shizuoka. Le bouillon d’Osaka s’est construit sur du kombu acheminé, celui de Tokyo sur de la bonite acheminée.
+- **La différence est un style, pas une question de fraîcheur.** La bibliothèque traite le partage comme un goût régional fixé à l’époque d’Edo.
+- **Je n’ai pas pu comparer les bouillons.** Aucune source officielle ne compare un bouillon d’udon de style Kansai à Tokyo avec un bouillon d’Osaka ; cette page ne prétend donc rien dans un sens ni dans l’autre.
+
+## Ce que l’on croit à tort
+
+- **« Le Kantō n’utilise pas de kombu. »** C’est une tendance, et le classique premier dashi utilise les deux.
+- **« L’eau dure le prouve. »** C’est l’une des deux explications ; l’étude citée ici n’en montre pas le sens.
+- **« Tokyo achète de la bonite, Osaka du kombu. »** Dans l’enquête sur les ménages, elles dépensent presque autant pour chacun.
+- **« La sauce de soja foncée sert à cacher un bouillon faible. »** Aucune source officielle ne le dit.

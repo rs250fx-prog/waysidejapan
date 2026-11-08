@@ -1,0 +1,117 @@
+---
+title: "Les célèbres marchés gastronomiques du Japon, et le prix qu’un habitant paierait vraiment"
+description: "Kuromon, Nishiki et Omicho vendent des bols de fruits de mer à ¥4,000–5,000. Statistiques officielles et résident montrent le prix ailleurs, et où se situe la limite."
+translationKey: tourist-prices-at-famous-markets
+translationStatus: reviewed
+category: column
+topic: buying
+basis: researched
+areas: [osaka, kyoto, kanazawa]
+pubDate: 2026-10-21
+updatedDate: 2026-10-21
+draft: true
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/column/market-prices-hero.webp
+heroAlt: "Illustration d’un marché couvert bondé de visiteurs devant des stands de bols de fruits de mer, tandis qu’une personne s’engage dans une petite rue calme vers un modeste restaurant"
+pricesCheckedOn: 2026-10-04
+faq:
+  - q: "Ces marchés sont-ils des pièges à touristes ?"
+    a: "Pas au sens juridique. Les prix sont affichés et personne n’est trompé. Ce qui compte, c’est l’écart entre ces prix et ce que coûte le même plat à quelques rues de là."
+  - q: "Quel est le prix normal d’un bol de fruits de mer au Japon ?"
+    a: "Il n’existe pas de chiffre officiel pour le kaisendon en particulier, mais l’enquête officielle sur les prix donne ¥746 pour un bol de ramen et ¥221 pour deux pièces de sushi sur tapis roulant en août 2026. Un bon bol de fruits de mer se situe au-dessus des deux, et sous ¥2,000 dans la majeure partie du pays."
+  - q: "Faut-il éviter ces marchés ?"
+    a: "Non. Traversez-les, et mangez une rue plus loin. Une partie du commerce d’autrefois, qui les rend dignes d’une visite, y est encore."
+sources:
+  - label: '総務省統計局 小売物価統計調査（ラーメン外食1杯の全国平均、2026年8月＝746円）'
+    url: 'https://www.jpmarket-conditions.com/2102/'
+    published: '2026-08'
+  - label: '総務省統計局 小売物価統計調査（回転ずし にぎり まぐろ2貫、2026年8月＝221円）'
+    url: 'https://www.jpmarket-conditions.com/2123/'
+    published: '2026-08'
+  - label: '小売物価統計調査 主要品目の都市別小売価格（e-Stat・一次情報）'
+    url: 'https://www.e-stat.go.jp/stat-search/database?layout=dataset&toukei=00200571&statdisp_id=0003421913'
+  - label: 'イチオシ — 錦市場の観光地価格'
+    url: 'https://ichioshi.allabout.co.jp/articles/news/71946'
+  - label: 'ちょこっと、つぶやいてよろしいでしょうか。 — 黒門市場の価格'
+    url: 'https://ameblo.jp/nazono-u-chan/entry-12886898691.html'
+  - label: '岡田香奈の男前な1日 — 近江町市場の海鮮丼'
+    url: 'https://ameblo.jp/kanakana019410/entry-12883315568.html'
+---
+
+import Price from '../../../components/Price.astro';
+import ReferencePrice from '../../../components/ReferencePrice.astro';
+import FromExperience from '../../../components/FromExperience.astro';
+import Figure from '../../../components/Figure.astro';
+import marketBowls from '../../../assets/column/market-prices-bowls.webp';
+
+Trois marchés figurent sur presque tous les itinéraires de première visite : Kuromon à Osaka, Nishiki à Kyoto, Omicho à Kanazawa. Ce sont trois vrais marchés en activité, à l’histoire ancienne. Tous trois ont aujourd’hui une seconde couche greffée dessus : des stands qui existent pour les visiteurs, et dont les prix sont à l’avenant.
+
+Il ne s’agit pas de fraude. Les prix sont affichés, personne n’est trompé, et les stands sont dans leur droit en demandant ce que le passage peut supporter. La question utile est plus étroite : **de combien dépassent-ils le prix japonais normal, et où se trouve la normale ?**
+
+Cette seconde moitié est celle à laquelle les guides en anglais ne répondent jamais. Ils vous diront qu’un marché est « cher », mais cher par rapport à quoi ?
+
+## La limite est à ¥2,000
+
+<FromExperience on="2026-10">
+  <p>
+    Voici le chiffre que je donnerais à n’importe quel ami japonais. **Au-dessus de ¥2,000 pour un déjeuner, les gens
+    ordinaires hésitent**, même dans un bon endroit, même dans un endroit célèbre. Ce n’est pas que personne ne dépense
+    davantage ; c’est que dépenser davantage devient une décision plutôt qu’un réflexe.
+  </p>
+  <p>
+    À Kuromon et à Nishiki en octobre 2026, les bols de fruits de mer valent ¥4,000–5,000. Ce n’est pas une majoration
+    du prix normal. C’est une autre catégorie d’achat, vendue à des gens qui n’ont aucun moyen de le savoir.
+  </p>
+</FromExperience>
+
+<ReferencePrice
+  item="Bol de fruits de mer (kaisendon)"
+  touristJpy={4500}
+  touristNote="Kuromon et Nishiki, relevé en octobre 2026"
+  referenceJpy={2000}
+  referenceNote="Le seuil à partir duquel un client japonais s’arrête et réfléchit"
+/>
+
+## Ce que disent les chiffres officiels
+
+Il n’existe pas de statistique officielle pour les bols de fruits de mer. Il en existe pour les choses auxquelles un visiteur peut se référer, et le Bureau des statistiques les publie chaque mois.
+
+| Produit | Moyenne nationale | En date de |
+| --- | --- | --- |
+| Ramen à la sauce de soja, au restaurant, un bol | <Price jpy={746} /> | août 2026 |
+| Sushis sur tapis roulant, thon, deux pièces | <Price jpy={221} /> | août 2026 |
+
+Dix pièces de sushi sur tapis roulant reviennent à environ <Price jpy={1105} />. Un bol de ramen, deuxième repas le plus satisfaisant que les visiteurs disent avoir mangé au Japon, coûte <Price jpy={746} />.
+
+Face à cela, **un bol de fruits de mer à ¥4,500 vaut six ramen.** Le poisson est meilleur que dans un bol à ¥1,000. Il n’est pas six fois meilleur.
+
+<Figure
+  src={marketBowls}
+  alt="Deux bols de riz aux fruits de mer sur un comptoir, avec une petite balance entre eux : un bol de marché garni de crabe, d’oursin et d’œufs de saumon, et un simple bol du quotidien au thon et au saumon"
+  caption="Le bol du marché et le bol de tous les jours. Plus de garniture, pas un repas six fois meilleur. Illustration."
+/>
+
+## Pourquoi cet écart existe
+
+Trois raisons, dont aucune n’a rien d’un complot.
+
+**Pas de prix de référence.** Un visiteur qui mange un bol de fruits de mer pour la première fois ne sait pas ce que cela coûte d’ordinaire. Sans référence, tout chiffre paraît plausible. C’est tout le mécanisme, et c’est la raison d’être de cet article.
+
+**Une visite, pas cinquante.** Un restaurant de quartier vit des clients qui reviennent. Un stand dans la galerie d’un marché célèbre n’a pas besoin que vous reveniez.
+
+**Des plats sans version standard.** Le udon au curry de wagyu n’est pas un plat que la plupart des Japonais commandent ; il n’y a donc pas de prix familier auquel le comparer. Les combinaisons inventées offrent la plus grande latitude de prix.
+
+## Que faire à la place
+
+Pas « éviter ces marchés ». Traversez-les : une partie du commerce d’autrefois y est encore, et Nishiki fournit toujours en ingrédients les cuisines de Kyoto. Mais :
+
+- **Mangez une rue plus loin.** Un menu dans un restaurant ordinaire derrière la galerie coûtera une fraction du prix et, le plus souvent, sera meilleur.
+- **Prenez ¥2,000 comme votre propre limite.** Au-dessus, demandez-vous ce que vous obtenez qu’une version à ¥1,500 ne vous donnerait pas.
+- **Méfiez-vous d’un plat dont vous n’avez jamais entendu parler.** Un ingrédient célèbre dans un format inconnu est le format qui offre le plus de marge de prix.
+- **Comparez avec le rayon alimentaire d’un grand magasin.** Même ville, même poisson, des prix fixés pour des gens qui y font leurs courses chaque semaine.
+
+## Comment cet article est construit
+
+Les prix des marchés proviennent des publications citées en fin d’article et de ce que j’ai vu moi-même en octobre 2026, signalé là où cela s’applique. Les moyennes nationales viennent de l’enquête officielle sur les prix de détail. **Les prix des marchés bougent, et les stands diffèrent entre eux dans une même galerie** : prenez les chiffres comme un ordre de grandeur plutôt que comme un menu.

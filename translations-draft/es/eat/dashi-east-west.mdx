@@ -1,0 +1,134 @@
+---
+title: 'Kombu en Kansai, bonito en Kantō: la división este-oeste del dashi y las dos explicaciones'
+description: 'Kansai basa su caldo en el kombu y Kantō en el bonito seco. Las dos explicaciones, comercio y agua, hasta dónde llegan las pruebas y qué muestra el gasto de los hogares.'
+translationKey: dashi-east-west
+translationStatus: machine
+category: eat
+kind: lineage
+dish: dashi
+lineage: east-west
+basis: researched
+areas: [kansai, kanto]
+updatedDate: 2026-11-27
+pubDate: 2026-11-27
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/dashi-east-west-hero.webp
+heroAlt: 'Ilustración de dos cuencos de udon uno junto al otro, un caldo claro de kombu a la izquierda y un caldo oscuro de soja y bonito a la derecha, con un mapa de Japón detrás coloreado en oeste y este'
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: ¿Por qué Kansai usa kombu y Kantō bonito?
+    a: La Biblioteca Nacional de la Dieta da dos explicaciones principales. El mejor kombu enviado desde Hokkaido llegaba primero a Osaka y se vendía allí, así que a Edo llegaba lo que sobraba. Y el agua más blanda de Kansai extrae con más facilidad el sabor del kombu, por lo que los cocineros de Kantō usaban bonito para un caldo intenso.
+  - q: ¿Está probada la explicación del agua?
+    a: No por las fuentes usadas aquí. Un estudio presentado en un congreso en 2004 halló que el tipo de agua cambiaba cuánto glutamato salía del kombu, pero su resumen no muestra que el agua más dura dé menos, y no pretende explicar la división regional.
+  - q: ¿Por qué el caldo de udon de Kansai es claro y el de Tokio oscuro?
+    a: Sobre todo por la salsa de soja. Kansai usa principalmente soja clara usukuchi, que conserva el color de los ingredientes, y Kantō soja oscura koikuchi. Un restaurador de Kioto entrevistado por el sitio de turismo de la ciudad añade que el bonito abundante pide una soja oscura aromática para tapar su sabor a pescado.
+sources:
+  - label: '国立国会図書館 本の万華鏡 第17回 第2章「だし」の誕生と発達'
+    url: 'https://www.ndl.go.jp/kaleido/entry/17/2.html'
+  - label: '農林水産省 にっぽん伝統食図鑑「昆布巻き」'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/kombumaki.html'
+  - label: '農林水産省 にっぽん伝統食図鑑「節類」'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/bunrui/fushirui.html'
+  - label: '農林水産省 うちの郷土料理「きつねうどん」大阪府'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_17_osaka.html'
+  - label: '農林水産省 冊子「和食」英語版'
+    url: 'https://www.maff.go.jp/j/shokusan/export/e_info/attach/pdf/koho_sizai-1.pdf'
+  - label: '農林水産省「こいくち醤油、うすくち醤油について」'
+    url: 'https://www.maff.go.jp/j/heya/kodomo_sodan/0406/05.html'
+  - label: '京都観光Naviぷらす「出汁」（平八茶屋への取材）'
+    url: 'https://plus.kyoto.travel/entry/food-culture-dashi/'
+    published: '2021'
+  - label: '大阪観光局 OSAKA-INFO「だし」'
+    url: 'https://osaka-info.jp/osaka/food/gastronomy-dashi/'
+  - label: 'うま味インフォメーションセンター「昆布」'
+    url: 'https://www.umamiinfo.jp/richfood/foodstuff/kelp.html'
+  - label: 'うま味インフォメーションセンター「かつお節」'
+    url: 'https://www.umamiinfo.jp/richfood/foodstuff/katsuobushi.html'
+  - label: '日本調理科学会 平成16年度大会 研究発表要旨「硬度の異なる水が昆布だしの性質に与える影響」'
+    url: 'https://www.jstage.jst.go.jp/article/ajscs/16/0/16_0_123/_article/-char/ja/'
+    published: '2004'
+  - label: 'キッコーマン「しょうゆの地域特性」（企業サイト）'
+    url: 'https://www.kikkoman.co.jp/enjoys/soysaucemuseum/area.html'
+  - label: '総務省統計局 家計調査 品目別ランキング 乾物・海藻（こんぶ、2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/zuhyou/rank06.xlsx'
+  - label: '総務省統計局 家計調査 品目別ランキング 魚介類（かつお節・削り節、2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/zuhyou/rank02.xlsx'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import kombuBonito from '../../../assets/eat/dashi-east-west-kombu-bonito.webp';
+
+El dato más repetido sobre el caldo japonés es que el oeste usa alga kombu y el este usa bonito. Como tendencia se sostiene: la Biblioteca Nacional de la Dieta lo plantea en esos términos, y un cuenco de udon en Osaka es claro donde el de Tokio es oscuro. Pero las razones que suelen darse son menos seguras de lo que suenan, y el gasto actual de los hogares no se reparte limpiamente a lo largo de esa línea. Esta página expone la tendencia, las dos explicaciones y hasta dónde llegan las pruebas de cada una.
+
+Para el dashi en general —umami, ingredientes, cuestiones vegetarianas—, empieza por la visión general del dashi.
+
+## De dónde viene
+
+El ensayo de la Biblioteca Nacional de la Dieta sobre el dashi dice que Kantō ha tendido a usar sobre todo katsuobushi y Kansai sobre todo kombu, y que se plantean principalmente dos razones.
+
+**1. El comercio.** El kombu venía de Hokkaido por la ruta marítima. A finales del siglo XVII, el comerciante de Edo Kawamura Zuiken estableció la ruta occidental desde Sakata, rodeando Shimonoseki, hasta Osaka y Edo, y el kombu de Hokkaido llegó a Kioto y Osaka, y luego a Edo. El mejor kombu enviado a Osaka se vendía allí primero, dice la biblioteca, y lo que sobraba seguía hacia Edo, de modo que en Kantō no se desarrolló el caldo de kombu. Este "camino del kombu", construido desde mediados del periodo Edo hasta el fin del shogunato, llegó hasta Kyushu y las islas Ryūkyū. El ministerio de Agricultura da la etapa anterior: en el periodo Muromachi el kombu iba de Hokkaido por Tsuruga a Kioto y Osaka, y desde la época Edo en barcos *kitamae* rodeando el oeste. Su página sobre el kitsune udon de Osaka dice que, al desarrollarse la ruta *kitamae*, se reunieron en Osaka el kombu, la harina y la sal.
+
+**2. El agua.** La segunda razón de la biblioteca: el agua blanda de Kansai extrae con facilidad el caldo de kombu, el agua más dura de Kantō no, así que los cocineros de Kantō eligieron el bonito para un caldo intenso. El folleto del ministerio de Agricultura dice, de Japón en conjunto, que el agua blanda extrae con eficacia el sabor del kombu y del katsuobushi.
+
+La biblioteca concluye que se cree que el sabor básico de cada región quedó fijado en el periodo Edo, cuando comenzó el transporte a gran escala.
+
+## ¿Qué solidez tiene la explicación del agua?
+
+Menos de la que suele contarse. Un estudio presentado a la Sociedad Japonesa de Ciencia Culinaria en 2004 extrajo kombu Hidaka en agua del grifo y en agua muy blanda, blanda y dura, y halló que los catadores valoraban el umami de manera distinta y que el glutamato del caldo variaba con el agua. Pero su resumen no muestra que el agua más dura dé *menos* glutamato, y no pretende explicar la división este-oeste. Lo justo es decir que el agua puede afectar a cómo sale el umami del kombu; que decidiera la diferencia regional es una explicación, no un hallazgo.
+
+## Qué hace el caldo de cada lado
+
+**Kansai.** La receta del ministerio de Agricultura para el kitsune udon de Osaka: ma-kombu con caballa y otras láminas de pescado, o sardinas secas; se remoja el kombu 40 minutos, se lleva a ebullición, se añaden las láminas durante dos o tres minutos y se sazona con soja clara. Se dice que el plato mismo empezó en 1893 en Matsubaya, en Senba, cuando un cliente puso el lado de tofu frito sobre su udon sencillo. La oficina de turismo de Osaka nombra el kombu de Hokkaido y el katsuobushi de Tosa como base del caldo de Osaka, y añade que las anchoas secas baratas de la bahía de Osaka y del Mar Interior sostuvieron la cultura del dashi de la ciudad. El Centro de Información del Umami dice que el ma-kombu se usa sobre todo en Kansai, alrededor de Osaka, y que el caldo de *arabushi* (bonito antes de curarlo con moho) también gusta en Kansai.
+
+**Kioto.** Un restaurador de Kioto entrevistado por el sitio de turismo de la ciudad en 2021 lo explica como una cadena: el agua de Kioto es blanda, así que el kombu es el protagonista y el bonito solo da aroma, sazonado con sal o soja clara, de modo que el caldo sigue claro. El kombu, dice, se extrae mejor a unos 60°C durante una hora, y las variedades difieren.
+
+**Kantō.** Con la misma cadena: en agua dura el kombu da menos, así que se usa más bonito; más bonito deja una nota a pescado, así que se usa una soja aromática, y el caldo se oscurece. Esa es la explicación de un restaurador. No pude encontrar una receta oficial de Tokio para el caldo de soba o de udon, así que no doy proporciones. Los dos principales productores de katsuobushi son Kagoshima y Shizuoka, no Tokio.
+
+**La soja.** El ministerio de Agricultura dice que la soja oscura *koikuchi* es alrededor del 85% de la producción y la clara *usukuchi* alrededor del 11%; la soja clara se usa sobre todo en Kansai y conserva el color de los ingredientes, mientras que la oscura tiene un aroma más fuerte que se dice que tapa el sabor a pescado. El relato de Kikkoman añade que Kantō se convirtió en la gran región de la soja oscura desde mediados del periodo Edo (Noda, Chōshi), y que se dice que el soba, la tempura, la anguila y el sushi nigiri crecieron con ella. No encontré ninguna fuente oficial que diga que la soja oscura se eligió para compensar un caldo flojo, así que no lo digo.
+
+<Figure
+  src={kombuBonito}
+  alt="Láminas de kombu seco en una bandeja de bambú a la izquierda y un montón de láminas de bonito a la derecha, junto a un bloque de katsuobushi sobre una caja de rallar de madera, con una flecha entre ellos"
+  caption="Los dos protagonistas: el kombu para el oeste, el bonito para el este. Una tendencia, no una frontera. Ilustración."
+/>
+
+## Qué muestra el gasto de los hogares
+
+La encuesta oficial de hogares (promedio de 2023–25) registra lo que los hogares gastan cada año en kombu y en katsuobushi. El archivo no da otra unidad que "importe"; las cifras son presumiblemente yenes por hogar.
+
+- **Kombu**, nacional 727: Toyama 1,587, Fukui 1,285, Aomori 1,174, Yamagata 1,112, Sakai 1,044, Kioto 1,034. Tokio centro 765, Osaka 761.
+- **Katsuobushi y láminas**, nacional 859: Naha 2,033, Kōchi 1,346, Hamamatsu 1,120, Gifu 1,107, Shizuoka 1,061. Tokio centro 913, Osaka 848.
+
+Así, los mayores compradores de kombu están en la antigua costa *kitamae* y en Tōhoku, con Kioto y Sakai también altas; entre los mayores compradores de bonito hay zonas productoras. Tokio y Osaka gastan casi lo mismo en kombu, y Tokio solo un poco más en bonito. Son compras para el hogar, no caldos de restaurante, y la encuesta no da razones, así que no extraigo causas de ellas; solo que la línea este-oeste no se ve en lo que compran los hogares de las dos grandes ciudades.
+
+<DishPrices keys={['udon', 'miso-soup']} />
+
+Esos son los precios del udon y de la sopa de miso de la página de referencia de precios.
+
+## No todo el dashi de Japón es así
+
+- **Sanuki (Kagawa)** usa anchoa seca, *iriko*, o bonito, según el local.
+- **Gotō y Hakata** usan pez volador, *ago*.
+
+Consulta la página del iriko y el ago.
+
+## Probarlo en casa y cómo llegar
+
+El kitsune udon de Osaka y la cocina de Kioto para los caldos con predominio de kombu; el soba y el udon de Tokio para el bonito y la soja oscura. Consulta las tarifas y los tiempos de viaje con la empresa operadora antes de salir.
+
+## El caldo de Kansai fuera de Kansai
+
+- **Los ingredientes vienen de otra parte en ambos lados.** Más del 90% del kombu es de Hokkaido; la mayor parte del katsuobushi, de Kagoshima y Shizuoka. El caldo de Osaka se construyó con kombu enviado de fuera, el de Tokio con bonito enviado de fuera.
+- **La diferencia es de estilo, no de frescura.** La biblioteca trata la división como un gusto regional fijado en el periodo Edo.
+- **No pude comparar caldos.** Ninguna fuente oficial compara un caldo de udon de estilo Kansai en Tokio con uno en Osaka, así que esta página no afirma nada en ningún sentido.
+
+## Lo que la gente entiende mal
+
+- **"Kantō no usa kombu."** Es una tendencia, y el clásico primer dashi usa ambos.
+- **"El agua dura lo demuestra."** Es una de las dos explicaciones; el estudio citado aquí no muestra la dirección.
+- **"Tokio compra bonito, Osaka compra kombu."** En la encuesta de hogares gastan casi lo mismo en cada uno.
+- **"La soja oscura está para esconder un caldo flojo."** Ninguna fuente oficial lo dice.
