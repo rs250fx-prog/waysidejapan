@@ -1,0 +1,135 @@
+---
+title: "Le soba : la nouille de sarrasin, ses trois maisons d’Edo, et pourquoi 70 % en est cultivé à l’étranger"
+description: "Le soba est la nouille de l’est et des montagnes du Japon : attesté en 1574, cuisine à Edo, mangé au réveillon. Ce que c’est, comment le manger, son prix."
+translationKey: soba
+translationStatus: reviewed
+category: eat
+kind: dish
+dish: soba
+basis: researched
+areas: [kanto, chubu, chugoku, tohoku]
+updatedDate: 2026-10-21
+pubDate: 2026-10-21
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/soba-hero.webp
+heroAlt: "Illustration d’un plateau rond en bambou de soba froid avec sauce à tremper, wasabi et oignon vert, et d’un pot de laque rouge de soba-yu, avec un champ de sarrasin en fleur dehors"
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: "Le soba est-il sans gluten ?"
+    a: "Seulement s’il est jūwari — 100 % sarrasin. La plupart des soba contiennent un peu de blé, et je n’ai trouvé aucun chiffre officiel sur la quantité qu’utilisent les comptoirs debout. Demandez, et attendez-vous à ce que la réponse soit non."
+  - q: "Comment manger correctement le soba froid ?"
+    a: "Prenez quelques nouilles, ne trempez que la moitié inférieure dans la sauce, et aspirez. C’est la consigne même de l’association nationale des nouilles. Les notes de l’association sur le soba-yu, l’eau de cuisson, disent qu’il est d’usage de le verser dans la sauce restante après le repas et de le boire."
+  - q: "Combien coûte le soba ?"
+    a: "L’enquête du gouvernement évalue une assiette de soba dans le centre de Tokyo à ¥788 taxe comprise (août 2026). Les chaînes de soba debout font payer ¥430–450 taxe comprise un bol chaud. Parmi les anciennes maisons d’Edo, Sarashina Horii fait payer ¥1,000 taxe comprise une assiette nature ; une assiette avec tempura coûte beaucoup plus."
+sources:
+  - label: '農林水産省 農産局「そばをめぐる状況について」（令和8年7月）'
+    url: 'https://www.maff.go.jp/j/seisan/tokusan/attach/pdf/soba.natane-17.pdf'
+    published: '2026-07'
+  - label: '農林水産省 aff 2017年3月号「ニッポン麺探訪 信州そば」'
+    url: 'https://www.maff.go.jp/j/pr/aff/1703/n_search.html'
+    published: '2017-03'
+  - label: '長野県木曽地域振興局「木曽のそば推進協議会」（定勝寺 1574年）'
+    url: 'https://www.pref.nagano.lg.jp/kisochi/nosei-aec/kisonosobasuisinkyougikai.html'
+  - label: '長野県「長野県のそばについて」'
+    url: 'https://www.pref.nagano.lg.jp/nogi/sangyo/nogyo/okome/soba2.html'
+  - label: '日本麺類業団体連合会「そばの散歩道」おそばの食べ方'
+    url: 'https://nichimen.or.jp/enjoy/speak/03/'
+  - label: '日本麺類業団体連合会「そばの散歩道」おそばはどうやって作るの？'
+    url: 'https://nichimen.or.jp/enjoy/speak/04/'
+  - label: '日本麺類業団体連合会「そばのあいうえお」二八そば'
+    url: 'https://nichimen.or.jp/know/aiueo/ni/'
+  - label: '日本麺類業団体連合会「麺類雑学事典」そば湯'
+    url: 'https://nichimen.or.jp/know/zatsugaku/01/'
+  - label: '日本食糧新聞「2月8日。今日は東京二八そばの日」'
+    url: 'https://news.nissyoku.co.jp/today/624795'
+  - label: 'J-CAST「そばの『ざる』と『もり』の違いは？」'
+    url: 'https://www.j-cast.com/2017/04/22296169.html?p=all'
+    published: '2017-04-22'
+  - label: '総本家更科堀井「更科堀井の歴史」'
+    url: 'https://www.sarashina-horii.com/about/'
+  - label: '総本家更科堀井 麻布十番本店 おしながき（価格は全て税込）'
+    url: 'https://www.sarashina-horii.com/azabu/menu/'
+  - label: '東都のれん会「室町砂場」'
+    url: 'https://norenkai.net/?p=9020'
+  - label: '総務省統計局 家計調査 品目別都道府県庁所在市ランキング 外食「日本そば・うどん」（2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/5.html'
+    published: '2026-02-13'
+  - label: '農林水産省 Let''s！和ごはんプロジェクト「年越しそば」'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/culture/wagohan/articles/2212/spe12_02.html'
+  - label: '農林水産省「にっぽん伝統食図鑑」出雲そば（日本三大そば）'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/izumo_soba.html'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import sobaWhatIs from '../../../assets/eat/soba-what-is.webp';
+import sobaAcrossJapan from '../../../assets/eat/soba-across-japan.webp';
+
+Le soba est la fine nouille gris-brun faite de sarrasin, et c’est la nouille de l’autre moitié du Japon : l’est, le nord, les montagnes, les endroits où le riz et le blé poussaient mal et où le sarrasin poussait en soixante-dix jours sur un sol pauvre. L’udon est la nouille de l’ouest chaud ; le soba est ce que mangeait Edo, ce que Nagano, Shimane et Iwate ont transformé en cuisines régionales, et ce que la plus grande partie du pays mange encore le dernier soir de l’année. C’est aussi la nouille japonaise à laquelle s’attache le plus de rituel pour la manger, et celle dont la matière première est désormais surtout importée.
+
+## Ce que c’est
+
+Le sarrasin n’est pas du blé ; c’est une graine d’une plante apparentée à la rhubarbe, et il ne contient pas de gluten. Le récit du ministère lui-même est qu’il est cultivé au Japon depuis la période Jōmon, probablement venu de Chine, et qu’il a été mangé pendant la plus grande partie de ce temps sous forme de *sobagaki* — une bouillie ou une boulette de farine de sarrasin et d’eau chaude. La nouille, *soba-kiri*, « soba coupé », est relativement récente. La plus ancienne mention est un document du temple Jōshōji à Ōkuwa, Kiso, à Nagano, notant que du soba-kiri fut servi aux artisans qui réparèrent le pavillon principal en 1574 ; la préfecture appelle Kiso le berceau de la nouille, avec la réserve habituelle sur d’autres théories. La nouille est arrivée à Edo et est devenue un aliment de la ville au XVIIIe siècle.
+
+<Figure
+  src={sobaWhatIs}
+  alt="Guide illustré du soba : un plateau de nouilles de sarrasin froides avec sauce à tremper, un plant de sarrasin, et trois étapes pour le manger avec des baguettes"
+  caption="Le soba en une image : l’assiette froide, la plante dont il vient, et la façon de le manger d’Edo. Illustration."
+  transcript={`Qu’est-ce que le soba ? Le soba est une nouille japonaise traditionnelle faite de sarrasin. Il a un arôme de noisette unique, une texture légère et une saveur rafraîchissante. Le soba se déguste de nombreuses façons, froid avec une sauce à tremper ou chaud dans un bol de soupe.
+Le sarrasin n’est pas du blé. Le soba est fait de sarrasin, une plante différente du blé. La plupart des soba contiennent un peu de blé et ne sont donc pas sans gluten.
+Comment manger le soba : 1. Prenez quelques nouilles. 2. Ne trempez que la moitié inférieure. 3. Aspirez pour profiter de l’arôme.
+Soba-yu : ajoutez l’eau de cuisson à la sauce restante.`}
+/>
+
+Comme le sarrasin n’a pas de gluten, les nouilles de sarrasin pur sont difficiles à faire et se cassent facilement ; la plupart des soba contiennent donc du blé. Les noms disent la proportion : *jūwari* est 100 % sarrasin, *kuichi* 90:10. *Ni-hachi* se lit de deux façons, 80:20 ou deux fois huit, seize *mon*, le prix d’un bol à Edo. L’association nationale des nouilles juge la lecture par le prix plus plausible avant l’ère Keiō (1865–68), quand les prix des boutiques ont dépassé vingt mon, et la lecture par la proportion après, tout en notant des problèmes de la lecture par la proportion, comme l’existence d’udon ni-hachi et de soba ni-roku et san-shi. Un article de l’industrie alimentaire prend le parti de la proportion. Je ne choisis pas. La farine elle-même est classée selon la profondeur à laquelle la meule entre dans le grain : la première mouture, au centre du grain, donne la farine blanche *sarashina*, la deuxième prend le germe, la troisième l’enveloppe intérieure, et moudre le grain entier avec son enveloppe donne le *hikigurumi* sombre d’Izumo.
+
+## Pourquoi il est comme il est
+
+**L’assiette froide et la sauce sombre.** Edo mangeait le soba froid, sur un plateau de bambou, avec une sauce concentrée à tremper de sauce de soja foncée et de bonite appelée *kaeshi*. La consigne de l’association nationale pour le manger est encore celle de la ville : ne tremper que la moitié de la nouille, pour goûter le sarrasin et non la sauce, et aspirer en faisant passer de l’air à travers la nouille. À la fin, le service apporte le *soba-yu*, l’eau de cuisson, pour diluer la sauce restante en boisson. La différence entre *mori* et *zaru*, les deux assiettes froides de tous les menus, était autrefois une meilleure sauce sur le zaru ; le responsable de l’association dit que c’est désormais surtout la feuille de nori dessus.
+
+**Trois maisons.** Les boutiques d’Edo se sont rangées en lignées qui nomment encore les restaurants de la ville. *Sarashina* fait la nouille blanche à partir de la farine de première mouture, un nom que sa maison fondatrice rattache au commerce du soba de Shinshū et à la permission d’un seigneur d’utiliser un caractère de son nom, en 1789. *Yabu* est la nouille sombre et ferme avec une sauce très salée, d’une maison fondée en 1880. *Sunaba* est le nom le plus ancien — de la cour de sable du château d’Osaka de Hideyoshi, où une boutique de soba prospéra parmi les bâtisseurs — et sa maison de Tokyo, de 1869, dit avoir inventé l’assiette de tempura et soba froid.
+
+**Partout ailleurs a gardé sa propre idée.** Izumo verse la sauce sur la nouille au lieu de tremper ; Togakushi l’empile en petits paquets sur un plateau rond comme offrande de sanctuaire ; Iwate vous en sert une bouchée à la fois jusqu’à ce que vous fermiez le couvercle. Le tableau ci-dessous est l’endroit où ces différences se trouvent.
+
+**Le grain vient de l’étranger.** Le Japon récolte environ 38,000 tonnes de sarrasin par an et en importe environ 88,000 — dont les trois quarts de Chine — de sorte que la part nationale est d’environ 30 %. Hokkaido en cultive de loin le plus (16,800 t), puis Tochigi, Ibaraki, Nagano et Fukui. « Shinshū soba » est un style et une marque ; ce n’est pas une garantie que le sarrasin ait poussé à Nagano.
+
+## Ce qu’il coûte
+
+<DishPrices keys={['soba', 'tachigui-soba']} />
+
+L’écart est le plus large de toutes les nouilles. Une chaîne de soba debout à Tokyo fait payer ¥430–450 taxe comprise un bol chaud (Yudetaro, Fuji Soba). L’assiette statistique du centre de Tokyo, un prix d’enquête qui comprend la taxe, est de ¥788. Parmi les anciennes maisons d’Edo, Sarashina Horii fait payer ¥1,000 taxe comprise son mori froid nature ; une assiette avec tempura coûte beaucoup plus. Le menu de Kanda Yabu ne dit pas si la taxe est comprise ; ses prix ne sont donc pas donnés ici. Dans l’enquête sur les ménages, la ville qui dépense le plus pour le soba et l’udon mangés à l’extérieur est Takamatsu — pour l’udon — et les villes de soba sont plus bas : Nagano 13e (¥8,705), Tokyo 22e (¥8,166), Matsue 32e, Morioka 38e.
+
+## Les lignées
+
+<Figure
+  src={sobaAcrossJapan}
+  alt="Quatre styles régionaux de soba dessinés côte à côte : soba froid de style Edo sur un plateau, soba d’Izumo dans des bols rouges empilés, paquets de Togakushi sur un panier rond, et wanko soba dans de petits bols à couvercle"
+  caption="La même nouille en quatre endroits. Edo trempe, Izumo verse, Togakushi met en paquets, Iwate ressert sans cesse. Illustration."
+  transcript={`Le soba à travers le Japon. Une nouille. De nombreuses régions. De nombreuses façons d’en profiter.
+Edo / Tokyo : trempez les nouilles dans une sauce concentrée de soja et de bonite.
+Izumo, Shimane : versez la sauce sur les nouilles au lieu de tremper.
+Togakushi, Nagano : de petits paquets servis sur un plateau rond.
+Wanko, Iwate : de minuscules portions arrivent l’une après l’autre ; fermez le couvercle quand vous avez fini.
+À savoir avant de commander : les comptoirs de gare : repas rapides et bon marché. La tempura en fait un accompagnement classique. Renseignez-vous sur les ingrédients si vous évitez le blé — la plupart des soba contiennent du blé.`}
+/>
+
+<LineageTable dish="soba" />
+
+## Où le manger
+
+- **Edo** — les anciennes maisons de Tokyo à Azabu-Jūban (Sarashina Horii), Kanda (Yabu) et Nihonbashi (Sunaba) ; des comptoirs debout dans toutes les gares.
+- **Izumo** — l’approche du grand sanctuaire d’Izumo et Matsue ; bus depuis l’aéroport, environ 35 minutes jusqu’au sanctuaire.
+- **Togakushi** — le bus express limité depuis la gare de Nagano, 56 minutes jusqu’à Chūsha.
+- **Wanko** — Morioka et Hanamaki, sur le Shinkansen du Tōhoku.
+
+## Ce que l’on croit à tort
+
+- **« Le soba est sans gluten. »** Seulement le *jūwari*. La plupart des soba contiennent du blé ; je n’ai trouvé aucun chiffre officiel sur la quantité qu’utilisent les comptoirs debout.
+- **« Il faut tremper toute la nouille. »** La moitié. L’association qui représente les boutiques le dit.
+- **« Ni-hachi a un seul sens établi. »** Il se lit comme un prix et comme une proportion, et l’association des nouilles dit que chacun correspond à une période différente.
+- **« Le shinshū soba est cultivé à Nagano. »** Nagano produit environ 2,500 tonnes par an et le Japon en importe 88,000. Le nom est un style.
+- **« Le soba est un aliment de Tokyo. »** Tokyo en a fait une cuisine. La plus ancienne mention est à Nagano, et Izumo, Togakushi et Iwate le mangent chacun d’une manière que Tokyo n’a jamais connue.

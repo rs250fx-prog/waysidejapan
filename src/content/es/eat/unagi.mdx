@@ -1,0 +1,173 @@
+---
+title: 'Unagi: por qué la anguila cuesta lo que cuesta, qué significan las categorías y el día de verano en que Japón la come'
+description: 'Casi toda la anguila que se come en Japón es importada, toda anguila de cría nace como angula salvaje y las categorías significan lo que cada local diga. Precio, pedido y consumo.'
+translationKey: unagi
+translationStatus: reviewed
+category: eat
+kind: dish
+dish: unagi
+basis: researched
+areas: [kanto, kansai, tokai, kyushu]
+updatedDate: 2026-10-21
+pubDate: 2026-10-21
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/unagi-hero.webp
+heroAlt: 'Ilustración de anguila a la parrilla sobre arroz en una caja laqueada, con sopa clara y un platito de pimienta sansho'
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: ¿Por qué es tan cara la unagi?
+    a: Toda anguila de cría empieza como una angula capturada en el medio natural, de unos 0.2 g cada una, y la captura es inestable. Las angulas se han cotizado entre ¥660,000 y ¥2.99 millones el kilo en las últimas temporadas, Japón limita cuántas pueden entrar en los estanques de cría, y unas siete de cada diez anguilas que se comen en Japón son importadas.
+  - q: ¿Qué significan ume, take y matsu en una carta de anguila?
+    a: Lo que decida el local. En una cadena significaban media, tres cuartos y una anguila entera. En un local de Nara, take es una anguila y matsu una y un cuarto. En Atsuta Hōraiken, en Nagoya, las categorías del cuenco de anguila cuentan las piezas. No hay una regla común.
+  - q: ¿Cuándo es el día del buey?
+    a: El doyō son los aproximadamente 18 días previos a cada cambio de estación. El día del buey se repite cada 12 días, de modo que el doyō de verano tiene uno o a veces dos días del buey, llamados ichi no ushi y ni no ushi. Es cuando Japón compra más anguila.
+  - q: ¿Está en peligro la anguila japonesa?
+    a: La Lista Roja de la UICN la incluyó en la categoría En Peligro en 2014. En 2025 se rechazó una propuesta de incluir todas las especies de anguila en el Apéndice II de CITES. Japón, China, Corea del Sur y Taiwán acordaron en 2014 reducir un 20% el número de anguilas jóvenes introducidas en los estanques de cría.
+sources:
+  - label: '水産庁「うなぎをめぐる状況と対策について」'
+    url: 'https://www.jfa.maff.go.jp/j/saibai/attach/pdf/unagi-279.pdf'
+    published: '2026-07'
+  - label: '水産庁 ウナギ供給量の推移（Excel）'
+    url: 'https://www.jfa.maff.go.jp/j/saibai/attach/xls/unagi-20.xlsx'
+  - label: '水産庁「ウナギに関する情報」'
+    url: 'https://www.jfa.maff.go.jp/j/saibai/unagi.html'
+  - label: '農林水産省 うちの郷土料理「鰻のかば焼き」東京都'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_24_tokyo.html'
+  - label: '農林水産省 aff 2016年7月号 特集「鰻」'
+    url: 'https://www.maff.go.jp/j/pr/aff/1607/spe2_01.html'
+    published: '2016-07'
+  - label: '農林水産省 消費者の部屋通信'
+    url: 'https://www.maff.go.jp/j//heya/annai/tusin/attach/pdf/index-125.pdf'
+    published: '2025-06'
+  - label: '総務省統計局 家計調査通信 533号（うなぎ）'
+    url: 'https://www.stat.go.jp/data/kakei/tsushin/pdf/30_7.pdf'
+  - label: '大阪府立中央図書館 レファレンス「土用の丑の日」（レファレンス協同データベース）'
+    url: 'https://crd.ndl.go.jp/reference/entry/index.php?id=1000142958&page=ref_view'
+  - label: 'GO TOKYO グルメ「うなぎ」'
+    url: 'https://www.gourmet.gotokyo.org/article/60.html'
+  - label: '浜松市 はままつフードパーク「うなぎ」'
+    url: 'https://www.city.hamamatsu.shizuoka.jp/foodpark/hamamatsu-foods/unagi.html'
+  - label: 'あつた蓬莱軒 本店 お品書き'
+    url: 'https://www.houraiken.com/honten/index.html'
+    published: '2026-10'
+  - label: 'あつた蓬莱軒 公式（会席）'
+    url: 'https://www.houraiken.com/'
+    published: '2026-10'
+  - label: 'うなぎ 江戸川 公式 メニュー'
+    url: 'https://unagi-edogawa.com/menu/'
+    published: '2026-10'
+  - label: '鰻の成瀬 プレスリリース（価格・量）'
+    url: 'https://prtimes.jp/main/html/rd/p/000000241.000107560.html'
+    published: '2024-08-08'
+  - label: '文化庁 100年フード 福岡県'
+    url: 'https://www.bunka.go.jp/seisaku/shokubunka/foodculture/hyakunenfood/jirei/list_fukuoka.html'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import boxSizes from '../../../assets/eat/unagi-body.webp';
+
+La anguila a la parrilla (*kabayaki*) sobre arroz es uno de los platos cotidianos más caros de Japón y uno de los menos comprendidos por los visitantes. El precio tiene una causa que puede rastrearse hasta un pez de 0.2 gramos de peso. Los nombres de las categorías de la carta —*ume*, *take*, *matsu*— suenan a sistema nacional y no lo son. Y la razón por la que todo un país hace cola por anguila en un día de verano es una discusión que los historiadores no han zanjado. Esta página es el mapa. Las páginas de linajes cubren las dos formas de cocinarla: la de Kantō, abierta por el lomo y cocida al vapor, y la de Kansai, abierta por el vientre y asada directamente.
+
+## Qué es
+
+Anguila de agua dulce, abierta, ensartada y asada al carbón con una *tare* dulce de soja, normalmente servida sobre arroz. La agencia de pesca cuenta 19 especies y subespecies de anguila en el mundo, cuatro de ellas muy consumidas; casi toda la anguila de cría en Japón es anguila japonesa, mientras que entre las importaciones figura en los últimos años la anguila americana.
+
+La vida de la anguila japonesa sigue siendo en parte un misterio. Eclosiona cerca de las islas Marianas, a unos 2,000 km de Japón, se desplaza hacia Asia oriental como larva y luego como *angula* transparente, pasa de 5 a 15 años en ríos y estuarios y se cree que regresa a las Marianas a desovar. Su zona de desove solo se localizó con precisión en 2011, 36 años después de que empezara la investigación.
+
+La forma en que se sirve viene de la comida para llevar. El ministerio de agricultura dice que la anguila y el arroz eran originalmente cosas separadas; el *donburi* se extendió porque poner la anguila sobre arroz caliente la mantenía caliente para el reparto, y la caja laqueada (*jū*) contenía al principio solo anguila.
+
+**Temporada.** Las fuentes del ministerio de agricultura no coinciden. Una dice que la anguila salvaje tiene dos temporadas, el verano, cuando se alimenta, y de otoño a invierno, cuando baja al mar, y que la de cría está en su mejor momento a principios de verano; otra dice que la verdadera temporada es el otoño, cuando engorda antes del invierno. Ambas son oficiales; elige la que prefieras.
+
+## Por qué cuesta lo que cuesta
+
+**Toda anguila empieza salvaje.** Las granjas crían angulas —de unos 6 cm y 0.2 g— capturadas en el medio natural. La captura cayó en picado a partir de finales de la década de 1950 y desde principios de la de 1980 ha sido en su mayoría de 5 a 30 toneladas al año. Más de 20,000 personas las capturan, unos pocos gramos cada una al día.
+
+**El precio de la semilla oscila.** Las cifras del sector de la agencia de pesca para el precio medio de la angula (nacional e importada) van de ¥160,000 el kilo en 2003 a un máximo de ¥2.99 millones en 2018, ¥2.5 millones en 2024, ¥1.3 millones en 2025 y ¥660,000 en la temporada de 2026, la segunda caída seguida. Con unas 5,000 angulas por kilo, ¥1.3 millones el kilo son aproximadamente ¥260 por anguila antes de que haya comido nada —es cálculo mío, no una cifra oficial—, y luego se alimenta durante seis meses o más de un año. En Hamamatsu, una angula de 0.2 g crece hasta 200–300 g en un año o más.
+
+**Los estanques tienen tope.** Desde una declaración conjunta de 2014, Japón, China, Corea del Sur y Taiwán limitan cuántas anguilas jóvenes entran en los estanques de cría, un 20% por debajo del nivel anterior. Para la temporada de 2026, la cuota de Japón es de 21.7 toneladas de anguila japonesa repartidas entre 507 granjas con licencia.
+
+**La mayor parte de la anguila es importada.** En 2025, según la base de peso vivo de la agencia de pesca, Japón produjo 17,611 t (17,557 de cría, 54 capturadas) e importó 45,987 t: cerca de un 72% importado según mi cálculo. Y la cría "nacional" usa algunas angulas importadas, así que nacional no significa japonesa de nacimiento. La oferta alcanzó su máximo en 158,094 t en 2000 y ha rondado las 60,000 t en los últimos años. Kagoshima cría más (7,342 t), seguida de Aichi, Miyazaki y Shizuoka.
+
+**El precio ya ha subido.** La comparación de la oficina de estadística entre 2007 y 2017: la cantidad que compraban los hogares cayó al 54% del nivel anterior, el índice de precios al consumidor del kabayaki subió a 183 y el gasto real cayó al 41%.
+
+## La cuestión de la protección
+
+La Lista Roja de la UICN clasificó la anguila japonesa como En Peligro en 2014 (la anguila europea ya estaba En Peligro Crítico). La anguila europea está en el Apéndice II de CITES desde 2009, y la UE no concede permisos de exportación. En la COP20 de CITES de 2025, la UE y Panamá propusieron incluir todas las especies de anguila; el comité la rechazó por 100 votos a 35, con 8 abstenciones, y se adoptó por consenso una resolución sobre el comercio y la gestión de la anguila. Las opiniones de los expertos sobre la propuesta estaban divididas: estas cifras proceden del propio resumen del gobierno japonés, lo cual debe tenerse en cuenta al leerlas. Desde diciembre de 2025, las angulas quedan bajo la ley japonesa contra los productos del mar capturados ilegalmente, después de que la agencia detectara una diferencia de 1.2 toneladas entre lo declarado como capturado e importado y lo que fue a los estanques.
+
+## El día del buey
+
+El *doyō* son los aproximadamente 18 días previos a cada uno de los cuatro puntos de inflexión estacionales. El día del buey del zodiaco llega cada 12 días, así que algunos veranos tienen dos días del buey en el doyō, *ichi no ushi* y *ni no ushi*. En la encuesta de hogares de 2017, los hogares gastaron ¥390 en kabayaki el primer día del buey y ¥65 el segundo, mucho más que en cualquier otro día, y julio supuso el 37.3% del gasto del año.
+
+¿Por qué anguila? Las explicaciones, todas registradas, ninguna demostrada:
+
+- **Hiraga Gennai**, el polímata de Edo, habría dicho a un local de anguila con dificultades que colgara un cartel: "Hoy es el día del buey". La oficina de estadística y el ministerio de agricultura la llaman la teoría famosa; la página de historia de una empresa de alimentación dice que no hay pruebas firmes.
+- **Harukiya**, un local de anguila de Edo, habría descubierto que la anguila asada el día del buey se conservaba mejor que en otros días: una historia citada de un ensayo antiguo como tradición popular.
+- **Sabiduría popular**: comer anguila nutritiva en los días más calurosos para evitar la fatiga del verano.
+- **Una estratagema de ventas con sentido**: una enciclopedia de referencia la llama una táctica de los locales de anguila, razonable como nutrición de verano, ya practicada en la década de 1820.
+
+## Las categorías y lo que cuestan
+
+<DishPrices keys={['unaju']} />
+
+Las cifras de arriba se guardan en la página de referencia de precios y se actualizan allí. En cualquier carta de anguila te encontrarás palabras de categoría: *ume*, *take*, *matsu* (ciruelo, bambú, pino), o *nami*, *jō*, *tokujō* (estándar, superior, extra). **No hay una regla común.** Cada local decide. Tres ejemplos, todos con impuestos incluidos:
+
+- **Unagi no Naruse** (cadena), según lo anunciado en agosto de 2024: ume, take y matsu eran media, tres cuartos y una anguila entera; los precios iban de ¥1,600–2,600 para la anguila *nami*, más magra, ¥1,900–2,900 para *jō* y ¥3,400–4,400 para *tokujō* (cinco al día). Su sitio actual da ¥1,900, ¥2,500 y ¥2,900 sin indicar los impuestos.
+- **Unagi Edogawa** (Nara): *take*, una anguila, ¥4,400; *matsu*, una y un cuarto, ¥5,450.
+- **Atsuta Hōraiken**, local principal (Nagoya): cuenco de anguila ¥3,300 por tres piezas, *jō* ¥4,100 por cuatro, *tokujō* ¥5,700 por seis; *hitsumabushi* ¥4,950. Su *kaiseki* de anguila cuesta ¥12,100 en el almuerzo y ¥16,500 en la cena, más un cargo por servicio del 10%.
+
+Así que en un local la categoría es la cantidad, en otro la calidad de la anguila y en un tercero el número de piezas. Pregunta.
+
+**Dónde más.** El día del buey, señala el ministerio de agricultura, la anguila se vende en cantidad en supermercados y konbini además de en los locales de anguila.
+
+<Figure
+  src={boxSizes}
+  alt="Tres cajas laqueadas de anguila sobre arroz en fila, de la pequeña a la grande, con sopa y encurtidos"
+  caption="Tres cajas, tres categorías. Lo que significa cada categoría es regla de cada local. Ilustración."
+/>
+
+## Cómo pedirla y comerla
+
+- **Las formas.** *Unajū* (en caja) y *unadon* (en cuenco) son anguila sobre arroz; *kabayaki* es la anguila sola; *shirayaki* es asada sin tare, se come con wasabi y soja. El sitio de turismo de Tokio dice que el unajū suele venir en unos tres tamaños.
+- **De acompañamiento.** Sopa de hígado de anguila (*kimosui*), anguila en vinagre con pepino (*uzaku*), anguila enrollada en tortilla (*umaki*).
+- **Sanshō.** La pimienta molida que hay en la mesa era, según el ministerio de agricultura, en origen para disimular el olor de la anguila de cría en los viejos tiempos. Un local de Nihonbashi citado por el sitio de turismo de Tokio aconseja probar primero la anguila y añadir un poco.
+- **Espinas pequeñas.** Hay algunas. Come con cuidado.
+- **Siempre cocinada.** La sangre de la anguila es tóxica, dice el ministerio de agricultura, pero el calor —60°C durante cinco minutos o más— la destruye.
+- **Anguila y ciruela encurtida.** La vieja advertencia contra comerlas juntas no tiene base médica.
+
+## Los linajes
+
+La tabla se mantiene en un solo lugar para que cada estilo se describa en los mismos términos. Las filas sin enlace están en la lista pero aún no están escritas.
+
+<LineageTable dish="unagi" />
+
+Hamamatsu, a orillas del lago Hamana, está entre los dos: la ciudad dice que, como queda a medio camino entre Tokio y Osaka, allí se pueden comer ambos estilos. La cría de anguila allí comenzó con Hattori Kurajirō en la era Meiji, hace más de 120 años.
+
+## Dónde comerla
+
+- **Tokio** — el estilo Kantō; Nihonbashi tiene locales antiguos que publican su método.
+- **Osaka** — *jiyaki*, abierta por el vientre y sin vapor.
+- **Nagoya** — *hitsumabushi* en Atsuta Hōraiken, fundado en 1873.
+- **Hamamatsu** — ambos estilos; la ciudad con mayor gasto de los hogares en kabayaki en la encuesta de 2015–17.
+- **Yanagawa, Fukuoka** — *seiro-mushi*, anguila al vapor sobre arroz en una cesta, "comida de 100 años" de la Agencia de Asuntos Culturales, unos 30 locales.
+
+Consulta las tarifas y los tiempos de viaje con la empresa operadora antes de viajar.
+
+## La misma anguila, otra ciudad
+
+- **Las ciudades famosas no son las mayores granjas.** Shizuoka, donde está Hamamatsu, fue cuarta en 2025 con 1,827 t; Kagoshima crió cuatro veces más. Los locales de Yanagawa usan anguila de cría de Kagoshima y Miyazaki, porque ya no se captura anguila salvaje allí. Un local de *jiyaki* de Osaka compra en el lago Hamana, Mikawa Isshiki, Kōchi, Kagoshima, Shizuoka, Tokushima y Miyazaki.
+- **El mapa del gasto es occidental.** En la encuesta de hogares de 2015–17 (la más reciente que desglosa el kabayaki), Hamamatsu gastó más por hogar, ¥6,311, seguida de Kioto, Ōtsu, Nara y Osaka; el centro de Tokio fue ¥3,352 y la media nacional ¥2,617. Eso es anguila comprada en tiendas, no en restaurantes.
+- **Lo que te da la región es un estilo.** Hamamatsu ofrece ambos; Osaka asa sin vapor; Nagoya sirve hitsumabushi; Yanagawa cuece al vapor en una cesta. El precio y el tamaño de una caja, mientras tanto, dependen más del tipo de local —cadena, especialista, *kaiseki*— que de la ciudad.
+
+## Lo que la gente entiende mal
+
+- **"La anguila japonesa es japonesa."** Cerca del 72% de la oferta es importada, y parte de la anguila de cría nacional empezó como angula importada.
+- **"La anguila se cría a partir de huevos."** Las granjas crían angulas capturadas en el medio natural.
+- **"Matsu es siempre la mejor."** Las categorías significan lo que diga el local: tamaño, calidad o número de piezas.
+- **"Gennai inventó el día del buey."** Es la historia famosa; no está demostrada, y hay otras explicaciones.
+- **"Hamamatsu cría más anguila."** Lo hace Kagoshima.
+- **"Los estilos Kantō y Kansai vienen fijados por la región."** Son los patrones típicos. Unagi Edogawa, en Nara, la abre por el lomo y la cuece al vapor.

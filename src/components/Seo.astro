@@ -95,7 +95,8 @@ const jsonLd = {
 
 {/* hreflang はパスの言語コード（zh-tw）ではなく、検索エンジン向けのコード（zh-TW）で出す */}
 {alternates.map((a) => <link rel="alternate" hreflang={hreflangOf(a.locale)} href={new URL(a.path, SITE_URL).href} />)}
-{alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(`/${DEFAULT_LOCALE}/`, SITE_URL).href} />}
+{/* x-default は既定言語（英語）の同じページ。英語版が無いときだけトップ */}
+{alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(alternates.find((a) => a.locale === DEFAULT_LOCALE)?.path ?? `/${DEFAULT_LOCALE}/`, SITE_URL).href} />}
 
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={SITE_NAME} />

@@ -1,0 +1,173 @@
+---
+title: "Unagi : pourquoi l’anguille coûte ce qu’elle coûte, ce que signifient les grades, et le jour d’été où le Japon en mange"
+description: "La plupart des anguilles mangées au Japon sont importées, toute anguille d’élevage naît civelle sauvage, et les grades valent ce que chaque maison décide. Prix, commande, dégustation."
+translationKey: unagi
+translationStatus: reviewed
+category: eat
+kind: dish
+dish: unagi
+basis: researched
+areas: [kanto, kansai, tokai, kyushu]
+updatedDate: 2026-10-21
+pubDate: 2026-10-21
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/unagi-hero.webp
+heroAlt: "Illustration d’anguille grillée sur du riz dans une boîte laquée, avec une soupe claire et un petit plat de poivre sansho"
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: "Pourquoi l’unagi est-il si cher ?"
+    a: "Toute anguille d’élevage commence comme civelle capturée à l’état sauvage, d’environ 0.2 g pièce, et la pêche est instable. Les civelles se sont négociées entre ¥660,000 et ¥2.99 million le kilo lors des dernières saisons, le Japon plafonne le nombre de civelles mises en bassin d’élevage, et environ sept anguilles sur dix mangées au Japon sont importées."
+  - q: "Que signifient ume, take et matsu sur un menu d’anguille ?"
+    a: "Ce que la maison décide. Dans une chaîne, cela voulait dire une demi-anguille, trois quarts d’anguille et une anguille entière. Dans une maison de Nara, take est une anguille et matsu une anguille et quart. Chez Atsuta Hōraiken à Nagoya, les grades du bol d’anguille comptent les morceaux. Il n’existe pas de règle commune."
+  - q: "Quand tombe le jour du bœuf ?"
+    a: "Le doyō désigne les quelque 18 jours précédant chaque changement de saison. Le jour du bœuf revient tous les 12 jours, si bien que le doyō d’été compte un ou parfois deux jours du bœuf, appelés ichi no ushi et ni no ushi. C’est le moment où le Japon achète le plus d’anguille."
+  - q: "L’anguille japonaise est-elle menacée d’extinction ?"
+    a: "La Liste rouge de l’UICN l’a classée dans la catégorie « en danger » en 2014. Une proposition de 2025 d’inscrire toutes les espèces d’anguilles à l’Annexe II de la CITES a été rejetée. Le Japon, la Chine, la Corée du Sud et Taïwan ont convenu en 2014 de réduire de 20% le nombre de jeunes anguilles mises en bassin d’élevage."
+sources:
+  - label: '水産庁「うなぎをめぐる状況と対策について」'
+    url: 'https://www.jfa.maff.go.jp/j/saibai/attach/pdf/unagi-279.pdf'
+    published: '2026-07'
+  - label: '水産庁 ウナギ供給量の推移（Excel）'
+    url: 'https://www.jfa.maff.go.jp/j/saibai/attach/xls/unagi-20.xlsx'
+  - label: '水産庁「ウナギに関する情報」'
+    url: 'https://www.jfa.maff.go.jp/j/saibai/unagi.html'
+  - label: '農林水産省 うちの郷土料理「鰻のかば焼き」東京都'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/34_24_tokyo.html'
+  - label: '農林水産省 aff 2016年7月号 特集「鰻」'
+    url: 'https://www.maff.go.jp/j/pr/aff/1607/spe2_01.html'
+    published: '2016-07'
+  - label: '農林水産省 消費者の部屋通信'
+    url: 'https://www.maff.go.jp/j//heya/annai/tusin/attach/pdf/index-125.pdf'
+    published: '2025-06'
+  - label: '総務省統計局 家計調査通信 533号（うなぎ）'
+    url: 'https://www.stat.go.jp/data/kakei/tsushin/pdf/30_7.pdf'
+  - label: '大阪府立中央図書館 レファレンス「土用の丑の日」（レファレンス協同データベース）'
+    url: 'https://crd.ndl.go.jp/reference/entry/index.php?id=1000142958&page=ref_view'
+  - label: 'GO TOKYO グルメ「うなぎ」'
+    url: 'https://www.gourmet.gotokyo.org/article/60.html'
+  - label: '浜松市 はままつフードパーク「うなぎ」'
+    url: 'https://www.city.hamamatsu.shizuoka.jp/foodpark/hamamatsu-foods/unagi.html'
+  - label: 'あつた蓬莱軒 本店 お品書き'
+    url: 'https://www.houraiken.com/honten/index.html'
+    published: '2026-10'
+  - label: 'あつた蓬莱軒 公式（会席）'
+    url: 'https://www.houraiken.com/'
+    published: '2026-10'
+  - label: 'うなぎ 江戸川 公式 メニュー'
+    url: 'https://unagi-edogawa.com/menu/'
+    published: '2026-10'
+  - label: '鰻の成瀬 プレスリリース（価格・量）'
+    url: 'https://prtimes.jp/main/html/rd/p/000000241.000107560.html'
+    published: '2024-08-08'
+  - label: '文化庁 100年フード 福岡県'
+    url: 'https://www.bunka.go.jp/seisaku/shokubunka/foodculture/hyakunenfood/jirei/list_fukuoka.html'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import boxSizes from '../../../assets/eat/unagi-body.webp';
+
+L’anguille grillée (*kabayaki*) sur du riz est l’un des plats quotidiens les plus chers du Japon, et l’un des moins bien compris des visiteurs. Son prix a une cause que l’on peut remonter jusqu’à un poisson de 0.2 gramme. Les noms de grades au menu — *ume*, *take*, *matsu* — sonnent comme un système national et n’en sont pas un. Et la raison pour laquelle tout un pays fait la queue pour l’anguille un jour d’été est un débat que les historiens n’ont pas tranché. Cette page est la carte. Les pages de lignées traitent des deux façons de la cuire : le Kantō, ouverte par le dos et cuite à la vapeur, et le Kansai, ouverte par le ventre et grillée directement.
+
+## Ce que c’est
+
+De l’anguille d’eau douce, ouverte, embrochée et grillée au charbon avec un *tare* de soja sucré, servie en général sur du riz. L’Agence des pêches compte 19 espèces et sous-espèces d’anguilles dans le monde, dont quatre largement consommées ; presque toute l’anguille d’élevage du Japon est de l’anguille japonaise, tandis que les importations comprennent ces dernières années de l’anguille américaine.
+
+La vie de l’anguille japonaise reste en partie un mystère. Elle éclôt près des îles Mariannes, à environ 2,000 km du Japon, dérive vers l’Asie de l’Est à l’état de larve puis de *civelle* transparente, passe 5 à 15 ans dans les rivières et les estuaires, et retournerait aux Mariannes pour frayer. Son lieu de ponte n’a été localisé qu’en 2011, 36 ans après le début des recherches.
+
+La façon dont elle est servie vient de la vente à emporter. Le ministère de l’Agriculture dit que l’anguille et le riz étaient à l’origine séparés ; le *donburi* s’est répandu parce que poser l’anguille sur du riz chaud la gardait chaude pour la livraison, et la boîte laquée (*jū*) ne contenait d’abord que de l’anguille.
+
+**Saison.** Les sources du ministère de l’Agriculture ne s’accordent pas. L’une dit que l’anguille sauvage a deux saisons, l’été où elle se nourrit et l’automne à l’hiver où elle descend vers la mer, et que l’anguille d’élevage est à son meilleur au début de l’été ; une autre dit que la vraie saison est l’automne, quand elle engraisse avant l’hiver. Les deux sont officielles ; à vous de choisir.
+
+## Pourquoi elle coûte ce qu’elle coûte
+
+**Toute anguille commence sauvage.** Les fermes élèvent des civelles — environ 6 cm et 0.2 g — capturées à l’état sauvage. La pêche a fortement chuté à partir de la fin des années 1950 et se situe le plus souvent entre 5 et 30 tonnes par an depuis le début des années 1980. Plus de 20,000 personnes les pêchent, quelques grammes chacune par jour.
+
+**Le prix de la semence oscille.** Les chiffres de la filière de l’Agence des pêches pour le prix moyen de la civelle (nationale et importée) vont de ¥160,000 le kilo en 2003 à un pic de ¥2.99 million en 2018, ¥2.5 million en 2024, ¥1.3 million en 2025 et ¥660,000 pour la saison 2026, deuxième baisse consécutive. À environ 5,000 civelles au kilo, ¥1.3 million le kilo font à peu près ¥260 par anguille avant qu’elle ait mangé quoi que ce soit — mon calcul, pas un chiffre officiel — et elle est ensuite nourrie pendant six mois à plus d’un an. À Hamamatsu, une civelle de 0.2 g grossit jusqu’à 200–300 g en un an ou plus.
+
+**Les bassins sont plafonnés.** Depuis une déclaration commune de 2014, le Japon, la Chine, la Corée du Sud et Taïwan limitent le nombre de jeunes anguilles mises en bassin d’élevage, 20% en dessous du niveau précédent. Pour la saison 2026, le quota du Japon est de 21.7 tonnes d’anguille japonaise pour 507 fermes autorisées.
+
+**La plupart de l’anguille est importée.** En 2025, sur la base du poids vif de l’Agence des pêches, le Japon a produit 17,611 t (17,557 d’élevage, 54 de pêche) et importé 45,987 t : environ 72% importé selon mon calcul. Et l’élevage « national » utilise des civelles en partie importées, national ne veut donc pas dire japonais de naissance. L’offre a culminé à 158,094 t en 2000 et se situe autour de 60,000 t ces dernières années. Kagoshima élève le plus (7,342 t), puis Aichi, Miyazaki et Shizuoka.
+
+**Le prix a déjà monté.** La comparaison de 2007 et 2017 par le Bureau des statistiques : la quantité achetée par les ménages est tombée à 54% du niveau antérieur, l’indice des prix à la consommation du kabayaki est monté à 183, et les dépenses réelles sont tombées à 41%.
+
+## La question de la protection
+
+La Liste rouge de l’UICN a classé l’anguille japonaise « en danger » en 2014 (l’anguille européenne était déjà « en danger critique »). L’anguille européenne est à l’Annexe II de la CITES depuis 2009, et l’UE ne délivre aucun permis d’exportation. À la COP20 de la CITES en 2025, l’UE et le Panama ont proposé d’inscrire toutes les espèces d’anguilles ; le comité l’a rejeté par 100 voix contre 35, avec 8 abstentions, et une résolution sur le commerce et la gestion de l’anguille a été adoptée par consensus. Les avis d’experts sur la proposition étaient partagés — ces chiffres viennent du résumé du gouvernement japonais lui-même, ce qu’il faut garder à l’esprit en les lisant. Depuis décembre 2025, les civelles relèvent de la loi japonaise contre les produits de la mer capturés illégalement, après que l’Agence a constaté un écart de 1.2 tonne entre ce qui était déclaré pêché et importé et ce qui était entré dans les bassins.
+
+## Le jour du bœuf
+
+Le *doyō* désigne les quelque 18 jours précédant chacun des quatre tournants de saison. Le jour du bœuf du zodiaque revient tous les 12 jours, si bien que certains étés comptent deux jours du bœuf dans le doyō, *ichi no ushi* et *ni no ushi*. Dans l’enquête sur les ménages de 2017, les ménages ont dépensé ¥390 en kabayaki le premier jour du bœuf et ¥65 le second — bien plus que n’importe quel autre jour — et juillet représentait 37.3% des dépenses de l’année.
+
+Pourquoi l’anguille ? Les explications, toutes consignées, aucune prouvée :
+
+- **Hiraga Gennai**, le polymathe de l’époque d’Edo, aurait dit à une boutique d’anguille en difficulté d’afficher « Aujourd’hui, c’est le jour du bœuf ». Le Bureau des statistiques et le ministère de l’Agriculture parlent de la théorie célèbre ; la page d’histoire d’une entreprise alimentaire dit qu’il n’y a pas de preuve solide.
+- **Harukiya**, une boutique d’anguille d’Edo, aurait constaté que l’anguille grillée le jour du bœuf se conservait mieux que les autres jours — une histoire citée d’un ancien essai comme tradition populaire.
+- **La sagesse populaire** : manger de l’anguille nourrissante les jours les plus chauds pour éviter la fatigue de l’été.
+- **Une astuce commerciale qui avait du sens** : une encyclopédie de référence y voit une tactique de boutiques d’anguille, raisonnable comme apport nutritif d’été, déjà pratiquée dans les années 1820.
+
+## Les grades, et ce que cela coûte
+
+<DishPrices keys={['unaju']} />
+
+Les chiffres ci-dessus sont tenus sur la page de référence des prix et s’y mettent à jour. Sur n’importe quel menu d’anguille, vous rencontrerez des mots de grade — *ume*, *take*, *matsu* (prunier, bambou, pin), ou *nami*, *jō*, *tokujō* (standard, supérieur, extra). **Il n’existe pas de règle commune.** Chaque maison décide. Trois exemples, tous taxes comprises :
+
+- **Unagi no Naruse** (chaîne), selon l’annonce d’août 2024 : ume, take et matsu étaient une demi-anguille, trois quarts d’anguille et une anguille entière ; les prix allaient de ¥1,600 à 2,600 pour l’anguille plus maigre *nami*, de ¥1,900 à 2,900 pour le *jō*, de ¥3,400 à 4,400 pour le *tokujō* (cinq par jour). Son site actuel donne ¥1,900, ¥2,500 et ¥2,900 sans préciser si les taxes sont comprises.
+- **Unagi Edogawa** (Nara) : *take*, une anguille, ¥4,400 ; *matsu*, une anguille et quart, ¥5,450.
+- **Atsuta Hōraiken**, maison mère (Nagoya) : bol d’anguille ¥3,300 pour trois morceaux, *jō* ¥4,100 pour quatre, *tokujō* ¥5,700 pour six ; *hitsumabushi* ¥4,950. Son *kaiseki* d’anguille est à ¥12,100 au déjeuner et ¥16,500 au dîner, plus 10% de service.
+
+Dans une maison, le grade est la quantité, dans une autre la qualité de l’anguille, dans une troisième le nombre de morceaux. Demandez.
+
+**Où d’autre.** Le jour du bœuf, note le ministère de l’Agriculture, l’anguille se vend en grande quantité dans les supermarchés et les konbini autant que dans les boutiques d’anguille.
+
+<Figure
+  src={boxSizes}
+  alt="Trois boîtes laquées d’anguille sur du riz alignées, de la plus petite à la plus grande, avec soupe et légumes marinés"
+  caption="Trois boîtes, trois grades. Ce que chaque grade signifie est la règle de la maison. Illustration."
+/>
+
+## Comment commander et manger
+
+- **Les formes.** *Unajū* (en boîte) et *unadon* (en bol) sont de l’anguille sur du riz ; *kabayaki* est l’anguille seule ; *shirayaki* est grillée sans tare, mangée avec du wasabi et du soja. Le site du tourisme de Tokyo dit que l’unajū se présente généralement en trois tailles environ.
+- **En accompagnement.** Soupe de foie d’anguille (*kimosui*), anguille au vinaigre avec du concombre (*uzaku*), anguille roulée dans l’omelette (*umaki*).
+- **Sanshō.** Le poivre moulu sur la table servait à l’origine, dit le ministère de l’Agriculture, à masquer l’odeur de l’anguille d’élevage d’autrefois. Une maison de Nihonbashi citée par le site du tourisme de Tokyo conseille de goûter d’abord l’anguille puis d’en ajouter un peu.
+- **Petites arêtes.** Il y en a. Mangez avec précaution.
+- **Toujours cuite.** Le sang d’anguille est toxique, dit le ministère de l’Agriculture, mais la chaleur — 60°C pendant cinq minutes ou plus — le détruit.
+- **Anguille et prune marinée.** La vieille mise en garde contre leur association n’a aucun fondement médical.
+
+## Les lignées
+
+Le tableau est tenu en un seul endroit pour que chaque style soit décrit dans les mêmes termes. Les lignes sans lien figurent dans la liste mais ne sont pas encore écrites.
+
+<LineageTable dish="unagi" />
+
+Hamamatsu, sur le lac Hamana, est entre les deux : la ville dit qu’étant à mi-chemin entre Tokyo et Osaka, on peut y manger les deux styles. L’élevage d’anguilles y a commencé avec Hattori Kurajirō à l’ère Meiji, il y a plus de 120 ans.
+
+## Où en manger
+
+- **Tokyo** — le style du Kantō ; Nihonbashi compte de vieilles maisons qui publient leur méthode.
+- **Osaka** — le *jiyaki*, ouvert par le ventre et non cuit à la vapeur.
+- **Nagoya** — le *hitsumabushi* chez Atsuta Hōraiken, fondé en 1873.
+- **Hamamatsu** — les deux styles ; la ville aux dépenses des ménages en kabayaki les plus élevées dans l’enquête 2015–17.
+- **Yanagawa, Fukuoka** — le *seiro-mushi*, anguille cuite à la vapeur sur du riz dans un panier, un « aliment de 100 ans » de l’Agence des affaires culturelles, environ 30 maisons.
+
+Vérifiez les tarifs et les durées de trajet auprès de l’exploitant avant de partir.
+
+## La même anguille, une autre ville
+
+- **Les villes célèbres ne sont pas les plus grands élevages.** Shizuoka, dont dépend Hamamatsu, était quatrième en 2025 avec 1,827 t ; Kagoshima en élevait quatre fois plus. Les maisons de Yanagawa utilisent de l’anguille d’élevage de Kagoshima et de Miyazaki, parce que l’anguille sauvage n’y est plus pêchée. Une maison de *jiyaki* d’Osaka s’approvisionne au lac Hamana, à Mikawa Isshiki, à Kōchi, Kagoshima, Shizuoka, Tokushima et Miyazaki.
+- **La carte des dépenses est occidentale.** Dans l’enquête sur les ménages de 2015–17 (la dernière qui isole le kabayaki), Hamamatsu dépensait le plus par ménage, ¥6,311, puis Kyoto, Ōtsu, Nara et Osaka ; le centre de Tokyo était à ¥3,352, la moyenne nationale à ¥2,617. Il s’agit d’anguille achetée en boutique, pas au restaurant.
+- **Ce que la région vous donne, c’est un style.** Hamamatsu propose les deux ; Osaka grille sans vapeur ; Nagoya sert le hitsumabushi ; Yanagawa cuit à la vapeur dans un panier. Le prix et la taille d’une boîte, eux, dépendent davantage du type de maison — chaîne, spécialiste, *kaiseki* — que de la ville.
+
+## Ce que l’on croit à tort
+
+- **« L’anguille japonaise est japonaise. »** Environ 72% de l’offre est importée, et une partie de l’anguille élevée au Japon est née de civelles importées.
+- **« L’anguille est élevée à partir d’œufs. »** Les fermes élèvent des civelles pêchées à l’état sauvage.
+- **« Matsu est toujours le meilleur. »** Les grades veulent dire ce que dit la maison : taille, qualité ou nombre de morceaux.
+- **« Gennai a inventé le jour du bœuf. »** C’est l’histoire célèbre ; elle n’est pas prouvée, et d’autres explications existent.
+- **« Hamamatsu élève le plus d’anguilles. »** C’est Kagoshima.
+- **« Les styles du Kantō et du Kansai sont fixés par la région. »** Ce sont les schémas typiques. L’Unagi Edogawa de Nara ouvre par le dos et cuit à la vapeur.

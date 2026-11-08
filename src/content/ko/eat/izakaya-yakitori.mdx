@@ -1,0 +1,117 @@
+---
+title: '야키토리: 소금이냐 타레냐, 부위 이름, 그리고 야키토리가 닭고기가 아닌 도시들'
+description: '야키토리는 소금이나 달콤한 간장 타레로 간해 꼬치에 구운 닭고기입니다. 주문하는 법과, 야키토리가 돼지고기나 철판에 누른 닭 껍질을 뜻하는 도시들을 소개합니다.'
+translationKey: izakaya-yakitori
+translationStatus: reviewed
+category: eat
+kind: lineage
+dish: izakaya
+lineage: yakitori
+basis: researched
+areas: [kanto, hokkaido, shikoku]
+pubDate: 2026-11-04
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/izakaya-yakitori-hero.webp
+heroAlt: '숯불 위에 놓인 야키토리 꼬치와, 일부에는 타레를 바르고 나머지는 소금으로 간하는 요리사를 그린 일러스트'
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: 야키토리는 소금과 타레 중 무엇으로 주문해야 하나요?
+    a: 어느 쪽이든 괜찮습니다. 일본 정부관광국은 정답이 있는지 걱정하지 말라고 합니다. 가게는 두 가지 모두 어울리는 꼬치에 대해서만 물어보며, 내장 부위는 타레와 잘 맞는 경우가 많다고 권합니다. 묻지 않는다면 그 꼬치는 와사비나 매실절임 같은 다른 방식으로 완성되어 나옵니다.
+  - q: 야키토리는 꼬치째 먹나요?
+    a: 네, 꼬치째 바로 먹으며 젓가락은 필요 없습니다. 테이블에 쓴 꼬치를 담는 통이 있으면 거기에 넣습니다.
+  - q: 야키토리는 항상 닭고기인가요?
+    a: 모든 곳이 그렇지는 않습니다. 사이타마현 히가시마쓰야마에서 야키토리는 돼지 볼살과 파를 꿰어 된장 소스와 함께 먹는 음식입니다. 홋카이도 무로란에서는 돼지고기와 양파에 겨자를 곁들입니다. 에히메현 이마바리에서는 닭 껍질을 꼬치 없이 철판에 눌러 굽습니다.
+sources:
+  - label: 'JNTO「Yakitori: A Guide to Chicken Skewers」'
+    url: 'https://www.japan.travel/en/guide/yakitori-a-guide-to-chicken-skewers/'
+  - label: 'JNTO「Yakitori」特集'
+    url: 'https://www.japan.travel/en/sg/story/gourmet-yakitori/'
+  - label: '農林水産省 うちの郷土料理「やきとり」埼玉県'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/33_16_saitama.html'
+  - label: '農林水産省 うちの郷土料理「室蘭やきとり」北海道'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/muroranyakitori_hokkaido.html'
+  - label: '農林水産省 うちの郷土料理「今治焼き鳥」愛媛県'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/imabari_yakitori_ehime.html'
+  - label: 'GO TOKYO「Pub Grub Decoded: A Guide to Japanese Izakaya」'
+    url: 'https://www.gotokyo.org/en/story/guide/pub-grub-decoded-a-guide-to-japanese-izakaya/index.html'
+  - label: 'GO TOKYO「Drink and Dine Like a Local: A Guide to Exploring Yokocho Alleyways」'
+    url: 'https://www.gotokyo.org/en/story/guide/drink-and-dine-like-a-local-a-guide-to-exploring-yokocho-alleyways/index.html'
+  - label: 'JNTO「Izakaya Dining Guide」'
+    url: 'https://www.japan.travel/en/guide/dinner-at-a-japanese-tavern/'
+  - label: '福岡市 公式観光サイト「屋台の楽しみ方」'
+    url: 'https://gofukuoka.jp/yatai-howto.html'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import yakitoriCuts from '../../../assets/eat/izakaya-yakitori-body.webp';
+
+야키토리는 선술집, 고급 카운터 가게, 축제 노점, 편의점에 이르기까지 일본 어디서나 팔립니다. 주문은 쉽습니다. 다만 주문하기 전에 알아 둘 것이 두 가지 있습니다. 가게가 *시오*(소금)나 *타레*라고 물을 때 무엇을 묻는 것인지, 그리고 일본의 적어도 세 도시에서는 "야키토리"가 닭고기를 뜻하지 않는다는 점입니다.
+
+이자카야의 저녁이 어떻게 흘러가는지는 이자카야 개요 편에서 시작해 보세요.
+
+## 야키토리란
+
+일본 정부관광국(JNTO)은 야키토리를 한입 크기로 자른 닭고기와 채소를 꼬치에 꿰어 숯불에 굽고, 소금(*시오*)이나 달콤한 간장 베이스 소스인 *타레*로 간한 음식이라고 정의합니다.
+
+## 부위
+
+JNTO의 안내 자료는 가장 자주 보게 될 꼬치를 이렇게 나열합니다.
+
+- **모모** — 넓적다리. 뼈를 발라낸 넓적다리살로, JNTO는 이 때문에 육즙이 많다고 합니다.
+- **네기마** — 닭고기와 파를 번갈아 꿴 것.
+- **쓰쿠네** — 다진 닭고기 완자.
+- **가와** — 껍질.
+- **스나기모** — 모래주머니.
+- **하쓰** — 심장.
+- **레바** — 간.
+- **난코쓰** — 연골.
+- **사사미 와사비** — 닭 안심에 와사비를 곁들인 것.
+
+<Figure
+  src={yakitoriCuts}
+  alt="넓적다리살과 파, 껍질, 간, 심장, 완자, 날개가 한 줄로 놓인 긴 접시의 야키토리 꼬치와, 그 옆의 소금과 타레를 담은 작은 접시"
+  caption="넓적다리살, 껍질, 간, 심장, 완자, 날개 — 그리고 소금이나 타레. 일러스트."
+/>
+
+## 주문하는 법
+
+**소금이냐 타레냐.** 가게에서 어느 쪽으로 할지 물을 수 있습니다. JNTO의 조언은 정답을 고르려고 걱정하지 말라는 것입니다. 두 가지 모두 어울리는 꼬치에 대해서만 묻기 때문입니다. 내장 부위는 타레와 잘 맞는 경우가 많다고 덧붙입니다. 묻지 않는다면 그 꼬치는 와사비나 매실절임처럼 다른 방식으로 마무리되어 나옵니다.
+
+**먹는 법.** 꼬치째 바로 먹으며 젓가락은 필요 없습니다. 쓴 꼬치를 담는 통이 있으면 거기에 넣습니다.
+
+**어울리는 자리.** JNTO는 야키토리를 맥주와 함께하는 가벼운 음식이라고 설명하고, 만날 수 있는 곳으로 서서 마시는 "비어 바", 격식 있는 좌석을 갖춘 가게, 축제 노점, 편의점과 슈퍼마켓을 꼽습니다.
+
+## 가격
+
+<DishPrices keys={['yakitori']} />
+
+위의 금액은 가격 참고 페이지에서 관리하며 그곳에서 갱신됩니다. 야키토리 전문점의 세금 포함 공개 가격은 찾지 못했습니다.
+
+## "야키토리"가 다른 음식인 곳
+
+농림수산성의 향토 음식 데이터베이스에는 이 말이 도쿄 이자카야의 닭 꼬치가 아니라 그 지역 고유의 음식을 뜻하는 도시가 세 곳 기록되어 있습니다.
+
+**사이타마현 히가시마쓰야마(東松山).** 돼지 *가시라*(관자놀이에서 볼까지의 고기)와 파를 번갈아 꿰어 숯불에서 천천히 굽고, 소금으로 간한 뒤 가게마다 다른 된장 소스와 함께 먹습니다. 시내에 가게가 약 50곳 있습니다. 농림수산성에 따르면 대형 공장에서 일하는 사람들의 음식으로 퍼졌고, 대부분 빨간 등롱을 단 이자카야에서 냅니다. 히가시마쓰야마는 비바이, 무로란, 후쿠시마, 이마바리, 나가토, 구루메와 함께 일본의 "야키토리 7대 도시"에 속한다고 자부합니다.
+
+**홋카이도 무로란(室蘭).** 여기서 "야키토리"는 돼지고기와 양파를 꿴 꼬치이며 서양식 겨자를 곁들여 먹습니다. 농림수산성에 따르면 홋카이도 남부에서는 메뉴에 야키토리라고 적혀 있으면 돼지고기를 뜻하고, 닭고기와 구별하려고 *부타세이*(돼지고기제)라고 적는 가게도 있습니다. 이자카야와 전문점에서 먹으며 집에서는 거의 만들지 않습니다. 최초로 여겨지는 가게 도리요시는 1937년 와니시초에서 문을 열었습니다.
+
+**에히메현 이마바리(今治).** 닭 껍질을 꼬치에 꿰지 않고 두꺼운 철판 위에서 무거운 것으로 눌러 굽습니다. 농림수산성은 약 50년 전에 고안되었고 한때 시내에 철판 야키토리 가게가 100곳이 넘었다고 합니다. 단골에게 권하는 순서는 껍질부터 시작해 이마바리의 닭튀김 *센잔키*로 마무리하는 것입니다.
+
+## 집에서, 그리고 밖에서 먹기
+
+**고향에서는 다른 음식.** 무로란에서 "야키토리"를 주문하면 돼지고기와 양파에 겨자가 나오고, 히가시마쓰야마에서는 돼지 볼살에 된장 소스, 이마바리에서는 납작하게 구운 닭 껍질이 나옵니다. 도쿄의 메뉴에서 같은 말은 닭 꼬치를 뜻합니다.
+
+**작은 가게, 적은 인원.** 도쿄의 요코초 골목에는 좌석이 10석쯤인 술집이 많고, 그보다 적은 곳도 있습니다. 두세 명이 가는 편이 좋습니다.
+
+**후쿠오카의 포장마차.** 야타이(포장마차)에서 먹는다면, 시의 관광 사이트에 따르면 대부분 오토시를 받지 않고, 1인당 음료 한 잔과 요리 한 접시를 주문해야 하며, 현금만 받습니다.
+
+## 흔히 잘못 아는 점
+
+- **"소금과 타레 중에 정답이 있다."** JNTO는 없다고 합니다. 둘 다 어울리는 꼬치에서만 묻습니다.
+- **"야키토리는 닭고기를 뜻한다."** 돼지고기인 히가시마쓰야마와 무로란, 철판에 구운 껍질인 이마바리에서는 그렇지 않습니다.
+- **"젓가락으로 꼬치에서 빼 먹는다."** 꼬치째 먹습니다.
+- **"야키토리는 식당 요리다."** 카운터 가게뿐 아니라 서서 마시는 술집, 축제 노점, 편의점에서도 팝니다.

@@ -210,7 +210,7 @@ const es: Dict = {
 export const ui: Record<string, Dict> = { en, ko, 'zh-tw': zhTw, fr, es };
 
 /** 人が確認し終えた言語。ここに無い言語は LOCALES に入れてはいけない（tools/check-i18n.mjs が見る） */
-export const UI_REVIEWED: readonly string[] = ['en'];
+export const UI_REVIEWED: readonly string[] = ['en', 'ko', 'fr', 'es'];
 
 export function t(locale: string, key: UIKey): string {
   const dict = ui[locale] ?? ui.en;

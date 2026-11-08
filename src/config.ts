@@ -58,7 +58,7 @@ export const PLANNED_LOCALES = Object.keys(LOCALE_META) as Locale[];
  *   2. UI 辞書（src/i18n/ui.ts）の該当言語を人が確認する
  * 翻訳記事のファイルが src/content/<lang>/ にあっても、ここに無い言語は公開されない（parseId が弾く）。
  */
-export const LOCALES: readonly Locale[] = ['en'];
+export const LOCALES: readonly Locale[] = ['en', 'ko', 'fr', 'es'];
 export const DEFAULT_LOCALE: Locale = 'en';
 
 export const hreflangOf = (locale: string): string => LOCALE_META[locale as Locale]?.hreflang ?? locale;

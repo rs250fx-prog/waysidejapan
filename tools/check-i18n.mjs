@@ -45,7 +45,7 @@ for (const l of PLANNED_LOCALES) {
 // 3, 4, 5
 const CONTENT = join(ROOT, 'src', 'content');
 const FORBIDDEN = new Set(['zh', 'zh-cn', 'zh-hans', 'zh-sg']);
-const keyOf = (file) => (readFileSync(file, 'utf8').match(/^translationKey:\s*["']?([^"'\n]+)["']?\s*$/m) ?? [])[1];
+const keyOf = (file) => (readFileSync(file, 'utf8').match(/^translationKey:\s*["']?([^"'\r\n]+)["']?\s*$/m) ?? [])[1];
 const statusOf = (file) => (readFileSync(file, 'utf8').match(/^translationStatus:\s*["']?(\w+)["']?\s*$/m) ?? [])[1] ?? 'reviewed';
 function* files(dir) {
   for (const n of readdirSync(dir)) {

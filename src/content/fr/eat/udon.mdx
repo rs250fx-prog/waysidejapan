@@ -1,0 +1,117 @@
+---
+title: "Udon : la simple nouille de blé que chaque région du Japon mange à sa façon"
+description: "L’udon, c’est farine, eau et sel : Kagawa, Fukuoka, Osaka et Ise n’y mettent pas la même chose. Origines, fossé est-ouest du bouillon, prix et lignées."
+translationKey: udon
+translationStatus: reviewed
+category: eat
+kind: dish
+dish: udon
+basis: researched
+areas: [setouchi, kyushu, kansai]
+updatedDate: 2026-10-21
+pubDate: 2026-10-21
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/udon-hero.webp
+heroAlt: "Illustration d’un bol d’udon chaud dans un bouillon clair, avec de la ciboule, des morceaux de tempura et une tranche de pâte de poisson"
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: "Quelle est la différence entre l’udon et le soba ?"
+    a: "L’udon est une nouille épaisse de blé ; le soba est une nouille plus fine de sarrasin. L’udon est la nouille de l’ouest et du sud du Japon, le soba celle de l’est et des montagnes, même si les deux sont désormais partout. L’enquête officielle chiffre un bol d’udon dans le centre de Tokyo à ¥818 et le soba à ¥788, taxe comprise (août 2026)."
+  - q: "Pourquoi l’udon est-il mou à Fukuoka et ferme à Kagawa ?"
+    a: "Ce sont deux idées différentes de la bonne nouille. Le sanuki udon de Kagawa est pétri au pied, mis au repos et cuit jusqu’à un rebond ferme ; le udon de Hakata, à Fukuoka, est cuit à l’avance et servi mou, selon le récit local pour que des marchands pressés soient servis en quelques secondes. Aucun n’est « le bon »."
+  - q: "Combien coûte un bol d’udon ?"
+    a: "De ¥360 à 440 taxe comprise pour le kake udon nature dans les chaînes nationales, et ¥818 taxe comprise pour le bol statistique du centre de Tokyo (août 2026). À Kagawa, un bol dans une boutique de fabrique de nouilles est encore moins cher."
+sources:
+  - label: '農林水産省 aff 2016年11月号「ニッポン麺探訪 讃岐うどん」'
+    url: 'https://www.maff.go.jp/j/pr/aff/1611/n_search.html'
+    published: '2016-11'
+  - label: '農林水産省「うちの郷土料理」AREA STORIES 大阪府（だしの東西）'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/area_stories/osaka.html'
+  - label: '農林水産省「うちの郷土料理」きつねうどん（大阪府）'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/39_17_osaka.html'
+  - label: '国土交通省 観光多言語解説文DB「さぬきうどん発祥の地」'
+    url: 'https://www.mlit.go.jp/tagengo-db/R2-01903.html'
+  - label: '福岡市「うどんも、そばも、まんじゅうも博多発祥」'
+    url: 'https://showcase.city.fukuoka.lg.jp/column/clm0025.html'
+  - label: 'コトバンク「饂飩」（日本国語大辞典・世界大百科事典）'
+    url: 'https://kotobank.jp/word/饂飩'
+  - label: '全国乾麺協同組合連合会「ひやむぎとそうめんの違い」（太さの規格）'
+    url: 'https://www.kanmen.com/topic/04_chigai.html'
+  - label: '全国生めん類公正取引協議会「生めん類の表示に関する公正競争規約・施行規則」'
+    url: 'https://www.jfftc.org/DATA/Kiyaku_pdf/c07_H_namamen.pdf'
+  - label: '総務省統計局 家計調査 品目別都道府県庁所在市ランキング 外食「日本そば・うどん」（2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/5.html'
+    published: '2026-02-13'
+  - label: '香川県統計調査課 うどん県統計情報コーナー「そば・うどん店」の事業所数'
+    url: 'https://www.pref.kagawa.lg.jp/tokei/sogo/udonken/0001.html'
+  - label: '日清食品 どん兵衛 きつねうどん［東］［西］商品ページ'
+    url: 'https://www.nissin.com/jp/products/brands/donbei/'
+  - label: '文春オンライン「きつね・たぬきの東西」（坂崎仁紀）'
+    url: 'https://bunshun.jp/articles/-/79805'
+    published: '2025-06-17'
+  - label: '伊勢市「伊勢うどん」'
+    url: 'https://www.city.ise.mie.jp/cul_spo_edu/culture/bunkazai_shiseki/iseudon.html'
+  - label: '佐藤養助 公式「歴代佐藤養助の軌跡」'
+    url: 'https://www.sato-yoske.co.jp/about/history'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import threeUdon from '../../../assets/eat/udon-body.webp';
+
+L’udon, c’est de la farine de blé, de l’eau et du sel, coupés en une nouille épaisse. C’est toute la recette, et c’est pourquoi un mot si simple recouvre des plats qui n’ont presque rien en commun : la nouille sanuki, dure et élastique, dans un bouillon clair d’anchois ; la nouille molle de Hakata sous une tranche de tempura de bardane ; le bouillon pâle d’algue kombu d’Osaka avec son coussin sucré de tofu frit ; l’énorme nouille molle d’Ise sans aucun bouillon, juste une cuillerée de sauce de soja noire. Les Japonais se disputent pour savoir quel est le vrai udon. La réponse honnête est que l’udon est une méthode, et que chaque région a fini la phrase à sa façon.
+
+## Ce que c’est
+
+Le mot est ancien et l’origine contestée. Les dictionnaires font remonter *udon* à un glissement phonétique à partir d’*undon*, et finalement à une friandise chinoise en forme de raviolis (*konton*) apportée au Japon à l’époque de Nara ; les plus anciennes formes écrites sont une entrée de journal de 1465 (« utón ») et un dictionnaire portugais-japonais de 1603–04 (« Vndon »). Deux villes revendiquent la nouille elle-même. Fukuoka dit que le moine Enni a rapporté la technique de mouture de la Chine des Song en 1241 et enseigné à la ville à faire l’udon, le soba et les brioches à la vapeur, et une pierre dans le parc de son temple l’affirme. Kagawa dit que le moine Kūkai l’a apportée de la Chine des Tang quatre siècles plus tôt et que son neveu en a servi à la famille à Takinomiya — un récit que le ministère de l’Agriculture classe, avec douceur, parmi les légendes. Ce qui est documenté, c’est qu’il existait des boutiques d’udon à l’époque d’Edo, et que les styles régionaux divergeaient déjà.
+
+Il n’existe aucune définition légale de l’épaisseur que doit avoir l’udon quand une boutique vous le sert. Les seules normes concernent les nouilles préemballées : l’udon séché industriel doit mesurer au moins 1.7 mm de large (plus fin, c’est du *hiyamugi*, plus fin encore du *sōmen*), et les règles d’étiquetage des nouilles fraîches définissent l’udon simplement comme toute nouille faite de farine de blé et d’eau, quelle que soit sa forme. Tout le reste — épaisseur, mâche, bouillon — relève de la coutume.
+
+## Pourquoi il est ainsi
+
+**La nouille suit l’eau et le blé.** Kagawa avait des champs de blé qui poussent dans ses hivers doux, des marais salants sur une côte peu profonde, des anchois séchés de la mer Intérieure et de la sauce de soja de Shōdoshima — le résumé du ministère est que tout ce qu’il faut à l’udon était à portée de main, et que le résultat fut une nouille dure, salée, mise au repos. Osaka avait la route maritime Kitamae qui amenait le kombu d’Hokkaido, et une eau douce qui convenait à un bouillon de kombu ; sa nouille fut faite molle pour porter ce bouillon. Le récit que Fukuoka fait de sa propre nouille molle est que les marchands étaient pressés, et qu’on cuisait donc les nouilles à l’avance.
+
+**L’est et l’ouest se séparent sur le bouillon.** La description du ministère lui-même : le Kantō fait son bouillon de nouilles surtout à base de bonite, Osaka à base de kombu avec de la bonite ajoutée, parce que le kombu arrivait par mer à Osaka et que l’eau locale était douce. Les deux bouillons ont des couleurs différentes — foncé à l’est, pâle à l’ouest — et la plus grande marque de nouilles instantanées vend deux recettes. Le kitsune udon Donbei de Nissin existe en version Est (fond de bonite et de bonite sōda, sauce de soja foncée, *shichimi* au piment rouge) et en version Ouest (fond de bonite et de kombu, sauce de soja pâle, *shichimi* au poivre japonais) ; Hokkaido en reçoit une troisième.
+
+**Même les noms changent à la frontière.** À Osaka, *kitsune* est de l’udon au tofu frit et *tanuki* du soba au tofu frit ; des miettes de tempura en font un *haikara*. À Tokyo, *tanuki* désigne les miettes de tempura. Commandez un tanuki dans la mauvaise ville et vous aurez un autre plat, et la personne qui vous sert n’y verra rien d’étrange.
+
+<Figure
+  src={threeUdon}
+  alt="Trois bols d’udon alignés : des nouilles fermes nature avec du gingembre, des nouilles molles garnies de tempura de bardane, et des nouilles sous une feuille de tofu frit"
+  caption="Sanuki, Hakata, Osaka : une nouille, trois bols. Illustration."
+/>
+
+## Ce que ça coûte
+
+<DishPrices keys={['udon']} />
+
+L’écart entre le bol de chaîne (¥360–440 pour le *kake* nature, taxe comprise comme l’affichent les chaînes) et le bol de l’enquête dans les 23 arrondissements de Tokyo (¥818, un prix d’enquête taxe comprise) est celui entre un comptoir en libre-service et une boutique où l’on s’assoit. À Kagawa, un bol dans un *seimenjo* — une fabrique de nouilles avec quelques places — est encore moins cher, ce qui est l’une des raisons pour lesquelles l’enquête sur les ménages montre que Takamatsu dépense ¥17,704 par an et par ménage en soba et udon mangés dehors, 2.4 fois la moyenne nationale de ¥7,467 et loin devant Shizuoka, deuxième, à ¥11,718. Osaka, patrie du kitsune udon, est 46e sur 52 villes à ¥6,078 : les Osakais mangent leur udon, mais ils ne sortent pas pour en manger comme le fait Kagawa.
+
+## Les lignées
+
+<LineageTable dish="udon" />
+
+Trois choses que le tableau ne peut pas montrer :
+
+- **Kagawa est le seul endroit doté d’une norme écrite.** Le code d’étiquetage des nouilles fraîches n’autorise « Honba (authentique) sanuki udon » que sur des nouilles fabriquées à Kagawa, coupées à la main ou à la manière manuelle, avec au moins 40% d’eau et 3% de sel par rapport au poids de la farine, mises au repos au moins deux heures. Il s’applique aux nouilles préemballées, pas à ce qu’un restaurant met dans un bol — si bien qu’une boutique n’importe où peut appeler son plat sanuki udon, et beaucoup le font.
+- **Les deux nouilles molles le sont pour des raisons différentes.** Celle de Hakata est cuite à l’avance pour la rapidité ; celle d’Ise est cuite une heure exprès, trois fois l’épaisseur habituelle, et se mange avec une sauce tamari foncée plutôt qu’avec un bouillon. Le nom d’Ise n’a été normalisé qu’en 1972, quand l’association des boutiques de nouilles de la ville s’est mise d’accord dessus.
+- **L’inaniwa fait figure d’exception :** une nouille plate fine, étirée à la main et séchée, d’Akita, dont les débuts au début d’Edo sont datés et attribués différemment par le ministère de l’Agriculture, la ville, la coopérative et les fabricants, et dont la méthode a été rendue publique en 1972. Voyez l’[udon inaniwa](/fr/eat/udon-inaniwa/).
+
+## Où en manger
+
+- **Sanuki** — Takamatsu et la route des pèlerins de Kotohira ; bus de l’aéroport à la gare de Takamatsu, 45 minutes ; depuis Okayama, le rapide Marine Liner par le pont de Seto.
+- **Hakata** — Fukuoka ; l’aéroport est sur la ligne de métro, à quelques stations de Hakata et de Tenjin.
+- **Osaka** — Senba, où le kitsune udon est né en 1893, et les comptoirs debout des gares.
+- **Ise** — l’approche du Grand Sanctuaire ; **Inaniwa** — Yuzawa, dans le sud d’Akita.
+
+## Ce que l’on croit à tort
+
+- **« L’udon est mou. »** À Kagawa, c’est le contraire, et Kagawa en mange plus que quiconque.
+- **« L’udon est ferme. »** À Fukuoka et à Ise, la mollesse est le but.
+- **« Sanuki udon sur une enseigne veut dire fabriqué à Kagawa. »** Seulement sur un paquet, et seulement avec le mot « Honba » ou « authentique ». Sur une enseigne de restaurant, c’est un style.
+- **« Kitsune et tanuki sont la même chose partout. »** Ils échangent leur sens entre Osaka et Tokyo.
+- **« Osaka est la capitale de l’udon. »** Osaka a créé le kitsune udon ; Takamatsu mange de l’udon. L’enquête sur les ménages place la ville d’Osaka près du bas du pays pour les nouilles mangées dehors.

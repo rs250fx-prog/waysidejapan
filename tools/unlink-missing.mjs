@@ -26,8 +26,8 @@ const exists = (href) => {
   return fs.existsSync(path.join(base, 'index.html')) || fs.existsSync(base + '.html');
 };
 
-// /en/ 以下のページだけを対象にする（/_astro や外部リンクには触らない）
-const A = /<a\b([^>]*?)\shref="(\/en\/[^"]*)"([^>]*)>([\s\S]*?)<\/a>/g;
+// 公開言語（/en/ /ko/ /fr/ /es/ ほか）以下のページだけを対象にする（/_astro や外部リンクには触らない）
+const A = /<a\b([^>]*?)\shref="(\/(?:en|ko|fr|es|zh-tw)\/[^"]*)"([^>]*)>([\s\S]*?)<\/a>/g;
 
 let removed = 0;
 const missing = new Map();
