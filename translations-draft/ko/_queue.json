@@ -1,0 +1,2828 @@
+[
+ {
+  "cat": "eat",
+  "slug": "donburi-gyudon",
+  "file": "src/content/en/eat/donburi-gyudon.mdx",
+  "words": 1250,
+  "published": true,
+  "impressions": 124,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "donburi-katsudon",
+  "file": "src/content/en/eat/donburi-katsudon.mdx",
+  "words": 1556,
+  "published": true,
+  "impressions": 71,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "paying-at-restaurants-in-japan",
+  "file": "src/content/en/column/paying-at-restaurants-in-japan.mdx",
+  "words": 1355,
+  "published": true,
+  "impressions": 39,
+  "done": true
+ },
+ {
+  "cat": "eat",
+  "slug": "unagi-kansai",
+  "file": "src/content/en/eat/unagi-kansai.mdx",
+  "words": 1293,
+  "published": true,
+  "impressions": 39,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-kobe",
+  "file": "src/content/en/eat/wagyu-kobe.mdx",
+  "words": 1519,
+  "published": true,
+  "impressions": 31,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "reading-menu-prices-in-japan",
+  "file": "src/content/en/column/reading-menu-prices-in-japan.mdx",
+  "words": 1324,
+  "published": true,
+  "impressions": 29,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "eating-out-with-children-in-japan",
+  "file": "src/content/en/column/eating-out-with-children-in-japan.mdx",
+  "words": 1995,
+  "published": true,
+  "impressions": 26,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "unagi",
+  "file": "src/content/en/eat/unagi.mdx",
+  "words": 2291,
+  "published": true,
+  "impressions": 26,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "queues-and-shared-tables",
+  "file": "src/content/en/column/queues-and-shared-tables.mdx",
+  "words": 1209,
+  "published": true,
+  "impressions": 25,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "akiu",
+  "file": "src/content/en/soak/akiu.mdx",
+  "words": 2809,
+  "published": true,
+  "impressions": 25,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-tsukemen",
+  "file": "src/content/en/eat/ramen-tsukemen.mdx",
+  "words": 1592,
+  "published": true,
+  "impressions": 23,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-hoto",
+  "file": "src/content/en/eat/udon-hoto.mdx",
+  "words": 729,
+  "published": true,
+  "impressions": 23,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "tonkatsu-kushikatsu",
+  "file": "src/content/en/eat/tonkatsu-kushikatsu.mdx",
+  "words": 1068,
+  "published": true,
+  "impressions": 22,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kusatsu",
+  "file": "src/content/en/soak/kusatsu.mdx",
+  "words": 4434,
+  "published": true,
+  "impressions": 22,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-sukiyaki",
+  "file": "src/content/en/eat/wagyu-sukiyaki.mdx",
+  "words": 1517,
+  "published": true,
+  "impressions": 20,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "donburi",
+  "file": "src/content/en/eat/donburi.mdx",
+  "words": 1399,
+  "published": true,
+  "impressions": 18,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sashimi",
+  "file": "src/content/en/eat/sashimi.mdx",
+  "words": 1756,
+  "published": true,
+  "impressions": 18,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "gyoza",
+  "file": "src/content/en/eat/gyoza.mdx",
+  "words": 2110,
+  "published": true,
+  "impressions": 17,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-funa",
+  "file": "src/content/en/eat/sushi-funa.mdx",
+  "words": 1173,
+  "published": true,
+  "impressions": 17,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yufuin",
+  "file": "src/content/en/soak/yufuin.mdx",
+  "words": 3564,
+  "published": true,
+  "impressions": 17,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yatai-matsuri",
+  "file": "src/content/en/eat/yatai-matsuri.mdx",
+  "words": 1010,
+  "published": true,
+  "impressions": 16,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "chicken-mizutaki",
+  "file": "src/content/en/eat/chicken-mizutaki.mdx",
+  "words": 1299,
+  "published": true,
+  "impressions": 15,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kinosaki",
+  "file": "src/content/en/soak/kinosaki.mdx",
+  "words": 4301,
+  "published": true,
+  "impressions": 15,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "chopsticks-in-japan",
+  "file": "src/content/en/column/chopsticks-in-japan.mdx",
+  "words": 1457,
+  "published": true,
+  "impressions": 14,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "restaurant-reservations-in-japan",
+  "file": "src/content/en/column/restaurant-reservations-in-japan.mdx",
+  "words": 1831,
+  "published": true,
+  "impressions": 14,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-shabu",
+  "file": "src/content/en/eat/wagyu-shabu.mdx",
+  "words": 1114,
+  "published": true,
+  "impressions": 14,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-tajima",
+  "file": "src/content/en/eat/wagyu-tajima.mdx",
+  "words": 1046,
+  "published": true,
+  "impressions": 14,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "gyoza-hamamatsu",
+  "file": "src/content/en/eat/gyoza-hamamatsu.mdx",
+  "words": 1649,
+  "published": true,
+  "impressions": 13,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen",
+  "file": "src/content/en/eat/ramen.mdx",
+  "words": 2329,
+  "published": true,
+  "impressions": 13,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sashimi-shime",
+  "file": "src/content/en/eat/sashimi-shime.mdx",
+  "words": 1014,
+  "published": true,
+  "impressions": 13,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-tachigui",
+  "file": "src/content/en/eat/soba-tachigui.mdx",
+  "words": 2103,
+  "published": true,
+  "impressions": 13,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-wanko",
+  "file": "src/content/en/eat/soba-wanko.mdx",
+  "words": 1427,
+  "published": true,
+  "impressions": 13,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "atami",
+  "file": "src/content/en/soak/atami.mdx",
+  "words": 3088,
+  "published": true,
+  "impressions": 13,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sashimi-shusse-uo",
+  "file": "src/content/en/eat/sashimi-shusse-uo.mdx",
+  "words": 1011,
+  "published": true,
+  "impressions": 12,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-hiyashi-chuka",
+  "file": "src/content/en/eat/ramen-hiyashi-chuka.mdx",
+  "words": 721,
+  "published": true,
+  "impressions": 11,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-tokyo-shoyu",
+  "file": "src/content/en/eat/ramen-tokyo-shoyu.mdx",
+  "words": 2015,
+  "published": true,
+  "impressions": 11,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-matsusaka",
+  "file": "src/content/en/eat/wagyu-matsusaka.mdx",
+  "words": 1309,
+  "published": true,
+  "impressions": 11,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-yonezawa",
+  "file": "src/content/en/eat/wagyu-yonezawa.mdx",
+  "words": 916,
+  "published": true,
+  "impressions": 10,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-honshu",
+  "file": "src/content/en/soak/onsen-honshu.mdx",
+  "words": 3184,
+  "published": true,
+  "impressions": 10,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "food-souvenirs-omiyage",
+  "file": "src/content/en/column/food-souvenirs-omiyage.mdx",
+  "words": 2220,
+  "published": true,
+  "impressions": 9,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "gyoza-utsunomiya",
+  "file": "src/content/en/eat/gyoza-utsunomiya.mdx",
+  "words": 1968,
+  "published": true,
+  "impressions": 9,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "nabe",
+  "file": "src/content/en/eat/nabe.mdx",
+  "words": 2133,
+  "published": true,
+  "impressions": 9,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-kakinoha",
+  "file": "src/content/en/eat/sushi-kakinoha.mdx",
+  "words": 978,
+  "published": true,
+  "impressions": 9,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-dagojiru",
+  "file": "src/content/en/eat/udon-dagojiru.mdx",
+  "words": 655,
+  "published": true,
+  "impressions": 9,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yatai",
+  "file": "src/content/en/eat/yatai.mdx",
+  "words": 1353,
+  "published": true,
+  "impressions": 8,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kakenagashi-explained",
+  "file": "src/content/en/soak/kakenagashi-explained.mdx",
+  "words": 2921,
+  "published": true,
+  "impressions": 8,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "eating-while-walking-in-japan",
+  "file": "src/content/en/column/eating-while-walking-in-japan.mdx",
+  "words": 1366,
+  "published": true,
+  "impressions": 7,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "chicken",
+  "file": "src/content/en/eat/chicken.mdx",
+  "words": 2260,
+  "published": true,
+  "impressions": 7,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-jindaiji",
+  "file": "src/content/en/eat/soba-jindaiji.mdx",
+  "words": 2013,
+  "published": true,
+  "impressions": 7,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-togakushi",
+  "file": "src/content/en/eat/soba-togakushi.mdx",
+  "words": 1272,
+  "published": true,
+  "impressions": 7,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "tonkatsu",
+  "file": "src/content/en/eat/tonkatsu.mdx",
+  "words": 1722,
+  "published": true,
+  "impressions": 7,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-omi",
+  "file": "src/content/en/eat/wagyu-omi.mdx",
+  "words": 1185,
+  "published": true,
+  "impressions": 7,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-edo",
+  "file": "src/content/en/eat/soba-edo.mdx",
+  "words": 1633,
+  "published": true,
+  "impressions": 6,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-edomae",
+  "file": "src/content/en/eat/sushi-edomae.mdx",
+  "words": 1475,
+  "published": true,
+  "impressions": 6,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-saba",
+  "file": "src/content/en/eat/sushi-saba.mdx",
+  "words": 1084,
+  "published": true,
+  "impressions": 6,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "unagi-kanto",
+  "file": "src/content/en/eat/unagi-kanto.mdx",
+  "words": 1416,
+  "published": true,
+  "impressions": 6,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yatai-hakata",
+  "file": "src/content/en/eat/yatai-hakata.mdx",
+  "words": 1438,
+  "published": true,
+  "impressions": 6,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "ikaho",
+  "file": "src/content/en/soak/ikaho.mdx",
+  "words": 2861,
+  "published": true,
+  "impressions": 6,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "how-meal-ticket-machines-work",
+  "file": "src/content/en/column/how-meal-ticket-machines-work.mdx",
+  "words": 1007,
+  "published": true,
+  "impressions": 5,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-steak",
+  "file": "src/content/en/eat/wagyu-steak.mdx",
+  "words": 1845,
+  "published": true,
+  "impressions": 5,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "akanko",
+  "file": "src/content/en/soak/akanko.mdx",
+  "words": 2705,
+  "published": true,
+  "impressions": 5,
+  "done": true
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-hakata",
+  "file": "src/content/en/eat/ramen-hakata.mdx",
+  "words": 3156,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-kagoshima",
+  "file": "src/content/en/eat/ramen-kagoshima.mdx",
+  "words": 778,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-kumamoto",
+  "file": "src/content/en/eat/ramen-kumamoto.mdx",
+  "words": 859,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-sapporo",
+  "file": "src/content/en/eat/ramen-sapporo.mdx",
+  "words": 2115,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "tonkatsu-miso-katsu",
+  "file": "src/content/en/eat/tonkatsu-miso-katsu.mdx",
+  "words": 1220,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "hakone",
+  "file": "src/content/en/soak/hakone.mdx",
+  "words": 3806,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "noboribetsu",
+  "file": "src/content/en/soak/noboribetsu.mdx",
+  "words": 3160,
+  "published": true,
+  "impressions": 4,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-goto",
+  "file": "src/content/en/eat/udon-goto.mdx",
+  "words": 2105,
+  "published": true,
+  "impressions": 3,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-kishimen",
+  "file": "src/content/en/eat/udon-kishimen.mdx",
+  "words": 676,
+  "published": true,
+  "impressions": 3,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-kyushu",
+  "file": "src/content/en/soak/onsen-kyushu.mdx",
+  "words": 3798,
+  "published": true,
+  "impressions": 3,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "izakaya-kakuuchi",
+  "file": "src/content/en/eat/izakaya-kakuuchi.mdx",
+  "words": 2052,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi",
+  "file": "src/content/en/eat/sushi.mdx",
+  "words": 1649,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-kanazawa",
+  "file": "src/content/en/eat/sushi-kanazawa.mdx",
+  "words": 1201,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-osaka-hako",
+  "file": "src/content/en/eat/sushi-osaka-hako.mdx",
+  "words": 1305,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-hakata",
+  "file": "src/content/en/eat/udon-hakata.mdx",
+  "words": 1449,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-osaka",
+  "file": "src/content/en/eat/udon-osaka.mdx",
+  "words": 1450,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu-yakiniku",
+  "file": "src/content/en/eat/wagyu-yakiniku.mdx",
+  "words": 1583,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "acidic-sulphur-radioactive-springs",
+  "file": "src/content/en/soak/acidic-sulphur-radioactive-springs.mdx",
+  "words": 3587,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "asamushi",
+  "file": "src/content/en/soak/asamushi.mdx",
+  "words": 2319,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "dogo",
+  "file": "src/content/en/soak/dogo.mdx",
+  "words": 4003,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-hokkaido",
+  "file": "src/content/en/soak/onsen-hokkaido.mdx",
+  "words": 2868,
+  "published": true,
+  "impressions": 2,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "eating-in-japan-allergies",
+  "file": "src/content/en/column/eating-in-japan-allergies.mdx",
+  "words": 1338,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "eating-in-japan-vegetarian",
+  "file": "src/content/en/column/eating-in-japan-vegetarian.mdx",
+  "words": 1863,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "izakaya-yakitori",
+  "file": "src/content/en/eat/izakaya-yakitori.mdx",
+  "words": 1109,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-kurume",
+  "file": "src/content/en/eat/ramen-kurume.mdx",
+  "words": 1161,
+  "published": true,
+  "impressions": 1,
+  "done": true
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-onomichi",
+  "file": "src/content/en/eat/ramen-onomichi.mdx",
+  "words": 2143,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-kaiten",
+  "file": "src/content/en/eat/sushi-kaiten.mdx",
+  "words": 1568,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sushi-masu",
+  "file": "src/content/en/eat/sushi-masu.mdx",
+  "words": 1013,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon",
+  "file": "src/content/en/eat/udon.mdx",
+  "words": 1512,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-sanuki",
+  "file": "src/content/en/eat/udon-sanuki.mdx",
+  "words": 1930,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "arima",
+  "file": "src/content/en/soak/arima.mdx",
+  "words": 4013,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "beppu",
+  "file": "src/content/en/soak/beppu.mdx",
+  "words": 4722,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "hydrogen-carbonate-sulphate-iodine-simple-springs",
+  "file": "src/content/en/soak/hydrogen-carbonate-sulphate-iodine-simple-springs.mdx",
+  "words": 2977,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yunotsu",
+  "file": "src/content/en/soak/yunotsu.mdx",
+  "words": 2823,
+  "published": true,
+  "impressions": 1,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "japanese-table-customs",
+  "file": "src/content/en/column/japanese-table-customs.mdx",
+  "words": 1228,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "roadside-stations-and-farm-stands",
+  "file": "src/content/en/column/roadside-stations-and-farm-stands.mdx",
+  "words": 1339,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "slurping-noodles",
+  "file": "src/content/en/column/slurping-noodles.mdx",
+  "words": 1406,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "chicken-karaage",
+  "file": "src/content/en/eat/chicken-karaage.mdx",
+  "words": 1829,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "izakaya",
+  "file": "src/content/en/eat/izakaya.mdx",
+  "words": 1911,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "izakaya-otoshi",
+  "file": "src/content/en/eat/izakaya-otoshi.mdx",
+  "words": 1525,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "izakaya-snack",
+  "file": "src/content/en/eat/izakaya-snack.mdx",
+  "words": 2155,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "meat",
+  "file": "src/content/en/eat/meat.mdx",
+  "words": 1699,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "meat-basashi",
+  "file": "src/content/en/eat/meat-basashi.mdx",
+  "words": 1743,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "meat-horumon",
+  "file": "src/content/en/eat/meat-horumon.mdx",
+  "words": 2168,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "meat-jingisukan",
+  "file": "src/content/en/eat/meat-jingisukan.mdx",
+  "words": 1698,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "meat-pork",
+  "file": "src/content/en/eat/meat-pork.mdx",
+  "words": 1776,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "nabe-miso",
+  "file": "src/content/en/eat/nabe-miso.mdx",
+  "words": 1777,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "nabe-oden",
+  "file": "src/content/en/eat/nabe-oden.mdx",
+  "words": 1604,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-iekei",
+  "file": "src/content/en/eat/ramen-iekei.mdx",
+  "words": 2069,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-kitakata",
+  "file": "src/content/en/eat/ramen-kitakata.mdx",
+  "words": 1970,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "ramen-tokushima",
+  "file": "src/content/en/eat/ramen-tokushima.mdx",
+  "words": 2068,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood",
+  "file": "src/content/en/eat/seafood.mdx",
+  "words": 1767,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-anago-hamo",
+  "file": "src/content/en/eat/seafood-anago-hamo.mdx",
+  "words": 1451,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-fugu",
+  "file": "src/content/en/eat/seafood-fugu.mdx",
+  "words": 1747,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-himono",
+  "file": "src/content/en/eat/seafood-himono.mdx",
+  "words": 1034,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba",
+  "file": "src/content/en/eat/soba.mdx",
+  "words": 1729,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-izumo",
+  "file": "src/content/en/eat/soba-izumo.mdx",
+  "words": 1391,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-inaniwa",
+  "file": "src/content/en/eat/udon-inaniwa.mdx",
+  "words": 2112,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagyu",
+  "file": "src/content/en/eat/wagyu.mdx",
+  "words": 1734,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "carbon-dioxide-chloride-iron-springs",
+  "file": "src/content/en/soak/carbon-dioxide-chloride-iron-springs.mdx",
+  "words": 2940,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "gero",
+  "file": "src/content/en/soak/gero.mdx",
+  "words": 4381,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "ginzan",
+  "file": "src/content/en/soak/ginzan.mdx",
+  "words": 2753,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "isawa",
+  "file": "src/content/en/soak/isawa.mdx",
+  "words": 2557,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "ito",
+  "file": "src/content/en/soak/ito.mdx",
+  "words": 2875,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "jozankei",
+  "file": "src/content/en/soak/jozankei.mdx",
+  "words": 2130,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kawayu",
+  "file": "src/content/en/soak/kawayu.mdx",
+  "words": 2416,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kurokawa",
+  "file": "src/content/en/soak/kurokawa.mdx",
+  "words": 3274,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "masutomi",
+  "file": "src/content/en/soak/masutomi.mdx",
+  "words": 2452,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-water-types",
+  "file": "src/content/en/soak/onsen-water-types.mdx",
+  "words": 3703,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yugawara",
+  "file": "src/content/en/soak/yugawara.mdx",
+  "words": 2895,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yunomine",
+  "file": "src/content/en/soak/yunomine.mdx",
+  "words": 2970,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yunoyama",
+  "file": "src/content/en/soak/yunoyama.mdx",
+  "words": 2232,
+  "published": true,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "crowds-and-local-rules-in-japan",
+  "file": "src/content/en/column/crowds-and-local-rules-in-japan.mdx",
+  "words": 3087,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "how-japanese-rice-is-actually-cooked",
+  "file": "src/content/en/column/how-japanese-rice-is-actually-cooked.mdx",
+  "words": 538,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "how-to-eat-sushi-in-japan",
+  "file": "src/content/en/column/how-to-eat-sushi-in-japan.mdx",
+  "words": 1863,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "japan-laws-and-manners-for-visitors",
+  "file": "src/content/en/column/japan-laws-and-manners-for-visitors.mdx",
+  "words": 3510,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "new-travel-rules-and-charges-in-japan",
+  "file": "src/content/en/column/new-travel-rules-and-charges-in-japan.mdx",
+  "words": 3449,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "column",
+  "slug": "tourist-prices-at-famous-markets",
+  "file": "src/content/en/column/tourist-prices-at-famous-markets.mdx",
+  "words": 1028,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "bkyu",
+  "file": "src/content/en/eat/bkyu.mdx",
+  "words": 2249,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "bkyu-korokke",
+  "file": "src/content/en/eat/bkyu-korokke.mdx",
+  "words": 1719,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "bkyu-senbei-jiru",
+  "file": "src/content/en/eat/bkyu-senbei-jiru.mdx",
+  "words": 1174,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "bkyu-torimotsu",
+  "file": "src/content/en/eat/bkyu-torimotsu.mdx",
+  "words": 1090,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "champon",
+  "file": "src/content/en/eat/champon.mdx",
+  "words": 1575,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "champon-sara-udon",
+  "file": "src/content/en/eat/champon-sara-udon.mdx",
+  "words": 1105,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "chicken-toriten",
+  "file": "src/content/en/eat/chicken-toriten.mdx",
+  "words": 1249,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "conbini",
+  "file": "src/content/en/eat/conbini.mdx",
+  "words": 1624,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "conbini-oden",
+  "file": "src/content/en/eat/conbini-oden.mdx",
+  "words": 1144,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "conbini-onigiri",
+  "file": "src/content/en/eat/conbini-onigiri.mdx",
+  "words": 1182,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "dashi",
+  "file": "src/content/en/eat/dashi.mdx",
+  "words": 2171,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "dashi-east-west",
+  "file": "src/content/en/eat/dashi-east-west.mdx",
+  "words": 1653,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "dashi-iriko-ago",
+  "file": "src/content/en/eat/dashi-iriko-ago.mdx",
+  "words": 1177,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "donburi-butadon",
+  "file": "src/content/en/eat/donburi-butadon.mdx",
+  "words": 1431,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "drinks",
+  "file": "src/content/en/eat/drinks.mdx",
+  "words": 2204,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "drinks-beer-highball",
+  "file": "src/content/en/eat/drinks-beer-highball.mdx",
+  "words": 2148,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "drinks-shochu",
+  "file": "src/content/en/eat/drinks-shochu.mdx",
+  "words": 2001,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "drinks-whisky",
+  "file": "src/content/en/eat/drinks-whisky.mdx",
+  "words": 1463,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "food-shopping",
+  "file": "src/content/en/eat/food-shopping.mdx",
+  "words": 2215,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "food-shopping-depachika",
+  "file": "src/content/en/eat/food-shopping-depachika.mdx",
+  "words": 1540,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "food-shopping-ekiben",
+  "file": "src/content/en/eat/food-shopping-ekiben.mdx",
+  "words": 1942,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "instant-noodles",
+  "file": "src/content/en/eat/instant-noodles.mdx",
+  "words": 2295,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "instant-noodles-bag",
+  "file": "src/content/en/eat/instant-noodles-bag.mdx",
+  "words": 1955,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "instant-noodles-cup",
+  "file": "src/content/en/eat/instant-noodles-cup.mdx",
+  "words": 1939,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kaiseki",
+  "file": "src/content/en/eat/kaiseki.mdx",
+  "words": 2163,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kaiseki-bento",
+  "file": "src/content/en/eat/kaiseki-bento.mdx",
+  "words": 1351,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kaiseki-honzen",
+  "file": "src/content/en/eat/kaiseki-honzen.mdx",
+  "words": 1325,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kaiseki-shojin",
+  "file": "src/content/en/eat/kaiseki-shojin.mdx",
+  "words": 1802,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kaiseki-tea",
+  "file": "src/content/en/eat/kaiseki-tea.mdx",
+  "words": 1783,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "konamono",
+  "file": "src/content/en/eat/konamono.mdx",
+  "words": 1813,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "konamono-monja",
+  "file": "src/content/en/eat/konamono-monja.mdx",
+  "words": 1891,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "konamono-okonomiyaki",
+  "file": "src/content/en/eat/konamono-okonomiyaki.mdx",
+  "words": 1848,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "konamono-takoyaki",
+  "file": "src/content/en/eat/konamono-takoyaki.mdx",
+  "words": 1708,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori",
+  "file": "src/content/en/eat/kyodo-ryori.mdx",
+  "words": 1322,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-akita",
+  "file": "src/content/en/eat/kyodo-ryori-akita.mdx",
+  "words": 1135,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-chubu",
+  "file": "src/content/en/eat/kyodo-ryori-chubu.mdx",
+  "words": 3634,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-hokkaido",
+  "file": "src/content/en/eat/kyodo-ryori-hokkaido.mdx",
+  "words": 2584,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-hokuriku",
+  "file": "src/content/en/eat/kyodo-ryori-hokuriku.mdx",
+  "words": 3190,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-kanto",
+  "file": "src/content/en/eat/kyodo-ryori-kanto.mdx",
+  "words": 4042,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-kinki",
+  "file": "src/content/en/eat/kyodo-ryori-kinki.mdx",
+  "words": 3719,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-kyushu",
+  "file": "src/content/en/eat/kyodo-ryori-kyushu.mdx",
+  "words": 3808,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-okinawa",
+  "file": "src/content/en/eat/kyodo-ryori-okinawa.mdx",
+  "words": 974,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-sanin",
+  "file": "src/content/en/eat/kyodo-ryori-sanin.mdx",
+  "words": 2804,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-setouchi",
+  "file": "src/content/en/eat/kyodo-ryori-setouchi.mdx",
+  "words": 3265,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-shikoku",
+  "file": "src/content/en/eat/kyodo-ryori-shikoku.mdx",
+  "words": 2675,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "kyodo-ryori-tohoku",
+  "file": "src/content/en/eat/kyodo-ryori-tohoku.mdx",
+  "words": 3587,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "market",
+  "file": "src/content/en/eat/market.mdx",
+  "words": 1937,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "market-omicho-hakodate",
+  "file": "src/content/en/eat/market-omicho-hakodate.mdx",
+  "words": 1379,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "market-toyosu",
+  "file": "src/content/en/eat/market-toyosu.mdx",
+  "words": 1391,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "meat-gibier",
+  "file": "src/content/en/eat/meat-gibier.mdx",
+  "words": 1174,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "nabe-botan",
+  "file": "src/content/en/eat/nabe-botan.mdx",
+  "words": 1208,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "nabe-chanko",
+  "file": "src/content/en/eat/nabe-chanko.mdx",
+  "words": 1052,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "nabe-ishikari",
+  "file": "src/content/en/eat/nabe-ishikari.mdx",
+  "words": 1107,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice",
+  "file": "src/content/en/eat/rice.mdx",
+  "words": 2274,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-curry",
+  "file": "src/content/en/eat/rice-curry.mdx",
+  "words": 2228,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-onigiri",
+  "file": "src/content/en/eat/rice-onigiri.mdx",
+  "words": 1800,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-sides",
+  "file": "src/content/en/eat/rice-sides.mdx",
+  "words": 1625,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-sides-mochi",
+  "file": "src/content/en/eat/rice-sides-mochi.mdx",
+  "words": 1589,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-sides-shiru",
+  "file": "src/content/en/eat/rice-sides-shiru.mdx",
+  "words": 1313,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-sides-takikomi",
+  "file": "src/content/en/eat/rice-sides-takikomi.mdx",
+  "words": 1182,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-sides-tofu-natto",
+  "file": "src/content/en/eat/rice-sides-tofu-natto.mdx",
+  "words": 1252,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "rice-sides-tsukemono",
+  "file": "src/content/en/eat/rice-sides-tsukemono.mdx",
+  "words": 1429,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sake",
+  "file": "src/content/en/eat/sake.mdx",
+  "words": 2517,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sake-akita",
+  "file": "src/content/en/eat/sake-akita.mdx",
+  "words": 1878,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sake-hiroshima",
+  "file": "src/content/en/eat/sake-hiroshima.mdx",
+  "words": 2184,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sake-nada-fushimi",
+  "file": "src/content/en/eat/sake-nada-fushimi.mdx",
+  "words": 2013,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sake-niigata",
+  "file": "src/content/en/eat/sake-niigata.mdx",
+  "words": 1466,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sashimi-tataki",
+  "file": "src/content/en/eat/sashimi-tataki.mdx",
+  "words": 1359,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-kombu",
+  "file": "src/content/en/eat/seafood-kombu.mdx",
+  "words": 1451,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-nerimono",
+  "file": "src/content/en/eat/seafood-nerimono.mdx",
+  "words": 1324,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-oyster-crab",
+  "file": "src/content/en/eat/seafood-oyster-crab.mdx",
+  "words": 1882,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-saba-katsuo-maguro",
+  "file": "src/content/en/eat/seafood-saba-katsuo-maguro.mdx",
+  "words": 2011,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-salmon",
+  "file": "src/content/en/eat/seafood-salmon.mdx",
+  "words": 1661,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seafood-seaweed",
+  "file": "src/content/en/eat/seafood-seaweed.mdx",
+  "words": 1117,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal",
+  "file": "src/content/en/eat/seasonal.mdx",
+  "words": 1919,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-christmas",
+  "file": "src/content/en/eat/seasonal-christmas.mdx",
+  "words": 1156,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-hinamatsuri",
+  "file": "src/content/en/eat/seasonal-hinamatsuri.mdx",
+  "words": 1015,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-new-year",
+  "file": "src/content/en/eat/seasonal-new-year.mdx",
+  "words": 1268,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-omisoka",
+  "file": "src/content/en/eat/seasonal-omisoka.mdx",
+  "words": 1104,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-setsubun",
+  "file": "src/content/en/eat/seasonal-setsubun.mdx",
+  "words": 1313,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-tanabata-obon",
+  "file": "src/content/en/eat/seasonal-tanabata-obon.mdx",
+  "words": 1311,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-tango",
+  "file": "src/content/en/eat/seasonal-tango.mdx",
+  "words": 1165,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-toji",
+  "file": "src/content/en/eat/seasonal-toji.mdx",
+  "words": 1230,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasonal-tsukimi",
+  "file": "src/content/en/eat/seasonal-tsukimi.mdx",
+  "words": 1026,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasoning",
+  "file": "src/content/en/eat/seasoning.mdx",
+  "words": 2005,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasoning-egg",
+  "file": "src/content/en/eat/seasoning-egg.mdx",
+  "words": 1779,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasoning-mirin",
+  "file": "src/content/en/eat/seasoning-mirin.mdx",
+  "words": 1221,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasoning-shoyu",
+  "file": "src/content/en/eat/seasoning-shoyu.mdx",
+  "words": 2031,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "seasoning-vinegar",
+  "file": "src/content/en/eat/seasoning-vinegar.mdx",
+  "words": 1221,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "shun",
+  "file": "src/content/en/eat/shun.mdx",
+  "words": 2157,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "shun-autumn-winter",
+  "file": "src/content/en/eat/shun-autumn-winter.mdx",
+  "words": 2221,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "shun-spring-summer",
+  "file": "src/content/en/eat/shun-spring-summer.mdx",
+  "words": 1752,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-echizen-oroshi",
+  "file": "src/content/en/eat/soba-echizen-oroshi.mdx",
+  "words": 1325,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "soba-hegi",
+  "file": "src/content/en/eat/soba-hegi.mdx",
+  "words": 1189,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "somen",
+  "file": "src/content/en/eat/somen.mdx",
+  "words": 1196,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "somen-banshu",
+  "file": "src/content/en/eat/somen-banshu.mdx",
+  "words": 700,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "somen-miwa",
+  "file": "src/content/en/eat/somen-miwa.mdx",
+  "words": 904,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sweets",
+  "file": "src/content/en/eat/sweets.mdx",
+  "words": 1917,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sweets-amamidokoro",
+  "file": "src/content/en/eat/sweets-amamidokoro.mdx",
+  "words": 1422,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sweets-conbini",
+  "file": "src/content/en/eat/sweets-conbini.mdx",
+  "words": 1267,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sweets-crepe",
+  "file": "src/content/en/eat/sweets-crepe.mdx",
+  "words": 1030,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sweets-yakiimo",
+  "file": "src/content/en/eat/sweets-yakiimo.mdx",
+  "words": 808,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "sweets-yogashi",
+  "file": "src/content/en/eat/sweets-yogashi.mdx",
+  "words": 1455,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "tea",
+  "file": "src/content/en/eat/tea.mdx",
+  "words": 2516,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "tea-kakigori-kissaten",
+  "file": "src/content/en/eat/tea-kakigori-kissaten.mdx",
+  "words": 2305,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "tea-regions",
+  "file": "src/content/en/eat/tea-regions.mdx",
+  "words": 2506,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "teishoku",
+  "file": "src/content/en/eat/teishoku.mdx",
+  "words": 1208,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "teishoku-morning",
+  "file": "src/content/en/eat/teishoku-morning.mdx",
+  "words": 1244,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "teishoku-washoku-breakfast",
+  "file": "src/content/en/eat/teishoku-washoku-breakfast.mdx",
+  "words": 979,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "udon-miso-nikomi",
+  "file": "src/content/en/eat/udon-miso-nikomi.mdx",
+  "words": 1465,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagashi",
+  "file": "src/content/en/eat/wagashi.mdx",
+  "words": 1362,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagashi-imagawayaki",
+  "file": "src/content/en/eat/wagashi-imagawayaki.mdx",
+  "words": 870,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "wagashi-yokan",
+  "file": "src/content/en/eat/wagashi-yokan.mdx",
+  "words": 1260,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western",
+  "file": "src/content/en/eat/western.mdx",
+  "words": 1785,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western-burger",
+  "file": "src/content/en/eat/western-burger.mdx",
+  "words": 1382,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western-dairy",
+  "file": "src/content/en/eat/western-dairy.mdx",
+  "words": 2255,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western-italian",
+  "file": "src/content/en/eat/western-italian.mdx",
+  "words": 1402,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western-machichuka",
+  "file": "src/content/en/eat/western-machichuka.mdx",
+  "words": 1877,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western-pan",
+  "file": "src/content/en/eat/western-pan.mdx",
+  "words": 1327,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "western-yoshoku",
+  "file": "src/content/en/eat/western-yoshoku.mdx",
+  "words": 1951,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yakisoba",
+  "file": "src/content/en/eat/yakisoba.mdx",
+  "words": 1594,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yakisoba-fujinomiya",
+  "file": "src/content/en/eat/yakisoba-fujinomiya.mdx",
+  "words": 1034,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yakisoba-ota",
+  "file": "src/content/en/eat/yakisoba-ota.mdx",
+  "words": 1130,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "eat",
+  "slug": "yakisoba-yokote",
+  "file": "src/content/en/eat/yakisoba-yokote.mdx",
+  "words": 879,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "rail",
+  "slug": "kansai-12-days-setouchi",
+  "file": "src/content/en/rail/kansai-12-days-setouchi.mdx",
+  "words": 1171,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "rail",
+  "slug": "kix-to-hiroshima",
+  "file": "src/content/en/rail/kix-to-hiroshima.mdx",
+  "words": 982,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "rail",
+  "slug": "setouchi-area-pass",
+  "file": "src/content/en/rail/setouchi-area-pass.mdx",
+  "words": 666,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "aso-uchinomaki",
+  "file": "src/content/en/soak/aso-uchinomaki.mdx",
+  "words": 2884,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "echigo-yuzawa",
+  "file": "src/content/en/soak/echigo-yuzawa.mdx",
+  "words": 2447,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "hanamaki",
+  "file": "src/content/en/soak/hanamaki.mdx",
+  "words": 2531,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "higashiyama",
+  "file": "src/content/en/soak/higashiyama.mdx",
+  "words": 2091,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "hinagu",
+  "file": "src/content/en/soak/hinagu.mdx",
+  "words": 2618,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "ibusuki",
+  "file": "src/content/en/soak/ibusuki.mdx",
+  "words": 2610,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "iizaka",
+  "file": "src/content/en/soak/iizaka.mdx",
+  "words": 2827,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kaike",
+  "file": "src/content/en/soak/kaike.mdx",
+  "words": 2719,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kinugawa",
+  "file": "src/content/en/soak/kinugawa.mdx",
+  "words": 2172,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "kirishima",
+  "file": "src/content/en/soak/kirishima.mdx",
+  "words": 2193,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "minakami",
+  "file": "src/content/en/soak/minakami.mdx",
+  "words": 2602,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "misasa",
+  "file": "src/content/en/soak/misasa.mdx",
+  "words": 2576,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "nagato-yumoto",
+  "file": "src/content/en/soak/nagato-yumoto.mdx",
+  "words": 2655,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "nagayu",
+  "file": "src/content/en/soak/nagayu.mdx",
+  "words": 2389,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "nanki-katsuura",
+  "file": "src/content/en/soak/nanki-katsuura.mdx",
+  "words": 2865,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "naruko",
+  "file": "src/content/en/soak/naruko.mdx",
+  "words": 3722,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "nasu",
+  "file": "src/content/en/soak/nasu.mdx",
+  "words": 3041,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "nozawa",
+  "file": "src/content/en/soak/nozawa.mdx",
+  "words": 3464,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "nyuto",
+  "file": "src/content/en/soak/nyuto.mdx",
+  "words": 3682,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "ogoto",
+  "file": "src/content/en/soak/ogoto.mdx",
+  "words": 2616,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "okuhida",
+  "file": "src/content/en/soak/okuhida.mdx",
+  "words": 2606,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-etiquette",
+  "file": "src/content/en/soak/onsen-etiquette.mdx",
+  "words": 2898,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-okinawa",
+  "file": "src/content/en/soak/onsen-okinawa.mdx",
+  "words": 2138,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-shikoku",
+  "file": "src/content/en/soak/onsen-shikoku.mdx",
+  "words": 3425,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "onsen-tattoos",
+  "file": "src/content/en/soak/onsen-tattoos.mdx",
+  "words": 2610,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "shima",
+  "file": "src/content/en/soak/shima.mdx",
+  "words": 2537,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "shirahama",
+  "file": "src/content/en/soak/shirahama.mdx",
+  "words": 4626,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "shirahone",
+  "file": "src/content/en/soak/shirahone.mdx",
+  "words": 2921,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "shuzenji",
+  "file": "src/content/en/soak/shuzenji.mdx",
+  "words": 2780,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "sounkyo",
+  "file": "src/content/en/soak/sounkyo.mdx",
+  "words": 2122,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "sukayu",
+  "file": "src/content/en/soak/sukayu.mdx",
+  "words": 2944,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "takeo",
+  "file": "src/content/en/soak/takeo.mdx",
+  "words": 2483,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "tamatsukuri",
+  "file": "src/content/en/soak/tamatsukuri.mdx",
+  "words": 2005,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "togura-kamiyamada",
+  "file": "src/content/en/soak/togura-kamiyamada.mdx",
+  "words": 1899,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "totsukawa",
+  "file": "src/content/en/soak/totsukawa.mdx",
+  "words": 2841,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "toyako",
+  "file": "src/content/en/soak/toyako.mdx",
+  "words": 2373,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "tsuetate",
+  "file": "src/content/en/soak/tsuetate.mdx",
+  "words": 2525,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "tsukioka",
+  "file": "src/content/en/soak/tsukioka.mdx",
+  "words": 2057,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "unazuki",
+  "file": "src/content/en/soak/unazuki.mdx",
+  "words": 2575,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "unzen",
+  "file": "src/content/en/soak/unzen.mdx",
+  "words": 2783,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "ureshino",
+  "file": "src/content/en/soak/ureshino.mdx",
+  "words": 2471,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "wakura",
+  "file": "src/content/en/soak/wakura.mdx",
+  "words": 2471,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yamanaka",
+  "file": "src/content/en/soak/yamanaka.mdx",
+  "words": 2478,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yamashiro",
+  "file": "src/content/en/soak/yamashiro.mdx",
+  "words": 2410,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yubara",
+  "file": "src/content/en/soak/yubara.mdx",
+  "words": 2832,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yuda",
+  "file": "src/content/en/soak/yuda.mdx",
+  "words": 2809,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "yudanaka-shibu",
+  "file": "src/content/en/soak/yudanaka-shibu.mdx",
+  "words": 2725,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ },
+ {
+  "cat": "soak",
+  "slug": "zao",
+  "file": "src/content/en/soak/zao.mdx",
+  "words": 2854,
+  "published": false,
+  "impressions": 0,
+  "done": false
+ }
+]

@@ -19,6 +19,8 @@ import { lineagesOf } from '../lib/lineages.ts';
 import { GLYPHS } from '../data/genres.ts';
 import { IMAGE_SPEC } from '../lib/images.ts';
 import Icon from './Icon.astro';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   hub: Article;
@@ -29,7 +31,9 @@ interface Props {
 }
 const { hub, lineages, large = false } = Astro.props;
 const dish = hub.data.dish ?? '';
-const data = lineagesOf(dish);
+const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
+const s = strings(locale).dishTile;
+const data = lineagesOf(dish, locale);
 
 /** 「Ramen: what it is, …」の前半を品目名に。コロンが無ければ JSON の name、それも無ければタイトル */
 const name = hub.data.title.split(/[:：]/)[0].trim() || data?.name || hub.data.title;
@@ -74,7 +78,7 @@ const spec = IMAGE_SPEC.card;
       )}
       <span class="tagline">{tagline}</span>
       <span class="go">
-        Read the guide <Icon name="arrow" />
+        {s.readGuide} <Icon name="arrow" />
       </span>
     </span>
   </a>
@@ -82,7 +86,7 @@ const spec = IMAGE_SPEC.card;
     links.length > 0 && (
       <div class="lineages">
         <span class="lin-label">
-          {links.length} {links.length === 1 ? 'lineage' : 'lineages'}
+          {s.lineageCount(links.length)}
         </span>
         <ul>
           {links.map((l) => (

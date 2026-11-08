@@ -9,16 +9,21 @@
 import { FOOD_PRICES, chainRange, type PriceEntry, type PriceGroup } from '../data/food-prices.ts';
 import { formatPrice, formatJpy } from '../lib/money.ts';
 import Icon from './Icon.astro';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { dateTagOf, localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/components.ts';
+import { localizeGroup } from '../i18n/data/food-prices.ts';
 
 interface Props {
   /** food-prices.ts の chainKey か officialKey。複数渡せる（寿司店の昼・夜など） */
   keys: string[];
   locale?: string;
 }
-const { keys, locale = 'en' } = Astro.props;
+const { keys, locale = Astro.currentLocale ?? DEFAULT_LOCALE } = Astro.props;
+const s = strings(locale).dishPrices;
 
 const rows: { group: PriceGroup; item: PriceEntry }[] = [];
-for (const group of FOOD_PRICES) {
+for (const group of FOOD_PRICES.map((g) => localizeGroup(g, locale))) {
   for (const item of group.items) {
     if ((item.chainKey && keys.includes(item.chainKey)) || (item.officialKey && keys.includes(item.officialKey))) {
       rows.push({ group, item });
@@ -27,7 +32,7 @@ for (const group of FOOD_PRICES) {
 }
 const yen = (n: number) => (Number.isInteger(n) ? formatJpy(n) : `¥${n.toFixed(2)}`);
 const monthLabel = (m: string) =>
-  new Date(`${m.slice(0, 7)}-01T00:00:00Z`).toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  new Date(`${m.slice(0, 7)}-01T00:00:00Z`).toLocaleDateString(dateTagOf(locale), { month: 'short', year: 'numeric', timeZone: 'UTC' });
 ---
 
 {
@@ -48,7 +53,7 @@ const monthLabel = (m: string) =>
             <dl>
               {item.official && (
                 <>
-                  <dt>Survey</dt>
+                  <dt>{s.survey}</dt>
                   <dd>
                     {formatPrice(item.official.jpy)}
                     <span class="sub">
@@ -60,9 +65,9 @@ const monthLabel = (m: string) =>
               )}
               {chain && r && (
                 <>
-                  <dt>{chain.tier === 'budget' ? 'Budget chains' : chain.tier === 'shop' ? chain.chains[0].chain : 'Chains'}</dt>
+                  <dt>{chain.tier === 'budget' ? s.budgetChains : chain.tier === 'shop' ? chain.chains[0].chain : s.chains}</dt>
                   <dd>
-                    {r.from && 'from '}
+                    {r.from && s.from}
                     {yen(r.min)}
                     {r.max > r.min && <>–{yen(r.max)}</>}
                     <span class="sub">
@@ -71,16 +76,16 @@ const monthLabel = (m: string) =>
                         .filter((c) => c.tier !== 'premium')
                         .map((c) => c.chain)
                         .join(', ')}
-                      {checked && <> · tax incl. · checked {checked}</>}
+                      {checked && <>{s.taxChecked(checked)}</>}
                     </span>
                   </dd>
                 </>
               )}
               {item.reference && (
                 <>
-                  <dt>Our guide figure</dt>
+                  <dt>{s.guideFigure}</dt>
                   <dd>
-                    {item.reference.from && 'from '}
+                    {item.reference.from && s.from}
                     {formatPrice(item.reference.jpy)}
                     <span class="sub">
                       {item.reference.note} · {monthLabel(item.reference.seenOn)}
@@ -89,8 +94,8 @@ const monthLabel = (m: string) =>
                 </>
               )}
             </dl>
-            <a class="more" href={`/${locale}/food-prices/#${group.key}`}>
-              All {group.name.toLowerCase()} prices, with sources <Icon name="arrow" />
+            <a class="more" href={localePath(locale, `/food-prices/#${group.key}`)}>
+              {s.all(group.name)} <Icon name="arrow" />
             </a>
           </div>
         );

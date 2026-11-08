@@ -9,7 +9,8 @@
  * rel="sponsored nofollow noopener" は必ず付ける。
  * GA4 へ記事slug・プログラム・本文中の位置を載せたイベントを送る。
  */
-import { AFFILIATE, GA4_MEASUREMENT_ID } from '../config.ts';
+import { AFFILIATE, GA4_MEASUREMENT_ID, DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 import { formatPrice } from '../lib/money.ts';
 
 type Kind = 'tour' | 'esim' | 'hotel';
@@ -26,7 +27,8 @@ interface Props {
   usedMyself?: boolean;
 }
 
-const { kind, title, href, slot = 'in-body', jpy, label = 'Check dates', usedMyself = true } = Astro.props;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).cta;
+const { kind, title, href, slot = 'in-body', jpy, label = s.label, usedMyself = true } = Astro.props;
 
 const enabled: Record<Kind, boolean> = {
   tour: Object.values(AFFILIATE.tours).some(Boolean),
@@ -42,11 +44,11 @@ const articleSlug = Astro.url.pathname;
   show && (
     <aside class="cta">
       <div class="body">
-        <span class="kicker">{usedMyself ? 'Sponsored · booked this myself' : 'Sponsored · not used by me'}</span>
+        <span class="kicker">{usedMyself ? s.bookedMyself : s.notUsed}</span>
         <span class="title">{title}</span>
         <span class="detail">
           <slot />
-          {jpy && <> from <span class="price">{formatPrice(jpy)}</span>.</>}
+          {jpy && <> {s.from} <span class="price">{formatPrice(jpy)}</span>.</>}
         </span>
       </div>
       <a

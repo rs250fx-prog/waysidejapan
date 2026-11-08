@@ -8,7 +8,9 @@
     "build": "node tools/schedule-publish.mjs --apply && astro build && node tools/unlink-missing.mjs",
     "preview": "astro preview",
     "rates": "node tools/fetch-rates.mjs",
-    "check": "node tools/check-content.mjs"
+    "check": "node tools/check-content.mjs",
+    "check:i18n": "node tools/check-i18n.mjs",
+    "check:translation": "node tools/check-translation.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",

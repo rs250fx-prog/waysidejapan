@@ -5,6 +5,8 @@
  * スマホでは表が潰れるので、1件1ブロックの積み上げに切り替える（CSS ではなく別マークアップ）。
  */
 import { formatPrice } from '../lib/money.ts';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Row {
   name: string;
@@ -20,6 +22,7 @@ interface Props {
   caption?: string;
 }
 const { rows, caption } = Astro.props;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).compare;
 ---
 
 <div class="compare">
@@ -28,10 +31,10 @@ const { rows, caption } = Astro.props;
   <table class="wide">
     <thead>
       <tr>
-        <th>Option</th>
-        <th>Cost</th>
-        <th>Covers</th>
-        <th>Best for</th>
+        <th>{s.option}</th>
+        <th>{s.cost}</th>
+        <th>{s.covers}</th>
+        <th>{s.bestFor}</th>
       </tr>
     </thead>
     <tbody>
@@ -62,7 +65,7 @@ const { rows, caption } = Astro.props;
             <span class="price">{formatPrice(r.jpy)}</span>
           </div>
           <p>
-            {r.covers}. Best for {r.bestFor.toLowerCase()}.
+            {s.stacked(r.covers, r.bestFor)}
           </p>
           {r.note && <p class="note">{r.note}</p>}
         </div>

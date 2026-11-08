@@ -12,6 +12,7 @@ import Thumb from './Thumb.astro';
 import Label from './Label.astro';
 import { relatedOf, hrefOf, type Article } from '../lib/content.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
+import { strings } from '../i18n/pages/article.ts';
 import type { Locale } from '../config.ts';
 
 interface Props {
@@ -21,12 +22,13 @@ interface Props {
 }
 const { entry, locale, variant = 'grid' } = Astro.props;
 const items = await relatedOf(entry);
+const s = strings(locale);
 ---
 
 {
   items.length > 0 && (
     <section class:list={['related', variant]} aria-labelledby="related-title">
-      <h2 id="related-title">Read next</h2>
+      <h2 id="related-title">{s.readNext}</h2>
       <div class="related-grid">
         {items.map((a) => (
           <a class="related-card" href={hrefOf(a)}>

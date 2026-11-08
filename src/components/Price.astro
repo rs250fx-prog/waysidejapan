@@ -7,6 +7,8 @@
  * <Price jpy={700} yenOnly />  → ¥700
  */
 import { formatJpy, formatPrice } from '../lib/money.ts';
+import { currenciesOf, DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   jpy: number;
@@ -15,7 +17,10 @@ interface Props {
 }
 
 const { jpy, yenOnly = false, from = false } = Astro.props;
-const text = yenOnly ? formatJpy(jpy) : formatPrice(jpy);
+// 言語ごとの通貨で換算する（韓国語は ₩、繁体字は NT$ を先に。config.ts の LOCALE_META）
+const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
+const text = yenOnly ? formatJpy(jpy) : formatPrice(jpy, currenciesOf(locale));
+const s = strings(locale).price;
 ---
 
-<span class="price" data-jpy={jpy}>{from ? 'from ' : ''}{text}</span>
+<span class="price" data-jpy={jpy}>{from ? s.from : ''}{text}</span>

@@ -12,6 +12,8 @@ import type { Article } from '../lib/content.ts';
 import { hrefOf } from '../lib/content.ts';
 import { IMAGE_SPEC } from '../lib/images.ts';
 import Icon from './Icon.astro';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   entry: Article;
@@ -25,6 +27,7 @@ const [head, ...rest] = d.title.split(/[:：]/);
 const name = head.trim();
 const tagline = rest.join(':').trim() || d.description.split(/(?<=[.!?])\s+/)[0];
 const spec = IMAGE_SPEC.card;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).guideTile;
 ---
 
 <article class:list={['tile', { photo: !!d.heroImage }]}>
@@ -52,7 +55,7 @@ const spec = IMAGE_SPEC.card;
       {kicker && <span class="kicker">{kicker}</span>}
       <span class="tagline">{tagline}</span>
       <span class="go">
-        Read <Icon name="arrow" />
+        {s.read} <Icon name="arrow" />
       </span>
     </span>
   </a>

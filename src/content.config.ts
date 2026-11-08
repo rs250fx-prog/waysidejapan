@@ -14,8 +14,11 @@ const articles = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      /** 英語は120〜160字。未記入だとページ間で重複する */
-      description: z.string().min(80).max(200),
+      /**
+       * 英語・フランス語・スペイン語は120〜160字。未記入だとページ間で重複する。
+       * 韓国語・中国語は同じ内容でも文字数が少ないので、スキーマの下限は40字（言語別の目安は tools/check-content.mjs）
+       */
+      description: z.string().min(40).max(200),
 
       /** 言語間の対応付け。原文の slug を入れる */
       translationKey: z.string(),

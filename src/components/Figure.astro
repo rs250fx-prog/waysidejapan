@@ -10,6 +10,8 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { IMAGE_SPEC } from '../lib/images.ts';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   src: ImageMetadata;
@@ -22,6 +24,7 @@ interface Props {
 }
 
 const spec = IMAGE_SPEC.inline;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).figure;
 const { src, alt, caption, transcript, loading = spec.loading } = Astro.props;
 const lines = (transcript ?? '')
   .split('\n')
@@ -35,7 +38,7 @@ const lines = (transcript ?? '')
   {
     lines.length > 0 && (
       <details class="transcript">
-        <summary>Text in this illustration</summary>
+        <summary>{s.transcript}</summary>
         {lines.map((l) => (
           <p>{l}</p>
         ))}

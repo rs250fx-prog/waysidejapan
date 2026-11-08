@@ -3,23 +3,28 @@
  * 記事冒頭の結論ボックス。誰に向くか・向かないか・総額を先に出し切る。
  * 「向かない」を書かない記事は宣伝に見えるので、buyIf / skipIf は両方必須。
  */
+import { t } from '../i18n/ui.ts';
+import { strings } from '../i18n/pages/components.ts';
+import { DEFAULT_LOCALE } from '../config.ts';
+
 interface Props {
   buyIf: string;
   skipIf: string;
   totalLabel?: string;
 }
-const { buyIf, skipIf, totalLabel = 'Week total' } = Astro.props;
+const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
+const { buyIf, skipIf, totalLabel = strings(locale).verdict.totalLabel } = Astro.props;
 ---
 
 <section class="verdict">
-  <h2>The short answer</h2>
+  <h2>{t(locale, 'article.verdict')}</h2>
   <div class="cols">
     <div>
-      <span class="label yes">Buy it if</span>
+      <span class="label yes">{t(locale, 'article.buyIf')}</span>
       <p>{buyIf}</p>
     </div>
     <div>
-      <span class="label no">Skip it if</span>
+      <span class="label no">{t(locale, 'article.skipIf')}</span>
       <p>{skipIf}</p>
     </div>
     <div>

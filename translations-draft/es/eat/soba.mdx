@@ -1,0 +1,135 @@
+---
+title: 'Soba: el fideo de alforfón, sus tres casas de Edo y por qué el 70% se cultiva en el extranjero'
+description: 'El soba es el fideo del Japón oriental y de montaña: registrado en 1574, cocina en Edo, comido en Nochevieja. Qué es, cómo se come y cuánto cuesta.'
+translationKey: soba
+translationStatus: machine
+category: eat
+kind: dish
+dish: soba
+basis: researched
+areas: [kanto, chubu, chugoku, tohoku]
+updatedDate: 2026-10-21
+pubDate: 2026-10-21
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/soba-hero.webp
+heroAlt: 'Ilustración de una bandeja redonda de bambú con soba frío, salsa para mojar, wasabi y cebolleta, y una olla de laca roja de soba-yu, con un campo de alforfón en flor fuera'
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: ¿Es el soba apto para celíacos?
+    a: Solo si es jūwari, es decir, 100% alforfón. La mayoría del soba lleva algo de trigo, y no encontré ninguna cifra oficial sobre cuánto usan los mostradores de pie. Pregunta, y cuenta con que la respuesta sea que no.
+  - q: ¿Cómo se come bien el soba frío?
+    a: Toma unas pocas hebras, moja solo la mitad inferior en la salsa y sorbe. Esa es la instrucción de la propia asociación nacional de fideos. Las notas de la asociación sobre el soba-yu, el agua de cocción, dicen que es habitual verterla en la salsa que sobra después de la comida y beberla.
+  - q: ¿Cuánto cuesta el soba?
+    a: La encuesta del gobierno fija el precio de un plato de soba en el centro de Tokio en ¥788 con impuestos incluidos (agosto de 2026). Las cadenas de soba de pie cobran ¥430–450 con impuestos incluidos por un cuenco caliente. Entre las antiguas casas de Edo, Sarashina Horii cobra ¥1,000 con impuestos incluidos por un plato sencillo; un plato con tempura cuesta mucho más.
+sources:
+  - label: '農林水産省 農産局「そばをめぐる状況について」（令和8年7月）'
+    url: 'https://www.maff.go.jp/j/seisan/tokusan/attach/pdf/soba.natane-17.pdf'
+    published: '2026-07'
+  - label: '農林水産省 aff 2017年3月号「ニッポン麺探訪 信州そば」'
+    url: 'https://www.maff.go.jp/j/pr/aff/1703/n_search.html'
+    published: '2017-03'
+  - label: '長野県木曽地域振興局「木曽のそば推進協議会」（定勝寺 1574年）'
+    url: 'https://www.pref.nagano.lg.jp/kisochi/nosei-aec/kisonosobasuisinkyougikai.html'
+  - label: '長野県「長野県のそばについて」'
+    url: 'https://www.pref.nagano.lg.jp/nogi/sangyo/nogyo/okome/soba2.html'
+  - label: '日本麺類業団体連合会「そばの散歩道」おそばの食べ方'
+    url: 'https://nichimen.or.jp/enjoy/speak/03/'
+  - label: '日本麺類業団体連合会「そばの散歩道」おそばはどうやって作るの？'
+    url: 'https://nichimen.or.jp/enjoy/speak/04/'
+  - label: '日本麺類業団体連合会「そばのあいうえお」二八そば'
+    url: 'https://nichimen.or.jp/know/aiueo/ni/'
+  - label: '日本麺類業団体連合会「麺類雑学事典」そば湯'
+    url: 'https://nichimen.or.jp/know/zatsugaku/01/'
+  - label: '日本食糧新聞「2月8日。今日は東京二八そばの日」'
+    url: 'https://news.nissyoku.co.jp/today/624795'
+  - label: 'J-CAST「そばの『ざる』と『もり』の違いは？」'
+    url: 'https://www.j-cast.com/2017/04/22296169.html?p=all'
+    published: '2017-04-22'
+  - label: '総本家更科堀井「更科堀井の歴史」'
+    url: 'https://www.sarashina-horii.com/about/'
+  - label: '総本家更科堀井 麻布十番本店 おしながき（価格は全て税込）'
+    url: 'https://www.sarashina-horii.com/azabu/menu/'
+  - label: '東都のれん会「室町砂場」'
+    url: 'https://norenkai.net/?p=9020'
+  - label: '総務省統計局 家計調査 品目別都道府県庁所在市ランキング 外食「日本そば・うどん」（2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/5.html'
+    published: '2026-02-13'
+  - label: '農林水産省 Let''s！和ごはんプロジェクト「年越しそば」'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/culture/wagohan/articles/2212/spe12_02.html'
+  - label: '農林水産省「にっぽん伝統食図鑑」出雲そば（日本三大そば）'
+    url: 'https://www.maff.go.jp/j/keikaku/syokubunka/traditional-foods/menu/izumo_soba.html'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import sobaWhatIs from '../../../assets/eat/soba-what-is.webp';
+import sobaAcrossJapan from '../../../assets/eat/soba-across-japan.webp';
+
+El soba es el fino fideo gris pardo hecho de alforfón, y es el fideo de la otra mitad de Japón: el este, el norte, las montañas, los lugares donde el arroz y el trigo crecían mal y el alforfón crecía en setenta días en suelo pobre. El udon es el fideo del cálido oeste; el soba es lo que comía Edo, lo que Nagano, Shimane e Iwate convirtieron en cocinas regionales y lo que la mayor parte del país sigue comiendo en la última noche del año. Es también el fideo japonés con más ritual asociado a su consumo, y aquel cuya materia prima es ahora en su mayor parte importada.
+
+## Qué es
+
+El alforfón no es trigo; es una semilla de una planta emparentada con el ruibarbo, y no tiene gluten. El relato del propio ministerio es que se cultiva en Japón desde el periodo Jōmon, probablemente llegado de China, y durante la mayor parte de ese tiempo se comió como *sobagaki*, una papilla o bola de harina de alforfón y agua caliente. El fideo, *soba-kiri*, "soba cortado", es comparativamente reciente. El registro más antiguo es un documento del templo Jōshōji en Ōkuwa, Kiso, en Nagano, que anota que se sirvió soba-kiri a los artesanos que repararon el salón principal en 1574; la prefectura llama a Kiso la cuna del fideo, con la salvedad habitual sobre otras teorías. El fideo llegó a Edo y se convirtió en comida urbana en el siglo XVIII.
+
+<Figure
+  src={sobaWhatIs}
+  alt="Guía ilustrada del soba: una bandeja de fideos de alforfón fríos con salsa para mojar, una planta de alforfón y tres pasos para comerlo con palillos"
+  caption="El soba en una imagen: el plato frío, la planta de la que procede y la manera de comerlo de Edo. Ilustración."
+  transcript={`¿Qué es el soba? El soba es un fideo tradicional japonés hecho de alforfón. Tiene un aroma singular a frutos secos, una textura ligera y un sabor refrescante. El soba se disfruta de muchas formas, desde frío con salsa para mojar hasta caliente en un cuenco de sopa.
+El alforfón no es trigo. El soba se hace con alforfón, una planta distinta del trigo. La mayoría del soba lleva algo de trigo, así que no es apto para celíacos.
+Cómo comer soba: 1. Toma unas pocas hebras. 2. Moja solo la mitad inferior. 3. Sorbe para disfrutar del aroma.
+Soba-yu: añade el agua de cocción a la salsa que te sobre.`}
+/>
+
+Como el alforfón no tiene gluten, los fideos de alforfón puro son difíciles de hacer y se rompen con facilidad, así que la mayoría del soba lleva trigo. Los nombres indican la proporción: *jūwari* es 100% alforfón, *kuichi* 90:10. *Ni-hachi* se lee de dos maneras: como 80:20 o como dos por ocho, dieciséis *mon*, el precio de un cuenco en Edo. La asociación nacional de fideos considera más plausible la lectura del precio antes de la era Keiō (1865–68), cuando los precios de los locales superaron los veinte mon, y la lectura de la proporción después de ella, aunque señala problemas con la lectura de la proporción, como la existencia de udon ni-hachi y de soba ni-roku y san-shi. Un artículo del sector alimentario toma el lado de la proporción. Yo no elijo. La propia harina se clasifica por lo profundo que llega el molino en el grano: la primera molienda del centro del grano es la harina blanca *sarashina*, la segunda toma el germen, la tercera la cáscara interior, y moler el grano entero con su cáscara da el oscuro *hikigurumi* de Izumo.
+
+## Por qué es como es
+
+**El plato frío y la salsa oscura.** Edo comía el soba frío, en una bandeja de bambú, con una salsa concentrada para mojar hecha de salsa de soja oscura y bonito llamada *kaeshi*. La instrucción de la asociación nacional para comerlo sigue siendo la de la ciudad: mojar solo la mitad del fideo, para que se note el alforfón y no la salsa, y sorber, haciendo pasar aire a través del fideo. Al final el camarero trae *soba-yu*, el agua de cocción, para aclarar la salsa sobrante hasta convertirla en una bebida. La diferencia entre *mori* y *zaru*, los dos platos fríos de todos los menús, solía ser una salsa mejor en el zaru; el propio responsable de la asociación dice que ahora es sobre todo la lámina de nori de encima.
+
+**Tres casas.** Los locales de Edo se ordenaron en linajes que aún dan nombre a los restaurantes de la ciudad. *Sarashina* hace el fideo blanco con harina de primera molienda, un nombre que su casa fundadora vincula con el comercio de soba de Shinshū y con el permiso de un señor para usar un carácter de su nombre, en 1789. *Yabu* es el fideo oscuro y firme con una salsa muy salada, de una casa fundada en 1880. *Sunaba* es el nombre más antiguo —del patio de arena del castillo de Osaka de Hideyoshi, donde un local de soba prosperó entre los constructores— y su casa de Tokio, de 1869, dice haber inventado el plato de tempura con soba frío.
+
+**El resto de lugares conservó su propia idea.** Izumo vierte la salsa sobre el fideo en lugar de mojarlo; Togakushi lo apila en pequeños fardos sobre una bandeja redonda como ofrenda al santuario; Iwate te lo sirve bocado a bocado hasta que cierras la tapa. La tabla de abajo es donde viven esas diferencias.
+
+**El grano viene del extranjero.** Japón cosecha unas 38,000 toneladas de alforfón al año e importa unas 88,000 —tres cuartas partes de China—, de modo que la proporción nacional es de alrededor del 30%. Hokkaido cultiva con diferencia el que más (16,800 t), seguido de Tochigi, Ibaraki, Nagano y Fukui. "Shinshū soba" es un estilo y una marca; no es una garantía de que el alforfón creciera en Nagano.
+
+## Cuánto cuesta
+
+<DishPrices keys={['soba', 'tachigui-soba']} />
+
+La diferencia es la más amplia de todos los fideos. Una cadena de soba de pie en Tokio cobra ¥430–450 con impuestos incluidos por un cuenco caliente (Yudetaro, Fuji Soba). El plato estadístico del centro de Tokio, un precio de encuesta que incluye impuestos, es de ¥788. Entre las antiguas casas de Edo, Sarashina Horii cobra ¥1,000 con impuestos incluidos por su mori frío sencillo; un plato con tempura cuesta mucho más. El menú de Kanda Yabu no dice si los impuestos están incluidos, así que sus precios no se dan aquí. En la encuesta de hogares, la ciudad que más gasta en soba y udon comidos fuera es Takamatsu —por el udon— y las ciudades del soba quedan más abajo: Nagano 13.ª (¥8,705), Tokio 22.ª (¥8,166), Matsue 32.ª, Morioka 38.ª.
+
+## Los linajes
+
+<Figure
+  src={sobaAcrossJapan}
+  alt="Cuatro estilos regionales de soba dibujados lado a lado: soba frío al estilo Edo en una bandeja, soba de Izumo en cuencos rojos apilados, fardos de Togakushi en una cesta redonda y soba wanko en pequeños cuencos con tapa"
+  caption="El mismo fideo en cuatro lugares. Edo moja, Izumo vierte, Togakushi hace fardos, Iwate sigue rellenando. Ilustración."
+  transcript={`El soba por todo Japón. Un fideo. Muchas regiones. Muchas maneras de disfrutarlo.
+Edo / Tokio: moja los fideos en una salsa concentrada de soja y bonito.
+Izumo, Shimane: vierte la salsa sobre los fideos en lugar de mojarlos.
+Togakushi, Nagano: pequeños fardos servidos en una bandeja redonda.
+Wanko, Iwate: llegan porciones diminutas una tras otra; cierra la tapa cuando termines.
+Qué saber antes de pedir: los mostradores de estación son comidas rápidas y baratas. La tempura es un acompañamiento clásico. Pregunta por los ingredientes si evitas el trigo: la mayoría del soba lleva trigo.`}
+/>
+
+<LineageTable dish="soba" />
+
+## Dónde comerlo
+
+- **Edo** — las antiguas casas de Tokio en Azabu-Jūban (Sarashina Horii), Kanda (Yabu) y Nihonbashi (Sunaba); mostradores de pie en todas las estaciones.
+- **Izumo** — el acceso al Gran Santuario de Izumo y Matsue; autobús desde el aeropuerto, unos 35 minutos hasta el santuario.
+- **Togakushi** — el autobús exprés limitado desde la estación de Nagano, 56 minutos hasta Chūsha.
+- **Wanko** — Morioka y Hanamaki, en el shinkansen de Tōhoku.
+
+## Lo que la gente entiende mal
+
+- **"El soba no lleva gluten."** Solo el *jūwari*. La mayoría del soba lleva trigo; no encontré ninguna cifra oficial sobre cuánto usan los mostradores de pie.
+- **"Hay que sumergir todo el fideo."** La mitad. Lo dice la asociación que representa a los locales.
+- **"Ni-hachi tiene un único significado establecido."** Se lee como un precio y como una proporción, y la asociación de fideos dice que cada lectura encaja en un periodo distinto.
+- **"El soba de Shinshū se cultiva en Nagano."** Nagano produce unas 2,500 toneladas al año y Japón importa 88,000. El nombre es un estilo.
+- **"El soba es una comida de Tokio."** Tokio lo convirtió en una cocina. El registro más antiguo está en Nagano, y Izumo, Togakushi e Iwate lo comen cada uno de maneras que Tokio nunca conoció.

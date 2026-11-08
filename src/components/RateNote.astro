@@ -3,8 +3,10 @@
  * 為替の基準日と料金の確認月を、記事の末尾で1回だけ出す。
  * 各金額に基準日を付けると本文が読めなくなるので、必ずここに集約する。
  */
-import { jpyPerEur, jpyPerUsd, ratesAsOf, formatAsOf, formatMonth } from '../lib/money.ts';
-import { ROUTES, DEFAULT_LOCALE } from '../config.ts';
+import { jpyPer, ratesAsOf, formatAsOf, formatMonth } from '../lib/money.ts';
+import { ROUTES, DEFAULT_LOCALE, currenciesOf } from '../config.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   pricesCheckedOn?: Date;
@@ -17,16 +19,21 @@ interface Props {
 const { pricesCheckedOn, faresCheckedOn, category, locale = DEFAULT_LOCALE } = Astro.props;
 /* 運賃を載せていない記事に "Fares verified" を出すと本文と矛盾する（監査 SUMMARY §1-3） */
 const faresOn = faresCheckedOn ?? (category === 'rail' ? pricesCheckedOn : undefined);
+
+/* 表示する通貨ぶんだけ「¥xx to the euro」を並べる。文言は src/i18n/pages/components.ts（rateNote） */
+const s = strings(locale).rateNote;
+const shown = currenciesOf(locale).filter((c) => s.currencyNames[c]);
+const rateText = s.join(shown.map((c) => s.rate(jpyPer(c), s.currencyNames[c])));
+const usesTwd = shown.includes('TWD');
 ---
 
 <p class="rate-note">
-  Prices are in Japanese yen. Conversions are approximate, at ¥{jpyPerEur()} to the euro and ¥{jpyPerUsd()} to the US
-  dollar as of {formatAsOf(ratesAsOf)}. Rates come from the European Central Bank, which publishes on working days only.
+  {s.body(rateText, formatAsOf(ratesAsOf, locale), usesTwd)}
   {
     faresOn ? (
-      <> Fares verified {formatMonth(faresOn)} — check the operator before you travel.</>
+      <> {s.faresVerified(formatMonth(faresOn, locale))}</>
     ) : (
-      pricesCheckedOn && <> Prices checked {formatMonth(pricesCheckedOn)}.</>
+      pricesCheckedOn && <> {s.pricesChecked(formatMonth(pricesCheckedOn, locale))}</>
     )
   }
   {
@@ -35,7 +42,7 @@ const faresOn = faresCheckedOn ?? (category === 'rail' ? pricesCheckedOn : undef
     ROUTES.foodPrices && (
       <>
         {' '}
-        <a href={`/${locale}/food-prices/`}>What food costs in Japan →</a>
+        <a href={localePath(locale, '/food-prices/')}>{s.foodPrices}</a>
       </>
     )
   }

@@ -5,65 +5,72 @@
  * 実装していないページはリンクにせず「Soon」と出す（ROUTES で管理）。
  * 404 へのリンクを人間の注意力で防ぐのは無理なので、表で防ぐ。
  * 未提携のあいだは開示リンクも出ない（AFFILIATE と連動）。
+ * 文言は src/i18n/pages/footer.ts、エリア名は src/i18n/data/areas.ts。
  */
-import { SITE_NAME, TAGLINE, NAV, ROUTES, LOCALES, GA4_MEASUREMENT_ID, hasAnyAffiliate, type Locale } from '../config.ts';
+import { SITE_NAME, TAGLINE, NAV, ROUTES, LOCALES, LOCALE_META, PLANNED_LOCALES, hreflangOf, GA4_MEASUREMENT_ID, hasAnyAffiliate, type Locale } from '../config.ts';
 import { AREAS } from '../data/areas.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/footer.ts';
+import { areaName } from '../i18n/data/areas.ts';
 
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const s = strings(locale);
 const year = new Date().getFullYear();
 
 type Item = { label: string; href?: string; note?: string };
 
 const areaItems: Item[] = AREAS.map((a) => ({
-  label: a.name,
-  href: ROUTES.areaHub && a.status !== 'planned' ? `/${locale}/areas/${a.slug}/` : undefined,
-  note: a.status === 'planned' ? 'Planned' : a.status === 'in-progress' ? 'In progress' : undefined,
+  label: areaName(a, locale),
+  href: ROUTES.areaHub && a.status !== 'planned' ? localePath(locale, `/areas/${a.slug}/`) : undefined,
+  note: a.status === 'planned' ? s.planned : a.status === 'in-progress' ? s.inProgress : undefined,
 }));
 
 const guideItems: Item[] = NAV.map((n) => ({
   label: t(locale, `nav.${n.key}` as UIKey),
-  href: n.enabled ? `/${locale}/${n.key}/` : undefined,
-  note: n.enabled ? undefined : 'Soon',
+  href: n.enabled ? localePath(locale, `/${n.key}/`) : undefined,
+  note: n.enabled ? undefined : s.soon,
 }));
 
 const planItems: Item[] = [
-  { label: 'What food costs', href: ROUTES.foodPrices ? `/${locale}/food-prices/` : undefined, note: ROUTES.foodPrices ? undefined : 'Soon' },
-  { label: 'Rail passes, compared', href: ROUTES.passes ? `/${locale}/passes/` : undefined, note: ROUTES.passes ? undefined : 'Soon' },
-  { label: 'Itineraries', href: ROUTES.itineraries ? `/${locale}/itineraries/` : undefined, note: ROUTES.itineraries ? undefined : 'Soon' },
-  { label: 'Budget calculator', note: 'Soon' },
-  { label: t(locale, 'nav.search'), href: ROUTES.search ? `/${locale}/search/` : undefined, note: ROUTES.search ? undefined : 'Soon' },
+  { label: s.foodCosts, href: ROUTES.foodPrices ? localePath(locale, '/food-prices/') : undefined, note: ROUTES.foodPrices ? undefined : s.soon },
+  { label: s.passes, href: ROUTES.passes ? localePath(locale, '/passes/') : undefined, note: ROUTES.passes ? undefined : s.soon },
+  { label: s.itineraries, href: ROUTES.itineraries ? localePath(locale, '/itineraries/') : undefined, note: ROUTES.itineraries ? undefined : s.soon },
+  { label: s.budget, note: s.soon },
+  { label: t(locale, 'nav.search'), href: ROUTES.search ? localePath(locale, '/search/') : undefined, note: ROUTES.search ? undefined : s.soon },
 ];
 
 const aboutItems: Item[] = [
-  { label: 'Who writes this', href: ROUTES.about ? `/${locale}/about/` : undefined, note: ROUTES.about ? undefined : 'Soon' },
-  { label: 'Send a correction', href: ROUTES.contact ? `/${locale}/contact/` : undefined, note: ROUTES.contact ? undefined : 'Soon' },
+  { label: s.whoWrites, href: ROUTES.about ? localePath(locale, '/about/') : undefined, note: ROUTES.about ? undefined : s.soon },
+  { label: s.correction, href: ROUTES.contact ? localePath(locale, '/contact/') : undefined, note: ROUTES.contact ? undefined : s.soon },
   ...(hasAnyAffiliate
-    ? [{ label: t(locale, 'footer.disclosure'), href: ROUTES.disclosure ? `/${locale}/disclosure/` : undefined, note: ROUTES.disclosure ? undefined : 'Soon' }]
+    ? [{ label: t(locale, 'footer.disclosure'), href: ROUTES.disclosure ? localePath(locale, '/disclosure/') : undefined, note: ROUTES.disclosure ? undefined : s.soon }]
     : []),
-  { label: t(locale, 'footer.privacy'), href: ROUTES.privacy ? `/${locale}/privacy/` : undefined, note: ROUTES.privacy ? undefined : 'Soon' },
+  { label: t(locale, 'footer.privacy'), href: ROUTES.privacy ? localePath(locale, '/privacy/') : undefined, note: ROUTES.privacy ? undefined : s.soon },
 ];
 
 const columns: { title: string; items: Item[] }[] = [
-  { title: 'Areas', items: areaItems },
-  { title: 'Guides', items: guideItems },
-  { title: 'Plan a trip', items: planItems },
-  { title: 'About', items: aboutItems },
+  { title: s.colAreas, items: areaItems },
+  { title: s.colGuides, items: guideItems },
+  { title: s.colPlan, items: planItems },
+  { title: s.colAbout, items: aboutItems },
 ];
 
-const languages = [
-  { code: 'en', label: 'English', ready: true },
-  { code: 'ko', label: '한국어', ready: LOCALES.includes('ko' as Locale) },
-  // 中国語は扱わない（2026-09-26 の決定）。欧州圏の読者を主要層に置き、通貨はユーロを先に出す
-];
+// 計画している言語（config.ts の PLANNED_LOCALES）を並べ、URL を持つ言語（LOCALES）だけリンクにする。
+// 中国語は繁体字（台湾向け）だけ。中国本土向けの簡体字は作らない（2026-11-08 の決定）
+const languages = PLANNED_LOCALES.map((code) => ({
+  code,
+  label: LOCALE_META[code].label,
+  ready: LOCALES.includes(code),
+}));
 ---
 
 <footer class="site-footer">
   <div class="wrap">
-    <nav class="sitemap" aria-label="Site map">
+    <nav class="sitemap" aria-label={s.siteMapLabel}>
       {
         columns.map((col) => (
           <div class="col">
@@ -75,7 +82,7 @@ const languages = [
                     <a href={i.href}>{i.label}</a>
                   ) : (
                     <span class="soon">
-                      {i.label} <em>{i.note ?? 'Soon'}</em>
+                      {i.label} <em>{i.note ?? s.soon}</em>
                     </span>
                   )}
                   {i.href && i.note && <em class="tag">{i.note}</em>}
@@ -87,24 +94,24 @@ const languages = [
       }
 
       <div class="col wide">
-        <p class="col-title">One letter a month</p>
+        <p class="col-title">{s.letterTitle}</p>
         <p class="blurb">
-          What changed in fares, what opened, and one place I would go back to. No sponsored posts.
+          {s.letterBlurb}
         </p>
         {
           ROUTES.newsletter ? (
-            <form class="signup" method="post" action={`/${locale}/subscribe/`}>
+            <form class="signup" method="post" action={localePath(locale, '/subscribe/')}>
               <label class="sr" for="footer-email">
-                Email address
+                {s.emailLabel}
               </label>
               <input id="footer-email" name="email" type="email" placeholder="you@example.com" required />
               <button class="btn" type="submit">
-                Subscribe
+                {s.subscribe}
               </button>
             </form>
           ) : (
             <p class="soon-block">
-              <em>Soon</em> — the letter starts once there are enough guides to be worth one.
+              <em>{s.soon}</em> {s.letterSoon}
             </p>
           )
         }
@@ -115,24 +122,23 @@ const languages = [
       <div>
         <div class="brand">{SITE_NAME}</div>
         <p>
-          {TAGLINE} Written in Japan by someone who eats here. Every photograph is mine, and every fare says the month it
-          was checked.
-          {hasAnyAffiliate && ' Some links are affiliate links; they never change what gets recommended.'}
+          {s.statement(TAGLINE)}
+          {hasAnyAffiliate && s.affiliateStatement}
         </p>
       </div>
       <div class="langs">
-        <p class="col-title">Language</p>
+        <p class="col-title">{s.language}</p>
         <ul>
           {
             languages.map((l) => (
               <li>
                 {l.ready ? (
-                  <a href={`/${l.code}/`} hreflang={l.code} lang={l.code}>
+                  <a href={localePath(l.code)} hreflang={hreflangOf(l.code)} lang={hreflangOf(l.code)}>
                     {l.label}
                   </a>
                 ) : (
                   <span class="soon">
-                    {l.label} <em>Soon</em>
+                    {l.label} <em>{s.soon}</em>
                   </span>
                 )}
               </li>
@@ -148,11 +154,11 @@ const languages = [
         /* 同意の選択を開き直す入口。バナー側（ConsentBanner）が data-consent-open を拾う */
         GA4_MEASUREMENT_ID && (
           <button type="button" class="cookie-settings" data-consent-open>
-            Cookie settings
+            {s.cookieSettings}
           </button>
         )
       }
-      <a class="totop" href="#main">Back to top ↑</a>
+      <a class="totop" href="#main">{s.backToTop}</a>
     </div>
   </div>
 </footer>

@@ -15,6 +15,8 @@ import { EXPLAINER_GLYPHS } from '../data/soak.ts';
 import { parseId } from '../content.config.ts';
 import { IMAGE_SPEC } from '../lib/images.ts';
 import Icon from './Icon.astro';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   entry: Article;
@@ -29,14 +31,15 @@ const name = head.trim();
 const tagline = rest.join(':').trim() || d.description.split(/(?<=[.!?])\s+/)[0];
 const glyph = d.kind === 'explainer' ? (EXPLAINER_GLYPHS[slug] ?? '泉') : '湯';
 const spec = IMAGE_SPEC.card;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).soakTile;
 
 const f = d.facility;
 const facts: string[] = [];
 if (f?.water) facts.push(f.water);
-if (f?.minutesFromStation != null) facts.push(`${f.minutesFromStation} min from the station`);
-if (f?.tattoos === 'allowed') facts.push('Tattoos OK');
-if (f?.tattoos === 'not-allowed') facts.push('No tattoos');
-if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
+if (f?.minutesFromStation != null) facts.push(s.minFromStation(f.minutesFromStation));
+if (f?.tattoos === 'allowed') facts.push(s.tattooOk);
+if (f?.tattoos === 'not-allowed') facts.push(s.noTattoos);
+if (f?.tattoos === 'conditional') facts.push(s.tattooConditions);
 ---
 
 <article class:list={['tile', d.kind, { photo: !!d.heroImage }]}>
@@ -65,7 +68,7 @@ if (f?.tattoos === 'conditional') facts.push('Tattoos: conditions');
       <span class="tagline">{tagline}</span>
       {facts.length > 0 && <span class="facts">{facts.join(' · ')}</span>}
       <span class="go">
-        {d.kind === 'explainer' ? 'Read' : 'Read the guide'} <Icon name="arrow" />
+        {d.kind === 'explainer' ? s.read : s.readGuide} <Icon name="arrow" />
       </span>
     </span>
   </a>

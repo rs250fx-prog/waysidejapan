@@ -1,0 +1,148 @@
+---
+title: "Izakaya : comment fonctionne un pub japonais, de la porte à l’addition"
+description: "Un izakaya, c’est s’asseoir pour boire, avec des plats à partager commandés par tournées. Le déroulé d’une soirée, le plat non commandé facturé, les types."
+translationKey: izakaya
+translationStatus: machine
+category: eat
+kind: dish
+dish: izakaya
+basis: researched
+areas: [kanto, kansai, kyushu]
+pubDate: 2026-11-02
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/izakaya-hero.webp
+heroAlt: "Illustration de l’entrée d’un izakaya au soir, une lanterne de papier rouge et un rideau fendu à la porte, des clients au comptoir à l’intérieur"
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: "Pourquoi me fait-on payer un plat que je n’ai pas commandé ?"
+    a: "C’est l’otoshi, un petit plat servi à chaque client dès qu’il s’assoit. L’office national du tourisme japonais le qualifie de droit de table, et le Centre national des affaires de consommation dit que les visiteurs peuvent le considérer comme tel. Si l’on vous facture à la fois un otoshi et un couvert distinct, ou si le montant semble erroné, demandez avant de payer."
+  - q: "Faut-il laisser un pourboire dans un izakaya ?"
+    a: "Non. L’office national du tourisme japonais dit qu’il n’y a pas de coutume du pourboire et qu’un pourboire risque de simplement dérouter le personnel. Le site touristique officiel de Tokyo dit que le service est généralement compris."
+  - q: "Faut-il commencer par une bière ?"
+    a: "Non. Beaucoup de groupes commencent par une bière, en partie parce que c’est la boisson la plus rapide à servir, et souvent tout le monde trinque avec la même. L’association touristique de Kyoto note que beaucoup d’habitants commencent plutôt par du saké. La seule coutume ferme est de ne pas boire avant le toast."
+  - q: "À quelle heure les izakaya ouvrent-ils et ferment-ils ?"
+    a: "La plupart sont des lieux du soir, pour ceux qui sortent du travail, et ne sont pas ouverts à midi. Le site touristique officiel de Tokyo dit que beaucoup ferment vers minuit, avec dernière commande 30 à 60 minutes avant la fermeture."
+sources:
+  - label: 'GO TOKYO「Pub Grub Decoded: A Guide to Japanese Izakaya」'
+    url: 'https://www.gotokyo.org/en/story/guide/pub-grub-decoded-a-guide-to-japanese-izakaya/index.html'
+  - label: 'GO TOKYO グルメ「居酒屋の楽しみ方」'
+    url: 'https://www.gourmet.gotokyo.org/article/95.html'
+    published: '2026-03-12'
+  - label: 'GO TOKYO「Drink and Dine Like a Local: A Guide to Exploring Yokocho Alleyways」'
+    url: 'https://www.gotokyo.org/en/story/guide/drink-and-dine-like-a-local-a-guide-to-exploring-yokocho-alleyways/index.html'
+  - label: '京都市観光協会 DMO KYOTO「Kyoto Nightlife」'
+    url: 'https://kyoto.travel/en/travel-inspiration/kyoto-nightlife-local-bars-and-nighttime-strolls-to-enjoy/'
+    published: '2025-01-31'
+  - label: 'JNTO「Izakaya Dining Guide」'
+    url: 'https://www.japan.travel/en/guide/dinner-at-a-japanese-tavern/'
+  - label: 'JNTO「Etiquette」'
+    url: 'https://www.japan.travel/en/ca/etiquette/'
+  - label: 'JNTO「Japanese Customs and Etiquette」'
+    url: 'https://www.japan.travel/en/responsible-travel-guide/japanese-customs-and-etiquette/'
+  - label: 'JNTO ブログ「Drinking the Japanese Way」'
+    url: 'https://www.japan.travel/en/us/blog/drinking-the-japanese-way/'
+    published: '2022-03-31'
+  - label: '国民生活センター 報道発表「訪日観光客消費者ホットライン」'
+    url: 'https://www.kokusen.go.jp/pdf/n-20190919_1.pdf'
+    published: '2019-09-19'
+  - label: '国民生活センター「訪日観光客消費者ホットライン」開設から1年'
+    url: 'https://www.kokusen.go.jp/pdf/n-20200116_1.pdf'
+    published: '2020-01-16'
+  - label: '国立国会図書館 レファレンス協同データベース「江戸時代の居酒屋」'
+    url: 'https://crd.ndl.go.jp/reference/modules/d3ndlcrdentry/index.php?id=1000197284&page=ref_view'
+  - label: '国立国会図書館 レファレンス協同データベース「江戸時代の屋台の禁止事項」'
+    url: 'https://crd.ndl.go.jp/reference/entry/index.php?page=ref_view&id=1000203663'
+  - label: 'Fukuoka Now「Kitakyushu Kakuuchi」（民間の観光メディア）'
+    url: 'https://www.fukuoka-now.com/en/kitakyushu-kakuuchi/'
+  - label: '福岡市 公式観光サイト「屋台の楽しみ方」'
+    url: 'https://gofukuoka.jp/yatai-howto.html'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import LineageTable from '../../../components/LineageTable.astro';
+import Figure from '../../../components/Figure.astro';
+import izakayaCounter from '../../../assets/eat/izakaya-body.webp';
+
+Un izakaya est un pub japonais, et son addition fait partie des malentendus que le Centre national des affaires de consommation cite comme typiques chez les visiteurs. En général, rien ne cloche. L’addition est construite autrement que celle d’un restaurant : un petit plat que vous n’avez pas commandé arrive et est facturé, la nourriture vient par petites tournées plutôt que par plats successifs, et dans certains endroits commander seulement à boire ne suffit pas tout à fait. Cette page explique comment se déroule la soirée et pourquoi. La page sur l’otoshi détaille l’addition ; celle sur le yakitori présente le type d’izakaya spécialisé le plus courant.
+
+## Ce que c’est
+
+Le site touristique officiel de Tokyo explique le nom par ses trois caractères — *i* (rester), *saka* (saké), *ya* (boutique) — un lieu où l’on s’installe pour boire. Il compare les izakaya aux bars à tapas et aux gastropubs. Ils vont de la boutique d’une seule personne aux énormes chaînes, du style bar au style restaurant, avec des places sur tatami, sur des coussins, ou des chaises et tables à l’occidentale.
+
+**D’où il vient.** L’histoire est moins établie qu’on ne la raconte d’ordinaire. Une réponse de référence de la base de données collaborative de la Bibliothèque nationale de la Diète cite un guide populaire de la vie à Edo qui date l’izakaya de l’ère Kyōhō (1716–36) et dit qu’il est né dans les boutiques de saké ; il n’y avait ni chaises ni tables, et le saké chaud était servi dans un pichet de métal appelé *chirori* plutôt que dans un flacon. Une autre histoire illustrée qu’elle cite dit que ces lieux s’appelaient aussi *nawa-noren* (rideau de corde), *niuri-sakaya* et *shirikake-sakaya*, et que le chirori a plus tard cédé la place au flacon. La même base consigne que les autorités d’Edo ont restreint après la tombée de la nuit les *niuri* — boutiques vendant des plats cuisinés — dans les années 1660 et 1670, bien qu’une source note que le fondement de l’heure indiquée n’est pas clair. Ce sont des ouvrages secondaires ; cette page tient donc la date de Kyōhō pour un récit parmi d’autres, pas pour l’origine.
+
+Boire au comptoir d’une boutique de saké subsiste. À Kitakyushu, cela s’appelle *kaku-uchi* : un magazine touristique privé, Fukuoka Now, le rattache aux ouvriers de l’aciérie de Yawata, entrée en service en 1901, qui s’arrêtaient dans un magasin d’alcool en rentrant chez eux. La plupart se font debout, beaucoup n’acceptent que les espèces, un verre pour quelques centaines de yens. Je n’ai pas pu le confirmer à partir des documents de la ville elle-même ; tenez-le donc pour le récit d’un magazine.
+
+## Le déroulé de la soirée
+
+**À la porte.** Attendez qu’on vous place, même si vous voyez une table libre, même si vous avez réservé. On vous demandera combien vous êtes. Si l’endroit est plein, certaines boutiques ont une liste où inscrire votre nom et votre numéro.
+
+**Quand vous vous asseyez.** L’eau est généralement gratuite (parfois en libre-service). L’*oshibori*, la serviette humide, est pour les mains, pas pour le visage. Puis arrive un petit plat que vous n’avez pas commandé — l’*otoshi*. L’office national du tourisme japonais dit qu’il a tendance à arriver tout de suite ; signalez donc au personnel tout régime alimentaire dès que vous vous asseyez.
+
+**La première boisson.** Beaucoup de groupes commencent par une bière ; l’association touristique de Kyoto dit que c’est parce que la bière est la plus rapide à apporter, et que les groupes trinquent souvent avec la même boisson. Le même article dit que beaucoup d’habitants de Kyoto commencent par du saké. L’office national du tourisme note que commencer à boire avant le toast passe pour impoli.
+
+**Commander.** Attendez le personnel, appuyez sur le bouton d’appel, ou utilisez la tablette que la plupart des grandes chaînes ont. Aux heures de pointe, il se peut que vous attendiez. Le site officiel de Tokyo dit qu’il est d’usage que chacun commande au moins un plat, et qu’on peut sans problème montrer des images du doigt ou utiliser une application de traduction ; beaucoup d’endroits ont des menus multilingues, mais les petites boutiques n’ont souvent que des menus manuscrits en japonais. Le rythme est modeste : quelques plats, puis quelques autres avec la tournée de boissons suivante.
+
+**Partager.** Les plats sont pour la table. Servez-vous votre part avec les petites assiettes (*torizara*).
+
+**L’arc d’une soirée**, tel que le décrit l’association touristique de Kyoto : d’abord quelque chose de léger — salade, sashimi — puis des plats mijotés, frits et grillés à mesure que l’on boit ; souvent un deuxième endroit (*nijikai*) ; et enfin un *shime*, un plat de clôture comme la bouillie de riz, le riz au thé, les boulettes de riz grillées ou le ramen.
+
+**L’addition.** Certains endroits l’apportent à table, d’autres vous font payer à la caisse près de la porte. Le site officiel de Tokyo donne les deux dans des articles différents et, dans un troisième, dit qu’on peut demander l’addition ou faire une croix avec les doigts, qu’elle arrive généralement sans détail, et que les groupes la partagent généralement à parts égales. En cas de doute, demandez. Il n’y a pas de pourboire.
+
+**Les horaires.** Les izakaya sont des lieux du soir, généralement pas ouverts à midi. Beaucoup ferment vers minuit, avec dernière commande 30 à 60 minutes avant.
+
+<Figure
+  src={izakayaCounter}
+  alt="Des verres de bière levés à un comptoir d’izakaya, de petites assiettes à partager d’edamame, de sashimi, de brochettes et de poulet frit, un cuisinier qui grille derrière"
+  caption="D’abord la bière, des assiettes pour la table, le gril qui chauffe derrière le comptoir. Illustration."
+/>
+
+## L’addition, et pourquoi elle surprend
+
+<DishPrices keys={['beer', 'sake', 'highball']} />
+
+Les chiffres ci-dessus sont conservés sur la page de référence des prix et s’y mettent à jour. Trois choses distinguent une addition d’izakaya de ce qu’attendent les visiteurs, et la page sur l’otoshi explique chacune en détail :
+
+- **L’otoshi.** Chaque client en reçoit un et le paie. L’office du tourisme du Japon le qualifie de droit de table ; l’association touristique de Kyoto donne ¥300–500 par personne à titre indicatif. Le Centre national des affaires de consommation le range parmi les malentendus typiques des visiteurs, et en attribue la cause au défaut d’explication des boutiques autant qu’à la différence culturelle.
+- **Les suppléments.** Certains izakaya ajoutent un supplément de fin de soirée. Les formules à volonté de boissons (*nomihōdai*) sont courantes, généralement pour une à deux heures.
+- **Minimums par portion.** Les fondues, les viandes grillées et les menus complets sont parfois affichés par personne mais ne peuvent se commander qu’à deux ou plus, en petits caractères.
+
+L’association touristique de Kyoto note aussi que certains menus affichent les prix avant la taxe à la consommation de 10%, ajoutée ensuite à la caisse. Vérifiez de quel type de menu il s’agit.
+
+## Les types
+
+Le tableau est tenu en un seul endroit pour que chaque type soit décrit dans les mêmes termes. Les lignes sans lien figurent dans la liste mais ne sont pas encore rédigées.
+
+<LineageTable dish="izakaya" />
+
+L’addition elle-même a sa propre page : [l’otoshi, les droits de couvert et les boissons à volonté](/en/eat/izakaya-otoshi/).
+
+## Où aller
+
+- **Les yokochō de Tokyo** — des ruelles étroites de petits bars, repérés par des lanternes rouges ou blanches et un rideau portant le nom de la boutique. Beaucoup comptent une dizaine de places ; certains, dans le Nonbei Yokochō de Shibuya, en ont quatre ou cinq. Allez-y en petit groupe. Boire et fumer dans la rue est interdit.
+- **Kyoto** — où, selon l’association touristique, un habitant commence aussi volontiers par du saké que par de la bière.
+- **Les yatai de Fukuoka** — stands de rue, traités dans la page sur le ramen de Hakata et plus bas.
+- **Le kaku-uchi de Kitakyushu** — comptoirs de magasins d’alcool, selon un magazine touristique.
+
+Les tarifs de transport et les durées de trajet ne figurent pas sur cette page.
+
+## La même soirée, dans une autre ville
+
+Il n’existe aucune comparaison officielle des izakaya de Tokyo, d’Osaka et de Fukuoka, ni des prix des quartiers touristiques et des prix de quartier. Voici ce que consignent les sites touristiques officiels :
+
+- **La première boisson varie.** La bière est l’ouverture courante ; à Kyoto, beaucoup d’habitants commencent par du saké.
+- **Les stands de Fukuoka suivent d’autres règles.** Le site touristique de la ville dit que les places sont peu nombreuses et conviennent à deux ou trois personnes ; commandez au moins une boisson et un plat chacun ; la plupart des stands ne facturent ni otoshi ni couvert, bien que les stands de style bar puissent le faire ; la plupart n’acceptent que les espèces (environ un sur dix prend les cartes) ; la plupart ouvrent vers 18:30–19:00 et ferment vers minuit, sans jour de fermeture fixe et avec fermeture sous la pluie ; très peu prennent des réservations ; et il n’y a pas de toilettes.
+- **Les ruelles locales sont moins traduites.** Le guide de Tokyo sur les yokochō dit que les ruelles préférées des habitants n’ont guère de menus en anglais.
+- **« Yakitori » change de sens.** À Higashimatsuyama et à Muroran, c’est du porc ; à Imabari, c’est de la peau de poulet pressée sur une plaque. Voyez la page sur le yakitori.
+
+## Ce que l’on croit à tort
+
+- **« L’otoshi est une arnaque. »** C’est un droit de table courant, et le centre des consommateurs dit aux visiteurs de le considérer ainsi — mais de demander si on leur facture à la fois un otoshi et un couvert.
+- **« On peut ne commander que des boissons. »** Le site officiel de Tokyo dit qu’il est d’usage que chacun commande au moins un plat ; les stands de Fukuoka demandent une boisson et un plat chacun.
+- **« Laissez un pourboire pour un bon service. »** Il n’y a pas de coutume du pourboire.
+- **« La serviette est pour le visage. »** Elle est pour les mains.
+- **« Les izakaya sont ouverts toute la journée. »** Ce sont des lieux du soir ; la plupart ferment vers minuit.
+- **« Les izakaya sont une institution ancienne. »** Un récit les date des années 1720–30 dans les boutiques de saké d’Edo ; c’est un récit, pas une histoire établie.

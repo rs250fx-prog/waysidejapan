@@ -3,7 +3,9 @@
  * title / description / canonical / OG / hreflang / JSON-LD を1か所に集約する。
  * ページ側で meta を直書きしない。
  */
-import { SITE_NAME, SITE_URL, IS_PUBLIC, AUTHOR, OPERATOR, DEFAULT_LOCALE } from '../config.ts';
+import { SITE_NAME, SITE_URL, IS_PUBLIC, AUTHOR, OPERATOR, DEFAULT_LOCALE, hreflangOf, ogLocaleOf } from '../config.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings as homeStrings } from '../i18n/pages/home.ts';
 
 interface Props {
   title: string;
@@ -47,7 +49,8 @@ const fullTitle = bareTitle ? title : `${title} | ${SITE_NAME}`;
 const og = typeof ogImage === 'string' ? { src: ogImage, width: 1200, height: 630, alt: undefined } : ogImage;
 const ogUrl = new URL(og.src, SITE_URL).href;
 const isDefaultOg = og.src === '/og-default.png';
-const ogAlt = og.alt ?? (isDefaultOg ? `${SITE_NAME} — what Japan eats, and why` : title);
+const ogAlt = og.alt ?? (isDefaultOg ? homeStrings(locale).title(SITE_NAME) : title);
+const authorUrl = new URL(localePath(locale, AUTHOR.path), SITE_URL).href;
 
 // IS_PUBLIC が false のあいだは無条件で noindex（public/_headers の X-Robots-Tag とセット）
 const robots = !IS_PUBLIC || noindex ? 'noindex, nofollow' : 'index, follow';
@@ -60,7 +63,7 @@ const jsonLd = {
       '@id': `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
-      inLanguage: locale,
+      inLanguage: hreflangOf(locale),
       publisher: { '@id': `${SITE_URL}/#publisher` },
     },
     {
@@ -76,7 +79,7 @@ const jsonLd = {
       '@id': `${SITE_URL}/#author`,
       name: AUTHOR.name,
       description: AUTHOR.credential,
-      url: new URL(AUTHOR.url, SITE_URL).href,
+      url: authorUrl,
       worksFor: { '@id': `${SITE_URL}/#publisher` },
       ...(AUTHOR.sameAs.length > 0 && { sameAs: AUTHOR.sameAs }),
     },
@@ -90,12 +93,14 @@ const jsonLd = {
 <link rel="canonical" href={canonical} />
 <meta name="robots" content={robots} />
 
-{alternates.map((a) => <link rel="alternate" hreflang={a.locale} href={new URL(a.path, SITE_URL).href} />)}
+{/* hreflang はパスの言語コード（zh-tw）ではなく、検索エンジン向けのコード（zh-TW）で出す */}
+{alternates.map((a) => <link rel="alternate" hreflang={hreflangOf(a.locale)} href={new URL(a.path, SITE_URL).href} />)}
 {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(`/${DEFAULT_LOCALE}/`, SITE_URL).href} />}
 
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={SITE_NAME} />
-<meta property="og:locale" content={locale === 'en' ? 'en_US' : locale} />
+<meta property="og:locale" content={ogLocaleOf(locale)} />
+{alternates.filter((a) => a.locale !== locale).map((a) => <meta property="og:locale:alternate" content={ogLocaleOf(a.locale)} />)}
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
@@ -105,7 +110,7 @@ const jsonLd = {
 <meta property="og:image:alt" content={ogAlt} />
 {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
 {ogType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-{ogType === 'article' && <meta property="article:author" content={new URL(AUTHOR.url, SITE_URL).href} />}
+{ogType === 'article' && <meta property="article:author" content={authorUrl} />}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />

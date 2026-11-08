@@ -20,8 +20,8 @@
  * 数値のうち official と chain が自動で入れ替わる。
  */
 
-import officialData from './food-prices.official.json';
-import chainData from './food-prices.chain.json';
+import officialData from './food-prices.official.json' with { type: 'json' };
+import chainData from './food-prices.chain.json' with { type: 'json' };
 
 /** チェーン1社ぶんの価格。公式サイトで確認できたものだけが入る */
 export interface ChainPrice {

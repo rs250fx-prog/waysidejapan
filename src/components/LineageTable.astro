@@ -6,13 +6,17 @@
  */
 import { lineagesOf, publishedLineagePages } from '../lib/lineages.ts';
 import Icon from './Icon.astro';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   dish: string;
   locale?: string;
 }
-const { dish, locale = 'en' } = Astro.props;
-const data = lineagesOf(dish);
+const { dish, locale = Astro.currentLocale ?? DEFAULT_LOCALE } = Astro.props;
+const s = strings(locale).lineageTable;
+const data = lineagesOf(dish, locale);
 const published = await publishedLineagePages(locale, dish);
 ---
 
@@ -22,8 +26,8 @@ const published = await publishedLineagePages(locale, dish);
       <table>
         <thead>
           <tr>
-            <th>Lineage</th>
-            <th>Origin</th>
+            <th>{s.lineage}</th>
+            <th>{s.origin}</th>
             {data.axes.map((a) => (
               <th>{a.label}</th>
             ))}
@@ -34,7 +38,7 @@ const published = await publishedLineagePages(locale, dish);
             <tr class:list={[{ planned: !published.has(l.key) }]}>
               <td>
                 {published.has(l.key) ? (
-                  <a href={`/${locale}/eat/${dish}-${l.key}/`}>
+                  <a href={localePath(locale, `/eat/${dish}-${l.key}/`)}>
                     {l.name} <Icon name="arrow" />
                   </a>
                 ) : (
@@ -54,8 +58,7 @@ const published = await publishedLineagePages(locale, dish);
         </tbody>
       </table>
       <p class="note">
-        Lineages without a link are on the list but not written yet. The table is kept in one place so every lineage is
-        described on the same terms.
+        {s.note}
       </p>
     </div>
   )

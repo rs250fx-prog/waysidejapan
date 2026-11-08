@@ -5,8 +5,10 @@ import DemoRibbon from '../components/DemoRibbon.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import Analytics from '../components/Analytics.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
-import { SITE_NAME, TAGLINE, NAV, ROUTES, DEFAULT_LOCALE, hasAnyAffiliate } from '../config.ts';
+import { SITE_NAME, TAGLINE, NAV, ROUTES, DEFAULT_LOCALE, hasAnyAffiliate, hreflangOf } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   title: string;
@@ -26,10 +28,11 @@ interface Props {
 const { locale = DEFAULT_LOCALE, ...seo } = Astro.props;
 const nav = NAV.filter((n) => n.enabled);
 const here = Astro.url.pathname;
+const s = strings(locale).layout;
 ---
 
 <!doctype html>
-<html lang={locale}>
+<html lang={hreflangOf(locale)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,7 +52,7 @@ const here = Astro.url.pathname;
 
     <header class="masthead">
       <div class="wrap masthead-inner">
-        <a class="brand" href={`/${locale}/`}>
+        <a class="brand" href={localePath(locale)}>
           {/* 赤い日と丘を抜ける道。ファビコンと同じ1枚（tools/make-icons.mjs が書き出す） */}
           <img class="brand-mark" src="/icon-192.png" width="38" height="38" alt="" />
           <span class="brand-text">
@@ -57,12 +60,12 @@ const here = Astro.url.pathname;
             <span class="brand-tag">{TAGLINE}</span>
           </span>
         </a>
-        <nav class="nav" aria-label="Sections">
+        <nav class="nav" aria-label={s.sectionsLabel}>
           {
             nav.map((n) => (
               <a
-                href={`/${locale}/${n.key}/`}
-                class:list={['nav-link', { current: here.startsWith(`/${locale}/${n.key}/`) }]}
+                href={localePath(locale, `/${n.key}/`)}
+                class:list={['nav-link', { current: here.startsWith(localePath(locale, `/${n.key}/`)) }]}
               >
                 {t(locale, `nav.${n.key}` as UIKey)}
               </a>
@@ -73,14 +76,14 @@ const here = Astro.url.pathname;
                どの記事にも金額が出るので、参照先が常に一手で開ける必要がある */
             ROUTES.foodPrices && (
               <a
-                href={`/${locale}/food-prices/`}
-                class:list={['nav-link', { current: here.startsWith(`/${locale}/food-prices/`) }]}
+                href={localePath(locale, '/food-prices/')}
+                class:list={['nav-link', { current: here.startsWith(localePath(locale, '/food-prices/')) }]}
               >
-                Prices
+                {s.prices}
               </a>
             )
           }
-          <a class="nav-link muted" href={`/${locale}/about/`}>{t(locale, 'nav.about')}</a>
+          <a class="nav-link muted" href={localePath(locale, '/about/')}>{t(locale, 'nav.about')}</a>
         </nav>
       </div>
     </header>

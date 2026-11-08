@@ -181,7 +181,11 @@ src/
     passes.ts            # 鉄道パスのマスタ（価格・有効日数・範囲・確認日）
     rates.json           # 為替の最終取得値。コミットする
   i18n/
-    ui.ts                # UI文言の辞書
+    index.ts             # pickLocale / localePath / fill / fixedAlternates / dateTagOf（共通ヘルパー）
+    ui.ts                # UI文言の辞書（ナビ・記事の見出しなど。5言語）
+    pages/<name>.ts      # 固定ページ・部品・レイアウトの文言。home category about privacy food-prices
+                         #   not-found footer consent article components。table = { en, ko, fr, es, zh-tw }
+    data/<name>.ts       # データ（areas regions genres guides soak food-prices lineages）の表示文言の上書き表
   components/
     Price.astro          # ¥1,200 (≈ $8 / €7)
     RateNote.astro       # 基準日と Fares verified を1回だけ出す
@@ -229,7 +233,7 @@ docs/
 export const SITE_NAME = 'Wayside Japan';
 export const SITE_URL  = 'https://waysidejapan.com';   // 実配信ホストを確認してから設定
 export const IS_PUBLIC = false;                         // false のあいだ全ページ noindex
-export const LOCALES   = ['en'] as const;               // 'ko' は最後。中国語は扱わない
+export const LOCALES   = ['en'] as const;               // URL を持つ言語。5言語を計画（LOCALE_META）。翻訳が確認済みでそろった言語から足す
 export const GA4_MEASUREMENT_ID = '';                   // 空なら計測タグもポリシー記述も出ない
 
 export const NAV = [
@@ -281,11 +285,57 @@ export const AFFILIATE = {
 
 ### hreflang
 
-`en` / `zh-TW` / `ko` と **`x-default` は `/en/`**。出すのは実在ページのみ。
+**計画する言語（2026-11-08 決定）**：`en`（現行）・`ko`・`zh-tw`・`fr`・`es`。中国語は**繁体字（台湾向け）だけ**で、中国本土向けの簡体字（`zh-CN`）は作らない。本土からのアクセスは遮断しない（簡体字を作らないだけ）。
+
+| URL のパス | hreflang / html lang | og:locale | 表示通貨（先頭から） |
+|---|---|---|---|
+| `/en/` | `en` | `en_US` | EUR, USD |
+| `/ko/` | `ko` | `ko_KR` | KRW, USD |
+| `/zh-tw/` | `zh-TW` | `zh_TW` | TWD, USD |
+| `/fr/` | `fr` | `fr_FR` | EUR, USD |
+| `/es/` | `es` | `es_ES` | EUR, USD |
+
+対応表は `src/config.ts` の `LOCALE_META` に1か所だけ。**ページ側で言語コードを組み立てない。** パス（`zh-tw`）と検索エンジン向けのコード（`zh-TW`）が違うので、`hreflangOf()` を通す。
+
+**`x-default` は `/en/`**。出すのは実在し、**検索に出す（`reviewed` かつ非 `unlisted`）ページだけ**。自己参照つきの相互参照にする。`noindex` の版は `hreflang` に載せない（`lib/content.ts` の `alternatesFor`）。実験で、確認済みの組は双方向に正しく出て、`machine` は双方に出ないことを確認した（2026-11-08）。
 
 ### 翻訳の運用
 
 AI翻訳 → **固有名詞・料金・乗り換えを人間が確認**。これを構造で守るため、frontmatter に `translationStatus: machine | reviewed` を置き、**`machine` のあいだは `noindex`**。品質が未確認の言語版が先にインデックスされるのを防ぐ。
+
+**未確認の翻訳は `src/content/` に置かない**（2026-11-08）。下書きは `translations-draft/<lang>/<category>/<slug>.md(x)` に置き、確認が済んだものだけ `src/content/<lang>/` へ移す。`noindex` でもサイトマップには載ってしまう（`@astrojs/sitemap` は URL しか見ない）ので、構造で入口を分ける。`tools/check-i18n.mjs`（`npm run check:i18n`）が次を落とす：
+
+1. `LOCALES` の言語に、`UI_REVIEWED`（UI 辞書を人が確認した印）が無い
+2. 全言語の UI 辞書が、英語と同じキーを持たない
+3. `src/content` に、計画外の言語フォルダ（簡体字 `zh-cn` / `zh-hans` を含む）がある
+4. 翻訳記事の `translationKey` に、英語の原文が無い
+5. `LOCALES` の言語に `translationStatus: machine` が残っている
+
+**翻訳記事の点検（`npm run check:translation`、`tools/check-translation.mjs`）**：`translations-draft/` と `src/content/<英語以外>/` を、英語の原文と突き合わせる。YAML・キーの過不足・訳さない値の変更・faq の数・import 行・部品タグの数・本文リンクの URL・台湾版の簡体字を error、原文の数字の欠落・換算後の金額の直書き・訳し残しの疑い・description の長さを warning にする。**事実の正しさや訳の自然さの保証ではない**（人の確認の代わりにならない）。簡体字の検査は、訳した値と本文だけを見る（`sources` の label は日本語の資料名で、国・会・体・区が日本語の新字体と同形のため対象外）。
+
+**description の下限**（2026-11-08）：スキーマは40字以上に下げた（韓国語・中国語は同じ内容でも文字数が少ない。目安は 60〜90 字）。英語・フランス語・スペイン語は 120〜160 字のまま（`tools/check-content.mjs` が言語で下限を切り替える）。
+
+### 固定ページ・部品・データの文言（2026-11-08 決定・基盤は実装済み）
+
+固定ページ（トップ・カテゴリ一覧・About・プライバシー・食の物価・404）は `LOCALES.map(...)` で言語の数だけ生成される。以前は英語の文章が各 `.astro`・部品・`src/data` に直書きだったので、言語を足した瞬間に**英語の文章のまま `/<lang>/` ページが作られる**（重複ページ）状態だった。これを「**言語ごとの表から取る**」形に直した。方式は次のとおり。
+
+| 層 | 置き場所 | 内容 |
+|---|---|---|
+| ページ・部品・レイアウトの文言 | `src/i18n/pages/<name>.ts` | `table = { en: {...}, ko?: {...}, ... }`。型は `en` から導く（`Strings`）。数や語順が言語で変わる文は**関数**（`count: (n) => ...`）。文中にリンクや強調が入る文は**HTML の断片**で、`set:html` で出す（使えるタグは `a strong em code br` のみ。リポジトリ内の固定文だけ）。リンク先は `{{name}}` で書き、`fill()` で値を入れる（値は `escapeHtml` を通す） |
+| データの表示文言 | `src/i18n/data/<name>.ts` | `src/data/*.ts`・`src/data/lineages/*.json`・`food-prices.chain.json` は**英語の原本として一切変えない**。言語ごとの**上書き表**を id（slug / key / 英語名から作る id）で持つ。`en` は原本から生成する（二重に持たない）。取り出し関数（`areaName` `genreLabel` `sectionLabel` `soakRegionLabel` `regionName` `localizeGroup` `localizeDish`）を通し、無い言語・項目は英語に落ちる |
+| 内部リンク | `localePath(locale, '/eat/ramen/')` | `/en/…` の直書きを廃止。`config.ts` の `AUTHOR.url` は言語を除いた `AUTHOR.path` に変えた。`locale` を受け取らない部品は `Astro.currentLocale ?? DEFAULT_LOCALE` |
+| 日付 | `dateTagOf(locale)` | 英語は `en-GB`（"Sep 2026"）、他は hreflang と同じコード。`formatMonth` `formatAsOf` が受ける |
+| hreflang（固定ページ） | `fixedAlternates(path)` | 公開言語（`LOCALES`）のすべてに同じページがあるので、自分自身を含めて全言語を返す（`x-default` は `/en/`）。**`LOCALES` が1言語のあいだは空**（hreflang を出さない＝従来と同じ出力） |
+
+**条件分岐（`ROUTES` `AFFILIATE` `GA4_MEASUREMENT_ID`）はページ・部品に残す。** 表は「フラグが立っているとき出す文」を条件ごとに別のキーで持ち、出し分けは `.astro` 側が行う（フラグを落とせば、それに言及する文も消える）。
+
+**固有名詞・ブランド名・コード・URL・数値・日付は表に出さない**（`SITE_NAME` `AUTHOR` `OPERATOR` は `config.ts` のまま）。統計の品目定義（`official.definition` は日本語のまま掲載する約束）、チェーン名・商品名も訳さない。
+
+**検査**：`tools/check-i18n.mjs` が `pages/*.ts` と `data/*.ts` の各 `table` について、`LOCALES` の各言語に表があり、キーの形が `en` と一致する（関数は関数、文字列は空でない）ことを見る。計画言語（`PLANNED_LOCALES`）で `LOCALES` に無い言語は、表が無くても落とさず一覧に出す。
+
+**言語を `LOCALES` に足す前の必須作業**：上の表（`pages` 10本・`data` 7本）に、その言語の `table.<lang>` を足し、`UI_REVIEWED` に言語を足し、プライバシーポリシーは法務の確認を通す。`npm run check:i18n` が通るまで `LOCALES` は変えない。`LOCALES` を足して `npx astro build` を試すと、固定ページは `dist/<lang>/` に出て、内部リンクは `/<lang>/…` になり、記事が0本の言語でも落ちない（2026-11-08 に ko・fr・es で確認）。
+
+**`set:html` の断片は、内側のタグに scoped CSS の属性（`data-astro-cid-*`）が付かない。** 現状その内側のタグ（`a strong code`）を狙う scoped CSS は無い。狙うルールを足すときは `:global()` を使う。
 
 ---
 
@@ -351,8 +401,10 @@ Deploy Hook も Worker も KV も使わない。`rates.json` がリポジトリ�
 
 - 取得失敗時は**コミット済みの前回値を使い、ビルドを落とさない**（体裁の問題で公開が止まるほうが損失が大きい）
 - ECB は営業日しか更新されない。土日は直近営業日のレートを使い、**その日付を表示する**
-- 通貨は **EUR → USD の順で表示する**（`DISPLAY_CURRENCIES` の並び順が表示順）。欧州圏を主要層に置く決定による。
-  中国語圏は扱わないので TWD は持たない。韓国語に着手する段で KRW を足す
+- 通貨は **EUR → USD の順で表示する**（英語版。`DISPLAY_CURRENCIES` の並び順が表示順）。欧州圏を主要層に置く決定による。
+  **言語ごとの通貨は `LOCALE_META.currencies`**（2026-11-08）：韓国語は KRW、繁体字は TWD を先頭に、フランス語・スペイン語は EUR（スペイン語圏のメキシコ向けに MXN を足す案は未決）。
+  `<Price>` は `Astro.currentLocale` で通貨を選ぶ
+- **取得元（`tools/fetch-rates.mjs`）**：USD・EUR・**KRW** は Frankfurter（ECB）。**ECB は台湾ドルを公表しない**ので、**TWD だけ** ExchangeRate-API の無料エンドポイント（`open.er-api.com`）から取る。TWD の取得に失敗しても、他の通貨の更新は止めず、前回の TWD を残す。注記には TWD の出所を併記する（`RateNote`）
 - 基準日の注記には**ユーロとドルの両方のレート**を出し、出所（ECB・営業日のみ更新）も書く
 
 ### 表示
@@ -711,6 +763,10 @@ AI が読んで src/content/<locale>/<category>/<slug>.mdx を書く
 | Travelpayouts の審査 | T-05。通るまで `AFFILIATE` は全て `false` |
 | 著者名の表記 | バイラインに出す英語表記が未定 |
 | ニュースレター | 導線を置くかどうか未定（Google依存を避ける施策として想定） |
+| 多言語の固定ページ | **解決済み（2026-11-08）**。文言を `src/i18n/pages/<name>.ts`、データの表示文言の上書きを `src/i18n/data/<name>.ts` の「言語ごとの表」に出し、ページ・部品は表から取る方式にした（基盤は実装済み、`en` のみ。ko・fr・es・zh-tw の翻訳はこれから）。第6節 |
+| 翻訳の対象と順序 | 5言語（en・ko・zh-tw・fr・es）で確定。全314本を一気に翻訳する方針だが、公開は言語ごとの確認後。試験翻訳（3本×4言語）で費用・時間・品質を測ってから全訳を決める |
+| 為替の MXN | スペイン語（メキシコ向け）に MXN を足すか未定 |
+| UI 辞書の確認 | ko・zh-tw・fr・es は AI の下書き。母語話者の確認後に `UI_REVIEWED` へ |
 
 ---
 
@@ -723,6 +779,8 @@ AI が読んで src/content/<locale>/<category>/<slug>.mdx を書く
 | 2026-09-27 | 実装開始（T-08）。Astro 7 + MDX、記事の部品一式、著者ページ、サイトマップ型フッタ、画像比率の規格化、コラムの導線。扱う地域は「地方が主体・関東は強みとして使う」で確定 |
 | 2026-09-26 | 言語と通貨の方針を変更。**中国語は扱わない**、韓国語は最後。通貨は **EUR を先**に表示し、欧州圏を主要層に置く |
 | 2026-09-26 | デザイン確定。配色は案4（Persimmon）、レイアウトは合成案。ページ型の一覧と採否を第10-B節に追加（競合4サイトのナビ・フッタを実地取得）。入稿フォーマット2種を `templates/` に作成 |
+| 2026-11-08 | **多言語の基盤を実装（公開はまだ。`LOCALES` は `['en']` のまま）。** 5言語（en・ko・zh-tw・fr・es）を計画し、**中国語は繁体字（台湾向け）のみ・簡体字は作らない**に変更（9月26日の「中国語は扱わない」「韓国語は最後」を置き換え）。`LOCALE_META` に hreflang・og:locale・通貨を集約、UI 辞書を5言語に拡張（下書き）、hreflang を「確認済み・検索に出す版だけ・自己参照つき・zh-TW コード」に修正、為替に KRW（ECB）と TWD（ExchangeRate-API）を追加、`tools/check-i18n.mjs` を新設。未確認の翻訳は `translations-draft/` に置き、確認後に `src/content/` へ移す。選定根拠は JNTO の2025年確定値（韓国 9,459,711・台湾 6,763,424・米国 3,306,820・香港 2,517,399・タイ 1,233,103 ほか。2025年の総数 42,683,301） |
+| 2026-11-08 | **固定ページ・部品・データの多言語化の基盤を実装（`LOCALES` は `['en']` のまま。英語の出力は変えていない）。** 文言を `src/i18n/pages/*.ts`（10本）、データの表示文言の上書きを `src/i18n/data/*.ts`（7本）に切り出し、ページ・部品は `pickLocale` 系の関数で取る。内部リンクを `localePath()` に、日付を `dateTagOf()` に、固定ページの hreflang を `fixedAlternates()` に統一（`LOCALES` が1言語のあいだは出ない）。`AUTHOR.url` を `AUTHOR.path` に変更。`tools/check-i18n.mjs` に文言の表の検査を追加。英語の `dist`（HTML・サイトマップ）を作業前後で比較して一致を確認、`LOCALES` を一時的に `['en','ko','fr','es']` にした試験ビルドで固定ページと内部リンクを確認 |
 | 2026-10-29 | **GA4 を導入し、同意バナーとプライバシーポリシー（`/en/privacy/`）を新設した。**測定ID は `config.ts` の `GA4_MEASUREMENT_ID`（GA4 はアカウント「Financial and Marketing」〈16murase@gmail.com〉のプロパティ「waysidejapan」）。Consent Mode v2 は既定をすべて denied にし、**同意するまで gtag.js 自体を読み込まない**（advanced だと同意前でも Google へ Cookie なしの通信が飛ぶため）。選択は localStorage の `wsj-consent`、フッタの「Cookie settings」で開き直せる。`affiliate_click` の送出は未実装（第12節の残り）。Cloudflare Web Analytics は有効にしていない（併走案は未実施） |
 
 ---

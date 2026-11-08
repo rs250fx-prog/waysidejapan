@@ -2,22 +2,22 @@
 import Base from '../../layouts/Base.astro';
 import { LOCALES, SITE_NAME, AUTHOR, OPERATOR, SITE_URL, hasAnyAffiliate, ROUTES, type Locale } from '../../config.ts';
 import { REGIONS } from '../../data/regions.ts';
+import { localePath, fixedAlternates } from '../../i18n/index.ts';
+import { strings } from '../../i18n/pages/about.ts';
+import { regionName, regionNote } from '../../i18n/data/regions.ts';
 
 export function getStaticPaths() {
   return LOCALES.map((lang) => ({ params: { lang } }));
 }
 const lang = Astro.params.lang as Locale;
+const s = strings(lang);
 
 /**
  * 記事のバイラインから毎回ここへ飛ばす。E-E-A-T の受け皿なので、
  * 主張する数値（走行距離・ローカルガイドのレベル）は事実でなくなったら直す。
+ * 文言は src/i18n/pages/about.ts。
  */
-const credentials = [
-  { value: '30,000 km+', label: 'covered in a typical year' },
-  { value: 'Level 8', label: 'Google Local Guide' },
-  { value: 'Since my twenties', label: 'travelling Japan' },
-  { value: '40+', label: 'prefectures visited' },
-];
+const credentials = s.credentials;
 
 const graph = [
   {
@@ -41,28 +41,20 @@ const graph = [
 
 <Base
   locale={lang}
-  title="Who writes this"
-  description="Ichiro Murase lives in Japan and rides about 30,000 km a year. How this site is researched, photographed and paid for, and what it will never do."
+  title={s.title}
+  description={s.description}
   graph={graph}
+  alternates={fixedAlternates('/about/')}
 >
   {/* 帯（全幅の背景・罫線）と列（1280）を分ける。肖像と見出しは列の中に置き、他ページと左端を揃える */}
   <section class="hero">
     <div class="wrap hero-inner">
-    <div class="portrait ph ratio-portrait" aria-hidden="true">PORTRAIT</div>
+    <div class="portrait ph ratio-portrait" aria-hidden="true">{s.portrait}</div>
     <div class="intro">
-      <p class="kicker">About</p>
-      <h1>I live here, and I stop wherever there is a bath</h1>
-      <p class="lead">
-        My name is Ichiro Murase ({AUTHOR.nameJa}). I am Japanese, I live in Japan, and I have been travelling this
-        country since my twenties — by motorcycle, by car and by train. In a normal year I cover more than 30,000
-        kilometres, in every season, mostly on roads that do not appear in guidebooks.
-      </p>
-      <p class="lead">
-        What I write about here is what I found by going there: the places even Japanese travellers do not know about,
-        and the food that never leaves the town it comes from. Alongside that there is a second kind of article —
-        researched rather than visited, and labelled as such — because a visitor planning next month cannot wait for me
-        to ride every line first.
-      </p>
+      <p class="kicker">{s.kicker}</p>
+      <h1>{s.h1}</h1>
+      <p class="lead">{s.lead1(AUTHOR.nameJa)}</p>
+      <p class="lead">{s.lead2}</p>
     </div>
     </div>
   </section>
@@ -85,70 +77,36 @@ const graph = [
   <div class="wrap about-layout">
   <div class="body">
     <section id="why">
-      <h2>Why a Japanese person writing in English</h2>
-      <p>
-        Most English-language writing about Japan is by people passing through. That is not a criticism — a visitor
-        notices things a resident stops seeing. But a visitor cannot go back next weekend to check whether the fare
-        changed, and cannot read the notice taped to the door of a bathhouse.
-      </p>
-      <p>
-        I can. That is the entire premise of this site. When a price here has a date on it, the date is real. When a
-        guide says the transfer is eight minutes and tight with luggage, it is because I made it with luggage.
-      </p>
+      <h2>{s.why.title}</h2>
+      <p>{s.why.p1}</p>
+      <p>{s.why.p2}</p>
     </section>
 
     <section id="travel">
-      <h2>How I travel</h2>
-      <p>
-        By motorcycle and by car for the distance, by train for everything else. Thirty thousand kilometres a year adds
-        up to a lot of small roads, and the reason I take them is what sits along them: hot springs, the inn with six
-        rooms, the counter with no English menu and one dish worth crossing a prefecture for.
-      </p>
-      <p>
-        I have slept in campsites and in ryokan that cost more than a flight home, and eaten at both roadside stands and
-        Michelin-starred kitchens. I am a Level 8 Google Local Guide, which mostly means I have been writing down what I
-        find for a long time.
-      </p>
-      <p>
-        On this site the travel is by train, because that is what visitors to Japan can actually use. The driving still
-        shows up in the writing — I know which valley the road follows, and which bath is worth the detour, because I
-        got there on my own wheels first.
-      </p>
+      <h2>{s.travel.title}</h2>
+      <p>{s.travel.p1}</p>
+      <p>{s.travel.p2}</p>
+      <p>{s.travel.p3}</p>
     </section>
 
     <section id="work">
-      <h2>How I work</h2>
+      <h2>{s.work.title}</h2>
       <div class="principles">
         <div>
-          <h3>Two kinds of article, and each one says which</h3>
-          <p>
-            Some guides here are places I went to, photographed and paid for myself; those carry the month I was there.
-            Others are researched from published sources, because useful information should not wait for me to get on a
-            train. <strong>Every article states which kind it is, at the top.</strong> The sourced ones list what they
-            were built from.
-          </p>
+          <h3>{s.work.kinds.title}</h3>
+          <p set:html={s.work.kinds.body} />
         </div>
         <div>
-          <h3>Every price carries a date, or is marked as a guide</h3>
-          <p>
-            Prices change and guides rot. Each figure here either states the month it was checked, or is labelled as an
-            indicative price. I cannot revisit every place often enough to promise more than that, and I would rather
-            tell you which kind of number you are looking at.
-          </p>
+          <h3>{s.work.dates.title}</h3>
+          <p>{s.work.dates.body}</p>
         </div>
         <div>
-          <h3>Yen first, conversions second</h3>
-          <p>
-            You will pay in yen, so yen is what I show — with an approximate euro and dollar figure beside it, updated
-            daily from European Central Bank rates.
-          </p>
+          <h3>{s.work.yen.title}</h3>
+          <p>{s.work.yen.body}</p>
         </div>
         <div>
-          <h3>Mostly my own photographs</h3>
-          <p>
-            Most of what you see here I photographed myself, and I avoid stock imagery. Where a photograph is not mine,
-            it is used with permission or proper credit, and said to be so.
-          </p>
+          <h3>{s.work.photos.title}</h3>
+          <p>{s.work.photos.body}</p>
         </div>
       </div>
     </section>
@@ -158,19 +116,12 @@ const graph = [
          提携が通って AFFILIATE が true になったら自動で現れる */
       hasAnyAffiliate && (
         <section class="money" id="money">
-          <h2>How this site makes money</h2>
-          <p>
-            Some links are affiliate links. If you book through one, the company pays me a commission and you pay the
-            same price you would have paid anyway. That is the whole arrangement.
-          </p>
-          <p>
-            What it does not buy is a recommendation. Nothing appears here because a company asked, and I have not
-            accepted a sponsored trip — accepting one would make the next review worthless. Where a booking link exists
-            for something I did not use myself, the article says so in the same sentence as the link.
-          </p>
+          <h2>{s.money.title}</h2>
+          <p>{s.money.p1}</p>
+          <p>{s.money.p2}</p>
           {ROUTES.disclosure && (
             <p>
-              <a href={`/${lang}/disclosure/`}>Read the full disclosure →</a>
+              <a href={localePath(lang, '/disclosure/')}>{s.money.disclosure}</a>
             </p>
           )}
         </section>
@@ -178,64 +129,50 @@ const graph = [
     }
 
     <section id="regions">
-      <h2>Where I know Japan</h2>
-      <p>
-        Two decades of driving leaves an uneven map. These are the regions I can write about from memory rather than
-        research, strongest first. Everywhere on this list I have been more than once.
-      </p>
+      <h2>{s.regions.title}</h2>
+      <p>{s.regions.intro}</p>
       <ol class="regions">
         {
           REGIONS.map((r, i) => (
             <li>
               <span class="rank">{i + 1}</span>
-              <span class="region-name">{r.name}</span>
-              <span class="region-note">{r.note}</span>
+              <span class="region-name">{regionName(r, lang)}</span>
+              <span class="region-note">{regionNote(r, lang)}</span>
             </li>
           ))
         }
       </ol>
-      <p class="note">
-        The site does not follow that order, and that is deliberate. Kanto is where I am strongest and where I live,
-        but it is also the part of Japan that is already written about in every language. What is missing in English is
-        the rest — the regions where a week still fits together on one pass and nobody has written the guide. So the
-        site leads with those, and draws on Kanto where it helps rather than making it the subject.
-      </p>
+      <p class="note">{s.regions.note}</p>
     </section>
 
     <section class="corrections" id="corrections">
-      <h2>Corrections welcome</h2>
-      <p>
-        If a fare has changed, a bath has closed or a rule has moved, tell me and I will fix it and credit you. That is
-        the fastest way this site stays worth reading.
-      </p>
-      <p><a href={OPERATOR.contactUrl} rel="noopener">Send a correction →</a></p>
+      <h2>{s.corrections.title}</h2>
+      <p>{s.corrections.body}</p>
+      <p><a href={OPERATOR.contactUrl} rel="noopener">{s.corrections.link}</a></p>
     </section>
 
     <section class="publisher" id="publisher">
-      <h2>Publisher</h2>
+      <h2>{s.publisher.title}</h2>
       <dl>
-        <dt>Site</dt>
+        <dt>{s.publisher.site}</dt>
         <dd>{SITE_NAME}</dd>
-        <dt>Published by</dt>
+        <dt>{s.publisher.publishedBy}</dt>
         <dd>{OPERATOR.name}</dd>
-        <dt>Representative</dt>
+        <dt>{s.publisher.representative}</dt>
         <dd>{OPERATOR.representative}（{AUTHOR.nameJa}）</dd>
-        <dt>Address</dt>
-        <dd>{OPERATOR.address}, Japan<br /><span class="ja">{OPERATOR.addressJa}</span></dd>
-        <dt>Contact</dt>
-        <dd><a href={OPERATOR.contactUrl} rel="noopener">Contact form</a></dd>
+        <dt>{s.publisher.address}</dt>
+        <dd>{s.publisher.addressLine(OPERATOR.address)}<br /><span class="ja">{OPERATOR.addressJa}</span></dd>
+        <dt>{s.publisher.contact}</dt>
+        <dd><a href={OPERATOR.contactUrl} rel="noopener">{s.publisher.contactForm}</a></dd>
       </dl>
-      <p class="note">
-        {OPERATOR.name} is a web marketing studio with a background in finance. This site is a personal publication run
-        under it, not a corporate product.
-      </p>
+      <p class="note">{s.publisher.note(OPERATOR.name)}</p>
     </section>
   </div>
 
-  <aside class="side" aria-label="About this site">
+  <aside class="side" aria-label={s.side.label}>
     <div class="side-inner">
       <section class="box creds">
-        <h2>In numbers</h2>
+        <h2>{s.side.numbers}</h2>
         {
           credentials.map((c) => (
             <div class="cred">
@@ -245,22 +182,22 @@ const graph = [
           ))
         }
       </section>
-      <nav class="box toc" aria-label="On this page">
-        <h2>On this page</h2>
+      <nav class="box toc" aria-label={s.side.onThisPage}>
+        <h2>{s.side.onThisPage}</h2>
         <ol>
-          <li><a href="#why">Why a Japanese person writing in English</a></li>
-          <li><a href="#travel">How I travel</a></li>
-          <li><a href="#work">How I work</a></li>
-          {hasAnyAffiliate && <li><a href="#money">How this site makes money</a></li>}
-          <li><a href="#regions">Where I know Japan</a></li>
-          <li><a href="#corrections">Corrections welcome</a></li>
-          <li><a href="#publisher">Publisher</a></li>
+          <li><a href="#why">{s.why.title}</a></li>
+          <li><a href="#travel">{s.travel.title}</a></li>
+          <li><a href="#work">{s.work.title}</a></li>
+          {hasAnyAffiliate && <li><a href="#money">{s.money.title}</a></li>}
+          <li><a href="#regions">{s.regions.title}</a></li>
+          <li><a href="#corrections">{s.corrections.title}</a></li>
+          <li><a href="#publisher">{s.publisher.title}</a></li>
         </ol>
       </nav>
       <a class="box contact" href={OPERATOR.contactUrl} rel="noopener">
-        <span class="contact-title">Seen something wrong?</span>
-        <span class="contact-dek">A fare, a closed bath, a moved rule — tell me and I will fix it and credit you.</span>
-        <span class="contact-go">Send a correction →</span>
+        <span class="contact-title">{s.side.contactTitle}</span>
+        <span class="contact-dek">{s.side.contactDek}</span>
+        <span class="contact-go">{s.side.contactGo}</span>
       </a>
     </div>
   </aside>

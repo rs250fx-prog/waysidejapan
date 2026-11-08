@@ -5,6 +5,12 @@
   "note": "ECB のデータ。営業日しか更新されないので asOf は直近営業日になる。tools/fetch-rates.mjs が更新する",
   "rates": {
     "USD": 0.0063161,
-    "EUR": 0.0056571
+    "EUR": 0.0056571,
+    "KRW": 8.5819,
+    "TWD": 0.207047
+  },
+  "sources": {
+    "ecb": "https://api.frankfurter.app（USD・EUR・KRW。欧州中央銀行。営業日のみ更新）",
+    "twd": "https://open.er-api.com（TWD。ExchangeRate-API の無料エンドポイント。ECB は台湾ドルを公表しない）"
   }
 }

@@ -1,0 +1,120 @@
+---
+title: "Le wanko soba : le repas d’Iwate où un serveur remplit votre bol sans cesse jusqu’à ce que vous refermiez le couvercle"
+description: "Une bouchée de soba, puis une autre, jusqu’à la fermeture du couvercle : l’hospitalité d’Iwate en compétition. Origines, règles, prix d’une séance, record de 632 bols."
+translationKey: soba-wanko
+translationStatus: machine
+category: eat
+kind: lineage
+dish: soba
+lineage: wanko
+basis: researched
+areas: [tohoku]
+pubDate: 2026-10-24
+draft: false
+unlisted: false
+access: public
+heroBand: false
+heroImage: ../../../assets/eat/soba-wanko-hero.webp
+heroAlt: "Illustration d’un serveur qui lance une bouchée de soba dans le bol d’un client, une pile grandissante de petits bols rouges sur la table"
+pricesCheckedOn: 2026-10-10
+faq:
+  - q: "Comment fonctionne le wanko soba ?"
+    a: "Un serveur se tient à côté de vous avec un plateau de petits bols laqués, chacun contenant une bouchée de soba, et en verse un neuf dans votre bol dès qu’il est vide. Cela continue jusqu’à ce que vous posiez le couvercle. Environ quinze bols font une portion ordinaire."
+  - q: "Combien cela coûte-t-il ?"
+    a: "¥4,500 par adulte chez Azumaya à Morioka (taxes comprises) et ¥4,300 chez Yabuya à Hanamaki ; les deux font un tarif réduit pour les enfants. La boutique de Yabuya à la gare de Morioka vend une dégustation de dix bols à ¥1,980."
+  - q: "Le wanko soba vient-il de Morioka ou de Hanamaki ?"
+    a: "Les deux le revendiquent. Hanamaki raconte l’histoire d’un seigneur Nambu servi en soba bouchée par bouchée au château de Hanamaki dans les années 1600 ; l’organisme du tourisme du Tōhoku le décrit comme une manière de nourrir de grands banquets. Chaque ville organise son propre concours national."
+sources:
+  - label: '東家「わんこそば」'
+    url: 'https://wankosoba.jp/wankosoba/'
+    published: '2026-10'
+  - label: 'やぶ屋「わんこそばの歴史」'
+    url: 'https://yabuya.jp/free/wanko_history'
+  - label: 'やぶ屋「メニュー」'
+    url: 'https://yabuya.jp/menu'
+    published: '2026-10'
+  - label: '東北観光推進機構「わんこそば」'
+    url: 'https://www.tohokukanko.jp/attractions/detail_1004478.html'
+  - label: '盛岡市「全日本わんこそば選手権 歴代記録」'
+    url: 'https://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/016/662/34rekidaikiroku'
+  - label: '広報もりおか「第33回全日本わんこそば選手権 出場者募集」'
+    url: 'https://www.city.morioka.iwate.jp/_res/projects/default_project/_page_/001/024/409/180915_0607_2.pdf'
+    published: '2018-09-15'
+  - label: '出雲市 記者会見資料（文化庁「100年フード」認定一覧：わんこそば・盛岡三大麵）'
+    url: 'https://www.city.izumo.shimane.jp/www/contents/1654153092977/files/7siryou.pdf'
+    published: '2022-06-02'
+  - label: '島根県資料「島短食レポ隊 in 出雲」（三大そばの比較）'
+    url: 'https://www.pref.shimane.lg.jp/medical/kenko/kenko/syokuiku/katsudou/kenritsudaigaku-shokureport.data/report-izumo.pdf'
+  - label: '総務省統計局 家計調査 品目別都道府県庁所在市ランキング 外食「日本そば・うどん」（2023〜2025年平均）'
+    url: 'https://www.stat.go.jp/data/kakei/5.html'
+    published: '2026-02-13'
+---
+
+import DishPrices from '../../../components/DishPrices.astro';
+import Figure from '../../../components/Figure.astro';
+import closeLid from '../../../assets/eat/soba-wanko-body.webp';
+
+Le wanko soba est le seul plat de nouilles du Japon qui ait un arbitre. Vous vous asseyez ; un serveur en tablier se tient à votre épaule avec un plateau de petits bols laqués, chacun contenant une seule bouchée de soba ; dès que votre bol est vide, une autre bouchée y tombe avec un cri de *hai, jan-jan !* et cela ne s’arrête pas avant que vous posiez le couvercle. C’est l’idée qu’Iwate se fait de l’hospitalité, et elle est devenue son idée du sport.
+
+## D’où il vient
+
+Deux villes racontent deux histoires, et le ministère de l’Agriculture range le wanko soba avec Izumo et Togakushi parmi les trois grandes traditions du soba du Japon sans trancher la question. La version de Hanamaki, racontée par Yabuya, le restaurant qui organise le concours de la ville : à l’ère Keichō (vers 1600), le seigneur Nambu Toshinao s’arrêta au château de Hanamaki, on lui servit le soba local peu à la fois dans des bols laqués pour ne pas offenser un seigneur avec le tas d’un ouvrier, et il continua d’en redemander. *Wanko* est le diminutif local pour un bol. La version de l’organisme du tourisme du Tōhoku est moins précise et plus plausible comme mécanisme : une manière de nourrir un grand banquet à partir d’une seule marmite, née de la tradition d’hospitalité de la région, qui se serait ensuite répandue des boutiques de soba de Hanamaki aux foyers pendant l’ère Meiji, puis Taishō. La revendication de Morioka repose sur ses boutiques et son concours plutôt que sur une légende fondatrice que ce site ait pu sourcer.
+
+Les deux villes l’ont institutionnalisé. Le « Original Wanko Soba All-Japan Tournament » de Hanamaki a commencé en décembre 1957 comme un combat de style sumo, a pris son nom actuel à la dix-huitième édition et se tient chaque 11 février depuis la vingt-deuxième ; ce jour a été enregistré comme Journée du wanko soba en 2015. Le « All-Japan Wanko Soba Championship » de Morioka a commencé en 1986. En 2022, l’Agence des affaires culturelles a inscrit le wanko soba comme « 100-year Food » (cuisine centenaire) et les trois nouilles de Morioka — wanko soba, *reimen* froides et *jajamen* — parmi ses cuisines « du futur ».
+
+## Ce qui fait le wanko soba
+
+**La portion.** Une bouchée par bol ; la norme du concours est de dix grammes. Azumaya à Morioka et l’organisme du tourisme du Tōhoku disent tous deux qu’environ quinze bols font une portion normale de soba ; une comparaison préfectorale la situe entre dix et quinze.
+
+**Les règles.** Celles d’Azumaya sont celles que vous entendrez à table : le premier bol se mange sans condiments, pour goûter le soba ; quand la sauce s’accumule dans votre bol, vous la versez dans le seau à déchets ; les condiments — sashimi de thon, daikon râpé, nori, oignon vert, pickles — servent à changer le goût au fil du repas ; et vous ne pouvez pas arrêter avant d’avoir posé le couvercle sous le regard du serveur. Couvercle posé, concours terminé. Mangez-en cent et vous recevez une plaque de comptage en bois.
+
+**La nouille.** Du soba ordinaire, déjà nappé de sauce, de sorte qu’on peut le manger sans coupelle de trempage. Ce n’est pas un plat sur le sarrasin ; c’est un plat sur le comptage.
+
+<Figure
+  src={closeLid}
+  alt="Un client pose le couvercle sur son bol tandis que le serveur attend avec la portion suivante"
+  caption="Posez le couvercle, et les recharges cessent. Illustration."
+/>
+
+## Pourquoi Iwate
+
+Une province froide du nord où poussait le sarrasin (Iwate en a récolté environ 1,050 tonnes en 2025, dans les dix premières du pays), une culture de banquets de ville de château, et l’habitude de servir aux invités plus qu’ils ne peuvent manger. L’expression de l’organisme du tourisme est *omotenashi no kokoro*, l’hospitalité des ancêtres ; l’histoire de Hanamaki est la même idée avec un seigneur dedans.
+
+## Les boutiques, et leurs prix
+
+<DishPrices keys={['soba']} />
+
+Le wanko soba se facture à la séance, pas au bol :
+
+- **Azumaya**, Morioka, fondé en 1907. Wanko soba ¥4,500 taxes comprises ; ¥700 de moins pour les écoliers du primaire et du secondaire, ¥1,800 pour les enfants d’âge préscolaire.
+- **Yabuya Hanamaki Sōhonten**, fondé en 1923 et jadis lieu de prédilection du poète Miyazawa Kenji. Wanko soba ¥4,300 à partir de l’âge du collège, ¥3,300 pour le primaire, ¥1,300 pour les enfants d’âge préscolaire (la page de la carte dit taxes comprises ; la page d’histoire dit le contraire, demandez donc). La succursale de Yabuya dans la gare de Morioka vend une dégustation de dix bols à ¥1,980.
+- **Chokurian**, l’autre nom de Morioka, ne publie aucun prix que ce site ait pu vérifier.
+
+Les ménages de Morioka se classent 38e sur 52 villes pour les nouilles mangées au restaurant (¥6,927 par an) — le wanko soba est pour les invités et les visiteurs, pas pour le déjeuner du mardi.
+
+## Comment le manger
+
+1. Attachez le tablier. Décidez si vous mangez ou si vous concourez ; le prix est le même.
+2. Premier bol nature. Utilisez ensuite les condiments pour garder le palais intéressé — thon, daikon, nori, pickles.
+3. Versez la sauce qui s’accumule dans le seau entre deux bols, sinon vous allez la boire.
+4. Comptez, ou laissez le serveur compter avec des allumettes. Quinze, c’est un déjeuner ; cinquante, un bel effort ; cent donne droit à la plaque.
+5. Pour arrêter, posez le couvercle sur votre bol sous le regard du serveur. Si vous hésitez, une autre bouchée tombe.
+
+## Les records
+
+Le concours de Morioka dure quinze minutes par personne. Le record est de 632 bols, établi en 2018 par Suzuki Takamasa ; le record féminin est de 411, la même année ; avant l’introduction de la limite de temps en 1997, la marque était de 559 sans chronomètre. Le concours de Hanamaki dure cinq minutes (trois pour les enfants) et son record officiel, tel que le publie le restaurant organisateur, est de 258 bols. Les résultats postérieurs à 2019 pour Morioka et à 2025 pour Hanamaki n’étaient pas disponibles sur une page officielle.
+
+## Le wanko soba hors d’Iwate
+
+Il ne voyage pas, parce que le plat, c’est le serveur. Des restaurants de soba ailleurs organisent parfois des événements dans l’esprit du wanko, et des foires de grands magasins vendent des « sets de wanko soba » de petits bols, mais sans quelqu’un à votre épaule pour remplir le bol, ce n’est qu’une assiette de soba en plusieurs fois. Les deux maisons qui détiennent la tradition sont restées chez elles : Azumaya est à Morioka, Yabuya à Hanamaki et à la gare de Morioka. Si vous en voulez, vous allez à Iwate — ce qui est, pour un organisme du tourisme, tout l’intérêt.
+
+## Comment s’y rendre
+
+Morioka et Shin-Hanamaki sont toutes deux sur le Shinkansen Tōhoku depuis Tokyo. La maison principale d’Azumaya est dans le centre de Morioka ; la maison principale de Yabuya est près de la gare de Hanamaki, sur la ligne principale Tōhoku, et sa succursale de la gare est dans le bâtiment Fesan de la gare de Morioka.
+
+## Ce que l’on croit à tort
+
+- **« C’est du soba à volonté. »** C’est une séance à prix fixe qui s’arrête quand vous posez le couvercle ; le prix ne dépend pas du nombre de bols mangés.
+- **« Quinze bols, c’est beaucoup. »** Quinze bols, c’est une assiette de soba.
+- **« La sauce est une soupe. »** Versez-la entre deux bols.
+- **« C’est celui de Morioka. »** Hanamaki a la légende et le plus ancien concours ; Morioka a le record. Les deux ont raison de le revendiquer.

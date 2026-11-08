@@ -8,17 +8,22 @@
  *
  * 日付は必須。「いつ見たか」が無い実見は、出典の無い数値と同じ。
  */
+import { DEFAULT_LOCALE } from '../config.ts';
+import { dateTagOf } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/components.ts';
+
 interface Props {
   /** YYYY-MM または YYYY-MM-DD */
   on: string;
   where?: string;
 }
 const { on, where } = Astro.props;
+const locale = Astro.currentLocale ?? DEFAULT_LOCALE;
 
 const label = (() => {
   const d = new Date(on.length === 7 ? `${on}-01` : on);
   if (Number.isNaN(d.valueOf())) return on;
-  return d.toLocaleDateString('en-GB', {
+  return d.toLocaleDateString(dateTagOf(locale), {
     ...(on.length > 7 ? { day: 'numeric' } : {}),
     month: 'long',
     year: 'numeric',
@@ -28,7 +33,7 @@ const label = (() => {
 ---
 
 <aside class="from-exp">
-  <span class="tag">Seen myself · {label}{where && <> · {where}</>}</span>
+  <span class="tag">{strings(locale).fromExperience.seenMyself} · {label}{where && <> · {where}</>}</span>
   <div class="body"><slot /></div>
 </aside>
 

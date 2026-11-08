@@ -7,13 +7,18 @@ import SoakTile from '../../../components/SoakTile.astro';
 import Label from '../../../components/Label.astro';
 import GuideTile from '../../../components/GuideTile.astro';
 import { COLUMN_TOPICS, RAIL_GROUPS, OTHER_SECTION, type GuideSection } from '../../../data/guides.ts';
-import { LOCALES, type Locale, type Category } from '../../../config.ts';
+import { LOCALES, SITE_NAME, type Locale, type Category } from '../../../config.ts';
 import { listArticles, hrefOf, enabledCategories, type Article } from '../../../lib/content.ts';
 import { parseId } from '../../../content.config.ts';
 import { t, type UIKey } from '../../../i18n/ui.ts';
 import { formatMonth } from '../../../lib/money.ts';
 import { GENRES, OTHER_GENRE, START_HERE, type Genre } from '../../../data/genres.ts';
 import { REGIONS, REGION_LEADS, EXPLAINER_ORDER, regionOfArea } from '../../../data/soak.ts';
+import { localePath, fixedAlternates } from '../../../i18n/index.ts';
+import { strings } from '../../../i18n/pages/category.ts';
+import { genreLabel, genreNote } from '../../../i18n/data/genres.ts';
+import { sectionLabel, sectionNote } from '../../../i18n/data/guides.ts';
+import { soakRegionLabel } from '../../../i18n/data/soak.ts';
 
 export function getStaticPaths() {
   return LOCALES.flatMap((lang) => enabledCategories().map((category) => ({ params: { lang, category } })));
@@ -21,20 +26,15 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Locale;
 const category = Astro.params.category as Category;
+const s = strings(lang);
 const RANK: Record<string, number> = { dish: 0, lineage: 1, region: 0, explainer: 1, town: 2 };
 const rank = (a: Article) => RANK[a.data.kind] ?? 2;
 const articles = (await listArticles(lang, category)).sort((a, b) => rank(a) - rank(b));
-const KIND_LABEL: Record<string, string> = { dish: 'Dish', lineage: 'Lineage', region: 'Region', explainer: 'How it works', town: 'Town' };
 const label = t(lang, `nav.${category}` as UIKey);
 
-const intro: Record<string, string> = {
-  rail: 'Regional passes, model routes and the transfers that catch people out. Every fare says when it was last checked, and I rode the route before writing about it.',
-  eat: 'Station bento, regional dishes and which counters have an English menu. Prices and opening hours checked in person.',
-  soak: 'Onsen within walking distance of a station, with the tattoo policy, towel rules and English signage stated up front.',
-  konbini: 'What is worth buying at a convenience store, including the things sold only in one region.',
-  column: 'The regions on this site are industries before they are scenery. Sourced, and written from the train window.',
-  ride: 'Touring routes in western Japan, with road surface, fuel stops and parking.',
-};
+const intro = s.intro;
+/* 食の物価ページの品目数。食の物価ページ・記事の右カラムの文（「68 dishes」）と合わせる */
+const FOOD_PRICE_DISHES = 68;
 
 /*
  * Eat は「雑誌の目次」型（docs/HUB-DESIGN.md）。
@@ -62,10 +62,10 @@ if (isContents && orphans.length) console.warn(`[eat] dishes not in src/data/gen
 const sections: { genre: Genre; hubs: Article[] }[] = [...GENRES, { ...OTHER_GENRE, dishes: orphans }]
   .map((genre) => ({ genre, hubs: genre.dishes.map((d) => hubs.get(d)).filter((h): h is Article => !!h) }))
   .filter((s) => s.hubs.length > 0);
-const sectionCount = (s: { hubs: Article[] }) => {
-  const n = s.hubs.length;
-  const m = s.hubs.reduce((sum, h) => sum + lineagesOf(h.data.dish!).length, 0);
-  return `${n} ${n === 1 ? 'dish' : 'dishes'}${m ? ` · ${m} ${m === 1 ? 'lineage' : 'lineages'}` : ''}`;
+const sectionCount = (sec: { hubs: Article[] }) => {
+  const n = sec.hubs.length;
+  const m = sec.hubs.reduce((sum, h) => sum + lineagesOf(h.data.dish!).length, 0);
+  return s.genreCount(n, m);
 };
 const startHere = START_HERE.map((d) => hubs.get(d)).filter((h): h is Article => !!h);
 const totalLineages = [...lineagesByDish.values()].reduce((s, l) => s + l.length, 0);
@@ -138,33 +138,34 @@ if (isGuides) {
 
 /* ジャンプ行の中身。カテゴリごとに組む */
 const jump: { href: string; label: string }[] = isContents
-  ? sections.map((s) => ({ href: `#${s.genre.key}`, label: s.genre.label }))
+  ? sections.map((sec) => ({ href: `#${sec.genre.key}`, label: genreLabel(sec.genre, lang) }))
   : isSoak
     ? [
-        ...(explainers.length ? [{ href: '#before-you-go', label: 'Before you go' }] : []),
-        ...regionSections.map((s) => ({ href: `#${s.region.key}`, label: s.region.label })),
+        ...(explainers.length ? [{ href: '#before-you-go', label: s.beforeYouGo }] : []),
+        ...regionSections.map((sec) => ({ href: `#${sec.region.key}`, label: soakRegionLabel(sec.region, lang) })),
       ]
     : isGuides
-      ? guideSections.map((s) => ({ href: `#${s.section.key}`, label: s.section.label }))
+      ? guideSections.map((sec) => ({ href: `#${sec.section.key}`, label: sectionLabel(sec.section, lang) }))
       : [];
 const jumpSummary = isContents
-  ? `${hubs.size} dishes · ${totalLineages} lineages`
+  ? s.eatSummary(hubs.size, totalLineages)
   : isSoak
-    ? `${townCount} onsen towns · ${regionSections.length} regions`
+    ? s.soakSummary(townCount, regionSections.length)
     : isGuides
-      ? `${articles.length} ${articles.length === 1 ? 'guide' : 'guides'} · ${guideSections.length} ${guideSections.length === 1 ? 'section' : 'sections'}`
+      ? s.guidesSummary(articles.length, guideSections.length)
       : '';
 ---
 
 <Base
   locale={lang}
   title={label}
-  description={intro[category] ?? `${label} guides from Wayside Japan, written in Japan and checked in person.`}
+  description={intro[category] ?? s.fallbackDescription(label, SITE_NAME)}
+  alternates={fixedAlternates(`/${category}/`)}
 >
   {/* 帯（全幅の背景・罫線）と列（1280）を分ける。見出しの左端が本文・記事ページと揃う */}
   <div class="head">
     <div class="wrap head-inner">
-      <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${lang}/`}>Home</a> › {label}</nav>
+      <nav class="crumbs" aria-label={s.breadcrumbLabel}><a href={localePath(lang)}>{s.home}</a> › {label}</nav>
       <h1><Icon name={category} /> {label}</h1>
       <p class="dek">{intro[category]}</p>
     </div>
@@ -173,7 +174,7 @@ const jumpSummary = isContents
   {
     /* ジャンプ行は head の外に置く。SP では画面上部に貼り付けて、18,000px のページを行き来できるようにする */
     jump.length > 0 && (
-      <nav class="jumpbar" aria-label="Sections">
+      <nav class="jumpbar" aria-label={s.sectionsLabel}>
         <div class="wrap jump">
           <span class="jump-label">{jumpSummary}</span>
           <ul>
@@ -194,8 +195,8 @@ const jumpSummary = isContents
         {startHere.length > 0 && (
           <section class="start" aria-labelledby="start-here">
             <h2 id="start-here" class="sec-head">
-              <span>Start here</span>
-              <span class="sec-note">The three most-asked-about dishes</span>
+              <span>{s.startHere}</span>
+              <span class="sec-note">{s.startHereNote}</span>
             </h2>
             <div class="grid grid-start">
               {startHere.map((h) => (
@@ -205,37 +206,36 @@ const jumpSummary = isContents
           </section>
         )}
 
-        {sections.map((s) => (
-          <section class="genre" id={s.genre.key} aria-labelledby={`h-${s.genre.key}`}>
-            <h2 id={`h-${s.genre.key}`} class="sec-head">
-              <span>{s.genre.label}</span>
-              <span class="sec-note">{sectionCount(s)}</span>
+        {sections.map((sec) => (
+          <section class="genre" id={sec.genre.key} aria-labelledby={`h-${sec.genre.key}`}>
+            <h2 id={`h-${sec.genre.key}`} class="sec-head">
+              <span>{genreLabel(sec.genre, lang)}</span>
+              <span class="sec-note">{sectionCount(sec)}</span>
             </h2>
-            {s.genre.note && <p class="sec-dek">{s.genre.note}</p>}
+            {genreNote(sec.genre, lang) && <p class="sec-dek">{genreNote(sec.genre, lang)}</p>}
             <div class="grid">
-              {s.hubs.map((h) => (
+              {sec.hubs.map((h) => (
                 <DishTile hub={h} lineages={lineagesOf(h.data.dish!)} />
               ))}
             </div>
           </section>
         ))}
 
-        <a class="band" href={`/${lang}/food-prices/`}>
+        <a class="band" href={localePath(lang, '/food-prices/')}>
           <span class="band-text">
-            <strong>What Japanese people actually pay.</strong> 68 dishes, three price sources side by side: the government survey,
-            the big chains and what a resident sees.
+            <strong>{s.priceBandLead}</strong> {s.priceBandBody(FOOD_PRICE_DISHES)}
           </span>
           <span class="band-cta">
-            Food prices <Icon name="arrow" />
+            {s.priceBandCta} <Icon name="arrow" />
           </span>
         </a>
 
         {loose.length > 0 && (
           <section class="genre" id="more" aria-labelledby="h-more">
             <h2 id="h-more" class="sec-head">
-              <span>More from Eat</span>
+              <span>{s.moreFromEat}</span>
               <span class="sec-note">
-                {loose.length} {loose.length === 1 ? 'guide' : 'guides'}
+                {s.guideCount(loose.length)}
               </span>
             </h2>
             <div class="list list-tight">
@@ -261,8 +261,8 @@ const jumpSummary = isContents
         {explainers.length > 0 && (
           <section class="start" id="before-you-go" aria-labelledby="h-before-you-go">
             <h2 id="h-before-you-go" class="sec-head">
-              <span>Before you go</span>
-              <span class="sec-note">What the water is, and what the words mean</span>
+              <span>{s.beforeYouGo}</span>
+              <span class="sec-note">{s.beforeYouGoNote}</span>
             </h2>
             <div class="grid">
               {explainers.map((a) => (
@@ -272,26 +272,26 @@ const jumpSummary = isContents
           </section>
         )}
 
-        {regionSections.map((s) => (
-          <section class="genre" id={s.region.key} aria-labelledby={`h-${s.region.key}`}>
-            <h2 id={`h-${s.region.key}`} class="sec-head">
-              <span>{s.region.label}</span>
+        {regionSections.map((sec) => (
+          <section class="genre" id={sec.region.key} aria-labelledby={`h-${sec.region.key}`}>
+            <h2 id={`h-${sec.region.key}`} class="sec-head">
+              <span>{soakRegionLabel(sec.region, lang)}</span>
               <span class="sec-note">
-                {s.towns.length === 0 ? 'Overview only, for now' : `${s.towns.length} ${s.towns.length === 1 ? 'onsen town' : 'onsen towns'}`}
+                {sec.towns.length === 0 ? s.overviewOnly : s.townCount(sec.towns.length)}
               </span>
             </h2>
-            {s.lead && (
-              <a class="lead" href={hrefOf(s.lead)}>
-                <span class="lead-label">Overview</span>
-                <span class="lead-title">{s.lead.data.title}</span>
+            {sec.lead && (
+              <a class="lead" href={hrefOf(sec.lead)}>
+                <span class="lead-label">{s.overview}</span>
+                <span class="lead-title">{sec.lead.data.title}</span>
                 <span class="lead-go">
-                  Read <Icon name="arrow" />
+                  {s.read} <Icon name="arrow" />
                 </span>
               </a>
             )}
-            {s.towns.length > 0 && (
+            {sec.towns.length > 0 && (
               <div class="grid">
-                {s.towns.map((a) => (
+                {sec.towns.map((a) => (
                   <SoakTile entry={a} />
                 ))}
               </div>
@@ -302,9 +302,9 @@ const jumpSummary = isContents
         {soakLoose.length > 0 && (
           <section class="genre" id="more" aria-labelledby="h-more">
             <h2 id="h-more" class="sec-head">
-              <span>More from Soak</span>
+              <span>{s.moreFromSoak}</span>
               <span class="sec-note">
-                {soakLoose.length} {soakLoose.length === 1 ? 'guide' : 'guides'}
+                {s.guideCount(soakLoose.length)}
               </span>
             </h2>
             <div class="list list-tight">
@@ -327,20 +327,20 @@ const jumpSummary = isContents
       </div>
     ) : isGuides && guideSections.length > 0 ? (
       <div class="wrap contents">
-        {guideSections.map((s, i) => (
-          <section class:list={['genre', { start: i === 0 }]} id={s.section.key} aria-labelledby={`h-${s.section.key}`}>
-            <h2 id={`h-${s.section.key}`} class="sec-head">
-              <span>{s.section.label}</span>
+        {guideSections.map((sec, i) => (
+          <section class:list={['genre', { start: i === 0 }]} id={sec.section.key} aria-labelledby={`h-${sec.section.key}`}>
+            <h2 id={`h-${sec.section.key}`} class="sec-head">
+              <span>{sectionLabel(sec.section, lang)}</span>
               <span class="sec-note">
-                {s.items.length} {s.items.length === 1 ? 'guide' : 'guides'}
+                {s.guideCount(sec.items.length)}
               </span>
             </h2>
-            {s.section.note && <p class="sec-dek">{s.section.note}</p>}
+            {sectionNote(sec.section, lang) && <p class="sec-dek">{sectionNote(sec.section, lang)}</p>}
             <div class="grid">
-              {s.items.map((a) => (
+              {sec.items.map((a) => (
                 <GuideTile
                   entry={a}
-                  glyph={s.section.glyph}
+                  glyph={sec.section.glyph}
                   kicker={category === 'rail' ? a.data.areas[0].charAt(0).toUpperCase() + a.data.areas[0].slice(1) : undefined}
                 />
               ))}
@@ -352,7 +352,7 @@ const jumpSummary = isContents
       <div class="wrap list">
         {articles.length === 0 ? (
           <p class="empty">
-            Nothing published here yet. The first guides are being written — I would rather post none than post a thin one.
+            {s.empty}
           </p>
         ) : (
           articles.map((a) => (
@@ -360,7 +360,7 @@ const jumpSummary = isContents
               {/* 型（またはカテゴリ）はサムネの札に。下の行には地域だけ */}
               <span class="row-photo">
                 <Thumb entry={a} kind="card" />
-                <Label icon={category} text={KIND_LABEL[a.data.kind] || label} />
+                <Label icon={category} text={s.kind[a.data.kind] || label} />
               </span>
               <span class="row-text">
                 {a.data.kind !== 'dish' && <span class="row-cat">{a.data.areas[0]}</span>}
@@ -369,7 +369,7 @@ const jumpSummary = isContents
                 {/* 確認日バッジは一次体験の記事だけ（Article.astro と同じ基準） */}
                 {a.data.basis === 'visited' && (
                   <span class="badge-verified">
-                    <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(a.data.pricesCheckedOn)}
+                    <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(a.data.pricesCheckedOn, lang)}
                   </span>
                 )}
               </span>

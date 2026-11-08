@@ -5,6 +5,8 @@ import Icon from '../../components/Icon.astro';
 import { LOCALES, SITE_NAME, TAGLINE, NAV, type Locale } from '../../config.ts';
 import { listArticles, hrefOf } from '../../lib/content.ts';
 import { t, type UIKey } from '../../i18n/ui.ts';
+import { localePath, fixedAlternates } from '../../i18n/index.ts';
+import { strings } from '../../i18n/pages/home.ts';
 import { formatMonth } from '../../lib/money.ts';
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
@@ -21,6 +23,7 @@ export function getStaticPaths() {
 }
 
 const lang = Astro.params.lang as Locale;
+const s = strings(lang);
 const articles = await listArticles(lang);
 const featured = articles[0];
 const latest = articles.filter((a) => a.data.category !== 'column').slice(1, 7);
@@ -29,25 +32,18 @@ const columns = await listArticles(lang, 'column');
 /** 「Three ways in」は旅の3カテゴリ固定。コラムは別枠で扱う */
 const PRIMARY = ['eat', 'soak', 'rail'] as const;
 const categories = NAV.filter((n) => n.enabled && (PRIMARY as readonly string[]).includes(n.key));
-/** カードの1行説明。写真が入るまでは、これとアイコンが入口の手がかりになる */
-const WAYS: Record<string, string> = {
-  eat: 'What each dish is, why it is the way it is, what locals pay for it, and where its lineages come from.',
-  soak: 'Onsen you can walk to from a platform, with the rules stated up front.',
-  rail: 'Getting there: regional passes, model routes, and the transfers that catch people out.',
-};
-const WAY_ART: Record<string, { src: ImageMetadata; alt: string }> = {
-  eat: { src: eatArt, alt: 'Illustration of a bowl of soba with tempura and green onion, beside a plate of yakitori skewers' },
-  soak: { src: soakArt, alt: 'Illustration of a small stone outdoor onsen with a wooden bucket, a local train waiting at the platform behind' },
-  rail: { src: railArt, alt: 'Illustration of a two-car local train crossing a bridge over rice paddies, with a rail pass in the corner' },
-};
+/** カードの1行説明と絵の alt は s.ways（言語ごと）。絵そのものは言語に依らない */
+const WAY_ART: Record<string, ImageMetadata> = { eat: eatArt, soak: soakArt, rail: railArt };
 const cardSpec = IMAGE_SPEC.card;
+const [yenBefore, yenAfter = ''] = s.strip.yen.body.split('{{price}}');
 ---
 
 <Base
   locale={lang}
   bareTitle
-  title={`${SITE_NAME} — what Japan eats, and why`}
-  description="A Japanese local explaining what Japan eats and why: the price locals pay, the lineages behind each dish, and the trains and baths on the way."
+  title={s.title(SITE_NAME)}
+  description={s.description}
+  alternates={fixedAlternates('/')}
 >
   <section class="hero wrap">
     <div class="hero-text">
@@ -58,17 +54,17 @@ const cardSpec = IMAGE_SPEC.card;
             <h1>{featured.data.title}</h1>
             <p class="dek">{featured.data.description}</p>
             <p class="meta">
-              {featured.data.experience && <>Rode this route {featured.data.experience.visitedOn} · </>}
+              {featured.data.experience && <>{s.rodeRoute(featured.data.experience.visitedOn)} · </>}
               <span class="badge-verified">
-                <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(featured.data.pricesCheckedOn)}
+                <Icon name="verified" /> {t(lang, 'article.verified')} {formatMonth(featured.data.pricesCheckedOn, lang)}
               </span>
             </p>
-            <a class="btn" href={hrefOf(featured)}>Read the guide <Icon name="arrow" /></a>
+            <a class="btn" href={hrefOf(featured)}>{s.readGuide} <Icon name="arrow" /></a>
           </>
         ) : (
           <>
             <h1>{SITE_NAME}</h1>
-            <p class="dek">{TAGLINE} — what Japan eats, and why. The first guides are being written.</p>
+            <p class="dek">{s.emptyDek(TAGLINE)}</p>
           </>
         )
       }
@@ -87,16 +83,16 @@ const cardSpec = IMAGE_SPEC.card;
   <section class="strip">
     <div class="wrap strip-inner">
       <div>
-        <p class="strip-title"><Icon name="camera" /> Photographed myself</p>
-        <p>No stock images. Every photo is one I took, on the day stated.</p>
+        <p class="strip-title"><Icon name="camera" /> {s.strip.photo.title}</p>
+        <p>{s.strip.photo.body}</p>
       </div>
       <div>
-        <p class="strip-title"><Icon name="verified" /> Fares with a date</p>
-        <p>Every price says when it was last checked, and gets rechecked.</p>
+        <p class="strip-title"><Icon name="verified" /> {s.strip.fares.title}</p>
+        <p>{s.strip.fares.body}</p>
       </div>
       <div>
-        <p class="strip-title"><Icon name="prices" /> Yen, converted</p>
-        <p>Shown as <Price jpy={1200} />, updated daily.</p>
+        <p class="strip-title"><Icon name="prices" /> {s.strip.yen.title}</p>
+        <p>{yenBefore}<Price jpy={1200} />{yenAfter}</p>
       </div>
     </div>
   </section>
@@ -107,24 +103,21 @@ const cardSpec = IMAGE_SPEC.card;
         <div class="wrap">
           <div class="cb-head">
             <div>
-              <p class="kicker">Column</p>
-              <h2 class="cb-title">What a guidebook will not tell you</h2>
-              <p class="cb-dek">
-                The places locals quietly avoid, the everyday knowledge most Japanese people never had to learn, and
-                the reasons behind both. Researched and sourced rather than photographed.
-              </p>
+              <p class="kicker">{s.column.kicker}</p>
+              <h2 class="cb-title">{s.column.title}</h2>
+              <p class="cb-dek">{s.column.dek}</p>
             </div>
-            <a class="cb-all" href={`/${lang}/column/`}>
-              All columns <Icon name="arrow" />
+            <a class="cb-all" href={localePath(lang, '/column/')}>
+              {s.column.all} <Icon name="arrow" />
             </a>
           </div>
 
           <div class="cb-grid">
             <a class="cb-lead" href={hrefOf(columns[0])}>
-              <span class="cb-lead-kicker">Latest column</span>
+              <span class="cb-lead-kicker">{s.column.latest}</span>
               <span class="cb-lead-title">{columns[0].data.title}</span>
               <span class="cb-lead-dek">{columns[0].data.description}</span>
-              <span class="cb-read">Read the column <Icon name="arrow" /></span>
+              <span class="cb-read">{s.column.read} <Icon name="arrow" /></span>
             </a>
 
             <div class="cb-more">
@@ -132,13 +125,12 @@ const cardSpec = IMAGE_SPEC.card;
                 <a class="cb-item" href={hrefOf(a)}>
                   <span class="cb-item-title">{a.data.title}</span>
                   <span class="cb-item-meta">
-                    {a.data.sources.length > 0 ? `${a.data.sources.length} sources` : 'Researched'}
+                    {a.data.sources.length > 0 ? s.column.sources(a.data.sources.length) : s.column.researched}
                   </span>
                 </a>
               ))}
               {columns.length === 1 && (
-                <p class="cb-empty">More columns are being written. They take longer than the guides — every figure in
-                one has to come from a source I can name.</p>
+                <p class="cb-empty">{s.column.more}</p>
               )}
             </div>
           </div>
@@ -148,16 +140,16 @@ const cardSpec = IMAGE_SPEC.card;
   }
 
   <section class="wrap block">
-    <h2 class="section-title">Three ways in</h2>
+    <h2 class="section-title">{s.waysTitle}</h2>
     <div class="cards grid">
       {
         categories.map((c) => (
-          <a class="card" href={`/${lang}/${c.key}/`}>
+          <a class="card" href={localePath(lang, `/${c.key}/`)}>
             <span class="card-photo ph ratio-card">
               {WAY_ART[c.key] && (
                 <Image
-                  src={WAY_ART[c.key].src}
-                  alt={WAY_ART[c.key].alt}
+                  src={WAY_ART[c.key]}
+                  alt={s.ways[c.key].alt}
                   width={cardSpec.widths.at(-1)}
                   widths={cardSpec.widths}
                   sizes={cardSpec.sizes}
@@ -166,8 +158,8 @@ const cardSpec = IMAGE_SPEC.card;
               )}
               <Label icon={c.key} text={t(lang, `nav.${c.key}` as UIKey)} />
             </span>
-            <span class="card-dek">{WAYS[c.key]}</span>
-            <span class="card-go">Browse <Icon name="arrow" /></span>
+            <span class="card-dek">{s.ways[c.key].dek}</span>
+            <span class="card-go">{s.browse} <Icon name="arrow" /></span>
           </a>
         ))
       }

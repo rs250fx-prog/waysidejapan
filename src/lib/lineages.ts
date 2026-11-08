@@ -6,6 +6,7 @@
  */
 import { getCollection } from 'astro:content';
 import { isPublished } from './content.ts';
+import { localizeDish } from '../i18n/data/lineages.ts';
 
 export interface LineageAxis {
   key: string;
@@ -36,9 +37,10 @@ export interface DishLineages {
 
 const files = import.meta.glob<{ default: DishLineages }>('../data/lineages/*.json', { eager: true });
 
-export function lineagesOf(dish: string): DishLineages | null {
+/** locale を渡すと、表示文言をその言語にする（src/i18n/data/lineages.ts の上書き。無い項目は英語）。省略は英語の原本 */
+export function lineagesOf(dish: string, locale?: string): DishLineages | null {
   for (const mod of Object.values(files)) {
-    if (mod.default.dish === dish) return mod.default;
+    if (mod.default.dish === dish) return locale ? localizeDish(mod.default, locale) : mod.default;
   }
   return null;
 }

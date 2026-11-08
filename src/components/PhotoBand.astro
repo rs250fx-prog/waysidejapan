@@ -4,16 +4,20 @@
  * 「これ」という1枚が無い記事では出さない（frontmatter の heroBand を false に）。
  * 写真が用意できるまではプレースホルダを出す。
  */
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
+
 interface Props {
   caption?: string;
   src?: string;
   alt?: string;
 }
 const { caption, src, alt = '' } = Astro.props;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).photoBand;
 ---
 
 <figure class="band">
-  {src ? <img src={src} alt={alt} /> : <div class="ph" aria-hidden="true">OWN PHOTO</div>}
+  {src ? <img src={src} alt={alt} /> : <div class="ph" aria-hidden="true">{s.placeholder}</div>}
   {caption && <figcaption>{caption}</figcaption>}
 </figure>
 

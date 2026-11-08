@@ -6,6 +6,11 @@
  * - 動きが小さいときは何もしない。Pages のビルド回数（月500回・アカウント共有）を節約する
  * - 取得に失敗したら前回値を残して正常終了する。体裁の問題でビルドを止めない
  *
+ * 取得元（2026-11-08）：
+ * - USD / EUR / KRW … Frankfurter（欧州中央銀行のデータ）。営業日しか更新されない
+ * - TWD … ExchangeRate-API の無料エンドポイント（open.er-api.com）。ECB は台湾ドルを公表していないため
+ *   TWD だけ失敗しても、他の通貨の更新は止めない（前回の TWD を残す）
+ *
  * GitHub Actions から毎日呼ばれ、変化があったときだけコミットする。
  * コミットが Pages のビルドを起こすので Deploy Hook は要らない。
  */
@@ -18,13 +23,14 @@ const FILE = join(HERE, '..', 'src', 'data', 'rates.json');
 
 /** この割合未満の変動では更新しない */
 const THRESHOLD = 0.003; // 0.3%
-const CURRENCIES = ['USD', 'EUR'];
+const ECB_CURRENCIES = ['USD', 'EUR', 'KRW'];
+const EXTRA_CURRENCIES = ['TWD'];
 
 const current = JSON.parse(readFileSync(FILE, 'utf8'));
 
 let fetched;
 try {
-  const url = `https://api.frankfurter.app/latest?from=JPY&to=${CURRENCIES.join(',')}`;
+  const url = `https://api.frankfurter.app/latest?from=JPY&to=${ECB_CURRENCIES.join(',')}`;
   const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   fetched = await res.json();
@@ -34,14 +40,31 @@ try {
   process.exit(0);
 }
 
-const next = fetched.rates ?? {};
-const missing = CURRENCIES.filter((c) => typeof next[c] !== 'number');
+const next = { ...(fetched.rates ?? {}) };
+const missing = ECB_CURRENCIES.filter((c) => typeof next[c] !== 'number');
 if (missing.length) {
   console.log(`rates: missing ${missing.join(', ')} — keeping ${current.asOf}`);
   process.exit(0);
 }
 
-const moved = CURRENCIES.some((c) => {
+// ECB に無い通貨。失敗しても前回値を残し、他の更新は続ける
+try {
+  const res = await fetch('https://open.er-api.com/v6/latest/JPY', { signal: AbortSignal.timeout(15000) });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const json = await res.json();
+  for (const c of EXTRA_CURRENCIES) {
+    const v = json?.rates?.[c];
+    if (json?.result === 'success' && typeof v === 'number' && v > 0) next[c] = v;
+    else if (current.rates[c]) next[c] = current.rates[c];
+  }
+} catch (err) {
+  console.log(`rates: extra currencies failed (${err.message}) — keeping previous ${EXTRA_CURRENCIES.join(', ')}`);
+  for (const c of EXTRA_CURRENCIES) if (current.rates[c]) next[c] = current.rates[c];
+}
+
+const ALL = [...ECB_CURRENCIES, ...EXTRA_CURRENCIES].filter((c) => typeof next[c] === 'number');
+
+const moved = ALL.some((c) => {
   const before = current.rates[c];
   if (!before) return true;
   return Math.abs(next[c] - before) / before >= THRESHOLD;
@@ -53,6 +76,15 @@ if (!moved) {
 }
 
 // ECB は営業日しか更新しない。返ってきた日付をそのまま基準日にする
-const out = { ...current, asOf: fetched.date, rates: Object.fromEntries(CURRENCIES.map((c) => [c, next[c]])) };
+const out = {
+  ...current,
+  asOf: fetched.date,
+  source: 'https://api.frankfurter.app',
+  sources: {
+    ecb: 'https://api.frankfurter.app（USD・EUR・KRW。欧州中央銀行。営業日のみ更新）',
+    twd: 'https://open.er-api.com（TWD。ExchangeRate-API の無料エンドポイント。ECB は台湾ドルを公表しない）',
+  },
+  rates: Object.fromEntries(ALL.map((c) => [c, next[c]])),
+};
 writeFileSync(FILE, JSON.stringify(out, null, 2) + '\n', 'utf8');
-console.log(`rates: updated to ${out.asOf} (${CURRENCIES.map((c) => `${c} ${out.rates[c]}`).join(', ')})`);
+console.log(`rates: updated to ${out.asOf} (${ALL.map((c) => `${c} ${out.rates[c]}`).join(', ')})`);

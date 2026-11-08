@@ -10,6 +10,8 @@
  * 根拠（公的統計か、運営者の実見か）を必ず添えること。
  */
 import { formatPrice } from '../lib/money.ts';
+import { DEFAULT_LOCALE } from '../config.ts';
+import { strings } from '../i18n/pages/components.ts';
 
 interface Props {
   item: string;
@@ -22,6 +24,7 @@ interface Props {
 }
 
 const { item, touristJpy, touristNote, referenceJpy, referenceNote } = Astro.props;
+const s = strings(Astro.currentLocale ?? DEFAULT_LOCALE).referencePrice;
 const ratio = referenceJpy > 0 ? touristJpy / referenceJpy : 0;
 const ratioText = ratio >= 2 ? `${ratio.toFixed(1)}×` : `+${Math.round((ratio - 1) * 100)}%`;
 ---
@@ -30,13 +33,13 @@ const ratioText = ratio >= 2 ? `${ratio.toFixed(1)}×` : `+${Math.round((ratio -
   <figcaption>{item}</figcaption>
   <div class="cols">
     <div class="col tourist">
-      <span class="label">Tourist-facing stall</span>
+      <span class="label">{s.tourist}</span>
       <span class="amount">{formatPrice(touristJpy)}</span>
       {touristNote && <span class="note">{touristNote}</span>}
     </div>
     <div class="gap" aria-hidden="true">{ratioText}</div>
     <div class="col reference">
-      <span class="label">What a local pays</span>
+      <span class="label">{s.local}</span>
       <span class="amount">{formatPrice(referenceJpy)}</span>
       {referenceNote && <span class="note">{referenceNote}</span>}
     </div>

@@ -20,6 +20,10 @@ import { lineagesOf, dishHub, publishedLineagePages } from '../lib/lineages.ts';
 import { REGION_LEADS, regionOfArea } from '../data/soak.ts';
 import { parseId } from '../content.config.ts';
 import type { Locale } from '../config.ts';
+import { t } from '../i18n/ui.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/article.ts';
+import { soakRegionLabel } from '../i18n/data/soak.ts';
 
 interface Props {
   entry: Article;
@@ -28,6 +32,7 @@ interface Props {
 }
 const { entry, locale, toc } = Astro.props;
 const d = entry.data;
+const s = strings(locale).rail;
 const slugOf = (a: Article) => parseId(a.id).slug;
 const shortTitle = (a: Article) => a.data.title.split(/[:：]/)[0].trim();
 
@@ -36,23 +41,23 @@ type Box = { title: string; note?: string; links: { href: string; text: string; 
 const boxes: Box[] = [];
 
 if (d.kind === 'dish' && d.dish) {
-  const data = lineagesOf(d.dish);
+  const data = lineagesOf(d.dish, locale);
   const published = await publishedLineagePages(locale, d.dish);
   const links = (data?.lineages ?? [])
     .filter((l) => published.has(l.key))
-    .map((l) => ({ href: `/${locale}/eat/${d.dish}-${l.key}/`, text: l.name }));
-  if (links.length) boxes.push({ title: 'Lineages', note: 'Where the dish went, and what changed', links });
+    .map((l) => ({ href: localePath(locale, `/eat/${d.dish}-${l.key}/`), text: l.name }));
+  if (links.length) boxes.push({ title: s.lineages, note: s.lineagesNote, links });
 }
 
 if (d.kind === 'lineage' && d.dish) {
-  const data = lineagesOf(d.dish);
+  const data = lineagesOf(d.dish, locale);
   const hub = await dishHub(locale, d.dish);
   const published = await publishedLineagePages(locale, d.dish);
   const links = (data?.lineages ?? [])
     .filter((l) => published.has(l.key))
-    .map((l) => ({ href: `/${locale}/eat/${d.dish}-${l.key}/`, text: l.name, current: l.key === d.lineage }));
-  if (hub) boxes.push({ title: `Part of ${shortTitle(hub)}`, links: [{ href: hrefOf(hub), text: `${shortTitle(hub)}: the guide` }] });
-  if (links.length > 1) boxes.push({ title: 'Other lineages', links });
+    .map((l) => ({ href: localePath(locale, `/eat/${d.dish}-${l.key}/`), text: l.name, current: l.key === d.lineage }));
+  if (hub) boxes.push({ title: s.partOf(shortTitle(hub)), links: [{ href: hrefOf(hub), text: s.theGuide(shortTitle(hub)) }] });
+  if (links.length > 1) boxes.push({ title: s.otherLineages, links });
 }
 
 let facts: { k: string; v: string }[] = [];
@@ -62,32 +67,29 @@ if (d.category === 'soak') {
   if (d.kind === 'town') {
     const f = d.facility;
     if (f) {
-      const tattoos = { allowed: 'Allowed', 'not-allowed': 'Not allowed', conditional: 'With conditions' } as const;
-      const towel = { included: 'Included', rental: 'Rental', bring: 'Bring your own' } as const;
-      const english = { signs: 'Signs', staff: 'Staff', none: 'None' } as const;
-      if (f.water) facts.push({ k: 'Water', v: f.water });
-      if (f.entry != null) facts.push({ k: 'Entry', v: `¥${f.entry.toLocaleString('en')}` });
-      if (f.hours) facts.push({ k: 'Hours', v: f.hours });
-      if (f.closed) facts.push({ k: 'Closed', v: f.closed });
-      if (f.minutesFromStation != null) facts.push({ k: 'From the station', v: `${f.minutesFromStation} min on foot` });
-      if (f.tattoos) facts.push({ k: 'Tattoos', v: tattoos[f.tattoos] });
-      if (f.towel) facts.push({ k: 'Towel', v: towel[f.towel] });
-      if (f.english) facts.push({ k: 'English', v: english[f.english] });
-      if (f.cashOnly) facts.push({ k: 'Payment', v: 'Cash only' });
+      if (f.water) facts.push({ k: s.water, v: f.water });
+      if (f.entry != null) facts.push({ k: s.entry, v: `¥${f.entry.toLocaleString('en')}` });
+      if (f.hours) facts.push({ k: s.hours, v: f.hours });
+      if (f.closed) facts.push({ k: s.closed, v: f.closed });
+      if (f.minutesFromStation != null) facts.push({ k: s.fromStation, v: s.onFoot(f.minutesFromStation) });
+      if (f.tattoos) facts.push({ k: s.tattoos, v: s.tattooValues[f.tattoos] });
+      if (f.towel) facts.push({ k: s.towel, v: s.towelValues[f.towel] });
+      if (f.english) facts.push({ k: s.english, v: s.englishValues[f.english] });
+      if (f.cashOnly) facts.push({ k: s.payment, v: s.cashOnly });
     }
     const lead = region ? soak.find((a) => a.data.kind === 'region' && (REGION_LEADS[slugOf(a)] ?? []).includes(region.key)) : null;
-    if (lead) boxes.push({ title: `${region!.label} overview`, links: [{ href: hrefOf(lead), text: shortTitle(lead) }] });
+    if (lead) boxes.push({ title: s.overview(soakRegionLabel(region!, locale)), links: [{ href: hrefOf(lead), text: shortTitle(lead) }] });
   }
   if (d.kind === 'region') {
     const keys = REGION_LEADS[slugOf(entry)] ?? [];
     const towns = soak
       .filter((a) => a.data.kind === 'town' && keys.includes(regionOfArea(a.data.areas[0])?.key ?? ''))
       .sort((a, b) => a.data.title.localeCompare(b.data.title));
-    if (towns.length) boxes.push({ title: 'Onsen towns here', links: towns.map((a) => ({ href: hrefOf(a), text: shortTitle(a) })) });
+    if (towns.length) boxes.push({ title: s.townsHere, links: towns.map((a) => ({ href: hrefOf(a), text: shortTitle(a) })) });
   }
   if (d.kind === 'explainer') {
     const others = soak.filter((a) => a.data.kind === 'explainer' && a.id !== entry.id);
-    if (others.length) boxes.push({ title: 'More on the water', links: others.map((a) => ({ href: hrefOf(a), text: shortTitle(a) })) });
+    if (others.length) boxes.push({ title: s.moreOnWater, links: others.map((a) => ({ href: hrefOf(a), text: shortTitle(a) })) });
   }
 }
 ---
@@ -95,8 +97,8 @@ if (d.category === 'soak') {
 <div class="rail">
   {
     toc.length > 1 && (
-      <nav class="box toc" aria-label="On this page">
-        <h2>On this page</h2>
+      <nav class="box toc" aria-label={t(locale, 'article.contents')}>
+        <h2>{t(locale, 'article.contents')}</h2>
         <ol>
           {toc.map((h) => (
             <li>
@@ -111,7 +113,7 @@ if (d.category === 'soak') {
   {
     facts.length > 0 && (
       <section class="box facts">
-        <h2>At a glance</h2>
+        <h2>{t(locale, 'article.glance')}</h2>
         <dl>
           {facts.map((f) => (
             <>
@@ -148,11 +150,11 @@ if (d.category === 'soak') {
 
   {
     d.category === 'eat' && d.kind === 'dish' && (
-      <a class="box prices" href={`/${locale}/food-prices/`}>
-        <span class="prices-title">What it costs</span>
-        <span class="prices-dek">68 dishes, three price sources side by side</span>
+      <a class="box prices" href={localePath(locale, '/food-prices/')}>
+        <span class="prices-title">{s.pricesTitle}</span>
+        <span class="prices-dek">{s.pricesDek(68)}</span>
         <span class="prices-go">
-          Food prices <Icon name="arrow" />
+          {s.pricesGo} <Icon name="arrow" />
         </span>
       </a>
     )

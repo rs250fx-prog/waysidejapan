@@ -1,5 +1,7 @@
 ---
-import { GA4_MEASUREMENT_ID } from '../config.ts';
+import { GA4_MEASUREMENT_ID, DEFAULT_LOCALE } from '../config.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/consent.ts';
 
 /**
  * Cookie の同意バナー（Analytics.astro とセット）。
@@ -12,7 +14,9 @@ interface Props {
   locale?: string;
   noindex?: boolean;
 }
-const { locale = 'en', noindex = false } = Astro.props;
+const { locale = DEFAULT_LOCALE, noindex = false } = Astro.props;
+const s = strings(locale);
+const [bodyBefore, bodyAfter = ''] = s.body.split('{{link}}');
 const show = GA4_MEASUREMENT_ID !== '' && !noindex;
 ---
 
@@ -20,15 +24,14 @@ const show = GA4_MEASUREMENT_ID !== '' && !noindex;
   <div id="consent" class="consent" role="dialog" aria-labelledby="consent-title" hidden>
     <div class="wrap consent-inner">
       <div class="consent-text">
-        <p id="consent-title" class="consent-title">Cookies</p>
+        <p id="consent-title" class="consent-title">{s.title}</p>
         <p>
-          With your OK, Google Analytics counts which pages are read, so I know which guides to improve. Nothing is stored
-          or sent until you choose. <a href={`/${locale}/privacy/`}>Privacy policy</a>
+          {bodyBefore}<a href={localePath(locale, '/privacy/')}>{s.privacyLink}</a>{bodyAfter}
         </p>
       </div>
       <div class="consent-actions">
-        <button type="button" class="consent-btn" data-consent="denied">Reject</button>
-        <button type="button" class="consent-btn" data-consent="granted">Accept</button>
+        <button type="button" class="consent-btn" data-consent="denied">{s.reject}</button>
+        <button type="button" class="consent-btn" data-consent="granted">{s.accept}</button>
       </div>
     </div>
   </div>

@@ -108,7 +108,9 @@ for (const file of files) {
   if (!desc) errors.push(`${rel}: description が無い`);
   else {
     if (desc.length > 200) errors.push(`${rel}: description が長い（${desc.length}）`);
-    if (desc.length < 80) warnings.push(`${rel}: description が短い（${desc.length}）`);
+    // 韓国語・中国語は同じ内容でも文字数が少ない（英語 120〜160 字 ≒ 60〜90 字）。下限だけ言語で変える
+    const minLen = /content[\\/](ko|zh-tw)[\\/]/.test(rel) ? 40 : 80;
+    if (desc.length < minLen) warnings.push(`${rel}: description が短い（${desc.length}、下限 ${minLen}）`);
     if (descriptions.has(desc)) errors.push(`${rel}: description が ${descriptions.get(desc)} と重複`);
     descriptions.set(desc, rel);
   }

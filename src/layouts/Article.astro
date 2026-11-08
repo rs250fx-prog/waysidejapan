@@ -4,6 +4,8 @@ import RateNote from '../components/RateNote.astro';
 import Rail from '../components/Rail.astro';
 import Icon from '../components/Icon.astro';
 import { AUTHOR, SITE_URL, hasAnyAffiliate, type Locale } from '../config.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/article.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
 import { formatMonth } from '../lib/money.ts';
 import { shouldNoindex, hrefOf, slugify, type Article } from '../lib/content.ts';
@@ -23,6 +25,7 @@ interface Props {
 
 const { entry, locale, alternates = [], preview } = Astro.props;
 const d = entry.data;
+const s = strings(locale);
 const url = new URL(hrefOf(entry), SITE_URL).href;
 // 系譜ページは品目ハブの下にぶら下がる。ハブが無ければ普通のパンくず
 const hub = d.kind === 'lineage' && d.dish ? await dishHub(locale, d.dish) : null;
@@ -89,12 +92,12 @@ const graph: Record<string, unknown>[] = [
   {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(`/${locale}/`, SITE_URL).href },
+      { '@type': 'ListItem', position: 1, name: s.home, item: new URL(localePath(locale), SITE_URL).href },
       {
         '@type': 'ListItem',
         position: 2,
         name: t(locale, `nav.${d.category}` as UIKey),
-        item: new URL(`/${locale}/${d.category}/`, SITE_URL).href,
+        item: new URL(localePath(locale, `/${d.category}/`), SITE_URL).href,
       },
       ...(hub
         ? [{ '@type': 'ListItem', position: 3, name: hub.data.title, item: new URL(hrefOf(hub), SITE_URL).href }]
@@ -149,7 +152,7 @@ if (d.faq.length > 0) {
   {
     toc.length > 1 && (
       <details class="toc-mobile">
-        <summary>On this page</summary>
+        <summary>{t(locale, 'article.contents')}</summary>
         <ol>
           {toc.map((h) => (
             <li>
@@ -161,10 +164,10 @@ if (d.faq.length > 0) {
     )
   }
   <article class="article">
-    <nav class="crumbs" aria-label="Breadcrumb">
-      <a href={`/${locale}/`}>Home</a>
+    <nav class="crumbs" aria-label={s.breadcrumbLabel}>
+      <a href={localePath(locale)}>{s.home}</a>
       <span aria-hidden="true">›</span>
-      <a href={`/${locale}/${d.category}/`}>{t(locale, `nav.${d.category}` as UIKey)}</a>
+      <a href={localePath(locale, `/${d.category}/`)}>{t(locale, `nav.${d.category}` as UIKey)}</a>
       {hub && (
         <>
           <span aria-hidden="true">›</span>
@@ -184,16 +187,16 @@ if (d.faq.length > 0) {
       <span class="avatar" aria-hidden="true"><Icon name="about" /></span>
       <span>
         <strong>{AUTHOR.name}</strong> · {AUTHOR.credential}
-        {d.basis === 'visited' && d.experience && <> · Rode this route {d.experience.visitedOn}</>}
+        {d.basis === 'visited' && d.experience && <> · {s.rodeRoute(d.experience.visitedOn)}</>}
       </span>
       {
         d.basis === 'visited' ? (
           <span class="badge-verified">
-            <Icon name="verified" /> {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn)}
+            <Icon name="verified" /> {t(locale, 'article.verified')} {formatMonth(d.pricesCheckedOn, locale)}
           </span>
         ) : (
           <span class="badge-researched">
-            <Icon name="sources" /> Researched · {d.sources.length} {d.sources.length === 1 ? 'source' : 'sources'}
+            <Icon name="sources" /> {s.researched(d.sources.length)}
           </span>
         )
       }
@@ -216,8 +219,7 @@ if (d.faq.length > 0) {
          このサイトの他の記事は一次体験で立っているので、黙ると読者を誤らせる */
       d.basis === 'researched' && (
         <p class="basis-note">
-          I have not been to every place in this guide. The figures below are taken from the sources listed at the end,
-          with the date each one was published — not measured by me. Where I have been, the article says so.
+          {s.basisNote}
         </p>
       )
     }
@@ -260,10 +262,10 @@ if (d.faq.length > 0) {
       )
     }
 
-    <RateNote pricesCheckedOn={d.pricesCheckedOn} faresCheckedOn={d.faresCheckedOn} category={d.category} />
+    <RateNote pricesCheckedOn={d.pricesCheckedOn} faresCheckedOn={d.faresCheckedOn} category={d.category} locale={locale} />
   </article>
 
-  <aside class="side" aria-label="Related">
+  <aside class="side" aria-label={s.relatedLabel}>
     <div class="side-inner">
       <Rail entry={entry} locale={locale} toc={toc} />
     </div>

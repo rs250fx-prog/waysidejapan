@@ -64,10 +64,30 @@ export async function byArea(locale: Locale, area: string): Promise<Article[]> {
   return (await listArticles(locale)).filter((a) => a.data.areas.includes(area));
 }
 
-/** 他言語版の実在するものだけ返す。hreflang はこれを使う */
+/**
+ * 他言語版の実在するものだけ返す。
+ * 言語が公開対象（LOCALES）で、記事が確認済み・非 unlisted のものに限る（noindex のページを hreflang に載せない）。
+ */
 export async function translationsOf(entry: Article): Promise<Article[]> {
   const all = await getCollection('articles', isBuildVisible);
-  return all.filter((a) => a.data.translationKey === entry.data.translationKey && a.id !== entry.id);
+  return all.filter(
+    (a) =>
+      a.data.translationKey === entry.data.translationKey &&
+      a.id !== entry.id &&
+      parseId(a.id).locale !== null &&
+      !shouldNoindex(a, true),
+  );
+}
+
+/**
+ * hreflang に出す対応表。自分自身も含む（相互参照・自己参照が揃っていないと Google が無視する）。
+ * 自分が noindex（machine 翻訳・unlisted）なら出さない。対応する他言語版が無いときも出さない。
+ */
+export async function alternatesFor(entry: Article): Promise<{ locale: string; path: string }[]> {
+  if (shouldNoindex(entry, true)) return [];
+  const others = await translationsOf(entry);
+  if (!others.length) return [];
+  return [entry, ...others].map((a) => ({ locale: parseId(a.id).locale as string, path: hrefOf(a) }));
 }
 
 export function hrefOf(entry: Article): string {

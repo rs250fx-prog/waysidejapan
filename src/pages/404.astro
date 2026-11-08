@@ -10,32 +10,32 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { DEFAULT_LOCALE, NAV, ROUTES } from '../config.ts';
 import { t, type UIKey } from '../i18n/ui.ts';
+import { localePath } from '../i18n/index.ts';
+import { strings } from '../i18n/pages/not-found.ts';
 
 const lang = DEFAULT_LOCALE;
+const s = strings(lang);
 const nav = NAV.filter((n) => n.enabled);
 ---
 
 <Base
   locale={lang}
-  title="Page not found"
-  description="This page does not exist on Wayside Japan. Start again from the guides, the food price reference or the front page."
+  title={s.title}
+  description={s.description}
   noindex
 >
   <div class="wrap nf">
     <p class="kicker">404</p>
-    <h1>This stop is not on the line</h1>
-    <p class="dek">
-      The page you asked for does not exist, or it has moved. Nothing is broken on your side. Pick up the route from one
-      of these.
-    </p>
+    <h1>{s.heading}</h1>
+    <p class="dek">{s.dek}</p>
     <ul class="ways">
       <li>
-        <a href={`/${lang}/`}><Icon name="pin" /> Front page</a>
+        <a href={localePath(lang)}><Icon name="pin" /> {s.front}</a>
       </li>
       {
         nav.map((n) => (
           <li>
-            <a href={`/${lang}/${n.key}/`}>
+            <a href={localePath(lang, `/${n.key}/`)}>
               <Icon name={n.key} /> {t(lang, `nav.${n.key}` as UIKey)}
             </a>
           </li>
@@ -44,8 +44,8 @@ const nav = NAV.filter((n) => n.enabled);
       {
         ROUTES.foodPrices && (
           <li>
-            <a href={`/${lang}/food-prices/`}>
-              <Icon name="prices" /> What food costs in Japan
+            <a href={localePath(lang, '/food-prices/')}>
+              <Icon name="prices" /> {s.prices}
             </a>
           </li>
         )

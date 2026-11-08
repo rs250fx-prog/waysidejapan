@@ -1,5 +1,6 @@
 import rates from '../data/rates.json';
-import { DISPLAY_CURRENCIES } from '../config.ts';
+import { DISPLAY_CURRENCIES, DEFAULT_LOCALE } from '../config.ts';
+import { dateTagOf } from '../i18n/index.ts';
 
 const SYMBOL: Record<string, string> = { USD: '$', EUR: '€', GBP: '£', AUD: 'A$', TWD: 'NT$', KRW: '₩' };
 
@@ -41,12 +42,12 @@ export function jpyPerUsd(): string {
   return jpyPer('USD');
 }
 
-export function formatAsOf(iso: string): string {
+export function formatAsOf(iso: string, locale: string = DEFAULT_LOCALE): string {
   const d = new Date(iso + 'T00:00:00Z');
-  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+  return d.toLocaleDateString(dateTagOf(locale), { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 }
 
 /** pricesCheckedOn の表示（Fares verified Aug 2026） */
-export function formatMonth(date: Date): string {
-  return date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+export function formatMonth(date: Date, locale: string = DEFAULT_LOCALE): string {
+  return date.toLocaleDateString(dateTagOf(locale), { month: 'short', year: 'numeric', timeZone: 'UTC' });
 }
