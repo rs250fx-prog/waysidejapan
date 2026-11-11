@@ -34,8 +34,10 @@ jobs:
           git config user.name "wayside-bot"
           git config user.email "actions@users.noreply.github.com"
 
+          # 英語にヒーローが付いた記事の翻訳（translations-draft）を src/content へ移す。公開日は次の行が英語に揃える
+          node tools/sync-translations.mjs --apply
           node tools/schedule-publish.mjs --fill --apply
-          git add docs/publish-plan.json src/content
+          git add docs/publish-plan.json src/content translations-draft
           if ! git diff --cached --quiet; then
             git commit -m "chore: 公開計画に追加（${TODAY}）"
             git push
