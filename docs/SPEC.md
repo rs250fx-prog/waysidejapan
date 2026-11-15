@@ -313,6 +313,13 @@ AI翻訳 → **固有名詞・料金・乗り換えを人間が確認**。これ
 
 **翻訳記事の点検（`npm run check:translation`、`tools/check-translation.mjs`）**：`translations-draft/` と `src/content/<英語以外>/` を、英語の原文と突き合わせる。YAML・キーの過不足・訳さない値の変更・faq の数・import 行・部品タグの数・本文リンクの URL・台湾版の簡体字を error、原文の数字の欠落・換算後の金額の直書き・訳し残しの疑い・description の長さを warning にする。**事実の正しさや訳の自然さの保証ではない**（人の確認の代わりにならない）。簡体字の検査は、訳した値と本文だけを見る（`sources` の label は日本語の資料名で、国・会・体・区が日本語の新字体と同形のため対象外）。
 
+**公開の連動と追従**（2026-11-16）：
+- 翻訳版は、英語の記事と**同じ日に**出る。`tools/schedule-publish.mjs --apply` が英語の `pubDate` を翻訳版にも書き込み、出す・出さないは slug の公開計画で共通。
+- ヒーロー画像がまだ無い英語記事の翻訳は `translations-draft/` に置いたまま。英語にヒーローが付くと、毎晩 `tools/sync-translations.mjs`（`daily-publish.yml`）が `src/content/<lang>/` へ移し、`heroImage` などを英語から写す。`heroAlt` は英語のまま入るので、`translations-draft/_alt-todo.json` の記事は訳し直す。
+- **英語の更新への追従**：`docs/translation-sync.json`（台帳）に、翻訳したときの英語の指紋（公開日・更新日・ヒーロー・translationStatus を除いた SHA-1）を持つ。`node tools/translation-sync.mjs`（`npm run translation:sync`）が、英語が変わった翻訳（古い）・台帳に無い翻訳・まだ訳していない記事を一覧する。毎晩 `daily-publish.yml` が実行し、Actions の要約に出す（報告のみ。落ちない・コミットしない）。
+  - 古い翻訳の直し方：その言語の翻訳を、英語の変更に合わせて直す → `node tools/translation-sync.mjs --accept <lang>/<cat>/<slug>`（3言語まとめては `--accept-all-of <cat>/<slug>`）で台帳を更新する。
+  - 新しい翻訳を足したあとは `node tools/translation-sync.mjs --init` で台帳に登録する。
+
 **description の下限**（2026-11-08）：スキーマは40字以上に下げた（韓国語・中国語は同じ内容でも文字数が少ない。目安は 60〜90 字）。英語・フランス語・スペイン語は 120〜160 字のまま（`tools/check-content.mjs` が言語で下限を切り替える）。
 
 ### 固定ページ・部品・データの文言（2026-11-08 決定・基盤は実装済み）

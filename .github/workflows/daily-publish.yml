@@ -26,6 +26,10 @@ jobs:
       - name: Check push access
         run: git push --dry-run origin HEAD:${{ github.ref_name }}
 
+      # 英語の記事が更新されて古くなった翻訳と、まだ訳していない記事を、Actions の要約に出す（報告のみ。落ちない・コミットしない）
+      - name: Translation freshness (report only)
+        run: node tools/translation-sync.mjs || true
+
       # 1. ヒーローを足したのに計画に無い記事を、計画の末尾に足す（pubDate は未来の日付になる）
       # 2. その日が pubDate の記事があれば、空コミットで再ビルドさせる
       - name: Fill the plan, then push if anything changes or goes live today
