@@ -1,13 +1,13 @@
 {
   "base": "JPY",
-  "asOf": "2026-11-23",
+  "asOf": "2026-11-24",
   "source": "https://api.frankfurter.app",
   "note": "ECB のデータ。営業日しか更新されないので asOf は直近営業日になる。tools/fetch-rates.mjs が更新する",
   "rates": {
-    "USD": 0.0062864,
-    "EUR": 0.0057468,
-    "KRW": 8.4795,
-    "TWD": 0.206745
+    "USD": 0.0062865,
+    "EUR": 0.0057343,
+    "KRW": 8.4523,
+    "TWD": 0.206918
   },
   "sources": {
     "ecb": "https://api.frankfurter.app（USD・EUR・KRW。欧州中央銀行。営業日のみ更新）",
